@@ -55,19 +55,19 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Click **Show portal menu** and select + **Create a Resource**.
 
-    ![Create new resource - screenshot](L08/Static/Mod_01_Web_Hook_image1.png)
+    ![Create new resource - screenshot](../L08/Static/Mod_01_Web_Hook_image1.png)
 
 	- Search for Function App and select it.
 
-    ![New function app - screenshot](L08/Static/Mod_01_Web_Hook_image2.png)
+    ![New function app - screenshot](../L08/Static/Mod_01_Web_Hook_image2.png)
 
 	- Click **Create**.
 
-    ![Create function app - screenshot](L08/Static/Mod_01_Web_Hook_image3.png)
+    ![Create function app - screenshot](../L08/Static/Mod_01_Web_Hook_image3.png)
 
 	- Enter your initials plus today’s date for **App Name**, select your **Subscription**, select **Create New** for **Resource Group**, select **.NET Core** for Runtime Stack, select location in the same region as **CDS**, and click **Review + Create**.
 
-    ![Review/create function app - screenshot](L08/Static/Mod_01_Web_Hook_image4.png)
+    ![Review/create function app - screenshot](../L08/Static/Mod_01_Web_Hook_image4.png)
 
 	- Click **Create** and wait for the deployment to complete.
 
@@ -77,15 +77,15 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Click **Go to resource**.
 
-    ![Go to resource - screenshot](L08/Static/Mod_01_Web_Hook_image5.png)
+    ![Go to resource - screenshot](../L08/Static/Mod_01_Web_Hook_image5.png)
 
 	- Select **Functions** and click **+ Add**.
 
-    ![Add function - screenshot](L08/Static/Mod_01_Web_Hook_image6.png)
+    ![Add function - screenshot](../L08/Static/Mod_01_Web_Hook_image6.png)
 
 	- Select **HTTP trigger**.
 
-    ![HTTP trigger - screenshot](L08/Static/Mod_01_Web_Hook_image7.png)
+    ![HTTP trigger - screenshot](../L08/Static/Mod_01_Web_Hook_image7.png)
 
 	- Click **Create Function** and wait for the function to be created.
 
@@ -93,17 +93,17 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select **Code + Test**.
 
-    ![Code + Test - screenshot](L08/Static/Mod_01_Web_Hook_image8.png)
+    ![Code + Test - screenshot](../L08/Static/Mod_01_Web_Hook_image8.png)
 
 	- Click **Test**/**Run**.
 
-    ![Test/run - screenshot](L08/Static/Mod_01_Web_Hook_image9.png)
+    ![Test/run - screenshot](../L08/Static/Mod_01_Web_Hook_image9.png)
 
 	- Click **Run**.
 
 	- You should see **Hello, Azure** in the output.
 
-    ![Function output - screenshot](L08/Static/Mod_01_Web_Hook_image10.png)
+    ![Function output - screenshot](../L08/Static/Mod_01_Web_Hook_image10.png)
 
 	- Close the test pane.
 
@@ -125,21 +125,21 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Save your changes.
 
-    ![Save function - screenshot](L08/Static/Mod_01_Web_Hook_image11.png)
+    ![Save function - screenshot](../L08/Static/Mod_01_Web_Hook_image11.png)
 
 4. Remove HTTP output
 
 	- Select **Integration**.
 
-    ![Integration - screenshot](L08/Static/Mod_01_Web_Hook_image12.png)
+    ![Integration - screenshot](../L08/Static/Mod_01_Web_Hook_image12.png)
 
 	- Select the **HTTP Output**.
 
-    ![Outputs - screenshot](L08/Static/Mod_01_Web_Hook_image13.png)
+    ![Outputs - screenshot](../L08/Static/Mod_01_Web_Hook_image13.png)
 
 	- Click **Delete**.
 
-    ![Delete output - screenshot](L08/Static/Mod_01_Web_Hook_image14.png)
+    ![Delete output - screenshot](../L08/Static/Mod_01_Web_Hook_image14.png)
 
 	- Click **OK**.
 
@@ -147,11 +147,11 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select **Overview** and click **Get Function URL**.
 
-    ![Get function URL - screenshot](L08/Static/Mod_01_Web_Hook_image15.png)
+    ![Get function URL - screenshot](../L08/Static/Mod_01_Web_Hook_image15.png)
 
 	- Click **Copy** and click OK to close the popup.
 
-    ![Copy function URL - screenshot](L08/Static/Mod_01_Web_Hook_image16.png)
+    ![Copy function URL - screenshot](../L08/Static/Mod_01_Web_Hook_image16.png)
 
 	- Save the **URL**, you will need it in the next exercise.
 
@@ -165,17 +165,17 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Click **Download SDK Zip File**.
 
-    ![Download SDK - screenshot](L08/Static/Mod_01_Web_Hook_image17.png)
+    ![Download SDK - screenshot](../L08/Static/Mod_01_Web_Hook_image17.png)
 
 	- Save the zip file on your machine.
 
 	- Right click on the downloaded **sdk.zip** file and select **Properties**.
 
-    ![File properties - screenshot](L08/Static/Mod_01_Web_Hook_image18.png)
+    ![File properties - screenshot](../L08/Static/Mod_01_Web_Hook_image18.png)
 
 	- Check the **Unblock** checkbox and click Apply.
 
-    ![Unblock file - screenshot](L08/Static/Mod_01_Web_Hook_image19.png)
+    ![Unblock file - screenshot](../L08/Static/Mod_01_Web_Hook_image19.png)
 
 	- Click **OK**.
 
@@ -187,70 +187,70 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Open the **sdk** folder you extracted and click to open the **PluginRegistration** folder.
 
-    ![Plugin registration - screenshot](L08/Static/Mod_01_Web_Hook_image20.png)
+    ![Plugin registration - screenshot](../L08/Static/Mod_01_Web_Hook_image20.png)
 
 	- Locate and double click PluginRegistration.exe.
 
-    ![Start plugin registration tool - screenshot ](L08/Static/Mod_01_Web_Hook_image21.png)
+    ![Start plugin registration tool - screenshot ](../L08/Static/Mod_01_Web_Hook_image21.png)
 
 3. Create new connection
 
 	- Click **Create New Connection**.
 
-    ![New connection - screenshot ](L08/Static/Mod_01_Web_Hook_image22.png)
+    ![New connection - screenshot ](../L08/Static/Mod_01_Web_Hook_image22.png)
 
 	- Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
 	- Provide your **CDS** credentials and click **Login**.  
-‎    ![Login - screenshot](L08/Static/Mod_01_Web_Hook_image23.png)
+‎    ![Login - screenshot](../L08/Static/Mod_01_Web_Hook_image23.png)
 
 	- Select the **Dev** environment and click **Login**.
 
-    ![Select environment - screenshot](L08/Static/Mod_01_Web_Hook_image24.png)
+    ![Select environment - screenshot](../L08/Static/Mod_01_Web_Hook_image24.png)
 
 4. Register new Web Hook
 
 	- Click **Register** and select **Register New Web Hook**.
 
-    ![Register new web hook - screenshot](L08/Static/Mod_01_Web_Hook_image25.png)
+    ![Register new web hook - screenshot](../L08/Static/Mod_01_Web_Hook_image25.png)
 
 	- Enter **NewSize** for **Name**.
 
 	- Go to the notepad where you saved the function URL and copy everything before the **‘?’**.
 
-    ![Copy URL - screenshot](L08/Static/Mod_01_Web_Hook_image26.png)
+    ![Copy URL - screenshot](../L08/Static/Mod_01_Web_Hook_image26.png)
 
 	- Go back to the **Plugin Registration** tool and paste the **URL** you copied in the **Endpoint URL** field.
 
-    ![Paste URL - screenshot ](L08/Static/Mod_01_Web_Hook_image27.png)
+    ![Paste URL - screenshot ](../L08/Static/Mod_01_Web_Hook_image27.png)
 
 	- Select **WebhookKey** for **Authentication**.
 
 	- Go back to the notepad and copy the key.
 
-    ![Copy key - screenshot](L08/Static/Mod_01_Web_Hook_image28.png)
+    ![Copy key - screenshot](../L08/Static/Mod_01_Web_Hook_image28.png)
 
 	- Go back to the **Plugin Registration** tool, paste the key you copied in the **Value** field and click **Save**.
 
-    ![Paste key value and save - screenshot](L08/Static/Mod_01_Web_Hook_image29.png)
+    ![Paste key value and save - screenshot](../L08/Static/Mod_01_Web_Hook_image29.png)
 
 5. Register new step
 
 	- Select the **Web Hook** you registered, click **Register** and select **Register New Step**.
 
-    ![Register new step - screenshot](L08/Static/Mod_01_Web_Hook_image30.png)
+    ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image30.png)
 
 	- Select **Update** for **Message**, **contoso_permit** for **Primary Entity**, and click **Filtering Attributes.**
 
-    ![Filtering attributes - screenshot](L08/Static/Mod_01_Web_Hook_image31.png)
+    ![Filtering attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image31.png)
 
 	- Select only **New Size** and click **OK**.
 
-    ![Select attribute - screenshot](L08/Static/Mod_01_Web_Hook_image32.png)
+    ![Select attribute - screenshot](../L08/Static/Mod_01_Web_Hook_image32.png)
 
 	- Select **Asynchronous** for **Execution Mode** and click **Register New Step**.
 
-    ![Register new step - screenshot](L08/Static/Mod_01_Web_Hook_image33.png)
+    ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image33.png)
 
 ## Task #2: Test the Web Hook
 
@@ -260,15 +260,15 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select Apps and click to open the Permit Management application.
 
-    ![Start application - screenshot](L08/Static/Mod_01_Web_Hook_image34.png)
+    ![Start application - screenshot](../L08/Static/Mod_01_Web_Hook_image34.png)
 
 	- Select **Permits** and open one of the permit records. Create new if you don’t have a Permit record.
 
-    ![Open permit record - screenshot](L08/Static/Mod_01_Web_Hook_image35.png)
+    ![Open permit record - screenshot](../L08/Static/Mod_01_Web_Hook_image35.png)
 
 	- Change the **New Size** to **5000** and **Save**.
 
-    ![Change size and save - screenshot](L08/Static/Mod_01_Web_Hook_image36.png)
+    ![Change size and save - screenshot](../L08/Static/Mod_01_Web_Hook_image36.png)
 
 2. Check Azure Output
 
@@ -278,11 +278,11 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Show **Logs**.
 
-    ![Show logs - screenshot](L08/Static/Mod_01_Web_Hook_image37.png)
+    ![Show logs - screenshot](../L08/Static/Mod_01_Web_Hook_image37.png)
 
 	- You should see logs like the image below. The Output is a serialized **RemoteExecutionContextobject** object
 
-    ![Function output - screenshot](L08/Static/Mod_01_Web_Hook_image38.png)
+    ![Function output - screenshot](../L08/Static/Mod_01_Web_Hook_image38.png)
 
 **Hint**: If the log is not showing in the console (sometimes this happens), click **Monitor** on the left and check execution log. Select entry, details will be on the right (this could be delayed up to a few minutes).
 
@@ -292,7 +292,7 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Change the **Start Date** to tomorrow’s date and click **Save**.
 
-    ![Update record and save - screenshot](L08/Static/Mod_01_Web_Hook_image39.png)
+    ![Update record and save - screenshot](../L08/Static/Mod_01_Web_Hook_image39.png)
 
 Go back to the Azure Function and make sure the function did not execute.
 
@@ -306,21 +306,21 @@ This step allows you to avoid unnecessarily querying CDS and make a request only
 
 	- Select the **NewSize** step you created, click **Register** and select **Register New Image**.
 
-    ![Register new image - screenshot](L08/Static/Mod_01_Web_Hook_image40.png)
+    ![Register new image - screenshot](../L08/Static/Mod_01_Web_Hook_image40.png)
 
 	- Check both **Pre** and **Post** images checkboxes.
 
 	- Enter **Permit Image** for **Name**, **PermitImage** for **Entity Alias**, and click on the **Parameters** button.
 
-    ![Image type information - screenshot](L08/Static/Mod_01_Web_Hook_image41.png)
+    ![Image type information - screenshot](../L08/Static/Mod_01_Web_Hook_image41.png)
 
 	- Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**, and then click **OK**.
 
-    ![Select attributes - screenshot](L08/Static/Mod_01_Web_Hook_image42.png)
+    ![Select attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image42.png)
 
 	- Click **Register Image**.
 
-    ![Register image - screenshot](L08/Static/Mod_01_Web_Hook_image43.png)
+    ![Register image - screenshot](../L08/Static/Mod_01_Web_Hook_image43.png)
 
 2. Clear Azure log
 
@@ -328,7 +328,7 @@ This step allows you to avoid unnecessarily querying CDS and make a request only
 
 	- Clear **Logs**.
 
-    ![Clear logs - screenshot](L08/Static/Mod_01_Web_Hook_image44.png)
+    ![Clear logs - screenshot](../L08/Static/Mod_01_Web_Hook_image44.png)
 
 3. Update Permit record
 
@@ -344,10 +344,10 @@ This step allows you to avoid unnecessarily querying CDS and make a request only
 
 	- Maximize the log pane.
 
-    ![Maximize log pane - screenshot](L08/Static/Mod_01_Web_Hook_image45.png)
+    ![Maximize log pane - screenshot](../L08/Static/Mod_01_Web_Hook_image45.png)
 
 	- The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
-    ![Post and pre entity image values - screenshot](L08/Static/Mod_01_Web_Hook_image46.png)
+    ![Post and pre entity image values - screenshot](../L08/Static/Mod_01_Web_Hook_image46.png)
 
 **Note:** Technically, we have the data in the target object already. However, if there are plugins modifying the data, PostImage will contain the copy as recorded in CDS while Target contains the data as submitted on Save. In addition to that, preimage contains data before the save operation took place.
