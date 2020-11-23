@@ -61,17 +61,17 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Class Library (.NET Framework)** and click **Next**. Make sure you have selected the one with C#.
 
-    ![Project type - screenshot](L06/Static/Mod_01_Plugin_image1.png)
+    ![Project type - screenshot](../L06/Static/Mod_01_Plugin_image1.png)
 
 	- Enter **ContosoPackageProject** for **Project Name**, select a location to save the project, select **.NET Framework 4.6.2** for **Framework**, and then select **Create**.
 
-    ![Project configuration - screenshot](L06/Static/Mod_01_Plugin_image2.png)
+    ![Project configuration - screenshot](../L06/Static/Mod_01_Plugin_image2.png)
 
 2. Add NuGet packages
 
 	- Right click on the project name and select **Manage NuGet Packages**.
 
-    ![Mange NuGet packages - screenshot](L06/Static/Mod_01_Plugin_image3.png)
+    ![Mange NuGet packages - screenshot](../L06/Static/Mod_01_Plugin_image3.png)
 
 	- Select the **Browse** tab.
 
@@ -79,7 +79,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Microsoft.crmsdk.coreassemblies** (one authored by Microsoft)and click **Install**.
 
-    ![Install package - screenshot](L06/Static/Mod_01_Plugin_image4.png)
+    ![Install package - screenshot](../L06/Static/Mod_01_Plugin_image4.png)
 
 	- Read the license terms and then select **I agree** if you agree. 
 
@@ -91,7 +91,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Enter **PreOperationPermitCreate** for **Name** and click **Add**. 
 
-    ![Create class - screenshot](L06/Static/Mod_01_Plugin_image5.png)
+    ![Create class - screenshot](../L06/Static/Mod_01_Plugin_image5.png)
 
 4. Add **PluginBase** file to the project.
 
@@ -99,11 +99,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Drag the **PluginBase** file to your Visual Studio project. Make sure that the file now exists in the folder structure.
 
-    ![Add class - screenshot](L06/Static/Mod_01_Plugin_image6.png)
+    ![Add class - screenshot](../L06/Static/Mod_01_Plugin_image6.png)
 
 	- Review the **PluginBase** class. This class inherits from IPlugin.
 
-    ![Class inheritance - screenshot](L06/Static/Mod_01_Plugin_image7.png)
+    ![Class inheritance - screenshot](../L06/Static/Mod_01_Plugin_image7.png)
 
 Close the **PluginBase** file.
 
@@ -117,7 +117,7 @@ Close the **PluginBase** file.
 
 	- Make the **PreOperationPermitCreate** public and **inherit** from **PluginBase**. 
 
-    ![class declaration - screenshot](L06/Static/Mod_01_Plugin_image8.png)
+    ![class declaration - screenshot](../L06/Static/Mod_01_Plugin_image8.png)
 
 6. Override the ExecuteCDSPlugin method and get the Target entity and the Build Site entity reference.
 
@@ -172,7 +172,7 @@ Close the **PluginBase** file.
 
 	- The ExecuteCDSPlugin method should now look like the image below.
 
-    ![Execute CDS Plugin method - screenshot](L06/Static/Mod_01_Plugin_image9.png)
+    ![Execute CDS Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
 
 	- Build the project and make sure it succeeds. To build the project, right click on the project and select **Build**. Check the output and make sure that the build is succeeded. If it does not, go back and review your work compared the steps documented here. 
 
@@ -184,15 +184,15 @@ Close the **PluginBase** file.
 
 	- Right click on the **Project** and select **Properties**.
 
-    ![Project properties - screenshot](L06/Static/Mod_01_Plugin_image10.png)
+    ![Project properties - screenshot](../L06/Static/Mod_01_Plugin_image10.png)
 
 	- Select the **Signing** tab, check the **Sign the assembly** checkbox and select **&lt;New…&gt;**.
 
-    ![Project signing - screenshot](L06/Static/Mod_01_Plugin_image11.png)
+    ![Project signing - screenshot](../L06/Static/Mod_01_Plugin_image11.png)
 
 	- Enter **contoso.snk** for **Name**, uncheck the Protect with a **Password** checkbox, and click **OK**. Note: In case you get an access denied while creating the signature, close Visual Studio and run it in administrator mode to successfully complete this step.
 
-    ![Project signing key - screenshot](L06/Static/Mod_01_Plugin_image12.png)
+    ![Project signing key - screenshot](../L06/Static/Mod_01_Plugin_image12.png)
 
 	- Rebuild the project. Make sure the project is rebuilt successfully.
 
@@ -202,17 +202,17 @@ Close the **PluginBase** file.
 
 	- Click **Download SDK Zip File**.
 
-    ![Download SDK - screenshot](L06/Static/Mod_01_Plugin_image13.png)
+    ![Download SDK - screenshot](../L06/Static/Mod_01_Plugin_image13.png)
 
 	- Save the zip file on your machine.
 
 	- Right click on the downloaded **sdk.zip** file and select **Properties**.
 
-    ![File properties - screenshot](L06/Static/Mod_01_Plugin_image14.png)
+    ![File properties - screenshot](../L06/Static/Mod_01_Plugin_image14.png)
 
 	- Check the **Unblock** checkbox and click Apply.
 
-    ![Unblock file - screenshot](L06/Static/Mod_01_Plugin_image15.png)
+    ![Unblock file - screenshot](../L06/Static/Mod_01_Plugin_image15.png)
 
 	- Click **OK**.
 
@@ -226,46 +226,46 @@ Close the **PluginBase** file.
 
 	- Locate **PluginRegistration.exe** and double click to start. This will open a new window.
 
-    ![Start plugin registration tool - screenshot](L06/Static/Mod_01_Plugin_image16.png)
+    ![Start plugin registration tool - screenshot](../L06/Static/Mod_01_Plugin_image16.png)
 
 2. Connect to your org.
 
 	- Click **Create New Connection**.
 
-    ![New connection - screenshot](L06/Static/Mod_01_Plugin_image17.png)
+    ![New connection - screenshot](../L06/Static/Mod_01_Plugin_image17.png)
 
 - Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
 - Provide your **CDS** credentials and click **Login**.
 
-    ![Provide credentials - screenshot](L06/Static/Mod_01_Plugin_image18.png)
+    ![Provide credentials - screenshot](../L06/Static/Mod_01_Plugin_image18.png)
 
 	- Select the **Dev** environment and click **Login**.
 
-    ![Select environment - screenshot](L06/Static/Mod_01_Plugin_image19.png)
+    ![Select environment - screenshot](../L06/Static/Mod_01_Plugin_image19.png)
 
 4. Register new assembly
 
 	- Click **Register** and select **Register** **New Assembly**.
 
-    ![Register new assembly - screenshot](L06/Static/Mod_01_Plugin_image20.png)
+    ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image20.png)
 
 	- Click **…** to browse.
 
-    ![Register new assembly - screenshot](L06/Static/Mod_01_Plugin_image21.png)
+    ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image21.png)
 
 	- Browse to the bin/**debug** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject**.dll file and click **Open**.  
 ‎**Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
 
-    ![Select .dll file - screenshot](L06/Static/Mod_01_Plugin_image22.png)
+    ![Select .dll file - screenshot](../L06/Static/Mod_01_Plugin_image22.png)
 
 	- Click **Register Selected Plugins**.
 
-    ![Register plugin - screenshot](L06/Static/Mod_01_Plugin_image23.png)
+    ![Register plugin - screenshot](../L06/Static/Mod_01_Plugin_image23.png)
 
 	- Click **OK**.
 
-    ![Registration popup - screenshot](L06/Static/Mod_01_Plugin_image24.png)
+    ![Registration popup - screenshot](../L06/Static/Mod_01_Plugin_image24.png)
 
 5. Register new step
 
@@ -273,7 +273,7 @@ Close the **PluginBase** file.
 
 	- Click **Register** and select **Register** **New Step**.
 
-    ![Register new step - screenshot](L06/Static/Mod_01_Plugin_image25.png)
+    ![Register new step - screenshot](../L06/Static/Mod_01_Plugin_image25.png)
 
 	- Enter **Create** for **Message**.
 
@@ -281,11 +281,11 @@ Close the **PluginBase** file.
 
 	- Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution** and click **Register New Step**.
 
-    ![Register step - screenshot](L06/Static/Mod_01_Plugin_image26.png)
+    ![Register step - screenshot](../L06/Static/Mod_01_Plugin_image26.png)
 
 	- Step should now be registered in the assembly plugin.
 
-    ![Registered step - screenshot](L06/Static/Mod_01_Plugin_image27.png)
+    ![Registered step - screenshot](../L06/Static/Mod_01_Plugin_image27.png)
 
  
 
@@ -303,11 +303,11 @@ Close the **PluginBase** file.
 
 	- Right on the project and select **Add &gt; Class**.
 
-    ![Add class to project - screenshot](L06/Static/Mod_01_Plugin_image28.png)
+    ![Add class to project - screenshot](../L06/Static/Mod_01_Plugin_image28.png)
 
 	- Enter **LockPermitCancelInspections** for **Name** and click **Add**.
 
-    ![Add class - screenshot](L06/Static/Mod_01_Plugin_image29.png)
+    ![Add class - screenshot](../L06/Static/Mod_01_Plugin_image29.png)
 
 2. Add **using statements** to the **LockPermitCancelInspections** class, make the class **public**, and inherit from **PuginBase**
 
@@ -320,7 +320,7 @@ Close the **PluginBase** file.
 
 	- Make the **LockPermitCancelInspections** public and **inherit** from **PluginBase**.
 
-    ![Add using statements and edit class - screenshot](L06/Static/Mod_01_Plugin_image30.png)
+    ![Add using statements and edit class - screenshot](../L06/Static/Mod_01_Plugin_image30.png)
 
 3. To override the ExecuteCDSPlugin method and get the reason value from the input parameter.
 
@@ -348,7 +348,7 @@ Close the **PluginBase** file.
             localcontext.OrganizationService.Update(permitEntity);
             localcontext.Trace("Updated Permit Id " + permitEntityRef.Id);
 
-    ![Execute plugin method - screenshot](L06/Static/Mod_01_Plugin_image31.png)
+    ![Execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image31.png)
 
 ## Task #2: Get Related Inspections and Cancel
 
@@ -375,7 +375,7 @@ Close the **PluginBase** file.
 
             qe.Criteria.Conditions.Add(condition);
 
-    ![Execute plugin method after update - screenshot](L06/Static/Mod_01_Plugin_image32.png)
+    ![Execute plugin method after update - screenshot](../L06/Static/Mod_01_Plugin_image32.png)
 
 2. Retrieve the inspections and iterate through the returned entities.
 
@@ -420,7 +420,7 @@ Close the **PluginBase** file.
 
  
 
-    ![Foreach section of the execute plugin method - screenshot](L06/Static/Mod_01_Plugin_image33.png)
+    ![Foreach section of the execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image33.png)
 
 ## Task #3: Set Output Parameter and Create Note Record
 
@@ -437,7 +437,7 @@ Close the **PluginBase** file.
     
             localcontext.PluginExecutionContext.OutputParameters["CanceledInspectionsCount"] = canceledInspectionsCount + " Inspections were canceled";
 
-    ![Set output parameter - screenshot](L06/Static/Mod_01_Plugin_image34.png)
+    ![Set output parameter - screenshot](../L06/Static/Mod_01_Plugin_image34.png)
 
 2. Check if the Input Parameters contain Reason and Create the Note record.
 
@@ -467,7 +467,7 @@ Close the **PluginBase** file.
             if (createdNoteId != Guid.Empty)
             localcontext.Trace("Note record was created");
 
-    ![Create not record - screenshot](L06/Static/Mod_01_Plugin_image35.png)
+    ![Create not record - screenshot](../L06/Static/Mod_01_Plugin_image35.png)
 
 3. Build plugin by right clicking on the project and select **Build** and make sure the build succeeds.
 
@@ -479,17 +479,17 @@ Close the **PluginBase** file.
 
 	- Select **ContosoPackageProject** and click **Update**.
 
-    ![Update assembly - screenshot](L06/Static/Mod_01_Plugin_image36.png)
+    ![Update assembly - screenshot](../L06/Static/Mod_01_Plugin_image36.png)
 
 	- Click … to **Browse**.
 
-    ![Browse for assembly - screenshot](L06/Static/Mod_01_Plugin_image37.png)
+    ![Browse for assembly - screenshot](../L06/Static/Mod_01_Plugin_image37.png)
 
 	- Browse to the **debug** folder of your plugin project, select the **ContosoPackageProject**.dll file and click **Open**.
 
 	- Check **Select All** checkbox and click **Update Selected Plugins**.
 
-    ![Update plugins - screenshot](L06/Static/Mod_01_Plugin_image38.png)
+    ![Update plugins - screenshot](../L06/Static/Mod_01_Plugin_image38.png)
 
 	- Click **OK**.
 
@@ -499,11 +499,11 @@ Close the **PluginBase** file.
 
 	- Click **Register** and select **Register** **New Step**.
 
-    ![Register new step - screenshot](L06/Static/Mod_01_Plugin_image39.png)
+    ![Register new step - screenshot](../L06/Static/Mod_01_Plugin_image39.png)
 
 	- Enter **contoso** in the **Message** textbox and select **contoso_LockPermit**.
 
-    ![Select message and primary entity - screenshot](L06/Static/Mod_01_Plugin_image40.png)
+    ![Select message and primary entity - screenshot](../L06/Static/Mod_01_Plugin_image40.png)
 
 	- Enter **contoso_permit** for **Primary Entity**.
 
@@ -511,11 +511,11 @@ Close the **PluginBase** file.
 
 	- Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution** and click **Register New Step**.
 
-    ![Register new step - screenshot](L06/Static/Mod_01_Plugin_image41.png)
+    ![Register new step - screenshot](../L06/Static/Mod_01_Plugin_image41.png)
 
 	- Step should now be registered in the assembly.
 
-    ![Registered step - screenshot](L06/Static/Mod_01_Plugin_image42.png)
+    ![Registered step - screenshot](../L06/Static/Mod_01_Plugin_image42.png)
 
 # Exercise #3: Test Plugins
 
@@ -532,31 +532,31 @@ Close the **PluginBase** file.
 
 	- Select **Solution** and click to open the **Permit Management** solution.
 
-    ![Open solution - screenshot](L06/Static/Mod_01_Plugin_image43.png)
+    ![Open solution - screenshot](../L06/Static/Mod_01_Plugin_image43.png)
 
 	- Click **Add Existing | Other | Plugin Assembly**.
 
-    ![Add existing plugin - screenshot](L06/Static/Mod_01_Plugin_image44.png)
+    ![Add existing plugin - screenshot](../L06/Static/Mod_01_Plugin_image44.png)
 
 	- Select **ContosoPackageProject** and click **Add**.
 
-    ![Add plug in assembly - screenshot](L06/Static/Mod_01_Plugin_image45.png)
+    ![Add plug in assembly - screenshot](../L06/Static/Mod_01_Plugin_image45.png)
 
 	- Click **Add Existing | Other | Plug-in step**.
 
-    ![Add existing plugin step - screenshot](L06/Static/Mod_01_Plugin_image46.png)
+    ![Add existing plugin step - screenshot](../L06/Static/Mod_01_Plugin_image46.png)
 
 	- Select both SDK Messages you created and click **Add**.
 
-    ![Select steps and add - screenshot](L06/Static/Mod_01_Plugin_image47.png)
+    ![Select steps and add - screenshot](../L06/Static/Mod_01_Plugin_image47.png)
 
 	- Now, open the **Permit** entity and click **Settings**.
 
-    ![Entity settings - screenshot](L06/Static/Mod_01_Plugin_image48.png)
+    ![Entity settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
 
 	- Check **Enable Attachments and Notes,** and then click **Done**. 
 
-    ![Enable attachments for entity - screenshot](L06/Static/Mod_01_Plugin_image49.png)
+    ![Enable attachments for entity - screenshot](../L06/Static/Mod_01_Plugin_image49.png)
 
 	- Click **Okay**.
 
@@ -570,15 +570,15 @@ Close the **PluginBase** file.
 
 	- Click to open the **Permit Management** application.
 
-    ![Start application - screenshot](L06/Static/Mod_01_Plugin_image50.png)
+    ![Start application - screenshot](../L06/Static/Mod_01_Plugin_image50.png)
 
 	- Click **Settings** and select **Advanced Settings**.
 
-    ![Advanced settings - screenshot](L06/Static/Mod_01_Plugin_image51.png)
+    ![Advanced settings - screenshot](../L06/Static/Mod_01_Plugin_image51.png)
 
 	- Click **Settings** and select **Administration**.
 
-    ![Administration - screenshot](L06/Static/Mod_01_Plugin_image52.png)
+    ![Administration - screenshot](../L06/Static/Mod_01_Plugin_image52.png)
 
 	- Click **System Settings**.
 
@@ -586,7 +586,7 @@ Close the **PluginBase** file.
 
 	- Set Enable Plugin Logging to Plugin Trace Log to **All** and click **OK**.
 
-    ![Enable plugin logging - screenshot](L06/Static/Mod_01_Plugin_image53.png)
+    ![Enable plugin logging - screenshot](../L06/Static/Mod_01_Plugin_image53.png)
 
 3. Create test record
 
@@ -598,11 +598,11 @@ Close the **PluginBase** file.
 
 	- Click **New**.
 
-    ![Create new inspection record - screenshot](L06/Static/Mod_01_Plugin_image54.png)
+    ![Create new inspection record - screenshot](../L06/Static/Mod_01_Plugin_image54.png)
 
 	- Enter **Plumbing Inspection** for **Name**, select **Initial Inspection** for **Type**, select a permit, provide **Schedule Data**, select **Pending** for **Status Reason**, and click **Save**.
 
-    ![Create inspection record - screenshot](L06/Static/Mod_01_Plugin_image55.png)
+    ![Create inspection record - screenshot](../L06/Static/Mod_01_Plugin_image55.png)
 
 	- Click **New** again.
 
@@ -614,25 +614,25 @@ Close the **PluginBase** file.
 
 	- Make sure you have four inspection records and with various Status Reason value.
 
-    ![Inspection records - screenshot](L06/Static/Mod_01_Plugin_image56.png)
+    ![Inspection records - screenshot](../L06/Static/Mod_01_Plugin_image56.png)
 
 	- Select **Permits**.
 
 	- Click to open the **Test Permit**.
 
-    ![Open permit record - screenshot](L06/Static/Mod_01_Plugin_image57.png)
+    ![Open permit record - screenshot](../L06/Static/Mod_01_Plugin_image57.png)
 
 	- Make sure the Status Reason is set to Active and click **Lock Permit**.
 
-    ![Lock permit record - screenshot](L06/Static/Mod_01_Plugin_image58.png)
+    ![Lock permit record - screenshot](../L06/Static/Mod_01_Plugin_image58.png)
 
 	- The Custom Action should run. Click **Refresh**.
 
-    ![Refresh record - screenshot](L06/Static/Mod_01_Plugin_image59.png)
+    ![Refresh record - screenshot](../L06/Static/Mod_01_Plugin_image59.png)
 
 	- The **Status Reason** value should change to **Locked** 
 
-    ![Locked record - screenshot](L06/Static/Mod_01_Plugin_image60.png)
+    ![Locked record - screenshot](../L06/Static/Mod_01_Plugin_image60.png)
 
 5. Check if the Pending and New Request Inspections get canceled
 
@@ -642,10 +642,10 @@ Close the **PluginBase** file.
 ‎
 
 **If you completed the PCF module:**
-    ![Inspection timeline control - screenshot](L06/Static/Mod_01_Plugin_image61.png)
+    ![Inspection timeline control - screenshot](../L06/Static/Mod_01_Plugin_image61.png)
 
 **If you did not complete the PCF module:**
-    ![Active inspections view - screenshot](L06/Static/Mod_01_Plugin_image62.png)
+    ![Active inspections view - screenshot](../L06/Static/Mod_01_Plugin_image62.png)
 
  
 
@@ -653,19 +653,19 @@ Close the **PluginBase** file.
 
 	- Click **Advanced Find**.
 
-    ![Advanced find - screenshot](L06/Static/Mod_01_Plugin_image63.png)
+    ![Advanced find - screenshot](../L06/Static/Mod_01_Plugin_image63.png)
 
 	- Select **Notes** and click **Results**.
 
-    ![notes results - screenshot](L06/Static/Mod_01_Plugin_image64.png)
+    ![notes results - screenshot](../L06/Static/Mod_01_Plugin_image64.png)
 
 	- You should at least one **Note** record. Click to open the **Note** record.
 
-    ![Open note record - screenshot](L06/Static/Mod_01_Plugin_image65.png)
+    ![Open note record - screenshot](../L06/Static/Mod_01_Plugin_image65.png)
 
 	- The Regarding field should be set to the Permit you locked.
 
-    ![Note record details - screenshot](L06/Static/Mod_01_Plugin_image66.png)
+    ![Note record details - screenshot](../L06/Static/Mod_01_Plugin_image66.png)
 
 	- Close the **Note** record. Close **Advanced Find**.
 
@@ -677,29 +677,29 @@ Close the **PluginBase** file.
 
 	- Click **New**.
 
-    ![Create new permit - screenshot](L06/Static/Mod_01_Plugin_image67.png)
+    ![Create new permit - screenshot](../L06/Static/Mod_01_Plugin_image67.png)
 
 	- Provide the information below and click **Save**.
 
-    ![Save new permit - screenshot](L06/Static/Mod_01_Plugin_image68.png)
+    ![Save new permit - screenshot](../L06/Static/Mod_01_Plugin_image68.png)
 
 	- You should get the error below. Click **OK**.
 
-    ![Record locked message - screenshot](L06/Static/Mod_01_Plugin_image69.png)
+    ![Record locked message - screenshot](../L06/Static/Mod_01_Plugin_image69.png)
 
 	- The record should not get created.
 
-    ![Unsaved changes - screenshot](L06/Static/Mod_01_Plugin_image70.png)
+    ![Unsaved changes - screenshot](../L06/Static/Mod_01_Plugin_image70.png)
 
 	- Select **Permits**.
 
 	- Click **Discard**.
 
-    ![Discard changes - screenshot](L06/Static/Mod_01_Plugin_image71.png)
+    ![Discard changes - screenshot](../L06/Static/Mod_01_Plugin_image71.png)
 
 	- You should have only one Permit record.
 
-    ![Permits list - screenshot](L06/Static/Mod_01_Plugin_image72.png)
+    ![Permits list - screenshot](../L06/Static/Mod_01_Plugin_image72.png)
 
  
 
@@ -718,27 +718,27 @@ Close the **PluginBase** file.
 
 	- Click **Settings** and select **Advanced Settings**.
 
-    ![Advanced settings - screenshot](L06/Static/Mod_01_Plugin_image73.png)
+    ![Advanced settings - screenshot](../L06/Static/Mod_01_Plugin_image73.png)
 
 	- Click **Settings** and select **Plugin Trace Log**.
 
-    ![Plug-in trace log - screenshot](L06/Static/Mod_01_Plugin_image74.png)
+    ![Plug-in trace log - screenshot](../L06/Static/Mod_01_Plugin_image74.png)
 
 	- You should see at least two logs.
 
-    ![Plug-in trace logs list - screenshot](L06/Static/Mod_01_Plugin_image75.png)
+    ![Plug-in trace logs list - screenshot](../L06/Static/Mod_01_Plugin_image75.png)
 
 2. Open the log and see what was logged.
 
 	- Click to open the Lock Permit log.
 
-    ![Open log - screenshot](L06/Static/Mod_01_Plugin_image76.png)
+    ![Open log - screenshot](../L06/Static/Mod_01_Plugin_image76.png)
 
 	- Scroll down to the Execution section.
 
 	- Examine your Trace messages.
 
-    ![Trace message - screenshot](L06/Static/Mod_01_Plugin_image77.png)
+    ![Trace message - screenshot](../L06/Static/Mod_01_Plugin_image77.png)
 
  
 

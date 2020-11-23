@@ -34,7 +34,7 @@ In this lab, you will set up a second environement to memic a production environ
 
 To prepare your learning environments you will create a solution and publisher and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (entities, field types and relationships). Your solution will contain several entities upon completion of all the customizations.
 
-![Screen image of grid displaying entities contained in the permit management solution.](L01/Static/Mod_01_Data_Modeling_image1.png)
+![Screen image of grid displaying entities contained in the permit management solution.](../L01/Static/Mod_01_Data_Modeling_image1.png)
 
 ## Things to consider before you begin
 
@@ -76,7 +76,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select your Dev environment.
 
-    ![Select environment - screenshot](L01/Static/Mod_01_Data_Modeling_image3.png)
+    ![Select environment - screenshot](../L01/Static/Mod_01_Data_Modeling_image3.png)
 
 	- Select **Solutions** from the left menu and click **+** **New solution**.
 
@@ -86,13 +86,13 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click on the **Publisher** dropdown and select **+ Publisher**.
 
-    ![New publisher - screenshot](L01/Static/Mod_01_Data_Modeling_image4.png)
+    ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
 	- Enter **Contoso** for **Display Name** and **contoso** for **Prefix.** 
 
 	- Click **Save and Close**.
 
-    ![Save publisher - screenshot](L01/Static/Mod_01_Data_Modeling_image5.png)
+    ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
 	- Click **Done**.
 
@@ -112,7 +112,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Add Existing** and select **Entity**.
 
-    ![Add existing entity - screenshot](L01/Static/Mod_01_Data_Modeling_image6.png)
+    ![Add existing entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image6.png)
 
 	- Search for **Contact** and select it.
 
@@ -120,7 +120,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Select** **Components**.
 
-    ![Select entity components - screenshot](L01/Static/Mod_01_Data_Modeling_image7.png)
+    ![Select entity components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
 
 	- Select the **Views** tab and select the **Active Contacts** view. Click **Add**.
 
@@ -132,7 +132,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- You should have **1 View** and **1 Form** selected. Click **Add** again. This will add the Contact entity to the newly created solution.
 
-    ![Add components](L01/Static/Mod_01_Data_Modeling_image8.png)
+    ![Add components](../L01/Static/Mod_01_Data_Modeling_image8.png)
 
 2. Add User entity to the solution
 
@@ -164,7 +164,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **+** **New** and select **Entity**.
 
-    ![Add new entity - screenshot](L01/Static/Mod_01_Data_Modeling_image9.png)
+    ![Add new entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
 
 	- Enter **Permit** for **Display Name** and click **Create**. This will start provisioning the entity in background while you can start adding fields.
 
@@ -172,7 +172,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Make sure you have the **Fields** tab selected and click **+** **Add Field**.
 
-    ![Add field - screenshot](L01/Static/Mod_01_Data_Modeling_image10.png)
+    ![Add field - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
 	- Enter **Start Date** for **Display Name**.
 
@@ -206,11 +206,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select **Custom** for filter.
 
-    ![Change filter to custom - screenshot](L01/Static/Mod_01_Data_Modeling_image11.png)
+    ![Change filter to custom - screenshot](../L01/Static/Mod_01_Data_Modeling_image11.png)
 
 	- Click **Save Entity**.
 
-    ![Save entity - screenshot](L01/Static/Mod_01_Data_Modeling_image12.png)
+    ![Save entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image12.png)
 
  
 
@@ -220,7 +220,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click on the solution name. This action will take you back to the Solution.
 
-    ![Navigation breadcrumbs - screenshot ](L01/Static/Mod_01_Data_Modeling_image13.png)
+    ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
 
 	- Click **+ New** and select **Entity**.
 
@@ -270,7 +270,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-    ![Primary field properties - screenshot](L01/Static/Mod_01_Data_Modeling_image14.png)
+    ![Primary field properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
 
 2. Add City field
 
@@ -284,7 +284,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-    ![Field properties - screenshot](L01/Static/Mod_01_Data_Modeling_image15.png)
+    ![Field properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
 3. Add Zip/Postal Code field
 
@@ -346,15 +346,15 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click on the **Option Set** dropdown and select +**New Option Set.**
 
-    ![New option set - screenshot](L01/Static/Mod_01_Data_Modeling_image16.png)
+    ![New option set - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
 
 	- Enter **Initial Inspection** and click **Add New Item**.
 
-    ![Add new option-set item - screenshot](L01/Static/Mod_01_Data_Modeling_image17.png)
+    ![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
 
 	- Enter **Final Inspection** and click **Save**.
 
-    ![Option-set options - screenshot](L01/Static/Mod_01_Data_Modeling_image18.png)
+    ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
 
 	-  Click **Done**.
 
@@ -400,7 +400,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 8.  Click **Publish All Customizations.**
 
-    ![Publish customizations - screenshot](L01/Static/Mod_01_Data_Modeling_image19.png)
+    ![Publish customizations - screenshot](../L01/Static/Mod_01_Data_Modeling_image19.png)
 
  
 
@@ -416,7 +416,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click on the **…** icon and select **Switch to Classic**.
 
-    ![Switch to classic - screenshot](L01/Static/Mod_01_Data_Modeling_image20.png)
+    ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
 
 3. Edit Inspection entity Status Reason options
 
@@ -424,11 +424,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Expand the **Inspection** entity and select **Fields**.
 
-    ![Select fields - screenshot](L01/Static/Mod_01_Data_Modeling_image21.png)
+    ![Select fields - screenshot](../L01/Static/Mod_01_Data_Modeling_image21.png)
 
 	- Locate and double click to open the **statuscode** field.
 
-    ![Open field for edit - screenshot](L01/Static/Mod_01_Data_Modeling_image22.png)
+    ![Open field for edit - screenshot](../L01/Static/Mod_01_Data_Modeling_image22.png)
 
 4. Change the Active option label
 
@@ -436,17 +436,17 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select the **Active** option and click **Edit**.
 
-    ![Edit option - screenshot](L01/Static/Mod_01_Data_Modeling_image23.png)
+    ![Edit option - screenshot](../L01/Static/Mod_01_Data_Modeling_image23.png)
 
 	- Change the **Label** to **New Request** and click **OK**.
 
-    ![Change option label - screenshot](L01/Static/Mod_01_Data_Modeling_image24.png)
+    ![Change option label - screenshot](../L01/Static/Mod_01_Data_Modeling_image24.png)
 
 5. Add the Pending Option
 
 	- Click **Add**.
 
-    ![Add new option - screenshot](L01/Static/Mod_01_Data_Modeling_image25.png)
+    ![Add new option - screenshot](../L01/Static/Mod_01_Data_Modeling_image25.png)
 
 	- Enter **Pending** for **Label** and click **OK**.
 
@@ -470,17 +470,17 @@ To prepare your learning environments you will create a solution and publisher a
 
 9. Your option-set should now have 5 options for the **Active** state.
 
-    ![Option-set options - screenshot](L01/Static/Mod_01_Data_Modeling_image26.png)
+    ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image26.png)
 
 10. Select Pending as the Default Value and click **Save and Close** from the top menu.
 
-    ![Select option-set default option - screenshot](L01/Static/Mod_01_Data_Modeling_image27.png)
+    ![Select option-set default option - screenshot](../L01/Static/Mod_01_Data_Modeling_image27.png)
 
 11. Edit Permit entity Status Reason options
 
 	- Expand the **Permit** entity and select **Fields**.
 
-    ![Select entity fields - screenshot](L01/Static/Mod_01_Data_Modeling_image28.png)
+    ![Select entity fields - screenshot](../L01/Static/Mod_01_Data_Modeling_image28.png)
 
 	- Locate and double click to open the **statuscode** field.
 
@@ -512,13 +512,13 @@ To prepare your learning environments you will create a solution and publisher a
 
 16. Your option-set should now have 5 options for the **Active** state
 
-    ![Option-set options - screenshot](L01/Static/Mod_01_Data_Modeling_image29.png)
+    ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image29.png)
 
 17. Select the **Active** for the **Default Value** and click **Save and Close** from the top menu
 
 18. Select **Information** from the left side menu and click **Save and Close** to close classic solution explorer
 
-    ![Save and close solution explorer - screenshot](L01/Static/Mod_01_Data_Modeling_image30.png)
+    ![Save and close solution explorer - screenshot](../L01/Static/Mod_01_Data_Modeling_image30.png)
 
 19. Select **Solutions** from the top menu and click **Publish All Customizations**.
 
@@ -551,11 +551,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **+ Add Relationship** and select **Many-to-one**.
 
-    ![Many to one relationship - screenshot](L01/Static/Mod_01_Data_Modeling_image31.png)
+    ![Many to one relationship - screenshot](../L01/Static/Mod_01_Data_Modeling_image31.png)
 
 	- Select Contact for **Related (One)** and click **Done**.
 
-    ![Relationship properties - screenshot](L01/Static/Mod_01_Data_Modeling_image32.png)
+    ![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
 
 3. Create Permit to Inspection relationship
 
@@ -563,11 +563,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select **Inspection** for **Entity** in the **Related (Many)** and click **Advanced Options**.
 
-    ![Relationship advanced options - screenshot](L01/Static/Mod_01_Data_Modeling_image33.png)
+    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
 
 	- Change the **Type of Behavior** to **Parental** and click **Done**.
 
-    ![Relationship behavior - screenshot](L01/Static/Mod_01_Data_Modeling_image34.png)
+    ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
 
 4. Create Permit to Build Site relationship
 
@@ -577,7 +577,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Change the **Delete** to **Restrict** and click **Done**.
 
-    ![Relationship advanced options - screenshot](L01/Static/Mod_01_Data_Modeling_image35.png)
+    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
 
 5. Create Permit to Permit Type relationship
 
@@ -587,11 +587,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 6. Change the filter to **Custom**.
 
-    ![Change filter - screenshot](L01/Static/Mod_01_Data_Modeling_image36.png)
+    ![Change filter - screenshot](../L01/Static/Mod_01_Data_Modeling_image36.png)
 
 7. Click **Save Entity**.
 
-    ![Save entity - screenshot](L01/Static/Mod_01_Data_Modeling_image37.png)
+    ![Save entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
 
 8. Select **Solutions** from the top menu and click **Publish All Customizations.**
 
