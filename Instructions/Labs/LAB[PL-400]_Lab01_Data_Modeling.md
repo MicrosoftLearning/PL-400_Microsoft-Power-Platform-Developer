@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 01: Data Modeling'
-    module: 'Module x: xxx'
 ---
 
 > [!NOTE]
