@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 07: Azure Functions'
-    module: 'Module xx: xxx'
 ---
 
 > [!NOTE]
