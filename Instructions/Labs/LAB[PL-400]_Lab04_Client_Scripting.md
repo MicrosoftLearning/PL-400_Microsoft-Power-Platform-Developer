@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 04: Client Scripting'
-    module: 'Module xx: xxx'
 ---
 
 > [!NOTE]
