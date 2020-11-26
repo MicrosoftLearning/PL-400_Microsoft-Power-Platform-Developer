@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 02: Model driven app'
-    module: 'Module 1: Create a model-driven app in Power Apps'
 ---
 
 > [!NOTE]
