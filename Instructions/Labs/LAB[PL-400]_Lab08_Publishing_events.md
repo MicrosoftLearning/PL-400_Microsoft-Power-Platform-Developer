@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 08: Publishing Events Externally'
-    module: 'Module x: xxxx'
 ---
 
 > [!NOTE]
