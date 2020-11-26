@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 10: Application Lifecycle Management'
-    module: 'Module x: xxx'
 ---
 
 > [!NOTE]
