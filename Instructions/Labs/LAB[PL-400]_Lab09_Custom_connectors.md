@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 09: Custom Connector'
-    module: 'Module x: xxx'
 ---
 
 > [!NOTE]
