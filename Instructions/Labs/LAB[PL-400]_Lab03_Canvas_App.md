@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 03: Canvas app'
-    module: 'Module 2: Create a canvas app in Power Apps'
 ---
 
 > [!NOTE]
