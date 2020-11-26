@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 05: Power Apps Component Framework'
-    module: 'Module 8: Create components with Power Apps Component Framework'
 ---
 
 > [!NOTE]
