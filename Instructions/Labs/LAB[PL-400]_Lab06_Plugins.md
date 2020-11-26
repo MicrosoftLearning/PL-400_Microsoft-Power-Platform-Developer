@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Lab 06: Plug-ins'
-    module: 'Module x: xxx'
 ---
 
 > [!NOTE]
