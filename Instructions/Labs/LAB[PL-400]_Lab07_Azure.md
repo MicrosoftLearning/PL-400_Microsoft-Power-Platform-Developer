@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -42,7 +42,7 @@ Deploy the Azure Function
 
 # Exercise #1: Configure an application user
 
-**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to the Common Data Service. 
+**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to the Microsoft Dataverse. 
 
 ## Task #1: Register Azure AD Application
 
@@ -50,7 +50,7 @@ Deploy the Azure Function
 
 - Sign in to [Azure Portal](https://portal.azure.com/).
 
-**Note:** You must be logged in with an organization account in the same tenant as your CDS Environment. This does **NOT** have to be the account that has your Azure subscription.
+**Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account that has your Azure subscription.
 
 - Click Show portal menu.
 
@@ -128,15 +128,15 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Business management tab - screenshot](../L07/Static/Mod_02_Azure_Functions_image13.png)
 
-- Locate the **User** entity and set **Read** and **Append To** privileges to **Organization**.
+- Locate the **User** Table and set **Read** and **Append To** privileges to **Organization**.
 
-![User entity privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image14.png)
+![User Table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image14.png)
 
-- Select the **Custom Entities** tab.
+- Select the **Custom Tables** tab.
 
-- Locate the **Inspection** entity and set **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
+- Locate the **Inspection** Table and set **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
 
-![User entity privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image15.png)
+![User Table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image15.png)
 
 - Click **Save and Close**.
 
@@ -170,7 +170,7 @@ In this task, you will create the application user and associate it with the Azu
 
 4. Create Application User.
 
-- Click on the **Full Name** field.
+- Click on the **Full Name** Column.
 
 - Enter [InspectionRouter@Tenant.onmicrosoft.com](mailto:InspectionRouter@tenant.onmicrosoft.com) for User name, **Inspection** for **First Name**, **Router** for **Last Name**, enter [InspectionRouter@Tenant.onmicrosoft.com](mailto:InspectionRouter@tenant.onmicrosoft.com) for **Email**.
 
@@ -200,9 +200,9 @@ In this task, you will create the application user and associate it with the Azu
 
 - Click **Save**.
 
-- The **Application ID URI** and **Azure AD Object ID** fields should auto populate.
+- The **Application ID URI** and **Azure AD Object ID** Columns should auto populate.
 
-![Auto populated fields - screenshot](../L07/Static/Mod_02_Azure_Functions_image25.png)
+![Auto populated Columns - screenshot](../L07/Static/Mod_02_Azure_Functions_image25.png)
 
 - Close the **User** form.
 
@@ -313,7 +313,7 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Install package - screenshot](../L07/Static/Mod_02_Azure_Functions_image42.png)
 
-- Search for **Xrm.Tools.CrmWebAPI**. Note: This is a community library designed to work with the CDS Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
+- Search for **Xrm.Tools.CrmWebAPI**. Note: This is a community library designed to work with the Microsoft Dataverse Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
 
 - Select the latest stable version and click **Install**.
 
@@ -359,7 +359,7 @@ In this task, you will create the application user and associate it with the Azu
 
 - Go back to **Visual Studio** and paste the **Application ID** as the **cdsclientid**.
 
-7. Find the your CDS URL
+7. Find the your Microsoft Dataverse URL
 
 - Sign in to [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com/) 
 

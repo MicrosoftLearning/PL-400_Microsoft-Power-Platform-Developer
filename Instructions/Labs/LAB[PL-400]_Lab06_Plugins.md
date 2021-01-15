@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *Table* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -25,7 +25,7 @@ As part of building the plugins, you will complete the following activities.
 
 - Create two plugins using a common provided base class
 
-- Implement logic to work with a plugin registered on an entity event
+- Implement logic to work with a plugin registered on an Table event
 
 - Implement logic to work with a plugin registered on a custom action event
 
@@ -118,7 +118,7 @@ Close the **PluginBase** file.
 
     ![class declaration - screenshot](../L06/Static/Mod_01_Plugin_image8.png)
 
-6. Override the ExecuteCDSPlugin method and get the Target entity and the Build Site entity reference.
+6. Override the ExecuteCDSPlugin method and get the Target Table and the Build Site Table reference.
 
 	- To override the **ExecuteCDSPlugin** method, add the code below to the **PreOperationPermitCreate** method.
 
@@ -130,11 +130,11 @@ Close the **PluginBase** file.
 
             }
 
-	- To get the **Target** entity, add the code below inside the ExecuteCDSPlugin method.
+	- To get the **Target** Table, add the code below inside the ExecuteCDSPlugin method.
 
             var permitEntity = localcontext.PluginExecutionContext.InputParameters["Target"] as Entity;
 
-	- To get the Build Site entity reference, add the below code after **permitEntity** variable definition.
+	- To get the Build Site Table reference, add the below code after **permitEntity** variable definition.
 
             var buildSiteRef = permitEntity["contoso_buildsite"] as EntityReference;
 
@@ -159,7 +159,7 @@ Close the **PluginBase** file.
 
 		- Get the locker permits **Count**.
 
-                int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
+                int lockedPermitCount = (int)((AliasedValue)response.Tables[0]["Count"]).Value;
 
 	- Add Trace Message, check if the **Count** is more than **0** and throw **InvalidPluginExecutionException** if it is more than **0**.
 
@@ -235,7 +235,7 @@ Close the **PluginBase** file.
 
 - Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
-- Provide your **CDS** credentials and click **Login**.
+- Provide your **Microsoft Dataverse** credentials and click **Login**.
 
     ![Provide credentials - screenshot](../L06/Static/Mod_01_Plugin_image18.png)
 
@@ -276,7 +276,7 @@ Close the **PluginBase** file.
 
 	- Enter **Create** for **Message**.
 
-	- Enter **contoso_permit** for **Primary Entity**.
+	- Enter **contoso_permit** for **Primary Table**.
 
 	- Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution** and click **Register New Step**.
 
@@ -330,14 +330,14 @@ Close the **PluginBase** file.
             base.ExecuteCDSPlugin(localcontext);
             }
 
-4. Get the target entity reference, entity, set status reason to lock, and update the permit record.
+4. Get the target Table reference, Table, set status reason to lock, and update the permit record.
 
-	- Get the target **Entity Reference** and **Entity**.
+	- Get the target **Table Reference** and **Table**.
 
             var permitEntityRef = localcontext.PluginExecutionContext.InputParameters["Target"] as EntityReference;
             Entity permitEntity = new Entity(permitEntityRef.LogicalName, permitEntityRef.Id);
 
-	- Add **Trace** message and Set the **Status Reason** to **Lock**. 463270000 is the lock value of the Status Reason option-set and statuscode is the name of the status reason field.
+	- Add **Trace** message and Set the **Status Reason** to **Lock**. 463270000 is the lock value of the Status Reason option-set and statuscode is the name of the status reason Column.
 
             localcontext.Trace("Updating Permit Id : " + permitEntityRef.Id);
             permitEntity["statuscode"] = new OptionSetValue(463270000);
@@ -376,7 +376,7 @@ Close the **PluginBase** file.
 
     ![Execute plugin method after update - screenshot](../L06/Static/Mod_01_Plugin_image32.png)
 
-2. Retrieve the inspections and iterate through the returned entities.
+2. Retrieve the inspections and iterate through the returned Tables.
 
 	- Retrieve the **Inspections** and add **Trace** messages.
 
@@ -384,7 +384,7 @@ Close the **PluginBase** file.
             var inspectionsResult = localcontext.OrganizationService.RetrieveMultiple(qe);
             localcontext.Trace("Retrievied " + inspectionsResult.TotalRecordCount + " inspection records");
 
-	- Create a **variable** that will keep track of the canceled **Inspections** count and Iterate through the returned entities.
+	- Create a **variable** that will keep track of the canceled **Inspections** count and Iterate through the returned Tables.
 
             int canceledInspectionsCount = 0;
             foreach (var inspection in inspectionsResult.Entities)
@@ -407,7 +407,7 @@ Close the **PluginBase** file.
 
 4. Cancel the inspections that are pending or new request
 
-	- Set the **Status Reason** selected value to **Canceled**. Add the code below inside the if statement inside the foreach loop. Make sure that 463270003 is the value for **Canceled** **Status Reason** in the **Inspections** entity. If this differs, please update the value with actual value for **Canceled Status Reason**.
+	- Set the **Status Reason** selected value to **Canceled**. Add the code below inside the if statement inside the foreach loop. Make sure that 463270003 is the value for **Canceled** **Status Reason** in the **Inspections** Table. If this differs, please update the value with actual value for **Canceled Status Reason**.
 
                 inspection["statuscode"] = new OptionSetValue(463270003);
 
@@ -502,9 +502,9 @@ Close the **PluginBase** file.
 
 	- Enter **contoso** in the **Message** textbox and select **contoso_LockPermit**.
 
-    ![Select message and primary entity - screenshot](../L06/Static/Mod_01_Plugin_image40.png)
+    ![Select message and primary Table - screenshot](../L06/Static/Mod_01_Plugin_image40.png)
 
-	- Enter **contoso_permit** for **Primary Entity**.
+	- Enter **contoso_permit** for **Primary Table**.
 
 	- Make sure that Event Handler is selected for **LockPermitCancelInspections** plugin.
 
@@ -549,17 +549,17 @@ Close the **PluginBase** file.
 
     ![Select steps and add - screenshot](../L06/Static/Mod_01_Plugin_image47.png)
 
-	- Now, open the **Permit** entity and click **Settings**.
+	- Now, open the **Permit** Table and click **Settings**.
 
-    ![Entity settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
+    ![Table settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
 
 	- Check **Enable Attachments and Notes,** and then click **Done**. 
 
-    ![Enable attachments for entity - screenshot](../L06/Static/Mod_01_Plugin_image49.png)
+    ![Enable attachments for Table - screenshot](../L06/Static/Mod_01_Plugin_image49.png)
 
 	- Click **Okay**.
 
-	- Finally, select **Save Entity**.
+	- Finally, select **Save Table**.
 
 	- Select **Solutions** and click **Publish All Customizations**.
 
@@ -662,7 +662,7 @@ Close the **PluginBase** file.
 
     ![Open note record - screenshot](../L06/Static/Mod_01_Plugin_image65.png)
 
-	- The Regarding field should be set to the Permit you locked.
+	- The Regarding Column should be set to the Permit you locked.
 
     ![Note record details - screenshot](../L06/Static/Mod_01_Plugin_image66.png)
 

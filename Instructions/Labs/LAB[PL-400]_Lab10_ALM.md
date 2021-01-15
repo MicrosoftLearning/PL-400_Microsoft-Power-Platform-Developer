@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *Table* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -159,7 +159,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 # Exercise #2: Build Export Pipeline
 
-**Objective:** In this exercise, you will build an Azure DevOps pipeline that will export the solution from the development CDS environment, unpack the solution file to individual files and then check those files into the repository.
+**Objective:** In this exercise, you will build an Azure DevOps pipeline that will export the solution from the development Microsoft Dataverse environment, unpack the solution file to individual files and then check those files into the repository.
 
 ## Task #1: Export the Solution
 
@@ -258,7 +258,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Go back to the **Build Pipeline** tasks and make sure you still have Power Apps Export Solution task selected.
 
-	- Locate the **Power Apps Environment URL** field and click **Refresh**.
+	- Locate the **Power Apps Environment URL** Column and click **Refresh**.
 
     ![Refresh service connection - screenshot](../L10/Static/Mod_3_ALM_image34.png)
 
@@ -440,21 +440,21 @@ You may examine the content of each folder.
 
     ![Open solution - screenshot](../L10/Static/Mod_3_ALM_image60.png)
 
-2. Open the Permit entity form for edit
+2. Open the Permit Table form for edit
 
-	- Click to open **Permit** entity.
+	- Click to open **Permit** Table.
 
-    ![Open entity - screenshot](../L10/Static/Mod_3_ALM_image61.png)
+    ![Open Table - screenshot](../L10/Static/Mod_3_ALM_image61.png)
 
 	- Select the **Forms** tab and click to open the **Main** form.
 
     ![Open form - screenshot ](../L10/Static/Mod_3_ALM_image62.png)
 
-3. Move the Contact lookup field
+3. Move the Contact lookup Column
 
-	- Drag the **Contact** lookup field and drop it between the **Start Date** and **New Size** fields.
+	- Drag the **Contact** lookup Column and drop it between the **Start Date** and **New Size** Columns.
 
-    ![Move field - screenshot](../L10/Static/Mod_3_ALM_image63.png)
+    ![Move Column - screenshot](../L10/Static/Mod_3_ALM_image63.png)
 
 	- Click **Save**.
 

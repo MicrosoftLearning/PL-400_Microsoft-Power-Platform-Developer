@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -17,7 +17,7 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-As we continue to build our solution, we will now design a Power Apps canvas app that the inspectors will use in the field on their mobile devices. Canvas apps are low code apps that can be designed for a tablet or mobile phone layouts. You will build a two-screen canvas app that allows inspectors quickly access and process the inspections.
+As we continue to build our solution, we will now design a Power Apps canvas app that the inspectors will use in the Column on their mobile devices. Canvas apps are low code apps that can be designed for a tablet or mobile phone layouts. You will build a two-screen canvas app that allows inspectors quickly access and process the inspections.
 
 # High-level lab steps
 
@@ -25,15 +25,15 @@ We will follow the below schema to design the canvas app:
 
 - Create the app using the tablet form factor
 
-- Connect to CDS as a data source
+- Connect to Microsoft Dataverse as a data source
 
 - Configure a gallery control to show the pending inspections
 
-- Use a CDS view to populate the gallery
+- Use a Microsoft Dataverse view to populate the gallery
 
 - Configure a detail page with inspection info
 
-- Handle saving the inspection results to CDS
+- Handle saving the inspection results to Microsoft Dataverse
 
 - Export the solution with the data model and apps and import it to the “Production” environment
 
@@ -136,7 +136,7 @@ This second screen lets the inspector update the selected Inspection.
 
 	- Select **Main Header**.
 
-	- Change the **Text** attribute of the **Main Header** to **My Pending Inspections**. This can be done by selecting “Text” property in the dropdown below top menu. Make sure that you have selected the Main Header control while doing this step.
+	- Change the **Text** Column of the **Main Header** to **My Pending Inspections**. This can be done by selecting “Text” property in the dropdown below top menu. Make sure that you have selected the Main Header control while doing this step.
 
     ![Change text value - screenshot](../L03/Static/Mod_03_Canvas_App_image12.png)
 
@@ -176,7 +176,7 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Insert vertical gallery - screenshot ](../L03/Static/Mod_03_Canvas_App_image18.png)
 
-	- Select **Inspections** for **Data Source**. When Inspection is selected, this will automatically pick the fields and show them in the gallery items.
+	- Select **Inspections** for **Data Source**. When Inspection is selected, this will automatically pick the Columns and show them in the gallery items.
 
     ![Select gallery data source - screenshot](../L03/Static/Mod_03_Canvas_App_image19.png)
 
@@ -200,15 +200,15 @@ This second screen lets the inspector update the selected Inspection.
 
 	- Select **Title and Subtitle**.
 
-4. Verify the selected fields.
+4. Verify the selected Columns.
 
-	- Go to the **Properties** pane and click on the **Edit Fields**.
+	- Go to the **Properties** pane and click on the **Edit Columns**.
 
-    ![Gallery fields - screenshot](../L03/Static/Mod_03_Canvas_App_image22.png)
+    ![Gallery Columns - screenshot](../L03/Static/Mod_03_Canvas_App_image22.png)
 
 	- Confirm that **Scheduled Date** is selected for **Subtitle** and **Name** is selected for **Tile**. Close the **Data** pane. 
 
-    ![Edit field pane - screenshot](../L03/Static/Mod_03_Canvas_App_image23.png)
+    ![Edit Column pane - screenshot](../L03/Static/Mod_03_Canvas_App_image23.png)
 
 5. Change date time to date only.
 
@@ -314,7 +314,7 @@ This second screen lets the inspector update the selected Inspection.
 
 4. Set the **Inspection Form** data source
 
-	- Select the **Inspection Form** and select the DataSource as **Inspections** entity.
+	- Select the **Inspection Form** and select the DataSource as **Inspections** Table.
 
     ![Set form data source - screenshot](../L03/Static/Mod_03_Canvas_App_image33.png)
 
@@ -324,23 +324,23 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Set form item value - screenshot](../L03/Static/Mod_03_Canvas_App_image34.png)
 
-5. Edit Inspection Form fields. This adds the data cards for fields by default, but you can add/remove the data cards as:
+5. Edit Inspection Form Columns. This adds the data cards for Columns by default, but you can add/remove the data cards as:
 
 	- Select the **Inspection Form**.
 
-	- Go to the **Properties** pane and click **Edit Fields**.
+	- Go to the **Properties** pane and click **Edit Columns**.
 
-    ![Edit form fields - screenshot](../L03/Static/Mod_03_Canvas_App_image35.png)
+    ![Edit form Columns - screenshot](../L03/Static/Mod_03_Canvas_App_image35.png)
 
-	- Click **Add Field**.
+	- Click **Add Column**.
 
 	- Select **Name**, **Scheduled** **Date**, **Status Reason**, and **Comments**.
 
 	- Click **Add**.
 
-	- The fields should be ordered as shown in the image below. You can drag/drop to rearrange the fields.
+	- The Columns should be ordered as shown in the image below. You can drag/drop to rearrange the Columns.
 
-    ![Form fields - screenshot](../L03/Static/Mod_03_Canvas_App_image36.png)
+    ![Form Columns - screenshot](../L03/Static/Mod_03_Canvas_App_image36.png)
 
 6. Change the Scheduled Date to show date only.
 
@@ -374,21 +374,21 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Edit formula - screenshot](../L03/Static/Mod_03_Canvas_App_image41.png)
 
-7. Make the Name and Scheduled Date fields read-only
+7. Make the Name and Scheduled Date Columns read-only
 
 	- Select the **Inspection Form**.
 
-	- Go to the **Properties** pane and click **Edit Fields**.
+	- Go to the **Properties** pane and click **Edit Columns**.
 
-	- Expand the **Name** field.
+	- Expand the **Name** Column.
 
-    ![Expand field - screenshot](../L03/Static/Mod_03_Canvas_App_image42.png)
+    ![Expand Column - screenshot](../L03/Static/Mod_03_Canvas_App_image42.png)
 
 	- Click on the **Control Type** dropdown and select **View Text**.
 
     ![Change control type - screenshot](../L03/Static/Mod_03_Canvas_App_image43.png)
 
-	- Expand the **Scheduled Date** field. Observe the change.
+	- Expand the **Scheduled Date** Column. Observe the change.
 
 	- Notice we cannot change this the same way because we’ve customized it. From the Tree View select **DateValue** control inside the **Scheduled Date** Datacard and go to the **Advanced tab** of the **Properties pane**.
 

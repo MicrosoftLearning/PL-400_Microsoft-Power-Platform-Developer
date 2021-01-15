@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -17,7 +17,7 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will use the event publishing capability of the Common Data Service. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Common Data Service to publish permits with size changes using the web hook option. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
+In this lab you will use the event publishing capability of the Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the web hook option. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
 
 # High-level lab steps
 
@@ -25,7 +25,7 @@ As part of configuring the event publishing, you will complete the following:
 
 - Create an Azure Function to receive the web hook post
 
-- Configure Common Data Service to publish events using a web hook
+- Configure Microsoft Dataverse to publish events using a web hook
 
 - Test publishing of events
 
@@ -64,7 +64,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Create function app - screenshot](../L08/Static/Mod_01_Web_Hook_image3.png)
 
-	- Enter your initials plus today’s date for **App Name**, select your **Subscription**, select **Create New** for **Resource Group**, select **.NET Core** for Runtime Stack, select location in the same region as **CDS**, and click **Review + Create**.
+	- Enter your initials plus today’s date for **App Name**, select your **Subscription**, select **Create New** for **Resource Group**, select **.NET Core** for Runtime Stack, select location in the same region as **Microsoft Dataverse**, and click **Review + Create**.
 
     ![Review/create function app - screenshot](../L08/Static/Mod_01_Web_Hook_image4.png)
 
@@ -200,7 +200,7 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
-	- Provide your **CDS** credentials and click **Login**.  
+	- Provide your **Microsoft Dataverse** credentials and click **Login**.  
 ‎    ![Login - screenshot](../L08/Static/Mod_01_Web_Hook_image23.png)
 
 	- Select the **Dev** environment and click **Login**.
@@ -219,7 +219,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Copy URL - screenshot](../L08/Static/Mod_01_Web_Hook_image26.png)
 
-	- Go back to the **Plugin Registration** tool and paste the **URL** you copied in the **Endpoint URL** field.
+	- Go back to the **Plugin Registration** tool and paste the **URL** you copied in the **Endpoint URL** Column.
 
     ![Paste URL - screenshot ](../L08/Static/Mod_01_Web_Hook_image27.png)
 
@@ -229,7 +229,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Copy key - screenshot](../L08/Static/Mod_01_Web_Hook_image28.png)
 
-	- Go back to the **Plugin Registration** tool, paste the key you copied in the **Value** field and click **Save**.
+	- Go back to the **Plugin Registration** tool, paste the key you copied in the **Value** Column and click **Save**.
 
     ![Paste key value and save - screenshot](../L08/Static/Mod_01_Web_Hook_image29.png)
 
@@ -239,7 +239,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image30.png)
 
-	- Select **Update** for **Message**, **contoso_permit** for **Primary Entity**, and click **Filtering Attributes.**
+	- Select **Update** for **Message**, **contoso_permit** for **Primary Table**, and click **Filtering Attributes.**
 
     ![Filtering attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image31.png)
 
@@ -295,9 +295,9 @@ As part of configuring the event publishing, you will complete the following:
 
 Go back to the Azure Function and make sure the function did not execute.
 
-## Task #3: Configure an entity image 
+## Task #3: Configure an Table image 
 
-This step allows you to avoid unnecessarily querying CDS and make a request only when you need information from the primary entity. It can also be used to get the prior value of a field before an update operation.
+This step allows you to avoid unnecessarily querying Microsoft Dataverse and make a request only when you need information from the primary Table. It can also be used to get the prior value of a Column before an update operation.
 
 1. Register New Image
 
@@ -309,7 +309,7 @@ This step allows you to avoid unnecessarily querying CDS and make a request only
 
 	- Check both **Pre** and **Post** images checkboxes.
 
-	- Enter **Permit Image** for **Name**, **PermitImage** for **Entity Alias**, and click on the **Parameters** button.
+	- Enter **Permit Image** for **Name**, **PermitImage** for **Table Alias**, and click on the **Parameters** button.
 
     ![Image type information - screenshot](../L08/Static/Mod_01_Web_Hook_image41.png)
 
@@ -345,8 +345,8 @@ This step allows you to avoid unnecessarily querying CDS and make a request only
 
     ![Maximize log pane - screenshot](../L08/Static/Mod_01_Web_Hook_image45.png)
 
-	- The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
+	- The logs should now show both **Pre** and **Post** Table images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
-    ![Post and pre entity image values - screenshot](../L08/Static/Mod_01_Web_Hook_image46.png)
+    ![Post and pre Table image values - screenshot](../L08/Static/Mod_01_Web_Hook_image46.png)
 
-**Note:** Technically, we have the data in the target object already. However, if there are plugins modifying the data, PostImage will contain the copy as recorded in CDS while Target contains the data as submitted on Save. In addition to that, preimage contains data before the save operation took place.
+**Note:** Technically, we have the data in the target object already. However, if there are plugins modifying the data, PostImage will contain the copy as recorded in Microsoft Dataverse while Target contains the data as submitted on Save. In addition to that, preimage contains data before the save operation took place.
