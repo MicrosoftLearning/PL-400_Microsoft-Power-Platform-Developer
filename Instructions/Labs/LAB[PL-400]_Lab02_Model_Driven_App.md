@@ -25,13 +25,13 @@ As part of creating the model-driven app, you will complete the following:
 
 - Create a new model-driven app named Permit Management
 
-- Edit the app navigation to reference the required entities
+- Edit the app navigation to reference the required Tables
 
-- Customize the forms and views of the required entities for the app 
+- Customize the forms and views of the required Tables for the app 
 
-**Views**: As the name suggests, this helps viewing the existing data in the form of table. This is the configuration of the fields that will be displayed on the screen.
+**Views**: As the name suggests, this helps viewing the existing data in the form of table. This is the configuration of the Columns that will be displayed on the screen.
 
-**Forms**: This is where the user creates/updates new records in the entities.
+**Forms**: This is where the user creates/updates new records in the Tables.
 
 Both will be integrated to the model-driven app for a better user-experience.
 
@@ -54,7 +54,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 # Exercise #1: Customize Views and Forms
 
-**Objective:** In this exercise, you will customize views and forms of the custom created entities that will be used in the model-driven app.
+**Objective:** In this exercise, you will customize views and forms of the custom created Tables that will be used in the model-driven app.
 
  
 
@@ -70,26 +70,26 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Click to open the **Permit Management** solution. 
 
-2. Steps to edit the Permit entity form.
+2. Steps to edit the Permit Table form.
 
-	- Click to open the **Permit** entity.
+	- Click to open the **Permit** Table.
 
-	- Select the **Forms** tab and click to open the **Main** form. By default, the form has two fields, Name (Primary Field) and Owner.
+	- Select the **Forms** tab and click to open the **Main** form. By default, the form has two Columns, Name (Primary Column) and Owner.
 
-	![Main entity form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image2.png)
+	![Main Table form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image2.png)
 
-	- Drag the **Permit Type** field to the form and place it below the **Name** field.
+	- Drag the **Permit Type** Column to the form and place it below the **Name** Column.
 
-	![Add field to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image3.png)
+	![Add Column to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image3.png)
 
-	- Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form. ![Add fields to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image4.png)
+	- Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form. ![Add Columns to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image4.png)
 
-	- Drag the **Status Reason** field and drop it in the right side of the form header.
+	- Drag the **Status Reason** Column and drop it in the right side of the form header.
 
- 	![Add field to form header - screenshot](../L02/Static/Mod_02_Model_Driven_App_image5.png)
+ 	![Add Column to form header - screenshot](../L02/Static/Mod_02_Model_Driven_App_image5.png)
 
 Once the control is dropped, this form will look like:  
-‎	![Form after adding fields - screenshot](../L02/Static/Mod_02_Model_Driven_App_image6.png)
+‎	![Form after adding Columns - screenshot](../L02/Static/Mod_02_Model_Driven_App_image6.png)
 
 3. Add new tab for **Inspections** to the form.
 
@@ -116,9 +116,9 @@ Once the control is dropped, this form will look like:
 
 	- Click **Add Component**.
 
-	- Scroll down and select **Subgrid,** this will open a pop-up to select Entity.
+	- Scroll down and select **Subgrid,** this will open a pop-up to select Table.
 
-	- Check the **Show** **Related Records** checkbox, select **Inspections** for **Entity**, select **Active** **Inspections** for **Default View** and click **Done**.
+	- Check the **Show** **Related Records** checkbox, select **Inspections** for **Table**, select **Active** **Inspections** for **Default View** and click **Done**.
 
 	![Add sub-grid - screenshot](../L02/Static/Mod_02_Model_Driven_App_image11.png)
 
@@ -142,7 +142,7 @@ Once the control is dropped, this form will look like:
 
 8. Click **Publish** and wait for the publishing to complete.
 
-9. Click on the **&lt;- Back** button. You should now be back to the Permit entity Forms tab.
+9. Click on the **&lt;- Back** button. You should now be back to the Permit Table Forms tab.
 
 10. Steps to edit the Active Permits view.
 
@@ -150,19 +150,19 @@ Once the control is dropped, this form will look like:
 
 	![Open view for edit - screenshot](../L02/Static/Mod_02_Model_Driven_App_image15.png)
 
-	- Drag the **Build Site** field and drop it between the **Name** and **Created On** fields.
+	- Drag the **Build Site** Column and drop it between the **Name** and **Created On** Columns.
 
 	![Add column to view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image16.png)
 
-	- Click on the **Permit Type** field. The Permit Type field will be added to the view.
+	- Click on the **Permit Type** Column. The Permit Type Column will be added to the view.
 
-	- Click on the **Contact** field. The **Contact** field will be added to the view.
+	- Click on the **Contact** Column. The **Contact** Column will be added to the view.
 
 	- Go to the view designer and click on the chevron icon of the **Created On** column.
 
 	![Edit column - screenshot](../L02/Static/Mod_02_Model_Driven_App_image17.png)
 
-	- Click **Remove**. **Created On** field will now be removed from the view.
+	- Click **Remove**. **Created On** Column will now be removed from the view.
 
 	- Click **Save** and wait until the changes are saved.
 
@@ -178,13 +178,13 @@ Once the control is dropped, this form will look like:
 
 	- While in your dev environment, select **Solutions**, and click to open the **Permit Management** solution.
 
-2. Edit the Build Site entity form.
+2. Edit the Build Site Table form.
 
-	- Click to open the **Build Site** entity.
+	- Click to open the **Build Site** Table.
 
 	- Select the **Forms** tab and click to open the **Main** form.
 
-	- Add **City**, **State/Province**, **Zip/Postal Code**, and **Country Region** fields to the form between **Street Address** and **Owner**.
+	- Add **City**, **State/Province**, **Zip/Postal Code**, and **Country Region** Columns to the form between **Street Address** and **Owner**.
 
 	![Build site form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image18.png)
 
@@ -200,7 +200,7 @@ Once the control is dropped, this form will look like:
 
 	- Add **City** and **Zip/Postal Code** to the view.
 
-	- Remove **Created On** from the view by selecting **Remove** from the options in field Chevron.
+	- Remove **Created On** from the view by selecting **Remove** from the options in Column Chevron.
 
 	![Active build sites view - screenshot ](../L02/Static/Mod_02_Model_Driven_App_image19.png)
 
@@ -220,17 +220,17 @@ Once the control is dropped, this form will look like:
 
 	- While in your dev environment, select **Solutions** and click to open the **Permit Management** solution.
 
-2. Edit the Inspection entity form.
+2. Edit the Inspection Table form.
 
-	- Click to open the **Inspection** entity.
+	- Click to open the **Inspection** Table.
 
 	- Select the **Forms** tab and click to open the **Main** form.
 
-	- Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** fields to the form. **Inspection type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** field.
+	- Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** Columns to the form. **Inspection type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** Column.
 
-	- Drag the **Status Reason** field **Comments** and drop it in the right side of the form header.
+	- Drag the **Status Reason** Column **Comments** and drop it in the right side of the form header.
 
-	![Add field to form header - screenshot](../L02/Static/Mod_02_Model_Driven_App_image20.png)
+	![Add Column to form header - screenshot](../L02/Static/Mod_02_Model_Driven_App_image20.png)
 
 	- The form should now look like the image below. 
 
@@ -248,7 +248,7 @@ Once the control is dropped, this form will look like:
 
 	- Add **Inspection Type,** **Scheduled Date** and **Sequence** to the view.
 
-	- Remove **Created On** from the view by selecting the chevron on the field and select **Remove**.
+	- Remove **Created On** from the view by selecting the chevron on the Column and select **Remove**.
 
 	![Active inspections view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image22.png)
 
@@ -258,7 +258,7 @@ Once the control is dropped, this form will look like:
 
 9. Click on the **&lt;-Back** button.
 
-10. Create new Inspector View for the Inspection entity.
+10. Create new Inspector View for the Inspection Table.
 
 	- Make sure you still have the **Views** tab selected.
 
@@ -268,7 +268,7 @@ Once the control is dropped, this form will look like:
 
 	- Enter **Inspector View** for **Name** and click **Create**.
 
-	- Add **Inspection Type**, **Permit**, **Scheduled Date**, and **Sequence** fields to the view.
+	- Add **Inspection Type**, **Permit**, **Scheduled Date**, and **Sequence** Columns to the view.
 
 	![Inspection view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image24.png)
 
@@ -294,7 +294,7 @@ Once the control is dropped, this form will look like:
 
 	![Filter properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image28.png)
 
-	- To set the filter property select **Owner** field in the first dropdown and Equals current user in second dropdown and click **OK**.
+	- To set the filter property select **Owner** Column in the first dropdown and Equals current user in second dropdown and click **OK**.
 
 	![View filters - screenshot](../L02/Static/Mod_02_Model_Driven_App_image29.png)
 
@@ -320,13 +320,13 @@ Once the control is dropped, this form will look like:
 
 	- Click to open the **Permit Management** solution.
 
-2. Edit the Permit Type entity form.
+2. Edit the Permit Type Table form.
 
-	- Click to open the **Permit Type** entity.
+	- Click to open the **Permit Type** Table.
 
 	- Select the **Forms** tab and click to open the **Main** form.
 
-	- Add **Require Inspections** and **Require Size** fields to the form between **Name** and **Owner**.
+	- Add **Require Inspections** and **Require Size** Columns to the form between **Name** and **Owner**.
 
 	![Permit type form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image30.png)
 
@@ -336,13 +336,13 @@ Once the control is dropped, this form will look like:
 
 	- Click on the **&lt;-Back** button.
 
-4. Edit the **Permit Type** entity **Active Permit Type** View.
+4. Edit the **Permit Type** Table **Active Permit Type** View.
 
 	- Select the **Views** tab and click to open the **Active Permit Type** view.
 
 	- Add **Require Inspections** and **Require Size** to the view.
 
-	- Remove **Created On** from the view but selecting the chevron on the field and select **Remove**.
+	- Remove **Created On** from the view but selecting the chevron on the Column and select **Remove**.
 
 	![Active permit types view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image31.png)
 
@@ -359,7 +359,7 @@ Once the control is dropped, this form will look like:
 
 **Objective:** In this exercise, you will create the model-driven app, customize the sitemap, and test the app.
 
-**Note:** You will see several fields not addressed as you build out your application, particularly on the sitemap steps. We have taken some short cuts in the interest of time for doing the labs. In a real project you would give these items logical names.
+**Note:** You will see several Columns not addressed as you build out your application, particularly on the sitemap steps. We have taken some short cuts in the interest of time for doing the labs. In a real project you would give these items logical names.
 
 ## Task #1: Create Application
 
@@ -397,17 +397,17 @@ Once the control is dropped, this form will look like:
 
 	![Sitemap area and group - screenshot](../L02/Static/Mod_02_Model_Driven_App_image34.png)
 
-5. Add the Permit entity to the sitemap
+5. Add the Permit Table to the sitemap
 
 	- Select **New Subarea**.
 
-	- Go to the **Properties** pane and select **Entity** from the dropdown for **Type**.
+	- Go to the **Properties** pane and select **Table** from the dropdown for **Type**.
 
-	- Search for **Permit** entity from the dropdown for **Entity**.
+	- Search for **Permit** Table from the dropdown for **Table**.
 
 	![Subarea properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image35.png)
 
-6. Add the Inspection entity to the sitemap
+6. Add the Inspection Table to the sitemap
 
 	- Select **Permits** group and click **Add**.
 
@@ -417,9 +417,9 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Entity** from the dropdown for **Type** and search for **Inspection** entity from the dropdown for **Entity**.
+	- Select **Table** from the dropdown for **Type** and search for **Inspection** Table from the dropdown for **Table**.
 
-7. Add the Permit Type entity to the sitemap
+7. Add the Permit Type Table to the sitemap
 
 	- Select **Permits** group and click **Add**.
 
@@ -427,7 +427,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Entity** from the dropdown for **Type** and search for **Permit Type** entity from the dropdown for **Entity**.
+	- Select **Table** from the dropdown for **Type** and search for **Permit Type** Table from the dropdown for **Table**.
 
 8. Add new Group to the sitemap
 
@@ -441,7 +441,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane and enter **Contacts** for Title.
 
-9. Add the Contact entity to the Contacts group.
+9. Add the Contact Table to the Contacts group.
 
 	- Select the **Contacts** group.
 
@@ -449,9 +449,9 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Entity** from the dropdown for **Type** and search for **Contact** entity in the dropdown for **Entity**.
+	- Select **Table** from the dropdown for **Type** and search for **Contact** Table in the dropdown for **Table**.
 
-10. Add the Build Site entity to the Contacts group.
+10. Add the Build Site Table to the Contacts group.
 
 	- Select the **Contacts** group.
 
@@ -459,7 +459,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Entity** from the dropdown for **Type** and search for **Build Site** entity in the dropdown for **Entity**.
+	- Select **Table** from the dropdown for **Type** and search for **Build Site** Table in the dropdown for **Table**.
 
 11. The sitemap should now look like the image below.
 
@@ -471,14 +471,14 @@ Once the control is dropped, this form will look like:
 
 14. Click **Save and Close** to close the sitemap editor.
 
-15. You will see the assets for the entities that were added to the sitemap are now all in the application.
+15. You will see the assets for the Tables that were added to the sitemap are now all in the application.
 
   
 	‎![Application designer - screenshot](../L02/Static/Mod_02_Model_Driven_App_image39.png)
 
 16. Click **Save** to save the application.
 
-17. Click **Validate** to validate the changes done in the application. This will show some warnings. Feel free to review them, but we can ignore them, since we have not referenced a specific View and Form for the entities and this will display all the Views and Forms.
+17. Click **Validate** to validate the changes done in the application. This will show some warnings. Feel free to review them, but we can ignore them, since we have not referenced a specific View and Form for the Tables and this will display all the Views and Forms.
 
 18. Click **Publish** to publish the application and wait for the publishing to complete.
 

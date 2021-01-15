@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *Table* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -203,7 +203,7 @@ As part of configuring the custom connector, you will complete the following
 
     ![Rename custom connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image18.png)
 
-	- Locate the **Host** field and paste the **Function URL** you copied in Exercise 1.
+	- Locate the **Host** Column and paste the **Function URL** you copied in Exercise 1.
 
 	- Remove https:// and everything after .net. 
 

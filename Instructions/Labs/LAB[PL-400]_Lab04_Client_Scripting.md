@@ -6,7 +6,7 @@ lab:
 > [!NOTE]
 > Effective November 2020:
 > - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
+> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
 >
 > This content will be updated soon to reflect the latest terminology.
 
@@ -33,7 +33,7 @@ As part of building the client-side logic, you will complete the following:
 
 - Build logic based on the permit type settings to hide and show the inspections tab on the form
 
-- Build logic to set fields as required/not required based on the permit type settings
+- Build logic to set Columns as required/not required based on the permit type settings
 
 - Use a community tool, Ribbon Workbench, to modify the command bar
 
@@ -143,7 +143,7 @@ In this task, you will create functions for the logic that you will be implement
 
 ## Task #3: Load Web Resources 
 
-In this task, you will upload the JavaScript files as web resources. Here, you will also edit the Permit entity main form and associate the new web resource with its form. Finally, you will register your functions to be called on specific form events.
+In this task, you will upload the JavaScript files as web resources. Here, you will also edit the Permit Table main form and associate the new web resource with its form. Finally, you will register your functions to be called on specific form events.
 
 1. Open the Permit Management solution
 
@@ -193,7 +193,7 @@ In this task, you will upload the JavaScript files as web resources. Here, you w
 
 	- Make sure you are still in the solution.
 
-	- Click to open the **Permit** entity.
+	- Click to open the **Permit** Table.
 
 	- Select the **Forms** tab and click to open the **Main** form.
 
@@ -272,7 +272,7 @@ In this task, you will upload the JavaScript files as web resources. Here, you w
 
 	- Click on the **&lt;- Back** button.
 
-    ![Back to entity - screenshot](../L04/Static/mod-01-client-scripting-24.png)
+    ![Back to Table - screenshot](../L04/Static/mod-01-client-scripting-24.png)
 
 	- Go back to the solution by clicking on the solution name.
 
@@ -339,7 +339,7 @@ In this task, you will be doing a test to ensure that you have correctly hooked 
 
 # Exercise #2: Show and Hide Tabs
 
-**Objective:** In this exercise, you will create a script that will show and hide the inspections tab based on the permit type entity’s “required inspections” field value.
+**Objective:** In this exercise, you will create a script that will show and hide the inspections tab based on the permit type Table’s “required inspections” Column value.
 
 ## Task #1: Create Function   
 
@@ -363,9 +363,9 @@ In this task, you will be doing a test to ensure that you have correctly hooked 
 
 3. Get the Permit Type value from the form.
 
-	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. contoso_permittype is the logical name of the Permit Type field. You can verify this in the entity metadata.
+	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. contoso_permittype is the logical name of the Permit Type Column. You can verify this in the Table metadata.
 
-            var permitType = formContext.getAttribute("contoso_permittype").getValue();
+            var permitType = formContext.getColumn("contoso_permittype").getValue();
 
 4. Check if the Permit Type has value.
 
@@ -402,7 +402,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 2. Retrieve the Permit Type record and show alert if there are errors
 
-	- Add the script mentioned below in the else statement of the _**handlePermitTypeSettings** function. contoso_pertmittype is the logical name of the Permit Type entity.
+	- Add the script mentioned below in the else statement of the _**handlePermitTypeSettings** function. contoso_pertmittype is the logical name of the Permit Type Table.
 
             Xrm.WebApi.retrieveRecord("contoso_permittype", permitTypeID).then(function (result) {
             },
@@ -411,9 +411,9 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Handle permit type settings function progress - screenshot](../L04/Static/mod-01-client-scripting-37.png)
 
-3. Check if “**Require Inspections**” field value is true
+3. Check if “**Require Inspections**” Column value is true
 
-	- Add the script mentioned below in the **retrieveRecord** function call. contoso_requireinspections is the logical name of the Require Inspections field of the Permit Type entity.
+	- Add the script mentioned below in the **retrieveRecord** function call. contoso_requireinspections is the logical name of the Require Inspections Column of the Permit Type Table.
 
             if (result.contoso_requireinspections) {
 
@@ -507,9 +507,9 @@ Click File and **Save All**.
 
     ![Open record - screenshot](../L04/Static/mod-01-client-scripting-45.png)
 
-3. Check if the **Permit Type** field is empty and if it is, the **Inspections** tab is hidden. In this case, the Permit Type is null.
+3. Check if the **Permit Type** Column is empty and if it is, the **Inspections** tab is hidden. In this case, the Permit Type is null.
 
-    ![Pert type field null - screenshot](../L04/Static/mod-01-client-scripting-46.png)
+    ![Pert type Column null - screenshot](../L04/Static/mod-01-client-scripting-46.png)
 
 4. Select Permit Type.
 
@@ -517,11 +517,11 @@ Click File and **Save All**.
 
 	- Select **New Construction**.
 
-	- Check if the **Inspections** tab is still hidden. If so, in this case, the Require Inspections field value is false/No
+	- Check if the **Inspections** tab is still hidden. If so, in this case, the Require Inspections Column value is false/No
 
     ![Pert type new construction with no inspection requirement - screenshot](../L04/Static/mod-01-client-scripting-47.png)
 
-5. Set **Require Inspections** field value of the **Permit Type** to **Yes**.
+5. Set **Require Inspections** Column value of the **Permit Type** to **Yes**.
 
 	- Click on the selected **Permit Type**.
 
@@ -547,9 +547,9 @@ Click File and **Save All**.
 
  
 
-# Exercise #3: Toggle *required property on the fields
+# Exercise #3: Toggle *required property on the Columns
 
-**Objective:** In this exercise, you will create a script that will make the “New Size” field required when the “Require Size” field value is set to Yes. If the “Require Size” field value is set to No, remove the requirement and make it optional. You will also hide the “New Size” field. This logic will be driven by a field on the permit type record that was retrieved using web API in the previous exercise.
+**Objective:** In this exercise, you will create a script that will make the “New Size” Column required when the “Require Size” Column value is set to Yes. If the “Require Size” Column value is set to No, remove the requirement and make it optional. You will also hide the “New Size” Column. This logic will be driven by a Column on the permit type record that was retrieved using web API in the previous exercise.
 
 ## Task #1: Create Function   
 
@@ -559,9 +559,9 @@ Click File and **Save All**.
 
 	- Locate the _**handlePermitTypeSettings** function.
 
-2. If permitType is null, remove the requirement and hide the “New Size” field. 
+2. If permitType is null, remove the requirement and hide the “New Size” Column. 
 
-	- Add the script mentioned below in the **if** **permitType == null** statement. contoso_newsize is the logical name of the New Size field.
+	- Add the script mentioned below in the **if** **permitType == null** statement. contoso_newsize is the logical name of the New Size Column.
 
             formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
 
@@ -569,7 +569,7 @@ Click File and **Save All**.
 
     ![Remove requirement script - screenshot](../L04/Static/mod-01-client-scripting-52.png)
 
-3. Check if “Require Size” field value of the Permit Type is set to Yes
+3. Check if “Require Size” Column value of the Permit Type is set to Yes
 
 	- Add the script mentioned below inside the retrieveRecord function.
 
@@ -581,17 +581,17 @@ Click File and **Save All**.
 
     ![Check requirement script - screenshot](../L04/Static/mod-01-client-scripting-53.png)
 
-4. If “Require Size” field value of the Permit Type is set to Yes, make the “New Size” field visible and as required.
+4. If “Require Size” Column value of the Permit Type is set to Yes, make the “New Size” Column visible and as required.
 
-	- Add the script mentioned below in the **if** **result.contoso_requiresize** statement. contoso_requiresize is the logical name of the Require Size field.
+	- Add the script mentioned below in the **if** **result.contoso_requiresize** statement. contoso_requiresize is the logical name of the Require Size Column.
 
             formContext.ui.controls.get("contoso_newsize").setVisible(true);
 
             formContext.getAttribute("contoso_newsize").setRequiredLevel("required");
 
-    ![Show field and make it required script - screenshot](../L04/Static/mod-01-client-scripting-54.png)
+    ![Show Column and make it required script - screenshot](../L04/Static/mod-01-client-scripting-54.png)
 
-5. If Require Size field value of the Permit Type is not set to Yes, remove the “New Size” field not required and hide it.
+5. If Require Size Column value of the Permit Type is not set to Yes, remove the “New Size” Column not required and hide it.
 
 	- Add the script mentioned below inside the else statement.
 
@@ -599,7 +599,7 @@ Click File and **Save All**.
 
             formContext.ui.controls.get("contoso_newsize").setVisible(false);
 
-    ![Remove requirement and hide field script - screenshot](../L04/Static/mod-01-client-scripting-55.png)
+    ![Remove requirement and hide Column script - screenshot](../L04/Static/mod-01-client-scripting-55.png)
 
 6. The _handlePermitTypeSettings function should now look like the image below.
 
@@ -647,11 +647,11 @@ Close the Web Resource editor.
 
     ![Open record - screenshot](../L04/Static/mod-01-client-scripting-59.png)
 
-3. Check if the **New Size** field is hidden. If so, then it is because in this case, the “Require Size” field of the Permit Type is set to NO.
+3. Check if the **New Size** Column is hidden. If so, then it is because in this case, the “Require Size” Column of the Permit Type is set to NO.
 
-    ![Hidden field - screenshot](../L04/Static/mod-01-client-scripting-60.png)
+    ![Hidden Column - screenshot](../L04/Static/mod-01-client-scripting-60.png)
 
-4. Set **Require Size** field value of the **Permit Type** to **Yes**.
+4. Set **Require Size** Column value of the **Permit Type** to **Yes**.
 
 	- Click on the selected **Permit Type**.
 
@@ -665,25 +665,25 @@ Close the Web Resource editor.
 
 	- Click on the browser back button.
 
-5. Check if the “New Size” field is visible and it is marked as required.
+5. Check if the “New Size” Column is visible and it is marked as required.
 
-	- You should now be able to see “**New Size”** field on the form and this is marked as required.
+	- You should now be able to see “**New Size”** Column on the form and this is marked as required.
 
-    ![Required field- screenshot](../L04/Static/mod-01-client-scripting-63.png)
+    ![Required Column- screenshot](../L04/Static/mod-01-client-scripting-63.png)
 
 	- Remove **Permit Type**.
 
     ![Remove permit type - screenshot](../L04/Static/mod-01-client-scripting-64.png)
 
-	- Check if both the **Inspections** tab and **New Size** field are now hidden. They should be removed as soon as the “Permit Type” is removed.
+	- Check if both the **Inspections** tab and **New Size** Column are now hidden. They should be removed as soon as the “Permit Type” is removed.
 
-    ![Removed tab and size field - screenshot](../L04/Static/mod-01-client-scripting-65.png)
+    ![Removed tab and size Column - screenshot](../L04/Static/mod-01-client-scripting-65.png)
 
  
 
 # Exercise #4: Command Button Function
 
-**Objective:** In this exercise, you will download and install the Ribbon Workbench tool to edit the command bar. Through this, you will also create action, create function that will lock permits, add a button to the permit entity and call the lock permit function when the button is clicked.
+**Objective:** In this exercise, you will download and install the Ribbon Workbench tool to edit the command bar. Through this, you will also create action, create function that will lock permits, add a button to the permit Table and call the lock permit function when the button is clicked.
 
 ## Task #1: Download and Install Ribbon Workbench
 
@@ -779,7 +779,7 @@ In this task, you will create a custom action that will be called to lock the pe
 
     ![Create new process - screenshot](../L04/Static/mod-01-client-scripting-76.png)
 
-	- Enter **Lock Permit** for **Name**, select **Action** from the dropdown for **Category**, select **Permit** from the dropdown for **Entity**, select **New Blank Process** for **Type**, and click **OK**.
+	- Enter **Lock Permit** for **Name**, select **Action** from the dropdown for **Category**, select **Permit** from the dropdown for **Table**, select **New Blank Process** for **Type**, and click **OK**.
 
     ![New process form - screenshot](../L04/Static/mod-01-client-scripting-77.png)
 
@@ -980,9 +980,9 @@ In this task, you will create the logic to invoke a custom action using the web 
 
 	- Wait for the solution to be downloaded.
 
-3. Add command to permit entity
+3. Add command to permit Table
 
-	- Select **contoso_permit** from the dropdown for Entity.
+	- Select **contoso_permit** from the dropdown for Table.
 
 	- Click **Add Command**.
 

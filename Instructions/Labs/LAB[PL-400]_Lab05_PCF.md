@@ -606,13 +606,13 @@ In this task, you will use the **css** resource you configured to change the col
   
 ‎ 
 
-# Exercise #2: Publish to CDS
+# Exercise #2: Publish to Microsoft Dataverse
 
-**Objective:** In this exercise, you will publish the timeline control to your CDS and add it to the Permit main form.
+**Objective:** In this exercise, you will publish the timeline control to your Microsoft Dataverse and add it to the Permit main form.
 
 ## Task #1: Setup and Publish
 
-1. Get your CDS org URL
+1. Get your Microsoft Dataverse org URL
 
 	- Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
@@ -670,9 +670,9 @@ In this task, you will use the **css** resource you configured to change the col
 
 2. Open the Permit Main form and switch to classic
 
-	- Locate and click to open the **Permit** entity.
+	- Locate and click to open the **Permit** Table.
 
-    ![Open entity - screenshot](../L05/Static/mod-02-pcf-1-54.png)
+    ![Open Table - screenshot](../L05/Static/mod-02-pcf-1-54.png)
 
 	- Select the **Forms** tab.
 
@@ -800,7 +800,7 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Select column - screenshot](../L05/Static/mod-02-pcf-1-73.png)
 
-	- Move the **Status Reason** field after the **Name** field.
+	- Move the **Status Reason** Column after the **Name** Column.
 
     ![Move column - screenshot](../L05/Static/mod-02-pcf-1-74.png)
 

@@ -31,15 +31,15 @@ In this lab, you will set up a second environement to memic a production environ
 
 # High-level lab steps
 
-To prepare your learning environments you will create a solution and publisher and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (entities, field types and relationships). Your solution will contain several entities upon completion of all the customizations.
+To prepare your learning environments you will create a solution and publisher and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (Tables, Column types and relationships). Your solution will contain several Tables upon completion of all the customizations.
 
-![Screen image of grid displaying entities contained in the permit management solution.](../L01/Static/Mod_01_Data_Modeling_image1.png)
+![Screen image of grid displaying Tables contained in the permit management solution.](../L01/Static/Mod_01_Data_Modeling_image1.png)
 
 ## Things to consider before you begin
 
 - What are considered as best practices for managing changes in between environments (“Dev” to “Test” to “Prod”)? Are there additional considerations for team solution development?
 
-- What entities a user might need in the scenario that we are building? 
+- What Tables a user might need in the scenario that we are building? 
 
 - What relationship behaviors would we consider enabling users to complete their tasks?
 
@@ -103,15 +103,15 @@ To prepare your learning environments you will create a solution and publisher a
 
  
 
-## Task #3: Add Existing Entity
+## Task #3: Add Existing Table
 
-1. Add Contact entity to the solution
+1. Add Contact Table to the solution
 
 	- Click to open the **Permit Management** solution you just created.
 
-	- Click **Add Existing** and select **Entity**.
+	- Click **Add Existing** and select **Table**.
 
-    ![Add existing entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image6.png)
+    ![Add existing Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image6.png)
 
 	- Search for **Contact** and select it.
 
@@ -119,7 +119,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Select** **Components**.
 
-    ![Select entity components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
+    ![Select Table components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
 
 	- Select the **Views** tab and select the **Active Contacts** view. Click **Add**.
 
@@ -129,13 +129,13 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Add**.
 
-	- You should have **1 View** and **1 Form** selected. Click **Add** again. This will add the Contact entity to the newly created solution.
+	- You should have **1 View** and **1 Form** selected. Click **Add** again. This will add the Contact Table to the newly created solution.
 
     ![Add components](../L01/Static/Mod_01_Data_Modeling_image8.png)
 
-2. Add User entity to the solution
+2. Add User Table to the solution
 
-	- Click Add Existing and select **Entity**.
+	- Click Add Existing and select **Table**.
 
 	- Search for **User** and select it.
 
@@ -143,15 +143,15 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- **DO NOT** select any components. Click **Add**.
 
-	- Your solution should now have two entities.
+	- Your solution should now have two Tables.
 
  
 
-# Exercise #2: Create Entities and Fields
+# Exercise #2: Create Tables and Columns
 
-**Objective:** In this exercise, you will create entities, add fields to these entities and edit the **Status Reason** options for the **Permit** and **Inspection** entities.
+**Objective:** In this exercise, you will create Tables, add Columns to these Tables and edit the **Status Reason** options for the **Permit** and **Inspection** Tables.
 
-## Task #1: Create Permit Entity and Fields
+## Task #1: Create Permit Table and Columns
 
 1. Continuing in your development environment, open the Permit Management solution
 
@@ -159,19 +159,19 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select **Solutions** and click to open the **Permit Management** solution you just created.
 
-2. Create Permit entity
+2. Create Permit Table
 
-	- Click **+** **New** and select **Entity**.
+	- Click **+** **New** and select **Table**.
 
-    ![Add new entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
+    ![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
 
-	- Enter **Permit** for **Display Name** and click **Create**. This will start provisioning the entity in background while you can start adding fields.
+	- Enter **Permit** for **Display Name** and click **Create**. This will start provisioning the Table in background while you can start adding Columns.
 
-3. Create Start Date field
+3. Create Start Date Column
 
-	- Make sure you have the **Fields** tab selected and click **+** **Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+** **Add Column**.
 
-    ![Add field - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+    ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
 	- Enter **Start Date** for **Display Name**.
 
@@ -179,13 +179,13 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Select **Required**.
 
-	- Leave the searchable checkbox checked. When a field is searchable it appears in Advanced Find in model-driven apps and is available when customizing views. De-selecting this will reduce the number of options shown to people using advanced find.
+	- Leave the searchable checkbox checked. When a Column is searchable it appears in Advanced Find in model-driven apps and is available when customizing views. De-selecting this will reduce the number of options shown to people using advanced find.
 
 	- Click **Done**.
 
-4. Create Expiration Date field.
+4. Create Expiration Date Column.
 
-	- Click **+ Add Field**.
+	- Click **+ Add Column**.
 
 	- Enter **Expiration Date** for **Display Name**.
 
@@ -193,9 +193,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-5. Create New Size field.
+5. Create New Size Column.
 
-	- Click **+ Add Field**.
+	- Click **+ Add Column**.
 
 	- Enter **New Size** for **Display Name**.
 
@@ -207,73 +207,73 @@ To prepare your learning environments you will create a solution and publisher a
 
     ![Change filter to custom - screenshot](../L01/Static/Mod_01_Data_Modeling_image11.png)
 
-	- Click **Save Entity**.
+	- Click **Save Table**.
 
-    ![Save entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image12.png)
+    ![Save Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image12.png)
 
  
 
-## Task #2: Create Permit Type Entity and Fields
+## Task #2: Create Permit Type Table and Columns
 
-1. Create Permit Type entity
+1. Create Permit Type Table
 
 	- Click on the solution name. This action will take you back to the Solution.
 
     ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
 
-	- Click **+ New** and select **Entity**.
+	- Click **+ New** and select **Table**.
 
 	- Enter **Permit Type** for **Display Name**.
 
 	- Click **Done**.
 
-2. Create Require Inspections field
+2. Create Require Inspections Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Require Inspections** for **Display Name**.
 
-	- Select **Two Options** for **Data Type**.
+	- Select **Yes/No** for **Data Type**.
 
 	- Click **Done**.
 
-3. Create Require Size field
+3. Create Require Size Column
 
-	- Click **+ Add Field**.
+	- Click **+ Add Column**.
 
 	- Enter **Require Size** for **Display Name**.
 
-	- Select **Two Options** for **Data Type**.
+	- Select **Yes/No** for **Data Type**.
 
 	- Click **Done**.
 
-4. Click Save Entity
+4. Click Save Table
 
  
 
  
 
-## Task #3: Create Build Site Entity and Fields
+## Task #3: Create Build Site Table and Columns
 
-1. Create Build Site entity
+1. Create Build Site Table
 
 	- Click on the solution name. This action will take you back to the Solution.
 
-	- Click **+ New** and select **Entity**.
+	- Click **+ New** and select **Table**.
 
 	- Enter **Build Site** for **Display Name.**
 
-	- Change the **Display Name** of the **Primary Field** to **Street Address.**
+	- Change the **Display Name** of the **Primary Column** to **Street Address.**
 
-	- Change the **Name** of the **Primary Field** to **street1.**
+	- Change the **Name** of the **Primary Column** to **street1.**
 
 	- Click **Done**.
 
-    ![Primary field properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
+    ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
 
-2. Add City field
+2. Add City Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **City** for **Display Name** and change the **Name** to **city**.
 
@@ -283,11 +283,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-    ![Field properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
+    ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
-3. Add Zip/Postal Code field
+3. Add Zip/Postal Code Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **ZIP/Postal Code** for **Display Name** and change the **Name** to **postalcode**.
 
@@ -297,9 +297,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-4. Add State/Province field
+4. Add State/Province Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **State/Province** for **Display Name** and change the **Name** to **stateprovince**.
 
@@ -309,9 +309,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-5. Add Country Region field
+5. Add Country Region Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Country/Region** for **Display Name** and change the **Name** to **country**.
 
@@ -319,33 +319,33 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-6. Click **Save Entity**.
+6. Click **Save Table**.
 
  
 
-## Task #4: Create Inspection Entity and Fields
+## Task #4: Create Inspection Table and Columns
 
-1. Create Inspection entity
+1. Create Inspection Table
 
 	- Click on the solution name. This action will take you back to the Solution.
 
-	- Click **New** and select **Entity**.
+	- Click **New** and select **Table**.
 
 	- Enter **Inspection** for **Display Name.**
 
 	- Click **Done**.
 
-2. Add Inspection Type field
+2. Add Inspection Type Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Inspection Type** for **Display Name**.
 
-	- Select **Option Set** for **Data Type**.
+	- Select **Choice** for **Data Type**.
 
-	- Click on the **Option Set** dropdown and select +**New Option Set.**
+	- Click on the **Choice** dropdown and select +**New Choice.**
 
-    ![New option set - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
+    ![New Choice - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
 
 	- Enter **Initial Inspection** and click **Add New Item**.
 
@@ -357,9 +357,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	-  Click **Done**.
 
-3. Add Scheduled Date field
+3. Add Scheduled Date Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Scheduled Date** for **Display Name**.
 
@@ -369,9 +369,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-4. Add Comments field
+4. Add Comments Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Comments** for **Display Name**.
 
@@ -383,9 +383,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-5. Add Sequence field
+5. Add Sequence Column
 
-	- Make sure you have the **Fields** tab selected and click **+ Add Field**.
+	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
 	- Enter **Sequence** for **Display Name**.
 
@@ -393,7 +393,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Done**.
 
-6. Click **Save Entity**.
+6. Click **Save Table**.
 
 7. Select **Solutions** on the top and this action will take you back to the Solutions page.
 
@@ -417,17 +417,17 @@ To prepare your learning environments you will create a solution and publisher a
 
     ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
 
-3. Edit Inspection entity Status Reason options
+3. Edit Inspection Table Status Reason options
 
-	- Expand **Entities**.
+	- Expand **Tables**.
 
-	- Expand the **Inspection** entity and select **Fields**.
+	- Expand the **Inspection** Table and select **Columns**.
 
-    ![Select fields - screenshot](../L01/Static/Mod_01_Data_Modeling_image21.png)
+    ![Select Columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image21.png)
 
-	- Locate and double click to open the **statuscode** field.
+	- Locate and double click to open the **statuscode** Column.
 
-    ![Open field for edit - screenshot](../L01/Static/Mod_01_Data_Modeling_image22.png)
+    ![Open Column for edit - screenshot](../L01/Static/Mod_01_Data_Modeling_image22.png)
 
 4. Change the Active option label
 
@@ -475,13 +475,13 @@ To prepare your learning environments you will create a solution and publisher a
 
     ![Select option-set default option - screenshot](../L01/Static/Mod_01_Data_Modeling_image27.png)
 
-11. Edit Permit entity Status Reason options
+11. Edit Permit Table Status Reason options
 
-	- Expand the **Permit** entity and select **Fields**.
+	- Expand the **Permit** Table and select **Columns**.
 
-    ![Select entity fields - screenshot](../L01/Static/Mod_01_Data_Modeling_image28.png)
+    ![Select Table Columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image28.png)
 
-	- Locate and double click to open the **statuscode** field.
+	- Locate and double click to open the **statuscode** Column.
 
 12. Add the Locked option
 
@@ -544,7 +544,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 2. Create Permit to Contact relationship
 
-	- Click to open the **Permit** entity.
+	- Click to open the **Permit** Table.
 
 	- Select the **Relationships** tab.
 
@@ -560,7 +560,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Add Relationship** and select **One-to-Many**.
 
-	- Select **Inspection** for **Entity** in the **Related (Many)** and click **Advanced Options**.
+	- Select **Inspection** for **Table** in the **Related (Many)** and click **Advanced Options**.
 
     ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
 
@@ -572,7 +572,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Add Relationship** and select **Many-to-One**.
 
-	- Select **Build Site** for **Related (One) Entity** and click **Advanced Options**.
+	- Select **Build Site** for **Related (One) Table** and click **Advanced Options**.
 
 	- Change the **Delete** to **Restrict** and click **Done**.
 
@@ -582,15 +582,15 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Click **Add Relationship** and select **Many-to-One**.
 
-	- Select **Permit Type** for **Related (One) Entity** and click **Done**.
+	- Select **Permit Type** for **Related (One) Table** and click **Done**.
 
 6. Change the filter to **Custom**.
 
     ![Change filter - screenshot](../L01/Static/Mod_01_Data_Modeling_image36.png)
 
-7. Click **Save Entity**.
+7. Click **Save Table**.
 
-    ![Save entity - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
+    ![Save Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
 
 8. Select **Solutions** from the top menu and click **Publish All Customizations.**
 
