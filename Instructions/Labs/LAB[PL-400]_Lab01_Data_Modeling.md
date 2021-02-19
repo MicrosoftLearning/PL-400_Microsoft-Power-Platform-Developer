@@ -419,9 +419,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 3. Edit Inspection Table Status Reason options
 
-	- Expand **Tables**.
+	- Expand **Entities**.
 
-	- Expand the **Inspection** Table and select **Columns**.
+	- Expand the **Inspection** Table and select **Fields**.
 
     ![Select Columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image21.png)
 
@@ -477,7 +477,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 11. Edit Permit Table Status Reason options
 
-	- Expand the **Permit** Table and select **Columns**.
+	- Expand the **Permit** Table and select **Fields**.
 
     ![Select Table Columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image28.png)
 
