@@ -284,7 +284,7 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Edit form - screenshot](../L03/Static/Mod_03_Canvas_App_image31.png)
 
-	- Select the **Three View** tab.
+	- Select the **Tree View** tab.
 
 	- Rename the form **Inspection Form**.
 
