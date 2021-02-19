@@ -334,7 +334,7 @@ This second screen lets the inspector update the selected Inspection.
 
 	- Click **Add Column**.
 
-	- Select **Name**, **Scheduled** **Date**, **Status Reason**, and **Comments**.
+	- Select **Status Reason**, and **Comments**.
 
 	- Click **Add**.
 
@@ -360,7 +360,7 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Select card components - screenshot](../L03/Static/Mod_03_Canvas_App_image38.png)
 
-	- Delete the selected controls. When the controls are deleted, you will to see an error message.
+	- Delete the selected controls. When the controls are deleted, you will see an error message.
 
     ![Delete card components - screenshot](../L03/Static/Mod_03_Canvas_App_image39.png)
 
