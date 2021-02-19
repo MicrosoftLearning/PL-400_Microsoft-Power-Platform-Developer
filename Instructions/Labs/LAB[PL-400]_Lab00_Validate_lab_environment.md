@@ -13,7 +13,7 @@ lab:
 
 ## Practice Lab – Validate lab environment
 
-Attention to MCTs: Please make sure you are familiar with the [TrainerPrepGuide](PL-400T00A-ENU-TrainerPrepGuide.pdf) for this course, especially the teaching tips and recommendations.
+Attention to MCTs: Please make sure you are familiar with the [TrainerPrepGuide](../PL-400T00A-ENU-TrainerPrepGuide.pdf) for this course, especially the teaching tips and recommendations.
 
 Scenario
 --------
