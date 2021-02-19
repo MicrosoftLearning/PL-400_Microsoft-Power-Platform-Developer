@@ -53,9 +53,9 @@ In this exercise, you will be create your **Development** environment that you w
     
     - Change the toggle on **Create a database for this environment?** to **Yes.**
     
-    - Leave all other selections as default and click **Save.**
+    - Leave all other selections as default and click **Next.**
     
-    - On the next tab, leave all selections to default and click **Save** again.
+    - On the next tab, leave all selections to default and click **Save**
 
 3. Your **Dev** environment should now show in the list of Environments. 
 
