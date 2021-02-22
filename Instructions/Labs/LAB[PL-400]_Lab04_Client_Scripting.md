@@ -365,7 +365,7 @@ In this task, you will be doing a test to ensure that you have correctly hooked 
 
 	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. contoso_permittype is the logical name of the Permit Type Column. You can verify this in the Table metadata.
 
-            var permitType = formContext.getColumn("contoso_permittype").getValue();
+            var permitType = formContext.getAttribute("contoso_permittype").getValue();
 
 4. Check if the Permit Type has value.
 
