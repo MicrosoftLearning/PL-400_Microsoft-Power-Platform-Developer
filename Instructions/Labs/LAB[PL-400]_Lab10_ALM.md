@@ -23,7 +23,7 @@ In this lab you will use Azure DevOps for source control of your solution assets
 
 As part of configuring Azure DevOps ALM automation, you will complete the following
 
-- Sign up for an Azure DevOps account
+- Sign in to your Azure DevOps account
 
 - Create an Azure DevOps project
 
@@ -50,27 +50,15 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 # Exercise #1: Initialize Azure DevOps
 
-**Objective:** In this exercise, you will setup an Azure DevOps account to track the solution assets of the Permit Management app.
+**Objective:** In this exercise, you will use your Azure DevOps account to track the solution assets of the Permit Management app.
 
-## Task #1: Sign up for Azure DevOps
+## Task #1: Sign in for Azure DevOps
 
-1. Sign up for Azure DevOps
+1. Sign in for Azure DevOps
 
 	- Navigate to [Azure DevOps](https://dev.azure.com/)
 
 	- Provide your admin credentials and sign in.
-
-	- Click **Sign into Azure DevOps**. Note: Use the same account you have been using to build the Permit Management app.
-
-    ![Azure DevOps - screenshot](../L10/Static/Mod_3_ALM_image1.png)
-
-	- Click **Continue**.
-
-    ![Get started with Azure DevOps - screenshot](../L10/Static/Mod_3_ALM_image2.png)
-
-	- Provide a unique **Azure DevOps Organization** like **FL-PermitManagement** (replace FL with your first and last initials), select your region and click **Continue**.
-
-    ![Azure DevOps organization name - screenshot](../L10/Static/Mod_3_ALM_image3.png)
 
 2. Create the Azure DevOps project
 
