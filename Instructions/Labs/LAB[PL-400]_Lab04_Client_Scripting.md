@@ -91,7 +91,7 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
 
     ![New file - screenshot](../L04/Static/mod-01-client-scripting-05.png)
 
-	- Name the new file as **PermitFormFuntions.js** and click **Enter**.
+	- Name the new file as **PermitFormFunctions.js** and click **Enter**.
 
     ![permit form functions JavaScript file - screenshot](../L04/Static/mod-01-client-scripting-06.png)
 
