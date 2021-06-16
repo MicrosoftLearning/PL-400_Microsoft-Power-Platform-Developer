@@ -35,6 +35,10 @@ Exercise 1 – Acquire your Power Platform trial tenant
 
 6. Select **Yes** to stay signed in.
 
+7. Enter *1234567890** into the Phone Number field.
+8. Click **Get Started**.
+9. Click **Get Started**.
+
 
 Exercise 2 - Create your environment 
 ------------------------------------------
