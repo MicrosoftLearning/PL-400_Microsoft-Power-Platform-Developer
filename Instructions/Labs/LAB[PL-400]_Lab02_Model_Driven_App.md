@@ -93,7 +93,7 @@ Once the control is dropped, this form will look like:
 
 3. Add new tab for **Inspections** to the form.
 
-	- With focus set on the main body of the form (not in the header) click **Add Component**.
+	- With focus set on the main body of the form (not in the header) click **+ Add Component**.
 
  	![Add components to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image7.png)
 
@@ -114,7 +114,7 @@ Once the control is dropped, this form will look like:
 
 	![Select tab - screenshot](../L02/Static/Mod_02_Model_Driven_App_image10.png)
 
-	- Click **Add Component**.
+	- Click **+ Add Component**.
 
 	- Scroll down and select **Subgrid,** this will open a pop-up to select Table.
 
@@ -371,7 +371,7 @@ Once the control is dropped, this form will look like:
 
 2. Create the Model-Driven Application
 
-	- Click **New** and select **App | Model-Driven App**. This will open a new Window.
+	- Click **+ New** and select **App | Model-Driven App**. This will open a new Window.
 
 	![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
 
