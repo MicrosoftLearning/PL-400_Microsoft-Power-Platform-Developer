@@ -375,10 +375,14 @@ Once the control is dropped, this form will look like:
 
 	![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
 
-	- Enter **Permit Management** for **Name** and click **Done**.
+	- Enter **Permit Management** for **Name** and click **Create**.
 
 3. Edit Sitemap
 
+        - Click on Apps
+        
+	- Select **Permit Management** app and click on **Edit** 
+        
 	- Click **Edit Site map.**
 
 	![Edit sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image33.png)
