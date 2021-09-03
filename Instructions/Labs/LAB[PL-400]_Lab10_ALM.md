@@ -122,7 +122,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Select project - screenshot](../L10/Static/Mod_3_ALM_image14.png)
 
-	- Select the **Permissions** tab.
+	- Select the **Security** tab.
 
 	- Search for **Project Collection Build Service** and select the one without the accounts **Project Collection.**
 
@@ -372,7 +372,7 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Select the **Permit Management** repository.
 
-	- Select the **Permissions** tab.
+	- Select the **Security** tab.
 
 	- Select **Permit Management Build Service** and **Allow** Contribute.
 
