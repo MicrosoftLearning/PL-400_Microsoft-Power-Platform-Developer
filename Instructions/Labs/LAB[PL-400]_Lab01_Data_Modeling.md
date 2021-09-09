@@ -57,7 +57,7 @@ To prepare your learning environments you will create a solution and publisher a
 1. Create the community plan environment
 
 	- Navigate to [Power Apps Community Plan page](https://powerapps.microsoft.com/en-us/communityplan/)
-	- Click on *Create an indiviual environment*
+	- Click on *Existing user? Add a dev environment*
 	- Enter your credentials when prompt to sign in
 	- Select your country from the dropdown menu and click *Accept*
 	- Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment had been created by the system. We will refer to it as "Prod" environment for the rest of this course.
@@ -83,7 +83,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 2. Create Publisher
 
-	- Click on the **Publisher** dropdown and select **+ Publisher**.
+	- Click on the **+ Publisher** option available below **Publisher** dropdown.
 
     ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
@@ -202,6 +202,8 @@ To prepare your learning environments you will create a solution and publisher a
 	- Select **Whole Number** for **Data Type.** 
 
 	- Click **Done**.
+	
+	- Click on Chevron icon next to **Default**  
 
 	- Select **Custom** for filter.
 
