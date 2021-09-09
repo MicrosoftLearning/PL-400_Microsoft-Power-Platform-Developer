@@ -78,7 +78,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Go to resource - screenshot](../L08/Static/Mod_01_Web_Hook_image5.png)
 
-	- Select **Functions** and click **+ Add**.
+	- Select **Functions** and click **+ Create**.
 
     ![Add function - screenshot](../L08/Static/Mod_01_Web_Hook_image6.png)
 
