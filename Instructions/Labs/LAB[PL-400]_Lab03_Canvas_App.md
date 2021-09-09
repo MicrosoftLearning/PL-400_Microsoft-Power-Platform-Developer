@@ -76,17 +76,21 @@ This second screen lets the inspector update the selected Inspection.
 
 2. Create new canvas application
 
-	- Click **+ New** and select **App | Canvas App** **| Tablet Form Factor**. This will open the App Editor in a New window.
+	- Click **+ New** and select **App | Canvas App** **
+	
+	- Select **Tablet Form Factor** from canvas app window.
 
     ![Create new canvas application - screenshot](../L03/Static/Mod_03_Canvas_App_image3.png)
 
     If you are creating your first app, this will ask you to set the Country/region for the app. Click **Get Started.**
 
     ![Get started popup - screenshot](../L03/Static/Mod_03_Canvas_App_image4.png)
-
+        
+	- Enter **Inspector** for App Name, and click **Create**
+	
 	- Click **File** and select **Save As**.
 
-	- Select **The Cloud**, enter **Inspector** for Name, and click **Save**. This will make sure that the changes are not removed if the app closes unexpectedly.
+	- Select **The Cloud**,This will make sure that the changes are not removed if the app closes unexpectedly.
 
     ![Save application](../L03/Static/Mod_03_Canvas_App_image5.png)
 
@@ -206,7 +210,7 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Gallery Columns - screenshot](../L03/Static/Mod_03_Canvas_App_image22.png)
 
-	- Confirm that **Scheduled Date** is selected for **Subtitle** and **Name** is selected for **Tile**. Close the **Data** pane. 
+	- Confirm that **Scheduled Date** is selected for **Subtitle** and **Name** is selected for **Title**. Close the **Data** pane. 
 
     ![Edit Column pane - screenshot](../L03/Static/Mod_03_Canvas_App_image23.png)
 
@@ -334,7 +338,7 @@ This second screen lets the inspector update the selected Inspection.
 
 	- Click **Add Column**.
 
-	- Select **Status Reason**, and **Comments**.
+	- Select **Status Reason**, **Scheduled Date**, **Name** and **Comments**.
 
 	- Click **Add**.
 
