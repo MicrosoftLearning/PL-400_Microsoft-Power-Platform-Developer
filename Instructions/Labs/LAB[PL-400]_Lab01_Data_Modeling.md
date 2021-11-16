@@ -91,7 +91,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Enter **Contoso** for **Display Name** and **contoso** for **Prefix.** 
 
-	- Click **Save and Close**.
+	- Click **Save**.
 
     ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
