@@ -29,6 +29,8 @@ In this lab, you will set up a second environement to memic a production environ
 
 - R5 – Permits, for our lab purposes, are requested by a person and we need to track who requested each permit
 
+- R6 - Suggested that you turn the Solution Preview feature to Off
+
 # High-level lab steps
 
 To prepare your learning environments you will create a solution and publisher and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (Tables, Column types and relationships). Your solution will contain several Tables upon completion of all the customizations.
@@ -89,7 +91,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Enter **Contoso** for **Display Name** and **contoso** for **Prefix.** 
 
-	- Click **Save and Close**.
+	- Click **Save**.
 
     ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
