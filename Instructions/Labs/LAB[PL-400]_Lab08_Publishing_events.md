@@ -50,7 +50,7 @@ As part of configuring the event publishing, you will complete the following:
 
 1. Create new function application
 
-	- Sign in to [Azure portal](Azure%20portal) and login.
+	- Sign in to [Azure portal](https://portal.azure.com) and login.
 
 	- Click **Show portal menu** and select + **Create a Resource**.
 
