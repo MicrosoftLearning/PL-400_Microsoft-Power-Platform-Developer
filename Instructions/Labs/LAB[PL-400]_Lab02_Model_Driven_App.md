@@ -432,7 +432,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Permit Type** Table from the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Permit Type** Table from the dropdown for **Entity**.
 
 8. Add new Group to the sitemap
 
