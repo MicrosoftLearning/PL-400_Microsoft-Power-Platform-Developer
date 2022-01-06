@@ -85,11 +85,11 @@ To prepare your learning environments you will create a solution and publisher a
 
 2. Create Publisher
 
-	- Click on the **+ Publisher** option available below **Publisher** dropdown.
+	- Click on the **+ New Publisher** option available below **Publisher** dropdown.
 
     ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
-	- Enter **Contoso** for **Display Name** and **contoso** for **Prefix.** 
+	- Enter **Contoso** for **Display Name** and **contoso** for ** Name** and **Prefix.** 
 
 	- Click **Save**.
 
