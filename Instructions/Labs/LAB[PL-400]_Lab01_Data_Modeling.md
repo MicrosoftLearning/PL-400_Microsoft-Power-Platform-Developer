@@ -167,11 +167,13 @@ To prepare your learning environments you will create a solution and publisher a
 
     ![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
 
-	- Enter **Permit** for **Display Name** and click **Create**. This will start provisioning the Table in background while you can start adding Columns.
+	- Enter **Permit** for **Display Name** and click **Save**. This will start provisioning the Table in background while you can start adding Columns.
 
 3. Create Start Date Column
 
-	- Make sure you have the **Columns** tab selected and click **+** **Add Column**.
+	-  Open the Permit table.
+
+	-  Make sure you have the **Columns** tab selected and click **+** **Add Column**.
 
     ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
@@ -221,7 +223,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 1. Create Permit Type Table
 
-	- Click on the solution name. This action will take you back to the Solution.
+	- Click on **Tables**.
 
     ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
 
@@ -267,9 +269,9 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Enter **Build Site** for **Display Name.**
 
-	- Change the **Display Name** of the **Primary Column** to **Street Address.**
+	- Change the **Display Name** of the **Schema name** to **Street Address.**
 
-	- Change the **Name** of the **Primary Column** to **street1.**
+	- Change the **Name** of the **Schema name** to **street1.**
 
 	- Click **Done**.
 
