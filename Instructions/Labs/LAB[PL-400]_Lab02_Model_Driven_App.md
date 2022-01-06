@@ -408,7 +408,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane and select **Table** from the dropdown for **Type**.
 
-	- Search for **Permit** Table from the dropdown for **Table**.
+	- Search for **Permit** Table from the dropdown for **Entity**.
 
 	![Subarea properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image35.png)
 
@@ -422,7 +422,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Inspection** Table from the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Inspection** Table from the dropdown for **Entity**.
 
 7. Add the Permit Type Table to the sitemap
 
@@ -454,7 +454,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Contact** Table in the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Contact** Table in the dropdown for **Entity**.
 
 10. Add the Build Site Table to the Contacts group.
 
@@ -464,7 +464,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Build Site** Table in the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Build Site** Table in the dropdown for **Entity**.
 
 11. The sitemap should now look like the image below.
 
