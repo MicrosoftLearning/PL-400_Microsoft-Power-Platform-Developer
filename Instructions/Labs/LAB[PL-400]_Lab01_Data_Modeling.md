@@ -101,7 +101,7 @@ To prepare your learning environments you will create a solution and publisher a
 
 	- Now, click on the **Publisher** dropdown and select the **Contoso** publisher you just created.
 
-	- Enter **1.0.0.0** for **Version** and click **Create**.
+	- Enter **1.0.0.0** for **Version** and click **Save**.
 
  
 
