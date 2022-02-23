@@ -195,7 +195,7 @@ As part of configuring the custom connector, you will complete the following
 
     ![Create new component - screenshot](../L09/Static/Mod_2_Custom_Connector_image16.png)
 
-	- Select **Other| Custom Connector**.
+	- Select **Automation| Custom Connector**.
 
     ![Create new custom connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image17.png)
 
