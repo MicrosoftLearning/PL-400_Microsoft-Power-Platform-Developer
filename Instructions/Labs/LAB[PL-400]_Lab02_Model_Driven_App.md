@@ -103,7 +103,7 @@ Once the control is dropped, this form will look like:
 
 	- Select the new tab you added.
 
-	- Go to the **Properties** pane, change the **Tab Label** to **Inspections** and the **Name** to **inspectionsTab**.  
+	- Go to the **Properties** pane, change the **Label** to **Inspections** and the **Name** to **inspectionsTab**.  
 ‎
 
 	![Tab properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image9.png)
@@ -371,11 +371,12 @@ Once the control is dropped, this form will look like:
 
 2. Create the Model-Driven Application
 
-	- Click **New** and select **App | Model-Driven App**. This will open a new Window.
+	- Click **New** and select **App | Model-Driven App**. 
+	- Select **Classic app designer**, click **Create**. This will open a new Window.
 
 	![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
 
-	- Enter **Permit Management** for **Name** and click **Create**.
+	- Enter **Permit Management** for **Name** and click **Done**.
 
 3. Edit Sitemap
 
@@ -407,7 +408,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane and select **Table** from the dropdown for **Type**.
 
-	- Search for **Permit** Table from the dropdown for **Table**.
+	- Search for **Permit** Table from the dropdown for **Entity**.
 
 	![Subarea properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image35.png)
 
@@ -421,7 +422,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Inspection** Table from the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Inspection** Table from the dropdown for **Entity**.
 
 7. Add the Permit Type Table to the sitemap
 
@@ -431,7 +432,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Permit Type** Table from the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Permit Type** Table from the dropdown for **Entity**.
 
 8. Add new Group to the sitemap
 
@@ -453,7 +454,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Contact** Table in the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Contact** Table in the dropdown for **Entity**.
 
 10. Add the Build Site Table to the Contacts group.
 
@@ -463,7 +464,7 @@ Once the control is dropped, this form will look like:
 
 	- Go to the **Properties** pane.
 
-	- Select **Table** from the dropdown for **Type** and search for **Build Site** Table in the dropdown for **Table**.
+	- Select **Entity** from the dropdown for **Type** and search for **Build Site** Table in the dropdown for **Entity**.
 
 11. The sitemap should now look like the image below.
 
@@ -502,7 +503,7 @@ Once the control is dropped, this form will look like:
 
 1. Start the application
 
-	- Select **Apps** and click to open the **Permit Management** app in a new window.
+	- Select **Apps** and click to open the **Permit Management** app in a new window. On the toolbar, click **Play**.
 
 2. Create new Contact record
 
@@ -510,7 +511,7 @@ Once the control is dropped, this form will look like:
 ‎	![Contacts - screenshot](../L02/Static/Mod_02_Model_Driven_App_image41.png)  
 ‎
 
-	- Click **New** from the top menu.
+	- Click **+ New** from the top menu.
 
 	- Provide **First Name** as **John** and **Last Name** as **Doe**.
 
@@ -526,7 +527,7 @@ Once the control is dropped, this form will look like:
 
 	- Select **Build Sites** from the sitemap.
 
-	- Click **New**.
+	- Click **+ New**.
 
 	- Provide **Street Address**, **City**, **State/Province**, **Zip/Postal Code**, and **Country/Region** as:  
 ‎Street Address: One Microsoft Way
@@ -546,7 +547,7 @@ Country/Region: USA
 
 	- Select **Permit Types** from the sitemap.
 
-	- Click **New**.
+	- Click **+ New**.
 
 	- Provide **Name** as **New Construction** and click **Save and Close**. This will create the record and you should be able to see it on the Active Permit Type View.
 
@@ -556,7 +557,7 @@ Country/Region: USA
 
 	- Select **Permits** from the sitemap.
 
-	- Click **New**.
+	- Click **+ New**.
 
 	- Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
 
