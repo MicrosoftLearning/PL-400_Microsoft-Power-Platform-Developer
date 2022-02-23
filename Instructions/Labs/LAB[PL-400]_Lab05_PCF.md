@@ -122,6 +122,7 @@ Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
 	- Install latest **Power Apps CLI** version. Use: [https://aka.ms/PowerAppsCLI](https://aka.ms/PowerAppsCLI)   
 ‎Note: if you just installed the tools, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
+Note: If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
 
             pac install latest
 
