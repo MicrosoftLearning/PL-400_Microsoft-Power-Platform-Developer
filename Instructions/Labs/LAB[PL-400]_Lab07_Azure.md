@@ -60,7 +60,7 @@ Deploy the Azure Function
 
 ![Azure active directory - screenshot](../L07/Static/Mod_02_Azure_Functions_image2.png)
 
-- Select **App Registration** from the **Manage** section.
+- Select **Registrations** from the **Manage** section.
 
 2. Create new application registration.
 
