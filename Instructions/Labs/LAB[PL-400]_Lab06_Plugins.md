@@ -52,9 +52,13 @@ As part of building the plugins, you will complete the following activities.
 
 ## Task #1: Create the plugin
 
+Note:When you start Visual Studio, you may be asked to login as the trial has expired. If you give it a couple of minutes, it will recognize your Microsoft account and will update the license. If this doesn't happen, log in with the tenant account and password.
+
 1. Create a Visual Studio project
 
 	- Start **Visual Studio**.
+	
+	- Click **Continue without code.**
 
 	- Click **File &gt; New &gt; Project**.
 
