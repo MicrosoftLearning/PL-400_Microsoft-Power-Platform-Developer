@@ -254,7 +254,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Select service connection - screenshot](../L10/Static/Mod_3_ALM_image35.png)
 
-	- Enter **$(SolutionName)** for **Solution Name**, **$(Build.ArtifactStagingDirectory)\$(SolutionName).zip** for **Solution Output File**.
+	- Enter **$(SolutionName)** for **Solution Name**, **```$(Build.ArtifactStagingDirectory)\$(SolutionName).zip```** for **Solution Output File**.
 
     ![Solution name and solution output file - screenshot](../L10/Static/Mod_3_ALM_image36.png)
 
@@ -281,7 +281,7 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Select the **Unpack** task.
 
-	- Enter **$(Build.ArtifactStagingDirectory)\$(SolutionName).zip** for **Solution Input** **File**, **$(Build.SourcesDirectory)\$(SolutionName)** for **Target Folder**.  
+	- Enter **```$(Build.ArtifactStagingDirectory)\$(SolutionName).zip```** for **Solution Input** **File**, **```$(Build.SourcesDirectory)\$(SolutionName)```** for **Target Folder**.  
 ‎    ![Unpack solution task properties - screenshot](../L10/Static/Mod_3_ALM_image40.png)
 
 	- Click **Save and Queue** and select **Save**.
