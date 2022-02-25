@@ -533,7 +533,7 @@ Click **Done** on the other window for the solution.
 
 2. Create Flow and add trigger.
 
-	- Click **New** and select **Flow**. This will open a New window.
+	- Click **New** and select **Automation** > **Cloud flow** > **Instant**. This will open a New window.
 
     ![Create new flow - screenshot](../L09/Static/Mod_2_Custom_Connector_image66.png)
 
