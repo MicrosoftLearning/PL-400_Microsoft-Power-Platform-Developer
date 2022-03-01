@@ -3,13 +3,6 @@ lab:
     title: 'Lab 00: Validate lab environment'
 ---
 
-> [!NOTE]
-> Effective November 2020:
-> - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
->
-> This content will be updated soon to reflect the latest terminology.
-
 
 ## Practice Lab – Validate lab environment
 
@@ -27,7 +20,7 @@ Exercise 1 – Acquire your Power Platform trial tenant
 
 2. Navigate to <powerapps.microsoft.com> and click **Start free.**
 
-3. Under **Work email**, enter the email address from your Microsoft 365 credentials.
+3. Enter the email address from your Microsoft 365 credentials.
 
 4. You see a prompt that you have an existing account with Microsoft. Select **Sign in.**
 
@@ -45,15 +38,15 @@ In this exercise, you will create your **Development** environment that you will
 
 1.  Access <https://admin.Powerplatform.microsoft.com> and log in with your Microsoft 365 credentials if prompted again.
 
-2. Select **Environments** and click **+New.**
+2. Select **Environments** and click **+ New**.
 
     - For **Name**, enter **[my initials] Dev** (Example: AJ Dev)
     
-    - For **Type**, select **Trial.**
+    - For **Type**, select **Trial**.
     
-    - Change the toggle on **Create a database for this environment?** to **Yes.**
+    - Change the toggle on **Create a database for this environment?** to **Yes**.
     
-    - Leave all other selections as default and click **Next.**
+    - Leave all other selections as default and click **Next**.
     
     - On the next tab, leave all selections to default and click **Save**
 
@@ -74,12 +67,11 @@ In this exercise, you will create your Azure DevOps account that you will be usi
 
 3. Using the same browser session, go to portal.azure.com, then search for “Azure DevOps”. In the resulting page, click Azure DevOps Organizations. 
 
-4. Next, click on the link called “My Azure DevOps Organizations” (or navigate to https://aex.dev.azure.com/).
+4. Next, click on the “My Azure DevOps Organizations” link (or navigate to https://aex.dev.azure.com/).
 
 5. In the drop down box on the left, choose Default, instead of “Microsoft Account”
 
-6. Create a new organization (find blue box in upper right-hand corner of the screen) using the Default directory. Provide a unique Azure DevOps Organization name like FL-
-PermitManagement (replace FL with your first and last initials), select your region and click Continue.
+6. Create a new organization (find blue box in upper right-hand corner of the screen) using the Default directory. Provide a unique Azure DevOps Organization name like FL-PermitManagement (replace FL with your first and last initials), select your region and click Continue.
 
 8. Choose the newly created organization, then choose Organization settings on the left-hand side of the screen
 
