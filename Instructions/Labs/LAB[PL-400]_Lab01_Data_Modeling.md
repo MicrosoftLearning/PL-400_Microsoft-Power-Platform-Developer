@@ -371,9 +371,9 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
 
-	- Enter **Scheduled Date** for **Display Name**.
+	- Enter **Scheduled Date** for **Display name**.
 
-	- Select **Date Only** for **Data Type**.
+	- Select **Date Only** for **Data type**.
 
 	- Select **Required**. 
 
