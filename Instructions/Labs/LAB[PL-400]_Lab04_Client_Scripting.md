@@ -638,7 +638,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
  
 
-# Exercise #4: Command Button Function
+# Exercise #4: Command Button Function (Optional)
 
 **Objective:** In this exercise, you will you will create custom API, create function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
 
