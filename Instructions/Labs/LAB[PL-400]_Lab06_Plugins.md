@@ -45,14 +45,58 @@ As part of building the plugins, you will complete the following activities.
 
 ## Task #1: Create the plugin
 
-1. Download and install Power Platform CLI
+1. Find the value of the Status Reason columns.
+   - Navigate to https://make.powerapps.com/ and make sure you are in your dev environment.
+  
+   - Select **Solutions** and open the **Permit Management** solution.
+  
+   - Select **Switch to classic**.
+  
+   - Expand **Entities**, expand the **Permit** table, and select **Fields**.
+  
+   - Locate and double click to open the **Status Reason** column.
+  
+   - Scroll down and double click on the **Locked** option.
+  
+   - Copy the value.
+  
+    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-8.png)
+
+   - You will need this value in a future step. Select **OK**
+  
+   - Close the column editor.
+  
+   - Expand **Entities**, expand the **Inspection** table, and select **Fields**.
+  
+   - Locate and double click to open the **Status Reason** column.
+  
+   - Scroll down and double click on the **Pending** option.
+  
+   - Copy the value.
+  
+    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-9.png)
+
+   - You will need this value in a future step. Select **OK**
+  
+   - Double click on the **Cancel** option.
+
+   ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-10.png)
+  
+   - You will need this value in a future step. Select **OK**
+  
+   - Close the column editor.
+  
+  **Note:** Keep these values on a notepad, you need them in future steps.
+
+
+2. Download and install Power Platform CLI
     - Download the standalone  Microsoft Power Platform CLI https://aka.ms/PowerAppsCLI 
   
     - Run the powerapps-cli file to start installation.
   
     - Use the setup wizard to complete the setup and select **Finish**.
 
-2. Create the visual studio project
+3. Create the visual studio project
 
 	- Open the command prompt.
 	
@@ -92,7 +136,7 @@ As part of building the plugins, you will complete the following activities.
 	- Select Yes on the rename references popup.
 
 4. Get the **Target** Table.
-  - Add the using statement below to the class.
+    - Add the using statement below to the class.
 
             using Microsoft.Xrm.Sdk.Query;
 
@@ -112,18 +156,18 @@ As part of building the plugins, you will complete the following activities.
 
 	1. Create Fetch xml and that will get the count of locked permits matching the build site id and call retrieve multiple.
 
-		- Create the **FetchXML** string.
+	- Create the **FetchXML** string. Replace **[Locked Option Value]** with the locked option value of the status reason column from Permit table you copied.
 
-                string fetchString = "<fetch output-format='xml-platform' distinct='false' version='1.0' mapping='logical' aggregate='true'><entity name='contoso_permit'><attribute name='contoso_permitid' alias='Count' aggregate='count' /><filter type='and' ><condition attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{" + buildSiteRef.Id + "}'/><condition attribute='statuscode' operator='eq' value='463270000'/></filter></entity></fetch>";
+                string fetchString = "<fetch output-format='xml-platform' distinct='false' version='1.0' mapping='logical' aggregate='true'><entity name='contoso_permit'><attribute name='contoso_permitid' alias='Count' aggregate='count' /><filter type='and' ><condition attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{" + buildSiteRef.Id + "}'/><condition attribute='statuscode' operator='eq' value='[Locked Option Value]'/></filter></entity></fetch>";
 
-	    - Call RetrieveMultiple and add Trace Message.
+	- Call RetrieveMultiple and add Trace Message.
 
                 localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
                 var response = localPluginContext.CurrentUserService.RetrieveMultiple(new FetchExpression(fetchString));
 
-	8. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
+	1. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
 
-		- Get the locker permits **Count**.
+	- Get the locker permits **Count**.
 
                 int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
 
@@ -193,7 +237,7 @@ As part of building the plugins, you will complete the following activities.
 
 4. Register new assembly
 
-	- Click **Register** and select **Register** **New Assembly**.
+	- Select **Register** and select **Register** **New Assembly**.
 
     ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image20.png)
 
@@ -248,56 +292,7 @@ As part of building the plugins, you will complete the following activities.
 
 ## Task #1: Add a new plugin to the project
 
-1. Find the value of the Status Reason Locked option.
-   - Navigate to https://make.powerapps.com/ and make sure you are in your dev environment.
-  
-   - Select **Solutions** and open the **Permit Management** solution.
-  
-   - Select **Switch to classic**.
-  
-   - Expand **Entities**, expand the **Permit** table, and select **Fields**.
-  
-   - Locate and double click to open the **Status Reason** column.
-  
-   - Scroll down and double click on the **Locked** option.
-  
-   - Copy the value.
-  
-    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-8.png)
-
-   - You will need this value in a future step. Select **OK**
-  
-   - Close the column editor.
-  
-   - Expand **Entities**, expand the **Inspection** table, and select **Fields**.
-  
-   - Locate and double click to open the **Status Reason** column.
-  
-   - Scroll down and double click on the **Pending** option.
-  
-   - Copy the value.
-  
-    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-9.png)
-
-   - You will need this value in a future step. Select **OK**
-  
-   - Double click on the **Cancel** option.
-
-   ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-10.png)
-  
-   - You will need this value in a future step. Select **OK**
-  
-   - Close the column editor.
-  
-2. Add new class to the project and name it **LockPermitCancelInspections**
-
-	- Right on the project and select **Add | Class**.
-
-	- Enter **LockPermitCancelInspections** for **Name** and select **Add**.
-
-    ![Add class - screenshot](../L06/Static/Mod_01_Plugin_image29.png)
-
-2. Add **using statements** to the **LockPermitCancelInspections** class, make the class **public**, and inherit from **PluginBase**
+1. Add **using statements** to the **LockPermitCancelInspections** class, make the class **public**, and inherit from **PluginBase**
 
 	- Add the using statement below to the **LockPermitCancelInspections** class.
 
@@ -627,7 +622,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![notes results - screenshot](../L06/Static/Mod_01_Plugin_image64.png)
 
-	- You should at least one **Note** record. Click to open the **Note** record.
+	- You should at least one **Note** record. select to open the **Note** record.
 
     ![Open note record - screenshot](../L06/Static/Mod_01_Plugin_image65.png)
 
@@ -649,7 +644,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Save new permit - screenshot](../L06/Static/Mod_01_Plugin_image68.png)
 
-	- You should get the error below. Click **OK**.
+	- You should get the error below. Select **OK**.
 
     ![Record locked message - screenshot](../L06/Static/Mod_01_Plugin_image69.png)
 
@@ -659,7 +654,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Permits**.
 
-	- Click **Discard**.
+	- Select **Discard**.
 
     ![Discard changes - screenshot](../L06/Static/Mod_01_Plugin_image71.png)
 
@@ -682,11 +677,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Go back to the Permit Management application.
 
-	- Click **Settings** and select **Advanced Settings**.
+	- Select **Settings** and then select **Advanced Settings**.
 
     ![Advanced settings - screenshot](../L06/Static/Mod_01_Plugin_image73.png)
 
-	- Click **Settings** and select **Plugin Trace Log**.
+	- Select **Settings** and then select **Plugin Trace Log**.
 
     ![Plug-in trace log - screenshot](../L06/Static/Mod_01_Plugin_image74.png)
 
@@ -696,15 +691,11 @@ As part of building the plugins, you will complete the following activities.
 
 2. Open the log and see what was logged.
 
-	- Click to open the Lock Permit log.
+	- Open the log with the Create message.
 
     ![Open log - screenshot](../L06/Static/Mod_01_Plugin_image76.png)
 
-	- Scroll down to the Execution section.
-
-	- Examine your Trace messages.
-
-    ![Trace message - screenshot](../L06/Static/Mod_01_Plugin_image77.png)
+	- Scroll down to the Execution section and examine
 
  
 
