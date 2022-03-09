@@ -3,12 +3,6 @@ lab:
     title: 'Lab 10: Application Lifecycle Management'
 ---
 
-> [!NOTE]
-> Effective November 2020:
-> - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *Table* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
->
-> This content will be updated soon to reflect the latest terminology.
 
 
 ## Lab 10 – Application Lifecycle Management
@@ -17,7 +11,7 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates the remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will use Azure DevOps for source control of your solution assets. As you have been building your app you have been tracking all the changes in a Permit Management solution. You have exported this solution, so you had a back up copy. You have also manually imported the managed version of the solution into your production environment. As part of this lab you will see how you can automate working with solutions and use the Power Apps Azure DevOps tasks to check the changes into an Azure DevOps Repository. This is the start of an overall ALM process that you would put in place to automate the complete lifecycle form development to production using Azure DevOps automation. In this lab you will be completing the first phase of that automation.
+In this lab you will use Azure DevOps for source control of your solution assets. As you have been building your app you have been tracking all the changes in a Permit Management solution. You have exported this solution, so you had a back up copy. You have also manually imported the managed version of the solution into your production environment. As part of this lab you will see how you can automate working with solutions and use the Power Apps Azure DevOps tasks to check the changes into an Azure DevOps repository. This is the start of an overall ALM process that you would put in place to automate the complete lifecycle form development to production using Azure DevOps automation. In this lab, you will be completing the first phase of that automation.
 
 # High-level lab steps
 
@@ -62,7 +56,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 2. Create the Azure DevOps project
 
-	- Enter **Permit Management** for **Project Name**, select **Private**, and click **Create Project**.
+	- Enter **Permit Management** for Project Name, select **Private**, and then select **+ Create project**.
 
     ![Azure DevOps project - screenshot](../L10/Static/Mod_3_ALM_image4.png)
 
@@ -72,7 +66,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Select repos - screenshot](../L10/Static/Mod_3_ALM_image5.png)
 
-	- Scroll down to the bottom, check the **Add a Readme** checkbox, and click **Initialize**.
+	- Scroll down to the bottom, make sure the **Add a Readme** checkbox is checked, and select **Initialize**.
 
     ![Initialize readme - screenshot](../L10/Static/Mod_3_ALM_image6.png)
 
@@ -88,27 +82,25 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Power Platform build tools - screenshot](../L10/Static/Mod_3_ALM_image7.png)
 
- 
-
-	- Click **Get it Free**.
+	- Select **Get it Free**.
 
     ![Get free Power Platform build tools - screenshot](../L10/Static/Mod_3_ALM_image8.png)
 
-	- Select the **Azure DevOps** organization you created and click **Install**.
+	- Select the **Azure DevOps** organization you created and then select **Install**.
 
     ![Install Power Platform build tools - screenshot](../L10/Static/Mod_3_ALM_image9.png)
 
-	- Click **Proceed to Organization**.
+	- Select **Proceed to Organization**.
 
     ![Proceed to organization - screenshot](../L10/Static/Mod_3_ALM_image10.png)
 
 2. Go to Git repositories security
 
-	- Click to open the **Permit Management** project you created.
+	- Open the **Permit Management** project you created.
 
     ![Open project - screenshot](../L10/Static/Mod_3_ALM_image11.png)
 
-	- Click **Project Settings**.
+	- Select **Project Settings**.
 
     ![Project settings - screenshot](../L10/Static/Mod_3_ALM_image12.png)
 
@@ -136,7 +128,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Allow contribute - screenshot](../L10/Static/Mod_3_ALM_image16.png)
 
-	- Click **Show More** to expand the menu.
+	- Select **Show More** to expand the menu.
 
     ![Show more - screenshot](../L10/Static/Mod_3_ALM_image17.png)
 
@@ -153,19 +145,19 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 1. Create Build Pipeline
 
-	- Click to expand **Pipelines**.
+	- Expand **Pipelines**.
 
     ![Pipelines - screenshot](../L10/Static/Mod_3_ALM_image18.png)
 
-	- Click **New Pipeline**.
+	- Select **New Pipeline**.
 
     ![Create new pipeline - screenshot](../L10/Static/Mod_3_ALM_image19.png)
 
-	- Click **Use the Classic Editor.**
+	- Select **Use the Classic Editor.**
 
     ![Use the classic editor - screenshot](../L10/Static/Mod_3_ALM_image20.png)
 
-	- Don’t change the default values and click **Continue**.
+	- Don’t change the default values. Select **Continue**.
 
     ![Select source - screenshot](../L10/Static/Mod_3_ALM_image21.png)
 
@@ -173,22 +165,22 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Empty job - screenshot ](../L10/Static/Mod_3_ALM_image22.png)
 
-	- Click **Save and Queue** and select **Save**.
+	- Select **Save and Queue** and then select **Save**.
 
     ![Save pipeline - screenshot](../L10/Static/Mod_3_ALM_image23.png)
 
-	- Click **Save**.
+	- Select **Save**.
 
     ![Save build pipeline - screenshot](../L10/Static/Mod_3_ALM_image24.png)
 
 2. Add Power Apps Tool Installer task   
 ‎Note: The Power Apps Tool Installer needs to be run before any other Power Apps ALM tasks.
 
-	- Click **+** icon to add Task to **Agent Job 1**.
+	- Select **+** icon to add task to **Agent Job 1**.
 
     ![Add task - screenshot ](../L10/Static/Mod_3_ALM_image25.png)
 
-	- Search for **Power Platform Tool,** hover over select **Power Platform Tool Installer** and click **Add**.
+	- Search for **Power Platform Tool**,  hover over select **Power Platform Tool Installer** and click **Add**.
 
     ![Power Platform tool installer - screenshot](../L10/Static/Mod_3_ALM_image26.png)
 
@@ -210,7 +202,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Start a new browser window or tab and sign in to [Power Platform admin center](https://admin.powerplatform.microsoft.com/support) 
 
-	- Select **Environments** and click to open the **Dev** environment.
+	- Select **Environments** and open the **Dev** environment.
 
 	- Copy the **Environment URL** and keep it in your clipboard.
 
@@ -224,19 +216,19 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Make sure you still have the **Power Platform Export Solution** task selected.
 
-	- Click **Manage** service sonnection. This will open a new window.
+	- Select **Manage** service sonnection. This will open a new window.
 
     ![Manage service connection - screenshot](../L10/Static/Mod_3_ALM_image30.png)
 
-	- Click **Create Service Connection**.
+	- Select **Create Service Connection**.
 
     ![New service connection - screenshot](../L10/Static/Mod_3_ALM_image31.png)
 
-	- Select **Generic** and click **Next**.
+	- Select **Generic** and then select **Next**.
 
     ![Generic service connection - screenshot](../L10/Static/Mod_3_ALM_image32.png)
 
-	- Paste the **Environment URL** you copied in Server URL, provide your admin credentials, provide a connection name, and click **Save**.
+	- Paste the **Environment URL** you copied in Server URL, provide your admin credentials, provide a connection name, and select **Save**.
 
     ![Save service connection - screenshot](../L10/Static/Mod_3_ALM_image33.png)
 
@@ -246,7 +238,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Go back to the **Build Pipeline** tasks and make sure you still have Power Apps Export Solution task selected.
 
-	- Locate the **Power Apps Environment URL** Column and click **Refresh**.
+	- Locate the **Power Apps Environment URL** Column and select **Refresh**.
 
     ![Refresh service connection - screenshot](../L10/Static/Mod_3_ALM_image34.png)
 
@@ -254,20 +246,20 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Select service connection - screenshot](../L10/Static/Mod_3_ALM_image35.png)
 
-	- Enter **$(SolutionName)** for **Solution Name**, **$(Build.ArtifactStagingDirectory)\$(SolutionName).zip** for **Solution Output File**.
+	- Enter $(SolutionName) for Solution Name, $(Build.ArtifactStagingDirectory)\$(SolutionName).zip for Solution Output File.
 
     ![Solution name and solution output file - screenshot](../L10/Static/Mod_3_ALM_image36.png)
 
-	- Click **Save and Queue** and select **Save**.
+	- Select **Save and Queue** and then select **Save**.
 
     ![Save tasks - screenshot](../L10/Static/Mod_3_ALM_image37.png)
 
-	- Click **Save** again.
+	- Select **Save** again.
 
 8. Add Unpack task.
 This task will take the solution zip file and expand it into a file for each solution component.
 
-	- Click **+ Add Task**.
+	- Select **Add Task**.
 
     ![New task - screenshot](../L10/Static/Mod_3_ALM_image38.png)
 
@@ -281,12 +273,12 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Select the **Unpack** task.
 
-	- Enter **$(Build.ArtifactStagingDirectory)\$(SolutionName).zip** for **Solution Input** **File**, **$(Build.SourcesDirectory)\$(SolutionName)** for **Target Folder**.  
-‎    ![Unpack solution task properties - screenshot](../L10/Static/Mod_3_ALM_image40.png)
+	- Enter $(Build.ArtifactStagingDirectory)\$(SolutionName).zip for Solution Input File, $(Build.SourcesDirectory)\$(SolutionName) for **Target Folder**.  
+    ![Unpack solution task properties - screenshot](../L10/Static/Mod_3_ALM_image40.png)
 
-	- Click **Save and Queue** and select **Save**.
+	- Select **Save and Queue** and then select **Save**.
 
-	- Click **Save** again.
+	- Select **Save** again.
 
 10. Allow scripts to access the OAuth Token.
 
@@ -300,13 +292,13 @@ This task will take the solution zip file and expand it into a file for each sol
 
 11. Add Command Line task
 
-	- Click **+ Add a Task**.
+	- Select **+ Add a Task**.
 
     ![Add new task - screenshot](../L10/Static/Mod_3_ALM_image43.png)
 
 	- Search for **Command Line**.
 
-	- Hover over **Command Line** and click **Add**.
+	- Hover over **Command Line** and select **Add**.
 
     ![Command line task - screenshot](../L10/Static/Mod_3_ALM_image44.png)
 
@@ -319,11 +311,11 @@ This task will take the solution zip file and expand it into a file for each sol
             echo commit all changes
             git config user.email "user@myorg.onmicrosoft.com"
             git config user.name "Automatic Build"
-            git checkout master
+            git checkout main
             git add --all
             git commit -m "solution init"
             echo push code to new repo
-            git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin master
+            git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin main
 
     ![Command line script - screenshot](../L10/Static/Mod_3_ALM_image45.png)
 
@@ -331,7 +323,7 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Select the **Variables** tab.
 
-	- Click **+ Add.**
+	- Select **+ Add.**
 
     ![Add variable - screenshot](../L10/Static/Mod_3_ALM_image46.png)
 
@@ -339,15 +331,13 @@ This task will take the solution zip file and expand it into a file for each sol
 
     ![New variable - screenshot](../L10/Static/Mod_3_ALM_image47.png)
 
-	- Click **Save and Queue** and select **Save**.
+	- Select **Save and Queue** and then select **Save**.
 
-	- Click **Save** again.
-
- 
+	- Select **Save** again.
 
  
 
-  
+ 
 ‎ 
 
 # Exercise #3: Test the Pipeline
@@ -358,11 +348,11 @@ This task will take the solution zip file and expand it into a file for each sol
 
 1. Open the build pipeline
 
-	- Sign in to [Azure DevOps](https://dev.azure.com/) and click to open the **Permit Management** project.
+	- Sign in to [Azure DevOps](https://dev.azure.com/) and open the **Permit Management** project.
 
     ![Open project - screenshot](../L10/Static/Mod_3_ALM_image48.png)
 
-	- Click **Project Settings**.
+	- Select **Project Settings**.
 
     ![Project settings - screenshot](../L10/Static/Mod_3_ALM_image49.png)
 
@@ -384,15 +374,15 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Select **Permit Management-CI**.
 
-	- Click **Run Pipeline**.
+	- Select **Run Pipeline**.
 
     ![Run pipeline - screenshot ](../L10/Static/Mod_3_ALM_image53.png)
 
-	- Click **Run** again and wait.
+	- Select **Run** again and wait.
 
     ![Run pipeline pane - screenshot ](../L10/Static/Mod_3_ALM_image54.png)
 
-	- Wait until the job completed and click to open it.
+	- Wait until the job completed and then open it.
 
     ![Open run results - screenshot](../L10/Static/Mod_3_ALM_image55.png)
 
