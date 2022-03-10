@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 00: Validate my lab environment'
+    title: 'Lab 00: Validate lab environment'
 ---
 
 
