@@ -39,8 +39,17 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 - Are there any other build tasks you should consider?
 
-  
-‎ 
+
+‎
+
+
+**Requirement**
+
+To avoid abuse Azure Pipelines now requires approval in free accounts to run pipelines. Use the following form to request the free grant of parallel jobs in Azure Pipelines. Please fill out [this form](https://aka.ms/azpipelines-parallelism-request)  This must be approved before you can complete the steps in this lab.
+
+You will receive an email when your approval request is completed.
+
+‎
 
 # Exercise #1: Initialize Azure DevOps
 
@@ -180,7 +189,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
     ![Add task - screenshot ](../L10/Static/Mod_3_ALM_image25.png)
 
-	- Search for **Power Platform Tool**,  hover over select **Power Platform Tool Installer** and click **Add**.
+	- Search for **Power Platform Tool**,  hover over select **Power Platform Tool Installer** and select **Add**.
 
     ![Power Platform tool installer - screenshot](../L10/Static/Mod_3_ALM_image26.png)
 
@@ -188,7 +197,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Search for **Export.**
 
-	- Hover over **Power Platform Export Solution** and click **Add**.
+	- Hover over **Power Platform Export Solution** and select **Add**.
 
     ![Power Platform export solution - screenshot](../L10/Static/Mod_3_ALM_image27.png)
 
@@ -238,7 +247,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 	- Go back to the **Build Pipeline** tasks and make sure you still have Power Apps Export Solution task selected.
 
-	- Locate the **Power Apps Environment URL** Column and select **Refresh**.
+	- Locate the **Power Apps Environment URL** column and select **Refresh**.
 
     ![Refresh service connection - screenshot](../L10/Static/Mod_3_ALM_image34.png)
 
@@ -265,7 +274,7 @@ This task will take the solution zip file and expand it into a file for each sol
 
 	- Search for **Unpack**.
 
-	- Hover over **Power Platform Unpack Solution** and click **Add**.
+	- Hover over **Power Platform Unpack Solution** and select **Add**.
 
     ![Power Platform unpack solution task - screenshot](../L10/Static/Mod_3_ALM_image39.png)
 
@@ -396,7 +405,7 @@ This task will take the solution zip file and expand it into a file for each sol
 
     ![Select repos - screenshot](../L10/Static/Mod_3_ALM_image57.png)
 
-	- You should see **PermitManagement** folder. Click to open the folder.
+	- You should see **PermitManagement** folder. Open the folder.
 
     ![Open folder - screenshot](../L10/Static/Mod_3_ALM_image58.png)
 
@@ -414,31 +423,27 @@ You may examine the content of each folder.
 
 	- Select **Solutions**.
 
-	- Click to open the **Permit Management** solution.
+	- Open the **Permit Management** solution.
 
-    ![Open solution - screenshot](../L10/Static/Mod_3_ALM_image60.png)
+2. Open the Permit table form for edit
 
-2. Open the Permit Table form for edit
+	- Select **Tables** and open the **Permit** table.
 
-	- Click to open **Permit** Table.
+    ![Open table - screenshot](../L10/Static/Mod_3_ALM_image61.png)
 
-    ![Open Table - screenshot](../L10/Static/Mod_3_ALM_image61.png)
-
-	- Select the **Forms** tab and click to open the **Main** form.
+	- Select the **Forms** tab and open the **Main** form.
 
     ![Open form - screenshot ](../L10/Static/Mod_3_ALM_image62.png)
 
-3. Move the Contact lookup Column
+3. Move the Contact lookup column
 
-	- Drag the **Contact** lookup Column and drop it between the **Start Date** and **New Size** Columns.
+	- Drag the **Contact** lookup column and drop it between the **Start Date** and **New Size** columns.
 
-    ![Move Column - screenshot](../L10/Static/Mod_3_ALM_image63.png)
+    ![Move column - screenshot](../L10/Static/Mod_3_ALM_image63.png)
 
-	- Click **Save**.
+	- Select **Save**.
 
-	- Click **Publish** and wait for the publishing to complete.
-
-    ![Publish changes - screenshot ](../L10/Static/Mod_3_ALM_image64.png)
+	- Select **Publish** and wait for the publishing to complete.
 
 ## Task #3: Run Build Pipeline  
 
@@ -446,9 +451,7 @@ You may examine the content of each folder.
 
 	- Sign in to [Azure DevOps](https://dev.azure.com/) 
 
-	- Click to open the **Permit Management** project
-
-    ![Open project - screenshot ](../L10/Static/Mod_3_ALM_image65.png)
+	- Open the **Permit Management** project
 
 2. Run the build pipeline again
 
@@ -458,11 +461,11 @@ You may examine the content of each folder.
 
 	- Select **Permit Management-CI**.
 
-	- Click **Run Pipeline**.
+	- Select **Run Pipeline**.
 
     ![Run pipeline - screenshot](../L10/Static/Mod_3_ALM_image67.png)
 
-	- Click **Run** and wait for the run to complete.
+	- Select **Run** and wait for the run to complete.
 
 	- Open the job after it completes.
 
@@ -482,7 +485,7 @@ You may examine the content of each folder.
 
     ![Select commits - screenshot ](../L10/Static/Mod_3_ALM_image71.png)
 
-	- Click to open then topmost commit.
+	- Open the topmost commit.
 
     ![Open commit - screenshot](../L10/Static/Mod_3_ALM_image72.png)
 
@@ -492,7 +495,7 @@ You may examine the content of each folder.
 
 4. View side-by-side.
 
-	- Click **View**.
+	- Select **View**.
 
     ![View side-by-side - screenshot](../L10/Static/Mod_3_ALM_image74.png)
 
