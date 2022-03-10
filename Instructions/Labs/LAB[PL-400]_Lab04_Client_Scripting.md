@@ -859,7 +859,7 @@ In this task, you will create the logic to invoke a custom action using the web 
 
 4. Build and return the request
 
-	- Add the script mentioned below in the **_lockPermiRequest** function.
+	- Add the script mentioned below in the **_lockPermitRequest** function.
 
             this.getMetadata = function () {
                 return {
