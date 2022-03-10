@@ -10,7 +10,7 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and perform automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab, you will set up a second environment to mimic a production environment for learning purposes, create solutions to track your changes. You will also create a data model to support the following requirements:
+In this lab, you will set up a second environment to mimic a production environment for learning purposes and create solutions to track your changes. You will also create a data model to support the following requirements:
 
 - R1 – Track the status of permits issued for new buildings and existing building modifications
 
@@ -53,9 +53,9 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Navigate to [Power Apps Community Plan page](https://powerapps.microsoft.com/en-us/communityplan/)
 	- Click on *Existing user? Add a dev environment*
-	- Enter your credentials when prompt to sign in
+	- Enter your credentials when prompted to sign in
 	- Select your country from the dropdown menu and click *Accept*
-	- Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment had been created by the system. We will refer to it as "Prod" environment for the rest of this course.
+	- Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment has been created by the system. We will refer to it as "Prod" environment for the rest of this course.
 
 
 
@@ -78,7 +78,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 2. Create Publisher
 
-	- Select the **+ New Publisher**button below **Publisher** dropdown.
+	- Select the **+ New Publisher** button below **Publisher** dropdown.
 
     ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
@@ -201,7 +201,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Done**.
 	
-	- Click on Chevron icon next to **Default**  
+	- Click on chevron icon next to **Default**  
 
 	- Select **Custom** for filter.
 
@@ -346,7 +346,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 2. Add Inspection Type Column
 
 	- Open the **Inspection** table.
-	- 
+	
 	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
 
 	- Enter **Inspection Type** for **Display name**.
