@@ -163,7 +163,7 @@ Close the **PluginBase** file.
 
 		- Get the locker permits **Count**.
 
-                int lockedPermitCount = (int)((AliasedValue)response.Tables[0]["Count"]).Value;
+                int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
 
 	- Add Trace Message, check if the **Count** is more than **0** and throw **InvalidPluginExecutionException** if it is more than **0**.
 
