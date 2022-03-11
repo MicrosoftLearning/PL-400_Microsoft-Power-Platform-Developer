@@ -35,7 +35,7 @@ As part of building the Azure Function, you will complete the following:
 
 # Exercise #1: Configure an application user
 
-**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to the Microsoft Dataverse. 
+**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse. 
 
 ## Task #1: Register Azure AD Application
 
@@ -128,7 +128,7 @@ In this task, you will create the application user and associate it with the Azu
 
   ![Users - screenshot](../L07/Static/Mod_02_Azure_Functions_image16.png)
 
-- Select **Aop users list**.
+- Select **App users list**.
 
   ![App users list button - screenshot](../L07/Static/Mod_02_Azure_Functions_image17.png)
 
@@ -142,7 +142,7 @@ In this task, you will create the application user and associate it with the Azu
 
   ![Switch form - screenshot](../L07/Static/Mod_02_Azure_Functions_image20.png)
 
-- Select your Business unit and then select edit **Security roles**.
+- Select your Business Unit and then select edit **Security roles**.
 
   ![Edit security roles- screenshot](../L07/Static/Mod_02_Azure_Functions_image21.png)
 
@@ -275,7 +275,7 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Add values - screenshot](../L07/Static/Mod_02_Azure_Functions_image45.png)
 
-- Find the Client Secret you saved in the notepad and paste as the cdsclientsecret.
+- Find the client secret you saved in the notepad and paste as the cdsclientsecret.
 
 ![Client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image46.png)
 
@@ -315,11 +315,11 @@ In this task, you will create the application user and associate it with the Azu
 
 - Save and close the file.
 
-1. Add using statements to the function class.
+8. Add using statements to the function class.
 
 - Open the **InspectionRouter.cs** file
 
-- Add the using statements below.
+- Add the using statements below
 
         using System.Threading.Tasks;
         using Xrm.Tools.WebAPI;
@@ -434,7 +434,7 @@ Go back **Visual Studio** and stop debugging.
 
 - Close the classic table editor.
 
-2. Create a method that will get all active inspections that are New Request or Pending, and scheduled them for today
+2. Create a method that will get all active inspections that are New Request or Pending, and schedule them for today
 
 - Add the method below inside the class.
 
@@ -506,7 +506,7 @@ Go back **Visual Studio** and stop debugging.
 
 ![Call get users method - screenshot](../L07/Static/Mod_02_Azure_Functions_image59.png)
 
-4. Create a method that will assign inspections to users
+5. Create a method that will assign inspections to users
 
 - Add the method below to the class.
 
@@ -519,14 +519,14 @@ Go back **Visual Studio** and stop debugging.
         return await api.Update("contoso_inspections", new Guid(inspection.contoso_inspectionid), updateObject);
         }
 
-5. Create two-digit random number.
+6. Create two-digit random number.
 
 - Add the code below to the Run method.
 
         Random rnd = new Random();
         int sequenceNumber = rnd.Next(10, 99);
 
-6. Assign Inspections
+7. Assign Inspections
 
 - Go through the **Inspections** and call the **RouteInspection** method.
 
