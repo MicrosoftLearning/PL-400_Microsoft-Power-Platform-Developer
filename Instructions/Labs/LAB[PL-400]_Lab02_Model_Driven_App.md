@@ -79,7 +79,7 @@ The following is what the model-driven app designer looks like when all the cust
   
     ![Add columns to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image4.png)
 
-	- Select the header pf the form.
+	- Select the header of the form.
   
 	- Add the **Status Reason** column to the form header.
 
@@ -193,7 +193,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Add **City** and **Zip/Postal Code** to the view.
 
-	- Remove **Created On** from the view by selecting **Remove** from the options in column Chevron.
+	- Remove **Created On** from the view by selecting **Remove** from the options in column chevron.
 
 	![Active build sites view - screenshot ](../L02/Static/Mod_02_Model_Driven_App_image19.png)
 
@@ -293,7 +293,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 14. Select **Publish** and wait for the publishing to complete.
 
-15. Select the **<- Back** button.
+15. Select on the **<- Back** button.
 
  
 
@@ -508,7 +508,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	![Created contact record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image43.png)
 
-1. Create new Build Site record
+3. Create new Build Site record
 
 	- Select **Build Sites** from the sitemap.
 
@@ -520,7 +520,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	![Created build site record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image44.png)
 
-1. Create new Permit Type record
+4. Create new Permit Type record
 
 	- Select **Permit Types** from the sitemap.
 
