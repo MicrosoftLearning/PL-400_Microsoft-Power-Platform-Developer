@@ -16,7 +16,7 @@ In this lab you will build two plugins. The first plugin will run when a new per
 
 As part of building the plugins, you will complete the following activities.
 
-- Create two plugins using a provided common base class.
+- Create two plugins.
 
 - Implement logic to work with a plugin registered on an table event.
 
