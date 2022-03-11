@@ -28,7 +28,7 @@ As part of building the client-side logic, you will complete the following:
 
 - Build logic to set columns as required/not required based on the permit type settings
 
-- Use a community tool, Ribbon Workbench, to modify the command bar
+- Modify the command bar
 
 - Build logic to invoke the lock permit custom API when the command bar button is selected
 
