@@ -87,7 +87,7 @@ As part of configuring the custom connector, you will complete the following
 	- Select **HTTP trigger** and then select **Create**.
 
 
-3. Add the **Using Statements** and **CRMCalcRequest** class to the function.
+3. Add the **Using Statements** and **CPMCalcRequest** class to the function.
 
 	- Select **Code + Test**.
 
@@ -120,7 +120,7 @@ As part of configuring the custom connector, you will complete the following
 
     ![Edit run method - screenshot](../L09/Static/Mod_2_Custom_Connector_image10.png)
 
-5. Get the Request body and deserialize it as **CRMCalcRequest**
+5. Get the Request body and deserialize it as **CPMCalcRequest**
 
 	- Get the request **Body** from the request argument. Add the code below inside the **Run** method.
 
@@ -307,7 +307,7 @@ As part of configuring the custom connector, you will complete the following
 
 # Exercise #3 Test Connector 
 
-**Objective:** In this exercise, you will use the Custom Connector from a Power Apps canvas app and a Power Automate.
+**Objective:** In this exercise, you will use the Custom Connector for a Power Apps canvas app and a Power Automate.
 
 ## Task #1: Test on Canvas App
 
@@ -511,7 +511,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Open the **Permit Management** solution.
 
-2. Create Flow and add trigger.
+2. Create flow and add trigger.
 
 	- Select **+ New**.
   
@@ -551,7 +551,7 @@ As part of configuring the custom connector, you will complete the following
 
     ![Save flow - screenshot](../L09/Static/Mod_2_Custom_Connector_image71.png)
 
-5. Test the Flow
+5. Test the flow
 
 	- Select **Test**.
 
@@ -565,7 +565,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Run Flow**.
 
-	- Select **Done**. The Flow should run successfully. In the Flow run history, expand the CPM Calculator action. 
+	- Select **Done**. The flow should run successfully. In the flow run history, expand the CPM Calculator action. 
 
     ![Succeeded run - screenshot](../L09/Static/Mod_2_Custom_Connector_image74.png)
 
