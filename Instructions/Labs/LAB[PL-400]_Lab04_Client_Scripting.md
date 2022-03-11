@@ -643,9 +643,9 @@ In this task, you will use the web API to retrieve the permit type lookup record
 **Objective:** In this exercise, you will you will create custom API, create a function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
 
 
-## Task #1: Create Action API
+## Task #1: Create Custom API
 
-In this task, you will create a custom API that will be called to lock the permit. You will not be implementing the business logic that will lock the permit in this lab. It will be completed later in the class when you build the plug-in that registers on the custom actions you are defining here.
+In this task, you will create a custom API that will be called to lock the permit. You will not be implementing the business logic that will lock the permit in this lab. It will be completed later in the class when you build the plug-in that registers on the custom api you are defining here.
 
 1. Open the Permit Management Solution.
 
