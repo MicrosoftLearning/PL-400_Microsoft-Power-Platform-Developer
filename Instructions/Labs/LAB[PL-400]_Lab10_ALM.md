@@ -81,7 +81,7 @@ You will receive an email when your approval request is completed.
 
 ## Task #2: Configure Power Apps ALM Tasks
 
-1. Get Power Apps BuildTools
+1. Get Power Platform Build Tools
 
 	- Sign in to [Visual Studio marketplace](https://marketplace.visualstudio.com/azuredevops) 
 
@@ -419,7 +419,7 @@ You may examine the content of each folder.
 
 1. Open the Permit Management solution
 
-	- Sign in to [Power apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
 	- Select **Solutions**.
 
