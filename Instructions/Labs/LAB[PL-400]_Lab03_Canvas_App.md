@@ -13,7 +13,7 @@ As we continue to build our solution, we will now design a Power Apps canvas app
 
 # High-level lab steps
 
-We will follow the below schema to design the canvas app:
+We will follow the below basic steps to design the canvas app:
 
 - Create the app using the tablet form factor.
 
@@ -78,7 +78,7 @@ This second screen it will let the inspector update the selected Inspection.
 	
 	- Select **File** and then select **Save As**.
 
-	- Select **The Cloud** and select **Save**. This will make sure that the changes are not removed if the app closes unexpectedly.
+	- Select **The Cloud** and select **Save**. This will make sure that the changes are not lost if the app closes unexpectedly.
 
     ![Save application](../L03/Static/Mod_03_Canvas_App_image5.png)
 
@@ -96,8 +96,6 @@ This second screen it will let the inspector update the selected Inspection.
 
 4. Import Component.
 
-**NOTE: Follow the workaround as listed at the beginning of the lab.**
-
    - Select the **Components** tab.
 
    - Select the **… (Component Options)** button and select Import **Components**.
@@ -106,10 +104,10 @@ This second screen it will let the inspector update the selected Inspection.
 
    - Select **Upload File**.
   
-   - Browser to the lab resources folder (L03\Resources), select the **Components.msapp** file and select **Open**.
+   - Browse to the lab resources folder (L03\Resources), select the **Components.msapp** file and select **Open**.
     ![Select components to upload - screenshot](../L03/Static/Mod_03_Canvas_App_image9.png)
 
-1. Add the Header component to the MainScreen.
+5. Add the Header component to the MainScreen.
 
 	- Select the **Screens** tab.
 
@@ -125,7 +123,7 @@ This second screen it will let the inspector update the selected Inspection.
 
 	- Rename **Header_1** to **Main Header** by double click on Header_1.
 
-2. Change the Main Header properties
+6. Change the Main Header properties
 
 	- Select **Main Header**.
 
@@ -390,7 +388,7 @@ This second screen it will let the inspector update the selected Inspection.
     
    ![Display mode - screenshot](../L03/Static/Mod_03_Canvas_App_image45.png)
 
-1. Change the Status Reason label.
+8. Change the Status Reason label.
 
 	- Select the **Status Reason data card**.
 
@@ -616,7 +614,7 @@ This second screen it will let the inspector update the selected Inspection.
 
     ![Solution checker with zero issues result - screenshot](../L03/Static/Mod_03_Canvas_App_image71.png)
 
-1. Export managed solution
+3. Export managed solution
 
 	- Select **Solutions** and then select the **Permit Management** solution.
 
@@ -657,7 +655,7 @@ This second screen it will let the inspector update the selected Inspection.
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) 
 
 	- Make sure you have your **Prod** environment selected.
-    **Note** If you are using the community plan environment as instructed (e.g: [username]'s Environment), you may need to create a data base before you proceed to the next step.
+    **Note** If you are using the community plan environment as instructed (e.g: [username]'s Environment), you may need to create a database before you proceed to the next step.
 
 2. Import solution
 
