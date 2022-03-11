@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab 06: Plug-ins'
+    title: 'Lab 06: Plugins'
 ---
 
 
-## Lab 06 – Plug-ins
+## Lab 06 – Plugins
 
 # Scenario
 
@@ -78,7 +78,7 @@ As part of building the plugins, you will complete the following activities.
 
    - You will need this value in a future step. Select **OK**
   
-   - Double click on the **Cancel** option.
+   - Double click on the **Canceled** option.
 
    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-10.png)
   
@@ -96,7 +96,7 @@ As part of building the plugins, you will complete the following activities.
   
     - Use the setup wizard to complete the setup and select **Finish**.
 
-3. Create the visual studio project
+3. Create the Visual Studio project
 
 	- Open the command prompt.
 	
@@ -154,7 +154,7 @@ As part of building the plugins, you will complete the following activities.
 
             localPluginContext.Trace("Build Site Entity Id: " + buildSiteRef.Id);
 
-	1. Create Fetch xml and that will get the count of locked permits matching the build site id and call retrieve multiple.
+	5. Create Fetch xml and that will get the count of locked permits matching the build site id and call retrieve multiple.
 
 	- Create the **FetchXML** string. Replace **[Locked Option Value]** with the locked option value of the status reason column from Permit table you copied.
 
@@ -165,9 +165,9 @@ As part of building the plugins, you will complete the following activities.
                 localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
                 var response = localPluginContext.CurrentUserService.RetrieveMultiple(new FetchExpression(fetchString));
 
-	1. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
+	6. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
 
-	- Get the locker permits **Count**.
+	- Get the locked permits **Count**.
 
                 int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
 
@@ -183,7 +183,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Execute CDS Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
 
-	- Build the project and make sure it succeeds. To build the project, right click on the project and select **Build**. Check the output and make sure that the build is succeeded. If it does not, go back and review your work compared the steps documented here. 
+	- Build the project and make sure it succeeds. To build the project, right click on the project and select **Build**. Check the output and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here. 
 
  
 
@@ -219,7 +219,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Start plugin registration tool - screenshot](../L06/Static/Mod_01_Plugin_image16.png)
 
-2. Connect to your org.
+3. Connect to your org.
 
 	- Select **Create New Connection**.
 
@@ -305,7 +305,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Add using statements and edit class - screenshot](../L06/Static/Mod_01_Plugin_image30.png)
 
-3. To override the ExecuteCDSPlugin method and get the reason value from the input parameter.
+3. Override the ExecuteCDSPlugin method and get the reason value from the input parameter.
 
 	- Override the **ExecuteCDSPlugin** method. Add the code below inside the **LockPermitCancelInspections** method.
 
@@ -465,7 +465,7 @@ As part of building the plugins, you will complete the following activities.
 
 ## Task #4: Deploy Plugin
 
-1. If you do not have the plugin registration tool running already, follow instructions in Exercise #1, Task #2 to run the tool and connect to the organization.
+1. If you do not have the plugin registration tool running already, follow instructions above to run the tool and connect to the organization.
 
 2. Update the assembly
 
@@ -622,7 +622,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![notes results - screenshot](../L06/Static/Mod_01_Plugin_image64.png)
 
-	- You should at least one **Note** record. select to open the **Note** record.
+	- You should have at least one **Note** record. Select to open the **Note** record.
 
     ![Open note record - screenshot](../L06/Static/Mod_01_Plugin_image65.png)
 
@@ -669,7 +669,7 @@ As part of building the plugins, you will complete the following activities.
 
 # Exercise #4: Plugin Trace Log and Debugging
 
-**Objective:** In this exercise, you will check the Plugin Trace log and debug the plugins
+**Objective:** In this exercise, you will check the Plugin Trace log and debug the plugins.
 
 ## Task #1: Plugin Trace Log
 
@@ -695,7 +695,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Open log - screenshot](../L06/Static/Mod_01_Plugin_image76.png)
 
-	- Scroll down to the Execution section and examine
+	- Scroll down to the Execution section and examine.
 
  
 
