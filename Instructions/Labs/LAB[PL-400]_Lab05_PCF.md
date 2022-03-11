@@ -109,7 +109,7 @@ This is what the component will look like when it is completed.
 
             cls
 
-4. Install the latest Power Apps CLI, create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**.
+4. Install the latest Power Apps CLI, create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**
 
 	- Install latest **Power Apps CLI** version. Use: [https://aka.ms/PowerAppsCLI](https://aka.ms/PowerAppsCLI)
   
@@ -129,7 +129,7 @@ This is what the component will look like when it is completed.
 
 	- Wait for the dependency installation to complete.
 
-5. Open the **src** folder in Visual Studio Code and review the generated resources.
+5. Open the **src** folder in Visual Studio Code and review the generated resources
 
 	- Open the **src** folder in **Visual Studio Code**. For this to work, make sure that the Visual Studio Code is added to Path in Environment Variables.
 
@@ -151,7 +151,7 @@ This is what the component will look like when it is completed.
 
 	- Open the **ManifestTypes** file and examine it.
 
-6. Open CLI in visual studio code.
+6. Open CLI in visual studio code
 
 	- Select **Terminal** and select **New Terminal**. If Terminal is not visible in the menu, you can open it by selecting View -> Integrated Terminal.
 
@@ -173,7 +173,7 @@ This is what the component will look like when it is completed.
 
     ![cmd terminal - screenshot =](../L05/Static/mod-02-pcf-1-12.png)
 
-7. Run the Build command and review the out folder.
+7. Run the Build command and review the out folder
 
 	- Run **npm** **build** in the terminal
 
@@ -183,7 +183,7 @@ This is what the component will look like when it is completed.
 
     ![Out folder - screenshot](../L05/Static/mod-02-pcf-1-13.png)
 
-8. Run the Start command to start the test harness.
+8. Run the Start command to start the test harness
 
 	- Run **npm** **start** in the terminal
 
@@ -209,7 +209,7 @@ This is what the component will look like when it is completed.
 
     ![stop test harness - screenshot](../L05/Static/mod-02-pcf-1-16.png)
 
-10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it.
+10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it
 
 	- Change directory to the **pcfTimelineControl** folder.
 
@@ -340,7 +340,7 @@ This is what the component will look like when it is completed.
 
     ![Add constant - screenshot](../L05/Static/mod-02-pcf-1-28.png)
 
-8. Build the timeline element as div and add it to container element as a child.
+8. Build the timeline element as div and add it to container element as a child
 
 	- Locate the **init** function.
 
@@ -374,7 +374,7 @@ This is what the component will look like when it is completed.
 
     ![Render timeline function - screenshot](../L05/Static/mod-02-pcf-1-30.png)
 
-10. Call the **renderTimeline** function from the **updateView** function.
+10. Call the **renderTimeline** function from the **updateView** function
 
 	- Locate the **updateView** function.
 
@@ -612,7 +612,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Locate and open your **Dev** environment.
 
-	- Right click and copy the**Environment URL**.
+	- Right click and copy the **Environment URL**.
 
     ![Endpoint address - screenshot](../L05/Static/mod-02-pcf-1-51.png)
 
@@ -640,7 +640,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 ## Task #2: Add Timeline Control to the Permit Form
 
-1. Open the Permit Management solution.
+1. Open the Permit Management solution
 
 	- Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
@@ -830,7 +830,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 # Exercise #3: Promote to production
 
-**Objective:** In this exercise, you will export the Permit Management solution form your Dev environment and import it into your Production environment.
+**Objective:** In this exercise, you will export the Permit Management solution from your Dev environment and import it into your Production environment.
 
 ## Task #1: Export Solution
 
