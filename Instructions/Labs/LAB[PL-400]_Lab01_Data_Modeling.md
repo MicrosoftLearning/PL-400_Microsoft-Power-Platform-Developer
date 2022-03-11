@@ -22,7 +22,6 @@ In this lab, you will set up a second environment to mimic a production environm
 
 - R5 – Permits, for our lab purposes, are requested by a person and we need to track who requested each permit
 
-- R6 - We suggested that you turn the Solution Preview feature to Off
 
 # High-level lab steps
 
