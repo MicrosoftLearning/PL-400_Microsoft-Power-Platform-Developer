@@ -9,23 +9,23 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the web hook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
+In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
 
 # High-level lab steps
 
 As part of configuring the event publishing, you will complete the following:
 
-- Create an Azure Function to receive the web hook post
+- Create an Azure Function to receive the Webhook post
 
-- Configure Microsoft Dataverse to publish events using a web hook
+- Configure Microsoft Dataverse to publish events using a Webhook
 
 - Test publishing of events
 
 ## Things to consider before you begin
 
-- Do we know what events will trigger our web hook?
+- Do we know what events will trigger our Webhook?
 
-- Could what we are doing with the web hook, be done using Power Automate?
+- Could what we are doing with the Webhook, be done using Power Automate?
 
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
@@ -143,9 +143,9 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Save the **URL**, you will need it in the next exercise.
 
-# Exercise #2: Configure Web Hook
+# Exercise #2: Configure Webhook
 
-## Task #1: Configure publishing to a web hook
+## Task #1: Configure publishing to a Webhook
 
 1. Download the SDK Toolkit. If you already have the Plugin Registration tool from the previous lab you can proceed to step three of this task.
 
@@ -195,11 +195,11 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Select environment - screenshot](../L08/Static/Mod_01_Web_Hook_image24.png)
 
-4. Register new web hook
+4. Register new Webhook
 
-	- Select **Register** and then select **Register New Web Hook**.
+	- Select **Register** and then select **Register New Webhook**.
 
-    ![Register new web hook - screenshot](../L08/Static/Mod_01_Web_Hook_image25.png)
+    ![Register new Webhook - screenshot](../L08/Static/Mod_01_Web_Hook_image25.png)
 
 	- Enter **NewSize** for **Name**.
 
@@ -223,7 +223,7 @@ As part of configuring the event publishing, you will complete the following:
 
 5. Register new step
 
-	- Select the **Web Hook** you registered, select **Register** and then select **Register New Step**.
+	- Select the **Webhook** you registered, select **Register** and then select **Register New Step**.
 
     ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image30.png)
 
@@ -239,7 +239,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image33.png)
 
-## Task #2: Test the web hook
+## Task #2: Test the Webhook
 
 1. Start the Permit Management application
 

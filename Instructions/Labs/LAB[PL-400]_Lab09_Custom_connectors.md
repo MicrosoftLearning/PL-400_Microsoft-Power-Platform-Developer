@@ -307,7 +307,7 @@ As part of configuring the custom connector, you will complete the following
 
 # Exercise #3 Test Connector 
 
-**Objective:** In this exercise, you will use the Custom Connector for a Power Apps canvas app and a Power Automate.
+**Objective:** In this exercise, you will use the Custom Connector from a Power Apps canvas app and a Power Automate.
 
 ## Task #1: Test on Canvas App
 

@@ -21,7 +21,7 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 - Create an Azure DevOps project
 
-- Configure the Power Apps ALM tasks
+- Configure the Power Platform ALM tasks
 
 - Build an export solution pipeline
 
@@ -45,7 +45,8 @@ As part of configuring Azure DevOps ALM automation, you will complete the follow
 
 **Requirement**
 
-To avoid abuse Azure Pipelines now requires approval in free accounts to run pipelines. Use the following form to request the free grant of parallel jobs in Azure Pipelines. Please fill out [this form](https://aka.ms/azpipelines-parallelism-request)  This must be approved before you can complete the steps in this lab.
+To avoid abuse Azure Pipelines now requires approval in free accounts to run pipelines. If you completed Lab 0 Exercise 3 and applied an Azure pass you are ready to proceed. Alternatively, you can use the following form to request the free grant of parallel jobs in Azure Pipelines. Please fill out [this form](https://aka.ms/azpipelines-parallelism-request)  This must be approved before you can complete the steps in this lab.
+
 
 You will receive an email when your approval request is completed.
 
@@ -79,7 +80,7 @@ You will receive an email when your approval request is completed.
 
     ![Initialize readme - screenshot](../L10/Static/Mod_3_ALM_image6.png)
 
-## Task #2: Configure Power Apps ALM Tasks
+## Task #2: Configure Power Platform ALM Tasks
 
 1. Get Power Platform Build Tools
 
@@ -182,8 +183,8 @@ You will receive an email when your approval request is completed.
 
     ![Save build pipeline - screenshot](../L10/Static/Mod_3_ALM_image24.png)
 
-2. Add Power Apps Tool Installer task   
-‎Note: The Power Apps Tool Installer needs to be run before any other Power Apps ALM tasks.
+2. Add Power Platform Tool Installer task   
+‎Note: The Power Platform Tool Installer needs to be run before any other Power Platform ALM tasks.
 
 	- Select **+** icon to add task to **Agent Job 1**.
 
@@ -193,7 +194,7 @@ You will receive an email when your approval request is completed.
 
     ![Power Platform tool installer - screenshot](../L10/Static/Mod_3_ALM_image26.png)
 
-3. Add PowerApps Export Solution task
+3. Add Power Platform Export Solution task
 
 	- Search for **Export.**
 
@@ -201,7 +202,7 @@ You will receive an email when your approval request is completed.
 
     ![Power Platform export solution - screenshot](../L10/Static/Mod_3_ALM_image27.png)
 
-4. Open PowerApps Export Solution
+4. Open Power Platform Export Solution
 
 	- Select the **Power Platform Export Solution** task.
 
@@ -243,11 +244,11 @@ You will receive an email when your approval request is completed.
 
 	- Close the **Service Connections** browser window or tab.
 
-7. Select the Generic Service Connection you created as the Power Apps Environment URL
+7. Select the Generic Service Connection you created as the Service connection
 
-	- Go back to the **Build Pipeline** tasks and make sure you still have Power Apps Export Solution task selected.
+	- Go back to the **Build Pipeline** tasks and make sure you still have Power Platform Export Solution task selected.
 
-	- Locate the **Power Apps Environment URL** column and select **Refresh**.
+	- Locate the **Service connection** column and select **Refresh**.
 
     ![Refresh service connection - screenshot](../L10/Static/Mod_3_ALM_image34.png)
 
