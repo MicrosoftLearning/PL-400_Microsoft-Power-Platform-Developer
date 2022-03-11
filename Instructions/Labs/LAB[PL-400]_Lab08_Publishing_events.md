@@ -9,7 +9,7 @@ lab:
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will use the event publishing capability of the Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the web hook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
+In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the web hook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
 
 # High-level lab steps
 
@@ -195,7 +195,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Select environment - screenshot](../L08/Static/Mod_01_Web_Hook_image24.png)
 
-4. Register new Web Hook
+4. Register new web hook
 
 	- Select **Register** and then select **Register New Web Hook**.
 
@@ -239,7 +239,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image33.png)
 
-## Task #2: Test the Web Hook
+## Task #2: Test the web hook
 
 1. Start the Permit Management application
 
@@ -271,7 +271,7 @@ As part of configuring the event publishing, you will complete the following:
 
 **Hint**: If the log is not showing in the console (sometimes this happens), select **Monitor** on the left and check execution log. Select entry, details will be on the right (this could be delayed up to a few minutes).
 
-6. Confirm the function executes only when the New Size value changes
+3. Confirm the function executes only when the New Size value changes
 
 	- Go back to the **Permit Management** application.
 
