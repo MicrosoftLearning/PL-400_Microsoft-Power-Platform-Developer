@@ -212,7 +212,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
 
 
-6. Add Permit Type OnChange event handler.,
+6. Add Permit Type OnChange event handler.
 
 	- Select **Permit Type** field on the form.
 
@@ -346,7 +346,7 @@ In this task, you will test the event handlers.
 
 5. Hide the Inspections tab and return if Permit type is null.
 
-	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. inspectionsTab is the name of the Inspections tab (This is configured while creating the Model Driven App in Lab1 Module 2).
+	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. inspectionsTab is the name of the Inspections tab (This is configured while creating the Model Driven App in a previous lab in this course).
 
             formContext.ui.tabs.get("inspectionsTab").setVisible(false);
             return;
@@ -508,7 +508,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 # Exercise #3: Toggle required property on the columns
 
-**Objective:** In this exercise, you will create a script that will make the “New Size” column required when the “Require Size” column value is set to Yes. If the “Require Size” column value is set to No, remove the requirement and make it optional. You will also hide the “New Size” column. This logic will be driven by a column on the permit type record that was retrieved using web API in the previous exercise.
+**Objective:** In this exercise, you will create a script that will make the “New Size” column required when the “Require Size” column value is set to Yes. If the “Require Size” column value is set to No, remove the requirement. You will also hide the “New Size” column. This logic will be driven by a column on the permit type record that was retrieved using web API in the previous exercise.
 
 ## Task #1: Create Function
 
@@ -574,7 +574,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Open the **Permit Management** solution.
   
-	- Select **Web resources** and open the **Permit Form Scripts** when resource.
+	- Select **Web resources** and open the **Permit Form Scripts** web resource.
 
 	- Select **Upload File**.
 
@@ -624,7 +624,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 5. Check if the “New Size” column is visible and it is marked as required.
 
-	- You should now be able to see **New Size”** column on the form and it is a  required field.
+	- You should now be able to see **New Size”** column on the form and it is a required field.
 
     ![Required column- screenshot](../L04/Static/mod-01-client-scripting-63.png)
 
@@ -640,7 +640,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 # Exercise #4: Command Button Function (Optional)
 
-**Objective:** In this exercise, you will you will create custom API, create function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
+**Objective:** In this exercise, you will you will create custom API, create a function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
 
 
 ## Task #1: Create Action API
@@ -696,13 +696,13 @@ In this task, you will create a custom API that will be called to lock the permi
 
 In this task, you will create the logic to invoke that will call the custom API.
 
-1. Start Visual Studio Code and open the resources you create in exercise one
+1. Start Visual Studio Code and open the resources you create in Exercise One
 
 	- Start **Visual Studio Code**.
 
 	- Select **File** and select **Open Folder**.
 
-	- Select the **ContosoClientScrpts** folder you created in exercise one and select **Select Folder**.
+	- Select the **ContosoClientScripts** folder you created in exercise one and select **Select Folder**.
 
     ![Select folder - screenshot](../L04/Static/mod-01-client-scripting-84.png)
 
@@ -730,7 +730,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 4. Build and return the request
 
-	- Add the script mentioned below in the **_lockPermiRequest** function.
+	- Add the script mentioned below in the **_lockPermitRequest** function.
 
             this.getMetadata = function () {
                 return {
@@ -851,7 +851,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Command properties- screenshot](../L04/Static/mod-01-client-scripting-97.png)
 
-	- Scroll down and select **+ Add  library**
+	- Scroll down and select **+ Add library**
 
     ![Add library - screenshot](../L04/Static/mod-01-client-scripting-98.png)
 
@@ -890,7 +890,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 	- Select** Permits**.
 
-	- SDelect to open a permit.
+	- Select to open a permit.
 
 	- You should be able to see the button you just added.
 
