@@ -95,7 +95,7 @@ To prepare your learning environments you will create a solution and publisher a
 
     ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
-	- Click **Done**.
+	- Click **Save**.
 
 3. Complete the solution creation
 
