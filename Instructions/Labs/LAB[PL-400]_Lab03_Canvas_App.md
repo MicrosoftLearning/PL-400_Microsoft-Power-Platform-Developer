@@ -162,6 +162,8 @@ This second screen lets the inspector update the selected Inspection.
 
     ![Select data sources = screenshot](../L03/Static/Mod_03_Canvas_App_image14.png)
 
+	- Click **Add data**
+	
 	- Search for **Permit** and select **Permits**.
 
     ![Select permits - screenshot](../L03/Static/Mod_03_Canvas_App_image15.png)
