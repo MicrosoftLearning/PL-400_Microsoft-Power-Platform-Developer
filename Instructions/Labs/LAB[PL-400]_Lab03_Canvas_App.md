@@ -78,7 +78,7 @@ This second screen lets the inspector update the selected Inspection.
 
 	- Click **+ New** and select **App | Canvas**.
 	
-	- Select **Tablet Form Factor** from canvas app window.
+	- Select **Tablet** from canvas app window.
 
     ![Create new canvas application - screenshot](../L03/Static/Mod_03_Canvas_App_image3.png)
 
