@@ -3,13 +3,6 @@ lab:
     title: 'Lab 07: Azure Functions'
 ---
 
-> [!NOTE]
-> Effective November 2020:
-> - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *Column* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
->
-> This content will be updated soon to reflect the latest terminology.
-
 
 ## Lab 07 – Azure Functions
 
@@ -27,7 +20,7 @@ As part of building the Azure Function, you will complete the following:
 
 - Build the function logic to route the requests
 
-Deploy the Azure Function
+- Deploy the Azure Function
 
 ## Things to consider before you begin
 
@@ -42,7 +35,7 @@ Deploy the Azure Function
 
 # Exercise #1: Configure an application user
 
-**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to the Microsoft Dataverse. 
+**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse. 
 
 ## Task #1: Register Azure AD Application
 
@@ -52,7 +45,7 @@ Deploy the Azure Function
 
 **Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account that has your Azure subscription.
 
-- Click Show portal menu.
+- Select Show portal menu.
 
 ![Show portal menu - screenshot](../L07/Static/Mod_02_Azure_Functions_image1.png)
 
@@ -60,35 +53,29 @@ Deploy the Azure Function
 
 ![Azure active directory - screenshot](../L07/Static/Mod_02_Azure_Functions_image2.png)
 
-- Select **Registrations** from the **Manage** section.
-
-2. Create new application registration.
-
-- Click **+ New registration**.
+- Select **+ Add** and then select **App registration**.
 
 ![New registration - screenshot](../L07/Static/Mod_02_Azure_Functions_image3.png)
 
-- Enter **Inspection Router** for **Name**, select **Accounts in this Organizational Directory Only** for **Supported** **Account Types**, and click **Register**.
+- Enter **Inspection Router** for **Name**, select **Accounts in this Organizational Directory Only** for **Supported** **Account Types**, and then select **Register**.
 
 ![Register application - screenshot](../L07/Static/Mod_02_Azure_Functions_image4.png)
 
-3. Add Client Secret. 
+2. Add Client Secret. 
 
 **Note**: In this lab we are using a secret, however, you can also use a certificate. With either of these options you need to have a plan in place to handle rollover when they expire to ensure that the app keeps running.
 
 - Select **Certificates &amp; Secrets**.
 
-![Certificate and secrets - screenshot](../L07/Static/Mod_02_Azure_Functions_image5.png)
-
-- Click **+ New Client Secret**.
+- Select **+ New Client Secret**.
 
 ![New client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image6.png)
 
-- Enter **Inspection Routing** for **Description** and click **Add**.
+- Enter **Inspection Routing** for **Description**, select **12 months** for **Expires**, and then select **Add**.
 
 ![Add client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image7.png)
 
-- Copy the **Value** and save it on a notepad. You need this value in future tasks.
+- Copy the **Value** and save it on a notepad. You will need this value in future tasks.
 
 ![Copy value - screenshot](../L07/Static/Mod_02_Azure_Functions_image8.png)
 
@@ -98,123 +85,74 @@ Deploy the Azure Function
 
 In this task, you will create the application user and associate it with the Azure AD app that you just registered. You will also create a security role needed to run the routing logic. 
 
-1. Navigate to security settings of your Dev environment
 
-- Sign in to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) 
+1. Create New Security Role
 
-- Select **Environments**.
+- Navigate to https://make.powerapps.com/ and make sure you have your **Dev** environment selected.
 
-- Select the **Dev** environment, click on the **… More Environment Actions** button and select **Settings**.
+- Select **Solutions** and open the **Permit Management** solution.
 
-![Environment settings - screenshot](../L07/Static/Mod_02_Azure_Functions_image9.png)
-
-- Expand **Users + Permissions**.
-
-![Expand section - screenshot ](../L07/Static/Mod_02_Azure_Functions_image10.png)
-
-- Select **Security Roles**.
-
-![Security roles - screenshot](../L07/Static/Mod_02_Azure_Functions_image11.png)
-
-2. Create New Security Role
-
-- Click **New role**.
+- Select **+ New** and then select **Security > Security role**
 
 ![New security role - screenshot](../L07/Static/Mod_02_Azure_Functions_image12.png)
 
-- Enter **Inspection Router** for **Role Name** and click **Save**.
+- Enter **Inspection Router** for **Role Name** and then select **Save**.
 
 - Select the **Business Management** tab.
 
-![Business management tab - screenshot](../L07/Static/Mod_02_Azure_Functions_image13.png)
+- Locate the **User** table and set **Read** and **Append To** privileges to **Organization**.
 
-- Locate the **User** Table and set **Read** and **Append To** privileges to **Organization**.
+![User table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image14.png)
 
-![User Table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image14.png)
+- Select the **Custom Entities** tab.
 
-- Select the **Custom Tables** tab.
+- Locate the **Inspection** table and set **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
 
-- Locate the **Inspection** Table and set **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
+![User table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image15.png)
 
-![User Table privileges - screenshot](../L07/Static/Mod_02_Azure_Functions_image15.png)
+- Select **Save and Close**.
 
-- Click **Save and Close**.
+- Select **Done**.
 
-- Close the **Security Roles** browser tab/window.
+2. Add Application User.
 
-- Click on the browser back button.
+- Select **Settings** and then select **Admin center**.
 
-3. Navigate to the Application User form
+  ![Admin settings - screenshot](../L07/Static/Mod_02_Azure_Functions_image10.png)
 
-- Expand **Users + permissions** again.
+- Select your **Dev** environment and then select **Settings**.
 
-- Click **Users**.
+- Expand **Users + permissions**.
 
-![Users - screenshot](../L07/Static/Mod_02_Azure_Functions_image16.png)
+- Select **Users**.
 
-- Click **Manage users in Dynamics 365**.
+  ![Users - screenshot](../L07/Static/Mod_02_Azure_Functions_image16.png)
 
-![manage users in Dynamics 365 - screenshot](../L07/Static/Mod_02_Azure_Functions_image17.png)
+- Select **App users list**.
 
-- Switch to the **Application Users** view.
+  ![App users list button - screenshot](../L07/Static/Mod_02_Azure_Functions_image17.png)
 
-![Change view - screenshot](../L07/Static/Mod_02_Azure_Functions_image18.png)
+- Select **+ New app user**.
 
-- Click **+ New**.
+- Select **+ Add an app**.
 
-![New application user - screenshot](../L07/Static/Mod_02_Azure_Functions_image19.png)
+  ![New application user - screenshot](../L07/Static/Mod_02_Azure_Functions_image19.png)
 
-- Switch to the **Application User** form.
+- Select the **Inspection Router** you created and then select **Add**.
 
-![Switch form - screenshot](../L07/Static/Mod_02_Azure_Functions_image20.png)
+  ![Switch form - screenshot](../L07/Static/Mod_02_Azure_Functions_image20.png)
 
-4. Create Application User.
+- Select your Business Unit and then select edit **Security roles**.
 
-- Click on the **Full Name** Column.
+  ![Edit security roles- screenshot](../L07/Static/Mod_02_Azure_Functions_image21.png)
 
-- Enter [InspectionRouter@Tenant.onmicrosoft.com](mailto:InspectionRouter@tenant.onmicrosoft.com) for User name, **Inspection** for **First Name**, **Router** for **Last Name**, enter [InspectionRouter@Tenant.onmicrosoft.com](mailto:InspectionRouter@tenant.onmicrosoft.com) for **Email**.
+- Select the Inspection Router security role and then select **Save**.
 
-![user information - screenshot](../L07/Static/Mod_02_Azure_Functions_image21.png)
+![ Add security role - screenshot](../L07/Static/Mod_02_Azure_Functions_image26.png)
 
-5. Copy App ID from Azure.
+- Select **Create**.
 
-- Go back to your **Azure** portal.
-
-- Select **Azure Active Directory**.
-
-- Select **App Registrations** **| Owned applications**
-
-- Click to open the registration you created.
-
-![App registration - screenshot](../L07/Static/Mod_02_Azure_Functions_image22.png)
-
-- Copy the **Application (Client ID).**
-
-![Application id - screenshot](../L07/Static/Mod_02_Azure_Functions_image23.png)
-
-6. Complete the Application User creation
-
-- Paste the Application Id you copied.
-
-![Application id - screenshot](../L07/Static/Mod_02_Azure_Functions_image24.png)
-
-- Click **Save**.
-
-- The **Application ID URI** and **Azure AD Object ID** Columns should auto populate.
-
-![Auto populated Columns - screenshot](../L07/Static/Mod_02_Azure_Functions_image25.png)
-
-- Close the **User** form.
-
-7. Assign the Inspection Router security role to the Application User you created
-
-- Refresh the user view, select the user you create, and click **Manage Roles**.
-
-![ Manage roles - screenshot](../L07/Static/Mod_02_Azure_Functions_image26.png)
-
-- Select **Inspection Router** and click **OK**.
-
-![Select role - screenshot](../L07/Static/Mod_02_Azure_Functions_image27.png)
+![Create app user - screenshot](../L07/Static/Mod_02_Azure_Functions_image27.png)
 
   
 ‎ 
@@ -229,23 +167,21 @@ In this task, you will create the application user and associate it with the Azu
 
 - Start **Visual Studio**.
 
-- Click **Create a New Project**.
+- Select **Create a New Project**.
 
 ![New visual studio project - screenshot](../L07/Static/Mod_02_Azure_Functions_image28.png)
 
-- Select **Azure Functions** and click **Next**.
+- Select **Azure Functions** and then select **Next**.
 
 ![Azure functions - screenshot](../L07/Static/Mod_02_Azure_Functions_image29.png)
 
-- Enter **InspectionManagementApp** for **Name** and click **Create**.
+- Enter **InspectionManagementApp** for **Name** and then select **Create**.
 
 ![Create project - screenshot](../L07/Static/Mod_02_Azure_Functions_image30.png)
 
-- Select **Azure Function V3 (.NET Core)** and select **Timer Trigger**.
+- Select **NET Core3** and select **Timer Trigger**.
 
-![Timer trigger - screenshot](../L07/Static/Mod_02_Azure_Functions_image31.png)
-
-- Change the Schedule to **0 0 0** *** (Midnight Every Day) and click **Create**.
+- Change the Schedule to 0 0 0 * * * (Midnight Every Day) and select **Create**.
 
 ![Create Azure function application - screenshot](../L07/Static/Mod_02_Azure_Functions_image32.png)
 
@@ -255,15 +191,17 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Rename function file - screenshot](../L07/Static/Mod_02_Azure_Functions_image33.png)
 
-- Change the function class and FunctionName to **InspectionRouter.**
+- Select **Yes** to rename references.
+
+- Change the function FunctionName to **InspectionRouter.**
 
 ![Change function name - screenshot](../L07/Static/Mod_02_Azure_Functions_image34.png)
 
-- Click **Run**.
+- Select **Run**.
 
 ![Run function - screenshot](../L07/Static/Mod_02_Azure_Functions_image35.png)
 
-- You should see **Now Listening on:** [http://0.0.0.0:7071](http://0.0.0.0:7071/)
+- Azure functions tools should start.
 
 ![Running azure function - screenshot](../L07/Static/Mod_02_Azure_Functions_image36.png)
 
@@ -273,7 +211,7 @@ In this task, you will create the application user and associate it with the Azu
 
 - Start **Postman**.
 
-- Select **POST** and paste the URL: [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter) 
+- Select **POST** and enter the URL: [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter) 
 
 ![Paste URL - screenshot](../L07/Static/Mod_02_Azure_Functions_image37.png)
 
@@ -289,7 +227,7 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Select body - screenshot](../L07/Static/Mod_02_Azure_Functions_image39.png)
 
-- Click **Send**.
+- Select **Send**.
 
 - You should get **202** **Accepted Status**.
 
@@ -309,13 +247,13 @@ In this task, you will create the application user and associate it with the Azu
 
 - Select the **Browse** tab and search for **Microsoft.IdentityModel.Clients.ActiveDirectory**.
 
-- Select the latest stable version and click **Install**.
+- Select the latest stable version and then select **Install**.
 
 ![Install package - screenshot](../L07/Static/Mod_02_Azure_Functions_image42.png)
 
 - Search for **Xrm.Tools.CrmWebAPI**. Note: This is a community library designed to work with the Microsoft Dataverse Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
 
-- Select the latest stable version and click **Install**.
+- Select the latest stable version and then select **Install**.
 
 ![Install package - screenshot](../L07/Static/Mod_02_Azure_Functions_image43.png)
 
@@ -323,7 +261,7 @@ In this task, you will create the application user and associate it with the Azu
 
 5. Edit the local settings file
 
-- Click to open the **local.settings.json** file
+- Open the **local.settings.json** file
 
 ![Local settings file - screenshot](../L07/Static/Mod_02_Azure_Functions_image44.png)
 
@@ -337,7 +275,7 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Add values - screenshot](../L07/Static/Mod_02_Azure_Functions_image45.png)
 
-- Find the Client Secret you saved in the notepad and paste as the cdsclientsecret.
+- Find the client secret you saved in the notepad and paste as the cdsclientsecret.
 
 ![Client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image46.png)
 
@@ -349,7 +287,7 @@ In this task, you will create the application user and associate it with the Azu
 
 - Select **App Registrations**.
 
-- Click to open the registration you created.
+- Open the registration you created.
 
 ![Open app registration - screenshot](../L07/Static/Mod_02_Azure_Functions_image47.png)
 
@@ -363,7 +301,7 @@ In this task, you will create the application user and associate it with the Azu
 
 - Sign in to [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com/) 
 
-- Select **Environments** and click to open the **Dev** environment.
+- Select **Environments** and open the **Dev** environment.
 
 ![Open environment - screenshot](../L07/Static/Mod_02_Azure_Functions_image49.png)
 
@@ -381,7 +319,7 @@ In this task, you will create the application user and associate it with the Azu
 
 - Open the **InspectionRouter.cs** file
 
-- Add the using statements below.
+- Add the using statements below
 
         using System.Threading.Tasks;
         using Xrm.Tools.WebAPI;
@@ -415,7 +353,7 @@ In this task, you will create the application user and associate it with the Azu
 
         var clientcred = new ClientCredential(clientID, clientSecret);
 
-- Get **Authentication** **Context**.
+- Get **Authentication Context**.
 
         // CreateFromUrlAsync returns endpoint while AuthenticationContext expects authority
         // workaround is to downgrade adal to v3.19 or to strip the tail
@@ -447,11 +385,9 @@ In this task, you will create the application user and associate it with the Azu
 
 11. Debug
 
-- Click Run.
+- Select **Run**.
 
-![Run project - screenshot](../L07/Static/Mod_02_Azure_Functions_image54.png)
-
-- Go back to **Postman** and click **Send**.
+- Go back to **Postman** and select **Send**.
 
 ![Postman send - screenshot](../L07/Static/Mod_02_Azure_Functions_image55.png)
 
@@ -465,7 +401,40 @@ Go back **Visual Studio** and stop debugging.
 
 ## Task #2: Get Inspections and Users and Assign Inspections
 
-1. Create a method that will get all active inspections that are New Request or Pending, and scheduled for today
+1. Get the New Request and Pending option values for the Inspection table Status Reason column.
+- Navigate to https://make.powerapps.com/ and make sure you have your **Dev** environment selected.
+
+- Select **Solutions** and open the **Permit Management** solution.
+
+- Select **Tables** and open the **Inspection** table.
+
+- Select **Switch to classic**.
+
+- Select **Fields**.
+
+- Locate and open the **Status Reason** field,
+
+- Scroll down and double open the **New Request** option.
+  
+  ![New request option - screenshot](../L07/Static/Mod_02_Azure_Functions_image56-1.png)
+
+- Copy the **Value** and keep it in a notepad.
+
+- Select **OK**.
+
+- double click to open the **Pending** option.
+
+- Copy the **Value** and keep it in a notepad.
+
+  ![Pending option - screenshot](../L07/Static/Mod_02_Azure_Functions_image56-2.png)
+
+- Select **OK**.
+
+- Close the field editor.
+
+- Close the classic table editor.
+
+2. Create a method that will get all active inspections that are New Request or Pending, and schedule them for today
 
 - Add the method below inside the class.
 
@@ -477,7 +446,7 @@ Go back **Visual Studio** and stop debugging.
 
         }
 
-- Create **Fetch XML**. Add the code below before the return line of the GetInspections method. 
+- Create **Fetch XML**. Add the code below before the return line of the GetInspections method. replace **[New Request]** and **[Pending]** with the option values you copied without the commas.
 
         var fetchxml = @"<fetch version=""1.0"" mapping=""logical"" >
         <entity name=""contoso_inspection"" >
@@ -491,8 +460,8 @@ Go back **Visual Studio** and stop debugging.
         <condition value=""0"" operator=""eq"" attribute=""statecode"" />
         <condition attribute=""contoso_scheduleddate"" operator=""today"" />
         <condition attribute=""statuscode"" operator=""in"" >
-        <value>1</value>
-        <value>463270000</value>
+        <value>[New Request]</value>
+        <value>[Pending]</value>
         </condition>
         </filter>
         </entity>
@@ -511,7 +480,7 @@ Go back **Visual Studio** and stop debugging.
 
 ![Get inspections method - screenshot](../L07/Static/Mod_02_Azure_Functions_image57.png)
 
-2. Call the GetInspections method from the Run method.
+3. Call the GetInspections method from the Run method.
 
 - Go back to the **Run** method.
 
@@ -521,7 +490,7 @@ Go back **Visual Studio** and stop debugging.
 
 ![Call get inspections method - screenshot](../L07/Static/Mod_02_Azure_Functions_image58.png)
 
-3. Create a method that will get all users.
+4. Create a method that will get all users.
 
 - Add the method below inside the class.
 
@@ -537,7 +506,7 @@ Go back **Visual Studio** and stop debugging.
 
 ![Call get users method - screenshot](../L07/Static/Mod_02_Azure_Functions_image59.png)
 
-4. Create a method that will assign inspections to users
+5. Create a method that will assign inspections to users
 
 - Add the method below to the class.
 
@@ -550,14 +519,14 @@ Go back **Visual Studio** and stop debugging.
         return await api.Update("contoso_inspections", new Guid(inspection.contoso_inspectionid), updateObject);
         }
 
-5. Create two-digit random number.
+6. Create two-digit random number.
 
 - Add the code below to the Run method.
 
         Random rnd = new Random();
         int sequenceNumber = rnd.Next(10, 99);
 
-6. Assign Inspections
+7. Assign Inspections
 
 - Go through the **Inspections** and call the **RouteInspection** method.
 
@@ -566,7 +535,7 @@ Go back **Visual Studio** and stop debugging.
         {
         log.LogInformation($"Routing inspection {inspection.contoso_name}");
         var inspectionResult = new CRMUpdateResult();
-        //Your record assignment would like this. We will not assign records to different users in this lab
+        //Your record assignment would look like this. We will not assign records to different users in this lab
         // if (users.List.Count > (currentUserIndex))
         //{
         // dynamic currentUser = users.List[currentUserIndex];
@@ -575,7 +544,7 @@ Go back **Visual Studio** and stop debugging.
         //}
         }
 
-- We will not assign inspection records to other users in this lab. **Comment** out the **if** statement you just added, and we will be replacing it with logic to do the routing to our user only.
+- We will not assign inspection records to other users in this lab.
 
 ![Comment out code - screenshot](../L07/Static/Mod_02_Azure_Functions_image60.png)
 
@@ -605,15 +574,25 @@ Build the project and make sure that the build succeeds.
 
 ![Publish project - screenshot](../L07/Static/Mod_02_Azure_Functions_image62.png)
 
-- Select **Create New** and click **Create Profile**.
+- Select **Azure** and then select **Next**.
 
-![Create profile - screenshot](../L07/Static/Mod_02_Azure_Functions_image63.png)
+- Select **Azure Function App (Windows)** and then select **Next**.
 
-- Make sure you are logged in to your correct **Azure** account, enter a unique name for **App Name**, create **New Resource Group**, create **New** **Azure Storage**, and click **Create**.
+- Sign in with user that has an Azure subscription.
+
+- Select your Azure subscription and then select **+** create new Azure function app.
+
+![Create Azure function app - screenshot](../L07/Static/Mod_02_Azure_Functions_image63.png)
+
+- Provide a unique name for **App Name**, select your subscription name, create new resource group, create new Azure storage, select **Consumption** for Plan type, select Location, and then select **Create**.
 
 ![Create profile - screenshot](../L07/Static/Mod_02_Azure_Functions_image64.png)
 
-- Click **Publish**.
+- Wait for the app service to be created.
+
+- Select **Finish**.
+
+- Select **Publish**.
 
 - Wait for the function application to be configured and published.
 
@@ -621,17 +600,17 @@ Build the project and make sure that the build succeeds.
 
 - Go back to you **Azure** portal.
 
-- Select **All Resources**, search for **InspectionManagement**, and click to open the function you published.
+- Select **All Resources**, search for **InspectionManagement**, and open the function you published.
 
 ![Open azure fi=unction application - screenshot](../L07/Static/Mod_02_Azure_Functions_image65.png)
 
-- Click scroll down to **Settings** and select **Configuration**.
+- Scroll down to **Settings** and select **Configuration**.
 
 ![Configuration - screenshot](../L07/Static/Mod_02_Azure_Functions_image66.png)
 
 3. Update App Settings
 
-- Click **Advanced Edit**.
+- Select **Advanced Edit**.
 
 ![Advanced edit - screenshot](../L07/Static/Mod_02_Azure_Functions_image67.png)
 
@@ -683,15 +662,15 @@ Build the project and make sure that the build succeeds.
 
 ![Paste id and secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image71.png)
 
-- Click **OK**.
+- Select **OK**.
 
-- Click **Save**.
+- Select **Save**.
 
 ![Save changes - screenshot](../L07/Static/Mod_02_Azure_Functions_image72.png)
 
-- Click **Continue**.
+- Select **Continue**.
 
-- Select **Functions** and click to open the function you published.
+- Select **Functions** and open the function you published.
 
 ![Open function - screenshot](../L07/Static/Mod_02_Azure_Functions_image73.png)
 
@@ -707,19 +686,19 @@ Build the project and make sure that the build succeeds.
 
 ![Current environment - screenshot](../L07/Static/Mod_02_Azure_Functions_image75.png)
 
-- Select **Apps** and click to open the **Permit Management** application.
+- Select **Apps** and open the **Permit Management** application.
 
 ![Start application - screenshot ](../L07/Static/Mod_02_Azure_Functions_image76.png)
 
-- Click Settings and select **Personalization and** Settings.
+- Select **Settings** and then select **Personalization and Settings**.
 
 ![Personal settings - screenshot](../L07/Static/Mod_02_Azure_Functions_image77.png)
 
-- Change the **Time Zone** to **(GMT-11:00) Coordinated Universal Time-11** and click **OK**. This will ensure the query results will produce the same results regardless of your time zone.
+- Change the **Time Zone** to **(GMT-11:00) Coordinated Universal Time-11** and then select **OK**. This will ensure the query results will produce the same results regardless of your time zone.
 
 ![Change time zone - screenshot](../L07/Static/Mod_02_Azure_Functions_image78.png)
 
-- Select **Inspections** and click to open one of the **Inspection** records or create a new record.
+- Select **Inspections** and open one of the **Inspection** records or create a new record.
 
 ![Open inspection record - screenshot](../L07/Static/Mod_02_Azure_Functions_image79.png)
 
@@ -727,17 +706,17 @@ Build the project and make sure that the build succeeds.
 
 ![Update record - screenshot](../L07/Static/Mod_02_Azure_Functions_image80.png)
 
-- Click **Save**.
+- Select **Save**.
 
 5. Run the function
 
 - Go to your **Azure** portal.
 
-- Click **Test/Run.**
+- Select **Test/Run.**
 
 ![Run function - screenshot](../L07/Static/Mod_02_Azure_Functions_image81.png)
 
-- Click **Run**.
+- Select **Run**.
 
 - The function should run and succeed.
 
@@ -747,7 +726,7 @@ Build the project and make sure that the build succeeds.
 
 - Go back to the **Permit Management** application.
 
-- Click **Refresh**.
+- Select **Refresh**.
 
 ![Refresh record - screenshot](../L07/Static/Mod_02_Azure_Functions_image83.png)
 
@@ -771,17 +750,17 @@ Build the project and make sure that the build succeeds.
 
 - Select **Solution**.
 
-- Select the **Permit Management** solution and click **Export**.
+- Select the **Permit Management** solution and then select **Export**.
 
 ![Export solution - screenshot](../L07/Static/Mod_02_Azure_Functions_image85.png)
 
-- Click **Publish** and wait for the publishing to complete.
+- Select **Publish** and wait for the publishing to complete.
 
 ![Publish solution - screenshot](../L07/Static/Mod_02_Azure_Functions_image86.png)
 
-- Click **Next**.
+- Select **Next**.
 
-- Select **Managed** and click **Export**.
+- Select **Managed** and then select **Export**.
 
 ![Export solution - screenshot](../L07/Static/Mod_02_Azure_Functions_image87.png)
 
@@ -790,9 +769,9 @@ Build the project and make sure that the build succeeds.
 2. Export Permit Management unmanaged solution
 
 - Select **Solution** again.
-- Select the **Permit Management** solution and click **Export**.
-- Click **Next**.
-- Select **Unmanaged, edit the version number to match the Managed solution** and click **Export**.
+- Select the **Permit Management** solution and then select **Export**.
+- Select **Next**.
+- Select **Unmanaged, edit the version number to match the Managed solution** and then select **Export**.
 
 - Save the **Exported** solution in your machine.
 
@@ -804,22 +783,18 @@ Build the project and make sure that the build succeeds.
 
 - Select **Solution**.
 
-- Click **Import**.
+- Select **Import**.
 
 ![Import solution - screenshot](../L07/Static/Mod_02_Azure_Functions_image88.png)
 
-- Click **Choose file**.
+- Select **Choose file**.
 
-- Select the **Managed** solution you exported and click **Open**.
+- Select the **Managed** solution you exported and then select **Open**.
 
-![Select managed solution - screenshot](../L07/Static/Mod_02_Azure_Functions_image89.png)
+- Select **Next**.
 
-- Click **Next**.
+- Select **Import**.
 
-- Click **Next** again.
-
-- Click **Import**.
-
-- Wait for the import to complete and click **Close**.
+- Wait for the import to complete and then select **Close**.
 
 - Review and test your production environment. 
