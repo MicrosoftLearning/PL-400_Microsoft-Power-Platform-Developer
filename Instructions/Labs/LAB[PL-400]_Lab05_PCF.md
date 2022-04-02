@@ -3,13 +3,6 @@ lab:
     title: 'Lab 05: Power Apps Component Framework'
 ---
 
-> [!NOTE]
-> Effective November 2020:
-> - Common Data Service has been renamed to Microsoft Dataverse. [Learn more](https://aka.ms/PAuAppBlog)
-> - Some terminology in Microsoft Dataverse has been updated. For example, *entity* is now *table* and *field* is now *column*. [Learn more](https://go.microsoft.com/fwlink/?linkid=2147247)
->
-> This content will be updated soon to reflect the latest terminology.
-
 
 ## Lab 05 – Power Apps Component Framework
 
@@ -31,7 +24,7 @@ As part of building this component, you will complete the following steps:
 
 - Configure the permit form to use the component 
 
-The is what the component will look like when it is completed.
+This is what the component will look like when it is completed.
 
  ![Completed component - screenshot](../L05/Static/mod-02-pcf-1-01.png)
 
@@ -62,7 +55,7 @@ The is what the component will look like when it is completed.
 
     ![latest LTS - screenshot](../L05/Static/mod-02-pcf-1-02.png)
 
-	- Click **Open file**.
+	- Open the downloaded file.
 
 	- Follow the steps in setup wizard to complete installing **Node.js**
 
@@ -74,17 +67,15 @@ The is what the component will look like when it is completed.
 
     ![Developer pack - screenshot](../L05/Static/mod-02-pcf-1-03.png)
 
-	- Click **Open file**.
-
-Follow the steps in setup wizard to complete installing the **Developer Pack.**
+	- Run the downloaded file.
+  
+	- Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
 ## Task #2: Setup Components Project
 
 1. Start the developer command prompt tool
 
-	- Click **Start** and search for **developer**.
-
-	- Click to start the **developer command prompt**.
+	- Launch to start the **developer command prompt** from the start menu.
 
     ![Developer command prompt - screenshot](../L05/Static/mod-02-pcf-1-04.png)
 
@@ -118,15 +109,17 @@ Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
             cls
 
-4. Install the latest Power Apps CLI, create a solution project with the **name timelinecontrol**, **namespace** **contoso**, and **template** **dataset**.
+4. Install the latest Power Apps CLI, create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**
 
-	- Install latest **Power Apps CLI** version. Use: [https://aka.ms/PowerAppsCLI](https://aka.ms/PowerAppsCLI)   
-‎Note: if you just installed the tools, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
-Note: If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
+	- Install latest **Power Apps CLI** version. Use: [https://aka.ms/PowerAppsCLI](https://aka.ms/PowerAppsCLI)
+  
+  **Note:** if you just installed the tools, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
+  
+  **Note:** If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
 
             pac install latest
 
-	- Initialize the component. This command will create a set of files that will implement a dataset component. You will customize these files as per your specific component as we continue.
+	- Initialize the component. This command will create a set of files that will implement a dataset component. You will customize these files as we continue.
 
             pac pcf init --name timelinecontrol --namespace contoso --template dataset
 
@@ -136,7 +129,7 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
 	- Wait for the dependency installation to complete.
 
-5. Open the **src** folder in Visual Studio Code and review the generated resources.
+5. Open the **src** folder in Visual Studio Code and review the generated resources
 
 	- Open the **src** folder in **Visual Studio Code**. For this to work, make sure that the Visual Studio Code is added to Path in Environment Variables.
 
@@ -158,13 +151,13 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
 	- Open the **ManifestTypes** file and examine it.
 
-6. Open CLI in visual studio code.
+6. Open CLI in visual studio code
 
-	- Click **Terminal** and select **New Terminal**. If Terminal is not visible in the Top menu, you can open it by selecting View -> Integrated Terminal.
+	- Select **Terminal** and select **New Terminal**. If Terminal is not visible in the menu, you can open it by selecting View -> Integrated Terminal.
 
     ![New terminal - screenshot](../L05/Static/mod-02-pcf-1-08.png)
 
-	- If **cmd** isn’t your **Default Shell** open, click on the arrow and click **Select Default Shell**. 
+	- If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Shell**. 
 
     ![Select default shell](../L05/Static/mod-02-pcf-1-09.png)
 
@@ -172,7 +165,7 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![Command prompt - screenshot](../L05/Static/mod-02-pcf-1-10.png)
 
-	- Click **New Terminal**.
+	- Select **New Terminal**.
 
     ![New terminal - screenshot](../L05/Static/mod-02-pcf-1-11.png)
 
@@ -180,17 +173,17 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![cmd terminal - screenshot =](../L05/Static/mod-02-pcf-1-12.png)
 
-7. Run the Build command and review the out folder.
+7. Run the Build command and review the out folder
 
 	- Run **npm** **build** in the terminal
 
             npm run build
 
-	- You should now be able to see the out folder. Expand the out folder and review its content.
+	- You should now be able to see the out folder. Expand the folder and review its content.
 
     ![Out folder - screenshot](../L05/Static/mod-02-pcf-1-13.png)
 
-8. Run the Start command to start the test harness.
+8. Run the Start command to start the test harness
 
 	- Run **npm** **start** in the terminal
 
@@ -216,7 +209,7 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![stop test harness - screenshot](../L05/Static/mod-02-pcf-1-16.png)
 
-10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it.
+10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it
 
 	- Change directory to the **pcfTimelineControl** folder.
 
@@ -274,15 +267,15 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
             cd ..\src
 
-2. Create **css** folder in the **timelinecontrol** folder and create **timelinecontrol.****css** file in the **css** folder
+2. Create **css** folder in the **timelinecontrol** folder and create **timelinecontrol.css** file in the **css** folder
 
-	- Select the **timelinecoltrol** folder and click **New Folder**.
+	- Select the **timelinecoltrol** folder and then select **New Folder**.
 
     ![New css folder - screenshot](../L05/Static/mod-02-pcf-1-21.png)
 
 	- Name the folder **css**.
 
-	- Select the **css** folder you created and click **New File**.
+	- Select the **css** folder you created and then select **New File**.
 
     ![New css file - screenshot](../L05/Static/mod-02-pcf-1-22.png)
 
@@ -347,9 +340,9 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![Add constant - screenshot](../L05/Static/mod-02-pcf-1-28.png)
 
-8. Build the timeline element as div and add it to container element as a child.
+8. Build the timeline element as div and add it to container element as a child
 
-	- Locate the **init** method.
+	- Locate the **init** function.
 
 	- Add the script mentioned below to the **init** function.
 
@@ -381,7 +374,7 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![Render timeline function - screenshot](../L05/Static/mod-02-pcf-1-30.png)
 
-10. Call the **renderTimeline** function from the **updateView** function.
+10. Call the **renderTimeline** function from the **updateView** function
 
 	- Locate the **updateView** function.
 
@@ -391,7 +384,7 @@ Note: If you get an error that npm is not a recognized command, you will need to
 
     ![Update view function - screenshot](../L05/Static/mod-02-pcf-1-31.png)
 
-	- Click **File** and **Save All**.
+	- Select **File** and then select **Save All**.
 
 11. Build and start
 
@@ -417,7 +410,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 1. Create test data csv file
 
-	- Select the **src** folder. And click **New File**.
+	- Select the **src** folder and then select **New File**.
 
     ![New file - screenshot](../L05/Static/mod-02-pcf-1-33.png)
 
@@ -513,7 +506,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 5. Replace the hardcoded items with the csv data.
 
-	- Locate the **renderTimeline** method.
+	- Locate the **renderTimeline** function.
 
 	- Replace the hardcoded **items** with code below.
 
@@ -523,7 +516,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 6. Make sure the test environment shows your changes and test the timeline control with the test data.
 
-	- Click **File** and then **Save All**.
+	- Select **File** and then **Save All**.
 
 	- The test harness should still be running. If it is not running run **npm start watch** command.
 
@@ -531,15 +524,15 @@ In this task, you will switch from using the hard-coded array of data to using a
 
     ![Timeline control - screenshot](../L05/Static/mod-02-pcf-1-40.png)
 
-	- Click **Select a File**.
+	- Select **+ Select a File**.
 
     ![Select file - screenshot](../L05/Static/mod-02-pcf-1-41.png)
 
-	- Select the **testdata.csv** and click **Open**.
+	- Select the **testdata.csv** and then select **Open**.
 
     ![Select CSV file - screenshot](../L05/Static/mod-02-pcf-1-42.png)
 
-	- Click **Apply**.
+	- Select **Apply**.
 
     ![Apply changes - screenshot](../L05/Static/mod-02-pcf-1-43.png)
 
@@ -580,13 +573,13 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Go to the **Test Environment**.
 
-	- Click **Select a File**.
+	- Select **+ Select a File**.
 
     ![Select file - screenshot](../L05/Static/mod-02-pcf-1-46.png)
 
-	- Select the **testdata.csv** and click **Open**.
+	- Select the **testdata.csv** and then select **Open**.
 
-	- Click **Apply**.
+	- Select **Apply**.
 
 	- The timeline control should now show the test data.
 
@@ -613,25 +606,13 @@ In this task, you will use the **css** resource you configured to change the col
 
 ## Task #1: Setup and Publish
 
-1. Get your Microsoft Dataverse org URL
+1. Get your environment URL
 
-	- Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+	- Navigate to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) and select environments.
 
-	- Select **Apps** and open the Permit Management application.
+	- Locate and open your **Dev** environment.
 
-    ![Start application - screenshot](../L05/Static/mod-02-pcf-1-48.png)
-
-	- Click Settings and select Advanced Settings.
-
-    ![Advanced settings - screenshot](../L05/Static/mod-02-pcf-1-49.png)
-
-	- Navigate to **Settings | Customizations**.
-
-    ![Customizations - screenshot](../L05/Static/mod-02-pcf-1-50.png)
-
-	- Click **Developer Resources**.
-
-	- Copy your organization **URL**.
+	- Right click and copy the **Environment URL**.
 
     ![Endpoint address - screenshot](../L05/Static/mod-02-pcf-1-51.png)
 
@@ -641,9 +622,9 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Make sure you are still in the **src** directory.
 
-	- Run the command below. Replace **&lt;orgurl&gt;** with **URL** you copied.
+	- Run the command below. Replace **&lt;Environment URL&gt;** with the **URL** you copied.
 
-            pac auth create --url <orgurl>
+            pac auth create --url <Environment URL>
 
 	- Sign in with your **admin** username.
 
@@ -659,29 +640,27 @@ In this task, you will use the **css** resource you configured to change the col
 
 ## Task #2: Add Timeline Control to the Permit Form
 
-1. Open the Permit Management solution.
+1. Open the Permit Management solution
 
 	- Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
 	- Select **Solutions**.
 
-	- Click to open the **Permit Management** solution.
-
-    ![Open solution - screenshot](../L05/Static/mod-02-pcf-1-53.png)
+	- Open the **Permit Management** solution.
 
 2. Open the Permit Main form and switch to classic
 
-	- Locate and click to open the **Permit** Table.
+	- Select **Tabled** and open the **Permit** table.
 
     ![Open Table - screenshot](../L05/Static/mod-02-pcf-1-54.png)
 
 	- Select the **Forms** tab.
 
-	- Click to open the **Main** form.
+	- Open the **Main** form.
 
     ![Open form - screenshot](../L05/Static/mod-02-pcf-1-55.png)
 
-	- Click **Switch to Classic**.
+	- Select **Switch to Classic**.
 
     ![Switch to classic - screenshot](../L05/Static/mod-02-pcf-1-56.png)
 
@@ -693,23 +672,23 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Open sub-grid properties - screenshot](../L05/Static/mod-02-pcf-1-57.png)
 
-	- Select the **Controls** tab and click **Add Control**.
+	- Select the **Controls** tab and select **Add Control**.
 
     ![Add control - screenshot](../L05/Static/mod-02-pcf-1-58.png)
 
-	- Select **timelinecontrol** and click Add.
+	- Select **timelinecontrol** and select **Add**.
 
     ![Add timeline control - screenshot](../L05/Static/mod-02-pcf-1-59.png)
 
-	- Select **Web** and click **OK**.
+	- Select **Web** and and then select **OK**.
 
     ![Select web - screenshot](../L05/Static/mod-02-pcf-1-60.png)
 
 4. Save and publish
 
-	- Click **Save**.
+	- Select **Save**.
 
-	- Click **Publish** and wait for the publishing to complete.
+	- Select **Publish** and wait for the publishing to complete.
 
 	- **DO NOT** close the form editor.
 
@@ -717,23 +696,23 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Go back to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
-	- Select **Apps** and click to start the **Permit Management** application
+	- Select **Apps** and launch the **Permit Management** application
 
-	- Click **Advanced Find**.
+	- Select **Advanced Find**.
 
     ![Advanced find - screenshot](../L05/Static/mod-02-pcf-1-61.png)
 
-	- Select **Inspections** and click **Results**.
+	- Select **Inspections** and then select **Results**.
 
     ![Inspections results - screenshot](../L05/Static/mod-02-pcf-1-62.png)
 
-	- Click to open the **Framing Inspection**.
+	- Open the **Framing Inspection**.
 
-	- Change the **Status Reason** to **Passed** and click **New**.
+	- Change the **Status Reason** to **Passed** and select **New**.
 
     ![Create new inspection - screenshot](../L05/Static/mod-02-pcf-1-63.png)
 
-	- Provide a Name, select Inspection Type, select the Test Permit, select Scheduled Date, select Failed for Status Reason, and click **Save and Close**.
+	- Provide a Name, select Inspection Type, select the Test Permit, select Scheduled Date, select Failed for Status Reason, and then select **Save and Close**.
 
     ![Save and close record - screenshot](../L05/Static/mod-02-pcf-1-64.png)
 
@@ -741,7 +720,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 6. Test the control
 
-	- Click to open a **Permit** record.
+	- Open a **Permit** record.
 
     ![Open permit record - screenshot](../L05/Static/mod-02-pcf-1-65.png)
 
@@ -789,31 +768,31 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![open inspection timeline properties - screenshot](../L05/Static/mod-02-pcf-1-70.png)
 
-	- Click **Edit**.
+	- Select **Edit**.
 
     ![Edit view - screenshot](../L05/Static/mod-02-pcf-1-71.png)
 
-	- Click **Add Column**.
+	- Select **Add Columns**.
 
     ![Add column - screenshot](../L05/Static/mod-02-pcf-1-72.png)
 
-	- Select **Status Reason** and click **OK**.
+	- Select **Status Reason** and select **OK**.
 
     ![Select column - screenshot](../L05/Static/mod-02-pcf-1-73.png)
 
-	- Move the **Status Reason** Column after the **Name** Column.
+	- Move the **Status Reason** column after the **Name** column.
 
     ![Move column - screenshot](../L05/Static/mod-02-pcf-1-74.png)
 
-	- Click **Save and Close**.
+	- Select **Save and Close**.
 
-	- Click **OK**.
+	- Select **OK**.
 
     ![Close properties - screenshot](../L05/Static/mod-02-pcf-1-75.png)
 
-	- Click **Save**.
+	- Select **Save**.
 
-	- Click **Publish** and wait for the publishing to complete.
+	- Select **Publish** and wait for the publishing to complete.
 
 	- Close the form editor.
 
@@ -833,19 +812,17 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Navigate to [Power Apps maker portal - screenshot](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
 
-	- Select **Solutions** and click to open the **Permit Management** solution.
+	- Select **Solutions** and open the **Permit Management** solution.
 
-    ![Open solution - screenshot](../L05/Static/mod-02-pcf-1-78.png)
-
-	- Click **Add Existing | Other | Custom Control**.
+	- Select **Add Existing | More | Developer | Custom Control**.
 
     ![Add existing custom control - screenshot](../L05/Static/mod-02-pcf-1-79.png)
 
-	- Search for Timeline, select **contoso_contoso.timelinecontrol** and click **Add**.
+	- Search for Timeline, select **contoso_contoso.timelinecontrol** and select **Add**.
 
     ![Select control - screenshot](../L05/Static/mod-02-pcf-1-80.png)
 
-	- Click **Publish All Customizations** and wait for the publishing to complete.
+	- Select **Publish All Customizations** and wait for the publishing to complete.
 
  
 
@@ -853,7 +830,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 # Exercise #3: Promote to production
 
-**Objective:** In this exercise, you will export the Permit Management solution form your Dev environment and import it into your Production environment.
+**Objective:** In this exercise, you will export the Permit Management solution from your Dev environment and import it into your Production environment.
 
 ## Task #1: Export Solution
 
@@ -863,17 +840,17 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Solution**.
 
-	- Select the **Permit Management** solution and click **Export**.
+	- Select the **Permit Management** solution and then select **Export**.
 
     ![Export solution - screenshot](../L05/Static/mod-02-pcf-1-81.png)
 
-	- Click **Publish** and wait for the publishing to complete.
+	- Select **Publish** and wait for the publishing to complete.
 
     ![Publish customizations - screenshot](../L05/Static/mod-02-pcf-1-82.png)
 
-	- Click **Next**.
+	- Select **Next**.
 
-	- Select **Managed** and click **Export**.
+	- Select **Managed** and then select **Export**.
 
     ![Export manage solution - screenshot](../L05/Static/mod-02-pcf-1-83.png)
 
@@ -883,11 +860,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Solution** again.
 
-	- Select the **Permit Management** solution and click **Export**.
+	- Select the **Permit Management** solution and then select **Export**.
 
-	- Click **Next**.
+	- Select **Next**.
 
-	- Select **Unmanaged, edit the version number** to match the Managed Solution you just exported and click **Export**.
+	- Select **Unmanaged, edit the version number** to match the Managed Solution you just exported and select **Export**.
 
 	- Save the **Exported** solution on your machine.
 
@@ -899,28 +876,23 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Solution**.
 
-	- Click **Import**.
+	- Select **Import**.
 
     ![Import solution - screenshot](../L05/Static/mod-02-pcf-1-84.png)
 
 	- Click **Choose File**.
 
-	- Select the **Managed** solution you exported and click **Open**.
+	- Select the **Managed** solution you exported and select **Open**.
 
     ![Select manage solution file - screenshot](../L05/Static/mod-02-pcf-1-85.png)
 
-	- Click **Next**.
+	- Select **Next**.
 
-	- Click **Next** again.
-
-	- Select the **Upgrade** option if you already have another version of the same solution.
-
-	- Click **Import**.
+	- Expand the Advanced settings area and make sure **Upgrade** is selected.
+  
+	- Select **Import** and wait the import to complete.
 
     ![Import solution - screenshot](../L05/Static/mod-02-pcf-1-86.png)
 
- 
-
-Wait for the import to complete and click **Close**
 
 Review the production application by adding a few records and testing your progress.
