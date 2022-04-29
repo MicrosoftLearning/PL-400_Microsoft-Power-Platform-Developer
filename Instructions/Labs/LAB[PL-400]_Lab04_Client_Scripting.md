@@ -683,7 +683,7 @@ In this task, you will create a custom API that will be called to lock the permi
 
 	- Select **+ New** and then select **More | Other | Custom API Response Parameter**.
 
-	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type, and select **Save and Close**.
+	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type. set **Yes** for Is Optional, and select **Save and Close**.
 
     ![Process arguments - screenshot](../L04/Static/mod-01-client-scripting-80.png)
 
