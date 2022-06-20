@@ -370,8 +370,14 @@ The following is what the model-driven app designer looks like when all the cust
 
 3. Edit Sitemap
 
-    - Select **Edit Site Map**.
-
+       - Switch to Classic.
+       
+       - Click Publish.
+        
+       - Switch back to Classic.
+        
+       - Select **Edit Site Map**.
+        
 	![Edit sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image33.png)
 
 4. Edit the default titles
