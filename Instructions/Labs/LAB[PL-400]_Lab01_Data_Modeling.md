@@ -402,7 +402,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Done**.
 
-6. Click **Save Table**.
 
 7. Select the **<- Back to solutions** button.
 
