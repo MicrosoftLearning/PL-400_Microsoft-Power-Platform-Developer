@@ -288,7 +288,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Required**. 
 
-	- Select **Done**.
+	- Select **Save**.
 
     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
