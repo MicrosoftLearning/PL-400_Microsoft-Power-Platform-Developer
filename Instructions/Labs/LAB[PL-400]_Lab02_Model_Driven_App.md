@@ -140,11 +140,11 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Select the **Views** tab and open the **Active Permits** view.
 
-	![Open view for edit - screenshot](../L02/Static/Mod_02_Model_Driven_App_image15.png)
+	
 
 	- Drag the **Build Site** column and drop it between the **Name** and **Created On** columns.
 
-	![Add column to view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image16.png)
+	
 
 	- Select on the **Permit Type** column. The Permit Type column will be added to the view.
 
@@ -152,7 +152,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Go to the view designer and select on the chevron icon of the **Created On** column.
 
-	![Edit column - screenshot](../L02/Static/Mod_02_Model_Driven_App_image17.png)
+	
 
 	- Select **Remove**. **Created On** column will now be removed from the view.
 
