@@ -475,7 +475,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 19. Select **Save and Close to** close the app designer.
 
-20. Select **Done**.
+20. Click **Back**.
 
 21. Select **Publish all Customizations.**
 
