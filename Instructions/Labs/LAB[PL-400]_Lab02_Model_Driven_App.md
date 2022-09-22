@@ -364,7 +364,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Select **+ New** and select **App | Model-Driven App**.
   ![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
-	- Select **Classic app designer** and select **Create**. 
+	
   
 	- Enter **Permit Management** for **Name** and select **Done**.
 
