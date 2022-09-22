@@ -172,15 +172,17 @@ To prepare your learning environments you will create a solution, a publisher, a
 
     ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
+	- Expand Data type.
+	
+	- Select **Date and Time**.
+	
+	- Select **Date only**.
+	
+	- In the **Required** dropdown, select **Business required**.
+	
+	- Select **Save**.
+	
 	- Enter **Start Date** for **Display name**.
-
-	- Select **Date Only** for **Data type**.
-
-	- Select **Required**.
-
-	- Leave the searchable checkbox checked. When a Column is searchable it appears in Advanced Find in model-driven apps and is available when customizing views. De-selecting this will reduce the number of options shown to people using advanced find.
-
-	- Select **Done**.
 
 4. Create Expiration Date column.
 
