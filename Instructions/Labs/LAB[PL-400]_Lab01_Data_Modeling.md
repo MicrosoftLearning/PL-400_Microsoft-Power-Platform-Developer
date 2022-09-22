@@ -320,8 +320,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Done**.
 
-6. Click **Save Table**.
-
  
 
 ## Task #4: Create Inspection Table and Columns
