@@ -550,7 +550,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **+ Add relationship** and select **Many-to-one**.
 
-    ![Many to one relationship - screenshot](../L01/Static/Mod_01_Data_Modeling_image31.png)
+
 
 	- Select Contact for **Related (One)** and select **Done**.
 
