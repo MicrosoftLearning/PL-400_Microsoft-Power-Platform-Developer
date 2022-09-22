@@ -206,15 +206,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 	
 	- Click on chevron icon next to **Default**  
 
-	- Select **Custom** for filter.
-
-    ![Change filter to custom - screenshot](../L01/Static/Mod_01_Data_Modeling_image11.png)
-
-	- Select **Save Table**.
-
-    ![Save Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image12.png)
-
- 
 
 ## Task #2: Create Permit Type Table and Columns
 
