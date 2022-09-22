@@ -164,9 +164,11 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 3. Create Start Date column
 
-	-  Open the Permit table.
-
-	-  Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	-  Expand the permit table.
+	
+	-  Click Columns.
+	
+	-  Select **+ New column**.
 
     ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
