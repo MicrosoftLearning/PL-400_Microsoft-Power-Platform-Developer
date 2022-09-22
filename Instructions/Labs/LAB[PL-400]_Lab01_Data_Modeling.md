@@ -283,7 +283,9 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Required**. 
 
+
 	- Select **Done**.
+
     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
 3. Add Zip/Postal Code column
