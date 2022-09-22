@@ -140,11 +140,11 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Select the **Views** tab and open the **Active Permits** view.
 
-	![Open view for edit - screenshot](../L02/Static/Mod_02_Model_Driven_App_image15.png)
+	
 
 	- Drag the **Build Site** column and drop it between the **Name** and **Created On** columns.
 
-	![Add column to view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image16.png)
+	
 
 	- Select on the **Permit Type** column. The Permit Type column will be added to the view.
 
@@ -152,7 +152,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Go to the view designer and select on the chevron icon of the **Created On** column.
 
-	![Edit column - screenshot](../L02/Static/Mod_02_Model_Driven_App_image17.png)
+	
 
 	- Select **Remove**. **Created On** column will now be removed from the view.
 
@@ -364,14 +364,20 @@ The following is what the model-driven app designer looks like when all the cust
 
 	- Select **+ New** and select **App | Model-Driven App**.
   ![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
-	- Select **Classic app designer** and select **Create**. 
+	
   
 	- Enter **Permit Management** for **Name** and select **Done**.
 
 3. Edit Sitemap
 
-    - Select **Edit Site Map**.
-
+       - Switch to Classic.
+       
+       - Click Publish.
+        
+       - Switch back to Classic.
+        
+       - Select **Edit Site Map**.
+        
 	![Edit sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image33.png)
 
 4. Edit the default titles
@@ -475,7 +481,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 19. Select **Save and Close to** close the app designer.
 
-20. Select **Done**.
+20. Click **Back**.
 
 21. Select **Publish all Customizations.**
 

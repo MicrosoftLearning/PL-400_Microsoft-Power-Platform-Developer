@@ -164,21 +164,25 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 3. Create Start Date column
 
-	-  Open the Permit table.
-
-	-  Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	-  Expand the permit table.
+	
+	-  Click Columns.
+	
+	-  Select **+ New column**.
 
     ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
 
+	- Expand Data type.
+	
+	- Select **Date and Time**.
+	
+	- Select **Date only**.
+	
+	- In the **Required** dropdown, select **Business required**.
+	
+	- Select **Save**.
+	
 	- Enter **Start Date** for **Display name**.
-
-	- Select **Date Only** for **Data type**.
-
-	- Select **Required**.
-
-	- Leave the searchable checkbox checked. When a Column is searchable it appears in Advanced Find in model-driven apps and is available when customizing views. De-selecting this will reduce the number of options shown to people using advanced find.
-
-	- Select **Done**.
 
 4. Create Expiration Date column.
 
@@ -202,15 +206,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 	
 	- Click on chevron icon next to **Default**  
 
-	- Select **Custom** for filter.
-
-    ![Change filter to custom - screenshot](../L01/Static/Mod_01_Data_Modeling_image11.png)
-
-	- Select **Save Table**.
-
-    ![Save Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image12.png)
-
- 
 
 ## Task #2: Create Permit Type Table and Columns
 
@@ -288,7 +283,8 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Required**. 
 
-	- Select **Save**.
+
+	- Select **Done**.
 
     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
@@ -325,8 +321,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 	- Make sure **Text** is selected for **Data type.** 
 
 	- Select **Done**.
-
-6. Click **Save Table**.
 
  
 
@@ -402,7 +396,6 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Done**.
 
-6. Click **Save Table**.
 
 7. Select the **<- Back to solutions** button.
 
@@ -558,7 +551,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **+ Add relationship** and select **Many-to-one**.
 
-    ![Many to one relationship - screenshot](../L01/Static/Mod_01_Data_Modeling_image31.png)
+
 
 	- Select Contact for **Related (One)** and select **Done**.
 
