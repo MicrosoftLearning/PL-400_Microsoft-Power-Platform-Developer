@@ -18,7 +18,7 @@ Exercise 1 – Acquire your Power Platform trial tenant
 
 1. Copy your **Microsoft 365 credentials** from the Authorized Lab Hoster.
 
-2. Navigate to <powerapps.microsoft.com> and click **Start free.**
+2. Navigate to [https://powerapps.microsoft.com](https://powerapps.microsoft.com) and click **Start free.**
 
 3. Enter the email address from your Microsoft 365 credentials.
 
@@ -36,7 +36,7 @@ In this exercise, you will create your **Development** environment that you will
 
 ### Task 1 – Create environment
 
-1.  Access <https://admin.Powerplatform.microsoft.com> and log in with your Microsoft 365 credentials if prompted again.
+1.  Access Power Platform admin center [https://admin.Powerplatform.microsoft.com](https://admin.Powerplatform.microsoft.com) and log in with your Microsoft 365 credentials if prompted again.
 
 2. Select **Environments** and click **+ New**.
 
