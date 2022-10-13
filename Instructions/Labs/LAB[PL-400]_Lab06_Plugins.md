@@ -191,7 +191,7 @@ As part of building the plugins, you will complete the following activities.
 
 1. If you don’t have CDS/Dynamics 365 SDK tools downloaded already, download them using the following method: 
 
-	- Navigate to [https://www.cds.tools/SDK](https://www.cds.tools/SDK) 
+	- Navigate to [https://xrm.tools/SDK](https://xrm.tools/SDK) 
 
 	- Select **Download SDK Zip File**.
 
