@@ -163,7 +163,7 @@ As part of building the plugins, you will complete the following activities.
 	- Call RetrieveMultiple and add Trace Message.
 
                 localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
-                var response = localPluginContext.CurrentUserService.RetrieveMultiple(new FetchExpression(fetchString));
+                var response = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchString));
 
 	6. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
 
