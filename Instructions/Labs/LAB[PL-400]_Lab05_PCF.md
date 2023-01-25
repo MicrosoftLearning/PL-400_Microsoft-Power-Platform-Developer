@@ -179,7 +179,15 @@ This is what the component will look like when it is completed.
 
             npm run build
 
+	**Note:** if you experience an error, try to modify your .eslintrc.json and include the rules as follows:
+
+			"rules": {
+			"no-unused-vars": "off",
+			"no-undef" : "off"
+			}
+					
 	- You should now be able to see the out folder. Expand the folder and review its content.
+
 
     ![Out folder - screenshot](../L05/Static/mod-02-pcf-1-13.png)
 
