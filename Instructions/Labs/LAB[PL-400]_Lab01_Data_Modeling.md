@@ -69,7 +69,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select your Dev environment.
 
-    ![Select environment - screenshot](../L01/Static/Mod_01_Data_Modeling_image3.png)
+    	![Select environment - screenshot](../L01/Static/Mod_01_Data_Modeling_image3.png)
 
 	- Select **Solutions** from the left menu and select **+ New solution**.
 
@@ -79,13 +79,13 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select the **+ New Publisher** button below **Publisher** dropdown.
 
-    ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
+    	![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
 	- Enter **Contoso** for **Display Name** and **contoso** for **Name** and **Prefix.** 
 
 	- Select **Save**.
 
-    ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
+    	![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
 
 3. Complete the solution creation
@@ -108,9 +108,9 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Next**.
 
-	- Select **Select Components**.
+	- Select **Select objects**.
 
-    ![Select Table components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
+    	![Select Table components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
 
 	- Select the **Views** tab and select the **Active Contacts** view.
   
@@ -124,7 +124,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- You should have **1 View** and **1 Form** selected. Select **Add** again. This will add the Contact Table to the newly created solution.
 
-    ![Add components](../L01/Static/Mod_01_Data_Modeling_image8.png)
+    	![Add components](../L01/Static/Mod_01_Data_Modeling_image8.png)
 
 2. Add User table to the solution
 
@@ -134,7 +134,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **Next**.
 
-	- **DO NOT** select any components.
+	- **DO NOT** select any objects.
   
 	- Select **Add**.
 
@@ -158,19 +158,21 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **+ New** and then select **Table**.
 
-    ![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
+    	![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
 
 	- Enter **Permit** for **Display Name** and select **Save**. This will start provisioning the table in background while you can start adding Columns.
 
+
+
 3. Create Start Date column
 
-	-  Expand the permit table.
+	- In the objects left pane expand the **Permit** table then select **Columns**.
 	
-	-  Click Columns.
-	
-	-  Select **+ New column**.
+	- Select **+ New column**.
 
-    ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+    	![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+
+	- Enter **Start Date** for **Display name**.
 
 	- Expand Data type.
 	
@@ -181,26 +183,24 @@ To prepare your learning environments you will create a solution, a publisher, a
 	- In the **Required** dropdown, select **Business required**.
 	
 	- Select **Save**.
-	
-	- Enter **Start Date** for **Display name**.
 
 4. Create Expiration Date column.
 
-	- Select **+ Add Column**.
+	- Select **+ New column**.
 
 	- Enter **Expiration Date** for **Display name**.
 
-	- Select **Date Only** for **Data type**.
+	- Select **Date Only** (Date and Time) for **Data type**.
 
 	- Select **Done**.
 
 5. Create New Size column.
 
-	- Select **+ Add Column**.
+	- Select **+ New column**.
 
 	- Enter **New Size** for **Display name**.
 
-	- Select **Whole Number** for **Data type.** 
+	- Select **Whole Number** (Number) for **Data type.** 
 
 	- Select **Done**.
 	
@@ -213,7 +213,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select **All**.
 
-    ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
+    	![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
   
 	- Select **+ New** and then select **Table**.
 
@@ -225,7 +225,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Open the **Permit Type** table.
   
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Make sure you have the **Columns** tab selected and select **+ New column**.
 
 	- Enter **Require Inspections** for **Display name**.
 
@@ -239,11 +239,11 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Enter **Require Size** for **Display name**.
 
-	- Select **Yes/No** for **Data type**.
+	- Select **Yes/No** (Choice) for **Data type**.
 
 	- Select **Done**.
 
-4. Select **Save Table**.
+4. Select **Save**.
 
  
 
@@ -265,62 +265,69 @@ To prepare your learning environments you will create a solution, a publisher, a
   
 	- Expand **Advanced options**.
   
-	 Change the **Schema name** to **street1**.
+	- Change the **Schema name** to **street1**.
 
 	- Select **Save**.
 
-    ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
+    	![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
 
 2. Add City column
 
 	- Open the **Build Site** table.
   
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Make sure you have the **Columns** tab selected and select **+ New column**.
 
-	- Enter **City** for **Display name** and change the **Name** to **city**.
+	- Enter **City** for **Display name**
+
+	- Expand advanced options and change the **Schema name** to **city**.
 
 	- Make sure **Text** is selected for **Data type**. 
 
-	- Select **Required**. 
+	- In the **Required** dropdown, select **Business required**.
 
+	- Select **Save**.
 
-	- Select **Done**.
-
-    ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
+    	![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
 3. Add Zip/Postal Code column
 
 	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
 
-	- Enter **ZIP/Postal Code** for **Display Name** and change the **Name** to **postalcode**.
+	- Enter **ZIP/Postal Code** for **Display Name**.
+
+	- Expand advanced options and change the **Schema name** to **postalcode**.
 
 	- Make sure **Text** is selected for **Data type**. 
+	
+	- In the **Required** dropdown, select **Business required**. 
 
-	- Select **Required**. 
-
-	- Select **Done**.
+	- Select **Save**.
 
 4. Add State/Province column
 
 	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
 
-	- Enter **State/Province** for **Display Name** and change the **Name** to **stateprovince**.
+	- Enter **State/Province** for **Display Name**.
+	
+	- Expand advanced options and change the **Schema name** to **stateprovince**.
 
 	- Make sure **Text** is selected for **Data type**.
-
-	- Select **Required**.
-
-	- Select **Done**.
+	
+	- In the **Required** dropdown, select **Business required**. 
+	
+	- Select **Save**.
 
 5. Add Country Region column
 
 	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
 
-	- Enter **Country/Region** for **Display Name** and change the **Name** to **country**.
+	- Enter **Country/Region** for **Display Name**.
+
+	- Expand advanced options and change the **Schema name** to **country**.
 
 	- Make sure **Text** is selected for **Data type.** 
 
-	- Select **Done**.
+	- Select **Save**.
 
  
 
@@ -340,25 +347,29 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Open the **Inspection** table.
 	
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Make sure you have the **Columns** tab selected and select **+ New column**.
 
 	- Enter **Inspection Type** for **Display name**.
 
-	- Select **Choice** for **Data type**.
+	- Select **Choice** (Choice) for **Data type**.
 
-	- Select on the **Choice** dropdown and select **+ New choice**.
+	- Select **+ New choice**.
 
-    ![New Choice - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
+    	![New Choice - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
 
-	- Enter **Initial Inspection** and select **Add new item**.
+	- Enter **Inspection** for Display name
 
-    ![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
+	- Enter **Initial Inspection** for **Label** and select **+ New choice**.
+
+    	![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
 
 	- Enter **Final Inspection** and select **Save**.
 
-    ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
+    	![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
+	
+	- Select **Inspection** for **Sync this choice with**
 
-	-  Click **Done**.
+	-  Click **Save**.
 
 3. Add Scheduled Date Column
 
@@ -366,11 +377,11 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Enter **Scheduled Date** for **Display name**.
 
-	- Select **Date Only** for **Data type**.
+	- Select **Date Only** (Date and time) for **Data type**.
 
-	- Select **Required**. 
+	- In the **Required** dropdown, select **Business required**. 
 
-	- Select **Done**.
+	- Select **Save**.
 
 4. Add Comments column
 
@@ -382,9 +393,9 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Expand **Advanced options**.
 
-	- Set **Max length** to **1000** in the Advanced options.
+	- Set **Maximum character count** to **1000** in the Advanced options.
 
-	- Select **Done**.
+	- Select **Save**.
 
 5. Add Sequence column
 
@@ -394,7 +405,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Make sure **Text** is selected for **Data type**.
 
-	- Select **Done**.
+	- Select **Save**.
 
 
 7. Select the **<- Back to solutions** button.
@@ -418,6 +429,8 @@ To prepare your learning environments you will create a solution, a publisher, a
 	- Select on the **…** icon and select **Switch to Classic**.
 
     ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
+    
+    	- Select **Permit Management** solution.
 
 3. Edit Inspection table Status Reason options
 
@@ -437,17 +450,17 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Select the **Active** option and select **Edit**.
 
-    ![Edit option - screenshot](../L01/Static/Mod_01_Data_Modeling_image23.png)
+    	![Edit option - screenshot](../L01/Static/Mod_01_Data_Modeling_image23.png)
 
 	- Change the **Label** to **New Request** and select **OK**.
 
-    ![Change option label - screenshot](../L01/Static/Mod_01_Data_Modeling_image24.png)
+    	![Change option label - screenshot](../L01/Static/Mod_01_Data_Modeling_image24.png)
 
 5. Add the Pending option
 
 	- Select **Add**.
 
-    ![Add new option - screenshot](../L01/Static/Mod_01_Data_Modeling_image25.png)
+    	![Add new option - screenshot](../L01/Static/Mod_01_Data_Modeling_image25.png)
 
 	- Enter **Pending** for **Label** and select **OK**.
 
@@ -525,9 +538,8 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 20. Select **Publish All Customizations**.
 
- 
-  
-‎ 
+
+
 
 # Exercise #3: Create Relationships 
 
@@ -547,41 +559,39 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Open the **Permit** table.
 
-	- Select the **Relationships** tab.
+	- Select the **Relationships** at **Schema** section.
 
-	- Select **+ Add relationship** and select **Many-to-one**.
-
-
+	- Select **+ New relationship** and select **Many-to-one**.
 
 	- Select Contact for **Related (One)** and select **Done**.
 
-    ![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
+    	![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
 
 3. Create Permit to Inspection relationship
 
-	- Select **Add relationship** and select **One-to-many**.
+	- Select **New relationship** and select **One-to-many**.
 
 	- Select **Inspection** for **Table** in the **Related (Many)** and click **Advanced Options**.
 
-    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
+	 ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
 
 	- Change the **Type of Behavior** to **Parental** and select **Done**.
 
-    ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
-
+	 ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
+	 
 4. Create Permit to Build Site relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**.
 
 	- Select **Build Site** for **Related (One) Table** and select **Advanced Options**.
 
 	- Change the **Delete** to **Restrict** and select **Done**.
 
-    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
-
+    	![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
+	
 5. Create Permit to Permit Type relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**.
 
 	- Select **Permit Type** for **Related (One) Table** and select **Done**.
 
@@ -594,7 +604,3 @@ To prepare your learning environments you will create a solution, a publisher, a
     ![Save table - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
 
 8. Select **Solutions** from the top menu and click **Publish All Customizations.**
-
-#  
-
- 
