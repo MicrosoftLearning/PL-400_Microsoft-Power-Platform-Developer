@@ -116,7 +116,7 @@ To prepare your learning environments you will create a solution, a publisher, a
   
 	- Select **Add**.
 
-	- Select **Select Components** again.
+	- Select **Select objects** again.
 
 	- Select the **Forms** tab and select the **Contact** form.
 
