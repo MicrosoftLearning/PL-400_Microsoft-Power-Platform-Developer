@@ -49,12 +49,12 @@ As part of building the plugins, you will complete the following activities.
    - Navigate to https://make.powerapps.com/ and make sure you are in your dev environment.
   
    - Select **Solutions** and open the **Permit Management** solution.
-  
-   - Select **Switch to classic**.
-  
-   - Expand **Entities**, expand the **Permit** table, and select **Fields**.
-  
-   - Locate and double click to open the **Status Reason** column.
+
+   - In the **Objects** pane on the left side expand the **Tables** then expand **Permit** table.
+
+   - Select **Columns**.
+    
+   - Double click to open and locate the **Status Reason** column.
   
    - Scroll down and double click on the **Locked** option.
   
@@ -62,13 +62,13 @@ As part of building the plugins, you will complete the following activities.
   
     ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-8.png)
 
-   - You will need this value in a future step. Select **OK**
+   - You will need this value in a future step. Select **Cancel** to close the editor.
   
-   - Close the column editor.
+   - In the **Objects** pane on the left select the **Inspection** table.
   
-   - Expand **Entities**, expand the **Inspection** table, and select **Fields**.
+   - Select **Columns**.
   
-   - Locate and double click to open the **Status Reason** column.
+   - Double click to open and locate the **Status Reason** column.
   
    - Scroll down and double click on the **Pending** option.
   
@@ -76,15 +76,13 @@ As part of building the plugins, you will complete the following activities.
   
     ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-9.png)
 
-   - You will need this value in a future step. Select **OK**
+   - You will need this value in a future step.
   
-   - Double click on the **Canceled** option.
+   - locate the **Canceled** option.
 
    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-10.png)
   
-   - You will need this value in a future step. Select **OK**
-  
-   - Close the column editor.
+   - You will need this value in a future step. Select **Cancel** to close the editor.
   
   **Note:** Keep these values on a notepad, you need them in future steps.
 
@@ -140,7 +138,7 @@ As part of building the plugins, you will complete the following activities.
 
             using Microsoft.Xrm.Sdk.Query;
 
-	- add the code below inside the ExecuteCdsPlugin method.
+	- In the **ExecuteDatavesePlugin** method After the comment `// TODO: Implement you custom business logic` add the code below.
 
             var permitEntity = context.InputParameters["Target"] as Entity;
 
@@ -179,7 +177,7 @@ As part of building the plugins, you will complete the following activities.
             throw new InvalidPluginExecutionException("Too many locked permits for build site");
             }
 
-	- The ExecuteCdsPlugin method should now look like the image below.
+	- The ExecuteDatavesePlugin method should now look like the image below.
 
     ![Execute CDS Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
 
@@ -189,35 +187,15 @@ As part of building the plugins, you will complete the following activities.
 
 ## Task #2: Deploy the plugin
 
-1. If you don’t have CDS/Dynamics 365 SDK tools downloaded already, download them using the following method: 
-
-	- Navigate to [https://xrm.tools/SDK](https://xrm.tools/SDK) 
-
-	- Select **Download SDK Zip File**.
-
-    ![Download SDK - screenshot](../L06/Static/Mod_01_Plugin_image13.png)
-
-	- Save the zip file on your machine.
-
-	- Right click on the downloaded **sdk.zip** file and select **Properties**.
-
-	- Check the **Unblock** checkbox and select Apply.
-
-    ![Unblock file - screenshot](../L06/Static/Mod_01_Plugin_image15.png)
-
-	- Select **OK**.
-
-	- Right click on the **sdk.zip** file again and select **Extract All**.
-
-	- Complete extracting.
+1. Power Platform tools will be installed on first launch.
 
 2. Start the plugin registration tool and sign in.
 
-	- Open the **sdk** folder you extracted and open the **PluginRegistration** folder.
+	- Return to command prompt.
 
-	- Locate **PluginRegistration.exe** and double click to start. This will open a new window.
-
-    ![Start plugin registration tool - screenshot](../L06/Static/Mod_01_Plugin_image16.png)
+	- Run the command below to launch the Plug-in Registration Tool (PRT).
+	
+            pac tool prt
 
 3. Connect to your org.
 
@@ -237,7 +215,7 @@ As part of building the plugins, you will complete the following activities.
 
 4. Register new assembly
 
-	- Select **Register** and select **Register** **New Assembly**.
+	- Select **Register** and select **Register** **Register New Package**.
 
     ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image20.png)
 
@@ -245,23 +223,23 @@ As part of building the plugins, you will complete the following activities.
 
     ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image21.png)
 
-	- Browse to the bin/**debug** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject**.dll file and select **Open**. 
+	- Browse to the bin/**debug** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject.1.0.0.nupkg** file and select **Open**. 
 	- 
 ‎**Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
 
 ![Select .dll file - screenshot](../L06/Static/Mod_01_Plugin_image22.png)
 
-   - Select **Register Selected Plugins**.
+   - For solution select **Permit Management**.
+
+   - Select **Import**.
 
 ![Register plugin - screenshot](../L06/Static/Mod_01_Plugin_image23.png)
 
-   - Select **OK**.
-  
-![Registration popup - screenshot](../L06/Static/Mod_01_Plugin_image24.png)
+ 
 
 1. Register new step
 
-	- Select the assembly you just registered.
+	- Select the assembly ContosoPackageProject you just registered.
 
 	- Select **Register** and then select **Register New Step**.
 
@@ -281,9 +259,6 @@ As part of building the plugins, you will complete the following activities.
 
  
 
-  
-‎ 
-
 # Exercise #2: Create Custom Action Plugin
 
 **Objective**: In this exercise, you will create and register a plugin that will be invoked when the lock permit custom action is used. This plugin will be used to implement the business logic of locking the permit. Specifically, it will update the permit to indicate it is locked and then cancel any pending inspections.
@@ -291,6 +266,8 @@ As part of building the plugins, you will complete the following activities.
 **Note:** If you did not create the custom API in a prior lab, look in your resources folder for how to add it here before you proceed.
 
 ## Task #1: Add a new plugin to the project
+
+1. Create new class named LockPermitCancelInspections.
 
 1. Add **using statements** to the **LockPermitCancelInspections** class, make the class **public**, and inherit from **PluginBase**
 
@@ -315,12 +292,14 @@ As part of building the plugins, you will complete the following activities.
 
             }
             
-            protected override void ExecuteCdsPlugin(ILocalPluginContext localPluginContext)
+            protected override void ExecuteDataversePlugin(ILocalPluginContext localPluginContext)
             { 
                 if (localPluginContext == null)
                 {
                     throw new ArgumentNullException(nameof(localPluginContext));
                 }
+		
+		var context = localPluginContext.PluginExecutionContext;
             }
 
 4. Get the target Table reference, Table, set status reason to lock, and update the permit record.
@@ -337,7 +316,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Update the **Permit** record and add **Trace** message.
 
-            localPluginContext.CurrentUserService.Update(permitEntity);
+            localPluginContext.PluginUserService.Update(permitEntity);
             localPluginContext.Trace("Updated Permit Id " + permitEntityRef.Id);
 
     ![Execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image31.png)
@@ -374,7 +353,7 @@ As part of building the plugins, you will complete the following activities.
 	- Retrieve the **Inspections** and add **Trace** messages.
 
             localPluginContext.Trace("Retrieving inspections for Permit Id " + permitEntityRef.Id);
-            var inspectionsResult = localPluginContext.CurrentUserService.RetrieveMultiple(qe);
+            var inspectionsResult = localPluginContext.PluginUserService.RetrieveMultiple(qe);
             localPluginContext.Trace("Retrievied " + inspectionsResult.TotalRecordCount + " inspection records");
 
 	- Create a **variable** that will keep track of the canceled **Inspections** count and Iterate through the returned Tables.
@@ -407,7 +386,7 @@ As part of building the plugins, you will complete the following activities.
 	- Update the **Inspection** and add **Trace** messages.
 
             localPluginContext.Trace("Canceling inspection Id : " + inspection.Id);
-            localPluginContext.CurrentUserService.Update(inspection);
+            localPluginContext.PluginUserService.Update(inspection);
             localPluginContext.Trace("Canceled inspection Id : " + inspection.Id);
 
  
@@ -452,7 +431,7 @@ As part of building the plugins, you will complete the following activities.
 	- Add Trace Message and create the Note record.
 
             localPluginContext.Trace("Creating a note reocord");
-            var createdNoteId = localPluginContext.CurrentUserService.Create(note);
+            var createdNoteId = localPluginContext.PlugingUserService.Create(note);
 
 	- Check if the Note record was created and add Trace Message.
 
@@ -469,19 +448,16 @@ As part of building the plugins, you will complete the following activities.
 
 2. Update the assembly
 
+	- In **View** select **Display by Package**.
+
 	- Select **ContosoPackageProject** and select **Update**.
 
     ![Update assembly - screenshot](../L06/Static/Mod_01_Plugin_image36.png)
 
 	- Select **…** browse**.
 
-	- Browse to the **debug** folder of your plugin project, select the **ContosoPackageProject.dll** file and select **Open**.
+	- Browse to the **debug** folder of your plugin project, select the **ContosoPackageProject** file and select **Update**.
 
-	- Check **Select All** checkbox and then select **Update Selected Plugins**.
-
-    ![Update plugins - screenshot](../L06/Static/Mod_01_Plugin_image38.png)
-
-	- Select **OK**.
 
 3. Add plugin and configure the custom API
 
@@ -520,7 +496,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Solution** and open the **Permit Management** solution.
 
-	- Select **Tables** and select the **...** button of the **Permit** table and then select **Settings**.
+	- Select **Tables** and select the **...** button of the **Permit** table and then select **Properties**.
 
     ![Table settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
 
