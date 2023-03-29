@@ -137,6 +137,7 @@ As part of building the plugins, you will complete the following activities.
     - Add the using statement below to the class.
 
             using Microsoft.Xrm.Sdk.Query;
+            using ContosoPackageProject
 
 	- In the **ExecuteDatavesePlugin** method After the comment `// TODO: Implement you custom business logic` add the code below.
 
@@ -156,18 +157,18 @@ As part of building the plugins, you will complete the following activities.
 
 	- Create the **FetchXML** string. Replace **[Locked Option Value]** with the locked option value of the status reason column from Permit table you copied.
 
-                string fetchString = "<fetch output-format='xml-platform' distinct='false' version='1.0' mapping='logical' aggregate='true'><entity name='contoso_permit'><attribute name='contoso_permitid' alias='Count' aggregate='count' /><filter type='and' ><condition attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{" + buildSiteRef.Id + "}'/><condition attribute='statuscode' operator='eq' value='[Locked Option Value]'/></filter></entity></fetch>";
+            string fetchString = "<fetch output-format='xml-platform' distinct='false' version='1.0' mapping='logical' aggregate='true'><entity name='contoso_permit'><attribute name='contoso_permitid' alias='Count' aggregate='count' /><filter type='and' ><condition attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{" + buildSiteRef.Id + "}'/><condition attribute='statuscode' operator='eq' value='[Locked Option Value]'/></filter></entity></fetch>";
 
 	- Call RetrieveMultiple and add Trace Message.
 
-                localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
-                var response = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchString));
+            localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
+            var response = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchString));
 
 	6. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
 
 	- Get the locked permits **Count**.
 
-                int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
+            int lockedPermitCount = (int)((AliasedValue)response.Entities[0]["Count"]).Value;
 
 	- Add Trace Message, check if the **Count** is more than **0** and throw **InvalidPluginExecutionException** if it is more than **0**.
 
@@ -374,7 +375,7 @@ As part of building the plugins, you will complete the following activities.
 
             if (currentValue.Value == 1 || currentValue.Value == 330650000)
             {
-            canceledInspectionsCount++;
+            
             }
 
 4. Cancel the inspections that are pending or new request
@@ -389,8 +390,9 @@ As part of building the plugins, you will complete the following activities.
             localPluginContext.PluginUserService.Update(inspection);
             localPluginContext.Trace("Canceled inspection Id : " + inspection.Id);
 
+            canceledInspectionsCount++;
  
-
+ 
     ![Foreach section of the execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image33.png)
 
 ## Task #3: Set Output Parameter and Create Note Record
