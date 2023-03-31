@@ -639,8 +639,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
     ![Removed tab and size column - screenshot](../L04/Static/mod-01-client-scripting-65.png)
 
  
-
-# Exercise #4: Command Button Function (Optional)
+# Exercise #4: Command Button Function
 
 **Objective:** In this exercise, you will you will create custom API, create a function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
 
@@ -679,9 +678,11 @@ In this task, you will create a custom API that will be called to lock the permi
 
 	- Select **Done**
 
-4. Create custom API response parameter
+4. Create Custom API Response Property 
 
-	- Select **+ New** and then select **More | Other | Custom API Response Parameter**.
+	> **NOTE:** Previously the 'Custom API Response Property' was called 'Custom API response parameter'.
+
+	- Select **+ New** and then select **More | Other | Custom API Response Property**.
 
 	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type. set **Yes** for Is Optional, and select **Save and Close**.
 
