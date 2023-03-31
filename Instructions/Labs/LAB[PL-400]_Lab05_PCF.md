@@ -266,7 +266,7 @@ This is what the component will look like when it is completed.
 
     ![Build result - screenshot](../L05/Static/mod-02-pcf-1-20.png)
 
- 
+	> NOTE: If you get the response where 'msbuild' is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
 
 ## Task #3: Build the Basic Timeline
 
@@ -300,7 +300,7 @@ This is what the component will look like when it is completed.
 
 4. Change the data-set name to **timelineDataSet**.
 
-	- Locate **data-set** tag and change the name property to **timelineDataSet**.
+	- Locate **sampleDataSet** tag and change the name property to **timelineDataSet**.
 
     ![Change dataset name - screenshot](../L05/Static/mod-02-pcf-1-24.png)
 
@@ -578,6 +578,9 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![CSS file - screenshot](../L05/Static/mod-02-pcf-1-45.png)
 
+
+	- Select File and then select Save All.
+
 2. Check the test environment, load the test data and make sure it shows your changes
 
 	- Go to the **Test Environment**.
@@ -715,7 +718,9 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Inspections results - screenshot](../L05/Static/mod-02-pcf-1-62.png)
 
-	- Open the **Framing Inspection**.
+	- Select **Inspection**.
+
+	- Open the **Framing Inspection** record.
 
 	- Change the **Status Reason** to **Passed** and select **New**.
 
@@ -729,7 +734,9 @@ In this task, you will use the **css** resource you configured to change the col
 
 6. Test the control
 
-	- Open a **Permit** record.
+	- Select **Permits**.
+
+	- Open a **Test Permit** record.
 
     ![Open permit record - screenshot](../L05/Static/mod-02-pcf-1-65.png)
 
