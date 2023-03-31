@@ -445,6 +445,54 @@ As part of building the plugins, you will complete the following activities.
 3. Build plugin by right clicking on the project and select **Build** and make sure the build succeeds.
 
 
+## Task #4: Deploy Plugin
+
+1. If you do not have the plugin registration tool running already, follow instructions above to run the tool and connect to the organization.
+
+2. Update the assembly
+
+	- Select **ContosoPackageProject** and select **Update**.
+
+    ![Update assembly - screenshot](../L06/Static/Mod_01_Plugin_image36.png)
+
+	- Select **…**.
+
+	- Browse to the **debug** folder of your plugin project, select the **ContosoPackageProject** file and select **Open**.
+
+	- Check **Select All** checkbox and then select **Update Selected Plugins**.
+
+	- Select **OK**.
+
+
+3. Add plugin and configure the custom API
+
+    > **NOTE:** The Custom API is done in `Lab 04 – Client Scripting` , `Exercise #4: Command Button Function (Optional)`. 
+    > If you have not performed this task, it is recommended that you do so.
+
+
+	- Navigate to https://make.powerapps.com/ and make sure you are in your **Dev** environment.
+
+	- Select **Solutions** and open the **Permit Management** solution.
+
+	- Select **Add existing** and select **More > Developer > Plug-in assembly**.
+
+    ![Select message and primary Table - screenshot](../L06/Static/Mod_01_Plugin_image40.png)
+
+	- Select the **ContosoPackageProject** assembly and then select **Add**.
+
+	- Select **Custom API** and open the **Lock Permit** custom API.
+  
+    ![Open custom API - screenshot](../L06/Static/Mod_01_Plugin_image39.png)
+  
+	- Scroll down and select **ContosoPackageProject.LockPermitCancelInspections** for Plugin Type.
+
+    ![Plugin type - screenshot](../L06/Static/Mod_01_Plugin_image41.png)
+
+	- Select **Save & Close**.
+  
+	- Select **Done**
+
+
 # Exercise #3: Test Plugins
 
 **Objective:** In this exercise, you will test the plugins you created.
