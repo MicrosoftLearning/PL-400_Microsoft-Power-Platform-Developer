@@ -16,17 +16,19 @@ In this Module 0 lab, you will acquire a Power Platform trial tenant, access the
 Exercise 1 – Acquire your Power Platform trial tenant 
 ------------------------------------------
 
-1. Copy your **Microsoft 365 credentials** from the Authorized Lab Hoster.
+1.  Copy your **Microsoft 365 credentials** from the Authorized Lab Hoster.
 
-2. Navigate to [https://powerapps.microsoft.com](https://powerapps.microsoft.com) and click **Start free.**
+2.  Navigate to [https://powerapps.microsoft.com](https://powerapps.microsoft.com) and select **Start free**. 
 
-3. Enter the email address from your Microsoft 365 credentials.
+3.  Enter the email address from your Microsoft 365 credentials.
 
-4. You see a prompt that you have an existing account with Microsoft. Select **Sign in.**
+4.  You will see a prompt that you have an existing account with Microsoft. Select **Sign in**.
 
-5. Enter the password provided by the Authorized Lab Hoster. 
+5.  Enter the password provided by the Authorized Lab Hoster. 
 
-6. Select **Yes** to stay signed in.
+6.  Select **Yes** to stay signed in.
+
+7.  You will be redirected to `https://make.powerapps.com/`
 
 
 Exercise 2 - Create your environment 
@@ -36,48 +38,57 @@ In this exercise, you will create your **Development** environment that you will
 
 ### Task 1 – Create environment
 
-1.  Access Power Platform admin center [https://admin.Powerplatform.microsoft.com](https://admin.Powerplatform.microsoft.com) and log in with your Microsoft 365 credentials if prompted again.
+1.  In a new tab, navigate to the Power Platform admin center `https://aka.ms/ppac` and if prompted, sign in with your Microsoft 365 credentials.
 
-2. Select **Environments** and click **+ New**.
+2.  Select **Environments** and select **+ New**.
 
     - For **Name**, enter **[my initials] Dev** (Example: AJ Dev)
     
     - For **Type**, select **Trial**.
     
-    - Change the toggle on **Create a database for this environment?** to **Yes**.
+    - Change the toggle on **Create a Dataverse data store?** to **Yes**.
     
-    - Leave all other selections as default and click **Next**.
+3.  Leave all other selections as default and select **Next**.
     
-    - On the next tab, leave all selections to default and click **Save**
+4.  On the **Add Dataverse** tab, leave all selections as default and select **Save**. 
 
-3. Your **Dev** environment should now show in the list of Environments. 
+5.  Verify your **Dev** environment now shows in the list of environments. 
 
-4. Your environment may take a few minutes to provision. Refresh the page if needed. When your environment is prepared, select your **Dev** environment by clicking on the ellipses next to its name to expand the drop down menu and select **Settings.** 
+6.  Your environment may take a few minutes to provision. Refresh the page if needed. 
 
-3.  Explore the different areas in **Settings** that you are interested in but do not make any changes yet. 
+7.  When the environment is **Ready**, select the **Dev** environment and select **Settings**. 
+
+8.  Explore the different areas in **Settings** that you are interested in but do not make any changes yet. 
+
 
 Exercise 3 - Azure DevOps account setup
 ------------------------------------------
 
-In this exercise, you will create your Azure DevOps account that you will be using in Lab10
+In this exercise, you will create your Azure DevOps account that you will be using in Lab 10.
 
-1. Get a new Azure Pass (valid for 30-days) from the instructor or other source.
+1.  Get a new Azure Pass (valid for 30-days) from the instructor or other source. 
 
-2. Use a private browser session, go to Microsoftazurepass.com to redeem your Azure Pass using the Dynamics 365 (or M365) credentials provided to you). [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5) Follow the instructions for redemption. 
+2.  Use a private browser session, go to `microsoftazurepass.com` to redeem your Azure Pass using your Microsoft 365 credentials. 
 
-3. Using the same browser session, go to portal.azure.com, then search for “Azure DevOps”. In the resulting page, click Azure DevOps Organizations. 
+    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5) Follow the instructions for redemption. 
 
-4. Next, click on the “My Azure DevOps Organizations” link (or navigate to https://aex.dev.azure.com/).
+3.  Using the same browser session, go to `portal.azure.com`, then search for `Azure DevOps`. From the results, select **Azure DevOps Organizations**. 
 
-5. In the drop down box on the left, choose Default, instead of “Microsoft Account”
+4.  Next, select the “My Azure DevOps Organizations” link, or navigate to `https://aex.dev.azure.com/` 
 
-6. Create a new organization (find blue box in upper right-hand corner of the screen) using the Default directory. Provide a unique Azure DevOps Organization name like FL-PermitManagement (replace FL with your first and last initials), select your region and click Continue.
+5.  Confirm your account details. 
 
-8. Choose the newly created organization, then choose Organization settings on the left-hand side of the screen
+6.  Select the **Create a new organization** button. 
 
-9. Navigate to Organization settings -> Billing -> Setup billing -> Select an Azure subscription, then select the Azure Pass subscription, then choose “MS Hosted CI/CD” and set the field “Paid parallel jobs” to 1. Then click SAVE in the blue box at the bottom. 
+7.  Provide a unique Azure DevOps Organization name like FL-PermitManagement (replace FL with your initials) and select **Continue**. 
 
-10. Wait at least 3 hours before using the CI/CD capabilities so that new settings are reflected in the back end. Otherwise you will still see the message “This agent is not running because you have reached the maximum number of requests…”.
+8.  Select **Organization settings** on the left-hand side of the screen. 
 
-11. As an optional step, you can validate this by creating a new pre-defined project using the newly created org with billing enabled, using https://azuredevopsdemogenerator.azurewebsites.net/. Wait for some time before trying, then run a test build.
+9.  Navigate to **General > Billing > Setup billing > Select an Azure subscription**, then select the Azure Pass subscription, then select **Save**. 
+
+10. Under **MS Hosted CI/CD**, set the field **Paid parallel jobs** to 1 and select **Save**. 
+
+11. Wait at least 3 hours before using the CI/CD capabilities so that new settings are reflected in the back end. Otherwise you will still see the message “This agent is not running because you have reached the maximum number of requests…”. 
+
+12. As an optional step, you can validate this by creating a new pre-defined project using the newly created org with billing enabled, using `https://azuredevopsdemogenerator.azurewebsites.net` Wait for some time before trying, then run a test build. 
 
