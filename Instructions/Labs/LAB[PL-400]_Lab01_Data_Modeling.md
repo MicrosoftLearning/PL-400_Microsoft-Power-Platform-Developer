@@ -48,17 +48,21 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ## Task #1: Create Environments
 
-1. Create the community plan environment
+1.  Create the community plan environment
 
 	- Navigate to [Power Apps Community Plan page](https://powerapps.microsoft.com/en-us/communityplan/)
-	- Click on *Existing user? Add a dev environment*
-	- Enter your credentials when prompted to sign in
-	- Select your country from the dropdown menu and click *Accept*
-	- Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment has been created by the system. We will refer to it as "Prod" environment for the rest of this course.
+	
+    - Click on *Existing user? Add a dev environment*
+	
+    - Enter your credentials when prompted to sign in
+	
+    - Select your country from the dropdown menu and click *Accept*
+	
+    - Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment has been created by the system. 
+	
+    We will refer to it as "Prod" environment for the rest of this course.
 
-
-
- You should now have the dev environment and the "Prod" environment listed under environments.
+    You should now have the dev environment and the "Prod" environment listed under environments.
 
 
 ## Task #2: Create Solution and Publisher
@@ -243,7 +247,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 1.  Create Build Site table
 
-	- In the **Objects** pane, select **All**.
+	- In the **Objects** pane, select **All**. 
 
 	- Select **+ New > Table** and select **Table**. 
 
@@ -261,19 +265,19 @@ To prepare your learning environments you will create a solution, a publisher, a
 
     ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
 
-2. Add City column
+2.  Add City column
 
-	- Open the **Build Site** table.
+	- Open the **Build Site** table. 
   
 	- Under **Schema**, select **Columns** and select **+ New column**. 
 
-	- Enter `City` for **Display name**.
+	- Enter `City` for **Display name**. 
 
-	- Make sure **Text** is selected for **Data type**. 
+	- Verify **Single line of text** is selected for **Data type**. 
 
 	- For **Required**, select **Business required**.
 
-    - Expand **Advanced options**. 
+    - Expand the **Advanced options**. 
 
     - Set **Schema name** to `city`
 
@@ -281,138 +285,148 @@ To prepare your learning environments you will create a solution, a publisher, a
 
     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
-3. Add Zip/Postal Code column
+3.  Add Zip/Postal Code column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+    - Select **+ New column**. 
 
-	- Enter **ZIP/Postal Code** for **Display Name** and change the **Name** to **postalcode**.
+	- Enter `ZIP/Postal Code` for **Display Name**.
 
-	- Make sure **Text** is selected for **Data type**. 
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Select **Required**. 
+	- For **Required**, select **Business required**. 
+    
+    - Expand the **Advanced options**. 
+
+    - Set **Schema name** to `postalcode`
 
 	- Select **Done**.
 
 4. Add State/Province column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **State/Province** for **Display Name** and change the **Name** to **stateprovince**.
+	- Enter `State/Province` for **Display Name**. 
 
-	- Make sure **Text** is selected for **Data type**.
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Select **Required**.
+	- For **Required**, select **Business required**.
 
-	- Select **Done**.
+    - Expand the **Advanced options**. 
 
-5. Add Country Region column
-
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
-
-	- Enter **Country/Region** for **Display Name** and change the **Name** to **country**.
-
-	- Make sure **Text** is selected for **Data type.** 
+    - Set **Schema name** to `stateprovince`
 
 	- Select **Done**.
 
- 
+5. Add Country/Region column
+
+	- Select **+ New column**. 
+
+	- Enter `Country/Region` for **Display Name**. 
+
+	- Verify **Single line of text** is selected for **Data type**. 
+
+	- For **Required**, leave it set as **Optional**.
+
+    - Expand the **Advanced options**. 
+
+    - Set **Schema name** to `country`
+
+	- Select **Done**. 
+
 
 ## Task #4: Create Inspection Table and Columns
 
-1. Create Inspection table
+1.  Create Inspection table
 
-	- Select **All**.
+	- In the **Objects** pane, select **All**. 
 
-	- Select **+ New** and select **Table**.
+	- Select **+ New > Table** and select **Table**.
 
-	- Enter **Inspection** for **Display name.**
+	- Enter `Inspection` for **Display name**. 
 
-	- Select **Save**.
+	- Select **Save**. 
 
-2. Add Inspection Type Column
+2.  Add Inspection Type Column
 
 	- Open the **Inspection** table.
 	
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Under **Schema**, select **Columns** and select **+ New column**. 
 
-	- Enter **Inspection Type** for **Display name**.
+	- Enter `Inspection Type` for **Display name**. 
 
-	- Select **Choice** for **Data type**.
+	- Select **Choice > Choice** for **Data type**.
 
-	- Select on the **Choice** dropdown and select **+ New choice**.
+	- Under **Sync this choice with**, select **+ New choice**. 
 
-    ![New Choice - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
+    - Enter `Inspection Type` for **Display name**. 
 
-	- Enter **Initial Inspection** and select **Add new item**.
+	- Enter `Initial Inspection` for **Label** and select **+ New choice**. 
 
     ![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
 
-	- Enter **Final Inspection** and select **Save**.
+	- Enter **Final Inspection** for **Label** and select **Save**. 
 
     ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
 
-	-  Click **Done**.
+	- For **Sync this choice with**, select **Inspection Type** from the drop-down. 
+	
+    - Select **Save**.
 
-3. Add Scheduled Date Column
+3.  Add Scheduled Date Column
 
-	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **Scheduled Date** for **Display name**.
+	- Enter `Scheduled Date` for **Display name**. 
 
-	- Select **Date Only** for **Data type**.
+	- Select **Date and time > Date only** for **Data type**.
 
-	- Select **Required**. 
+	- For **Required**, select **Business required**.
 
-	- Select **Done**.
+	- Select **Save**.
 
-4. Add Comments column
+4.  Add Comments column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **Comments** for **Display name**.
+	- Enter **Comments** for **Display name**. 
 
-	- Make sure **Text** is selected for **Data type.** 
+	- For **Data type**, select **Text > Multiple Lines of Text > Plain Text**. 
 
-	- Expand **Advanced options**.
+	- Select **Save**. 
 
-	- Set **Max length** to **1000** in the Advanced options.
+5.  Add Sequence column
 
-	- Select **Done**.
+	- Select **+ New column**. 
 
-5. Add Sequence column
+	- Enter `Sequence` for **Display name**.
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Enter **Sequence** for **Display name**.
-
-	- Make sure **Text** is selected for **Data type**.
-
-	- Select **Done**.
+	- Select **Save**.
 
 
-7. Select the **<- Back to solutions** button.
+7.  From the left navigation, select the **<- Back to solutions** button.
 
-8. Select **Publish All Customizations.**
+8.  Select **Publish All Customizations.**
 
     ![Publish customizations - screenshot](../L01/Static/Mod_01_Data_Modeling_image19.png)
 
- 
 
 ## Task #5: Edit Status Reason Options
 
-1. Open the Permit Management solution
+1.  Open the Permit Management solution
 
-	- Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+	- Navigate to `https://make.powerapps.com`
 
 	- Select **Solutions** from the left menu and open the **Permit Management** solution.
 
-2. Switch to Classic
+2.  Switch to Classic
 
 	- Select on the **…** icon and select **Switch to Classic**.
 
     ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
 
-3. Edit Inspection table Status Reason options
+3.  Edit Inspection table Status Reason options
 
 	- Expand **Entities**.
 
