@@ -530,7 +530,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 19. Select the **<- Back to solutions**.
 
-20. Select **Publish All Customizations**.
+20. Select **Publish all customizations**.
 
  
   
@@ -544,63 +544,53 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ## Task #1: Create Relationships
 
-1. Open the Permit Management solution
+1.  Open the Permit Management solution
 
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/)
 
-	- Select **Solutions** and open the **Permit Management** solution.
+	- Select **Solutions** and open the **Permit Management** solution. 
 
-2. Create Permit to Contact relationship
+2.  Create Permit to Contact relationship
 
 	- Open the **Permit** table.
 
-	- Select the **Relationships** tab.
+	- Under **Schema**, select **Relationships**. 
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**. 
 
-
-
-	- Select Contact for **Related (One)** and select **Done**.
+	- Select `Contact` for the **Related (One) > Table** and select **Done**. 
 
     ![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
 
-3. Create Permit to Inspection relationship
+3.  Create Permit to Inspection relationship
 
-	- Select **Add relationship** and select **One-to-many**.
+	- Select **+ New relationship** and select **One-to-many**. 
 
-	- Select **Inspection** for **Table** in the **Related (Many)** and click **Advanced Options**.
+	- Select `Inspection` for **Table** in the **Related (Many)** and expand **Advanced options**. 
 
     ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
 
-	- Change the **Type of Behavior** to **Parental** and select **Done**.
+	- Change the **Type of behavior** to **Parental** and select **Done**. 
 
     ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
 
-4. Create Permit to Build Site relationship
+4.  Create Permit to Build Site relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**.
 
-	- Select **Build Site** for **Related (One) Table** and select **Advanced Options**.
+	- Select `Build Site` for **Related (One) > Table** and expand **Advanced options**.
 
-	- Change the **Delete** to **Restrict** and select **Done**.
+	- Change the **Delete** field to **Restrict** and select **Done**. 
 
     ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
 
-5. Create Permit to Permit Type relationship
+5.  Create Permit to Permit Type relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**. 
 
-	- Select **Permit Type** for **Related (One) Table** and select **Done**.
+	- Select `Permit Type` for **Related (One) > Table** and select **Done**. 
 
-6. Change the filter to **Custom**.
-
-    ![Change filter - screenshot](../L01/Static/Mod_01_Data_Modeling_image36.png)
-
-7. Click **Save Table**.
-
-    ![Save table - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
-
-8. Select **Solutions** from the top menu and click **Publish All Customizations.**
+6.  Select the **Back to solutions** button from the left navigation menu and select **Publish all customizations**.
 
 #  
 
