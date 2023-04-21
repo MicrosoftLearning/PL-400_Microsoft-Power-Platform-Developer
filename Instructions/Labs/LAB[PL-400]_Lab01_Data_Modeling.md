@@ -48,99 +48,100 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ## Task #1: Create Environments
 
-1. Create the community plan environment
+1.  Create the community plan environment
 
 	- Navigate to [Power Apps Community Plan page](https://powerapps.microsoft.com/en-us/communityplan/)
-	- Click on *Existing user? Add a dev environment*
-	- Enter your credentials when prompted to sign in
-	- Select your country from the dropdown menu and click *Accept*
-	- Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment has been created by the system. We will refer to it as "Prod" environment for the rest of this course.
+	
+    - Click on *Existing user? Add a dev environment*
+	
+    - Enter your credentials when prompted to sign in
+	
+    - Select your country from the dropdown menu and click *Accept*
+	
+    - Navigate to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/environments) to see a new environment has been created by the system. 
+	
+    We will refer to it as "Prod" environment for the rest of this course.
 
-
-
- You should now have the dev environment and the "Prod" environment listed under environments.
+    You should now have the dev environment and the "Prod" environment listed under environments.
 
 
 ## Task #2: Create Solution and Publisher
 
-1. Create Solution
+1.  Create Solution
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+	- Sign in to the [Power Apps maker portal](https://make.powerapps.com/)
 
-	- Select your Dev environment.
+	- Select your Dev environment. 
 
     ![Select environment - screenshot](../L01/Static/Mod_01_Data_Modeling_image3.png)
 
-	- Select **Solutions** from the left menu and select **+ New solution**.
+	- Select **Solutions** from the left menu and select **+ New solution**. 
 
 	- Enter **Permit Management** for **Display Name**.
 
-2. Create Publisher
+2.  Create Publisher
 
 	- Select the **+ New Publisher** button below **Publisher** dropdown.
 
     ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
 
-	- Enter **Contoso** for **Display Name** and **contoso** for **Name** and **Prefix.** 
+	- Enter `Contoso` for **Display Name** and `contoso` for **Name** and **Prefix**. 
 
 	- Select **Save**.
 
     ![Save publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
 
+3.  Complete the solution creation
 
-3. Complete the solution creation
+	- Now, select the **Publisher** drop-down and then select the **Contoso** publisher you just created. 
 
-	- Now, select on the **Publisher** dropdown and then select the **Contoso** publisher you just created.
+	- Select **Create**. 
 
-	- Select **Create**.
-
- 
 
 ## Task #3: Add Existing Table
 
-1. Add Contact table to the solution
-
-	- Open the **Permit Management** solution you just created.
+1.  Add Contact table to the solution
+    
+    - Open the **Permit Management** solution you just created.
 
 	- Select **Add Existing** and select **Table**.
 
-	- Search for contact and select the **Contact** table.
+	- Search for `contact` and select the **Contact** table.
 
 	- Select **Next**.
 
-	- Select **Select Components**.
+	- Select **Select objects**.
 
-    ![Select Table components - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
+    ![Select Table objects - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
 
 	- Select the **Views** tab and select the **Active Contacts** view.
   
 	- Select **Add**.
 
-	- Select **Select Components** again.
+	- Select **Select objects** again. 
 
 	- Select the **Forms** tab and select the **Contact** form.
 
 	- Select **Add**.
 
-	- You should have **1 View** and **1 Form** selected. Select **Add** again. This will add the Contact Table to the newly created solution.
+	- You should have **1 View** and **1 Form** selected. Select **Add**. This will add the Contact Table to the newly created solution.
 
-    ![Add components](../L01/Static/Mod_01_Data_Modeling_image8.png)
+    ![Add objects](../L01/Static/Mod_01_Data_Modeling_image8.png)
 
-2. Add User table to the solution
+2.  Add User table to the solution
 
-	- Select **Add Existing** and select **Table**.
+	- Select **Add Existing** and select **Table**. 
 
-	- Search for user and select the **User** table.
+	- Search for `user` and select the **User** table. 
 
-	- Select **Next**.
+	- Select **Next**. 
 
-	- **DO NOT** select any components.
+	- **DO NOT** select any objects. 
   
-	- Select **Add**.
+	- Select **Add**. 
 
 	- Your solution should now have two tables.
 
- 
 
 # Exercise #2: Create Tables and Columns
 
@@ -148,13 +149,13 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ## Task #1: Create Permit Table and Columns
 
-1. Continuing in your development environment, open the Permit Management solution
+1.  Continuing in your development environment, open the Permit Management solution
 
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/)
 
 	- Select **Solutions** and select to open the **Permit Management** solution you created.
 
-2. Create Permit table
+2.  Create Permit table
 
 	- Select **+ New** and then select **Table**.
 
@@ -162,264 +163,270 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 	- Enter **Permit** for **Display Name** and select **Save**. This will start provisioning the table in background while you can start adding Columns.
 
-3. Create Start Date column
+3.  Create Start Date column
 
-	-  Expand the permit table.
-	
-	-  Click Columns.
-	
-	-  Select **+ New column**.
+	-  Open the **Permit** table. 
 
-    ![Add Column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+	-  Under **Schema**, select **Columns**. 
 
-	- Expand Data type.
+	-  Select **+ New column**. 
+
+    ![New column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+
+	- Enter `Start Date` for **Display name**.
+
+	- Expand **Data type**.
 	
-	- Select **Date and Time**.
+	- Select **Date and time**.
 	
-	- Select **Date only**.
+	- Select **Date only** for **Format**. 
 	
-	- In the **Required** dropdown, select **Business required**.
+	- In the **Required** drop-down, select **Business required**.
 	
 	- Select **Save**.
 	
-	- Enter **Start Date** for **Display name**.
+4.  Create Expiration Date column.
 
-4. Create Expiration Date column.
+	- Select **+ New column**. 
 
-	- Select **+ Add Column**.
+	- Enter `Expiration Date` for **Display name**. 
 
-	- Enter **Expiration Date** for **Display name**.
+	- Select **Date and time > Date only** for **Data type**. 
 
-	- Select **Date Only** for **Data type**.
+	- Select **Save**. 
 
-	- Select **Done**.
+5.  Create New Size column. 
 
-5. Create New Size column.
+	- Select **+ New column**.
 
-	- Select **+ Add Column**.
+	- Enter `New Size` for **Display name**. 
 
-	- Enter **New Size** for **Display name**.
+	- Select **Number > Whole number** for **Data type**. 
 
-	- Select **Whole Number** for **Data type.** 
-
-	- Select **Done**.
+	- Select **Save**.
 	
-	- Click on chevron icon next to **Default**  
-
 
 ## Task #2: Create Permit Type Table and Columns
 
-1. Create Permit Type table
+1.  Create Permit Type table
 
-	- Select **All**.
+	- In the **Objects** pane, select **All**. 
 
     ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
   
-	- Select **+ New** and then select **Table**.
+	- Select **+ New > Table** and select **Table**. 
 
-	- Enter **Permit Type** for **Display name**.
+	- Enter `Permit Type` for **Display name**. 
 
-	- Select **Save**.
+	- Select **Save**. 
 
-2. Create Require Inspections column
+2.  Create Require Inspections column
 
-	- Open the **Permit Type** table.
+	- Open the **Permit Type** table. 
   
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Under **Schema**, select **Columns** and select **+ New column**. 
 
-	- Enter **Require Inspections** for **Display name**.
+	- Enter `Require Inspections` for **Display name**. 
 
-	- Select **Yes/No** for **Data type**.
+	- Select **Choice > Yes/no** for **Data type**. 
 
-	- Select **Done**.
+	- Select **Save**. 
 
-3. Create Require Size column
+3.  Create Require Size column
 
-	- Select **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **Require Size** for **Display name**.
+	- Enter `Require Size` for **Display name**.
 
-	- Select **Yes/No** for **Data type**.
+	- Select **Choice > Yes/no** for **Data type**. 
 
-	- Select **Done**.
+	- Select **Done**. 
 
-4. Select **Save Table**.
-
- 
-
- 
 
 ## Task #3: Create Build Site Table and Columns
 
-1. Create Build Site table
+1.  Create Build Site table
 
-	- Select **All**.
+	- In the **Objects** pane, select **All**. 
 
-	- Select **+ New** and select **Table**.
+	- Select **+ New > Table** and select **Table**. 
 
-	- Enter **Build Site** for **Display name**.
+	- Enter `Build Site` for **Display name**. 
 
 	- Select the **Primary column** tab.
   
-	- Change the **Display Name** to **Street Address**.
+	- Change the **Display Name** to `Street Address`
   
 	- Expand **Advanced options**.
   
-	 Change the **Schema name** to **street1**.
+	 Change the **Schema name** to `street1`
 
-	- Select **Save**.
+	- Select **Save**. 
 
     ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
 
-2. Add City column
+2.  Add City column
 
-	- Open the **Build Site** table.
+	- Open the **Build Site** table. 
   
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Under **Schema**, select **Columns** and select **+ New column**. 
 
-	- Enter **City** for **Display name** and change the **Name** to **city**.
+	- Enter `City` for **Display name**. 
 
-	- Make sure **Text** is selected for **Data type**. 
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Select **Required**. 
+	- For **Required**, select **Business required**.
 
+    - Expand the **Advanced options**. 
 
-	- Select **Done**.
+    - Set **Schema name** to `city`
+
+	- Select **Save**. 
 
     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
 
-3. Add Zip/Postal Code column
+3.  Add Zip/Postal Code column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+    - Select **+ New column**. 
 
-	- Enter **ZIP/Postal Code** for **Display Name** and change the **Name** to **postalcode**.
+	- Enter `ZIP/Postal Code` for **Display Name**.
 
-	- Make sure **Text** is selected for **Data type**. 
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Select **Required**. 
+	- For **Required**, select **Business required**. 
+    
+    - Expand the **Advanced options**. 
+
+    - Set **Schema name** to `postalcode`
 
 	- Select **Done**.
 
 4. Add State/Province column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **State/Province** for **Display Name** and change the **Name** to **stateprovince**.
+	- Enter `State/Province` for **Display Name**. 
 
-	- Make sure **Text** is selected for **Data type**.
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Select **Required**.
+	- For **Required**, select **Business required**.
 
-	- Select **Done**.
+    - Expand the **Advanced options**. 
 
-5. Add Country Region column
-
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
-
-	- Enter **Country/Region** for **Display Name** and change the **Name** to **country**.
-
-	- Make sure **Text** is selected for **Data type.** 
+    - Set **Schema name** to `stateprovince`
 
 	- Select **Done**.
 
- 
+5. Add Country/Region column
+
+	- Select **+ New column**. 
+
+	- Enter `Country/Region` for **Display Name**. 
+
+	- Verify **Single line of text** is selected for **Data type**. 
+
+	- For **Required**, leave it set as **Optional**.
+
+    - Expand the **Advanced options**. 
+
+    - Set **Schema name** to `country`
+
+	- Select **Done**. 
+
 
 ## Task #4: Create Inspection Table and Columns
 
-1. Create Inspection table
+1.  Create Inspection table
 
-	- Select **All**.
+	- In the **Objects** pane, select **All**. 
 
-	- Select **+ New** and select **Table**.
+	- Select **+ New > Table** and select **Table**.
 
-	- Enter **Inspection** for **Display name.**
+	- Enter `Inspection` for **Display name**. 
 
-	- Select **Save**.
+	- Select **Save**. 
 
-2. Add Inspection Type Column
+2.  Add Inspection Type Column
 
 	- Open the **Inspection** table.
 	
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Under **Schema**, select **Columns** and select **+ New column**. 
 
-	- Enter **Inspection Type** for **Display name**.
+	- Enter `Inspection Type` for **Display name**. 
 
-	- Select **Choice** for **Data type**.
+	- Select **Choice > Choice** for **Data type**.
 
-	- Select on the **Choice** dropdown and select **+ New choice**.
+	- Under **Sync this choice with**, select **+ New choice**. 
 
-    ![New Choice - screenshot](../L01/Static/Mod_01_Data_Modeling_image16.png)
+    - Enter `Inspection Type` for **Display name**. 
 
-	- Enter **Initial Inspection** and select **Add new item**.
+	- Enter `Initial Inspection` for **Label** and select **+ New choice**. 
 
     ![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
 
-	- Enter **Final Inspection** and select **Save**.
+	- Enter **Final Inspection** for **Label** and select **Save**. 
 
     ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
 
-	-  Click **Done**.
+	- For **Sync this choice with**, select **Inspection Type** from the drop-down. 
+	
+    - Select **Save**.
 
-3. Add Scheduled Date Column
+3.  Add Scheduled Date Column
 
-	- Make sure you have the **Columns** tab selected and click **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **Scheduled Date** for **Display name**.
+	- Enter `Scheduled Date` for **Display name**. 
 
-	- Select **Date Only** for **Data type**.
+	- Select **Date and time > Date only** for **Data type**.
 
-	- Select **Required**. 
+	- For **Required**, select **Business required**.
 
-	- Select **Done**.
+	- Select **Save**.
 
-4. Add Comments column
+4.  Add Comments column
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Select **+ New column**. 
 
-	- Enter **Comments** for **Display name**.
+	- Enter **Comments** for **Display name**. 
 
-	- Make sure **Text** is selected for **Data type.** 
+	- For **Data type**, select **Text > Multiple Lines of Text > Plain Text**. 
 
-	- Expand **Advanced options**.
+	- Select **Save**. 
 
-	- Set **Max length** to **1000** in the Advanced options.
+5.  Add Sequence column
 
-	- Select **Done**.
+	- Select **+ New column**. 
 
-5. Add Sequence column
+	- Enter `Sequence` for **Display name**.
 
-	- Make sure you have the **Columns** tab selected and select **+ Add Column**.
+	- Verify **Single line of text** is selected for **Data type**. 
 
-	- Enter **Sequence** for **Display name**.
-
-	- Make sure **Text** is selected for **Data type**.
-
-	- Select **Done**.
+	- Select **Save**.
 
 
-7. Select the **<- Back to solutions** button.
+7.  From the left navigation, select the **<- Back to solutions** button.
 
-8. Select **Publish All Customizations.**
+8.  Select **Publish All Customizations.**
 
     ![Publish customizations - screenshot](../L01/Static/Mod_01_Data_Modeling_image19.png)
 
- 
 
 ## Task #5: Edit Status Reason Options
 
-1. Open the Permit Management solution
+1.  Open the Permit Management solution
 
-	- Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+	- Navigate to `https://make.powerapps.com`
 
 	- Select **Solutions** from the left menu and open the **Permit Management** solution.
 
-2. Switch to Classic
+2.  Switch to Classic
 
 	- Select on the **…** icon and select **Switch to Classic**.
 
     ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
 
-3. Edit Inspection table Status Reason options
+3.  Edit Inspection table Status Reason options
 
 	- Expand **Entities**.
 
@@ -523,7 +530,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 19. Select the **<- Back to solutions**.
 
-20. Select **Publish All Customizations**.
+20. Select **Publish all customizations**.
 
  
   
@@ -537,63 +544,53 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ## Task #1: Create Relationships
 
-1. Open the Permit Management solution
+1.  Open the Permit Management solution
 
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/)
 
-	- Select **Solutions** and open the **Permit Management** solution.
+	- Select **Solutions** and open the **Permit Management** solution. 
 
-2. Create Permit to Contact relationship
+2.  Create Permit to Contact relationship
 
 	- Open the **Permit** table.
 
-	- Select the **Relationships** tab.
+	- Under **Schema**, select **Relationships**. 
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**. 
 
-
-
-	- Select Contact for **Related (One)** and select **Done**.
+	- Select `Contact` for the **Related (One) > Table** and select **Done**. 
 
     ![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
 
-3. Create Permit to Inspection relationship
+3.  Create Permit to Inspection relationship
 
-	- Select **Add relationship** and select **One-to-many**.
+	- Select **+ New relationship** and select **One-to-many**. 
 
-	- Select **Inspection** for **Table** in the **Related (Many)** and click **Advanced Options**.
+	- Select `Inspection` for **Table** in the **Related (Many)** and expand **Advanced options**. 
 
     ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
 
-	- Change the **Type of Behavior** to **Parental** and select **Done**.
+	- Change the **Type of behavior** to **Parental** and select **Done**. 
 
     ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
 
-4. Create Permit to Build Site relationship
+4.  Create Permit to Build Site relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**.
 
-	- Select **Build Site** for **Related (One) Table** and select **Advanced Options**.
+	- Select `Build Site` for **Related (One) > Table** and expand **Advanced options**.
 
-	- Change the **Delete** to **Restrict** and select **Done**.
+	- Change the **Delete** field to **Restrict** and select **Done**. 
 
     ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
 
-5. Create Permit to Permit Type relationship
+5.  Create Permit to Permit Type relationship
 
-	- Select **+ Add relationship** and select **Many-to-one**.
+	- Select **+ New relationship** and select **Many-to-one**. 
 
-	- Select **Permit Type** for **Related (One) Table** and select **Done**.
+	- Select `Permit Type` for **Related (One) > Table** and select **Done**. 
 
-6. Change the filter to **Custom**.
-
-    ![Change filter - screenshot](../L01/Static/Mod_01_Data_Modeling_image36.png)
-
-7. Click **Save Table**.
-
-    ![Save table - screenshot](../L01/Static/Mod_01_Data_Modeling_image37.png)
-
-8. Select **Solutions** from the top menu and click **Publish All Customizations.**
+6.  Select the **Back to solutions** button from the left navigation menu and select **Publish all customizations**.
 
 #  
 
