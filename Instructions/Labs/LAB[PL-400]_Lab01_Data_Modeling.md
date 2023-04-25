@@ -53,7 +53,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 ### Task 1.2 – Create solution and publisher
 
-1. Select **Solutions** from the left navigation pane. You should see several solutions including the Default solution and the Common Data Services solution.
+1. Select **Solutions** from the left navigation pane. You should see several solutions including the Default solution and the Common Data Services Default solution.
 
     ![List of solutions in Maker portal.](../L01/Static/solutions-list.png)
 
@@ -72,6 +72,8 @@ To prepare your learning environments you will create a solution, a publisher, a
 1. In the **Prefix** text box, enter **contoso**.
 
    ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
+
+1. Make a note of the **Choice value prefix**.
 
 1. Click **Save**.
 
@@ -147,7 +149,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Open the **Permit Management** solution.
 
-1. Click **+ New** and then select **Table**.
+1. Click **+ New** and then select **Table** and select **Table** again.
 
    ![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
 
@@ -220,9 +222,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Select **+ New > Table** and select **Table**.
    - Enter `Build Site` for **Display name**.
    - Select the **Primary column** tab.
-   - Change the **Display Name** to `Street Address`
+   - Change the **Display Name** to `Street Address`.
    - Expand **Advanced options**.
-   - Change the **Schema name** to `street1`
+   - Change the **Schema name** to `street1`.
    - Select **Save**.
 
      ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
@@ -235,7 +237,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Verify **Single line of text** is selected for **Data type**.
    - For **Required**, select **Business required**.
    - Expand the **Advanced options**.
-   - Set **Schema name** to `city`
+   - Set **Schema name** to `city`.
    - Select **Save**.
 
      ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
@@ -247,7 +249,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Verify **Single line of text** is selected for **Data type**.
    - For **Required**, select **Business required**.
    - Expand the **Advanced options**.
-   - Set **Schema name** to `postalcode`
+   - Set **Schema name** to `postalcode`.
    - Select **Save**.
 
 1. Add State/Province column
@@ -257,7 +259,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Verify **Single line of text** is selected for **Data type**.
    - For **Required**, select **Business required**.
    - Expand the **Advanced options**.
-   - Set **Schema name** to `stateprovince`
+   - Set **Schema name** to `stateprovince`.
    - Select **Save**.
 
 1. Add Country/Region column
@@ -267,7 +269,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Verify **Single line of text** is selected for **Data type**.
    - For **Required**, leave it set as **Optional**.
    - Expand the **Advanced options**.
-   - Set **Schema name** to `country`
+   - Set **Schema name** to `country`.
    - Select **Save**.
 
 ### Task 3.4: Create Inspection Table and Columns
