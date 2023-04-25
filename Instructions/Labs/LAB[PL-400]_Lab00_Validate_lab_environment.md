@@ -1,94 +1,150 @@
 ---
 lab:
-    title: 'Lab 00: Validate lab environment'
+    title: 'Lab 0: Validate lab environment'
+    module: 'Module 0: Course Introduction'
 ---
 
+# Practice Lab 0 - Validate lab environment
 
-## Practice Lab – Validate my lab environment
+> [!IMPORTANT]
+> This lab provides you with a Microsoft 365 tenant and licenses for the Power Platform applications you will be using in this course. You will only be provided with one tenant for the practice labs in this course. The settings and actions you take within this tenant do not roll-back or reset, whereas the virtual machine you are provided with does reset each time you close the lab session. Please be aware that Microsoft 365 and Power Platform are evolving all the time. The instructions in this document may be different from what you experience in your actual tenant. It is also possible to experience a delay of several minutes before the virtual machine has network connectivity to begin the labs.
 
-Attention to MCTs: Please make sure you are familiar with the [TrainerPrepGuide](../PL-400T00A-ENU-TrainerPrepGuide.pdf) for this course, especially the teaching tips and recommendations.
+## Exercise 1 – Power Platform trial
 
-Scenario
---------
+In this exercise, you will add a Power Apps trial to the tenant and assign licenses to users.
 
-In this Module 0 lab, you will acquire a Power Platform trial tenant, access the Power Platform admin center and setup your Azure DevOps account. In the admin center, we will create an individual environment for configuration during the course.
+### Task 1.1 – Sign up for a Power Apps per user trial
 
-Exercise 1 – Acquire your Power Platform trial tenant 
-------------------------------------------
+1. Navigate to <https://admin.microsoft.com>.
 
-1.  Copy your **Microsoft 365 credentials** from the Authorized Lab Hoster.
+1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype** .
 
-2.  Navigate to [https://powerapps.microsoft.com](https://powerapps.microsoft.com) and select **Start free**. 
+1. Click **Next**.
 
-3.  Enter the email address from your Microsoft 365 credentials.
+1. Enter the password from your Microsoft 365 credentials.
 
-4.  You will see a prompt that you have an existing account with Microsoft. Select **Sign in**.
+1. Click **Sign in**.
 
-5.  Enter the password provided by the Authorized Lab Hoster. 
+1. Select **Yes** to stay signed in.
 
-6.  Select **Yes** to stay signed in.
+1. In the left-hand navigation, expand **Billing** and select **Purchase services**.
 
-7.  You will be redirected to `https://make.powerapps.com/`
+    ![Purchase services.](../L00/Static/purchase-services.png)
 
+1. In the search all product categories text box, enter **PowerApps** and press **Enter**.
 
-Exercise 2 - Create your environment 
-------------------------------------------
+1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
 
-In this exercise, you will create your **Development** environment that you will do the majority of your lab work in.
+    ![Power Apps per user plan.](../L00/Static/per-user-plan.png)
 
-### Task 1 – Create environment
+1. Click **Start free trial**.
 
-1.  In a new tab, navigate to the Power Platform admin center `https://aka.ms/ppac` and if prompted, sign in with your Microsoft 365 credentials.
+1. Click **Try now**.
 
-2.  Select **Environments** and select **+ New**.
+1. Click **Continue**.
 
-    - For **Name**, enter **[my initials] Dev** (Example: AJ Dev)
-    
-    - For **Type**, select **Trial**.
-    
-    - Change the toggle on **Create a Dataverse data store?** to **Yes**.
-    
-3.  Leave all other selections as default and select **Next**.
-    
-4.  On the **Add Dataverse** tab, leave all selections as default and select **Save**. 
+### Task 1.2 – Assign Power Apps licenses to your user
 
-5.  Verify your **Dev** environment now shows in the list of environments. 
+1. In the left-hand navigation, expand **Users** and select **Active users**.
 
-6.  Your environment may take a few minutes to provision. Refresh the page if needed. 
+1. Select your user **MOD Administrator** to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../L00/Static/mod-administrator.png)
 
-7.  When the environment is **Ready**, select the **Dev** environment and select **Settings**. 
+1. Check the box for **Power Apps per user plan**.
 
-8.  Explore the different areas in **Settings** that you are interested in but do not make any changes yet. 
+1. Click **Save changes**.
 
+1. Click on **X** in the top right of the pane to close the panel.
 
-Exercise 3 - Azure DevOps account setup
-------------------------------------------
+### Task 1.3 – Assign Power Apps licenses to other users
 
-In this exercise, you will create your Azure DevOps account that you will be using in Lab 10.
+1. In the left-hand navigation, expand **Users** and select **Active users**.
 
-1.  Get a new Azure Pass (valid for 30-days) from the instructor or other source. 
+1. Check the boxes next to the other users, click on the **ellipses (...**) in the action bar, and select **Manage product licenses**.
 
-2.  Use a private browser session, go to `microsoftazurepass.com` to redeem your Azure Pass using your Microsoft 365 credentials. 
+    ![Select other users.](../L00/Static/select-users.png)
 
-    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5) Follow the instructions for redemption. 
+1. Select **Assign more** and check the box for **Power Apps per user plan**.
 
-3.  Using the same browser session, go to `portal.azure.com`, then search for `Azure DevOps`. From the results, select **Azure DevOps Organizations**. 
+    ![Add more licenses.](../L00/Static/add-licenses.png)
 
-4.  Next, select the “My Azure DevOps Organizations” link, or navigate to `https://aex.dev.azure.com/` 
+1. Click **Save changes**.
 
-5.  Confirm your account details. 
+1. Click **Done**.
 
-6.  Select the **Create a new organization** button. 
+## Exercise 2 - Create environments
 
-7.  Provide a unique Azure DevOps Organization name like FL-PermitManagement (replace FL with your initials) and select **Continue**. 
+In this exercise, you will create a *Development* environment that you will do the majority of your lab work in and a *Live* environment to use to deploy solutions.
 
-8.  Select **Organization settings** on the left-hand side of the screen. 
+> [!NOTE]
+> Depending on the browser that you are using, it is suggested that you disable any pop-up blockers that maybe enabled. This will prevent popup screens from not appearing as they should.
 
-9.  Navigate to **General > Billing > Setup billing > Select an Azure subscription**, then select the Azure Pass subscription, then select **Save**. 
+### Task 2.1 – Create development environment
 
-10. Under **MS Hosted CI/CD**, set the field **Paid parallel jobs** to 1 and select **Save**. 
+1. Navigate to the Power Platform admin center <https://admin.powerplatform.microsoft.com> and sign in with your Microsoft 365 credentials if prompted again.
 
-11. Wait at least 3 hours before using the CI/CD capabilities so that new settings are reflected in the back end. Otherwise you will still see the message “This agent is not running because you have reached the maximum number of requests…”. 
+1. Click **Get Started** if a Welcome to the Power Platform admin center popup is shown.
 
-12. As an optional step, you can validate this by creating a new pre-defined project using the newly created org with billing enabled, using `https://azuredevopsdemogenerator.azurewebsites.net` Wait for some time before trying, then run a test build. 
+1. Select **Environments** from the left navigation pane. There should be a single environment, *Contoso (default)*.
 
+1. Click **+ New**.
+
+    ![Environment in the Power Platform admin center.](../L00/Static/ppac-environments.png)
+
+1. In the **Name** text box, enter **[my initials] Development**. (Example: PL Development).
+
+1. In the **Type** drop down, select **Developer**.
+
+1. Leave all other selections as default and select **Next**.
+
+    ![New environment.](../L00/Static/new-environment.png)
+
+1. On the **Add database** tab, click **Save**.
+
+1. Your **Development** environment should now show in the list of environments.
+
+    ![Environment in the Power Platform admin center.](../L00/Static/ppac-environments-dev.png)
+
+1. Your Development environment may take a few minutes to provision. Refresh the page if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
+
+    ![Environment in the Power Platform admin center.](../L00/Static/ellipses-settings-dev.png)
+
+1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
+
+### Task 2.2 – Create live environment
+
+1. Navigate to environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
+
+1. Click **+ New**.
+
+1. In the **Name** text box, enter **[my initials] Live**. (Example: PL Live).
+
+1. In the **Type** drop down, select **Developer**.
+
+1. Leave all other selections as default and select **Next**.
+
+1. On the **Add database** tab, click **Save**.
+
+1. You should now see three environments; Contoso (default), Development, and Live.
+
+    ![Environments.](../L00/Static/environments-all.png)
+
+1. You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+
+## Exercise 3 - Azure subscription
+
+In this exercise, you will create an Azure subscription that you will be using in later labs.
+
+### Task 3.1 – Redeem Azure Pass
+
+1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
+
+1. Navigate to the Azure Pass redemption page <https://www.microsoftazurepass.com> and sign in with your Microsoft 365 credentials if prompted.
+
+1. Follow these instructions to redeem your Azure Pass.
+
+    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
+
+1. On the sign up page, enter address line 1, city, and postal code.
+
+> [!NOTE]
+> 1. If you are prompted for a *Phone number* enter **0123456789** and click on **Submit**.
