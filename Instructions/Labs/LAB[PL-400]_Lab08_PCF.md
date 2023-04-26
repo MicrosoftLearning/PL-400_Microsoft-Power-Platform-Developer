@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 05: Power Apps Component Framework'
+    title: 'Lab 08: Power Apps Component Framework'
 ---
 
 

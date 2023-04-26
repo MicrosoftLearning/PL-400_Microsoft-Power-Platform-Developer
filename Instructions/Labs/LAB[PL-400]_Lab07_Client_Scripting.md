@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 04: Client Scripting'
+    title: 'Lab 07: Client Scripting'
 ---
 
 

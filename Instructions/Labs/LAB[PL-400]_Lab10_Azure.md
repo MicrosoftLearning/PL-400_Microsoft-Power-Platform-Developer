@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 07: Azure Functions'
+    title: 'Lab 10: Azure Functions'
 ---
 
 

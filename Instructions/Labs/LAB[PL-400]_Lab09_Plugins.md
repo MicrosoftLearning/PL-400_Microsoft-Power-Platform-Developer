@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 06: Plugins'
+    title: 'Lab 09: Plugins'
 ---
 
 

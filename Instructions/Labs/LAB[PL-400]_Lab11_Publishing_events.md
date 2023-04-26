@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 08: Publishing Events Externally'
+    title: 'Lab 11: Publishing Events Externally'
 ---
 
 ## Lab 08 – Publishing Events Externally
