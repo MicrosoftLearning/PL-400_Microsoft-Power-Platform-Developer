@@ -53,7 +53,8 @@ The following is what the model-driven app designer looks like when all the cust
 1. Steps to edit the Permit table form.
 
    - Open the **Permit** table.
-   - Select the **Forms** tab and open the **Main** form. By default, the form has two columns, Name (Primary column) and Owner.
+   - Under **Data experiences**, select **Forms**.
+   - Edit the **Main** form. By default, the form has two columns, Name (Primary column) and Owner.
 
      ![Main table form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image2.png)
 
@@ -77,7 +78,7 @@ The following is what the model-driven app designer looks like when all the cust
 
      ![Add components to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image7.png)
 
-   - Select **One column tab**.
+   - Select **1-column tab**.
 
       ![Add one column tab to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image8.png)
 
@@ -301,95 +302,67 @@ The following is what the model-driven app designer looks like when all the cust
    - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
    - While in your dev environment, open the **Permit Management** solution.
 
-1. Create the Model-Driven application
+1. Create the Model-driven application
 
-   - Select **+ New** and select **App | Model-Driven App**.
+   - Select **+ New** and select **App** and then select **Model-driven app**.
   
      ![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
   
-   - Enter **Permit Management** for **Name** and select **Done**.
+   - Enter **Permit Management** for **Name** and select **Create**.
 
-1. Edit Sitemap
+1. Click on **Navigation**.
 
-   - Switch to Classic.
-   - Click Publish.
-   - Switch back to Classic.
-   - Select **Edit Site Map**.
+1. In the right-hand pane, check **Enable Areas**.
+
+1. In the left-hand pane, select **Area1**, select the **ellipses (...)** and select **Edit properties**.
+
+1. In the **Title** text box in the **Properties** pane, enter **Building Dept**.
+
+1. Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+
+1. In the **Title** text box in the **Properties** pane, enter **Permits**.
+
+1. Click **+ Add page**.
+
+1. Select **Dataverse table**.
+
+1. Click **Next**.
+
+1. Search for `Permit` and select the **Permit** and ***Permit Type** tables.
+
+1. Search for `Inspections` and select the **Inspections** table.
+
+1. Search for `Permit` and select the *table.
+
+1. CLick **Add**.
+
+1. Select **Permits view** , select the **ellipses (...)** and select **Move up**.
+
+1. Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+
+1. In the **Title** text box in the **Properties** pane, enter **Contacts**.
+
+1. Click **+ New**.
+
+1. Select **Dataverse table**.
+
+1. Click **Next**.
+
+1. Search for `Contact` and select the **Contact** table.
+
+1. Search for `Build` and select the **Build Site** table.
+
+1. Click **Add**.
+
+1. Select **Contacts view** , select the **ellipses (...)** and select **Move up**.
 
      ![Edit sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image33.png)
-
-1. Edit the default titles
-
-   - Select **New Area**.
-   - Go to the properties pane and enter **Building Dept** for **Title**.
-   - Select **New Group**.
-   - Go to the **Properties** pane and enter **Permits** for **Title**.
-
      ![Sitemap area and group - screenshot](../L02/Static/Mod_02_Model_Driven_App_image34.png)
-
-1. Add the Permit table to the sitemap
-
-   - Select **New Subarea**.
-   - Go to the **Properties** pane and select **Entity** from the dropdown for **Type**.
-   - Select the **Permit** table from the dropdown for **Entity**.
-
      ![Subarea properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image35.png)
-
-1. Add the Inspection table to the sitemap
-
-   - Select **Permits** group and select **Add**.
-
      ![Add component - screenshot](../L02/Static/Mod_02_Model_Driven_App_image36.png)
-
-   - Select **Subarea**.
-
-   - Go to the **Properties** pane.
-
-   - Select **Entity** from the dropdown for **Type** and select the **Inspection** table from the dropdown for **Entity**.
-
-1. Add the Permit Type table to the sitemap
-
-   - Select **Permits** group and select **Add**.
-
-   - Select **Subarea**.
-
-   - Go to the **Properties** pane.
-
-   - Select **Entity** from the dropdown for **Type** and select **Permit Type** from the dropdown for **Entity**.
-
-1. Add new Group to the sitemap
-
-   - Select the **Building Dept** area and select **Add.**
-
     ![Add component to area - screenshot](../L02/Static/Mod_02_Model_Driven_App_image37.png)
 
-   - Select **Group**.
-  
-   - Select the group you just added.
-
-   - Go to the **Properties** pane and enter **Contacts** for Title.
-
-1. Add the Contact table to the Contacts group.
-
-   - Select the **Contacts** group.
-
-   - Select **Add** and select **Subarea.**
-
-   - Go to the **Properties** pane.
-
-   - Select **Entity** from the dropdown for **Type** and select the **Contact** table in the dropdown for **Entity**.
-
-1. Add the Build Site table to the Contacts group.
-
-   - Select the **Contacts** group.
-
-   - Select **Add** and select **Subarea.**
-
-   - Go to the **Properties** pane.
-
-   - Select **Entity** from the dropdown for **Type** and select the **Build Site** table in the dropdown for **Entity**.
-
-1. The sitemap should now look like the image below.
+1. The navigation should now look like the image below.
 
      ![Sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image38.png)
 
@@ -403,19 +376,9 @@ The following is what the model-driven app designer looks like when all the cust
 
     ![Application designer - screenshot](../L02/Static/Mod_02_Model_Driven_App_image39.png)
 
-1. Select **Save** to save the application.
-
-1. Select **Validate** to validate the changes done in the application. This will show some warnings. Feel free to review them, but we can ignore them, since we have not referenced a specific View and Form for the tables.
+1. Click **Save** to save the application.
 
 1. Select **Publish** to publish the application and wait for the publishing to complete.
-
-1. Select **Save and Close to** close the app designer.
-
-1. Click **Back**.
-
-1. Select **Publish all Customizations.**
-
-1. Select **Apps** and your application should now be listed in the list of apps.
 
      ![New application in the app list - screenshot](../L02/Static/Mod_02_Model_Driven_App_image40.png)
 
@@ -425,7 +388,7 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. Launch the application
 
-   - Select **Apps** and launch the **Permit Management** app.
+   - Select **Apps** and play  the **Permit Management** app.
 
 1. Create new Contact record
 
@@ -481,11 +444,11 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Go to the **Inspections** tab.
 
-   - Select **+ New Inspections**.
+   - Select **+ New Inspection**.
 
      ![Add new inspection - screenshot](../L02/Static/Mod_02_Model_Driven_App_image47.png)
 
-   - Provide **Name** as **Framing Inspections**, select **Initial Inspection** from the dropdown for **Inspection Type**, and select future date for **Scheduled Date**.
+   - Provide **Name** as **Framing Inspection**, select **Initial Inspection** from the dropdown for **Inspection Type**, and select future date for **Scheduled Date**.
 
    - Select **Save and Close.**
 
