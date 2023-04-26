@@ -12,46 +12,142 @@ Create Power Automate cloud flows.
 
 ## Exercise 1: Create a scheduled cloud flow
 
-**Objective:** In this exercise, you will create a cloiud flow that resets all inspections to Pending.
+**Objective:** In this exercise, you will create a cloud flow that resets all inspections to Pending.
 
 ### Task 1.1: Create scheduled flow
 
-- Create a monthly scheduled cloud flow that retrieves all non-Pending Inspections
-- Use Apply to each Loop 
-- Update Inspection row and set Status Reason to Pending
-- Run the flow
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+
+1. Click **+New** and then select **Automation** > **Cloud flow** > **Scheduled**.
+1. Enter Flow name as ***Reset Inspections**.
+1. Change Minute drop-down to **Month**.
+1. Click **Create**.
+1. Click **+New step**.
+1. Select the **Microsoft Dataverse** connector.
+1. Select the **List rows** action.
+1. Select the **Inspections** table.
+1. Click **Show advanced options**.
+1. In **Filter rows**, enter
+
+   ```odata
+   statuscode ne 330650000
+   ```
+
+1. Click **+ New step**.
+1. Select the **Control** connector.
+1. Select the **Apply to each** action.
+1. Click in **Select an output from previous steps**.
+1. Using **Dynamic content**, select **value**.
+
+1. Click **+ Add an action**.
+1. Select the **Microsoft Dataverse** connector.
+1. Select the **Update a row** action.
+1. Select the **Inspections** table.
+1. Click in **Row ID**.
+1. Using **Dynamic content**, select **Inspection**.
+1. Click **Show advanced options**.
+1. In **Status Reason**, select **Pending**.
+1. Click **Save**.
+
+### Task 1.2: Run flow
+
+1. Click **Test**.
+1. Select **Manually**.
+1. Click **Test**.
+1. Click **Run flow**.
+1. Click **Done**.
 
 ## Exercise 2: Create an instant cloud flow
 
 **Objective:** In this exercise, you will create a cloud flow that is run from a canvas app.
 
-### Task 2.1: Create instant flow for Power Apps
+### Task 2.1: Create instant flow
 
-- Create an instant cloud flow using the Power Apps connector
-- Add Update a row action for Inspections table
-- Add Ask in PowerApps to Row ID
-- Add a text input parameter for Inspection ID GUID
-- Clear the comments column of the Inspection row using null Expression
-- Add Get a row by ID action and retrieve the Permit row using Permit (Value)
-- Add PowerApps Respond to a PowerApp or flow action
-- Pass back the Permit’s Start Date as an output parameter
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+
+1. Click **+New** and then select **Automation** > **Cloud flow** > **Instant**.
+1. Enter Flow name as ***ClearInspectionComments**.
+1. Select **PowerApps**.
+1. Click **Create**.
+
+1. Click **+ New step**.
+1. Select the **Microsoft Dataverse** connector.
+1. Select the **Update a row** action.
+1. Select the **Inspections** table.
+1. Rename the step as **CancelComments**.
+1. Click in **Row ID**.
+1. Select **Ask in PowerApps**.
+1. Click **Show advanced options**.
+1. Click in **Comments**.
+1. Select the **Expression** tab.
+1. Enter **null** and click **OK**.
+
+1. Click **+ New step**.
+1. Select the **Microsoft Dataverse** connector.
+1. Select the **Get a row by ID** action.
+1. Select the **Permits** table.
+1. Click in **Row ID**.
+1. Using **Dynamic content**, select **Permit (Value)**.
+
+1. Click **+N ew step**.
+1. Select the **PowerApps** connector.
+1. Select the **PowerApps Respond to a PowerApp or flow** action.
+1. Select **+ Add an output**.
+1. Select **Date**.
+1. Click in Enter title and enter **startdate**.
+1. Click in Enter a value to respond.
+1. Using **Dynamic content**, select **Start Date**.
+1. Click **Save**.
 
 ### Task 2.2: Call flow from the canvas app
 
-- Edit the Inspections canvas app and add the flow to the app
-- Add a button to the Details screen in the canvas app
-- In the OnSelect property of the button, Run the cloud flow passing in the GUID of the Inspection
-- Set a variable to the Permit Start Date from the response
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Edit the **Inspector** canvas app.
 
-      Set(ScheduledDate, ClearInspectionComments.Run('Inspection List'.Selected.Inspection).startdate)
+1. Select the **Power Automate** tab.
+1. Click **+ Add flow**.
+1. Select **ClearInspectionComments**.
 
-## Exercise 3: Business process flow
+1. Select **Tree view**.
+1. Select the **Details** screen.
+1. Select the **+ Insert** tab.
+1. Click on **Button**.
+1. Drag the label to the bottom of the screen.
+1. Set the **Text** property to **"Clear Comments"**.
+1. In the property selector, select **OnSelect**.
+1. In the formula bar, enter
+
+   ```powerappsfl
+   Set(ScheduledDate, ClearInspectionComments.Run('Inspection List'.Selected.Inspection).startdate)
+   ```
+
+1. Select the **+ Insert** tab.
+1. Click on **Text label**.
+1. Drag the label to the top right of the screen.
+1. Set the **Text** property to
+
+   ```powerappsfl
+   ScheduledDate
+   ```
+
+1. Save the app.
+
+## Exercise 3: Business process flow (Optional)
 
 **Objective:** In this exercise, you will create a business process flow.
 
 ### Task 3.1: Create business process flow for Build Site
 
-Create a Business Process flow for the Build Site table with the following stages and steps
+Create a Business process flow for the Build Site table with the following stages and steps
 
 - Stage 1: New Build Site with data steps for Street Address, City, State, Postal Code, Country
 - Stage 2: Initial Permit on Permit table with data steps Build Site, Name, Contact, Start Date, Permit Type
@@ -59,3 +155,6 @@ Create a Business Process flow for the Build Site table with the following stage
 
 > [!NOTE]
 > All data steps should be required
+
+> [!IMPORTANT]
+> You will need to add the Business process flow table to the solution

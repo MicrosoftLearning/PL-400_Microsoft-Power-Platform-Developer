@@ -16,16 +16,36 @@ Customize the canvas app to use variables and the Patch formula.
 
 ### Task 1.1: Set variable in OnStart
 
-- Edit the Inspector canvas app
-- Add connection to Office365Users
-- Set variable currentuser in App OnStart to Office365User.MyProfile()
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Edit the **Inspector** canvas app.
+1. Select the **Data** tab.
+1. Click **+ Add data**.
+1. Expand **Connectors**.
+1. Select **Office365Users**.
+1. Click **Connect**.
+1. Select **Tree view**.
+1. Select the **App** object
+1. In the property selector, select **OnStart**.
+1. In the formula bar, enter
 
-```powerappsfl
-  Set(currentuser,Office365Users.MyProfile())
-```
+   ```powerappsfl
+   Set(currentuser,Office365Users.MyProfile())
+   ```
 
-- Run App OnStart
-- Add a label to the Main Screen and set the Text property to currentuser.Country
+1. Select the ellipses (...) and select **Run OnStart**
+1. Select the **+ Insert** tab.
+1. Click on **Text label**.
+1. Drag the label to the top right of the screen.
+1. Set the **Text** property
+
+   ```powerappsfl
+   currentuser.Country
+   ```
+
+1. Save the app.
 
 ## Exercise 2: Patch
 
@@ -33,10 +53,22 @@ Customize the canvas app to use variables and the Patch formula.
 
 ### Task 2.1: Update inspection row using Patch
 
-- Add a button to the Detail Screen
-- Set the button’s text property to “Failed”
-- In the button’s OnSelect property use Patch to update Inspection row and set Status Reason to Failed
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Edit the **Inspector** canvas app.
+1. Select **Tree view**.
+1. Select the **Details** screen.
+1. Select the **+ Insert** tab.
+1. Click on **Button**.
+1. Drag the label to the bottom of the screen.
+1. Set the **Text** property to **"Failed"**.
+1. In the property selector, select **OnSelect**.
+1. In the formula bar, enter
 
-```powerappsfl
+   ```powerappsfl
    Patch(Inspections, 'Inspection List'.Selected, {'Status Reason':'Status Reason (Inspections)'.Failed})
-```
+   ```
+
+1. Save the app.
