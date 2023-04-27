@@ -1,18 +1,18 @@
 ---
 lab:
-    title: 'Lab 08: Power Apps Component Framework'
+    title: 'Lab 8: Power Apps Component Framework'
+    module: 'Module 7: Create components with Power Apps Component Framework'
 ---
 
+# Practice Lab 8 – Power Apps Component Framework
 
-## Lab 05 – Power Apps Component Framework
-
-# Scenario
+## Scenario
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
 In this lab you will develop a custom component control using the Power Apps Component Framework (PCF). This component will be used to visualize the permit inspection history timeline. As you build the component, you will see how to use prescriptive interfaces of the framework to interact with the hosting form data. To speed things up we will use a community timeline library to render the visualization. When you build such controls, you can either follow the same procedure or use popular frameworks like React or Vue to completely control the visualization that the component will render.
 
-# High-level lab steps
+## High-level lab steps
 
 As part of building this component, you will complete the following steps:
 
@@ -22,13 +22,11 @@ As part of building this component, you will complete the following steps:
 
 - Publish the component for use on forms
 
-- Configure the permit form to use the component 
+- Configure the permit form to use the component
 
 This is what the component will look like when it is completed.
 
  ![Completed component - screenshot](../L05/Static/mod-02-pcf-1-01.png)
-
- 
 
 ## Things to consider before you begin
 
@@ -36,20 +34,15 @@ This is what the component will look like when it is completed.
 
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
-  
-‎ 
+## Exercise #1: Create the PCF Control
 
-# Exercise #1: Create the PCF Control
+**Objective:** In this exercise, you will create a Power Apps Components Framework control using the Power Apps CLI.
 
-**Objective:** In this exercise, you will create a Power Apps Components Framework control using the Power Apps CLI 
-
- 
-
-## Task #1: Install Microsoft Power Apps CLI and Prerequisites
+### Task 1.1: Install Microsoft Power Apps CLI and Prerequisites
 
 1. Install Node.js
 
-	- Navigate to [Node JS](https://nodejs.org/en/) 
+	- Navigate to [Node JS](https://nodejs.org/en/)
 
 	- Select the latest **LTS** version.
 
@@ -59,9 +52,9 @@ This is what the component will look like when it is completed.
 
 	- Follow the steps in setup wizard to complete installing **Node.js**
 
-2. Install .NET Framework 4.6.2 Developer Pack
+1. Install .NET Framework 4.6.2 Developer Pack
 
-	- Navigate to [Download .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462) 
+	- Navigate to [Download .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 
 	- Select the **Developer Pack**.
 
@@ -71,7 +64,19 @@ This is what the component will look like when it is completed.
   
 	- Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
-## Task #2: Setup Components Project
+1. Download [Power Platform CLI](https://aka.ms/PowerAppsCLI).
+
+1. Run the **powerapps-cli-1.0.msi** to start the installation.
+  
+1. Use the setup wizard to complete the setup and select **Finish**.
+
+	**Note:** if you just installed the CLI tool, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
+
+	**Note:** If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
+
+         pac install latest
+
+### Task 1.2: Setup Components Project
 
 1. Start the developer command prompt tool
 
@@ -109,16 +114,7 @@ This is what the component will look like when it is completed.
 
             cls
 
-4. Install the latest Power Apps CLI, create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**
-
-	- Install latest **Power Apps CLI** version. Use: [https://aka.ms/PowerAppsCLI](https://aka.ms/PowerAppsCLI)
-	
-	
-	**Note:** if you just installed the tools, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
-	
-	**Note:** If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
-
-         pac install latest
+4. Create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**
 
 	- Initialize the component. This command will create a set of files that will implement a dataset component. You will customize these files as we continue.
 
@@ -144,7 +140,7 @@ This is what the component will look like when it is completed.
 
 	- Open the **ControlManifest.Input** xml file and examine it.
 
-    ![Manifest file - screenshot](../L05/Static/mod-02-pcf-1-07.png) 
+    ![Manifest file - screenshot](../L05/Static/mod-02-pcf-1-07.png)
 
 	- Open the **Index.ts** file and examine it.
 
@@ -158,7 +154,7 @@ This is what the component will look like when it is completed.
 
     ![New terminal - screenshot](../L05/Static/mod-02-pcf-1-08.png)
 
-	- If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Shell**. 
+	- If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Shell**.
 
     ![Select default shell](../L05/Static/mod-02-pcf-1-09.png)
 
@@ -186,9 +182,8 @@ This is what the component will look like when it is completed.
 			"no-unused-vars": "off",
 			"no-undef" : "off"
 			}
-					
-	- You should now be able to see the out folder. Expand the folder and review its content.
 
+	- You should now be able to see the out folder. Expand the folder and review its content.
 
     ![Out folder - screenshot](../L05/Static/mod-02-pcf-1-13.png)
 
@@ -254,13 +249,17 @@ This is what the component will look like when it is completed.
 
     ![Add project reference - screenshot](../L05/Static/mod-02-pcf-1-19.png)
 
+    - Edit the solution.cdsproj file and add the tag ti tge PropertyGroup
+ 
+           <OutputPath>bin/debug</OutputPath>
+
 12. Build the solution
 
 	- Make sure you are still in the solution folder.
 
 	- Build the project by running the command below.
 
-            msbuild /t:restore
+            msbuild /t:build /restore
 
 	- The build should succeed.
 
@@ -268,7 +267,7 @@ This is what the component will look like when it is completed.
 
 	> NOTE: If you get the response where 'msbuild' is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
 
-## Task #3: Build the Basic Timeline
+### Task 1.3: Build the Basic Timeline
 
 1. Change directory to the **src** folder
 
@@ -413,7 +412,7 @@ This is what the component will look like when it is completed.
 
 **Do not** close the test environment.
 
-## Task #4: Tailor for Inspection Data
+### Task 1.4: Tailor for Inspection Data
 
 In this task, you will switch from using the hard-coded array of data to using a file loaded into the test harness.
 
@@ -496,7 +495,6 @@ In this task, you will switch from using the hard-coded array of data to using a
                 }
             }
 
-
     ![Create timeline data method - screenshot ](../L05/Static/mod-02-pcf-1-37.png)
 
 4. Call the createTimelineData method from the updateView method.
@@ -551,7 +549,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 Do not close the test environment.
 
-## Task #5: Change Color for Items
+### Task 1.5: Change Color for Items
 
 In this task, you will use the **css** resource you configured to change the color of the items on the timeline.
 
@@ -578,7 +576,6 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![CSS file - screenshot](../L05/Static/mod-02-pcf-1-45.png)
 
-
 	- Select File and then select Save All.
 
 2. Check the test environment, load the test data and make sure it shows your changes
@@ -599,7 +596,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Close the test environment browser window or tab.
 
-3. Stop the test 
+3. Stop the test
 
 	- Go back to **Visual Studio Code**.
 
@@ -607,16 +604,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Type **y** and **[ENTER].**
 
- 
-
-  
-‎ 
-
-# Exercise #2: Publish to Microsoft Dataverse
+## Exercise 2: Publish to Microsoft Dataverse
 
 **Objective:** In this exercise, you will publish the timeline control to your Microsoft Dataverse and add it to the Permit main form.
 
-## Task #1: Setup and Publish
+### Task 2.1: Setup and Publish
 
 1. Get your environment URL
 
@@ -628,7 +620,7 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Endpoint address - screenshot](../L05/Static/mod-02-pcf-1-51.png)
 
-2. Authenticate 
+2. Authenticate
 
 	- Go back to **Visual Studio Code**.
 
@@ -640,17 +632,25 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Sign in with your **admin** username.
 
+3. Build the solution
+
+	- Change directory to the **solution** folder.
+
+            cd ..\solution
+
+	- Build the project by running the command below.
+
+            msbuild /t:build /restore
+
 3. Import the solution into your org and publish
 
-	- Run the command below and wait for the publishing to complete. The push command uploads your component to the configured environment. This can be used over and over during development to quickly see your component in the live form.
+	- Run the command below and wait for the publishing to complete.
 
-            pac pcf push --publisher-prefix contoso
+            pac solution import
 
     ![import solution - screenshot](../L05/Static/mod-02-pcf-1-52.png)
 
- 
-
-## Task #2: Add Timeline Control to the Permit Form
+### Task 2.2: Add Timeline Control to the Permit Form
 
 1. Open the Permit Management solution
 
@@ -746,9 +746,7 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Timeline control - screenshot](../L05/Static/mod-02-pcf-1-66.png)
 
- 
-
-## Task #3: Debug
+### Task 2.3: Debug
 
 1. Start Edge DevTools and add breakpoint.
 
@@ -822,7 +820,7 @@ In this task, you will use the **css** resource you configured to change the col
 
     ![Timeline control with stye - screenshot](../L05/Static/mod-02-pcf-1-77.png)
 
-## Task #4: Add the Timeline Control to Permit Management Solution
+### Task 2.4: Add the Timeline Control to Permit Management Solution
 
 1. Add Custom Control to solution
 
@@ -840,15 +838,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Publish All Customizations** and wait for the publishing to complete.
 
- 
-
- 
-
-# Exercise #3: Promote to production
+## Exercise 3: Promote to production
 
 **Objective:** In this exercise, you will export the Permit Management solution from your Dev environment and import it into your Production environment.
 
-## Task #1: Export Solution
+### Task 3.1: Export Solution
 
 1. Export Permit Management managed solution
 
@@ -884,7 +878,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Save the **Exported** solution on your machine.
 
-## Task #2: Import Solution
+## Task 3.2: Import Solution
 
 1. Import Permit Management managed solution
 
@@ -909,6 +903,5 @@ In this task, you will use the **css** resource you configured to change the col
 	- Select **Import** and wait the import to complete.
 
     ![Import solution - screenshot](../L05/Static/mod-02-pcf-1-86.png)
-
 
 Review the production application by adding a few records and testing your progress.

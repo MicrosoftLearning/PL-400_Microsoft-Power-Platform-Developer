@@ -1,22 +1,22 @@
 ---
 lab:
     title: 'Lab 12: Custom Connector'
+    module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 
+# Practice Lab 12 – Custom Connector
 
-## Lab 09 – Custom Connector
+## Scenario
 
-# Scenario
-
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow. 
+A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
 In this lab you will build a custom connector that can be used from Power Apps and Power Automate. Custom connectors describe existing APIs and allow them to be used easily. In this lab, you will build an API that has common calculations used by inspectors so that they can be used by applications. After building the API, you will create a custom connector definition to make it available to Power Apps and Power Automate.
 
-The connector could have multiple actions defined on it. However, for our lab we will define a single action **Get Required CPM** – where CPM stands for Cubic <N> Per Minute. In some regions this would be Cubic Feet Per Minute, and in others it could be Cubic Meters Per Minute. The action we are building will take the dimensions of a room and the number of air exchanges required by policy. The action logic will calculate the required CPM for that configuration. If you want, you can add additional actions to support other inspection type scenarios to the API and the custom connector. 
+The connector could have multiple actions defined on it. However, for our lab we will define a single action **Get Required CPM** – where CPM stands for Cubic <N> Per Minute. In some regions this would be Cubic Feet Per Minute, and in others it could be Cubic Meters Per Minute. The action we are building will take the dimensions of a room and the number of air exchanges required by policy. The action logic will calculate the required CPM for that configuration. If you want, you can add additional actions to support other inspection type scenarios to the API and the custom connector.
 
 After building the API and the custom connector you will modify the inspector app. You will use the same connector and invoke an action from Power Automate.
 
-# High-level lab steps
+## High-level lab steps
 
 As part of configuring the custom connector, you will complete the following
 
@@ -38,17 +38,15 @@ As part of configuring the custom connector, you will complete the following
 
 - What security will we use in our connector?
 
-- What are possible triggers and actions of the connector? 
+- What are possible triggers and actions of the connector?
 
 - Are there any API rate limits that could potentially affect the connector?
 
- 
-
-# Exercise #1: Create the Azure Function
+## Exercise 1: Create the Azure Function
 
 **Objective:** In this exercise, you will create an Azure function app and the function that will calculate the CPM.
 
-## Task #1: Create CPM Calculation Function
+### Task 1.1: Create CPM Calculation Function
 
 1. Create the function app
 
@@ -85,7 +83,6 @@ As part of configuring the custom connector, you will complete the following
     ![Add function - screenshot](../L09/Static/Mod_2_Custom_Connector_image6.png)
 
 	- Select **HTTP trigger** and then select **Create**.
-
 
 3. Add the **Using Statements** and **CPMCalcRequest** class to the function.
 
@@ -161,11 +158,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Keep the URL you copied on a notepad. You will need this URL while creating the custom connector.
 
-# Exercise #2: Create the Custom Connector
+## Exercise 2: Create the Custom Connector
 
-**Objective:** In this exercise, you will create the Custom Connector. This same approach could be used to describe any existing API you create or that has been created by any third party. 
+**Objective:** In this exercise, you will create the Custom Connector. This same approach could be used to describe any existing API you create or that has been created by any third party.
 
-## Task #1: Create the Custom Connector
+### Task 2.1: Create the Custom Connector
 
 1. Open the Permit Management solution
 
@@ -189,7 +186,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
 
-	- Remove https:// and everything after .net. 
+	- Remove https:// and everything after .net.
 
     ![Paste host URL - screenshot ](../L09/Static/Mod_2_Custom_Connector_image19.png)
 
@@ -266,7 +263,7 @@ As part of configuring the custom connector, you will complete the following
 
     ![Update connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image32.png)
 
-8.  Test the connector
+8. Test the connector
 
 	- Advance to Test.
 
@@ -300,16 +297,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Publish all Customizations** and wait for the publishing to complete.
 
- 
-
-  
-‎ 
-
-# Exercise #3 Test Connector 
+## Exercise 3 Test Connector
 
 **Objective:** In this exercise, you will use the Custom Connector from a Power Apps canvas app and a Power Automate.
 
-## Task #1: Test on Canvas App
+## Task 3.1: Test on Canvas App
 
 1. Open the Permit Management solution
 
@@ -459,8 +451,6 @@ As part of configuring the custom connector, you will complete the following
 
 	- Place the button on the bottom right of the **Main Screen**.
 
- 
-
 11. Steps to navigate to the CPM Calc Screens
 
 	- Select the **CPM Calculator**.
@@ -499,9 +489,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Close**.
 
- 
-
-## Task #2: Test on Flow
+### Task 3.2: Test on Flow
 
 1. Open the Permit Management solution
 
@@ -513,11 +501,9 @@ As part of configuring the custom connector, you will complete the following
 
 2. Create flow and add trigger.
 
-
 	- Select **+ New**.
   
 	- Select **Automation | Cloud flow | Instant**.
-
 
     ![Create new flow - screenshot](../L09/Static/Mod_2_Custom_Connector_image66.png)
 
@@ -567,7 +553,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Run Flow**.
 
-	- Select **Done**. The flow should run successfully. In the flow run history, expand the CPM Calculator action. 
+	- Select **Done**. The flow should run successfully. In the flow run history, expand the CPM Calculator action.
 
     ![Succeeded run - screenshot](../L09/Static/Mod_2_Custom_Connector_image74.png)
 
@@ -584,4 +570,3 @@ As part of configuring the custom connector, you will complete the following
 	- If you finish early, try adding input values to the Manual Button trigger for the room dimensions and use those to call the custom connector. You could also use the notification connector to send the user the required CPM. Finally, if you want to test this in a real device install the Power Automate mobile application.
 
     ![Flow using input values - screenshot](../L09/Static/Mod_2_Custom_Connector_image76.png)
- 

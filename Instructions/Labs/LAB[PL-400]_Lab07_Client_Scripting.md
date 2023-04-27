@@ -1,16 +1,16 @@
 ---
 lab:
-    title: 'Lab 07: Client Scripting'
+    title: 'Lab 7: Client Scripting'
+    module: 'Module 6: Extending the model-driven apps user experience'
 ---
 
+# Practice Lab 7 - Client scripting
 
-## Lab 04 – Client Scripting
-
-# Scenario
+## Scenario
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course, you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab, you will implement client-side logic that will use the web API to evaluate the permit type associated with the permit record and use the client scripting API to manipulate the form controls. 
+In this lab, you will implement client-side logic that will use the web API to evaluate the permit type associated with the permit record and use the client scripting API to manipulate the form controls.
 
 You will also customize the command bar to introduce a new lock permit button that will invoke a custom API to perform the lock permit logic. The server-side logic for the lock permit custom API will be implemented later in the course. Right now, you will just add the button and the logic to invoke the custom API.
 
@@ -38,22 +38,19 @@ As part of building the client-side logic, you will complete the following:
 
 - Remember to continue working in your DEVELOPMENT environment. We will move everything to production soon.
 
-  
-‎ 
-
-# Exercise #1: Prepare and Load Resources
+## Exercise 1: Prepare and Load Resources
 
 **Objective:** In this exercise, you will create, organize, and load your JavaScript web resources.
 
-## Task #1: Use Visual Studio Code to Create Resources
+### Task 1.1: Use Visual Studio Code to Create Resources
 
-In this task, you will set up a folder to contain the JavaScript web resource files in this course. 
+In this task, you will set up a folder to contain the JavaScript web resource files in this course.
 
 1. If you do not already have Visual Studio Code, download it from here [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win) and install it.
 
-2. Start **Visual Studio Code**. 
+1. Start **Visual Studio Code**.
 
-3. Create resources
+1. Create resources
 
 	- Select Explorer from left menu or press Ctrl + Shift + E.
 
@@ -69,7 +66,7 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
 
     ![Select folder - screenshot](../L04/Static/mod-01-client-scripting-02.png)
 
-4. Create **Form Scripts** folder
+1. Create **Form Scripts** folder
 
 	- Hover over the folder and select **New Folder**.
 
@@ -79,15 +76,13 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
 
     ![Form scripts folder - screenshot](../L04/Static/mod-01-client-scripting-04.png)
 
-5. Create the **Permit Form Functions** file
+1. Create the **Permit Form Functions** file
 
 	- Right click on the **FormScripts** folder and select **New File**.
 
     ![New file - screenshot](../L04/Static/mod-01-client-scripting-05.png)
 
-
 	- Name the new file as **PermitFormFuntions.js** and **Enter**.
-
 
     ![permit form functions JavaScript file - screenshot](../L04/Static/mod-01-client-scripting-06.png)
 
@@ -107,9 +102,8 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
             }
 
     ![Add function - screenshot](../L04/Static/mod-01-client-scripting-08.png)  
-‎
 
-## Task #2: Add Event Handlers
+### Task 1.2: Add Event Handlers
 
 In this task, you will create functions for the logic that you will be implementing. This will allow you to register the event handlers in the next tasks for calling these functions and performing few basic tests in the upcoming tasks.
 
@@ -123,7 +117,7 @@ In this task, you will create functions for the logic that you will be implement
 
     ![handle on load event - screenshot](../L04/Static/mod-01-client-scripting-09.png)
 
-2. Add a function to OnChange permit type event
+1. Add a function to OnChange permit type event
 
 	- Add the function mentioned below to the **PermitFormFuntions** file inside the function created in Step 1(d). Once this is done, select **File** and **Save All**.
 
@@ -133,9 +127,7 @@ In this task, you will create functions for the logic that you will be implement
 
     ![Handle on change permit type - screenshot](../L04/Static/mod-01-client-scripting-10.png)
 
- 
-
-## Task #3: Load Web Resources 
+### Task 1.3: Load Web Resources
 
 In this task, you will upload the JavaScript files as web resources.You will also edit the Permit table main form and associate the new web resource with its form. Finally, you will register your functions to be called on specific form events.
 
@@ -149,7 +141,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
 	- Open the **Permit Management** solution.
 
-2. Add web resource to the solution
+1. Add web resource to the solution
 
 	- Select **+ New**.
 
@@ -175,8 +167,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
 	- Select **Publish all customizations** and wait for the publishing to complete.
 
-
-3. Open the Permit main form.
+1. Open the Permit main form.
 
 	- Make sure you are still in the solution.
 
@@ -184,7 +175,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
 	- Select the **Forms** tab and open the **Main** form.
 
-4. Add the script to the permit form
+1. Add the script to the permit form
 
 	- Go to the **Properties** pane and select the **Events** tab.
 
@@ -196,13 +187,13 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
     ![Add script file - screenshot](../L04/Static/mod-01-client-scripting-18.png)
 
-5. Add OnLoad event handler.
+1. Add OnLoad event handler.
 
 	- Expand the **OnLoad** section and select **+ Event Handler**.
 
     ![Add event - screenshot](../L04/Static/mod-01-client-scripting-19.png)
 
-	- Select **Contoso_****PermitFormScripts.js** in the dropdown for **Library**.
+	- Select **Contoso_PermitFormScripts.js** in the dropdown for **Library**.
 
 	- Enter **ContosoPermit.Scripts.PermitForm.handleOnLoad** in the textbox for **Function**.
 
@@ -212,9 +203,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
     ![Event details - screenshot](../L04/Static/mod-01-client-scripting-20.png)
 
-
-
-6. Add Permit Type OnChange event handler.
+1. Add Permit Type OnChange event handler.
 
 	- Select **Permit Type** field on the form.
 
@@ -236,7 +225,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
     ![Event details - screenshot](../L04/Static/mod-01-client-scripting-22.png)
 
-7. Save and publish your changes
+1. Save and publish your changes
 
 	- Select **Save** and wait for changes to be saved.
 
@@ -252,8 +241,7 @@ In this task, you will upload the JavaScript files as web resources.You will als
 
 **DO NOT** navigate away from this page
 
-
-## Task #4: Test Event Handlers 
+### Task 1.4: Test Event Handlers
 
 In this task, you will test the event handlers.
 
@@ -265,7 +253,7 @@ In this task, you will test the event handlers.
 
     ![Start application - screenshot](../L04/Static/mod-01-client-scripting-27.png)
 
-2. Open a Permit record
+1. Open a Permit record
 
 	- Select **Permits** from the Site Map.
 
@@ -273,7 +261,7 @@ In this task, you will test the event handlers.
 
     ![Open record - screenshot](../L04/Static/mod-01-client-scripting-28.png)
 
-3. Open Edge Dev Tools
+1. Open Edge Dev Tools
 
 	- Press **F12** or right click and select **Inspect**.
 
@@ -281,7 +269,7 @@ In this task, you will test the event handlers.
 
     ![Clear console - screenshot](../L04/Static/mod-01-client-scripting-29.png)
 
-4. Refresh and confirm the OnLoad event handler function runs
+1. Refresh and confirm the OnLoad event handler function runs
 
 	- Go to the **Permit** record and select **Refresh**.
 
@@ -289,7 +277,7 @@ In this task, you will test the event handlers.
 
     ![On load event message - screenshot](../L04/Static/mod-01-client-scripting-31.png)
 
-5. Remove Permit Type and confirm the OnChange Permit Type event handler function runs
+1. Remove Permit Type and confirm the OnChange Permit Type event handler function runs
 
 	- Go to the **Permit** record and remove the **Permit Type**.
 
@@ -301,14 +289,11 @@ In this task, you will test the event handlers.
 
 	- Close the **Dev Tools**.
 
-  
-‎ 
-
-# Exercise #2: Show and Hide Tabs
+## Exercise 2: Show and Hide Tabs
 
 **Objective:** In this exercise, you will create a script that will show and hide the inspections tab based on the permit type table’s “required inspections” column value.
 
-## Task #1: Create Function   
+### Task 2.1: Create Function
 
 1. Create a function that will run when the Permit form loads and when the Permit Type value changes
 
@@ -322,19 +307,19 @@ In this task, you will test the event handlers.
 
     ![handle permit type settings function - screenshot](../L04/Static/mod-01-client-scripting-34.png)
 
-2. Get form context from the execution context
+1. Get form context from the execution context
 
 	- Add the script mentioned below inside _**handlePermitTypeSettings** function.
 
             var formContext = executionContext.getFormContext(); 
 
-3. Get the Permit Type value from the form.
+1. Get the Permit Type value from the form.
 
 	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. contoso_permittype is the logical name of the Permit Type column. You can verify this in the table metadata.
 
             var permitType = formContext.getAttribute("contoso_permittype").getValue();
 
-4. Check if the Permit Type has value.
+1. Check if the Permit Type has value.
 
 	- Add the script mentioned below inside the _**handlePermitTypeSettings** function.
 
@@ -346,7 +331,7 @@ In this task, you will test the event handlers.
 
     ![Handle permit type settings function - screenshot](../L04/Static/mod-01-client-scripting-35.png)
 
-5. Hide the Inspections tab and return if Permit type is null.
+1. Hide the Inspections tab and return if Permit type is null.
 
 	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. inspectionsTab is the name of the Inspections tab (This is configured while creating the Model Driven App in a previous lab in this course).
 
@@ -355,9 +340,7 @@ In this task, you will test the event handlers.
 
     ![Handle permit type settings function progress - screenshot](../L04/Static/mod-01-client-scripting-36.png)
 
- 
-
-## Task #2: Get Inspection Type Record   
+### Task 2.2: Get Inspection Type Record
 
 In this task, you will use the web API to retrieve the permit type lookup record associated with the current permit record that is currently displayed in the form.
 
@@ -367,7 +350,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
             var permitTypeID = permitType[0].id;
 
-2. Retrieve the Permit Type record and show alert if there are errors
+1. Retrieve the Permit Type record and show alert if there are errors
 
 	- Add the script mentioned below in the else statement of the _**handlePermitTypeSettings** function. contoso_pertmittype is the logical name of the Permit Type table.
 
@@ -378,7 +361,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Handle permit type settings function progress - screenshot](../L04/Static/mod-01-client-scripting-37.png)
 
-3. Check if “**Require Inspections**” column value is true
+1. Check if “**Require Inspections**” column value is true
 
 	- Add the script mentioned below in the **retrieveRecord** function call. contoso_requireinspections is the logical name of the Require Inspections column of the Permit Type table.
 
@@ -388,27 +371,27 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
             }
 
-4. Make the Inspections tab visible if Require Inspections is true
+1. Make the Inspections tab visible if Require Inspections is true
 
-	- Add the script mentioned below in the if statement of the **retrieveRecord** call. 
+	- Add the script mentioned below in the if statement of the **retrieveRecord** call.
 
             formContext.ui.tabs.get("inspectionsTab").setVisible(true);
 
-5. Hide the Inspections tab if Require Inspections is not true
+1. Hide the Inspections tab if Require Inspections is not true
 
-	- Add the script mentioned below in the else statement of the **retrieveRecord** call. 
+	- Add the script mentioned below in the else statement of the **retrieveRecord** call.
 
             formContext.ui.tabs.get("inspectionsTab").setVisible(false);
 
     ![Handle permit type settings function progress - screenshot](../L04/Static/mod-01-client-scripting-38.png)
 
-6. Call the _handlePermitTypeSettings function from the handleOnLoad function.
+1. Call the _handlePermitTypeSettings function from the handleOnLoad function.
 
 	- Go to the **handleOnLoad** function and add the script mentioned below.
 
             ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
 
-7. Call the _handlePermitTypeSettings function from the handleOnChangePermitType function.
+1. Call the _handlePermitTypeSettings function from the handleOnChangePermitType function.
 
 	- Go to the **handleOnChangePertmitType** function and add the script mentioned below.
 
@@ -418,7 +401,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     - Select **File** and **Save All**.
 
-## Task #3: Load Updated Script    
+### Task 2.3: Load Updated Script
 
 1. Open the Permit Form Script web resource.
 
@@ -434,7 +417,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Open web resource - screenshot](../L04/Static/mod-01-client-scripting-41.png)
 
-2. Load the updated version of permitFormFuntion.jsPermitFormFuntion.js
+1. Load the updated version of permitFormFuntion.jsPermitFormFuntion.js
 
 	- Select **Upload file**.
 
@@ -442,7 +425,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Select **PermitFormFunctions.js** and select **Open**.
 
-3. Save and Publish your changes
+1. Save and Publish your changes
 
 	- Select **Save** and wait until the changes are saved.
 
@@ -452,9 +435,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
   
 	- Do not navigate away from this page.
 
-
-
-## Task #4: Test Your Changes    
+### Task 2.4: Test Your Changes
 
 1. Start the Permit Management application
 
@@ -462,17 +443,17 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Launch the **Permit Management** application.
 
-2. Open Permit record.
+1. Open Permit record.
 
 	- Select Permits from the Site Map.
 
 	- Select to open a **Permit** record.
 
-3. Check if the **Permit Type** column is empty and if it is, the **Inspections** tab is hidden. In this case, the Permit Type is null.
+1. Check if the **Permit Type** column is empty and if it is, the **Inspections** tab is hidden. In this case, the Permit Type is null.
 
     ![Pert type column null - screenshot](../L04/Static/mod-01-client-scripting-46.png)
 
-4. Select Permit Type.
+1. Select Permit Type.
 
 	- Select the **Permit Type** lookup.
 
@@ -482,7 +463,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Pert type new construction with no inspection requirement - screenshot](../L04/Static/mod-01-client-scripting-47.png)
 
-5. Set **Require Inspections** column value of the **Permit Type** to **Yes**.
+1. Set **Require Inspections** column value of the **Permit Type** to **Yes**.
 
 	- Open the selected **Permit Type**.
 
@@ -496,7 +477,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Select the **<-** back button.
 
-6. You should now be able to see the Inspections tab.
+1. You should now be able to see the Inspections tab.
 
 	- Select the **Inspections** tab.
 
@@ -506,13 +487,11 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Inspections sub-grid - screenshot](../L04/Static/mod-01-client-scripting-51.png)
 
- 
-
-# Exercise #3: Toggle required property on the columns
+## Exercise 3: Toggle required property on the columns
 
 **Objective:** In this exercise, you will create a script that will make the “New Size” column required when the “Require Size” column value is set to Yes. If the “Require Size” column value is set to No, remove the requirement. You will also hide the “New Size” column. This logic will be driven by a column on the permit type record that was retrieved using web API in the previous exercise.
 
-## Task #1: Create Function
+### Task 3.1: Create Function
 
 1. Locate the _handlePermitTypeSettings function
 
@@ -520,7 +499,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Locate the _**handlePermitTypeSettings** function.
 
-2. If permitType is null, remove the requirement and hide the “New Size” column. 
+1. If permitType is null, remove the requirement and hide the “New Size” column.
 
 	- Add the script below in the **if** **permitType == null** statement. contoso_newsize is the logical name of the New Size column.
 
@@ -530,7 +509,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Remove requirement script - screenshot](../L04/Static/mod-01-client-scripting-52.png)
 
-3. Check if “Require Size” column value of the Permit Type is set to Yes
+1. Check if “Require Size” column value of the Permit Type is set to Yes
 
 	- Add the script mentioned below inside the retrieveRecord function.
 
@@ -542,7 +521,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Check requirement script - screenshot](../L04/Static/mod-01-client-scripting-53.png)
 
-4. If “Require Size” column value of the Permit Type is set to Yes, make the “New Size” column visible and required.
+1. If “Require Size” column value of the Permit Type is set to Yes, make the “New Size” column visible and required.
 
 	- Add the script mentioned below in the **if** **result.contoso_requiresize** statement. contoso_requiresize is the logical name of the Require Size column.
 
@@ -552,7 +531,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Show column and make it required script - screenshot](../L04/Static/mod-01-client-scripting-54.png)
 
-5. If Require Size column value of the Permit Type is not set to Yes, make the “New Size” column not required and hide it.
+1. If Require Size column value of the Permit Type is not set to Yes, make the “New Size” column not required and hide it.
 
 	- Add the script mentioned below inside the else statement.
 
@@ -562,13 +541,13 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Remove requirement and hide column script - screenshot](../L04/Static/mod-01-client-scripting-55.png)
 
-6. The _handlePermitTypeSettings function should now look like the image below.
+1. The _handlePermitTypeSettings function should now look like the image below.
 
     ![Completed handle permit type settings function - screenshot](../L04/Static/mod-01-client-scripting-56.png)
 
-7. Select **File** and then **Save All**.
+1. Select **File** and then **Save All**.
 
-## Task #2: Load Updated Script    
+### Task 3.2: Load Updated Script
 
 1. Update the Permit Form Script web resource.
 
@@ -582,7 +561,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Select the **PermitFormFunctions.js** you updated and then select **Open**.
 
-2. Save and Publish your changes
+1. Save and Publish your changes
 
 	- Select **Save** and wait until the changes are saved.
 
@@ -590,9 +569,9 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Select the **<-** back button.
   
-3. Do not navigate away from this page.
+1. Do not navigate away from this page.
 
-## Task #3: Test Your Changes    
+### Task 3.3: Test Your Changes
 
 1. Start the Permit Management application
 
@@ -600,17 +579,17 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Launch the **Permit Management** application.
 
-2. Open Permit record.
+1. Open Permit record.
 
 	- Select Permits.
 
 	- Select to open a **Permit** record.
 
-3. Check if the **New Size** column is hidden. If so, then it is because the “Require Size” column of the Permit Type is set to NO.
+1. Check if the **New Size** column is hidden. If so, then it is because the “Require Size” column of the Permit Type is set to NO.
 
     ![Hidden column - screenshot](../L04/Static/mod-01-client-scripting-60.png)
 
-4. Set **Require Size** column value of the **Permit Type** to **Yes**.
+1. Set **Require Size** column value of the **Permit Type** to **Yes**.
 
 	- Open the **Permit Type**.
 
@@ -624,7 +603,7 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 	- Select the **<-** back button.
 
-5. Check if the “New Size” column is visible and it is marked as required.
+1. Check if the “New Size” column is visible and it is marked as required.
 
 	- You should now be able to see **New Size”** column on the form and it is a required field.
 
@@ -638,13 +617,11 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
     ![Removed tab and size column - screenshot](../L04/Static/mod-01-client-scripting-65.png)
 
- 
-# Exercise #4: Command Button Function
+## Exercise 4: Command Button Function
 
 **Objective:** In this exercise, you will you will create custom API, create a function that will lock permits, add a button to the permit table and call the lock permit function when the button is selected.
 
-
-## Task #1: Create Custom API
+### Task 4.1: Create Custom API
 
 In this task, you will create a custom API that will be called to lock the permit. You will not be implementing the business logic that will lock the permit in this lab. It will be completed later in the class when you build the plug-in that registers on the custom api you are defining here.
 
@@ -654,9 +631,9 @@ In this task, you will create a custom API that will be called to lock the permi
 
 	- Select **Solutions** and open the **Permit Management** solution.
   
-2. Create new custom API
+1. Create new custom API
 
-	- Select **+ New** and then select **More | Other | Custom API**.
+	- Select **+ New** and then select **More > Other > Custom API**.
 
     ![Create new process - screenshot](../L04/Static/mod-01-client-scripting-76.png)
 
@@ -666,7 +643,7 @@ In this task, you will create a custom API that will be called to lock the permi
   
     - Select **Done**
   
-3. Create custom API request parameter
+1. Create custom API Request Parameter
 
 	- Select **+ New** and then select **More | Other | Custom API Request Parameter**.
 
@@ -678,28 +655,25 @@ In this task, you will create a custom API that will be called to lock the permi
 
 	- Select **Done**
 
-4. Create Custom API Response Property 
+1. Create Custom API Response Property
 
-	> **NOTE:** Previously the 'Custom API Response Property' was called 'Custom API response parameter'.
+	- Select **+ New** and then select **More > Other > Custom API Response Property**.
 
-	- Select **+ New** and then select **More | Other | Custom API Response Property**.
-
-	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type. set **Yes** for Is Optional, and select **Save and Close**.
+	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type, and select **Save and Close**.
 
     ![Process arguments - screenshot](../L04/Static/mod-01-client-scripting-80.png)
 
     - Select **Done**
 
-5. Publish your changes
+1. Publish your changes
 
 	- Select **Publish all customizations** and wait for the publishing to complete.
- 
 
-## Task #2: Create the Function
+### Task 4.2: Create the Function
 
 In this task, you will create the logic to invoke that will call the custom API.
 
-1. Start Visual Studio Code and open the resources you create in Exercise One
+1. Start Visual Studio Code and open the resources you create in Exercise 1
 
 	- Start **Visual Studio Code**.
 
@@ -709,7 +683,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Select folder - screenshot](../L04/Static/mod-01-client-scripting-84.png)
 
-2. Add a function that will build the request
+1. Add a function that will build the request
 
 	- Open the **PermitFormFunctions.js** file.
 
@@ -723,7 +697,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Add lock permit request function - screenshot](../L04/Static/mod-01-client-scripting-86.png)
 
-3. Build entity and set reason.
+1. Build entity and set reason.
 
 	- Add the script mentioned below inside the **_lockPermitRequest** function.
 
@@ -731,7 +705,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
             this.Reason = reason;
 
-4. Build and return the request
+1. Build and return the request
 
 	- Add the script mentioned below in the **_lockPermitRequest** function.
 
@@ -754,7 +728,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Add lock permit request function progress- screenshot](../L04/Static/mod-01-client-scripting-87.png)
 
-5. Add the function that will be called from the action button.
+1. Add the function that will be called from the action button.
 
 	- Add the function mentioned below after the **_lockPermitRequest** function.
 
@@ -764,7 +738,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Lock permit function - screenshot](../L04/Static/mod-01-client-scripting-88.png)
 
-6. Get Permit ID and call **_lockPermitRequest**
+1. Get Permit ID and call **_lockPermitRequest**
 
 	- Get the id by adding the script mentioned below inside the **lockPermit** function.
 
@@ -775,7 +749,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
             var lockPermitRequest = new ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
 
-7. Execute the request.
+1. Execute the request.
 
 	- Add the script mentioned below inside the lockPermit function.
 
@@ -794,12 +768,11 @@ In this task, you will create the logic to invoke that will call the custom API.
                     }
                 );
 
-
     ![Lock permit function screenshot](../L04/Static/mod-01-client-scripting-89.png)
 
 	- Select **File** and then **Save All**.
 
-8. Load the update resource and publish.
+1. Load the update resource and publish.
 
 	- Log on to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
@@ -815,32 +788,35 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 	- Select **Publish** and wait for the publishing to complete.
 
+### Task 4.3: Add Button to Ribbon
 
-## Task #3: Add Button to Ribbon
-
-1. Open the Permit Management application for edit 
+1. Open the Permit Management application for edit
 
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
 	- Select **Solutions** and select to open the **Permit Management** solution.
 
 	- Select **Apps** and select the **Permit Management** application.
+
   ![Select application - screenshot](../L04/Static/mod-01-client-scripting-92.png)
 
-	- Select the chevron button next to the **Edit** button and select **Edit in preview**.
+	- Select the chevron button next to the **Edit** button and select **Edit in new tab**.
+
   ![Edit application - screenshot](../L04/Static/mod-01-client-scripting-93.png)
 
-2. Edit the Permit table command bar.
+1. Edit the Permit table command bar.
 
-	- Select the **Pages** tab, Hover over the **Permit** table and select the **...** button.
-  ![Select permit management solution - screenshot](../L04/Static/mod-01-client-scripting-94.png)
+	- Select the **Pages** tab, Hover over **Permits view** and select the **...** button.
+  
+   ![Select permit management solution - screenshot](../L04/Static/mod-01-client-scripting-94.png)
 
 	- Select **Edit command bar**.
-  ![Adit command bar - screenshot](../L04/Static/mod-01-client-scripting-95.png)
+
+   ![Adit command bar - screenshot](../L04/Static/mod-01-client-scripting-95.png)
 
     - Select **Main form** and then select **Edit**.
 
-3. Add command to permit table
+1. Add command to permit table
 
 	- Select **+ New command**.
 
@@ -848,13 +824,13 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 	- Select **JavaScript** and then select **Continue**.
 
-4. Configure command bar button
+1. Configure command bar button
 
-	- Enter **Lock Permit** for Label, Select **Use Icon**, select **Lock** for Icon, and enter **Lock Permit** for Tooltip, 
+	- Enter **Lock Permit** for Label, Select **Use Icon**, select **Lock** for Icon, and enter **Lock Permit** for Tooltip title.
 
     ![Command properties- screenshot](../L04/Static/mod-01-client-scripting-97.png)
 
-	- Scroll down and select **+ Add library**
+	- Select **+ Add library**
 
     ![Add library - screenshot](../L04/Static/mod-01-client-scripting-98.png)
 
@@ -866,9 +842,9 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Function name - screenshot](../L04/Static/mod-01-client-scripting-100.png)
 
-5. Add parameter
+1. Add parameter
 
-	- Select **+ Add Parameter** .
+	- Select **+ Add parameter** .
 
     ![Add parameter - screenshot](../L04/Static/mod-01-client-scripting-101.png)
 
@@ -876,12 +852,11 @@ In this task, you will create the logic to invoke that will call the custom API.
 
     ![Select primary control as parameter - screenshot](../L04/Static/mod-01-client-scripting-102.png)
 
-6. Publish your changes.
+1. Publish your changes.
+
     - Select **Save and Publish**.
 
- 
-
-## Task #5: Test Command Button
+### Task 4.4: Test Command Button
 
 1. Start the Permit Management application.
 
@@ -891,7 +866,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 2. Open a permit record
 
-	- Select** Permits**.
+	- Select **Permits**.
 
 	- Select to open a permit.
 

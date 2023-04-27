@@ -1,18 +1,18 @@
 ---
 lab:
     title: 'Lab 10: Azure Functions'
+    module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 
+# Practice Lab 10 – Azure Functions
 
-## Lab 07 – Azure Functions
-
-# Scenario
+## Scenario
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will create an Azure Function that will handle routing inspections. Every morning people call in to request inspections on their permits. They must call before 9:30 AM and once that period ends all the inspections for the day must be assigned and sequenced for the inspectors. To accomplish this, you will build an Azure Function that runs on a schedule, queries pending inspections and assigns them to inspectors. Given the limited time to complete the lab, we’ve simplified the routing and sequencing decisions. 
+In this lab you will create an Azure Function that will handle routing inspections. Every morning people call in to request inspections on their permits. They must call before 9:30 AM and once that period ends all the inspections for the day must be assigned and sequenced for the inspectors. To accomplish this, you will build an Azure Function that runs on a schedule, queries pending inspections and assigns them to inspectors. Given the limited time to complete the lab, we’ve simplified the routing and sequencing decisions.
 
-# High-level lab steps
+## High-level lab steps
 
 As part of building the Azure Function, you will complete the following:
 
@@ -30,14 +30,11 @@ As part of building the Azure Function, you will complete the following:
 
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
-  
-‎ 
+## Exercise 1: Configure an Azure AD application user
 
-# Exercise #1: Configure an application user
+**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse.
 
-**Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse. 
-
-## Task #1: Register Azure AD Application
+### Task 1.1: Register Azure AD Application
 
 1. Navigate to Azure Active Directory
 
@@ -61,34 +58,56 @@ As part of building the Azure Function, you will complete the following:
 
 ![Register application - screenshot](../L07/Static/Mod_02_Azure_Functions_image4.png)
 
-2. Add Client Secret. 
+### Task 1.2: Enable OAuth 2.0
 
-**Note**: In this lab we are using a secret, however, you can also use a certificate. With either of these options you need to have a plan in place to handle rollover when they expire to ensure that the app keeps running.
+1. Select **Manifest**.
 
-- Select **Certificates &amp; Secrets**.
+1. Set **allowPublicClient** to **true**.
 
-- Select **+ New Client Secret**.
+1. Set **oauth2AllowIdTokenImplicitFlow** to **true**.
 
-![New client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image6.png)
+1. Set **oauth2AllowImplicitFlow** to **true**.
 
-- Enter **Inspection Routing** for **Description**, select **12 months** for **Expires**, and then select **Add**.
+1. Click **Save**.
 
-![Add client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image7.png)
+1. Select **API Permissions**.
 
-- Copy the **Value** and save it on a notepad. You will need this value in future tasks.
+1. Click **+Add a permission**.
 
-![Copy value - screenshot](../L07/Static/Mod_02_Azure_Functions_image8.png)
+1. Select **Dynamics CRM**.
 
- 
+1. Select **Delegated permissions**.
 
-## Task #2: Create Application User and Security Role
+1. Check **user_impersonation**.
 
-In this task, you will create the application user and associate it with the Azure AD app that you just registered. You will also create a security role needed to run the routing logic. 
+1. Click **Add permissions**.
 
+### Task 1.3: Client Secret
+
+> [!NOTE]
+> In this lab we are using a secret, however, you can also use a certificate. With either of these options you need to have a plan in place to handle rollover when they expire to ensure that the app keeps running.
+
+1. Select **Certificates &amp; secrets**.
+
+1. Click **+ New client secret**.
+
+   ![New client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image6.png)
+
+1. Enter **Inspection Routing** for **Description**, select **12 months** for **Expires**, and then select **Add**.
+
+   ![Add client secret - screenshot](../L07/Static/Mod_02_Azure_Functions_image7.png)
+
+1. Copy the **Value** and save it on a notepad. You will need this value in future tasks.
+
+   ![Copy value - screenshot](../L07/Static/Mod_02_Azure_Functions_image8.png)
+
+### Task 1.4: Security Role
+
+In this task, you will create the security role needed for the routing logic.
 
 1. Create New Security Role
 
-- Navigate to https://make.powerapps.com/ and make sure you have your **Dev** environment selected.
+- Navigate to https://make.powerapps.com/ and make sure you have your **Development** environment selected.
 
 - Select **Solutions** and open the **Permit Management** solution.
 
@@ -114,23 +133,15 @@ In this task, you will create the application user and associate it with the Azu
 
 - Select **Done**.
 
-2. Add Application User.
+### Task 1.5: Add Application User to Dataverse
 
-- Select **Settings** and then select **Admin center**.
+In this task, you will create the application user and associate it with the Azure AD app that you just registered.#
 
-  ![Admin settings - screenshot](../L07/Static/Mod_02_Azure_Functions_image10.png)
+- Navigate to https://admin.powerplatform.microsoft.com/ and make sure you have your **Development** environment selected.
 
-- Select your **Dev** environment and then select **Settings**.
+- Select your **Development** environment.
 
-- Expand **Users + permissions**.
-
-- Select **Users**.
-
-  ![Users - screenshot](../L07/Static/Mod_02_Azure_Functions_image16.png)
-
-- Select **App users list**.
-
-  ![App users list button - screenshot](../L07/Static/Mod_02_Azure_Functions_image17.png)
+- Click **See all** under **S2S apps**.
 
 - Select **+ New app user**.
 
@@ -154,14 +165,11 @@ In this task, you will create the application user and associate it with the Azu
 
 ![Create app user - screenshot](../L07/Static/Mod_02_Azure_Functions_image27.png)
 
-  
-‎ 
-
-# Exercise #2: Create Azure Function for Inspection Routing
+## Exercise 2: Create Azure Function for Inspection Routing
 
 **Objective:** In this exercise, you will create the Azure function that will route the inspections.
 
-## Task #1: Create the Function
+### Task 2.1: Create the Function
 
 1. Create Azure Function project
 
@@ -169,21 +177,21 @@ In this task, you will create the application user and associate it with the Azu
 
 - Select **Create a New Project**.
 
-![New visual studio project - screenshot](../L07/Static/Mod_02_Azure_Functions_image28.png)
+   ![New visual studio project - screenshot](../L07/Static/Mod_02_Azure_Functions_image28.png)
 
 - Select **Azure Functions** and then select **Next**.
 
-![Azure functions - screenshot](../L07/Static/Mod_02_Azure_Functions_image29.png)
+   ![Azure functions - screenshot](../L07/Static/Mod_02_Azure_Functions_image29.png)
 
 - Enter **InspectionManagementApp** for **Name** and then select **Create**.
 
-![Create project - screenshot](../L07/Static/Mod_02_Azure_Functions_image30.png)
+   ![Create project - screenshot](../L07/Static/Mod_02_Azure_Functions_image30.png)
 
 - Select **NET Core3** and select **Timer Trigger**.
 
 - Change the Schedule to 0 0 0 * * * (Midnight Every Day) and select **Create**.
 
-![Create Azure function application - screenshot](../L07/Static/Mod_02_Azure_Functions_image32.png)
+   ![Create Azure function application - screenshot](../L07/Static/Mod_02_Azure_Functions_image32.png)
 
 2. Rename and run the Function
 
@@ -207,11 +215,11 @@ In this task, you will create the application user and associate it with the Azu
 
 3. Trigger the function with Postman
 
-- If you don’t have **Postman** installed, get it from here [Postman](https://www.getpostman.com/) and install it on your machine. Or you can use any similar tool of your preference that allows you to construct an HTTP POST request. 
-
 - Start **Postman**.
 
-- Select **POST** and enter the URL: [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter) 
+- Click **+** to open a new request tab.
+
+- Select **POST** and enter the URL: [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter)
 
 ![Paste URL - screenshot](../L07/Static/Mod_02_Azure_Functions_image37.png)
 
@@ -299,7 +307,7 @@ In this task, you will create the application user and associate it with the Azu
 
 7. Find the your Microsoft Dataverse URL
 
-- Sign in to [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com/) 
+- Sign in to [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com/)
 
 - Select **Environments** and open the **Dev** environment.
 
@@ -345,7 +353,7 @@ In this task, you will create the application user and associate it with the Azu
         var crmBaseUrl = Environment.GetEnvironmentVariable("cdsurl", EnvironmentVariableTarget.Process);
         var crmurl = crmBaseUrl + "/api/data/v9.0/";
 
-- Create **Authentication Parameters**. 
+- Create **Authentication Parameters**.
 
         AuthenticationParameters ap = await AuthenticationParameters.CreateFromUrlAsync(new Uri(crmurl));
 
@@ -399,9 +407,10 @@ In this task, you will create the application user and associate it with the Azu
 
 Go back **Visual Studio** and stop debugging.
 
-## Task #2: Get Inspections and Users and Assign Inspections
+### Task 2.2: Get Inspections and Users and Assign Inspections
 
 1. Get the New Request and Pending option values for the Inspection table Status Reason column.
+
 - Navigate to https://make.powerapps.com/ and make sure you have your **Dev** environment selected.
 
 - Select **Solutions** and open the **Permit Management** solution.
@@ -557,16 +566,11 @@ Go back **Visual Studio** and stop debugging.
 
 Build the project and make sure that the build succeeds.
 
-  
-‎ 
-
-# Exercise #3: Publish and Test
+## Exercise 3: Publish and Test
 
 **Objective:** In this exercise, you will publish the Azure function to Azure, update the app settings, and test the function.
 
- 
-
-## Task #1: Publish to Azure
+### Task 3.1: Publish to Azure
 
 1. Publish the function
 
@@ -680,7 +684,7 @@ Build the project and make sure that the build succeeds.
 
 4. Prepare test record
 
-- Start a new browser window and sign in to [Power Apps maker portal](https://make.powerapps.com/) 
+- Start a new browser window and sign in to [Power Apps maker portal](https://make.powerapps.com/)
 
 - Make sure you are in the **Dev** environment.
 
@@ -734,15 +738,11 @@ Build the project and make sure that the build succeeds.
 
 ![Routed record - screenshot](../L07/Static/Mod_02_Azure_Functions_image84.png)
 
- 
-
- 
-
-# Exercise #4: Promote to production
+## Exercise 4: Promote to production
 
 **Objective:** In this exercise, you will export the Permit Management solution form your Dev environment and import it into your Production environment. In this lab, you have added a security role to the solution that must be promoted.
 
-## Task #1: Export Solution
+### Task 4.1: Export Solution
 
 1. Export Permit Management managed solution
 
@@ -775,7 +775,7 @@ Build the project and make sure that the build succeeds.
 
 - Save the **Exported** solution in your machine.
 
-## Task #2: Import Solution
+### Task 4.2: Import Solution
 
 1. Import Permit Management managed solution
 
@@ -797,4 +797,4 @@ Build the project and make sure that the build succeeds.
 
 - Wait for the import to complete and then select **Close**.
 
-- Review and test your production environment. 
+- Review and test your production environment.

@@ -1,17 +1,18 @@
 ---
 lab:
     title: 'Lab 11: Publishing Events Externally'
+    module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 
-## Lab 08 – Publishing Events Externally
+# Practice Lab 11 – Publishing Events Externally
 
-# Scenario
+## Scenario
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
-In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post. 
+In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
 
-# High-level lab steps
+## High-level lab steps
 
 As part of configuring the event publishing, you will complete the following:
 
@@ -29,16 +30,11 @@ As part of configuring the event publishing, you will complete the following:
 
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
-  
-‎ 
-
-# Exercise #1: Create an Azure Function
+## Exercise 1: Create an Azure Function
 
 **Objective:** In this exercise, you will create an Azure Function that will be the endpoint to accept and log incoming web requests.
 
- 
-
-## Task #1: Create Azure Function App
+### Task 1.1: Create Azure Function App
 
 1. Create new function application
 
@@ -62,7 +58,7 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select **Create** and wait for the deployment to complete.
 
-## Task #2: Create an Azure Function
+### Task 1.2: Create an Azure Function
 
 1. Create a new function
 
@@ -77,7 +73,6 @@ As part of configuring the event publishing, you will complete the following:
 	- Select **HTTP trigger** for template and then select **Create**.
 
     ![HTTP trigger - screenshot](../L08/Static/Mod_01_Web_Hook_image7.png)
-
 
 2. Test the function
 
@@ -143,13 +138,13 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Save the **URL**, you will need it in the next exercise.
 
-# Exercise #2: Configure Webhook
+## Exercise 2: Configure Webhook
 
-## Task #1: Configure publishing to a Webhook
+### Task 2.1: Configure publishing to a Webhook
 
 1. Download the SDK Toolkit. If you already have the Plugin Registration tool from the previous lab you can proceed to step three of this task.
 
-	- Navigate to [https://xrm.tools/SDK](https://xrm.tools/SDK) 
+	- Navigate to [https://xrm.tools/SDK](https://xrm.tools/SDK)
 
 	- Select **Download SDK Zip File**.
 
@@ -188,7 +183,7 @@ As part of configuring the event publishing, you will complete the following:
 	- Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
 	- Provide your **Microsoft Dataverse** credentials and **Login**.
-   
+
     ![Login - screenshot](../L08/Static/Mod_01_Web_Hook_image23.png)
 
 	- Select the **Dev** environment and then select **Login**.
@@ -239,7 +234,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Register new step - screenshot](../L08/Static/Mod_01_Web_Hook_image33.png)
 
-## Task #2: Test the Webhook
+### Task 2.2: Test the Webhook
 
 1. Start the Permit Management application
 
@@ -281,7 +276,7 @@ As part of configuring the event publishing, you will complete the following:
 
 Go back to the Azure Function and make sure the function did not execute.
 
-## Task #3: Configure an entity image 
+### Task 2.3: Configure an entity image
 
 This step allows you to avoid unnecessarily querying Microsoft Dataverse and make a request only when you need information from the primary table. It can also be used to get the prior value of a column before an update operation.
 

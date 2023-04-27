@@ -147,4 +147,4 @@ In this exercise, you will create an Azure subscription that you will be using i
 1. On the sign up page, enter address line 1, city, and postal code.
 
 > [!NOTE]
-> 1. If you are prompted for a *Phone number* enter **0123456789** and click on **Submit**.
+> If you are prompted for a *Phone number* enter **0123456789** and click on **Submit**.

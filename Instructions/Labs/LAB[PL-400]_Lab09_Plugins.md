@@ -1,18 +1,19 @@
 ---
 lab:
     title: 'Lab 09: Plugins'
+    module: 'Module 8: Extending the Power Platform Dataverse'
 ---
 
 
-## Lab 06 – Plugins
+# Practice Lab 6 – Plugins
 
-# Scenario
+## Scenario
 
 A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
 In this lab you will build two plugins. The first plugin will run when a new permit record is created, and it will check that there are no other permits that exists for the build sites that are “locked”. If a locked permit is found, the plugin will block the creation of this new permit. The second plugin will hook up and run when the Lock Permit custom API is invoked. In the prior module we defined the custom API, and now with the plugin step registered on execution of the custom API, it will perform the lock permit business logic.
 
-# High-level lab steps
+## High-level lab steps
 
 As part of building the plugins, you will complete the following activities.
 
@@ -36,16 +37,14 @@ As part of building the plugins, you will complete the following activities.
 
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
-  
-‎ 
-
-# Exercise #1: Block New Permit Creation Plugin
+## Exercise 1: Block New Permit Creation Plugin
 
 **Objective:** In this exercise, you will create a plugin that will run on create permit. This plugin will check if there are any locked permits for the selected build site of the new permit and block the creation of the new permit.
 
-## Task #1: Create the plugin
+### Task 1.1: Create the plugin
 
 1. Find the value of the Status Reason columns.
+
    - Navigate to https://make.powerapps.com/ and make sure you are in your dev environment.
   
    - Select **Solutions** and open the **Permit Management** solution.
@@ -53,7 +52,7 @@ As part of building the plugins, you will complete the following activities.
    - In the **Objects** pane on the left side expand the **Tables** then expand **Permit** table.
 
    - Select **Columns**.
-    
+
    - Double click to open and locate the **Status Reason** column.
   
    - Scroll down and double click on the **Locked** option.
@@ -84,11 +83,10 @@ As part of building the plugins, you will complete the following activities.
   
    - You will need this value in a future step. Select **Cancel** to close the editor.
   
-  **Note:** Keep these values on a notepad, you need them in future steps.
-
+   **Note:** Keep these values on a notepad, you need them in future steps.
 
 2. Download and install Power Platform CLI
-    - Download the standalone  Microsoft Power Platform CLI https://aka.ms/PowerAppsCLI 
+    - Download the standalone  Microsoft Power Platform CLI https://aka.ms/PowerAppsCLI
   
     - Run the powerapps-cli file to start installation.
   
@@ -97,19 +95,16 @@ As part of building the plugins, you will complete the following activities.
 3. Create the Visual Studio project
 
 	- Open the command prompt.
-	
+
 	- Run the command below to create a new folder and name it ContosoPackageProject.
-  
   
             md ContosoPackageProject
 
      ![Create directory- screenshot](../L06/Static/Mod_01_Plugin_image1.png)
-     
+
 	- Change directory to the folder you just create by running the below command.
 
-
             cd ContosoPackageProject
-
 
 	- You should now be in the ContosoPackageProject folder. Run the command below to initialize a directory with a new Dataverse plugin class library.
 
@@ -123,7 +118,7 @@ As part of building the plugins, you will complete the following activities.
   
             start ContosoPackageProject.csproj
 
-3. Delete Plugin1 and create new class file for the plugin
+4. Rename the Plugin1 class file for the plugin
 
 	- Right click on **Plugin1.cs** and select **Rename**.
 
@@ -133,27 +128,28 @@ As part of building the plugins, you will complete the following activities.
   
 	- Select Yes on the rename references popup.
 
-4. Get the **Target** Table.
+5. Get the **Target** Table.
+
     - Add the using statement below to the class.
 
             using Microsoft.Xrm.Sdk.Query;
             using ContosoPackageProject
 
-	- In the **ExecuteDatavesePlugin** method After the comment `// TODO: Implement you custom business logic` add the code below.
+    - In the **ExecuteDataversePlugin** method After the comment `// TODO: Implement you custom business logic` add the code below.
 
             var permitEntity = context.InputParameters["Target"] as Entity;
 
-	- To get the Build Site table reference, add the below code after **permitEntity** variable definition.
+    - To get the Build Site table reference, add the below code after **permitEntity** variable definition.
 
             var buildSiteRef = permitEntity["contoso_buildsite"] as EntityReference;
 
-	- To add Trace Messages, add the below mentioned code after **buildSiteRef** variable definition.
+    - To add Trace Messages, add the below mentioned code after **buildSiteRef** variable definition.
 
             localPluginContext.Trace("Primary Entity Id: " + permitEntity.Id);
 
             localPluginContext.Trace("Build Site Entity Id: " + buildSiteRef.Id);
 
-	5. Create Fetch xml and that will get the count of locked permits matching the build site id and call retrieve multiple.
+6. Create Fetch xml and that will get the count of locked permits matching the build site id and call retrieve multiple.
 
 	- Create the **FetchXML** string. Replace **[Locked Option Value]** with the locked option value of the status reason column from Permit table you copied.
 
@@ -164,7 +160,7 @@ As part of building the plugins, you will complete the following activities.
             localPluginContext.Trace("Calling RetrieveMultiple for locked permits");
             var response = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchString));
 
-	6. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
+7. Get the locked Permit Count and throw InvalidPluginExecutionException if the **Count** is more than 0
 
 	- Get the locked permits **Count**.
 
@@ -178,15 +174,13 @@ As part of building the plugins, you will complete the following activities.
             throw new InvalidPluginExecutionException("Too many locked permits for build site");
             }
 
-	- The ExecuteDatavesePlugin method should now look like the image below.
+	- The ExecuteDataversePlugin method should now look like the image below.
 
-    ![Execute CDS Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
+    ![Execute Dataverse Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
 
 	- Build the project and make sure it succeeds. To build the project, right click on the project and select **Build**. Check the output and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here. 
 
- 
-
-## Task #2: Deploy the plugin
+### Task 1.2: Deploy the plugin
 
 1. Power Platform tools will be installed on first launch.
 
@@ -195,28 +189,28 @@ As part of building the plugins, you will complete the following activities.
 	- Return to command prompt.
 
 	- Run the command below to launch the Plug-in Registration Tool (PRT).
-	
+
             pac tool prt
 
 3. Connect to your org.
 
-	- Select **Create New Connection**.
+    - Select **Create New Connection**.
 
     ![New connection - screenshot](../L06/Static/Mod_01_Plugin_image17.png)
 
-- Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
+    - Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
-- Provide your **Microsoft Dataverse** credentials and select **Login**.
+    - Provide your **Microsoft Dataverse** credentials and select **Login**.
 
     ![Provide credentials - screenshot](../L06/Static/Mod_01_Plugin_image18.png)
 
-	- Select the **Dev** environment and then select **Login**.
+    - Select the **Dev** environment and then select **Login**.
 
     ![Select environment - screenshot](../L06/Static/Mod_01_Plugin_image19.png)
 
 4. Register new assembly
 
-	- Select **Register** and select **Register** **Register New Package**.
+	- Select **Register** and select **Register** **Register New Assembly**.
 
     ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image20.png)
 
@@ -224,21 +218,19 @@ As part of building the plugins, you will complete the following activities.
 
     ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image21.png)
 
-	- Browse to the bin/**debug** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject.1.0.0.nupkg** file and select **Open**. 
-	- 
-‎**Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
+	- Browse to the **bin/debug/net462** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject.dll** file and select **Open**.
 
-![Select .dll file - screenshot](../L06/Static/Mod_01_Plugin_image22.png)
+        **Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
 
-   - For solution select **Permit Management**.
+       ![Select .dll file - screenshot](../L06/Static/Mod_01_Plugin_image22.png)
 
-   - Select **Import**.
+	- For solution select **Permit Management**.
 
-![Register plugin - screenshot](../L06/Static/Mod_01_Plugin_image23.png)
+	- Select **Import**.
 
- 
+      ![Register plugin - screenshot](../L06/Static/Mod_01_Plugin_image23.png)
 
-1. Register new step
+5. Register new step
 
 	- Select the assembly ContosoPackageProject you just registered.
 
@@ -258,15 +250,13 @@ As part of building the plugins, you will complete the following activities.
 
     ![Registered step - screenshot](../L06/Static/Mod_01_Plugin_image27.png)
 
- 
-
-# Exercise #2: Create Custom Action Plugin
+## Exercise 2: Create Custom Action Plugin
 
 **Objective**: In this exercise, you will create and register a plugin that will be invoked when the lock permit custom action is used. This plugin will be used to implement the business logic of locking the permit. Specifically, it will update the permit to indicate it is locked and then cancel any pending inspections.
 
 **Note:** If you did not create the custom API in a prior lab, look in your resources folder for how to add it here before you proceed.
 
-## Task #1: Add a new plugin to the project
+### Task 2.1: Add a new plugin to the project
 
 1. Create new class named LockPermitCancelInspections.
 
@@ -283,9 +273,9 @@ As part of building the plugins, you will complete the following activities.
 
     ![Add using statements and edit class - screenshot](../L06/Static/Mod_01_Plugin_image30.png)
 
-3. Override the ExecuteCDSPlugin method and get the reason value from the input parameter.
+1. Override the ExecuteDataversePlugin method and get the reason value from the input parameter.
 
-	- Override the **ExecuteCDSPlugin** method. Add the code below inside the **LockPermitCancelInspections** method.
+	- Override the **ExecuteDataversePlugin** method. Add the code below inside the **LockPermitCancelInspections** method.
 
             public LockPermitCancelInspections(string unsecureConfiguration, string secureConfiguration)
             : base(typeof(PreOperationPermitCreate))
@@ -299,11 +289,9 @@ As part of building the plugins, you will complete the following activities.
                 {
                     throw new ArgumentNullException(nameof(localPluginContext));
                 }
-		
-		var context = localPluginContext.PluginExecutionContext;
             }
 
-4. Get the target Table reference, Table, set status reason to lock, and update the permit record.
+1. Get the target Table reference, Table, set status reason to lock, and update the permit record.
 
 	- Get the target **Table Reference** and **Table**. Add the below code inside the Execute method.
 
@@ -322,11 +310,11 @@ As part of building the plugins, you will complete the following activities.
 
     ![Execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image31.png)
 
-## Task #2: Get Related Inspections and Cancel
+### Task 2.2: Get Related Inspections and Cancel
 
 1. Create query and condition expressions.
 
-	- Create the **QueryExpression**. Add the code below to the **ExecuteCdsPlugin** method.
+	- Create the **QueryExpression**. Add the code below to the **ExecuteDataversePlugin** method.
 
             QueryExpression qe = new QueryExpression();
             qe.EntityName = "contoso_inspection";
@@ -391,11 +379,10 @@ As part of building the plugins, you will complete the following activities.
             localPluginContext.Trace("Canceled inspection Id : " + inspection.Id);
 
             canceledInspectionsCount++;
- 
- 
+
     ![Foreach section of the execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image33.png)
 
-## Task #3: Set Output Parameter and Create Note Record
+### Task 2.3: Set Output Parameter and Create Note Record
 
 1. Check if at least one Inspection was canceled and CanceledInspectionsCount output Parameter.
 
@@ -407,7 +394,7 @@ As part of building the plugins, you will complete the following activities.
             }
 
 	- Set the **CanceledInspectionsCount** output parameter. Add the code below inside the if statement outside the foreach loop.
-    
+
             localPluginContext.PluginExecutionContext.OutputParameters["CanceledInspectionsCount"] = canceledInspectionsCount + " Inspections were canceled";
 
     ![Set output parameter - screenshot](../L06/Static/Mod_01_Plugin_image34.png)
@@ -444,8 +431,7 @@ As part of building the plugins, you will complete the following activities.
 
 3. Build plugin by right clicking on the project and select **Build** and make sure the build succeeds.
 
-
-## Task #4: Deploy Plugin
+### Task 2.4: Deploy Plugin
 
 1. If you do not have the plugin registration tool running already, follow instructions above to run the tool and connect to the organization.
 
@@ -463,12 +449,10 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **OK**.
 
-
 3. Add plugin and configure the custom API
 
-    > **NOTE:** The Custom API is done in `Lab 04 – Client Scripting` , `Exercise #4: Command Button Function (Optional)`. 
+    > **NOTE:** The Custom API is done in `Lab 04 – Client Scripting` , `Exercise #4: Command Button Function (Optional)`.
     > If you have not performed this task, it is recommended that you do so.
-
 
 	- Navigate to https://make.powerapps.com/ and make sure you are in your **Dev** environment.
 
@@ -492,15 +476,13 @@ As part of building the plugins, you will complete the following activities.
   
 	- Select **Done**
 
-
-# Exercise #3: Test Plugins
+## Exercise 3: Test Plugins
 
 **Objective:** In this exercise, you will test the plugins you created.
 
-## Task #1: Test Lock Plugin
+### Task 3.1: Test Lock Plugin
 
-1. Enable attachments for the Permit table   
-
+1. Enable attachments for the Permit table
 
 	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
 
@@ -510,7 +492,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Table settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
 
-	- Check **Enable attachments** and then select **Done**. 
+	- Check **Enable attachments** and then select **Done**.
 
     ![Enable attachments for Table - screenshot](../L06/Static/Mod_01_Plugin_image49.png)
 
@@ -518,9 +500,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Publish All Customizations** and wait for the publishing to complete.
 
-
 2. Enable Plugin Tracing
-
 
 	- Select **Settings** and then select **Advanced Settings**.
 
@@ -584,7 +564,7 @@ As part of building the plugins, you will complete the following activities.
 
     ![Refresh record - screenshot](../L06/Static/Mod_01_Plugin_image59.png)
 
-	- The **Status Reason** value should change to **Locked** 
+	- The **Status Reason** value should change to **Locked**.
 
     ![Locked record - screenshot](../L06/Static/Mod_01_Plugin_image60.png)
 
@@ -595,8 +575,6 @@ As part of building the plugins, you will complete the following activities.
 	- You should now have two canceled inspections.  
 
     ![Active inspections view - screenshot](../L06/Static/Mod_01_Plugin_image62.png)
-
- 
 
 6. Check if the Note record was created.
 
@@ -620,7 +598,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Close the **Note** record. Close **Advanced Find**.
 
-## Task #2: Test Restrict New Permit Creation Plugin
+### Task 3.2: Test Restrict New Permit Creation Plugin
 
 1. Try to create new Permit record for the One Microsoft Way Build Site
 
@@ -650,16 +628,11 @@ As part of building the plugins, you will complete the following activities.
 
     ![Permits list - screenshot](../L06/Static/Mod_01_Plugin_image72.png)
 
- 
-
-  
-‎ 
-
-# Exercise #4: Plugin Trace Log and Debugging
+## Exercise 4: Plugin Trace Log and Debugging
 
 **Objective:** In this exercise, you will check the Plugin Trace log and debug the plugins.
 
-## Task #1: Plugin Trace Log
+### Task 4.1: Plugin Trace Log
 
 1. Open Plugin trace Log.
 
@@ -685,8 +658,6 @@ As part of building the plugins, you will complete the following activities.
 
 	- Scroll down to the Execution section and examine.
 
- 
+### Task 4.2: Debugging Plugins (Optional)
 
-## Task #2: Debugging Plugins (Optional)
-
-Follow these steps to debug your plugins [https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/tutorial-debug-plug-in](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/tutorial-debug-plug-in) 
+Follow these steps to debug your plugins [https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/tutorial-debug-plug-in](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/tutorial-debug-plug-in)
