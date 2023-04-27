@@ -142,37 +142,15 @@ As part of configuring the event publishing, you will complete the following:
 
 ### Task 2.1: Configure publishing to a Webhook
 
-1. Download the SDK Toolkit. If you already have the Plugin Registration tool from the previous lab you can proceed to step three of this task.
+1. Start the Plugin Registration Tool
 
-	- Navigate to [https://xrm.tools/SDK](https://xrm.tools/SDK)
+2. Start the plugin registration tool and sign in.
 
-	- Select **Download SDK Zip File**.
+	- Open a command prompt.
 
-    ![Download SDK - screenshot](../L08/Static/Mod_01_Web_Hook_image17.png)
+	- Run the command below to launch the Plug-in Registration Tool (PRT).
 
-	- Save the zip file on your machine.
-
-	- Right click on the downloaded **sdk.zip** file and select **Properties**.
-
-	- Check the **Unblock** checkbox and then select **Apply**.
-
-    ![Unblock file - screenshot](../L08/Static/Mod_01_Web_Hook_image19.png)
-
-	- Select **OK**.
-
-	- Right click on the **sdk.zip** file again and select **Extract All**.
-
-	- Complete extracting.
-
-2. Start the Plugin Registration Tool
-
-	- Open the **sdk** folder you extracted and open the **PluginRegistration** folder.
-
-    ![Plugin registration - screenshot](../L08/Static/Mod_01_Web_Hook_image20.png)
-
-	- Locate and double click PluginRegistration.exe.
-
-    ![Start plugin registration tool - screenshot ](../L08/Static/Mod_01_Web_Hook_image21.png)
+            pac tool prt
 
 3. Create new connection
 
@@ -186,7 +164,7 @@ As part of configuring the event publishing, you will complete the following:
 
     ![Login - screenshot](../L08/Static/Mod_01_Web_Hook_image23.png)
 
-	- Select the **Dev** environment and then select **Login**.
+	- Select the **Development** environment and then select **Login**.
 
     ![Select environment - screenshot](../L08/Static/Mod_01_Web_Hook_image24.png)
 
@@ -200,21 +178,21 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Go to the notepad where you saved the function URL and copy everything before the **‘?’**.
 
-    ![Copy URL - screenshot](../L08/Static/Mod_01_Web_Hook_image26.png)
+      ![Copy URL - screenshot](../L08/Static/Mod_01_Web_Hook_image26.png)
 
 	- Go back to the **Plugin Registration** tool and paste the **URL** you copied in the **Endpoint URL** field.
 
-    ![Paste URL - screenshot ](../L08/Static/Mod_01_Web_Hook_image27.png)
+      ![Paste URL - screenshot ](../L08/Static/Mod_01_Web_Hook_image27.png)
 
 	- Select **WebhookKey** for **Authentication**.
 
 	- Go back to the notepad and copy the key.
 
-    ![Copy key - screenshot](../L08/Static/Mod_01_Web_Hook_image28.png)
+      ![Copy key - screenshot](../L08/Static/Mod_01_Web_Hook_image28.png)
 
 	- Go back to the **Plugin Registration** tool, paste the key you copied in the **Value** field and select **Save**.
 
-    ![Paste key value and save - screenshot](../L08/Static/Mod_01_Web_Hook_image29.png)
+      ![Paste key value and save - screenshot](../L08/Static/Mod_01_Web_Hook_image29.png)
 
 5. Register new step
 
@@ -224,7 +202,7 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Select **Update** Message, **contoso_permit** for Primary Entity, and select **Filtering Attributes.**
 
-    ![Filtering attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image31.png)
+      ![Filtering attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image31.png)
 
 	- Select only **New Size** and then select **OK**.
 
@@ -238,17 +216,17 @@ As part of configuring the event publishing, you will complete the following:
 
 1. Start the Permit Management application
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
 
 	- Select Apps and launch the Permit Management application.
 
-    ![Start application - screenshot](../L08/Static/Mod_01_Web_Hook_image34.png)
+      ![Start application - screenshot](../L08/Static/Mod_01_Web_Hook_image34.png)
 
 	- Select **Permits** and open one of the permit records. Create new if you don’t have a Permit record.
 
 	- Change the **New Size** to **5000** and **Save**.
 
-    ![Change size and save - screenshot](../L08/Static/Mod_01_Web_Hook_image36.png)
+      ![Change size and save - screenshot](../L08/Static/Mod_01_Web_Hook_image36.png)
 
 2. Check Azure Output
 
@@ -258,11 +236,11 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Show **Logs**.
 
-    ![Show logs - screenshot](../L08/Static/Mod_01_Web_Hook_image37.png)
+      ![Show logs - screenshot](../L08/Static/Mod_01_Web_Hook_image37.png)
 
 	- You should see logs like the image below. The Output is a serialized **RemoteExecutionContextobject** object
 
-    ![Function output - screenshot](../L08/Static/Mod_01_Web_Hook_image38.png)
+      ![Function output - screenshot](../L08/Static/Mod_01_Web_Hook_image38.png)
 
 **Hint**: If the log is not showing in the console (sometimes this happens), select **Monitor** on the left and check execution log. Select entry, details will be on the right (this could be delayed up to a few minutes).
 
@@ -272,7 +250,7 @@ As part of configuring the event publishing, you will complete the following:
 
 	- Change the **Start Date** to tomorrow’s date and select **Save**.
 
-    ![Update record and save - screenshot](../L08/Static/Mod_01_Web_Hook_image39.png)
+      ![Update record and save - screenshot](../L08/Static/Mod_01_Web_Hook_image39.png)
 
 Go back to the Azure Function and make sure the function did not execute.
 
@@ -286,21 +264,21 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
 
 	- Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
 
-    ![Register new image - screenshot](../L08/Static/Mod_01_Web_Hook_image40.png)
+      ![Register new image - screenshot](../L08/Static/Mod_01_Web_Hook_image40.png)
 
 	- Check both **Pre** and **Post** images checkboxes.
 
 	- Enter **Permit Image** for **Name**, **PermitImage** for **Entity Alias**, and then select the **Parameters** button.
 
-    ![Image type information - screenshot](../L08/Static/Mod_01_Web_Hook_image41.png)
+      ![Image type information - screenshot](../L08/Static/Mod_01_Web_Hook_image41.png)
 
 	- Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**, and then select **OK**.
 
-    ![Select attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image42.png)
+      ![Select attributes - screenshot](../L08/Static/Mod_01_Web_Hook_image42.png)
 
 	- Select **Register Image**.
 
-    ![Register image - screenshot](../L08/Static/Mod_01_Web_Hook_image43.png)
+      ![Register image - screenshot](../L08/Static/Mod_01_Web_Hook_image43.png)
 
 2. Clear Azure log
 
@@ -308,7 +286,7 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
 
 	- Select **Clear** logs.
 
-    ![Clear logs - screenshot](../L08/Static/Mod_01_Web_Hook_image44.png)
+      ![Clear logs - screenshot](../L08/Static/Mod_01_Web_Hook_image44.png)
 
 3. Update Permit record
 
@@ -324,10 +302,10 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
 
 	- Maximize the log pane.
 
-    ![Maximize log pane - screenshot](../L08/Static/Mod_01_Web_Hook_image45.png)
+      ![Maximize log pane - screenshot](../L08/Static/Mod_01_Web_Hook_image45.png)
 
 	- The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
-    ![Post and pre entity image values - screenshot](../L08/Static/Mod_01_Web_Hook_image46.png)
+      ![Post and pre entity image values - screenshot](../L08/Static/Mod_01_Web_Hook_image46.png)
 
 **Note:** Technically, we have the data in the target object already. However, if there are plugins modifying the data, PostImage will contain the copy as recorded in Microsoft Dataverse while Target contains the data was submitted on Save. In addition to that, preimage contains data before the save operation took place.

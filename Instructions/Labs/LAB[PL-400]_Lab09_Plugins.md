@@ -4,7 +4,6 @@ lab:
     module: 'Module 8: Extending the Power Platform Dataverse'
 ---
 
-
 # Practice Lab 6 – Plugins
 
 ## Scenario
