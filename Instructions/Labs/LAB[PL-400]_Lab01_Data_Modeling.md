@@ -20,7 +20,11 @@ In this lab, you will set up a second environment to mimic a production environm
 
 ## High-level lab steps
 
-To prepare your learning environments you will create a solution, a publisher, and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (tables, column types and relationships). Your solution will contain several tables upon completion of all the customizations.
+To prepare your learning environments you will create a solution, a publisher, and add both new and existing components that are necessary to meet the application requirements.
+
+Refer to the data model document for the metadata description (tables, column types and relationships) [Data model and metadata pdf](../../Allfiles/Labs/L01/DataModel.pdf).
+
+Your solution will contain several tables upon completion of all the customizations.
 
 ![Screen image of grid displaying tables contained in the permit management solution.](../images/L01/Mod_01_Data_Modeling_image1.png)
 
@@ -441,6 +445,10 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 ## Exercise 4: Create Relationships
 
 **Objective:** In this exercise, you will create relationships.
+
+You will create the following data model.
+
+![Data model](../../Allfiles/Labs/L01/DataModel_image1.png)
 
 ### Task 4.1: Create Relationships
 
