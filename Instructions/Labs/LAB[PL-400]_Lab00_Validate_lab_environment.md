@@ -9,11 +9,49 @@ lab:
 > [!IMPORTANT]
 > This lab provides you with a Microsoft 365 tenant and licenses for the Power Platform applications you will be using in this course. You will only be provided with one tenant for the practice labs in this course. The settings and actions you take within this tenant do not roll-back or reset, whereas the virtual machine you are provided with does reset each time you close the lab session. Please be aware that Microsoft 365 and Power Platform are evolving all the time. The instructions in this document may be different from what you experience in your actual tenant. It is also possible to experience a delay of several minutes before the virtual machine has network connectivity to begin the labs.
 
-## Exercise 1 – Power Platform trial
+## Exercise 1 - Download lab files
+
+1. From the lab virtual machine, click Start and search for PowerShell then open PowerShell as Administrator.
+
+1. Run the following commands to download the latest version of the lab files to the virtual machine.
+
+> [!Note]
+> If any of the commands fail run them again until they are succesfull.
+
+1. Create folder for lab files.
+
+   ```powershell
+   New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
+   ```
+
+1. Download ZIP file from GitHub.
+
+   ```powershell
+   ([System.Net.WebClient]::new()).DownloadFile('https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip', 'C:\LabFiles\master.zip')
+
+   ```
+
+1. Expand ZIP file.
+
+   ```powershell
+   Expand-Archive -Path 'C:\LabFiles\master.zip' -DestinationPath 'C:\LabFiles'
+
+   ```
+
+1. Move files to C:\Labfiles
+
+   ```powershell
+   Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Instructions\*" -Destination "C:\LabFiles" -confirm: $false
+   ```
+
+> [!NOTE]
+>Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should  use this location.
+
+## Exercise 2 – Power Platform trial
 
 In this exercise, you will add a Power Apps trial to the tenant and assign licenses to users.
 
-### Task 1.1 – Sign up for a Power Apps per user trial
+### Task 2.1 – Sign up for a Power Apps per user trial
 
 1. Navigate to <https://admin.microsoft.com>.
 
@@ -43,7 +81,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click **Continue**.
 
-### Task 1.2 – Assign Power Apps licenses to your user
+### Task 2.2 – Assign Power Apps licenses to your user
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
@@ -55,7 +93,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click on **X** in the top right of the pane to close the panel.
 
-### Task 1.3 – Assign Power Apps licenses to other users
+### Task 2.3 – Assign Power Apps licenses to other users
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
@@ -71,14 +109,14 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click **Done**.
 
-## Exercise 2 - Create environments
+## Exercise 3 - Create environments
 
 In this exercise, you will create a *Development* environment that you will do the majority of your lab work in and a *Live* environment to use to deploy solutions.
 
 > [!NOTE]
 > Depending on the browser that you are using, it is suggested that you disable any pop-up blockers that maybe enabled. This will prevent popup screens from not appearing as they should.
 
-### Task 2.1 – Create development environment
+### Task 3.1 – Create development environment
 
 1. Navigate to the Power Platform admin center <https://admin.powerplatform.microsoft.com> and sign in with your Microsoft 365 credentials if prompted again.
 
@@ -110,7 +148,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
 
-### Task 2.2 – Create live environment
+### Task 3.2 – Create live environment
 
 1. Navigate to environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
 
@@ -130,11 +168,11 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
-## Exercise 3 - Azure subscription
+## Exercise 4 - Azure subscription
 
 In this exercise, you will create an Azure subscription that you will be using in later labs.
 
-### Task 3.1 – Redeem Azure Pass
+### Task 4.1 – Redeem Azure Pass
 
 1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
 
