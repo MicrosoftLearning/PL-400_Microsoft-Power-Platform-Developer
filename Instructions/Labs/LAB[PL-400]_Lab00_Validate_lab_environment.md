@@ -67,13 +67,13 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. In the left-hand navigation, expand **Billing** and select **Purchase services**.
 
-    ![Purchase services.](../L00/Static/purchase-services.png)
+    ![Purchase services.](../images/L00/purchase-services.png)
 
 1. In the search all product categories text box, enter **PowerApps** and press **Enter**.
 
 1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
 
-    ![Power Apps per user plan.](../L00/Static/per-user-plan.png)
+    ![Power Apps per user plan.](../images/L00/per-user-plan.png)
 
 1. Click **Start free trial**.
 
@@ -85,7 +85,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
-1. Select your user **MOD Administrator** to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../L00/Static/mod-administrator.png)
+1. Select your user **MOD Administrator** to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator.png)
 
 1. Check the box for **Power Apps per user plan**.
 
@@ -99,11 +99,11 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Check the boxes next to the other users, click on the **ellipses (...**) in the action bar, and select **Manage product licenses**.
 
-    ![Select other users.](../L00/Static/select-users.png)
+    ![Select other users.](../images/L00/select-users.png)
 
 1. Select **Assign more** and check the box for **Power Apps per user plan**.
 
-    ![Add more licenses.](../L00/Static/add-licenses.png)
+    ![Add more licenses.](../images/L00/add-licenses.png)
 
 1. Click **Save changes**.
 
@@ -126,7 +126,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Click **+ New**.
 
-    ![Environment in the Power Platform admin center.](../L00/Static/ppac-environments.png)
+    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
 1. In the **Name** text box, enter **[my initials] Development**. (Example: PL Development).
 
@@ -134,17 +134,17 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Leave all other selections as default and select **Next**.
 
-    ![New environment.](../L00/Static/new-environment.png)
+    ![New environment.](../images/L00/new-environment.png)
 
 1. On the **Add database** tab, click **Save**.
 
 1. Your **Development** environment should now show in the list of environments.
 
-    ![Environment in the Power Platform admin center.](../L00/Static/ppac-environments-dev.png)
+    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments-dev.png)
 
 1. Your Development environment may take a few minutes to provision. Refresh the page if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
 
-    ![Environment in the Power Platform admin center.](../L00/Static/ellipses-settings-dev.png)
+    ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
 1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
 
@@ -164,7 +164,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. You should now see three environments; Contoso (default), Development, and Live.
 
-    ![Environments.](../L00/Static/environments-all.png)
+    ![Environments.](../images/L00/environments-all.png)
 
 1. You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 

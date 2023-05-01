@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab 09: Plugins'
+    title: 'Lab 10: Plugins'
     module: 'Module 8: Extending the Power Platform Dataverse'
 ---
 
-# Practice Lab 6 – Plugins
+# Practice Lab 10 – Plugins
 
 ## Scenario
 
@@ -58,7 +58,7 @@ As part of building the plugins, you will complete the following activities.
   
    - Copy the value.
   
-    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-8.png)
+    ![Copy option value - screenshot](../images/L10/Mod_01_Plugin_image2-8.png)
 
    - You will need this value in a future step. Select **Cancel** to close the editor.
   
@@ -72,13 +72,13 @@ As part of building the plugins, you will complete the following activities.
   
    - Copy the value.
   
-    ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-9.png)
+    ![Copy option value - screenshot](../images/L10/Mod_01_Plugin_image2-9.png)
 
    - You will need this value in a future step.
   
    - locate the **Canceled** option.
 
-   ![Copy option value - screenshot](../L06/Static/Mod_01_Plugin_image2-10.png)
+   ![Copy option value - screenshot](../images/L10/Mod_01_Plugin_image2-10.png)
   
    - You will need this value in a future step. Select **Cancel** to close the editor.
   
@@ -99,7 +99,7 @@ As part of building the plugins, you will complete the following activities.
   
             md ContosoPackageProject
 
-     ![Create directory- screenshot](../L06/Static/Mod_01_Plugin_image1.png)
+     ![Create directory- screenshot](../images/L10/Mod_01_Plugin_image1.png)
 
 	- Change directory to the folder you just create by running the below command.
 
@@ -111,7 +111,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Dataverse plugin class library creation should be successful.
   
-   ![Plugin class library creation - screenshot](../L06/Static/Mod_01_Plugin_image2.png)
+   ![Plugin class library creation - screenshot](../images/L10/Mod_01_Plugin_image2.png)
 
 	- Run the command below to open the project in Visual Studio.
   
@@ -121,7 +121,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Right click on **Plugin1.cs** and select **Rename**.
 
-    ![Delete class - screenshot](../L06/Static/Mod_01_Plugin_image3.png)
+    ![Delete class - screenshot](../images/L10/Mod_01_Plugin_image3.png)
 
 	- Rename the class **PreOperationPermitCreate**.
   
@@ -175,7 +175,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- The ExecuteDataversePlugin method should now look like the image below.
 
-    ![Execute Dataverse Plugin method - screenshot](../L06/Static/Mod_01_Plugin_image9.png)
+    ![Execute Dataverse Plugin method - screenshot](../images/L10/Mod_01_Plugin_image9.png)
 
 	- Build the project and make sure it succeeds. To build the project, right click on the project and select **Build**. Check the output and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here. 
 
@@ -195,39 +195,39 @@ As part of building the plugins, you will complete the following activities.
 
     - Select **Create New Connection**.
 
-    ![New connection - screenshot](../L06/Static/Mod_01_Plugin_image17.png)
+    ![New connection - screenshot](../images/L10/Mod_01_Plugin_image17.png)
 
     - Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
 
     - Provide your **Microsoft Dataverse** credentials and select **Login**.
 
-    ![Provide credentials - screenshot](../L06/Static/Mod_01_Plugin_image18.png)
+    ![Provide credentials - screenshot](../images/L10/Mod_01_Plugin_image18.png)
 
     - Select the **Dev** environment and then select **Login**.
 
-    ![Select environment - screenshot](../L06/Static/Mod_01_Plugin_image19.png)
+    ![Select environment - screenshot](../images/L10/Mod_01_Plugin_image19.png)
 
 4. Register new assembly
 
 	- Select **Register** and select **Register** **Register New Assembly**.
 
-    ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image20.png)
+    ![Register new assembly - screenshot](../images/L10/Mod_01_Plugin_image20.png)
 
 	- Select **…** to browse.
 
-    ![Register new assembly - screenshot](../L06/Static/Mod_01_Plugin_image21.png)
+    ![Register new assembly - screenshot](../images/L10/Mod_01_Plugin_image21.png)
 
 	- Browse to the **bin/debug/net462** folder of your plugin project (**ContosoPackageProject**), select the **ContosoPackageProject.dll** file and select **Open**.
 
         **Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
 
-       ![Select .dll file - screenshot](../L06/Static/Mod_01_Plugin_image22.png)
+       ![Select .dll file - screenshot](../images/L10/Mod_01_Plugin_image22.png)
 
 	- For solution select **Permit Management**.
 
 	- Select **Import**.
 
-      ![Register plugin - screenshot](../L06/Static/Mod_01_Plugin_image23.png)
+      ![Register plugin - screenshot](../images/L10/Mod_01_Plugin_image23.png)
 
 5. Register new step
 
@@ -235,7 +235,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Register** and then select **Register New Step**.
 
-    ![Register new step - screenshot](../L06/Static/Mod_01_Plugin_image25.png)
+    ![Register new step - screenshot](../images/L10/Mod_01_Plugin_image25.png)
 
 	- Enter **Create** for **Message**.
 
@@ -243,11 +243,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution** and then select **Register New Step**.
 
-    ![Register step - screenshot](../L06/Static/Mod_01_Plugin_image26.png)
+    ![Register step - screenshot](../images/L10/Mod_01_Plugin_image26.png)
 
 	- Step should now be registered in the assembly plugin.
 
-    ![Registered step - screenshot](../L06/Static/Mod_01_Plugin_image27.png)
+    ![Registered step - screenshot](../images/L10/Mod_01_Plugin_image27.png)
 
 ## Exercise 2: Create Custom Action Plugin
 
@@ -270,7 +270,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Make the **LockPermitCancelInspections** public and **inherit** from **PluginBase**.
 
-    ![Add using statements and edit class - screenshot](../L06/Static/Mod_01_Plugin_image30.png)
+    ![Add using statements and edit class - screenshot](../images/L10/Mod_01_Plugin_image30.png)
 
 1. Override the ExecuteDataversePlugin method and get the reason value from the input parameter.
 
@@ -307,7 +307,7 @@ As part of building the plugins, you will complete the following activities.
             localPluginContext.PluginUserService.Update(permitEntity);
             localPluginContext.Trace("Updated Permit Id " + permitEntityRef.Id);
 
-    ![Execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image31.png)
+    ![Execute plugin method - screenshot](../images/L10/Mod_01_Plugin_image31.png)
 
 ### Task 2.2: Get Related Inspections and Cancel
 
@@ -334,7 +334,7 @@ As part of building the plugins, you will complete the following activities.
 
             qe.Criteria.Conditions.Add(condition);
 
-    ![Execute plugin method after update - screenshot](../L06/Static/Mod_01_Plugin_image32.png)
+    ![Execute plugin method after update - screenshot](../images/L10/Mod_01_Plugin_image32.png)
 
 2. Retrieve the inspections and iterate through the returned Tables.
 
@@ -379,7 +379,7 @@ As part of building the plugins, you will complete the following activities.
 
             canceledInspectionsCount++;
 
-    ![Foreach section of the execute plugin method - screenshot](../L06/Static/Mod_01_Plugin_image33.png)
+    ![Foreach section of the execute plugin method - screenshot](../images/L10/Mod_01_Plugin_image33.png)
 
 ### Task 2.3: Set Output Parameter and Create Note Record
 
@@ -396,7 +396,7 @@ As part of building the plugins, you will complete the following activities.
 
             localPluginContext.PluginExecutionContext.OutputParameters["CanceledInspectionsCount"] = canceledInspectionsCount + " Inspections were canceled";
 
-    ![Set output parameter - screenshot](../L06/Static/Mod_01_Plugin_image34.png)
+    ![Set output parameter - screenshot](../images/L10/Mod_01_Plugin_image34.png)
 
 2. Check if the Input Parameters contain reason and create the Note record.
 
@@ -426,7 +426,7 @@ As part of building the plugins, you will complete the following activities.
             if (createdNoteId != Guid.Empty)
             localPluginContext.Trace("Note record was created");
 
-    ![Create not record - screenshot](../L06/Static/Mod_01_Plugin_image35.png)
+    ![Create not record - screenshot](../images/L10/Mod_01_Plugin_image35.png)
 
 3. Build plugin by right clicking on the project and select **Build** and make sure the build succeeds.
 
@@ -438,7 +438,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **ContosoPackageProject** and select **Update**.
 
-    ![Update assembly - screenshot](../L06/Static/Mod_01_Plugin_image36.png)
+    ![Update assembly - screenshot](../images/L10/Mod_01_Plugin_image36.png)
 
 	- Select **…**.
 
@@ -459,17 +459,17 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Add existing** and select **More > Developer > Plug-in assembly**.
 
-    ![Select message and primary Table - screenshot](../L06/Static/Mod_01_Plugin_image40.png)
+    ![Select message and primary Table - screenshot](../images/L10/Mod_01_Plugin_image40.png)
 
 	- Select the **ContosoPackageProject** assembly and then select **Add**.
 
 	- Select **Custom API** and open the **Lock Permit** custom API.
   
-    ![Open custom API - screenshot](../L06/Static/Mod_01_Plugin_image39.png)
+    ![Open custom API - screenshot](../images/L10/Mod_01_Plugin_image39.png)
   
 	- Scroll down and select **ContosoPackageProject.LockPermitCancelInspections** for Plugin Type.
 
-    ![Plugin type - screenshot](../L06/Static/Mod_01_Plugin_image41.png)
+    ![Plugin type - screenshot](../images/L10/Mod_01_Plugin_image41.png)
 
 	- Select **Save & Close**.
   
@@ -489,11 +489,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Tables** and select the **...** button of the **Permit** table and then select **Properties**.
 
-    ![Table settings - screenshot](../L06/Static/Mod_01_Plugin_image48.png)
+    ![Table settings - screenshot](../images/L10/Mod_01_Plugin_image48.png)
 
 	- Check **Enable attachments** and then select **Done**.
 
-    ![Enable attachments for Table - screenshot](../L06/Static/Mod_01_Plugin_image49.png)
+    ![Enable attachments for Table - screenshot](../images/L10/Mod_01_Plugin_image49.png)
 
 	- Select **All**.
 
@@ -503,11 +503,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Settings** and then select **Advanced Settings**.
 
-    ![Advanced settings - screenshot](../L06/Static/Mod_01_Plugin_image51.png)
+    ![Advanced settings - screenshot](../images/L10/Mod_01_Plugin_image51.png)
 
 	- Select **Settings** and then select **Administration**.
 
-    ![Administration - screenshot](../L06/Static/Mod_01_Plugin_image52.png)
+    ![Administration - screenshot](../images/L10/Mod_01_Plugin_image52.png)
 
 	- Select **System Settings**.
 
@@ -515,7 +515,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- Set Enable Plugin Logging to Plugin Trace Log to **All** and select **OK**.
 
-    ![Enable plugin logging - screenshot](../L06/Static/Mod_01_Plugin_image53.png)
+    ![Enable plugin logging - screenshot](../images/L10/Mod_01_Plugin_image53.png)
   
     - Close the Advanced settings.
 
@@ -531,11 +531,11 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **New**.
 
-    ![Create new inspection record - screenshot](../L06/Static/Mod_01_Plugin_image54.png)
+    ![Create new inspection record - screenshot](../images/L10/Mod_01_Plugin_image54.png)
 
 	- Enter **Plumbing Inspection** Name, select **Initial Inspection** for Type, select a permit, provide **Schedule Data**, select **Pending** Status Reason, and then select **Save**.
 
-    ![Create inspection record - screenshot](../L06/Static/Mod_01_Plugin_image55.png)
+    ![Create inspection record - screenshot](../images/L10/Mod_01_Plugin_image55.png)
 
 	- Select **New** again.
 
@@ -547,25 +547,25 @@ As part of building the plugins, you will complete the following activities.
 
 	- Make sure you have four inspection records and with various Status Reason value.
 
-    ![Inspection records - screenshot](../L06/Static/Mod_01_Plugin_image56.png)
+    ![Inspection records - screenshot](../images/L10/Mod_01_Plugin_image56.png)
 
 	- Select **Permits**.
 
 	- Open the **Test Permit**.
 
-    ![Open permit record - screenshot](../L06/Static/Mod_01_Plugin_image57.png)
+    ![Open permit record - screenshot](../images/L10/Mod_01_Plugin_image57.png)
 
 	- Make sure the Status Reason is set to Active and select **Lock Permit**.
 
-    ![Lock permit record - screenshot](../L06/Static/Mod_01_Plugin_image58.png)
+    ![Lock permit record - screenshot](../images/L10/Mod_01_Plugin_image58.png)
 
 	- The Custom API should run. Select **Refresh**.
 
-    ![Refresh record - screenshot](../L06/Static/Mod_01_Plugin_image59.png)
+    ![Refresh record - screenshot](../images/L10/Mod_01_Plugin_image59.png)
 
 	- The **Status Reason** value should change to **Locked**.
 
-    ![Locked record - screenshot](../L06/Static/Mod_01_Plugin_image60.png)
+    ![Locked record - screenshot](../images/L10/Mod_01_Plugin_image60.png)
 
 5. Check if the Pending and New Request Inspections get canceled
 
@@ -573,7 +573,7 @@ As part of building the plugins, you will complete the following activities.
 
 	- You should now have two canceled inspections.  
 
-    ![Active inspections view - screenshot](../L06/Static/Mod_01_Plugin_image62.png)
+    ![Active inspections view - screenshot](../images/L10/Mod_01_Plugin_image62.png)
 
 6. Check if the Note record was created.
 
@@ -581,19 +581,19 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Advanced Find**.
 
-    ![Advanced find - screenshot](../L06/Static/Mod_01_Plugin_image63.png)
+    ![Advanced find - screenshot](../images/L10/Mod_01_Plugin_image63.png)
 
 	- Select **Notes** and then select **Results**.
 
-    ![notes results - screenshot](../L06/Static/Mod_01_Plugin_image64.png)
+    ![notes results - screenshot](../images/L10/Mod_01_Plugin_image64.png)
 
 	- You should have at least one **Note** record. Select to open the **Note** record.
 
-    ![Open note record - screenshot](../L06/Static/Mod_01_Plugin_image65.png)
+    ![Open note record - screenshot](../images/L10/Mod_01_Plugin_image65.png)
 
 	- The Regarding column should be set to the Permit you locked.
 
-    ![Note record details - screenshot](../L06/Static/Mod_01_Plugin_image66.png)
+    ![Note record details - screenshot](../images/L10/Mod_01_Plugin_image66.png)
 
 	- Close the **Note** record. Close **Advanced Find**.
 
@@ -607,25 +607,25 @@ As part of building the plugins, you will complete the following activities.
 
 	- Provide the information below and select **Save**.
 
-    ![Save new permit - screenshot](../L06/Static/Mod_01_Plugin_image68.png)
+    ![Save new permit - screenshot](../images/L10/Mod_01_Plugin_image68.png)
 
 	- You should get the error below. Select **OK**.
 
-    ![Record locked message - screenshot](../L06/Static/Mod_01_Plugin_image69.png)
+    ![Record locked message - screenshot](../images/L10/Mod_01_Plugin_image69.png)
 
 	- The record should not get created.
 
-    ![Unsaved changes - screenshot](../L06/Static/Mod_01_Plugin_image70.png)
+    ![Unsaved changes - screenshot](../images/L10/Mod_01_Plugin_image70.png)
 
 	- Select **Permits**.
 
 	- Select **Discard**.
 
-    ![Discard changes - screenshot](../L06/Static/Mod_01_Plugin_image71.png)
+    ![Discard changes - screenshot](../images/L10/Mod_01_Plugin_image71.png)
 
 	- You should have only one Permit record.
 
-    ![Permits list - screenshot](../L06/Static/Mod_01_Plugin_image72.png)
+    ![Permits list - screenshot](../images/L10/Mod_01_Plugin_image72.png)
 
 ## Exercise 4: Plugin Trace Log and Debugging
 
@@ -639,21 +639,21 @@ As part of building the plugins, you will complete the following activities.
 
 	- Select **Settings** and then select **Advanced Settings**.
 
-    ![Advanced settings - screenshot](../L06/Static/Mod_01_Plugin_image73.png)
+    ![Advanced settings - screenshot](../images/L10/Mod_01_Plugin_image73.png)
 
 	- Select **Settings** and then select **Plugin Trace Log**.
 
-    ![Plug-in trace log - screenshot](../L06/Static/Mod_01_Plugin_image74.png)
+    ![Plug-in trace log - screenshot](../images/L10/Mod_01_Plugin_image74.png)
 
 	- You should see at least two logs.
 
-    ![Plug-in trace logs list - screenshot](../L06/Static/Mod_01_Plugin_image75.png)
+    ![Plug-in trace logs list - screenshot](../images/L10/Mod_01_Plugin_image75.png)
 
 2. Open the log and see what was logged.
 
 	- Open the log with the Create message.
 
-    ![Open log - screenshot](../L06/Static/Mod_01_Plugin_image76.png)
+    ![Open log - screenshot](../images/L10/Mod_01_Plugin_image76.png)
 
 	- Scroll down to the Execution section and examine.
 

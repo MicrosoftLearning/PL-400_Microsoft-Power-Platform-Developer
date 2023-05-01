@@ -28,7 +28,7 @@ Both will be integrated to the model-driven app for a better user-experience.
 
 The following is what the model-driven app designer looks like when all the customizations are completed:
 
-![Completed sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image1.png)
+![Completed sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image1.png)
 
 ## Things to consider before you begin
 
@@ -56,37 +56,37 @@ The following is what the model-driven app designer looks like when all the cust
    - Under **Data experiences**, select **Forms**.
    - Edit the **Main** form. By default, the form has two columns, Name (Primary column) and Owner.
 
-     ![Main table form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image2.png)
+     ![Main table form - screenshot](../images/L02/Mod_02_Model_Driven_App_image2.png)
 
    - Drag the **Permit Type** column to the form and place it below the **Name** column.
 
-     ![Add column to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image3.png)
+     ![Add column to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image3.png)
 
    - Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form.
   
-     ![Add columns to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image4.png)
+     ![Add columns to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image4.png)
 
    - Select the header of the form.
   
    - Add the **Status Reason** column to the form header.
 
-      ![Add column to form header - screenshot](../L02/Static/Mod_02_Model_Driven_App_image5.png)
+      ![Add column to form header - screenshot](../images/L02/Mod_02_Model_Driven_App_image5.png)
 
 1. Add new tab for **Inspections** to the form.
 
    - With focus set on the main body of the form (not in the header) select **Add Component**.
 
-     ![Add components to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image7.png)
+     ![Add components to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image7.png)
 
    - Select **1-column tab**.
 
-      ![Add one column tab to form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image8.png)
+      ![Add one column tab to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image8.png)
 
    - Select the new tab you added.
 
    - Go to the **Properties** pane, change the **Label** to **Inspections** and the **Name** to **inspectionsTab**.
 
-     ![Tab properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image9.png)
+     ![Tab properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image9.png)
 
 1. Steps to add Sub-Grid to the Permit form.
 
@@ -98,23 +98,23 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Check the **Show related records** checkbox, select **Inspections (Permit)** for **Table**, select **Active Inspections** for **Default View** and select **Done**.
 
-     ![Add sub-grid - screenshot](../L02/Static/Mod_02_Model_Driven_App_image11.png)
+     ![Add sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image11.png)
 
 1. Edit Sub-Grid properties.
 
     - Go to the sub-grid properties pane and change the Label to **Inspections**.
 
-      ![Sub-grid properties - screenshot ](../L02/Static/Mod_02_Model_Driven_App_image12.png)
+      ![Sub-grid properties - screenshot ](../images/L02/Mod_02_Model_Driven_App_image12.png)
 
 1. Steps to hide the section label
 
    - Select the section.
 
-     ![Select section - screenshot](../L02/Static/Mod_02_Model_Driven_App_image13.png)
+     ![Select section - screenshot](../images/L02/Mod_02_Model_Driven_App_image13.png)
 
    - Go to the **Properties** pane and check the **Hide Label** checkbox.
 
-     ![Hide section label - screenshot](../L02/Static/Mod_02_Model_Driven_App_image14.png)
+     ![Hide section label - screenshot](../images/L02/Mod_02_Model_Driven_App_image14.png)
 
 1. Select **Save** and wait for the save to complete.
 
@@ -148,7 +148,7 @@ The following is what the model-driven app designer looks like when all the cust
    - Select the **Forms** tab and open the **Main** form.
    - Add **City**, **State/Province**, **Zip/Postal Code**, and **Country Region** columns to the form between **Street Address** and **Owner**.
 
-     ![Build site form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image18.png)
+     ![Build site form - screenshot](../images/L02/Mod_02_Model_Driven_App_image18.png)
 
 1. Select **Save** and wait until the changes are saved.
 
@@ -162,7 +162,7 @@ The following is what the model-driven app designer looks like when all the cust
    - Add **City** and **Zip/Postal Code** to the view.
    - Remove **Created On** from the view by selecting **Remove** from the options in column chevron.
 
-     ![Active build sites view - screenshot ](../L02/Static/Mod_02_Model_Driven_App_image19.png)
+     ![Active build sites view - screenshot ](../images/L02/Mod_02_Model_Driven_App_image19.png)
 
 1. Select **Save** and wait until the changes are saved.
 
@@ -185,7 +185,7 @@ The following is what the model-driven app designer looks like when all the cust
    - Add the **Status Reason** column to the header.
    - The form should now look like the image below.
 
-     ![inspection form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image21.png)
+     ![inspection form - screenshot](../images/L02/Mod_02_Model_Driven_App_image21.png)
 
 1. Select **Save** and wait until the changes are saved.
 
@@ -199,7 +199,7 @@ The following is what the model-driven app designer looks like when all the cust
    - Add **Inspection Type**, **Scheduled Date**, and **Sequence** to the view.
    - Remove **Created On** from the view by selecting the chevron on the column and select **Remove**.
 
-     ![Active inspections view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image22.png)
+     ![Active inspections view - screenshot](../images/L02/Mod_02_Model_Driven_App_image22.png)
 
 1. Select **Save** and wait until the changes are saved.
 
@@ -211,17 +211,17 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Make sure you still have the **Views** tab selected.
    - Select **+ Add View**. This will open a new window to create View.
-     ![Create new view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image23.png)
+     ![Create new view - screenshot](../images/L02/Mod_02_Model_Driven_App_image23.png)
    - Enter **Inspector View** for **Name** and select **Create**.
    - Add **Inspection Type**, **Permit**, **Scheduled Date**, and **Sequence** columns to the view.
 
-      ![Inspection view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image24.png)
+      ![Inspection view - screenshot](../images/L02/Mod_02_Model_Driven_App_image24.png)
 
 1. Sort the Inspector View by the sequence.
 
    - Go to the view properties pane and select **Sort By**.
 
-     ![Sort view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image25.png)
+     ![Sort view - screenshot](../images/L02/Mod_02_Model_Driven_App_image25.png)
 
    - Select **Sequence**.
 
@@ -229,19 +229,19 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Go to the view properties pane and select **Edit Filter**. This will open a new pop-up on the right side of the window.
 
-     ![Filter view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image26.png)
+     ![Filter view - screenshot](../images/L02/Mod_02_Model_Driven_App_image26.png)
 
    - Select **Add** and select **Add Row**.
 
-     ![Add filter - screenshot](../L02/Static/Mod_02_Model_Driven_App_image27.png)
+     ![Add filter - screenshot](../images/L02/Mod_02_Model_Driven_App_image27.png)
 
    - Set the filter property by Selecting **Status Reason** in first dropdown and **Pending** in the third dropdown. Now, select **Add** and select **Add Row** again.
 
-     ![Filter properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image28.png)
+     ![Filter properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image28.png)
 
    - To set the filter property select **Owner** column in the first dropdown and **Equals current user** in second dropdown and select **OK**.
 
-     ![View filters - screenshot](../L02/Static/Mod_02_Model_Driven_App_image29.png)
+     ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
 1. Select **Save** and wait until the changes are saved.
 
@@ -264,7 +264,7 @@ The following is what the model-driven app designer looks like when all the cust
    - Select the **Forms** tab and open the **Main** form.
    - Add **Require Inspections** and **Require Size** columns to the form between **Name** and **Owner**.
 
-     ![Permit type form - screenshot](../L02/Static/Mod_02_Model_Driven_App_image30.png)
+     ![Permit type form - screenshot](../images/L02/Mod_02_Model_Driven_App_image30.png)
 
    - Select **Save** and wait until the changes are saved.
   
@@ -280,7 +280,7 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Remove **Created On** from the view but selecting the chevron on the column and select **Remove**.
 
-     ![Active permit types view - screenshot](../L02/Static/Mod_02_Model_Driven_App_image31.png)
+     ![Active permit types view - screenshot](../images/L02/Mod_02_Model_Driven_App_image31.png)
 
    - Select **Save** and wait until the changes are saved.
 
@@ -306,7 +306,7 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Select **+ New** and select **App** and then select **Model-driven app**.
   
-     ![Create model-driven application - screenshot](../L02/Static/Mod_02_Model_Driven_App_image32.png)
+     ![Create model-driven application - screenshot](../images/L02/Mod_02_Model_Driven_App_image32.png)
   
    - Enter **Permit Management** for **Name** and select **Create**.
 
@@ -356,15 +356,15 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. Select **Contacts view** , select the **ellipses (...)** and select **Move up**.
 
-     ![Edit sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image33.png)
-     ![Sitemap area and group - screenshot](../L02/Static/Mod_02_Model_Driven_App_image34.png)
-     ![Subarea properties - screenshot](../L02/Static/Mod_02_Model_Driven_App_image35.png)
-     ![Add component - screenshot](../L02/Static/Mod_02_Model_Driven_App_image36.png)
-    ![Add component to area - screenshot](../L02/Static/Mod_02_Model_Driven_App_image37.png)
+     ![Edit sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image33.png)
+     ![Sitemap area and group - screenshot](../images/L02/Mod_02_Model_Driven_App_image34.png)
+     ![Subarea properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image35.png)
+     ![Add component - screenshot](../images/L02/Mod_02_Model_Driven_App_image36.png)
+    ![Add component to area - screenshot](../images/L02/Mod_02_Model_Driven_App_image37.png)
 
 1. The navigation should now look like the image below.
 
-     ![Sitemap - screenshot](../L02/Static/Mod_02_Model_Driven_App_image38.png)
+     ![Sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image38.png)
 
 1. Select **Save**.
 
@@ -374,13 +374,13 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. You will see the assets for the tables that were added to the sitemap are now all in the application.
 
-    ![Application designer - screenshot](../L02/Static/Mod_02_Model_Driven_App_image39.png)
+    ![Application designer - screenshot](../images/L02/Mod_02_Model_Driven_App_image39.png)
 
 1. Click **Save** to save the application.
 
 1. Select **Publish** to publish the application and wait for the publishing to complete.
 
-     ![New application in the app list - screenshot](../L02/Static/Mod_02_Model_Driven_App_image40.png)
+     ![New application in the app list - screenshot](../images/L02/Mod_02_Model_Driven_App_image40.png)
 
 1. Select the **<- Back** button to go back to the solutions list.
 
@@ -394,17 +394,17 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Select **Contacts** from the sitemap.
   
-     ![Contacts - screenshot](../L02/Static/Mod_02_Model_Driven_App_image41.png)  
+     ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
 
    - Select **+ New**.
    - Provide First Name as **John**, Last Name as **Doe**.
    - Select **Save and Close**
 
-     ![Create contact record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image42.png)
+     ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
 
    - You should now see the created contact on the **Active Contacts** view.
 
-     ![Created contact record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image43.png)
+     ![Created contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image43.png)
 
 1. Create new Build Site record
 
@@ -416,7 +416,7 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Select **Save and Close** and this will show the newly created record on the Active Build Sites View.
 
-     ![Created build site record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image44.png)
+     ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
 
 1. Create new Permit Type record
 
@@ -426,7 +426,7 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Provide **Name** as **New Construction** and select **Save and Close**. This will create the record and you should be able to see it on the Active Permit Type View.
 
-     ![New permit type record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image45.png)
+     ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
 
 1. Create new Permit record
 
@@ -438,7 +438,7 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Select a future date for the **Start Date** and select **Save**.
 
-     ![New permit record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image46.png)
+     ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
 
 1. Create new Inspection record
 
@@ -446,16 +446,16 @@ The following is what the model-driven app designer looks like when all the cust
 
    - Select **+ New Inspection**.
 
-     ![Add new inspection - screenshot](../L02/Static/Mod_02_Model_Driven_App_image47.png)
+     ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
 
    - Provide **Name** as **Framing Inspection**, select **Initial Inspection** from the dropdown for **Inspection Type**, and select future date for **Scheduled Date**.
 
    - Select **Save and Close.**
 
-     ![New inspection record - screenshot](../L02/Static/Mod_02_Model_Driven_App_image48.png)
+     ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)
 
    - The **Inspection** record should now show on the **Permit** sub-grid.
 
-     ![Inspect sub-grid - screenshot](../L02/Static/Mod_02_Model_Driven_App_image49.png)
+     ![Inspect sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image49.png)
 
 1. You may add more test records.

@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab 12: Custom Connector'
+    title: 'Lab 13: Custom Connector'
     module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 
-# Practice Lab 12 – Custom Connector
+# Practice Lab 13 – Custom Connector
 
 ## Scenario
 
@@ -54,11 +54,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Create a Resource**.
 
-    ![Create new resource - screenshot](../L09/Static/Mod_2_Custom_Connector_image1.png)
+    ![Create new resource - screenshot](../images/L13/Mod_2_Custom_Connector_image1.png)
 
 	- Search for **Function** and select **Function App**.
 
-    ![Select function app - screenshot](../L09/Static/Mod_2_Custom_Connector_image2.png)
+    ![Select function app - screenshot](../images/L13/Mod_2_Custom_Connector_image2.png)
 
 	- Select **Create**.
 
@@ -68,7 +68,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **.NET** for Runtime Stack, select **6** for Version, select your **Region** and select **Review + Create**.
 
-    ![Create review function application - screenshot](../L09/Static/Mod_2_Custom_Connector_image4.png)
+    ![Create review function application - screenshot](../images/L13/Mod_2_Custom_Connector_image4.png)
 
 	- Select **Create**. Wait for the function app to be created
 
@@ -76,11 +76,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Go to Resource**.
 
-    ![Go to resource - screenshot](../L09/Static/Mod_2_Custom_Connector_image5.png)
+    ![Go to resource - screenshot](../images/L13/Mod_2_Custom_Connector_image5.png)
 
 	- Select **Functions** and then select **+ Create**.
 
-    ![Add function - screenshot](../L09/Static/Mod_2_Custom_Connector_image6.png)
+    ![Add function - screenshot](../images/L13/Mod_2_Custom_Connector_image6.png)
 
 	- Select **HTTP trigger** and then select **Create**.
 
@@ -88,14 +88,14 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Code + Test**.
 
-    ![Code and test - screenshot](../L09/Static/Mod_2_Custom_Connector_image7.png)
+    ![Code and test - screenshot](../images/L13/Mod_2_Custom_Connector_image7.png)
 
 	- Add the Using Statements below to the function.
 
             using Microsoft.Extensions.Logging;
             using Newtonsoft.Json.Linq;
 
-    ![Add using statements - screenshot](../L09/Static/Mod_2_Custom_Connector_image8.png)
+    ![Add using statements - screenshot](../images/L13/Mod_2_Custom_Connector_image8.png)
 
 	- Add the public class below to the function. This will describe the request that will be sent from the applications using the API.
 
@@ -107,7 +107,7 @@ As part of configuring the custom connector, you will complete the following
                 public int AirChanges=0;
             }
 
-    ![Add class - screenshot](../L09/Static/Mod_2_Custom_Connector_image9.png)
+    ![Add class - screenshot](../images/L13/Mod_2_Custom_Connector_image9.png)
 
 4. Clean up the Run method
 
@@ -115,7 +115,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Remove everything but the log line from the **Run** method.
 
-    ![Edit run method - screenshot](../L09/Static/Mod_2_Custom_Connector_image10.png)
+    ![Edit run method - screenshot](../images/L13/Mod_2_Custom_Connector_image10.png)
 
 5. Get the Request body and deserialize it as **CPMCalcRequest**
 
@@ -127,7 +127,7 @@ As part of configuring the custom connector, you will complete the following
 
             CPMCalcRequest calcReq = JsonConvert.DeserializeObject<CPMCalcRequest>(requestBody);
 
-    ![Add code to run method - screenshot](../L09/Static/Mod_2_Custom_Connector_image11.png)
+    ![Add code to run method - screenshot](../images/L13/Mod_2_Custom_Connector_image11.png)
 
 6. Calculate the CPM and return it form the Run method
 
@@ -142,7 +142,7 @@ As part of configuring the custom connector, you will complete the following
                 CPM = cpm
             });
 
-    ![Updated run method - screenshot](../L09/Static/Mod_2_Custom_Connector_image12.png)
+    ![Updated run method - screenshot](../images/L13/Mod_2_Custom_Connector_image12.png)
 
 7. Select **Save** to save your changes.
 
@@ -150,11 +150,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Get Function URL**.
 
-    ![Get function URL - screenshot](../L09/Static/Mod_2_Custom_Connector_image13.png)
+    ![Get function URL - screenshot](../images/L13/Mod_2_Custom_Connector_image13.png)
 
 	- Select **Copy**.
 
-    ![Copy function URL - screenshot](../L09/Static/Mod_2_Custom_Connector_image14.png)
+    ![Copy function URL - screenshot](../images/L13/Mod_2_Custom_Connector_image14.png)
 
 	- Keep the URL you copied on a notepad. You will need this URL while creating the custom connector.
 
@@ -170,7 +170,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Solutions** and open the **Permit Management** solution.
 
-    ![Open solution - screenshot](../L09/Static/Mod_2_Custom_Connector_image15.png)
+    ![Open solution - screenshot](../images/L13/Mod_2_Custom_Connector_image15.png)
 
 2. Create Custom Connector
 
@@ -178,63 +178,63 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Automation** > **Custom Connector**.
 
-    ![Create new custom connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image17.png)
+    ![Create new custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image17.png)
 
 	- Change the **Connector** **Name** from **Untitled** to **CPM Calculator**.
 
-    ![Rename custom connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image18.png)
+    ![Rename custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image18.png)
 
 	- Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
 
 	- Remove https:// and everything after .net.
 
-    ![Paste host URL - screenshot ](../L09/Static/Mod_2_Custom_Connector_image19.png)
+    ![Paste host URL - screenshot ](../images/L13/Mod_2_Custom_Connector_image19.png)
 
 3. Select API key for security and create the connector
 
 	- Advance to **Security**.
 
-    ![Select security - screenshot ](../L09/Static/Mod_2_Custom_Connector_image20.png)
+    ![Select security - screenshot ](../images/L13/Mod_2_Custom_Connector_image20.png)
 
 	- Select **API Key**.
 
-    ![Select API key - screenshot](../L09/Static/Mod_2_Custom_Connector_image21.png)
+    ![Select API key - screenshot](../images/L13/Mod_2_Custom_Connector_image21.png)
 
 	- Enter **API Key** for Parameter Label, **code** for Parameter Name, and select **Query** for Parameter Location.
 
-    ![API key - screenshot](../L09/Static/Mod_2_Custom_Connector_image22.png)
+    ![API key - screenshot](../images/L13/Mod_2_Custom_Connector_image22.png)
 
 4. Create Connector
 
 	- Advance to **Definition**.
 
-    ![Definition - screenshot](../L09/Static/Mod_2_Custom_Connector_image23.png)
+    ![Definition - screenshot](../images/L13/Mod_2_Custom_Connector_image23.png)
 
 	- Select **Create Connector** and wait for the connector to be created.
 
-    ![Create connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image24.png)
+    ![Create connector - screenshot](../images/L13/Mod_2_Custom_Connector_image24.png)
 
 5. Create Action
 
 	- Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API or Postman collection files for larger APIs.
 
-    ![Create new action - screenshot](../L09/Static/Mod_2_Custom_Connector_image25.png)
+    ![Create new action - screenshot](../images/L13/Mod_2_Custom_Connector_image25.png)
 
 	- Enter **CPM Calculator** for Summary, **Calculates CPM** for Description, and **GetRequiredCPM** for Operation ID.
 
-    ![Action information - screenshot](../L09/Static/Mod_2_Custom_Connector_image26.png)
+    ![Action information - screenshot](../images/L13/Mod_2_Custom_Connector_image26.png)
 
 6. Import request from sample
 
 	- Select **+ Import from Sample**.
 
-    ![Import request from sample - screenshot](../L09/Static/Mod_2_Custom_Connector_image27.png)
+    ![Import request from sample - screenshot](../images/L13/Mod_2_Custom_Connector_image27.png)
 
 	- Select **Post** for **Verb**.
 
 	- Paste the function **URL** from your notepad and remove everything after **HttpTrigger1**.
 
-    ![Paste URL - screenshot](../L09/Static/Mod_2_Custom_Connector_image28.png)
+    ![Paste URL - screenshot](../images/L13/Mod_2_Custom_Connector_image28.png)
 
 	- Paste the json below in the **Body** field and select **Import**.
 
@@ -245,41 +245,41 @@ As part of configuring the custom connector, you will complete the following
                 "AirChanges":8
             }
 
-    ![Import sample - screenshot](../L09/Static/Mod_2_Custom_Connector_image29.png)
+    ![Import sample - screenshot](../images/L13/Mod_2_Custom_Connector_image29.png)
 
 7. Add Default response
 
 	- Scroll down to the **Response** section and select **+ Add Default Response**.
 
-    ![Add default response - screenshot](../L09/Static/Mod_2_Custom_Connector_image30.png)
+    ![Add default response - screenshot](../images/L13/Mod_2_Custom_Connector_image30.png)
 
 	- Paste the json below in the **Body** and select **Import**.
 
             {"cpm":200}
 
-    ![Import response - screenshot](../L09/Static/Mod_2_Custom_Connector_image31.png)
+    ![Import response - screenshot](../images/L13/Mod_2_Custom_Connector_image31.png)
 
 	- Select **Update Connector**.
 
-    ![Update connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image32.png)
+    ![Update connector - screenshot](../images/L13/Mod_2_Custom_Connector_image32.png)
 
 8. Test the connector
 
 	- Advance to Test.
 
-    ![Select test - screenshot](../L09/Static/Mod_2_Custom_Connector_image33.png)
+    ![Select test - screenshot](../images/L13/Mod_2_Custom_Connector_image33.png)
 
 	- Select **New Connection**. This will open a New window.
 
-    ![New connection - screenshot](../L09/Static/Mod_2_Custom_Connector_image34.png)
+    ![New connection - screenshot](../images/L13/Mod_2_Custom_Connector_image34.png)
 
 	- Go to your notepad and copy only the value of the **code**.
 
-    ![Copy key - screenshot](../L09/Static/Mod_2_Custom_Connector_image35.png)
+    ![Copy key - screenshot](../images/L13/Mod_2_Custom_Connector_image35.png)
 
 	- Go back to the connector, paste the value you copied, and select **Create Connection**.
 
-    ![Create connection - screenshot](../L09/Static/Mod_2_Custom_Connector_image36.png)
+    ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image36.png)
 
 	- Refresh the connections and select the connection you just created.
 
@@ -287,11 +287,11 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Test Operation**.
 
-    ![Test operation - screenshot](../L09/Static/Mod_2_Custom_Connector_image37.png)
+    ![Test operation - screenshot](../images/L13/Mod_2_Custom_Connector_image37.png)
 
 	- You should get a CPM value back.
 
-    ![Response value - screenshot](../L09/Static/Mod_2_Custom_Connector_image38.png)
+    ![Response value - screenshot](../images/L13/Mod_2_Custom_Connector_image38.png)
 
 	- Close the window and go back to Solution window and select **Done.**
 
@@ -315,17 +315,17 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Apps** and open the **Inspector** Canvas app.
 
-    ![Edit application - screenshot](../L09/Static/Mod_2_Custom_Connector_image39.png)
+    ![Edit application - screenshot](../images/L13/Mod_2_Custom_Connector_image39.png)
 
 3. Add new screen to the application
 
 	- Select **New Screen** and then select **Blank**.
 
-    ![New blank screen - screenshot ](../L09/Static/Mod_2_Custom_Connector_image40.png)
+    ![New blank screen - screenshot ](../images/L13/Mod_2_Custom_Connector_image40.png)
 
 	- Rename the screen **CPM Calc Screen**
 
-    ![Rename screen - screenshot](../L09/Static/Mod_2_Custom_Connector_image41.png)
+    ![Rename screen - screenshot](../images/L13/Mod_2_Custom_Connector_image41.png)
 
 4. Add Input Text to the new screen
 
@@ -333,61 +333,61 @@ As part of configuring the custom connector, you will complete the following
 
 	- Select **Insert**.
 
-    ![Insert button screenshot](../L09/Static/Mod_2_Custom_Connector_image42.png)
+    ![Insert button screenshot](../images/L13/Mod_2_Custom_Connector_image42.png)
 
 	- Select **Text Input**.
 
-    ![Add control to screens - screenshot ](../L09/Static/Mod_2_Custom_Connector_image43.png)
+    ![Add control to screens - screenshot ](../images/L13/Mod_2_Custom_Connector_image43.png)
 
 	- Select the **Tree View**.
 
-    ![Select tree view - screenshot](../L09/Static/Mod_2_Custom_Connector_image44.png)
+    ![Select tree view - screenshot](../images/L13/Mod_2_Custom_Connector_image44.png)
 
 	- Rename the Text Input **Width Text**.
 
 	- Remove the **Default** property of the **Width** text input.
 
-    ![Remove default value - svreenshot](../L09/Static/Mod_2_Custom_Connector_image45.png)
+    ![Remove default value - svreenshot](../images/L13/Mod_2_Custom_Connector_image45.png)
 
 	- Change the **HintText** property of the **Width** text input to **Provide Width**.
 
-    ![Provide hint text - screenshot](../L09/Static/Mod_2_Custom_Connector_image46.png)
+    ![Provide hint text - screenshot](../images/L13/Mod_2_Custom_Connector_image46.png)
 
 	- The **Width Text** input should now look like the image below.
 
-    ![Width text - screenshot](../L09/Static/Mod_2_Custom_Connector_image47.png)
+    ![Width text - screenshot](../images/L13/Mod_2_Custom_Connector_image47.png)
 
 5. Add Height, Length, and Air Change Input Text controls
 
 	- Copy the **Width Text**.
 
-    ![Copy input text - screenshot](../L09/Static/Mod_2_Custom_Connector_image48.png)
+    ![Copy input text - screenshot](../images/L13/Mod_2_Custom_Connector_image48.png)
 
 	- Paste the text input you copied to the **CPM Calc Screen.**
 
-    ![Paste text input - screenshot](../L09/Static/Mod_2_Custom_Connector_image49.png)
+    ![Paste text input - screenshot](../images/L13/Mod_2_Custom_Connector_image49.png)
 
 	- Paste the text input you copied to the **CPM Calc Screen** two more times.
 
 	- The **CPMCalcScreen** should now have total of four text inputs.
 
-    ![Text input controls - screenshot](../L09/Static/Mod_2_Custom_Connector_image50.png)
+    ![Text input controls - screenshot](../images/L13/Mod_2_Custom_Connector_image50.png)
 
 	- Rename the input text controls **Height Text**, **Length Text**, and **Air Change Text**.
 
-    ![Rename controls - screenshot](../L09/Static/Mod_2_Custom_Connector_image51.png)
+    ![Rename controls - screenshot](../images/L13/Mod_2_Custom_Connector_image51.png)
 
 	- Change the **HintText** for the three text inputs you renamed to **Provide Height**, **Provide Length**, and **Provide Air Change**, respectively.
 
 	- Resize and reposition the text inputs as shown in the image below.
 
-    ![Input text control layout - screenshot](../L09/Static/Mod_2_Custom_Connector_image52.png)
+    ![Input text control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image52.png)
 
 6. Add button
 
 	- Go to the **Insert** tab and select Button.
 
-    ![Insert button - screenshot](../L09/Static/Mod_2_Custom_Connector_image53.png)
+    ![Insert button - screenshot](../images/L13/Mod_2_Custom_Connector_image53.png)
 
 	- Rename the Button **Calculate Button**.
 
@@ -395,7 +395,7 @@ As part of configuring the custom connector, you will complete the following
 
 	- Resize and reposition the button as shown in the image below.
 
-    ![Reposition button - screenshot](../L09/Static/Mod_2_Custom_Connector_image54.png)
+    ![Reposition button - screenshot](../images/L13/Mod_2_Custom_Connector_image54.png)
 
 7. Add the result label to the screen
 
@@ -405,25 +405,25 @@ As part of configuring the custom connector, you will complete the following
 
 	- Place the label to the right of the text inputs.
 
-    ![Control layout - screenshot](../L09/Static/Mod_2_Custom_Connector_image55.png)
+    ![Control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image55.png)
 
 8. Add the Custom Connector to the application.
 
 	- Select the **Data** tab and then select **+ Add data**.
   
-    ![Add data - screenshot](../L09/Static/Mod_2_Custom_Connector_image55-1.png)
+    ![Add data - screenshot](../images/L13/Mod_2_Custom_Connector_image55-1.png)
 
 	- Expand **Connectors**.
 
 	- Select the **CPM Connector**.
 
-    ![CPM Calculator connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image56.png)
+    ![CPM Calculator connector - screenshot](../images/L13/Mod_2_Custom_Connector_image56.png)
 
 	- Select **CPM Calculator** again.
 
 	- The **CPM Calculator** should now be listed in the **In your App** section.
 
-    ![Added connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image58.png)
+    ![Added connector - screenshot](../images/L13/Mod_2_Custom_Connector_image58.png)
 
 9. Get the calculated value when the button is selected
 
@@ -433,11 +433,11 @@ As part of configuring the custom connector, you will complete the following
 
             Set(CalculatedValue, Concatenate("Calculated CPM ", Text(Defaulttitle.GetRequiredCPM({Width: 'Width Text'.Text, Height: 'Height Text'.Text, Length: 'Length Text'.Text, AirChanges: 'Air Change Text'.Text}).cpm)))
 
-    ![On-Select formula - screenshot](../L09/Static/Mod_2_Custom_Connector_image59.png)
+    ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image59.png)
 
 	- Select the **Result Label** and set the **Text** value to the **CalculatedValue** variable.
 
-    ![Label text value - screenshot](../L09/Static/Mod_2_Custom_Connector_image60.png)
+    ![Label text value - screenshot](../images/L13/Mod_2_Custom_Connector_image60.png)
 
 10. Add navigation button to the Main screen
 
@@ -459,27 +459,27 @@ As part of configuring the custom connector, you will complete the following
 
             Set(CalculatedValue, ""); Navigate('CPM Calc Screen', ScreenTransition.None)
 
-    ![On-Select formula - screenshot](../L09/Static/Mod_2_Custom_Connector_image61.png)
+    ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image61.png)
 
 12. Run the Application
 
 	- Select the **Main Screen** and select **Preview the App**.
 
-    ![Preview app - screenshot](../L09/Static/Mod_2_Custom_Connector_image62.png)
+    ![Preview app - screenshot](../images/L13/Mod_2_Custom_Connector_image62.png)
 
 	- Select on **CPM Calculator** button.
 
 	- The CPM Calculator screen should load.
 
-    ![Calculator page - screenshot](../L09/Static/Mod_2_Custom_Connector_image63.png)
+    ![Calculator page - screenshot](../images/L13/Mod_2_Custom_Connector_image63.png)
 
 	- Provide values and then select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
 
-    ![Submit form - screenshot](../L09/Static/Mod_2_Custom_Connector_image64.png)
+    ![Submit form - screenshot](../images/L13/Mod_2_Custom_Connector_image64.png)
 
 	- The **Result Label** should show the calculated result from the Custom Connector.
 
-    ![Calculation result - screenshot](../L09/Static/Mod_2_Custom_Connector_image65.png)
+    ![Calculation result - screenshot](../images/L13/Mod_2_Custom_Connector_image65.png)
 
 	- Close the Preview.
 
@@ -505,25 +505,25 @@ As part of configuring the custom connector, you will complete the following
   
 	- Select **Automation | Cloud flow | Instant**.
 
-    ![Create new flow - screenshot](../L09/Static/Mod_2_Custom_Connector_image66.png)
+    ![Create new flow - screenshot](../images/L13/Mod_2_Custom_Connector_image66.png)
 
 	- Select **Manually Trigger Flow** and then select **Create**.
 
-    ![Select trigger - screenshot](../L09/Static/Mod_2_Custom_Connector_image67.png)
+    ![Select trigger - screenshot](../images/L13/Mod_2_Custom_Connector_image67.png)
 
 3. Add a step that will use the Custom Connector
 
 	- Select **+ New Step**.
 
-    ![Add new step - screenshot](../L09/Static/Mod_2_Custom_Connector_image68.png)
+    ![Add new step - screenshot](../images/L13/Mod_2_Custom_Connector_image68.png)
 
 	- Select the **Custom** tab and then select **CPM Calculator**.
 
-    ![Select custom connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image69.png)
+    ![Select custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image69.png)
 
 	- Select **CPM Calculator** action.
 
-    ![Select action - screenshot](../L09/Static/Mod_2_Custom_Connector_image70.png)
+    ![Select action - screenshot](../images/L13/Mod_2_Custom_Connector_image70.png)
 
 	- Enter **CPM Connector** for Connection name.
   
@@ -531,42 +531,42 @@ As part of configuring the custom connector, you will complete the following
   
 	- Select **Create**.
   
-     ![Create connection - screenshot](../L09/Static/Mod_2_Custom_Connector_image70-1.png)
+     ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image70-1.png)
 
 4. Provide values and save
 
 	- Enter 18 for Width, 10 for Height, 18 for Length, 30 for AirChanges, and select **Save**.
 
-    ![Save flow - screenshot](../L09/Static/Mod_2_Custom_Connector_image71.png)
+    ![Save flow - screenshot](../images/L13/Mod_2_Custom_Connector_image71.png)
 
 5. Test the flow
 
 	- Select **Test**.
 
-    ![Test connector - screenshot](../L09/Static/Mod_2_Custom_Connector_image72.png)
+    ![Test connector - screenshot](../images/L13/Mod_2_Custom_Connector_image72.png)
 
 	- Select **Manually** and then select**Test**.
 
 	- Select **Continue**.
 
-    ![Continue with test - screenshot](../L09/Static/Mod_2_Custom_Connector_image73.png)
+    ![Continue with test - screenshot](../images/L13/Mod_2_Custom_Connector_image73.png)
 
 	- Select **Run Flow**.
 
 	- Select **Done**. The flow should run successfully. In the flow run history, expand the CPM Calculator action.
 
-    ![Succeeded run - screenshot](../L09/Static/Mod_2_Custom_Connector_image74.png)
+    ![Succeeded run - screenshot](../images/L13/Mod_2_Custom_Connector_image74.png)
 
 	- You should be able to see the calculated result from the custom connector in the output of the action.
 
-    ![Result value - screenshot](../L09/Static/Mod_2_Custom_Connector_image75.png)
+    ![Result value - screenshot](../images/L13/Mod_2_Custom_Connector_image75.png)
 
 	- Select the **<-** back button
 
-    ![Back to solution value - screenshot](../L09/Static/Mod_2_Custom_Connector_image75-1.png)
+    ![Back to solution value - screenshot](../images/L13/Mod_2_Custom_Connector_image75-1.png)
 
 	- Select **Publish all Customizations.**
 
 	- If you finish early, try adding input values to the Manual Button trigger for the room dimensions and use those to call the custom connector. You could also use the notification connector to send the user the required CPM. Finally, if you want to test this in a real device install the Power Automate mobile application.
 
-    ![Flow using input values - screenshot](../L09/Static/Mod_2_Custom_Connector_image76.png)
+    ![Flow using input values - screenshot](../images/L13/Mod_2_Custom_Connector_image76.png)

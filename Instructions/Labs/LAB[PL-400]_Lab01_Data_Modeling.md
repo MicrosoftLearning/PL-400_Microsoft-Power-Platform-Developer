@@ -22,7 +22,7 @@ In this lab, you will set up a second environment to mimic a production environm
 
 To prepare your learning environments you will create a solution, a publisher, and add both new and existing components that are necessary to meet the application requirements. Refer to the data model document for the metadata description (tables, column types and relationships). Your solution will contain several tables upon completion of all the customizations.
 
-![Screen image of grid displaying tables contained in the permit management solution.](../L01/Static/Mod_01_Data_Modeling_image1.png)
+![Screen image of grid displaying tables contained in the permit management solution.](../images/L01/Mod_01_Data_Modeling_image1.png)
 
 ## Things to consider before you begin
 
@@ -45,7 +45,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 1. Select your **Development** environment from the list.
 
-    ![Select Development environment in the Power Apps maker portal.](../L01/Static/select-dev-environment.png)
+    ![Select Development environment in the Power Apps maker portal.](../images/L01/select-dev-environment.png)
 
 1. Select **Apps** from the left navigation pane. You should see a single app, Solution Health Hub, listed.
 
@@ -55,13 +55,13 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 1. Select **Solutions** from the left navigation pane. You should see several solutions including the Default solution and the Common Data Services Default solution.
 
-    ![List of solutions in Maker portal.](../L01/Static/solutions-list.png)
+    ![List of solutions in Maker portal.](../images/L01/solutions-list.png)
 
 1. Click **+ New solution**.
 
 1. In the **Display name** text box, enter **Permit Management**. The Name text box should be automatically populated.
 
-   ![Add new publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image4.png)
+   ![Add new publisher - screenshot](../images/L01/Mod_01_Data_Modeling_image4.png)
 
 1. Click **+ New publisher** below the **Publisher** dropdown.
 
@@ -71,7 +71,7 @@ To prepare your learning environments you will create a solution, a publisher, a
 
 1. In the **Prefix** text box, enter **contoso**.
 
-   ![New publisher - screenshot](../L01/Static/Mod_01_Data_Modeling_image5.png)
+   ![New publisher - screenshot](../images/L01/Mod_01_Data_Modeling_image5.png)
 
 1. Make a note of the **Choice value prefix**.
 
@@ -97,7 +97,7 @@ In this exercise, you will add existing tables to the solution.
 
 1. Click on **Add existing** and select **Table**.
 
-    ![Add existing tables.](../L01/Static/add-existing.png)
+    ![Add existing tables.](../images/L01/add-existing.png)
 
 1. Search for `contact` and select the **Contact** table.
 
@@ -105,7 +105,7 @@ In this exercise, you will add existing tables to the solution.
 
 1. Click **Select objects**.
 
-   ![Select Table objects - screenshot](../L01/Static/Mod_01_Data_Modeling_image7.png)
+   ![Select Table objects - screenshot](../images/L01/Mod_01_Data_Modeling_image7.png)
 
 1. Select the **Views** tab.
 
@@ -123,7 +123,7 @@ In this exercise, you will add existing tables to the solution.
 
 1. You should have **1 view** and **1 form** selected.
 
-   ![Add objects](../L01/Static/Mod_01_Data_Modeling_image8.png)
+   ![Add objects](../images/L01/Mod_01_Data_Modeling_image8.png)
 
 1. Select **Add**. This will add the Contact table to the Practice Management solution.
 
@@ -151,7 +151,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Click **+ New** and then select **Table** and select **Table** again.
 
-   ![Add new Table - screenshot](../L01/Static/Mod_01_Data_Modeling_image9.png)
+   ![Add new Table - screenshot](../images/L01/Mod_01_Data_Modeling_image9.png)
 
 1. Enter **Permit** for **Display Name**. The plural name will be automatically populated.
 
@@ -161,7 +161,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Click **+ New column**.
 
-    ![New column - screenshot](../L01/Static/Mod_01_Data_Modeling_image10.png)
+    ![New column - screenshot](../images/L01/Mod_01_Data_Modeling_image10.png)
 
 1. Enter **Start Date** for **Display name**.
 
@@ -193,7 +193,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
    - In the **Objects** pane, select **All**.
 
-     ![Navigation breadcrumbs - screenshot ](../L01/Static/Mod_01_Data_Modeling_image13.png)
+     ![Navigation breadcrumbs - screenshot ](../images/L01/Mod_01_Data_Modeling_image13.png)
   
    - Select **+ New > Table** and select **Table**.
    - Enter `Permit Type` for **Display name**.
@@ -227,7 +227,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Change the **Schema name** to `street1`.
    - Select **Save**.
 
-     ![Primary Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image14.png)
+     ![Primary Column properties - screenshot](../images/L01/Mod_01_Data_Modeling_image14.png)
 
 1. Add City column
 
@@ -240,7 +240,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Set **Schema name** to `city`.
    - Select **Save**.
 
-     ![Column properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image15.png)
+     ![Column properties - screenshot](../images/L01/Mod_01_Data_Modeling_image15.png)
 
 1. Add Zip/Postal Code column
 
@@ -291,11 +291,11 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Enter `Inspection Type` for **Display name**.
    - Enter `Initial Inspection` for **Label** and select **+ New choice**.
 
-     ![Add new option-set item - screenshot](../L01/Static/Mod_01_Data_Modeling_image17.png)
+     ![Add new option-set item - screenshot](../images/L01/Mod_01_Data_Modeling_image17.png)
 
    - Enter **Final Inspection** for **Label** and select **Save**.
 
-     ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image18.png)
+     ![Option-set options - screenshot](../images/L01/Mod_01_Data_Modeling_image18.png)
 
    - For **Sync this choice with**, select **Inspection Type** from the drop-down.
 
@@ -327,7 +327,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Select **Publish All Customizations.**
 
-   ![Publish customizations - screenshot](../L01/Static/Mod_01_Data_Modeling_image19.png)
+   ![Publish customizations - screenshot](../images/L01/Mod_01_Data_Modeling_image19.png)
 
 ### Task 3.5: Edit Status Reason Options
 
@@ -340,35 +340,35 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
    - Select on the **…** icon and select **Switch to Classic**.
 
-     ![Switch to classic - screenshot](../L01/Static/Mod_01_Data_Modeling_image20.png)
+     ![Switch to classic - screenshot](../images/L01/Mod_01_Data_Modeling_image20.png)
 
 1. Edit Inspection table Status Reason options
 
    - Expand **Entities**.
    - Expand the **Inspection** table and select **Fields**.
 
-     ![Select Columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image21.png)
+     ![Select Columns - screenshot](../images/L01/Mod_01_Data_Modeling_image21.png)
 
    - Locate and double click to open the **statuscode** Column.
 
-     ![Open Column for edit - screenshot](../L01/Static/Mod_01_Data_Modeling_image22.png)
+     ![Open Column for edit - screenshot](../images/L01/Mod_01_Data_Modeling_image22.png)
 
 1. Change the Active option label
 
    - Make sure you have **Active** selected for **Status**.
    - Select the **Active** option and select **Edit**.
 
-     ![Edit option - screenshot](../L01/Static/Mod_01_Data_Modeling_image23.png)
+     ![Edit option - screenshot](../images/L01/Mod_01_Data_Modeling_image23.png)
 
    - Change the **Label** to **New Request** and select **OK**.
 
-     ![Change option label - screenshot](../L01/Static/Mod_01_Data_Modeling_image24.png)
+     ![Change option label - screenshot](../images/L01/Mod_01_Data_Modeling_image24.png)
 
 1. Add the Pending option
 
    - Select **Add**.
 
-     ![Add new option - screenshot](../L01/Static/Mod_01_Data_Modeling_image25.png)
+     ![Add new option - screenshot](../images/L01/Mod_01_Data_Modeling_image25.png)
 
    - Enter **Pending** for **Label** and select **OK**.
 
@@ -389,17 +389,17 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Your option-set should now have 5 options for the **Active** state.
 
-   ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image26.png)
+   ![Option-set options - screenshot](../images/L01/Mod_01_Data_Modeling_image26.png)
 
 1. Select Pending as the Default Value and select **Save and Close** from the top menu.
 
-   ![Select option-set default option - screenshot](../L01/Static/Mod_01_Data_Modeling_image27.png)
+   ![Select option-set default option - screenshot](../images/L01/Mod_01_Data_Modeling_image27.png)
 
 1. Edit Permit table Status Reason options
 
    - Expand the **Permit** table and select **Fields**.
 
-     ![Select table columns - screenshot](../L01/Static/Mod_01_Data_Modeling_image28.png)
+     ![Select table columns - screenshot](../images/L01/Mod_01_Data_Modeling_image28.png)
 
    - Locate and double click to open the **statuscode** Column.
 
@@ -426,13 +426,13 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Your option-set should now have 5 options for the **Active** state
 
-   ![Option-set options - screenshot](../L01/Static/Mod_01_Data_Modeling_image29.png)
+   ![Option-set options - screenshot](../images/L01/Mod_01_Data_Modeling_image29.png)
 
 1. Select the **Active** for the **Default Value** and select **Save and Close** from the top menu
 
 1. Select **Information** from the left side menu and click **Save and Close** to close classic solution explorer
 
-   ![Save and close solution explorer - screenshot](../L01/Static/Mod_01_Data_Modeling_image30.png)
+   ![Save and close solution explorer - screenshot](../images/L01/Mod_01_Data_Modeling_image30.png)
 
 1. Select the **<- Back to solutions**.
 
@@ -456,18 +456,18 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Select **+ New relationship** and select **Many-to-one**.
    - Select `Contact` for the **Related (One) > Table** and select **Done**.
 
-    ![Relationship properties - screenshot](../L01/Static/Mod_01_Data_Modeling_image32.png)
+    ![Relationship properties - screenshot](../images/L01/Mod_01_Data_Modeling_image32.png)
 
 1. Create Permit to Inspection relationship
 
    - Select **+ New relationship** and select **One-to-many**.
    - Select `Inspection` for **Table** in the **Related (Many)** and expand **Advanced options**.
 
-    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image33.png)
+    ![Relationship advanced options - screenshot](../images/L01/Mod_01_Data_Modeling_image33.png)
 
    - Change the **Type of behavior** to **Parental** and select **Done**.
 
-    ![Relationship behavior - screenshot](../L01/Static/Mod_01_Data_Modeling_image34.png)
+    ![Relationship behavior - screenshot](../images/L01/Mod_01_Data_Modeling_image34.png)
 
 1. Create Permit to Build Site relationship
 
@@ -475,7 +475,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - Select `Build Site` for **Related (One) > Table** and expand **Advanced options**.
    - Change the **Delete** field to **Restrict** and select **Done**.
 
-    ![Relationship advanced options - screenshot](../L01/Static/Mod_01_Data_Modeling_image35.png)
+    ![Relationship advanced options - screenshot](../images/L01/Mod_01_Data_Modeling_image35.png)
 
 1. Create Permit to Permit Type relationship
 

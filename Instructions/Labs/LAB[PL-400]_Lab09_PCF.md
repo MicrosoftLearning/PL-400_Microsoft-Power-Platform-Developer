@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab 8: Power Apps Component Framework'
+    title: 'Lab 9: Power Apps Component Framework'
     module: 'Module 7: Create components with Power Apps Component Framework'
 ---
 
-# Practice Lab 8 – Power Apps Component Framework
+# Practice Lab 9 – Power Apps Component Framework
 
 ## Scenario
 
@@ -26,7 +26,7 @@ As part of building this component, you will complete the following steps:
 
 This is what the component will look like when it is completed.
 
- ![Completed component - screenshot](../L05/Static/mod-02-pcf-1-01.png)
+ ![Completed component - screenshot](../images/L09/mod-02-pcf-1-01.png)
 
 ## Things to consider before you begin
 
@@ -46,7 +46,7 @@ This is what the component will look like when it is completed.
 
 	- Select the latest **LTS** version.
 
-    ![latest LTS - screenshot](../L05/Static/mod-02-pcf-1-02.png)
+    ![latest LTS - screenshot](../images/L09/mod-02-pcf-1-02.png)
 
 	- Open the downloaded file.
 
@@ -58,7 +58,7 @@ This is what the component will look like when it is completed.
 
 	- Select the **Developer Pack**.
 
-    ![Developer pack - screenshot](../L05/Static/mod-02-pcf-1-03.png)
+    ![Developer pack - screenshot](../images/L09/mod-02-pcf-1-03.png)
 
 	- Run the downloaded file.
   
@@ -82,7 +82,7 @@ This is what the component will look like when it is completed.
 
 	- Launch to start the **developer command prompt** from the start menu.
 
-    ![Developer command prompt - screenshot](../L05/Static/mod-02-pcf-1-04.png)
+    ![Developer command prompt - screenshot](../images/L09/mod-02-pcf-1-04.png)
 
 2. Create a new folder in your Documents folder and work in that directory
 
@@ -98,7 +98,7 @@ This is what the component will look like when it is completed.
 
             cd pcfTimelineControl
 
-    ![Change directory - screenshot](../L05/Static/mod-02-pcf-1-05.png)
+    ![Change directory - screenshot](../images/L09/mod-02-pcf-1-05.png)
 
 3. Create a new folder in the **pcfTimelineControl** folder, name it **src**, and work in that directory
 
@@ -134,13 +134,13 @@ This is what the component will look like when it is completed.
 
 	- **Visual Studio Code** should start, and it should open the **src** folder.
 
-    ![Visual Studio Code - screenshot](../L05/Static/mod-02-pcf-1-06.png)
+    ![Visual Studio Code - screenshot](../images/L09/mod-02-pcf-1-06.png)
 
 	- Expand the **timelinecontrol** folder.
 
 	- Open the **ControlManifest.Input** xml file and examine it.
 
-    ![Manifest file - screenshot](../L05/Static/mod-02-pcf-1-07.png)
+    ![Manifest file - screenshot](../images/L09/mod-02-pcf-1-07.png)
 
 	- Open the **Index.ts** file and examine it.
 
@@ -152,23 +152,23 @@ This is what the component will look like when it is completed.
 
 	- Select **Terminal** and select **New Terminal**. If Terminal is not visible in the menu, you can open it by selecting View -> Integrated Terminal.
 
-    ![New terminal - screenshot](../L05/Static/mod-02-pcf-1-08.png)
+    ![New terminal - screenshot](../images/L09/mod-02-pcf-1-08.png)
 
 	- If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Shell**.
 
-    ![Select default shell](../L05/Static/mod-02-pcf-1-09.png)
+    ![Select default shell](../images/L09/mod-02-pcf-1-09.png)
 
 	- Select **Command Prompt**.
 
-    ![Command prompt - screenshot](../L05/Static/mod-02-pcf-1-10.png)
+    ![Command prompt - screenshot](../images/L09/mod-02-pcf-1-10.png)
 
 	- Select **New Terminal**.
 
-    ![New terminal - screenshot](../L05/Static/mod-02-pcf-1-11.png)
+    ![New terminal - screenshot](../images/L09/mod-02-pcf-1-11.png)
 
 	- The **cmd** terminal should now open.
 
-    ![cmd terminal - screenshot =](../L05/Static/mod-02-pcf-1-12.png)
+    ![cmd terminal - screenshot =](../images/L09/mod-02-pcf-1-12.png)
 
 7. Run the Build command and review the out folder
 
@@ -185,7 +185,7 @@ This is what the component will look like when it is completed.
 
 	- You should now be able to see the out folder. Expand the folder and review its content.
 
-    ![Out folder - screenshot](../L05/Static/mod-02-pcf-1-13.png)
+    ![Out folder - screenshot](../images/L09/mod-02-pcf-1-13.png)
 
 8. Run the Start command to start the test harness
 
@@ -195,11 +195,11 @@ This is what the component will look like when it is completed.
 
 	- This should open the Test Environment in a browser window.
 
-    ![Test environment - screenshot](../L05/Static/mod-02-pcf-1-14.png)
+    ![Test environment - screenshot](../images/L09/mod-02-pcf-1-14.png)
 
 	- The **Component** container size should change, if you provide **Width** and **Height**.
 
-    ![Change component size - screenshot](../L05/Static/mod-02-pcf-1-15.png)
+    ![Change component size - screenshot](../images/L09/mod-02-pcf-1-15.png)
 
 9. Stop the test harness
 
@@ -211,7 +211,7 @@ This is what the component will look like when it is completed.
 
 	- Type **y** and **[ENTER].**
 
-    ![stop test harness - screenshot](../L05/Static/mod-02-pcf-1-16.png)
+    ![stop test harness - screenshot](../images/L09/mod-02-pcf-1-16.png)
 
 10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it
 
@@ -221,7 +221,7 @@ This is what the component will look like when it is completed.
 
 	- You should now be in the **pcfTimelineControl** directory.
 
-    ![parent folder - screenshot](../L05/Static/mod-02-pcf-1-17.png)
+    ![parent folder - screenshot](../images/L09/mod-02-pcf-1-17.png)
 
 	- Create a new folder with the name **solution**.
 
@@ -233,7 +233,7 @@ This is what the component will look like when it is completed.
 
 	- You should now be in the solution directory.
 
-    ![change directory - screenshot ](../L05/Static/mod-02-pcf-1-18.png)
+    ![change directory - screenshot ](../images/L09/mod-02-pcf-1-18.png)
 
 11. Create solution project and add reference of the **src** folder where the component is located to the solution. This configuration will be used when you are done with your development and ready to publish your component for others to use.
 
@@ -247,7 +247,7 @@ This is what the component will look like when it is completed.
 
 	- The project reference should be added successfully.
 
-    ![Add project reference - screenshot](../L05/Static/mod-02-pcf-1-19.png)
+    ![Add project reference - screenshot](../images/L09/mod-02-pcf-1-19.png)
 
     - Edit the solution.cdsproj file and add the tag ti tge PropertyGroup
  
@@ -263,7 +263,7 @@ This is what the component will look like when it is completed.
 
 	- The build should succeed.
 
-    ![Build result - screenshot](../L05/Static/mod-02-pcf-1-20.png)
+    ![Build result - screenshot](../images/L09/mod-02-pcf-1-20.png)
 
 	> NOTE: If you get the response where 'msbuild' is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
 
@@ -279,13 +279,13 @@ This is what the component will look like when it is completed.
 
 	- Select the **timelinecoltrol** folder and then select **New Folder**.
 
-    ![New css folder - screenshot](../L05/Static/mod-02-pcf-1-21.png)
+    ![New css folder - screenshot](../images/L09/mod-02-pcf-1-21.png)
 
 	- Name the folder **css**.
 
 	- Select the **css** folder you created and then select **New File**.
 
-    ![New css file - screenshot](../L05/Static/mod-02-pcf-1-22.png)
+    ![New css file - screenshot](../images/L09/mod-02-pcf-1-22.png)
 
 	- Name the new file **timelinecontrol.css**.
 
@@ -295,13 +295,13 @@ This is what the component will look like when it is completed.
 
 	- Locate the **resources** sub element and uncomment the **css** tag, change the **Order** to **2**.
 
-    ![Uncomment css - screenshot](../L05/Static/mod-02-pcf-1-23.png)
+    ![Uncomment css - screenshot](../images/L09/mod-02-pcf-1-23.png)
 
 4. Change the data-set name to **timelineDataSet**.
 
 	- Locate **sampleDataSet** tag and change the name property to **timelineDataSet**.
 
-    ![Change dataset name - screenshot](../L05/Static/mod-02-pcf-1-24.png)
+    ![Change dataset name - screenshot](../images/L09/mod-02-pcf-1-24.png)
 
 5. Install vis-timeline css npm package
 
@@ -311,7 +311,7 @@ This is what the component will look like when it is completed.
 
             npm install vis-timeline
 
-    ![Install vis-timeline npm - screenshot ](../L05/Static/mod-02-pcf-1-25.png)
+    ![Install vis-timeline npm - screenshot ](../images/L09/mod-02-pcf-1-25.png)
 
 	- Run the command mentioned below and wait for the packages to be added.
 
@@ -329,7 +329,7 @@ This is what the component will look like when it is completed.
 
             <css path="..\node_modules\vis-timeline\dist\vis-timeline-graph2d.min.css" order="1" />
 
-    ![Add resource - screenshot](../L05/Static/mod-02-pcf-1-26.png)
+    ![Add resource - screenshot](../images/L09/mod-02-pcf-1-26.png)
 
 7. Add timeline element and visual properties to the Index file
 
@@ -340,13 +340,13 @@ This is what the component will look like when it is completed.
              private _timelineElm: HTMLDivElement;
              private _timelineVis : any;
 
-    ![Add properties - screenshot](../L05/Static/mod-02-pcf-1-27.png)
+    ![Add properties - screenshot](../images/L09/mod-02-pcf-1-27.png)
 
 	- Add the below constant after the import lines on the top.
 
             const vis = require('vis-timeline');
 
-    ![Add constant - screenshot](../L05/Static/mod-02-pcf-1-28.png)
+    ![Add constant - screenshot](../images/L09/mod-02-pcf-1-28.png)
 
 8. Build the timeline element as div and add it to container element as a child
 
@@ -358,7 +358,7 @@ This is what the component will look like when it is completed.
 
             container.appendChild(this._timelineElm);
 
-    ![Init function - screenshot](../L05/Static/mod-02-pcf-1-29.png)
+    ![Init function - screenshot](../images/L09/mod-02-pcf-1-29.png)
 
 9. Create a function that will render the timeline
 
@@ -380,7 +380,7 @@ This is what the component will look like when it is completed.
                 var timeline = new vis.Timeline(this._timelineElm, items, options);
             }
 
-    ![Render timeline function - screenshot](../L05/Static/mod-02-pcf-1-30.png)
+    ![Render timeline function - screenshot](../images/L09/mod-02-pcf-1-30.png)
 
 10. Call the **renderTimeline** function from the **updateView** function
 
@@ -390,7 +390,7 @@ This is what the component will look like when it is completed.
 
             this.renderTimeline();
 
-    ![Update view function - screenshot](../L05/Static/mod-02-pcf-1-31.png)
+    ![Update view function - screenshot](../images/L09/mod-02-pcf-1-31.png)
 
 	- Select **File** and then select **Save All**.
 
@@ -408,7 +408,7 @@ This is what the component will look like when it is completed.
 
             npm start watch
 
-    ![Timeline control - screenshot](../L05/Static/mod-02-pcf-1-32.png)
+    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-32.png)
 
 **Do not** close the test environment.
 
@@ -420,7 +420,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 	- Select the **src** folder and then select **New File**.
 
-    ![New file - screenshot](../L05/Static/mod-02-pcf-1-33.png)
+    ![New file - screenshot](../images/L09/mod-02-pcf-1-33.png)
 
 	- Name the new file **testdata.csv**
 
@@ -432,7 +432,7 @@ In this task, you will switch from using the hard-coded array of data to using a
             125,Plumbing:Rough Inspection:Failed,8/8/2020,Failed
             126,Plumbing:Rough Inspection:Passed,8/10/2020,Passed
 
-    ![Test data - screenshot](../L05/Static/mod-02-pcf-1-34.png)
+    ![Test data - screenshot](../images/L09/mod-02-pcf-1-34.png)
 
 2. Create Timeline Data class
 
@@ -454,13 +454,13 @@ In this task, you will switch from using the hard-coded array of data to using a
                 }
             }
 
-    ![Timeline data class - screenshot](../L05/Static/mod-02-pcf-1-35.png)
+    ![Timeline data class - screenshot](../images/L09/mod-02-pcf-1-35.png)
 
 	- Add the timeline data array property inside the **export** class timelinecontrol function and below the **_timelineElm** definition.
 
             private _timelineData : TimelineData[] = [];
 
-    ![timeline data array - screenshot](../L05/Static/mod-02-pcf-1-36.png)
+    ![timeline data array - screenshot](../images/L09/mod-02-pcf-1-36.png)
 
 3. Add a method that will create the timeline data.
 
@@ -495,7 +495,7 @@ In this task, you will switch from using the hard-coded array of data to using a
                 }
             }
 
-    ![Create timeline data method - screenshot ](../L05/Static/mod-02-pcf-1-37.png)
+    ![Create timeline data method - screenshot ](../images/L09/mod-02-pcf-1-37.png)
 
 4. Call the createTimelineData method from the updateView method.
 
@@ -509,7 +509,7 @@ In this task, you will switch from using the hard-coded array of data to using a
                 this.renderTimeline();
             }
 
-    ![Update vie method - screenshot](../L05/Static/mod-02-pcf-1-38.png)
+    ![Update vie method - screenshot](../images/L09/mod-02-pcf-1-38.png)
 
 5. Replace the hardcoded items with the csv data.
 
@@ -519,7 +519,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
             var items = this._timelineData;
 
-    ![render timeline function - screenshot](../L05/Static/mod-02-pcf-1-39.png)
+    ![render timeline function - screenshot](../images/L09/mod-02-pcf-1-39.png)
 
 6. Make sure the test environment shows your changes and test the timeline control with the test data.
 
@@ -529,23 +529,23 @@ In this task, you will switch from using the hard-coded array of data to using a
 
 	- Go to the test environment and make sure it looks like the image below.
 
-    ![Timeline control - screenshot](../L05/Static/mod-02-pcf-1-40.png)
+    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-40.png)
 
 	- Select **+ Select a File**.
 
-    ![Select file - screenshot](../L05/Static/mod-02-pcf-1-41.png)
+    ![Select file - screenshot](../images/L09/mod-02-pcf-1-41.png)
 
 	- Select the **testdata.csv** and then select **Open**.
 
-    ![Select CSV file - screenshot](../L05/Static/mod-02-pcf-1-42.png)
+    ![Select CSV file - screenshot](../images/L09/mod-02-pcf-1-42.png)
 
 	- Select **Apply**.
 
-    ![Apply changes - screenshot](../L05/Static/mod-02-pcf-1-43.png)
+    ![Apply changes - screenshot](../images/L09/mod-02-pcf-1-43.png)
 
 	- The timeline control should now show the test data.
 
-    ![Timeline control with data - screenshot](../L05/Static/mod-02-pcf-1-44.png)
+    ![Timeline control with data - screenshot](../images/L09/mod-02-pcf-1-44.png)
 
 Do not close the test environment.
 
@@ -574,7 +574,7 @@ In this task, you will use the **css** resource you configured to change the col
                 color:black;
                 }
 
-    ![CSS file - screenshot](../L05/Static/mod-02-pcf-1-45.png)
+    ![CSS file - screenshot](../images/L09/mod-02-pcf-1-45.png)
 
 	- Select File and then select Save All.
 
@@ -584,7 +584,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **+ Select a File**.
 
-    ![Select file - screenshot](../L05/Static/mod-02-pcf-1-46.png)
+    ![Select file - screenshot](../images/L09/mod-02-pcf-1-46.png)
 
 	- Select the **testdata.csv** and then select **Open**.
 
@@ -592,7 +592,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- The timeline control should now show the test data.
 
-    ![Timeline control with style - screenshot](../L05/Static/mod-02-pcf-1-47.png)
+    ![Timeline control with style - screenshot](../images/L09/mod-02-pcf-1-47.png)
 
 	- Close the test environment browser window or tab.
 
@@ -618,7 +618,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Right click and copy the **Environment URL**.
 
-    ![Endpoint address - screenshot](../L05/Static/mod-02-pcf-1-51.png)
+    ![Endpoint address - screenshot](../images/L09/mod-02-pcf-1-51.png)
 
 2. Authenticate
 
@@ -648,7 +648,7 @@ In this task, you will use the **css** resource you configured to change the col
 
             pac solution import
 
-    ![import solution - screenshot](../L05/Static/mod-02-pcf-1-52.png)
+    ![import solution - screenshot](../images/L09/mod-02-pcf-1-52.png)
 
 ### Task 2.2: Add Timeline Control to the Permit Form
 
@@ -664,17 +664,17 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Tabled** and open the **Permit** table.
 
-    ![Open Table - screenshot](../L05/Static/mod-02-pcf-1-54.png)
+    ![Open Table - screenshot](../images/L09/mod-02-pcf-1-54.png)
 
 	- Select the **Forms** tab.
 
 	- Open the **Main** form.
 
-    ![Open form - screenshot](../L05/Static/mod-02-pcf-1-55.png)
+    ![Open form - screenshot](../images/L09/mod-02-pcf-1-55.png)
 
 	- Select **Switch to Classic**.
 
-    ![Switch to classic - screenshot](../L05/Static/mod-02-pcf-1-56.png)
+    ![Switch to classic - screenshot](../images/L09/mod-02-pcf-1-56.png)
 
 3. Add Timeline control to the form
 
@@ -682,19 +682,19 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Double click on the **Inspections** sub-grid.
 
-    ![Open sub-grid properties - screenshot](../L05/Static/mod-02-pcf-1-57.png)
+    ![Open sub-grid properties - screenshot](../images/L09/mod-02-pcf-1-57.png)
 
 	- Select the **Controls** tab and select **Add Control**.
 
-    ![Add control - screenshot](../L05/Static/mod-02-pcf-1-58.png)
+    ![Add control - screenshot](../images/L09/mod-02-pcf-1-58.png)
 
 	- Select **timelinecontrol** and select **Add**.
 
-    ![Add timeline control - screenshot](../L05/Static/mod-02-pcf-1-59.png)
+    ![Add timeline control - screenshot](../images/L09/mod-02-pcf-1-59.png)
 
 	- Select **Web** and and then select **OK**.
 
-    ![Select web - screenshot](../L05/Static/mod-02-pcf-1-60.png)
+    ![Select web - screenshot](../images/L09/mod-02-pcf-1-60.png)
 
 4. Save and publish
 
@@ -712,11 +712,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Advanced Find**.
 
-    ![Advanced find - screenshot](../L05/Static/mod-02-pcf-1-61.png)
+    ![Advanced find - screenshot](../images/L09/mod-02-pcf-1-61.png)
 
 	- Select **Inspections** and then select **Results**.
 
-    ![Inspections results - screenshot](../L05/Static/mod-02-pcf-1-62.png)
+    ![Inspections results - screenshot](../images/L09/mod-02-pcf-1-62.png)
 
 	- Select **Inspection**.
 
@@ -724,11 +724,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Change the **Status Reason** to **Passed** and select **New**.
 
-    ![Create new inspection - screenshot](../L05/Static/mod-02-pcf-1-63.png)
+    ![Create new inspection - screenshot](../images/L09/mod-02-pcf-1-63.png)
 
 	- Provide a Name, select Inspection Type, select the Test Permit, select Scheduled Date, select Failed for Status Reason, and then select **Save and Close**.
 
-    ![Save and close record - screenshot](../L05/Static/mod-02-pcf-1-64.png)
+    ![Save and close record - screenshot](../images/L09/mod-02-pcf-1-64.png)
 
 	- Close **Advanced Find**.
 
@@ -738,13 +738,13 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Open a **Test Permit** record.
 
-    ![Open permit record - screenshot](../L05/Static/mod-02-pcf-1-65.png)
+    ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
 
 	- Select the **Inspections** tab.
 
 	- The control should show the two inspections, but the color will not match the status reason values.
 
-    ![Timeline control - screenshot](../L05/Static/mod-02-pcf-1-66.png)
+    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-66.png)
 
 ### Task 2.3: Debug
 
@@ -756,11 +756,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Locate the **createTimelineData** function and add breakpoint on the **permitColor =”green”** line.
 
-    ![Add breakpoint - screenshot](../L05/Static/mod-02-pcf-1-67.png)
+    ![Add breakpoint - screenshot](../images/L09/mod-02-pcf-1-67.png)
 
 	- Go back to the Permit Management application and click Refresh.
 
-    ![Refresh record - screenshot](../L05/Static/mod-02-pcf-1-68.png)
+    ![Refresh record - screenshot](../images/L09/mod-02-pcf-1-68.png)
 
 	- Select the **Inspections** tab again.
 
@@ -768,7 +768,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Hover over the **permitStatus**, the **permitStatus** is null because **Status Reason** is not included in the **View**.
 
-    ![Null permit status - screenshot](../L05/Static/mod-02-pcf-1-69.png)
+    ![Null permit status - screenshot](../images/L09/mod-02-pcf-1-69.png)
 
 	- Press **F5** to continue.
 
@@ -780,29 +780,29 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Double click on the Inspections timeline control.
 
-    ![open inspection timeline properties - screenshot](../L05/Static/mod-02-pcf-1-70.png)
+    ![open inspection timeline properties - screenshot](../images/L09/mod-02-pcf-1-70.png)
 
 	- Select **Edit**.
 
-    ![Edit view - screenshot](../L05/Static/mod-02-pcf-1-71.png)
+    ![Edit view - screenshot](../images/L09/mod-02-pcf-1-71.png)
 
 	- Select **Add Columns**.
 
-    ![Add column - screenshot](../L05/Static/mod-02-pcf-1-72.png)
+    ![Add column - screenshot](../images/L09/mod-02-pcf-1-72.png)
 
 	- Select **Status Reason** and select **OK**.
 
-    ![Select column - screenshot](../L05/Static/mod-02-pcf-1-73.png)
+    ![Select column - screenshot](../images/L09/mod-02-pcf-1-73.png)
 
 	- Move the **Status Reason** column after the **Name** column.
 
-    ![Move column - screenshot](../L05/Static/mod-02-pcf-1-74.png)
+    ![Move column - screenshot](../images/L09/mod-02-pcf-1-74.png)
 
 	- Select **Save and Close**.
 
 	- Select **OK**.
 
-    ![Close properties - screenshot](../L05/Static/mod-02-pcf-1-75.png)
+    ![Close properties - screenshot](../images/L09/mod-02-pcf-1-75.png)
 
 	- Select **Save**.
 
@@ -814,11 +814,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Go back to the **Permit Management** application and refresh the browser.
 
-    ![Refresh browser - screenshot ](../L05/Static/mod-02-pcf-1-76.png)
+    ![Refresh browser - screenshot ](../images/L09/mod-02-pcf-1-76.png)
 
 	- Select the **Inspections** tab. The timeline control should now show the correct colors.
 
-    ![Timeline control with stye - screenshot](../L05/Static/mod-02-pcf-1-77.png)
+    ![Timeline control with stye - screenshot](../images/L09/mod-02-pcf-1-77.png)
 
 ### Task 2.4: Add the Timeline Control to Permit Management Solution
 
@@ -830,11 +830,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Add Existing | More | Developer | Custom Control**.
 
-    ![Add existing custom control - screenshot](../L05/Static/mod-02-pcf-1-79.png)
+    ![Add existing custom control - screenshot](../images/L09/mod-02-pcf-1-79.png)
 
 	- Search for Timeline, select **contoso_contoso.timelinecontrol** and select **Add**.
 
-    ![Select control - screenshot](../L05/Static/mod-02-pcf-1-80.png)
+    ![Select control - screenshot](../images/L09/mod-02-pcf-1-80.png)
 
 	- Select **Publish All Customizations** and wait for the publishing to complete.
 
@@ -852,17 +852,17 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select the **Permit Management** solution and then select **Export**.
 
-    ![Export solution - screenshot](../L05/Static/mod-02-pcf-1-81.png)
+    ![Export solution - screenshot](../images/L09/mod-02-pcf-1-81.png)
 
 	- Select **Publish** and wait for the publishing to complete.
 
-    ![Publish customizations - screenshot](../L05/Static/mod-02-pcf-1-82.png)
+    ![Publish customizations - screenshot](../images/L09/mod-02-pcf-1-82.png)
 
 	- Select **Next**.
 
 	- Select **Managed** and then select **Export**.
 
-    ![Export manage solution - screenshot](../L05/Static/mod-02-pcf-1-83.png)
+    ![Export manage solution - screenshot](../images/L09/mod-02-pcf-1-83.png)
 
 	- Save the **Exported** solution on your machine.
 
@@ -888,13 +888,13 @@ In this task, you will use the **css** resource you configured to change the col
 
 	- Select **Import**.
 
-    ![Import solution - screenshot](../L05/Static/mod-02-pcf-1-84.png)
+    ![Import solution - screenshot](../images/L09/mod-02-pcf-1-84.png)
 
 	- Click **Choose File**.
 
 	- Select the **Managed** solution you exported and select **Open**.
 
-    ![Select manage solution file - screenshot](../L05/Static/mod-02-pcf-1-85.png)
+    ![Select manage solution file - screenshot](../images/L09/mod-02-pcf-1-85.png)
 
 	- Select **Next**.
 
@@ -902,6 +902,6 @@ In this task, you will use the **css** resource you configured to change the col
   
 	- Select **Import** and wait the import to complete.
 
-    ![Import solution - screenshot](../L05/Static/mod-02-pcf-1-86.png)
+    ![Import solution - screenshot](../images/L09/mod-02-pcf-1-86.png)
 
 Review the production application by adding a few records and testing your progress.
