@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 1: Data Modeling'
+    title: 'Lab 1: Data modeling'
     module: 'Module 1: Create a model-driven app in Power Apps'
 ---
 

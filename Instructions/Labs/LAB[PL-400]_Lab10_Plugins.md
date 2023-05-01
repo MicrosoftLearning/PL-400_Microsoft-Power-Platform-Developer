@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab 10: Plugins'
-    module: 'Module 8: Extending the Power Platform Dataverse'
+    title: 'Lab 10: Dataverse Plug-ins'
+    module: 'Module 8: Extending Microsoft Dataverse'
 ---
 
-# Practice Lab 10 – Plugins
+# Practice Lab 10 – Dataverse Plug-ins
 
 ## Scenario
 

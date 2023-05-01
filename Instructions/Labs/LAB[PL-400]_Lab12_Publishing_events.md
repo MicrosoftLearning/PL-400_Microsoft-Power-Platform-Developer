@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 12: Publishing Events Externally'
+    title: 'Lab 12: Publishing events externally'
     module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 

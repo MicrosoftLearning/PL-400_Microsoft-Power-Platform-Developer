@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 13: Custom Connector'
+    title: 'Lab 13: Custom connector'
     module: 'Module 9: Integrate with Power Platform and Dataverse'
 ---
 
