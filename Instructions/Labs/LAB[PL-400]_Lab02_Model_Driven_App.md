@@ -35,6 +35,14 @@ The following is what the model-driven app designer looks like when all the cust
 - What customizations can be made on the sitemap of a model-driven app?
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production once everything is built and tested.
 
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L02\Starter folder.
+
+## Completed solution
+
+A completed solution file for this lab can be found in the  C:\Labfiles\L02\Completed folder.
+
 ## Exercise 1: Customize forms and views
 
 **Objective:** In this exercise, you will customize views and forms of the tables that will be used in the model-driven app.
