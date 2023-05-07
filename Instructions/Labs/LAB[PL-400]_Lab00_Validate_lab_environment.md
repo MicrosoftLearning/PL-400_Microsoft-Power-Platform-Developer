@@ -13,7 +13,7 @@ lab:
 
 1. From the lab virtual machine, click **Start** and search for **PowerShell** then open **PowerShell as Administrator**.
 
-    ![Start Powershell as adminstraotr.](../images/L00/start-powershell.png)
+    ![Start Powershell as administrator.](../images/L00/start-powershell.png)
 
 1. Select **Yes** if prompted.
 

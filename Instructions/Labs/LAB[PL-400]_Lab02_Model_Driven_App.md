@@ -8,9 +8,7 @@ lab:
 
 ## Scenario
 
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
-
-In this lab we will continue to build on top of the components created in the previous lab. We will now build a Power Apps model-driven app to allow the office staff manage records for the inspectors and the inspectors to manage their own records as needed.
+In this lab we will continue to build on top of the Microsoft Dataverse components created in the previous lab. We will now build a Power Apps model-driven app to allow the office staff manage records for the inspectors and the inspectors to manage their own records as needed.
 
 ## High-level lab steps
 
@@ -28,7 +26,7 @@ Both will be integrated to the model-driven app for a better user-experience.
 
 The following is what the model-driven app designer looks like when all the customizations are completed:
 
-![Completed sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image1.png)
+![Completed sitemap - screenshot](../images/L02/app-designer.png)
 
 ## Things to consider before you begin
 
@@ -37,26 +35,30 @@ The following is what the model-driven app designer looks like when all the cust
 - What customizations can be made on the sitemap of a model-driven app?
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production once everything is built and tested.
 
-## Exercise 1: Customize Views and Forms
+## Exercise 1: Customize forms and views
 
 **Objective:** In this exercise, you will customize views and forms of the tables that will be used in the model-driven app.
 
-### Task 1.1: Edit Permit Form and View
+### Task 1.1: Permit Form
 
-1. In your development environment, open the Permit Management solution.
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Expand **Tables**.
+1. Select the **Permit** table.
+1. Edit the Permit table main form.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Dev environment.**
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-
-1. Steps to edit the Permit table form.
-
-   - Open the **Permit** table.
    - Under **Data experiences**, select **Forms**.
-   - Edit the **Main** form. By default, the form has two columns, Name (Primary column) and Owner.
+   - Select the **Main** form.
 
-     ![Main table form - screenshot](../images/L02/Mod_02_Model_Driven_App_image2.png)
+     ![Permit forms - screenshot](../images/L02/permit-forms.png)
+
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+
+   - By default, the form has two columns, Name (Primary column) and Owner.
+
+     ![Permit main form - default](../images/L02/permit-default-main-form.png)
 
    - Drag the **Permit Type** column to the form and place it below the **Name** column.
 
@@ -74,35 +76,42 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. Add new tab for **Inspections** to the form.
 
-   - With focus set on the main body of the form (not in the header) select **Add Component**.
+   - Select the **Components** tab in the left-had pane.
 
-     ![Add components to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image7.png)
+     ![Add components to form - screenshot](../images/L02/form-components.png)
 
    - Select **1-column tab**.
 
-      ![Add one column tab to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image8.png)
+     ![Add one column tab to form - screenshot](../images/L02/Mod_02_Model_Driven_App_image8.png)
 
    - Select the new tab you added.
 
-   - Go to the **Properties** pane, change the **Label** to **Inspections** and the **Name** to **inspectionsTab**.
-
+   - Go to the **Properties** pane, change the **Label** to `Inspections` and the **Name** to `inspectionsTab`.
+  
      ![Tab properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image9.png)
 
-1. Steps to add Sub-Grid to the Permit form.
+   > [!IMPORTANT]
+   > Make sure you enter the name of the new tab correctly as this will be referenced by JavaScript in a later lab.
+
+1. Add Inspections sub-grid to the Permit form.
 
    - Select the **Inspections** tab. Make sure that you have selected the whole tab and not just a section.
 
-   - Select **Add Component**.
+   - Select the **Components** tab in the left-had pane.
 
-   - Scroll down and select **Subgrid,** this will open a pop-up to select table.
+   - Select **Subgrid** this will open a pop-up to select table.
 
-   - Check the **Show related records** checkbox, select **Inspections (Permit)** for **Table**, select **Active Inspections** for **Default View** and select **Done**.
+     - Check the **Show related records** checkbox.
+     - Select **Inspections (Permit)** for **Table**.
+     - Select **Active Inspections** for **Default view**.
 
-     ![Add sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image11.png)
+       ![Add sub-grid - screenshot](../images/L02/add-subgrid.png)
 
-1. Edit Sub-Grid properties.
+     - Select **Done**.
 
-    - Go to the sub-grid properties pane and change the Label to **Inspections**.
+1. Inspections sub-grid properties.
+
+    - Go to the sub-grid properties pane and change the Label to `Inspections`.
 
       ![Sub-grid properties - screenshot ](../images/L02/Mod_02_Model_Driven_App_image12.png)
 
@@ -116,108 +125,123 @@ The following is what the model-driven app designer looks like when all the cust
 
      ![Hide section label - screenshot](../images/L02/Mod_02_Model_Driven_App_image14.png)
 
-1. Select **Save** and wait for the save to complete.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the form editor tab.
+1. Select **Done**.
 
-1. Select **Publish** and wait for the publishing to complete.
+### Task 1.2: Permit View
 
-1. Select on the **<- Back** button. You should now be back to the Permit table Forms tab.
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Expand **Tables**.
+1. Select the **Permit** table.
+1. Edit the Active Permits view.
 
-1. Steps to edit the Active Permits view.
+   - Under **Data experiences**, select **Views**.
+   - Select the **Active Permits** view.
 
-   - Select the **Views** tab and open the **Active Permits** view.
+     ![Permit views - screenshot](../images/L02/permit-views.png)
+
+   - Select the ellipses **...** for the **Active Permits** view, select **Edit** and select **Edit in new tab**.
    - Drag the **Build Site** column and drop it between the **Name** and **Created On** columns.
-   - Select on the **Permit Type** column. The Permit Type column will be added to the view.
-   - Select the **Contact** column. The **Contact** column will be added to the view.
-   - Go to the view designer and select on the chevron icon of the **Created On** column.
+   - Click once on the **Permit Type** column. The Permit Type column will be added to the view.
+   - Click the **Contact** column. The **Contact** column will be added to the view.
+   - Go to the view designer and click on the chevron icon of the **Created On** column.
    - Select **Remove**. **Created On** column will now be removed from the view.
-   - Select **Save** and wait until the changes are saved.
-   - Select **Publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 
-1. Select on the **<-Back** button.
+1. Close the view editor tab.
+1. Select **Done**.
+1. In the **Objects** pane, select **All**.
 
-### Task 1.2: Edit Build Site Form and View
+### Task 1.3: Build Site form and view
 
-1. Open the Permit Management solution.
-
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - While in your dev environment, select **Solutions**, and open the **Permit Management** solution.
-
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Expand **Tables**.
+1. Select the **Build Site** table.
 1. Edit the Build Site table form.
 
-   - Select to open the **Build Site** table.
-   - Select the **Forms** tab and open the **Main** form.
+   - Under **Data experiences**, select **Forms**.
+   - Select the **Main** form.
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **City**, **State/Province**, **Zip/Postal Code**, and **Country Region** columns to the form between **Street Address** and **Owner**.
 
      ![Build site form - screenshot](../images/L02/Mod_02_Model_Driven_App_image18.png)
 
-1. Select **Save** and wait until the changes are saved.
-
-1. Select **Publish** and wait for the publishing to complete.
-
-1. Select on the **<-Back** button.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the form editor tab.
+1. Select **Done**.
 
 1. Edit the Active Build Sites view.
 
-   - Select the **Views** tab and open the **Active Build Sites** view.
+   - Select the **Views** node in the tree view for the Build Sites table.
+   - Select the **Active Build Sites** view.
+   - Select the ellipses **...** for the **Active Build Sites** view, select **Edit** and select **Edit in new tab**.
    - Add **City** and **Zip/Postal Code** to the view.
    - Remove **Created On** from the view by selecting **Remove** from the options in column chevron.
 
      ![Active build sites view - screenshot ](../images/L02/Mod_02_Model_Driven_App_image19.png)
 
-1. Select **Save** and wait until the changes are saved.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the view editor tab.
+1. Select **Done**.
 
-1. Select **Publish** and wait for the publishing to complete.
+### Task 1.4: Inspection form and views
 
-1. Select on the **<-Back** button.
-
-### Task 1.3: Edit Inspection Form and View
-
-1. Open the Permit Management solution.
-
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - While in your dev environment, select **Solutions** and open the **Permit Management** solution.
-
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Expand **Tables**.
+1. Select the **Inspection** table.
 1. Edit the Inspection table form.
 
-   - Open the **Inspection** table.
-   - Select the **Forms** tab and open the **Main** form.
+   - Under **Data experiences**, select **Forms**.
+   - Select the **Main** form.
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** columns to the form. **Inspection type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** column.
    - Add the **Status Reason** column to the header.
    - The form should now look like the image below.
 
      ![inspection form - screenshot](../images/L02/Mod_02_Model_Driven_App_image21.png)
 
-1. Select **Save** and wait until the changes are saved.
-
-1. Select **Publish** and wait for the publishing to complete.
-
-1. Select on the **<-Back** button.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the form editor tab.
+1. Select **Done**.
 
 1. Edit the Active Inspections view.
 
-   - Select the **Views** tab and open the **Active Inspections Sites** view.
+   - Select the **Views** node in the tree view for the Inspections table.
+   - Select the **Active Inspections** view.
+   - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
    - Add **Inspection Type**, **Scheduled Date**, and **Sequence** to the view.
    - Remove **Created On** from the view by selecting the chevron on the column and select **Remove**.
 
      ![Active inspections view - screenshot](../images/L02/Mod_02_Model_Driven_App_image22.png)
 
-1. Select **Save** and wait until the changes are saved.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the view editor tab.
+1. Select **Done**.
 
-1. Select **Publish** and wait for the publishing to complete.
+1. Create new Inspector View on the Inspection table.
 
-1. Select on the **<-Back** button.
+   - Make sure you still have the **Views** node selected.
+   - Select **+ New view**.
 
-1. Create new Inspector View for the Inspection table.
+     ![Create new view - screenshot](../images/L02/new-view-button.png)
 
-   - Make sure you still have the **Views** tab selected.
-   - Select **+ Add View**. This will open a new window to create View.
-     ![Create new view - screenshot](../images/L02/Mod_02_Model_Driven_App_image23.png)
-   - Enter **Inspector View** for **Name** and select **Create**.
+   - Enter `Inspector View` for **Name**.
+   - Select **Create**.
    - Add **Inspection Type**, **Permit**, **Scheduled Date**, and **Sequence** columns to the view.
 
       ![Inspection view - screenshot](../images/L02/Mod_02_Model_Driven_App_image24.png)
 
-1. Sort the Inspector View by the sequence.
+1. Sort the Inspector View by the Sequence column.
 
    - Go to the view properties pane and select **Sort By**.
 
@@ -227,68 +251,61 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. Filter the Inspector View.
 
-   - Go to the view properties pane and select **Edit Filter**. This will open a new pop-up on the right side of the window.
+   - Go to the view properties pane and select **Edit filters**. This will open a new pane on the right side of the window.
 
      ![Filter view - screenshot](../images/L02/Mod_02_Model_Driven_App_image26.png)
 
-   - Select **Add** and select **Add Row**.
+   - Select **Add** and select **Add row**.
 
      ![Add filter - screenshot](../images/L02/Mod_02_Model_Driven_App_image27.png)
 
-   - Set the filter property by Selecting **Status Reason** in first dropdown and **Pending** in the third dropdown. Now, select **Add** and select **Add Row** again.
+   - Set the filter property by Selecting **Status Reason** in first dropdown and **Pending** in the third dropdown. Now, select **Add** and select **Add row** again.
 
      ![Filter properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image28.png)
 
-   - To set the filter property select **Owner** column in the first dropdown and **Equals current user** in second dropdown and select **OK**.
+   - To set the filter property select **Owner** column in the first dropdown and **Equals current user** in second dropdown .
 
      ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
-1. Select **Save** and wait until the changes are saved.
+1. Select **OK**.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Select the **<- Back** button.
 
-1. Select **Publish** and wait for the publishing to complete.
+### Task 1.5: Edit Permit Type form and view
 
-1. Select on the **<- Back** button.
-
-### Task 1.4: Edit Permit Type Form
-
-1. Open the Permit Management solution.
-
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Dev environment.**
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. Expand **Tables**.
+1. Select the **Permit Type** table.
 1. Edit the Permit Type table form.
 
-   - Open the **Permit Type** table.
-   - Select the **Forms** tab and open the **Main** form.
+   - Under **Data experiences**, select **Forms**.
+   - Select the **Main** form.
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **Require Inspections** and **Require Size** columns to the form between **Name** and **Owner**.
 
      ![Permit type form - screenshot](../images/L02/Mod_02_Model_Driven_App_image30.png)
 
-   - Select **Save** and wait until the changes are saved.
-  
-   - Select **Publish** and wait for the publishing to complete.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the form editor tab.
+1. Select **Done**.
 
-   - Select the **<--Back** button.
-
-1. Edit the **Permit Type** table **Active Permit Type** view.
-
-   - Select the **Views** tab and open the **Active Permit Type** view.
-
+1. Edit the Active Permit Types view.
+   - Select the **Views** node in the tree view for the Inspections table.
+   - Select the **Active Active Permit Types** view.
+   - Select the ellipses **...** for the **Active Permit Types** view, select **Edit** and select **Edit in new tab**.
    - Add **Require Inspections** and **Require Size** to the view.
-
    - Remove **Created On** from the view but selecting the chevron on the column and select **Remove**.
 
      ![Active permit types view - screenshot](../images/L02/Mod_02_Model_Driven_App_image31.png)
 
-   - Select **Save** and wait until the changes are saved.
+1. Select **Save and publish** and wait for the publishing to complete.
+1. Close the view editor tab.
+1. Select **Done**.
 
-   - Select **Publish** and wait for the publishing to complete.
-
-   - Select the **<-Back** button.
-
-## Exercise 2: Create Model-driven application
+## Exercise 2: Create model-driven app
 
 **Objective:** In this exercise, you will create the model-driven app, customize the sitemap, and test the app.
 
@@ -297,74 +314,76 @@ The following is what the model-driven app designer looks like when all the cust
 
 ### Task 2.1: Create Application
 
-1. Open the Permit Management solution.
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - While in your dev environment, open the **Permit Management** solution.
-
-1. Create the Model-driven application
+1. Create the model-driven application
 
    - Select **+ New** and select **App** and then select **Model-driven app**.
   
      ![Create model-driven application - screenshot](../images/L02/Mod_02_Model_Driven_App_image32.png)
   
-   - Enter **Permit Management** for **Name** and select **Create**.
+   - Enter `Permit Management` for **Name**.
+   - Select **Create**.
 
-1. Click on **Navigation**.
+1. Enable Areas in Navigation
 
-1. In the right-hand pane, check **Enable Areas**.
+   - Select **Navigation**.
+   - Select the ellipses **...** for the **Navigation**  and select **Settings**.
 
-1. In the left-hand pane, select **Area1**, select the **ellipses (...)** and select **Edit properties**.
+     ![App navigation settings - screenshot](../images/L02/app-navigation-settings.png)
 
-1. In the **Title** text box in the **Properties** pane, enter **Building Dept**.
+   - Select the **Navigation** tab.
+   - Check the **Enable Areas** checkbox.
 
-1. Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+     ![Enable Areas in navigation settings - screenshot](../images/L02/app-navigation-enable-areas.png)
 
-1. In the **Title** text box in the **Properties** pane, enter **Permits**.
+   - Close the settings window.
 
-1. Click **+ Add page**.
+   - In the left-hand pane, select **Area1**, select the **ellipses (...)** and select **Edit properties**.
 
-1. Select **Dataverse table**.
+       ![Enable Areas in navigation settings - screenshot](../images/L02/edit-area-properties.png)
 
-1. Click **Next**.
+   - In the **Title** text box in the **Properties** pane, enter **Building Dept**.
 
-1. Search for `Permit` and select the **Permit** and ***Permit Type** tables.
+1. Add group to app navigation
 
-1. Search for `Inspections` and select the **Inspections** table.
+   - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+   - In the **Title** text box in the **Properties** pane, enter **Permits**.
 
-1. Search for `Permit` and select the *table.
+1. Add tables to Permits group
 
-1. CLick **Add**.
+   - Click **+ Add page**.
+   - Select **Dataverse table**.
+   - Click **Next**.
+   - Search for `Permit` and select the **Permit** and **Permit Type** tables.
+   - Search for `Inspection` and select the **Inspections** table.
+   - Click **Add**.
 
-1. Select **Permits view** , select the **ellipses (...)** and select **Move up**.
+1. Order the navigation.
 
-1. Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+   - Select **Permits view** , select the **ellipses (...)** and select **Move up**.
 
-1. In the **Title** text box in the **Properties** pane, enter **Contacts**.
+1. Add second group to app navigation
 
-1. Click **+ New**.
+   - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+   - In the **Title** text box in the **Properties** pane, enter **Contacts**.
 
-1. Select **Dataverse table**.
+1. Add tables to Contacts group
 
-1. Click **Next**.
-
-1. Search for `Contact` and select the **Contact** table.
-
-1. Search for `Build` and select the **Build Site** table.
-
-1. Click **Add**.
-
-1. Select **Contacts view** , select the **ellipses (...)** and select **Move up**.
-
-     ![Edit sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image33.png)
-     ![Sitemap area and group - screenshot](../images/L02/Mod_02_Model_Driven_App_image34.png)
-     ![Subarea properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image35.png)
-     ![Add component - screenshot](../images/L02/Mod_02_Model_Driven_App_image36.png)
-    ![Add component to area - screenshot](../images/L02/Mod_02_Model_Driven_App_image37.png)
+   - Click **+ New**.
+   - Select **Dataverse table**.
+   - Click **Next**.
+   - Search for `Contact` and select the **Contact** table.
+   - Search for `Build` and select the **Build Site** table.
+   - Click **Add**.
+   - Select **Contacts view** , select the **ellipses (...)** and select **Move up**.
 
 1. The navigation should now look like the image below.
 
-     ![Sitemap - screenshot](../images/L02/Mod_02_Model_Driven_App_image38.png)
+     ![Sitemap - screenshot](../images/L02/app-navigation.png)
 
 1. Select **Save**.
 
@@ -372,89 +391,79 @@ The following is what the model-driven app designer looks like when all the cust
 
 1. Select **Save and Close** to close the sitemap editor.
 
-1. You will see the assets for the tables that were added to the sitemap are now all in the application.
-
-    ![Application designer - screenshot](../images/L02/Mod_02_Model_Driven_App_image39.png)
-
 1. Click **Save** to save the application.
 
 1. Select **Publish** to publish the application and wait for the publishing to complete.
 
-     ![New application in the app list - screenshot](../images/L02/Mod_02_Model_Driven_App_image40.png)
-
-1. Select the **<- Back** button to go back to the solutions list.
+1. Select the **<- Back** button to go back to the solution.
 
 ### Task 2.2: Test Application
 
-1. Launch the application
-
-   - Select **Apps** and play  the **Permit Management** app.
+1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. In the **Objects** pane, select **All**.
+1. Select the **Apps** node.
+1. Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
 1. Create new Contact record
 
-   - Select **Contacts** from the sitemap.
+   - Select **Contacts**.
   
      ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
 
    - Select **+ New**.
    - Provide First Name as **John**, Last Name as **Doe**.
-   - Select **Save and Close**
+   - Select **Save & Close**
 
      ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
 
    - You should now see the created contact on the **Active Contacts** view.
 
-     ![Created contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image43.png)
+     ![Created contact record - screenshot](../images/L02/contact-list.png)
 
 1. Create new Build Site record
 
-   - Select **Build Sites** from the sitemap.
-
+   - Select **Build Sites**.
    - Select **+ New**.
-
    - Provide the address as **One Microsoft Way Redmond WA 98052 USA**
-
-   - Select **Save and Close** and this will show the newly created record on the Active Build Sites View.
+   - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
 
      ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
 
 1. Create new Permit Type record
 
    - Select **Permit Types** from the sitemap.
-
    - Select **+ New**.
-
-   - Provide **Name** as **New Construction** and select **Save and Close**. This will create the record and you should be able to see it on the Active Permit Type View.
+   - Provide **Name** as **New Construction** and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
 
      ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
 
 1. Create new Permit record
 
-   - Select **Permits** from the sitemap.
-
+   - Select **Permits**.
    - Select **+ New**.
-
    - Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
-
-   - Select a future date for the **Start Date** and select **Save**.
+   - Select tomorrow's date for the **Start Date** and select **Save**.
 
      ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
 
 1. Create new Inspection record
 
-   - Go to the **Inspections** tab.
-
+   - Select the **Inspections** tab in the Perform form.
    - Select **+ New Inspection**.
 
      ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
 
-   - Provide **Name** as **Framing Inspection**, select **Initial Inspection** from the dropdown for **Inspection Type**, and select future date for **Scheduled Date**.
-
-   - Select **Save and Close.**
+   - Provide **Name** as **Framing Inspection**.
+   - Select **Initial Inspection** from the dropdown for **Inspection Type**.
+   - Select tomorrow's date for **Scheduled Date**.
+   - Select **Save & Close**.
 
      ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)
 
-   - The **Inspection** record should now show on the **Permit** sub-grid.
+   - The **Inspection** record should now show in the Inspections sub-grid.
 
      ![Inspect sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image49.png)
 
