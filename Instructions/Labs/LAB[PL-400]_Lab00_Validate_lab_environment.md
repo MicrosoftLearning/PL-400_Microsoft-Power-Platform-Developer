@@ -11,12 +11,16 @@ lab:
 
 ## Exercise 1 - Download lab files
 
-1. From the lab virtual machine, click Start and search for PowerShell then open PowerShell as Administrator.
+1. From the lab virtual machine, click **Start** and search for **PowerShell** then open **PowerShell as Administrator**.
+
+    ![Start Powershell as adminstraotr.](../images/L00/start-powershell.png)
+
+1. Select **Yes** if prompted.
 
 1. Run the following commands to download the latest version of the lab files to the virtual machine.
 
-> [!Note]
-> If any of the commands fail run them again until they are succesfull.
+> [!NOTE]
+> If any of the commands fail run them again until they are successful.
 
 1. Create folder for lab files.
 
@@ -28,14 +32,12 @@ lab:
 
    ```powershell
    ([System.Net.WebClient]::new()).DownloadFile('https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip', 'C:\LabFiles\master.zip')
-
    ```
 
 1. Expand ZIP file.
 
    ```powershell
    Expand-Archive -Path 'C:\LabFiles\master.zip' -DestinationPath 'C:\LabFiles'
-
    ```
 
 1. Move files to C:\Labfiles
@@ -44,8 +46,12 @@ lab:
    Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Instructions\*" -Destination "C:\LabFiles" -confirm: $false
    ```
 
-> [!NOTE]
->Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should  use this location.
+    ![Powershell commands.](../images/L00/powershell-commands.png)
+
+   > [!NOTE]
+   > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
+
+    ![Labfiles folders.](../images/L00/labfiles-folder.png)
 
 ## Exercise 2 – Power Platform trial
 
@@ -85,13 +91,13 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
-1. Select your user **MOD Administrator** to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator.png)
+1. Click on your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator.png)
 
 1. Check the box for **Power Apps per user plan**.
 
-1. Click **Save changes**.
+1. Select **Save changes**.
 
-1. Click on **X** in the top right of the pane to close the panel.
+1. Click on **X** in the top right of the user details panel to close the panel.
 
 ### Task 2.3 – Assign Power Apps licenses to other users
 
@@ -136,13 +142,13 @@ In this exercise, you will create a *Development* environment that you will do t
 
     ![New environment.](../images/L00/new-environment.png)
 
-1. On the **Add database** tab, click **Save**.
+1. On the **Add Dataverse** tab, select **Save**.
 
 1. Your **Development** environment should now show in the list of environments.
 
     ![Environment in the Power Platform admin center.](../images/L00/ppac-environments-dev.png)
 
-1. Your Development environment may take a few minutes to provision. Refresh the page if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
+1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
 
     ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
@@ -160,13 +166,14 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Leave all other selections as default and select **Next**.
 
-1. On the **Add database** tab, click **Save**.
+1. On the **Add Dataverse** tab, select **Save**.
 
 1. You should now see three environments; Contoso (default), Development, and Live.
 
     ![Environments.](../images/L00/environments-all.png)
 
-1. You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+   > [!IMPORTANT]
+   > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
 ## Exercise 4 - Azure subscription
 
@@ -176,13 +183,21 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
 
-1. Navigate to the Azure Pass redemption page <https://www.microsoftazurepass.com> and sign in with your Microsoft 365 credentials if prompted.
+1. Navigate to the Azure Pass redemption page <https://www.microsoftazurepass.com> and sign in with your Microsoft 365 credentials.
 
 1. Follow these instructions to redeem your Azure Pass.
 
     [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
 
-1. On the sign up page, enter address line 1, city, and postal code.
+1. On the Your profile page, change *Last name* from Administrator to **Developers**.
+
+1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
 > [!NOTE]
-> If you are prompted for a *Phone number* enter **0123456789** and click on **Submit**.
+> If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter **0123456789** and click on **Submit**.
+
+1. Wait for Azure subscription to be provisioned and select **Maybe later**.
+
+1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
+
+    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
