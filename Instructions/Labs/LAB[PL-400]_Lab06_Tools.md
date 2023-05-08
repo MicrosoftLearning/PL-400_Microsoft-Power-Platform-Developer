@@ -8,10 +8,21 @@ lab:
 
 ## Scenario
 
-- Install Power Platform CLI
-- Copy reference data by using Configuration Migration tool from Development to Live
-- Create a FetchXml query using XrmToolBox
-- Install Postman
+As we continue to build our solution, we will now install and configure tools used for extending the Power Platform with code.
+
+## High-level lab steps
+
+We will install and configure the following tools:
+
+- Power Platform CLI
+- Configuration Migration Tool
+- XrmToolBox
+- Postman
+
+## Things to consider before you begin
+
+- Which tools do you require?
+- Which IDE(s) do you require?
 
 ## Exercise 1: Power Platform CLI
 
@@ -20,99 +31,76 @@ lab:
 ### Task 1.1: Download and install Power Platform CLI
 
 1. Download [Power Platform CLI](https://aka.ms/PowerAppsCLI).
-
 1. Run the **powerapps-cli-1.0.msi** to start the installation.
-  
 1. Use the setup wizard to complete the setup and select **Finish**.
-
-1. Open the Command Prompt.
-
+1. Open a Command Prompt.
 1. Run the command **pac install latest**.
-
 1. Run the command **pac tool list**.
+
+   ![pac tools - screenshot](../images/L06/pac-tool-list.png)
 
 ## Exercise 2: Configuration Migration Tool
 
 **Objective:** In this exercise, you will copy reference data between environments.
 
-### Task 2.1: Export data
+### Task 2.1: Export data from Development
 
-1. Open the Command Prompt.
-
+1. Open a Command Prompt.
 1. Run the command **pac tool cmt**.
+
+   ![Configuration Migration Tool - screenshot](../images/L06/pac-tool-cmt.png)
 
 1. Select **Create schema** and select **Continue**.
-
 1. Select **Office 365** for Deployment Type.
-
 1. Check **Display list of available organizations**.
-
 1. Check **Show Advanced**.
-
 1. Enter you tenant credentials.
 
-1. Click **Login**.
+   ![Tools login - screenshot](../images/L06/pac-tools-login.png)
 
-1. Select your **Development** environment and click **Login**.
+1. Select **Login**.
 
+   ![Tools environments - screenshot](../images/L06/pac-tools-environments.png)
+
+1. Select your **Development** environment and select **Login**.
 1. Select the **Permit Management** solution.
-
-1. Select **Build Site** table.
-
+1. Select the **Build Site** table under Select Entity .
 1. Select **Build Site, City, Country/Region, State/Province, Street Address, ZIP/Postal Code** columns.
+1. Select **Add Fields**.
 
-1. Click **Add Fields**.
+   ![Configuration Migration Tool table and columns- screenshot](../images/L06/pac-tool-cmt-build-site.png)
 
-1. Select **Permit Type** table.
-
-1. Select **Permit Type, Require Inspections, Require Size** columns.
-
-1. Click **Add Fields**.
-
-1. Click **Save and Export**.
-
-1. Enter **permit.xml** and click **Save**.
-
+1. Select the **Permit Type** table under Select Entity.
+1. Select **Name, Permit Type, Require Inspections, Require Size** columns.
+1. Select **Add Fields**.
+1. Select **Save and Export**.
+1. Enter `permit.xml` and select **Save**.
 1. Select **Yes** to export the data.
+1. Select the **ellipses (...)** next to **Save to data file**.
+1. Enter `permitdata.zip`.
+1. Select **Save**.
 
-1. Click the ellipses (...) next to **Save to data file**.
+   ![Configuration Migration Tool export - screenshot](../images/L06/pac-tool-cmt-export.png)
 
-1. Enter **permitdata.zip**.
+1. Select **Export Data**.
+1. Select **Exit**.
 
-1. Click **Save**.
-
-1. Click **Export Data**.
-
-1. Click **Exit**.
-
-### Task 2.2: Import data
+### Task 2.2: Import data to Production
 
 1. Open the Command Prompt.
-
 1. Run the command **pac tool cmt**.
-
-1. Select **Import data** and select **Continue**.
-
+1. Select **Import data**
+1. Select **Continue**.
 1. Select **Office 365** for Deployment Type.
-
 1. Check **Display list of available organizations**.
-
 1. Check **Show Advanced**.
-
 1. Enter you tenant credentials.
-
-1. Click **Login**.
-
-1. Select your **Live** environment and click **Login**.
-
-1. Click the ellipses (...) next to **Zip File**.
-
+1. Select **Login**.
+1. Select your **Production** environment and click **Login**.
+1. Select the ellipses (...) next to **Zip File**.
 1. Select the **permitdata.zip** file you created in the previous task and click **Open**.
-
-1. Click **Import Data**.
-
-1. Click **Exit**.
-
+1. Select **Import data**
+1. Select **Exit**.
 1. Close the Configuration Migration Tool window.
 
 ## Exercise 3: Community tools
@@ -123,76 +111,84 @@ lab:
 
 1. Navigate to [XrmToolBox](https://www.xrmtoolbox.com).
 
-1. Download **XrmToolBox** and extract the files.
+   ![XrmToolBox website - screenshot](../images/L06/xrmtoolbox-website.png)
 
-1. Run **XrmToolBox.exe**
+1. Download **XrmToolBox** latest version and extract the files to a folder.
+1. Run **XrmToolBox.exe** from the folder.
+
+   ![XrmToolBox app - screenshot](../images/L06/xrmtoolbox-app.png)
 
 1. Select **Open Tool Library**.
+1. Search for `fetchxml` and select **FetchXML Builder by Jonas Rapp**.
 
-1. Search for **fetchxml**, select **FetchXMLBuilder** and select **Install**.
+   ![XrmToolBox Tool Library - screenshot](../images/L06/xrmtoolbox-tool-library.png)
+
+1. Select **Install**.
+1. Select **Yes**.
+1. Select **Close**.
+1. Close the *Tool Library* tab.
 
 ### Task 3.2: FetchXML query
 
-1. Select the **Tools** tab.
-
-1. Search for **fetchxml** and select **FetchXMLBuilder**.
-
+1. Select the **Tools** tab in XRMToolBox.
+1. Search for `fetchxml` and select **FetchXML Builder**.
 1. Select **Yes** to connect to an organization.
-
 1. Select **New connection**.
-
 1. Select **Microsoft Login Control**.
-
 1. Click **Open Microsoft Login Control**.
-
 1. Select **Office 365** for Deployment Type.
-
 1. Check **Display list of available organizations**.
-
 1. Check **Show Advanced**.
-
 1. Enter you tenant credentials.
-
 1. Click **Login**.
-
 1. Select your **Development** environment and click **Login**.
+1. Enter **Dev** for Name and click **Finish**.
+1. Click **Continue**.
 
-1. Enter **Dev** and click **Finish**.
+   ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
 
 1. Click on the **(entity)** node.
-
 1. Select **contoso_inspection** in the Entity name drop down.
-
 1. Click on **filter**.
-
 1. Select **statuscode** in the Attribute drop down.
-
 1. Select **Equal** in the Operator drop down.
-
 1. Select **New Request** in the Value drop down.
-
 1. Click on **+condition**.
-
 1. Select **statuscode** in the Attribute drop down.
-
 1. Select **Equal** in the Operator drop down.
-
 1. Select **Pending** in the Value drop down.
-
 1. Click on the **filter** node.
-
 1. Select **or** in the Filter type drop down.
 
-1. Click **Execute (F5)**.
+   ![FetchXML Builder query - screenshot](../images/L06/fetchxml-query-builder.png)
+
+1. Select **View** and then select **FetchXML**. The FetchXML should look like the following query.
+
+   ```xml
+   <fetch top="50">
+     <entity name="contoso_inspection">
+       <filter type="or">
+         <condition attribute="statuscode" operator="eq" value="1" />
+         <condition attribute="statuscode" operator="eq" value="330650001" />
+       </filter>
+     </entity>
+   </fetch>
+   ```
+
+1. Select **Execute (F5)**. You should see a list of inspection records.
+
+1. Select **Convert** and then select **Power Automate Parameters**. The filter should look like the following
+
+   ```odata
+   (statuscode eq 1 or statuscode eq 330650001)
 
 ## Exercise 4: Postman
 
-**Objective:** In this exercise, you will install Postman.
+**Objective:** In this exercise, you will install Postman and configure connection to Dataverse.
 
-### Task 4.1: Register Azure AD Application
+### Task 4.1: Install and configure Postman
 
-1. Download [Postman](https://www.postman.com/downloads)
-
+1. Download Windows 64-bit [Postman](https://www.postman.com/downloads)
 1. Run the Postman installer.
-
 1. Click **Skip and go to the app**.
+1. Follow the steps in [Set up a Postman environment](https://learn.microsoft.com/power-apps/developer/data-platform/webapi/setup-postman-environment) to configure Postman to connect to your Development environment.
