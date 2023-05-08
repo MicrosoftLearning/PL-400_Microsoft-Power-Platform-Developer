@@ -44,11 +44,11 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L03\Starte
 
 Completed solution files for this lab can be found in the  C:\Labfiles\L03\Completed folder.
 
-## Exercise 1: Create Canvas App
+## Exercise 1: Canvas app
 
 **Objective:** In this exercise, you will create a canvas app that lists pending inspections for the inspector.
 
-### Task 1.1: Create Canvas App
+### Task 1.1: Create Canvas app
 
 1. Open the Permit Management solution.
 
@@ -57,7 +57,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
-1. Create new canvas application
+1. Create new canvas application.
 
    - Select **+ New** and then select **App** and then select **Canvas app**.
    - Enter `Inspector` for App name.
@@ -72,7 +72,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 1. Rename Screen1.
 
    - Go to the **Tree View** and double click on **Screen1**.
-   - Rename it **Main Screen**.
+   - Rename the screen to `Main Screen`.
 
      ![Rename screen - screenshot](../images/L03/Mod_03_Canvas_App_image7.png)
 
@@ -101,9 +101,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      ![Select header - screenshot](../images/L03/custom-header-control.png)
 
    - Select **Tree view**.
-   - Rename **ContosoHeader_1** to **Main Header**.
+   - Rename **ContosoHeader_1** to `Main Header`.
 
-1. Change the Main Header properties
+1. Change the Main Header properties.
 
    - Select **Main Header**.
    - Change the **Text** property of the **Main Header** to `"My Pending Inspections"`. This can be done by selecting *Text* property in the dropdown below top menu. Make sure that you have selected the Main Header control while doing this step.
@@ -118,7 +118,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
     ![Change width value - screenshot](../images/L03/Mod_03_Canvas_App_image13.png)
 
-### Task 1.2: Add Data sources
+### Task 1.2: Add data sources
 
 1. Add Permit and Inspection Dataverse tables as data sources.
 
@@ -137,9 +137,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Data sources in your app - screenshot](../images/L03/Mod_03_Canvas_App_image17.png)
 
-### Task 1.3: Add Inspection Gallery
+### Task 1.3: Add Inspections gallery
 
-1. Add Gallery
+1. Add Gallery.
 
    - Select the **+ Insert** tab and then select **Vertical gallery**. The gallery will be added to the Main Screen.
 
@@ -151,9 +151,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - Select the **Tree view** tab.
 
-   - Rename **Gallery_1** to **Inspection List** by double clicking on the control in the Tree view tab
+   - Rename **Gallery_1** to `Inspection List` by double clicking on the control in the Tree view tab.
 
-1. Select the inspector view
+1. Select the inspector view.
 
    - Make sure you have the **Inspection List** control selected.
 
@@ -161,7 +161,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Select view - screenshot](../images/L03/Mod_03_Canvas_App_image20.png)
 
-1. Change the **Inspection List** control layout
+1. Change the **Inspection List** control layout.
 
    - Go to the **Properties** pane and select the **Layout** dropdown.
 
@@ -191,7 +191,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
     DateValue(Text(ThisItem.'Scheduled Date'),"en")
     ```
 
-1. Resize the Gallery
+1. Resize the Gallery.
 
    - Select the **Inspection List** gallery.
 
@@ -223,16 +223,16 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 ### Task 1.4: Add Inspection Details screen
 
-1. Add new screen
+1. Add new screen.
 
    - Select the **Tree view** tab.
    - Click **+ New screen** and select **Blank**.
 
      ![Add blank screen - screenshot](../images/L03/new-screen.png)
 
-   - Rename the new screen **Details Screen** by double clicking on the control in Tree View.
+   - Rename the new screen `Details Screen` by double clicking on the control in Tree View.
 
-1. Add Header to the Details Screen and edit
+1. Add Header to the Details Screen and edit.
 
    - Go to the **Main Screen** and copy the **Main Header**.
 
@@ -242,7 +242,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Paste component - screenshot](../images/L03/Mod_03_Canvas_App_image28.png)
 
-   - Rename the Header to **Details Header** by double clicking on the control in the Tree view tab.
+   - Rename the Header to `Details Header` by double clicking on the control in the Tree view tab.
 
    - Select the **Text** property of the **Details Header** and set it to formula below.
 
@@ -252,7 +252,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Change text value - screenshot](../images/L03/Mod_03_Canvas_App_image30.png)
 
-1. Add a form to the Details screen.
+1. Add a form to the details screen.
 
    - Select the **Details Screen** in the Tree view.
 
@@ -261,7 +261,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      ![Edit form - screenshot](../images/L03/Mod_03_Canvas_App_image31.png)
 
    - Select the **Tree view** tab.
-   - Rename the form **InspectionForm** by double clicking on the control in Tree View.
+   - Rename the form `InspectionForm` by double clicking on the control in Tree View.
    - Select the **InspectionForm**.
 
    - Select the X property from the dropdown and set it to formula below.
@@ -290,7 +290,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Form - screenshot](../images/L03/Mod_03_Canvas_App_image32.png)
 
-1. Set the form's data source
+1. Set the form's data source.
 
    - Select the **InspectionForm** and select the DataSource as **Inspections** table.
 
@@ -304,7 +304,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Set form item value - screenshot](../images/L03/Mod_03_Canvas_App_image34.png)
 
-1. Edit form fields.
+1. Select form fields.
 
    - Select the **InspectionForm**.
    - Go to the **Properties** pane and select the **Edit fields** button.
@@ -345,7 +345,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Edit formula - screenshot](../images/L03/Mod_03_Canvas_App_image41.png)
 
-1. Make the Name and Scheduled Date columns read-only
+1. Make the Name and Scheduled Date columns read-only.
 
    - Select the **InspectionForm** in the Tree view.
    - Go to the **Properties** pane and select **Edit fields**.
@@ -415,15 +415,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      ![Add button - screenshot](../images/L03/add-button.png)
 
    - Select the **Tree view** tab.
-   - Rename the button **Submit Button**.
-   - Change the Text value of the button to `"Submit"`.
+   - Rename the button `Submit Button`.
+   - Change the **Text** value of the button to `"Submit"`.
    - Place the button below the form via drag and drop.
 
      ![Form layout - screenshot](../images/L03/Mod_03_Canvas_App_image52.png)
 
 1. Submit the inspection result.
 
-   - Select the **Submit Button.**
+   - Select the **Submit Button** in the Tree view.
 
    - Set the **OnSelect** value of the submit button to the formula below. Remove the false expression and update it. This formula will submit the form and then navigate back to the MainScreen.
 
@@ -445,9 +445,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 ### Task 1.6: Test Application
 
-1. Start the application
+1. Start the application.
 
-   - Select the **Main Screen** and select **Preview the App**.
+   - Select the **Main Screen** and select **Preview the app**.
 
      ![Preview application - screenshot](../images/L03/Mod_03_Canvas_App_image54.png)
 
@@ -467,7 +467,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - Select **Close**.
 
-1. Save and publish the application
+1. Save and publish the application.
 
    - Click the **Save** icon.
    - Click the **Publish** icon.
@@ -477,7 +477,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Click the **<- Back** icon.
    - Select **Leave**.
 
-1. Confirm the inspection record was updated
+1. Confirm the inspection record was updated.
 
    - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
@@ -489,9 +489,13 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Open record - screenshot](../images/L03/Mod_03_Canvas_App_image61.png)
 
-   - The **Status Reason** of the inspection should be **Passed,** and the comment should be updated to the comment you provided.
+   - The **Status Reason** of the inspection should be **Passed** and the comment should be updated to the comment you provided.
 
      ![Updated record - screenshot](../images/L03/Mod_03_Canvas_App_image62.png)
+
+   - Change the **Status Reason** back to **Pending**.
+
+   - Select **Save & Close**.
 
    - Close the **Permit Management** application.
 
@@ -528,7 +532,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - To resolve the issues, follow these steps:
 
-     - Select **OBjects** in the Permit Management solution.
+     - Select **Objects** in the Permit Management solution.
      - Select **Apps**.
      - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
      - Select the **App checker** icon on the toolbar
@@ -573,7 +577,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 ### Task 2.2: Export solution
 
-1. Export managed solution
+1. Export managed solution.
 
    - Select the **Overview** tab in the solution.
    - Select **Export**.
@@ -596,7 +600,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - Click **Download** to download the managed solution on your machine.
 
-1. Export unmanaged solution
+1. Export unmanaged solution.
 
    - Select **Export** again.
    - Select **Next**.
@@ -615,7 +619,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Production** environment.
 
-1. Import solution
+1. Import solution.
 
    - Select **Solutions**.
    - Select **Import solution**.
