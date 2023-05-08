@@ -14,7 +14,7 @@ As we continue to build our solution, we will now customize the canvas app to us
 
 We will follow the below basic steps to optimize the canvas app:
 
-- Add variables to store the user's Office 365 profile
+- Add variables to store the user's Office 365 profile.
 - Use Patch to set the status reason of an inspection to failed.
 
 ## Things to consider before you begin
@@ -38,7 +38,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Open the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -80,14 +80,14 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
     ![OnStart formula - screenshot](../images/L04/run-onstart.png)
 
-1. Add Text label
+1. Add Text label.
 
    - Select the **+ Insert** tab.
    - Select **Text label**.
    - Drag the label to the top right of the screen.
    - Select the **Tree view** tab.
    - Rename **Label1** to `CountryLabel` by double clicking on the control in the Tree view tab.
-   - Change the **Color** property of the **Main Header** to `Color.White`.
+   - Change the **Color** property of the **CountryLabel** to `Color.White`.
    - Change the **Text** property of the **CountryLabel** to the formula below.
 
      ```powerappsfl
@@ -108,7 +108,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Open the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -151,7 +151,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
    - Select the **Main Screen** and select **Preview the app**.
    - The application should load and show at least one inspection. Select the inspection.
-   - Click the **Failed** button.
+   - Select the **Failed** button.
    - The inspection should be updated, and the application should navigate back to the Main Screen. The inspection you set to failed will not be listed in the gallery.
    - Select **Close**.
 
@@ -173,9 +173,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
      ![Updated record - screenshot](../images/L04/failed-inspection.png)
 
    - Change the **Status Reason** back to **Pending**.
-
    - Select **Save & Close**.
-
    - Close the **Permit Management** application.
 
 ### Task 2.3: Create test data
