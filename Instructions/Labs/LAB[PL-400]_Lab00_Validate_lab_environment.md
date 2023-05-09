@@ -21,14 +21,14 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. From the lab virtual machine, click **Start** and search for **PowerShell** then open **PowerShell as Administrator**.
 
-    ![Start Powershell as administrator.](../images/L00/start-powershell.png)
+   ![Start Powershell as administrator.](../images/L00/start-powershell.png)
 
 1. Select **Yes** if prompted.
 
 1. Run the following commands to download the latest version of the lab files to the virtual machine.
 
-> [!NOTE]
-> If any of the commands fail run them again until they are successful.
+   > [!NOTE]
+   > If any of the commands fail run them again until they are successful.
 
 1. Create folder for lab files.
 
@@ -140,7 +140,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Click **+ New**.
 
-    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
+   ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
 1. In the **Name** text box, enter **[my initials] Development**. (Example: PL Development).
 
@@ -148,7 +148,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Leave all other selections as default and select **Next**.
 
-    ![New environment.](../images/L00/new-environment.png)
+   ![New environment.](../images/L00/new-environment.png)
 
 1. On the **Add Dataverse** tab, select **Save**.
 
@@ -158,11 +158,11 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
 
-    ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
+   ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
 1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
 
-### Task 3.2 – Create live environment
+### Task 3.2 – Create production environment
 
 1. Navigate to environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
 
@@ -178,7 +178,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. You should now see three environments; Contoso (default), Development, and Live.
 
-    ![Environments.](../images/L00/environments-all.png)
+   ![Environments.](../images/L00/environments-all.png)
 
    > [!IMPORTANT]
    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
@@ -195,17 +195,17 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. Follow these instructions to redeem your Azure Pass.
 
-    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
+   [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
 
 1. On the Your profile page, change *Last name* from Administrator to **Developers**.
 
 1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
-> [!NOTE]
-> If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter **0123456789** and click on **Submit**.
+   > [!NOTE]
+   > If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter **0123456789** and click on **Submit**.
 
 1. Wait for Azure subscription to be provisioned and select **Maybe later**.
 
 1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
 
-    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
+   ![Azure Pass subscription.](../images/L00/azure-subscription.png)

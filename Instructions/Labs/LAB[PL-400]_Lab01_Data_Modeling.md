@@ -304,7 +304,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
      ![Add new option-set item - screenshot](../images/L01/Mod_01_Data_Modeling_image17.png)
 
-   - Enter **Final Inspection** for **Label**.
+   - Enter `Final Inspection` for **Label**.
 
      ![Option-set options - screenshot](../images/L01/Mod_01_Data_Modeling_image18.png)
 
@@ -325,7 +325,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 1. Add Comments column
 
    - Select **+ New column**.
-   - Enter **Comments** for **Display name**.
+   - Enter `Comments` for **Display name**.
    - For **Data type**, select **Text** and then select **Plain Text** under **Multiple Lines of Text**.
    - Select **Save**.
 

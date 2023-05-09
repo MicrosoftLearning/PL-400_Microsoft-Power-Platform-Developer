@@ -181,7 +181,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Build site form - screenshot](../images/L02/Mod_02_Model_Driven_App_image18.png)
 
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Close the form editor tab.
 1. Select **Done**.
 
@@ -195,7 +195,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Active build sites view - screenshot ](../images/L02/Mod_02_Model_Driven_App_image19.png)
 
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Close the view editor tab.
 1. Select **Done**.
 
@@ -218,7 +218,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![inspection form - screenshot](../images/L02/Mod_02_Model_Driven_App_image21.png)
 
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Close the form editor tab.
 1. Select **Done**.
 
@@ -232,7 +232,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Active inspections view - screenshot](../images/L02/Mod_02_Model_Driven_App_image22.png)
 
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Close the view editor tab.
 1. Select **Done**.
 
@@ -275,8 +275,8 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
-1. Select **OK**.
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **OK**.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Select the **<- Back** button.
 
 ### Task 1.5: Edit Permit Type form and view
@@ -309,7 +309,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Active permit types view - screenshot](../images/L02/Mod_02_Model_Driven_App_image31.png)
 
-1. Select **Save and publish** and wait for the publishing to complete.
+   - Select **Save and publish** and wait for the publishing to complete.
 1. Close the view editor tab.
 1. Select **Done**.
 
@@ -395,13 +395,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Select **Save**.
 
-1. Select **Publish** to publish the sitemap and wait for the publishing to complete.
-
-1. Select **Save and Close** to close the sitemap editor.
-
-1. Click **Save** to save the application.
-
-1. Select **Publish** to publish the application and wait for the publishing to complete.
+1. Select **Publish**.
 
 1. Select the **<- Back** button to go back to the solution.
 
@@ -422,7 +416,9 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
      ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
 
    - Select **+ New**.
+
    - Provide First Name as **John**, Last Name as **Doe**.
+
    - Select **Save & Close**
 
      ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
@@ -434,16 +430,21 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Create new Build Site record
 
    - Select **Build Sites**.
+
    - Select **+ New**.
+
    - Provide the address as **One Microsoft Way Redmond WA 98052 USA**
+
    - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
 
      ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
 
 1. Create new Permit Type record
 
-   - Select **Permit Types** from the sitemap.
+   - Select **Permit Types**.
+
    - Select **+ New**.
+
    - Provide **Name** as **New Construction** and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
 
      ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
@@ -451,22 +452,29 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Create new Permit record
 
    - Select **Permits**.
+
    - Select **+ New**.
+
    - Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
+
    - Select tomorrow's date for the **Start Date** and select **Save**.
 
      ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
 
 1. Create new Inspection record
 
-   - Select the **Inspections** tab in the Perform form.
+   - Select the **Inspections** tab in the Permit form.
+
    - Select **+ New Inspection**.
 
      ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
 
    - Provide **Name** as **Framing Inspection**.
+
    - Select **Initial Inspection** from the dropdown for **Inspection Type**.
+
    - Select tomorrow's date for **Scheduled Date**.
+
    - Select **Save & Close**.
 
      ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)

@@ -326,19 +326,19 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 1. Add stages.
 
    - Click on the first stage.
-   - Enter `New Site' for Display Name.
+   - Enter `New Site` for Display Name.
    - Select **Apply**.
    - Select the **Components** tab.
    - Drag the **Stage** component and drop it onto the **+** icon to the right of the first stage.
    - Click on the second stage.
-   - Enter `Initial Permit' for Display Name.
+   - Enter `Initial Permit` for Display Name.
    - Select **Permit** for Entity.
    - Select **Apply**.
    - Select the **+ Add** button in the command bar.
    - Select **Add Stage**.
    - Click the **+** icon to the right of the second stage.
    - Click on the third stage.
-   - Enter `Initial Inspection' for Display Name.
+   - Enter `Initial Inspection` for Display Name.
    - Select **Inspection** for Entity.
    - Select **Apply**.
 
