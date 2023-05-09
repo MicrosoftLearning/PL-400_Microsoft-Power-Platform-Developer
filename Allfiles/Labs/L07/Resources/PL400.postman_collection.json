@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "88a6105e-41c5-49e0-aa47-4726ede8c0e4",
+		"name": "PL400",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WhoAmI",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "{{clientid}}",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{authurl}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{callback}}",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "implicit",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{webapiurl}}WhoAmI",
+					"host": [
+						"{{webapiurl}}WhoAmI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Build Sites",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientid}}",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{authurl}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{callback}}",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "implicit",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "OData-Version",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "OData-MaxVersion",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "null",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{webapiurl}}contoso_buildsites?$select=contoso_street1,contoso_city",
+					"host": [
+						"{{webapiurl}}contoso_buildsites"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "contoso_street1,contoso_city"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Inspections",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientid}}",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{authurl}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{callback}}",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "implicit",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "OData-Version",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "OData-MaxVersion",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "null",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{webapiurl}}contoso_inspections?$select=contoso_Permit, contoso_name",
+					"host": [
+						"{{webapiurl}}contoso_inspections"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "contoso_Permit, contoso_name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Permit",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientid}}",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{authurl}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{callback}}",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "implicit",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "OData-Version",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "OData-MaxVersion",
+						"value": "4.0",
+						"type": "default"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "null",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"contoso_name\":\"Web API Permit\",\r\n  \"contoso_newsize\":1000,\r\n  \"contoso_startdate\":\"2023-12-12\"\r\n}"
+				},
+				"url": {
+					"raw": "{{webapiurl}}contoso_permits",
+					"host": [
+						"{{webapiurl}}contoso_permits"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

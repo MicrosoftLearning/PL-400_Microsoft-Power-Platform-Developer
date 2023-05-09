@@ -18,6 +18,7 @@ We will install and configure the following tools:
 - Configuration Migration Tool
 - XrmToolBox
 - Postman
+- DotNet Framework
 
 ## Things to consider before you begin
 
@@ -34,8 +35,17 @@ We will install and configure the following tools:
 1. Run the **powerapps-cli-1.0.msi** to start the installation.
 1. Use the setup wizard to complete the setup and select **Finish**.
 1. Open a Command Prompt.
-1. Run the command **pac install latest**.
-1. Run the command **pac tool list**.
+1. Verify Power Apps CLI is installed.
+
+   ```dos
+   pac install latest
+   ```
+
+1. List the Power Apps CLI tools.
+
+   ```dos
+   pac tool list
+   ```
 
    ![pac tools - screenshot](../images/L06/pac-tool-list.png)
 
@@ -54,7 +64,7 @@ We will install and configure the following tools:
 1. Select **Office 365** for Deployment Type.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
-1. Enter you tenant credentials.
+1. Enter your tenant credentials.
 
    ![Tools login - screenshot](../images/L06/pac-tools-login.png)
 
@@ -66,13 +76,13 @@ We will install and configure the following tools:
 1. Select the **Permit Management** solution.
 1. Select the **Build Site** table under Select Entity .
 1. Select **Build Site, City, Country/Region, State/Province, Street Address, ZIP/Postal Code** columns.
-1. Select **Add Fields**.
+1. Select **Add Fields >**.
 
    ![Configuration Migration Tool table and columns- screenshot](../images/L06/pac-tool-cmt-build-site.png)
 
 1. Select the **Permit Type** table under Select Entity.
 1. Select **Name, Permit Type, Require Inspections, Require Size** columns.
-1. Select **Add Fields**.
+1. Select **Add Fields >**.
 1. Select **Save and Export**.
 1. Enter `permit.xml` and select **Save**.
 1. Select **Yes** to export the data.
@@ -94,7 +104,7 @@ We will install and configure the following tools:
 1. Select **Office 365** for Deployment Type.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
-1. Enter you tenant credentials.
+1. Enter your tenant credentials.
 1. Select **Login**.
 1. Select your **Production** environment and click **Login**.
 1. Select the ellipses (...) next to **Zip File**.
@@ -126,6 +136,10 @@ We will install and configure the following tools:
 1. Select **Install**.
 1. Select **Yes**.
 1. Select **Close**.
+1. Search for `early` and select **Early Bound Generator by Daryl LaBar**.
+1. Select **Install**.
+1. Select **Yes**.
+1. Select **Close**.
 1. Close the *Tool Library* tab.
 
 ### Task 3.2: FetchXML query
@@ -139,11 +153,11 @@ We will install and configure the following tools:
 1. Select **Office 365** for Deployment Type.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
-1. Enter you tenant credentials.
+1. Enter your tenant credentials.
 1. Click **Login**.
-1. Select your **Development** environment and click **Login**.
-1. Enter **Dev** for Name and click **Finish**.
-1. Click **Continue**.
+1. Select your **Development** environment and select **Login**.
+1. Enter **Dev** for Name and select **Finish**.
+1. Select **Continue**.
 
    ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
 
@@ -181,14 +195,61 @@ We will install and configure the following tools:
 
    ```odata
    (statuscode eq 1 or statuscode eq 330650001)
+   ```
 
 ## Exercise 4: Postman
 
 **Objective:** In this exercise, you will install Postman and configure connection to Dataverse.
 
-### Task 4.1: Install and configure Postman
+### Task 4.1: Find the Web API endpoint
+
+1. Find the Web API endpoint
+
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+
+     ![Power Apps Studio Settings - screenshot](../images/L06/maker-portal-settings.png)
+
+   - Select **Settings** and then select **Developer Resources**
+
+     ![Power Apps Studio Developer Resources - screenshot](../images/L06/developer-resources.png)
+
+   - Copy the base url of the Web API endpoint.
+
+### Task 4.2: Install and configure Postman
 
 1. Download Windows 64-bit [Postman](https://www.postman.com/downloads)
 1. Run the Postman installer.
 1. Click **Skip and go to the app**.
 1. Follow the steps in [Set up a Postman environment](https://learn.microsoft.com/power-apps/developer/data-platform/webapi/setup-postman-environment) to configure Postman to connect to your Development environment.
+
+## Exercise 5: .NET Framework
+
+**Objective:** In this exercise, you will install the supported .NET Framework.
+
+> [!NOTE]
+> The virtual machine used in the lab environment has Visual Studio 2019 Community Edition installed. The labs are have been verified against this version of Visual Studio. If you are using a different version or edition of Visual Studio, the steps may differ.
+
+### Task 5.1: Install .NET Framework
+
+1. Install .NET Framework 4.6.2 Developer Pack
+
+   - Navigate to [Download .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
+
+   - Select the **Developer Pack**.
+
+    ![Developer pack - screenshot](../images/L09/mod-02-pcf-1-03.png)
+
+   - Open the downloaded file.
+   - Follow the steps in setup wizard to complete installing the **Developer Pack.**
+
+### Task 5.2: Install .NET Framework in Visual Studio
+
+1. Add .NET Framework 4.6.2 to Visual Studio 2019.
+
+   - Start **Visual Studio Installer**.
+   - Select **Modify**.
+   - Under *Installation details* pane, check **.NET Framework 4.6.2 development tools**.
+   - Select **Modify**.
+   - Select **Yes**
+   - Close the **Visual Studio Installer** window.
