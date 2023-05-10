@@ -8,8 +8,6 @@ lab:
 
 ## Scenario
 
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course, you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
-
 In this lab, you will implement client-side logic that will use the web API to evaluate the permit type associated with the permit record and use the client scripting API to manipulate the form controls.
 
 You will also customize the command bar to introduce a new lock permit button that will invoke a custom API to perform the lock permit logic. The server-side logic for the lock permit custom API will be implemented later in the course. Right now, you will just add the button and the logic to invoke the custom API.
@@ -19,30 +17,23 @@ You will also customize the command bar to introduce a new lock permit button th
 As part of building the client-side logic, you will complete the following:
 
 - Setup a folder to contain your client script
-
 - Upload and register the client script on the form
-
 - Build logic to use the web API to retrieve the permit type record associated with the permit
-
 - Build logic based on the permit type settings to hide and show the inspections tab on the form
-
 - Build logic to set columns as required/not required based on the permit type settings
-
 - Modify the command bar
-
 - Build logic to invoke the lock permit custom API when the command bar button is selected
 
 ## Things to consider before you begin
 
 - Are there alternative designs that would be viable and not require code?
-
 - Remember to continue working in your DEVELOPMENT environment. We will move everything to production soon.
 
-## Exercise 1: Prepare and Load Resources
+## Exercise 1: Prepare and load resources
 
 **Objective:** In this exercise, you will create, organize, and load your JavaScript web resources.
 
-### Task 1.1: Use Visual Studio Code to Create Resources
+### Task 1.1: Use Visual Studio Code to create resources
 
 In this task, you will set up a folder to contain the JavaScript web resource files in this course.
 
@@ -52,15 +43,15 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
 
 1. Create resources
 
-	- Select Explorer from left menu or press Ctrl + Shift + E.
+    - Select Explorer from left menu or press Ctrl + Shift + E.
 
     ![Select Explorer - screenshot](../images/L08/mod-01-client-scripting-01.png)
 
-	- Select **Open Folder**.
+    - Select **Open Folder**.
+    - Create a new folder and name it **ContosoClientScripts**.
 
-	- Create a new folder and name it **ContosoClientScripts**.
-  
-  	**Note:** This is the name and structure used for this lab, the platform does not require a specific structure or content organization. Many projects check these assets into a source control system to keep track of all the changes over the life of the client script.
+    > [!NOTE]
+    > This is the name and structure used for this lab, the platform does not require a specific structure or content organization. Many projects check these assets into a source control system to keep track of all the changes over the life of the client script.
 
 	- Select the new folder you just created and select **Select Folder**.
 
