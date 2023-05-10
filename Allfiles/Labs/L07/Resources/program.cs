@@ -16,7 +16,7 @@ namespace Permit_console
             Console.Title = "PL400.Permit.Console";
             Console.WriteLine("Permit console : Start");
 
-            string connectionString = "AuthType=OAuth;Username=***REMOVED***;Password=***REMOVED***;Url=***REMOVED***;AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
+            string connectionString = "AuthType=OAuth;Username=;Password=;Url=;AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
 
             try
             {
