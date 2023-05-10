@@ -19,6 +19,7 @@ We will install and configure the following tools:
 - XrmToolBox
 - Postman
 - DotNet Framework
+- Visual Studio Code
 
 ## Things to consider before you begin
 
@@ -56,7 +57,7 @@ We will install and configure the following tools:
 ### Task 2.1: Export data from Development
 
 1. Open a Command Prompt.
-1. Open the Configuration Migration Tool with the following command.
+1. Launch the Configuration Migration Tool with the following command.
 
    ```dos
    pac tool cmt
@@ -257,3 +258,18 @@ We will install and configure the following tools:
    - Select **Modify**.
    - Select **Yes**
    - Close the **Visual Studio Installer** window.
+
+## Exercise 6: Visual Studio Code
+
+**Objective:** In this exercise, you will install the Visual Studio Code IDE.
+
+> [!NOTE]
+> If you already have Visual Studio Code installed, you can skip this exercise.
+
+### Task 6.1: Install Visual Studio Code
+
+1. Download [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win).
+
+1. Open the downloaded file.
+
+1. Follow the steps in setup wizard to complete installing **Visual Studio Code.**
