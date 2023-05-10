@@ -56,7 +56,11 @@ We will install and configure the following tools:
 ### Task 2.1: Export data from Development
 
 1. Open a Command Prompt.
-1. Run the command **pac tool cmt**.
+1. Open the Configuration Migration Tool with the following command.
+
+   ```dos
+   pac tool cmt
+   ```
 
    ![Configuration Migration Tool - screenshot](../images/L06/pac-tool-cmt.png)
 
@@ -98,7 +102,7 @@ We will install and configure the following tools:
 ### Task 2.2: Import data to Production
 
 1. Open the Command Prompt.
-1. Run the command **pac tool cmt**.
+1. Run the command `pac tool cmt`.
 1. Select **Import data**
 1. Select **Continue**.
 1. Select **Office 365** for Deployment Type.

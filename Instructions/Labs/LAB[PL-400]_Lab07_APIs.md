@@ -112,7 +112,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Console App (.NET Framework)**.
    - Select **Next**.
    - Enter `Permit console` for Project Name.
-   - Change the location to **C:\LabFiles\L07**
+   - Change the location to **C:\LabFiles\L07**.
    - Select **.NET Framework 4.7.2**.
 
      ![Visual Studio configure project - screenshot](../images/L07/visual-studio-configure-project.png)
