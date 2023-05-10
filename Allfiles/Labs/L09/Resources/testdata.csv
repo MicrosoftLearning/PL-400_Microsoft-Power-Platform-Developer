@@ -1,0 +1,5 @@
+contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
+123,Electrical:Rough Inspection:Passed,8/1/2023,Passed
+124,Electrical:Rough Inspection:Passed,8/5/2023,Passed
+125,Plumbing:Rough Inspection:Failed,8/8/2023,Failed
+126,Plumbing:Rough Inspection:Passed,8/10/2023,Passed

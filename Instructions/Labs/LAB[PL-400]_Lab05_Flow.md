@@ -133,7 +133,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Inspections**.
    - Select **Edit columns**.
-   - Select **Add columns**.
+   - Select **+ Add columns**.
    - Select **Status Reason**.
    - Select **Close**.
    - Select **Apply**.

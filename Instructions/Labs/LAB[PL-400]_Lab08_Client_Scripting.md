@@ -49,7 +49,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L08\Resources 
 
 In this task, you will set up a folder to contain the JavaScript web resource files in this course.
 
-1. Create a folder named named **ContosoClientScripts** for the JavaScript code
+1. Create a folder named named **ContosoClientScripts** for the JavaScript code.
 
    - Open a Command Prompt.
    - Run the following commands.
