@@ -29,6 +29,18 @@ As part of building the client-side logic, you will complete the following:
 - Are there alternative designs that would be viable and not require code?
 - Remember to continue working in your DEVELOPMENT environment. We will move everything to production soon.
 
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L08\Starter folder.
+
+## Completed solution
+
+Completed solution files for this lab can be found in the  C:\Labfiles\L08\Completed folder.
+
+## Resources
+
+Complete code files for this lab can be found in the  C:\Labfiles\L08\Resources folder.
+
 ## Exercise 1: Prepare and load resources
 
 **Objective:** In this exercise, you will create, organize, and load your JavaScript web resources.
@@ -37,576 +49,618 @@ As part of building the client-side logic, you will complete the following:
 
 In this task, you will set up a folder to contain the JavaScript web resource files in this course.
 
-1. If you do not already have Visual Studio Code, download it from here [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win) and install it.
+1. Create a folder named named **ContosoClientScripts** for the JavaScript code
 
-1. Start **Visual Studio Code**.
+   - Open a Command Prompt.
+   - Run the following commands.
 
-1. Create resources
+   ```dos
+   cd C:\LabFiles\L08
+   mkdir ContosoClientScripts
+   cd ContosoClientScripts
+   ```
 
-    - Select Explorer from left menu or press Ctrl + Shift + E.
+    ![ContosoClientScripts folder - screenshot](../images/L08/scripts-folder.png)
 
-    ![Select Explorer - screenshot](../images/L08/mod-01-client-scripting-01.png)
+1. Launch **Visual Studio Code**.
 
-    - Select **Open Folder**.
-    - Create a new folder and name it **ContosoClientScripts**.
+   - Run the following command.
 
-    > [!NOTE]
-    > This is the name and structure used for this lab, the platform does not require a specific structure or content organization. Many projects check these assets into a source control system to keep track of all the changes over the life of the client script.
+   ```dos
+   code .
+   ```
 
-	- Select the new folder you just created and select **Select Folder**.
+   ![ContosoClientScripts folder in Visual Studio Code - screenshot](../images/L08/scripts-folder-in-vscode.png)
 
-    ![Select folder - screenshot](../images/L08/mod-01-client-scripting-02.png)
+1. Create folder for form scripts.
 
-1. Create **Form Scripts** folder
-
-	- Hover over the folder and select **New Folder**.
+   - Hover over the folder and select **New Folder**.
 
     ![New folder - screenshot](../images/L08/mod-01-client-scripting-03.png)
 
-	- Name the new folder as **FormScripts** and **Enter**.
+   - Name the new folder as `FormScripts` and **Enter**.
 
     ![Form scripts folder - screenshot](../images/L08/mod-01-client-scripting-04.png)
 
-1. Create the **Permit Form Functions** file
+1. Create the file for the JavaScript form script.
 
-	- Right click on the **FormScripts** folder and select **New File**.
+   - Right click on the **FormScripts** folder and select **New File**.
 
-    ![New file - screenshot](../images/L08/mod-01-client-scripting-05.png)
+     ![New file - screenshot](../images/L08/mod-01-client-scripting-05.png)
 
-	- Name the new file as **PermitFormFuntions.js** and **Enter**.
+   - Name the new file as `PermitFormFunctions.js` and **Enter**.
 
-    ![permit form functions JavaScript file - screenshot](../images/L08/mod-01-client-scripting-06.png)
+     ![permit form functions JavaScript file - screenshot](../images/L08/mod-01-client-scripting-06.png)
 
-	- Add the below mentioned namespaces to the newly created **PermitFormFunctions** file.
+   - Add the below namespaces to the newly created **PermitFormFunctions** file.
 
-            if (typeof (ContosoPermit) == "undefined")
-            {var ContosoPermit = {__namespace: true};}
-            if (typeof (ContosoPermit.Scripts) == "undefined")
-            {ContosoPermit.Scripts = {__namespace: true};}
+     ```javascript
+     if (typeof (ContosoPermit) == "undefined")
+     {var ContosoPermit = {__namespace: true};}
+     if (typeof (ContosoPermit.Scripts) == "undefined")
+     {ContosoPermit.Scripts = {__namespace: true};}
+     ```
+
+     > [!IMPORTANT]
+     > When copying and pasting code into Visual Studio Code, Intellisense may add or replace code. You should open Notepad and paste into Notepad first, and then copy and paste into Visual Studio Code.
 
      ![Namespaces - screenshot](../images/L08/mod-01-client-scripting-07.png)
 
-    - Add the function mentioned below after adding the namespaces.
+   - Add the function below after adding the namespaces.
 
-            ContosoPermit.Scripts.PermitForm = {
-            __namespace: true
-            }
+     ```javascript
+     ContosoPermit.Scripts.PermitForm = {
 
-    ![Add function - screenshot](../images/L08/mod-01-client-scripting-08.png)  
+        __namespace: true
+     }
+     ```
+
+     ![Add function - screenshot](../images/L08/mod-01-client-scripting-08.png)  
 
 ### Task 1.2: Add Event Handlers
 
 In this task, you will create functions for the logic that you will be implementing. This will allow you to register the event handlers in the next tasks for calling these functions and performing few basic tests in the upcoming tasks.
 
-1. Add a function to OnLoad event
+1. Add a function for the OnLoad event.
 
-	- Add the function mentioned below to the **PermitFormFuntions** file inside the function created in Step 1(d).
+   - Add the function below to the **PermitFormFunctions.js** file at the top of the *ContosoPermit.Scripts.PermitForm* function created in the previous task.
 
-            handleOnLoad: function (executionContext) {
-        console.log('on load - permit form');
-    },
+      ```javascript
+      handleOnLoad: function (executionContext) {
+         console.log('on load - permit form');
+      },
+      ```
 
-    ![handle on load event - screenshot](../images/L08/mod-01-client-scripting-09.png)
+     ![handle on load event - screenshot](../images/L08/mod-01-client-scripting-09.png)
 
-1. Add a function to OnChange permit type event
+1. Add a function for the OnChange permit type event.
 
-	- Add the function mentioned below to the **PermitFormFuntions** file inside the function created in Step 1(d). Once this is done, select **File** and **Save All**.
+   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* function.
 
-            handleOnChangePermitType: function (executionContext) {
-        console.log('on change - permit type');
-    },
+      ```javascript
+      handleOnChangePermitType: function (executionContext) {
+          console.log('on change - permit type');
+      },
+      ```
 
-    ![Handle on change permit type - screenshot](../images/L08/mod-01-client-scripting-10.png)
+     ![Handle on change permit type - screenshot](../images/L08/mod-01-client-scripting-10.png)
+
+1. Select **File** and **Save All**.
 
 ### Task 1.3: Load Web Resources
 
-In this task, you will upload the JavaScript files as web resources.You will also edit the Permit table main form and associate the new web resource with its form. Finally, you will register your functions to be called on specific form events.
+In this task, you will upload the JavaScript file as a web resource.You will also edit the Permit table main form and associate the new web resource with its form. Finally, you will register your functions to be called on specific form events.
 
-1. Open the Permit Management solution
+1. Open the Permit Management solution.
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/).
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select your **Dev** environment.
+1. Create web resource.
 
-	- Select **Solutions**.
+   - Select **+ New**.
 
-	- Open the **Permit Management** solution.
-
-1. Add web resource to the solution
-
-	- Select **+ New**.
-
-	- Select **More | Web Resources**.
+   - Select **More** and then select **Web Resource**.
 
     ![Add web resource - screenshot](../images/L08/mod-01-client-scripting-12.png)
 
-	- Enter **Permit Form Scripts** for **Display name**.
+   - Enter `Permit Form Scripts` for **Display name**.
 
-	- Enter **PermitFormScripts.js** for **Name**.
+   - Enter `PermitFormScripts.js` for **Name**.
 
-	- Select **JavaScript (JS)** for **Type**.
+   - Select **JavaScript (JS)** for **Type**.
 
-	- Select **Upload file**.
+   - Select **Choose file**.
 
-    ![New web resource form - screenshot](../images/L08/mod-01-client-scripting-13.png)
+     ![New web resource form - screenshot](../images/L08/new-web-resource.png)
 
-	- Select the **PermitFormFunctions.js** file and select **Open**.
+   - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
 
-    ![Select file - screenshot](../images/L08/mod-01-client-scripting-14.png)
+   - Select the **PermitFormFunctions.js** file and select **Open**.
 
-	- Select **Save** and wait until the changes are saved.
+     ![Select file - screenshot](../images/L08/mod-01-client-scripting-14.png)
 
-	- Select **Publish all customizations** and wait for the publishing to complete.
+   - Select **Save**.
 
-1. Open the Permit main form.
+1. Add the JavaScript library to the Permit main form.
 
-	- Make sure you are still in the solution.
+   - In the Objects tab of the solution, expand **Tables**.
 
-	- Open the **Permit** table.
+   - Expand the **Permit** table.
 
-	- Select the **Forms** tab and open the **Main** form.
+   - Select **Forms**.
 
-1. Add the script to the permit form
+   - Select the **Main** form.
 
-	- Go to the **Properties** pane and select the **Events** tab.
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
 
-    ![Form properties - screenshot](../images/L08/mod-01-client-scripting-16.png)
+   - Go to the **Properties** pane and select the **Events** tab.
 
-	- Select **+ Add library**.
+     ![Form properties - screenshot](../images/L08/mod-01-client-scripting-16.png)
 
-	- Search for **contoso**, select **Permit Form Scripts** and select **Add**.
+   - Select **+ Add library**.
 
-    ![Add script file - screenshot](../images/L08/mod-01-client-scripting-18.png)
+   - Search for `contoso`, select **Permit Form Scripts** and select **Add**.
+
+     ![Add script file - screenshot](../images/L08/mod-01-client-scripting-18.png)
 
 1. Add OnLoad event handler.
 
-	- Expand the **OnLoad** section and select **+ Event Handler**.
+   - Expand the **OnLoad** section and select **+ Event Handler**.
 
-    ![Add event - screenshot](../images/L08/mod-01-client-scripting-19.png)
+     ![Add event - screenshot](../images/L08/mod-01-client-scripting-19.png)
 
-	- Select **Contoso_PermitFormScripts.js** in the dropdown for **Library**.
+   - Select **Contoso_PermitFormScripts.js** in the dropdown for **Library**.
 
-	- Enter **ContosoPermit.Scripts.PermitForm.handleOnLoad** in the textbox for **Function**.
+   - Enter `ContosoPermit.Scripts.PermitForm.handleOnLoad` in the textbox for **Function**.
 
-	- Check the **Pass execution context as first parameter** checkbox.
+   - Check the **Pass execution context as first parameter** checkbox.
 
-	- Select **Done**.
+   - Select **Done**.
 
-    ![Event details - screenshot](../images/L08/mod-01-client-scripting-20.png)
+     ![Event details - screenshot](../images/L08/mod-01-client-scripting-20.png)
 
 1. Add Permit Type OnChange event handler.
 
-	- Select **Permit Type** field on the form.
+   - Select **Permit Type** field on the form.
 
-    ![Permit type field - screenshot](../images/L08/mod-01-client-scripting-15.png)
+     ![Permit type field - screenshot](../images/L08/mod-01-client-scripting-15.png)
 
-	- Go to the **Properties** pane and select the **Events** tab.
+   - Go to the **Properties** pane and select the **Events** tab.
   
-	- Expend the On Change section and select **+ Event Handler**
+   - In the On Change section, select **+ Event Handler**
 
     ![Add event - screenshot](../images/L08/mod-01-client-scripting-21.png)
 
-	- Select **Contoso_****PermitFormScripts****.js** for **Library**.
+   - Select **Contoso_PermitFormScripts.js** in the dropdown for **Library**.
 
-	- Enter **ContosoPermit.Scripts.PermitForm.handleOnChangePermitType** in the textbox for **Function**.
+   - Enter `ContosoPermit.Scripts.PermitForm.handleOnChangePermitType` in the textbox for **Function**.
 
-	- Check the **Pass execution context as first parameter** checkbox.
+   - Check the **Pass execution context as first parameter** checkbox.
 
-	- Select **Done**.
+   - Select **Done**.
 
-    ![Event details - screenshot](../images/L08/mod-01-client-scripting-22.png)
+     ![Event details - screenshot](../images/L08/mod-01-client-scripting-22.png)
 
-1. Save and publish your changes
+1. Save and publish your changes.
 
-	- Select **Save** and wait for changes to be saved.
-
-	- Select **Publish** and wait for the publishing to complete.
-
-	- Go back to the Permit table by selecting on the **<- Back** button.
-
-     ![Back to table - screenshot](../images/L08/mod-01-client-scripting-24.png)
-
-	- Go back to the main maker portal by selecting the **<-** back button again.
-  
-	- Select **Publish all customizations** and wait for the publishing to complete.
-
-**DO NOT** navigate away from this page
+   - Select **Save and publish**.
+   - Close the form editor tab.
+   - Select **Done**.
 
 ### Task 1.4: Test Event Handlers
 
 In this task, you will test the event handlers.
 
-1. Start the Permit Management application
+1. Start the Permit Management app.
 
-	- Select **Apps**.
+   - In the Objects tab of the solution, select the **Apps** node.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
-	- Launch the **Permit Management** application.
-
-    ![Start application - screenshot](../images/L08/mod-01-client-scripting-27.png)
+     ![Start application - screenshot](../images/L08/mod-01-client-scripting-27.png)
 
 1. Open a Permit record
 
-	- Select **Permits** from the Site Map.
+   - Select **Permits**.
 
-	- Select to open a permit record.
+   - Select to edit a permit record.
 
-    ![Open record - screenshot](../images/L08/mod-01-client-scripting-28.png)
+     ![Open record - screenshot](../images/L08/mod-01-client-scripting-28.png)
 
-1. Open Edge Dev Tools
+1. Open browser Dev Tools.
 
-	- Press **F12** or right click and select **Inspect**.
+   - Press **F12** or right click and select **Inspect**.
 
-	- Select the **Console** from top menu and clear console.
+   - Select the **Console** tab in the top menu and select the **Clear console** icon.
 
-    ![Clear console - screenshot](../images/L08/mod-01-client-scripting-29.png)
+     ![Clear console - screenshot](../images/L08/mod-01-client-scripting-29.png)
 
-1. Refresh and confirm the OnLoad event handler function runs
+1. Confirm the OnLoad event handler function runs.
 
-	- Go to the **Permit** record and select **Refresh**.
+   - In the **Permit** record form, select the **Refresh** cion.
 
-	- Go to the **Dev Tools** and you should now be able to see the **on load – permit form** message.
+   - In the **Dev Tools** pane you should see the **on load – permit form** message.
 
-    ![On load event message - screenshot](../images/L08/mod-01-client-scripting-31.png)
+     ![On load event message - screenshot](../images/L08/mod-01-client-scripting-31.png)
 
-1. Remove Permit Type and confirm the OnChange Permit Type event handler function runs
+1. Confirm the OnChange Permit Type event handler function runs.
 
-	- Go to the **Permit** record and remove the **Permit Type**.
+   - In the **Permit** record form, clear the **Permit Type** field.
 
-    ![Remove permit type - screenshot](../images/L08/mod-01-client-scripting-32.png)
+     ![Remove permit type - screenshot](../images/L08/mod-01-client-scripting-32.png)
 
-	- Go to the **Dev Tools** and you should now be able to see the **on change – permit type** message.
+   - In the **Dev Tools** pane you should see the **on change – permit type** message.
 
-    ![On change permit message - screenshot](../images/L08/mod-01-client-scripting-33.png)
+     ![On change permit message - screenshot](../images/L08/mod-01-client-scripting-33.png)
 
-	- Close the **Dev Tools**.
+   - Close the **Dev Tools** pane.
 
-## Exercise 2: Show and Hide Tabs
+   - In the **Permit** record form, select **Save & Close**.
 
-**Objective:** In this exercise, you will create a script that will show and hide the inspections tab based on the permit type table’s “required inspections” column value.
+## Exercise 2: Show and hide tabs
 
-### Task 2.1: Create Function
+**Objective:** In this exercise, you will create a script that will show and hide the Inspections tab based on the value of the permit type table's *Required inspections* column.
 
-1. Create a function that will run when the Permit form loads and when the Permit Type value changes
+### Task 2.1: Create Function for Permit Type changes
 
-	- Go back to **Visual Studio Code**.
+1. Create a function that will run when the Permit form loads and when the Permit Type value changes.
 
-	- Add the function mentioned below to **PermitFormFuntions** inside the PermitForm function.
+   - Open **Visual Studio Code**.
 
-            _handlePermitTypeSettings: function (executionContext) {
+   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* function.
 
-            },
+      ```javascript
+      _handlePermitTypeSettings: function (executionContext) {
 
-    ![handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-34.png)
+
+      },
+      ```
+
+     ![handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-34.png)
 
 1. Get form context from the execution context
 
-	- Add the script mentioned below inside _**handlePermitTypeSettings** function.
+   - Add the script below inside the **_handlePermitTypeSettings** function.
 
-            var formContext = executionContext.getFormContext(); 
+      ```javascript
+      var formContext = executionContext.getFormContext(); 
+      ```
 
-1. Get the Permit Type value from the form.
+1. Get the Permit Type value.
 
-	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. contoso_permittype is the logical name of the Permit Type column. You can verify this in the table metadata.
+   - Add the script below inside the **_handlePermitTypeSettings** function.
 
-            var permitType = formContext.getAttribute("contoso_permittype").getValue();
+      ```javascript
+      var permitType = formContext.getAttribute("contoso_permittype").getValue();
+      ```
 
-1. Check if the Permit Type has value.
+     > [!NOTE]
+     > contoso_permittype is the logical name of the Permit Type column. You can verify this in the Power Apps maker portal.
 
-	- Add the script mentioned below inside the _**handlePermitTypeSettings** function.
+1. Check if the Permit Type has a value.
 
-            if (permitType == null) {
+   - Add the script below inside the **_handlePermitTypeSettings** function.
 
-            } else {
+      ```javascript
+      if (permitType == null) {
+
+      } else {
             
-            }
+      }
+      ```
 
-    ![Handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-35.png)
+     ![Handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-35.png)
 
-1. Hide the Inspections tab and return if Permit type is null.
+1. Hide the Inspections tab if the Permit type is null.
 
-	- Add the script mentioned below inside the _**handlePermitTypeSettings** function. inspectionsTab is the name of the Inspections tab (This is configured while creating the Model Driven App in a previous lab in this course).
+   - Add the script below inside the if statement in the **_handlePermitTypeSettings** function.
 
-            formContext.ui.tabs.get("inspectionsTab").setVisible(false);
-            return;
+      ```javascript
+      formContext.ui.tabs.get("inspectionsTab").setVisible(false);
+      return;
+      ```
+
+     > [!NOTE]
+     > inspectionsTab is the name of the Inspections tab configured while creating the model-driven app in an earlier lab.
 
     ![Handle permit type settings function progress - screenshot](../images/L08/mod-01-client-scripting-36.png)
 
-### Task 2.2: Get Inspection Type Record
+### Task 2.2: Get Inspection type record
 
-In this task, you will use the web API to retrieve the permit type lookup record associated with the current permit record that is currently displayed in the form.
+In this task, you will use the Web API to retrieve the permit type lookup record associated with the current permit record that is currently displayed in the form.
 
 1. Get the Permit Type ID
 
-	- Add the script mentioned below in the else statement of the _**handlePermitTypeSettings** function.
+   - Add the script below inside the else statement in the **_handlePermitTypeSettings** function.
 
-            var permitTypeID = permitType[0].id;
+      ```javascript
+      var permitTypeID = permitType[0].id;
+      ```
 
 1. Retrieve the Permit Type record and show alert if there are errors
 
-	- Add the script mentioned below in the else statement of the _**handlePermitTypeSettings** function. contoso_pertmittype is the logical name of the Permit Type table.
+   - Add the script below in the else statement of the **_handlePermitTypeSettings** function.
 
-            Xrm.WebApi.retrieveRecord("contoso_permittype", permitTypeID).then(function (result) {
-            },
+      ```javascript
+      Xrm.WebApi.retrieveRecord("contoso_permittype", permitTypeID).then(function (result) {
 
-            function (error) { alert('Error:' + error.message) });
+      },
 
-    ![Handle permit type settings function progress - screenshot](../images/L08/mod-01-client-scripting-37.png)
+          function (error) { alert('Error:' + error.message) });
+      ```
 
-1. Check if “**Require Inspections**” column value is true
+     > [!NOTE]
+     > contoso_permittype is the logical name of the Permit Type table. You can verify this in the Power Apps maker portal.
 
-	- Add the script mentioned below in the **retrieveRecord** function call. contoso_requireinspections is the logical name of the Require Inspections column of the Permit Type table.
+     ![Handle permit type settings function progress - screenshot](../images/L08/mod-01-client-scripting-37.png)
 
-            if (result.contoso_requireinspections) {
+1. Check if **Require Inspections** column value is true.
 
-            } else {
+    - Add the script below inside the **retrieveRecord** function call.
 
-            }
+      ```javascript
+      if (result.contoso_requireinspections) {
+
+      } else {
+
+      }
+      ```
+
+     > [!NOTE]
+     > contoso_requireinspections is the logical name of the Require Inspections column of the Permit Type table.
 
 1. Make the Inspections tab visible if Require Inspections is true
 
-	- Add the script mentioned below in the if statement of the **retrieveRecord** call.
+   - Add the script below in the if statement in the **retrieveRecord** call.
 
-            formContext.ui.tabs.get("inspectionsTab").setVisible(true);
+      ```javascript
+      formContext.ui.tabs.get("inspectionsTab").setVisible(true);
+      ```
 
 1. Hide the Inspections tab if Require Inspections is not true
 
-	- Add the script mentioned below in the else statement of the **retrieveRecord** call.
+   - Add the script below in the else statement in the **retrieveRecord** call.
 
-            formContext.ui.tabs.get("inspectionsTab").setVisible(false);
+      ```javascript
+      formContext.ui.tabs.get("inspectionsTab").setVisible(false);
+      ```
 
-    ![Handle permit type settings function progress - screenshot](../images/L08/mod-01-client-scripting-38.png)
+      ![Handle permit type settings function progress - screenshot](../images/L08/mod-01-client-scripting-38.png)
 
 1. Call the _handlePermitTypeSettings function from the handleOnLoad function.
 
-	- Go to the **handleOnLoad** function and add the script mentioned below.
+   - In the **handleOnLoad** function and add the script below.
 
-            ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+      ```javascript
+      ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+      ```
 
 1. Call the _handlePermitTypeSettings function from the handleOnChangePermitType function.
 
-	- Go to the **handleOnChangePertmitType** function and add the script mentioned below.
+   - In the **handleOnChangePermitType** function and add the script below.
 
-            ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+      ```javascript
+      ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+      ```
 
-    ![handle on load and handle in change functions - screenshot](../images/L08/mod-01-client-scripting-39.png)
+     ![handle on load and handle in change functions - screenshot](../images/L08/mod-01-client-scripting-39.png)
 
-    - Select **File** and **Save All**.
+   - Select **File** and **Save All**.
 
 ### Task 2.3: Load Updated Script
 
 1. Open the Permit Form Script web resource.
 
-	- Navigate to [Power Apps maker portal](https://make.powerapps.com/).
-
-	- Select your **Dev** environment.
-
-	- Select **Solutions**.
-
-	- Open the **Permit Management** solution.
-
-	- Select **Web resources** and open the **Permit Form Script** web resource.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select **Web resources**.
+   - Edit the **Permit Form Script** web resource.
 
     ![Open web resource - screenshot](../images/L08/mod-01-client-scripting-41.png)
 
-1. Load the updated version of permitFormFuntion.jsPermitFormFuntion.js
+1. Load the updated version of PermitFormFunction.js.
 
-	- Select **Upload file**.
-
-    ![Choose file - screenshot](../images/L08/mod-01-client-scripting-42.png)
-
-	- Select **PermitFormFunctions.js** and select **Open**.
-
-1. Save and Publish your changes
-
-	- Select **Save** and wait until the changes are saved.
-
-	- Select **Publish** and wait for the publishing to complete.
+   - Select **Choose file**.
+   - Select the **PermitFormFunctions.js** file and select **Open**.
+   - Select **Save**. The Edit web resource pane will close.
+   - With the Perform Form Scripts web resources still selected, select **Publish** in the action bar.
   
-	- Select the **<-** back button to go back to the main maker portal.
-  
-	- Do not navigate away from this page.
-
 ### Task 2.4: Test Your Changes
 
-1. Start the Permit Management application
+1. Start the Permit Management app.
 
-	- Select **Apps**.
+   - In the Objects tab of the solution, select the **Apps** node.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
-	- Launch the **Permit Management** application.
+     ![Start application - screenshot](../images/L08/mod-01-client-scripting-27.png)
 
-1. Open Permit record.
+1. Open a Permit record.
 
-	- Select Permits from the Site Map.
+   - Select **Permits**.
 
-	- Select to open a **Permit** record.
+   - Select to edit a permit record.
 
-1. Check if the **Permit Type** column is empty and if it is, the **Inspections** tab is hidden. In this case, the Permit Type is null.
+     ![Open record - screenshot](../images/L08/mod-01-client-scripting-28.png)
 
-    ![Pert type column null - screenshot](../images/L08/mod-01-client-scripting-46.png)
+1. Check that when the **Permit Type** column is empty, the **Inspections** tab is hidden.
+
+     ![Pert type column null - screenshot](../images/L08/mod-01-client-scripting-46.png)
+
+   > [!NOTE]
+   > If the Inspection tab is not hidden, refresh your browser.
 
 1. Select Permit Type.
 
-	- Select the **Permit Type** lookup.
+   - Select the **Permit Type** lookup.
 
-	- Select **New Construction**.
+   - Select **New Construction**.
 
-	- Check if the **Inspections** tab is still hidden. If so, in this case, the Require Inspections column value is false/No
+   - Check that the **Inspections** tab is still hidden. This is because the value of the *Require Inspections* column on the Permit Type table is No.
 
     ![Pert type new construction with no inspection requirement - screenshot](../images/L08/mod-01-client-scripting-47.png)
 
 1. Set **Require Inspections** column value of the **Permit Type** to **Yes**.
 
-	- Open the selected **Permit Type**.
+   - Open the **New Construction** record by clicking in the Permit Type lookup field.
 
-    ![Open permit type - screenshot](../images/L08/mod-01-client-scripting-48.png)
+      ![Open permit type - screenshot](../images/L08/mod-01-client-scripting-48.png)
 
-	- Set the **Require Inspections** to **Yes**.
+   - Set **Require Inspections** to **Yes**.
 
-    ![Change inspection requirement - screenshot](../images/L08/mod-01-client-scripting-49.png)
+     ![Change inspection requirement - screenshot](../images/L08/mod-01-client-scripting-49.png)
 
-	- Select **Save**.
-
-	- Select the **<-** back button.
+   - Select **Save & Close**.
 
 1. You should now be able to see the Inspections tab.
 
-	- Select the **Inspections** tab.
+     ![Select inspection tab - screenshot](../images/L08/mod-01-client-scripting-50.png)
 
-    ![Select inspection tab - screenshot](../images/L08/mod-01-client-scripting-50.png)
+   - Select the **Inspections** tab.
 
-	- The user should now be able to view/add inspections to the sub-grid.
+   - You should now be able to the view inspections in the sub-grid.
 
-    ![Inspections sub-grid - screenshot](../images/L08/mod-01-client-scripting-51.png)
+     ![Inspections sub-grid - screenshot](../images/L08/mod-01-client-scripting-51.png)
 
 ## Exercise 3: Toggle required property on the columns
 
-**Objective:** In this exercise, you will create a script that will make the “New Size” column required when the “Require Size” column value is set to Yes. If the “Require Size” column value is set to No, remove the requirement. You will also hide the “New Size” column. This logic will be driven by a column on the permit type record that was retrieved using web API in the previous exercise.
+**Objective:** In this exercise, you will create a script that will make the *New Size* column business required when the *Require Size* column value is set to Yes. If the *Require Size* column value is set to No, remove the requirement. You will also hide the *New Size* column. This logic will be driven by a column on the permit type record that was retrieved using the Web API in the previous exercise.
 
-### Task 3.1: Create Function
+### Task 3.1: Add script to control fields
 
-1. Locate the _handlePermitTypeSettings function
+1. When Permit Type is not selected, remove the column's requirement and hide the New Size column.
 
-	- Go back to **Visual Studio Code**.
+   - Open **Visual Studio Code**.
 
-	- Locate the _**handlePermitTypeSettings** function.
+   - Add the script below inside the **if permitType == null** statement.
 
-1. If permitType is null, remove the requirement and hide the “New Size” column.
+      ```javascript
+      formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
+      formContext.ui.controls.get("contoso_newsize").setVisible(false);
+      ```
 
-	- Add the script below in the **if** **permitType == null** statement. contoso_newsize is the logical name of the New Size column.
+     > [!NOTE]
+     > contoso_newsize is the logical name of the New Size column.
 
-            formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
+     ![Remove requirement script - screenshot](../images/L08/mod-01-client-scripting-52.png)
 
-            formContext.ui.controls.get("contoso_newsize").setVisible(false);
+1. When Permit Type is selected, check if the value of the *Require Size* column value of the Permit Type is set to Yes.
 
-    ![Remove requirement script - screenshot](../images/L08/mod-01-client-scripting-52.png)
+   - Add the script below inside the **retrieveRecord** function.
 
-1. Check if “Require Size” column value of the Permit Type is set to Yes
+      ```javascript
+      if (result.contoso_requiresize) {
 
-	- Add the script mentioned below inside the retrieveRecord function.
+      } else {
 
-            if (result.contoso_requiresize) {
+      }
+      ```
 
-            } else {
+     ![Check requirement script - screenshot](../images/L08/mod-01-client-scripting-53.png)
 
-            }
+1. If the value of the *Require Size* column of the Permit Type is set to Yes, make the *New Size* column visible and required.
 
-    ![Check requirement script - screenshot](../images/L08/mod-01-client-scripting-53.png)
+   - Add the script below in the **if result.contoso_requiresize** statement.
 
-1. If “Require Size” column value of the Permit Type is set to Yes, make the “New Size” column visible and required.
+      ```javascript
+      formContext.ui.controls.get("contoso_newsize").setVisible(true);
+      formContext.getAttribute("contoso_newsize").setRequiredLevel("required");
+      ```
 
-	- Add the script mentioned below in the **if** **result.contoso_requiresize** statement. contoso_requiresize is the logical name of the Require Size column.
+     > [!NOTE]
+     >  contoso_requiresize is the logical name of the Require Size column.
 
-            formContext.ui.controls.get("contoso_newsize").setVisible(true);
+     ![Show column and make it required script - screenshot](../images/L08/mod-01-client-scripting-54.png)
 
-            formContext.getAttribute("contoso_newsize").setRequiredLevel("required");
+1. If the value of the *Require Size* column of the Permit Type is not set to Yes, make the *New Size* column not required and hide it.
 
-    ![Show column and make it required script - screenshot](../images/L08/mod-01-client-scripting-54.png)
+   - Add the script below inside the else statement.
 
-1. If Require Size column value of the Permit Type is not set to Yes, make the “New Size” column not required and hide it.
+      ```javascript
+      formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
+      formContext.ui.controls.get("contoso_newsize").setVisible(false);
+      ```
 
-	- Add the script mentioned below inside the else statement.
+     ![Remove requirement and hide column script - screenshot](../images/L08/mod-01-client-scripting-55.png)
 
-            formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
+1. The **_handlePermitTypeSettings** function should now look like the image below.
 
-            formContext.ui.controls.get("contoso_newsize").setVisible(false);
-
-    ![Remove requirement and hide column script - screenshot](../images/L08/mod-01-client-scripting-55.png)
-
-1. The _handlePermitTypeSettings function should now look like the image below.
-
-    ![Completed handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-56.png)
+     ![Completed handle permit type settings function - screenshot](../images/L08/mod-01-client-scripting-56.png)
 
 1. Select **File** and then **Save All**.
 
 ### Task 3.2: Load Updated Script
 
-1. Update the Permit Form Script web resource.
+1. Open the Permit Form Script web resource.
 
-	- Go to the maker portal and select **Solutions**.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select **Web resources**.
+   - Edit the **Permit Form Script** web resource.
 
-	- Open the **Permit Management** solution.
-  
-	- Select **Web resources** and open the **Permit Form Scripts** web resource.
+1. Load the updated version of PermitFormFunction.js.
 
-	- Select **Upload File**.
-
-	- Select the **PermitFormFunctions.js** you updated and then select **Open**.
-
-1. Save and Publish your changes
-
-	- Select **Save** and wait until the changes are saved.
-
-	- Select **Publish** and wait for the publishing to complete.
-
-	- Select the **<-** back button.
-  
-1. Do not navigate away from this page.
+   - Select **Choose file**.
+   - Select the **PermitFormFunctions.js** file and select **Open**.
+   - Select **Save**. The Edit web resource pane will close.
+   - With the Perform Form Scripts web resources still selected, select **Publish** in the action bar.
 
 ### Task 3.3: Test Your Changes
 
-1. Start the Permit Management application
+1. Start the Permit Management app.
 
-	- Select **Apps**.
+   - In the Objects tab of the solution, select the **Apps** node.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
-	- Launch the **Permit Management** application.
+1. Open a Permit record.
 
-1. Open Permit record.
+   - Select **Permits**.
 
-	- Select Permits.
+   - Select to edit a permit record.
 
-	- Select to open a **Permit** record.
+1. Check that the **New Size** column is hidden. This is because the value of the *Require Size* column on the Permit Type table is No.
 
-1. Check if the **New Size** column is hidden. If so, then it is because the “Require Size” column of the Permit Type is set to NO.
+     ![Hidden column - screenshot](../images/L08/mod-01-client-scripting-60.png)
 
-    ![Hidden column - screenshot](../images/L08/mod-01-client-scripting-60.png)
+   > [!NOTE]
+   > If the New Size column is not hidden, refresh your browser.
 
 1. Set **Require Size** column value of the **Permit Type** to **Yes**.
 
-	- Open the **Permit Type**.
+   - Open the **New Construction** record by clicking in the Permit Type lookup field.
 
-    ![Open permit type - screenshot](../images/L08/mod-01-client-scripting-61.png)
+     ![Open permit type - screenshot](../images/L08/mod-01-client-scripting-61.png)
 
-	- Set the **Require Size** to **Yes**.
+   - Set **Require Size** to **Yes**.
 
-    ![Change require size to yes - screenshot](../images/L08/mod-01-client-scripting-62.png)
+     ![Change require size to yes - screenshot](../images/L08/mod-01-client-scripting-62.png)
 
-	- Select **Save** on the bottom right of the screen.
+   - Select **Save & Close**.
 
-	- Select the **<-** back button.
+   - You should now be able to see the **New Size** column on the form and it is a required field.
 
-1. Check if the “New Size” column is visible and it is marked as required.
+     ![Required column- screenshot](../images/L08/mod-01-client-scripting-63.png)
 
-	- You should now be able to see **New Size”** column on the form and it is a required field.
+1. Change Permit Type.
 
-    ![Required column- screenshot](../images/L08/mod-01-client-scripting-63.png)
+   - In the **Permit** record form, clear the **Permit Type** field.
 
-	- Remove **Permit Type**.
+     ![Remove permit type - screenshot](../images/L08/mod-01-client-scripting-64.png)
 
-    ![Remove permit type - screenshot](../images/L08/mod-01-client-scripting-64.png)
+   - Both the **Inspections** tab and **New Size** column should be hidden. They should be removed as soon as the *Permit Type* is removed.
 
-	- Check if both the **Inspections** tab and **New Size** column are now hidden. They should be removed as soon as the “Permit Type” is removed.
+     ![Removed tab and size column - screenshot](../images/L08/mod-01-client-scripting-65.png)
 
-    ![Removed tab and size column - screenshot](../images/L08/mod-01-client-scripting-65.png)
+   - Select the **Permit Type** lookup and select **New Construction**.
+
+   - Enter `1000` for **New Size**.
+
+   - Select **Save & Close**.
 
 ## Exercise 4: Command Button Function
 
@@ -616,259 +670,308 @@ In this task, you will use the web API to retrieve the permit type lookup record
 
 In this task, you will create a custom API that will be called to lock the permit. You will not be implementing the business logic that will lock the permit in this lab. It will be completed later in the class when you build the plug-in that registers on the custom api you are defining here.
 
-1. Open the Permit Management Solution.
+1. Open the Permit Management solution.
 
-	- Navigate to [Power Apps makes portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select **Solutions** and open the **Permit Management** solution.
-  
-1. Create new custom API
+1. Create Custom API.
 
-	- Select **+ New** and then select **More > Other > Custom API**.
+   - Select **+ New** and then select **More** and then **Other** and then **Custom API**.
 
-    ![Create new process - screenshot](../images/L08/mod-01-client-scripting-76.png)
+     ![Create new process - screenshot](../images/L08/mod-01-client-scripting-76.png)
 
-	- Enter **contoso_LockPermit** for Unique name, enter **Lock Permit** for Name, **Lock Permit** for Display name, enter **Lock Permit** for Description, select **Entity** for Binding type, enter **contoso_permit** for Bound entity logical name, and select **Save and Close**.
+   - Enter the following:
+      - `contoso_LockPermit` for Unique name.
+      - `Lock Permit` for Name.
+      - `Lock Permit` for Display name.
+      - `Lock Permit` for Description.
+   - Select **Entity** for Binding type.
+   - Enter `contoso_permit` for Bound Entity Logical Name.
 
     ![New process form - screenshot](../images/L08/mod-01-client-scripting-77.png)
   
-    - Select **Done**
+   - Select **Save & Close**.
+   - Select **Done**.
   
-1. Create custom API Request Parameter
+1. Create custom API Request Parameter.
 
-	- Select **+ New** and then select **More | Other | Custom API Request Parameter**.
+   - Select **+ New** and then select **More** and **Other** and **Custom API Request Parameter**.
 
-    ![Add process argument - screenshot](../images/L08/mod-01-client-scripting-78.png)
+     ![Add process argument - screenshot](../images/L08/mod-01-client-scripting-78.png)
 
-	- Select **Lock Permit** for Custom API, enter **Reason** for Unique name, enter **Reason** for Name, enter **Reason** Display name, **Reason** for Description, select **String** for Type, and select **Save and Close**.
+   - Search for `lock` and select **Lock Permit** for Custom API.
+   - Enter the following:
+      - `Reason` for Unique name.
+      - `Reason` for Name.
+      - `Reason` Display name.
+      - `Reason` for Description.
+   - Select **String** for Type
 
-    ![Add string input argument - screenshot](../images/L08/mod-01-client-scripting-79.png)
+     ![Add string input argument - screenshot](../images/L08/mod-01-client-scripting-79.png)
 
-	- Select **Done**
+   - Select **Save & Close**.
+   - Select **Done**.
 
-1. Create Custom API Response Property
+1. Create Custom API Response Property.
 
-	- Select **+ New** and then select **More > Other > Custom API Response Property**.
+   - Select **+ New** and then select **More** and **Other** and **Custom API Response Property**.
 
-	- Select **Lock Permit** for Custom API, enter **CanceledInspectionsCount** for Unique name, enter **Canceled Inspections Count** for Name, enter **Canceled Inspections Count** Display name, **Canceled Inspections Count** for Description, select **Integer** for Type, and select **Save and Close**.
+   - Search for `lock` and select **Lock Permit** for Custom API.
+   - Enter the following:
+      - **CanceledInspectionsCount** for Unique name.
+      - **Canceled Inspections Count** for Name.
+      - **Canceled Inspections Count** for Display name.
+      - **Canceled Inspections Count** for Description.
+   - Select **Integer** for Type
+   - Select **Save and Close**.
 
-    ![Process arguments - screenshot](../images/L08/mod-01-client-scripting-80.png)
+     ![Process arguments - screenshot](../images/L08/mod-01-client-scripting-80.png)
 
-    - Select **Done**
+   - Select **Save and Close**.
+   - Select **Done**.
 
-1. Publish your changes
-
-	- Select **Publish all customizations** and wait for the publishing to complete.
-
-### Task 4.2: Create the Function
+### Task 4.2: Create the function for the Lock Permit button
 
 In this task, you will create the logic to invoke that will call the custom API.
 
-1. Start Visual Studio Code and open the resources you create in Exercise 1
+1. Start Visual Studio Code and open the resources you created earlier in the lab.
 
-	- Start **Visual Studio Code**.
+   - Open **Visual Studio Code**.
+   - Open the **ContosoClientScripts** folder.
 
-	- Select **File** and select **Open Folder**.
+     ![Select folder - screenshot](../images/L08/mod-01-client-scripting-84.png)
 
-	- Select the **ContosoClientScripts** folder you created in exercise one and select **Select Folder**.
+1. Add a function to build the Custom API request
 
-    ![Select folder - screenshot](../images/L08/mod-01-client-scripting-84.png)
+   - Open the **PermitFormFunctions.js** file.
 
-1. Add a function that will build the request
+     ![Permit dorm function file - screenshot](../images/L08/mod-01-client-scripting-85.png)
 
-	- Open the **PermitFormFunctions.js** file.
+   - Add the function below after the **_handlePermitTypeSettings** function.
 
-    ![Permit dorm function file - screenshot](../images/L08/mod-01-client-scripting-85.png)
+      ```javascript
+      _lockPermitRequest : function (permitID, reason) {
 
-	- Add the function below after the _handlePermitTypeSettings function.
+      },
+      ```
 
-            _lockPermitRequest : function (permitID, reason) {
-
-            },
-
-    ![Add lock permit request function - screenshot](../images/L08/mod-01-client-scripting-86.png)
+      ![Add lock permit request function - screenshot](../images/L08/mod-01-client-scripting-86.png)
 
 1. Build entity and set reason.
 
-	- Add the script mentioned below inside the **_lockPermitRequest** function.
+   - Add the script below inside the **_lockPermitRequest** function.
 
-            this.entity = { entityType: "contoso_permit", id: permitID };
+      ```javascript
+      this.entity = { entityType: "contoso_permit", id: permitID };
+      this.Reason = reason;
+      ```
 
-            this.Reason = reason;
+1. Build and return the request.
 
-1. Build and return the request
+   - Add the script below inside the **_lockPermitRequest** function.
 
-	- Add the script mentioned below in the **_lockPermitRequest** function.
+      ```javascript
+      this.getMetadata = function () {
+          return {
+              boundParameter: "entity", parameterTypes: {
+                  "entity": {
+                      typeName: "mscrm.contoso_permit",
+                      structuralProperty: 5
+                  },
+                  "Reason": {
+                      "typeName": "Edm.String",
+                      "structuralProperty": 1 // Primitive Type
+                  }
+              },
+              operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
+              operationName: "contoso_LockPermit",
+          };
+      };
+      ```
 
-            this.getMetadata = function () {
-                return {
-                    boundParameter: "entity", parameterTypes: {
-                        "entity": {
-                            typeName: "mscrm.contoso_permit",
-                            structuralProperty: 5
-                        },
-                        "Reason": {
-                            "typeName": "Edm.String",
-                            "structuralProperty": 1 // Primitive Type
-                        }
-                    },
-                    operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
-                    operationName: "contoso_LockPermit",
-                };
-            };
-
-    ![Add lock permit request function progress- screenshot](../images/L08/mod-01-client-scripting-87.png)
+     ![Add lock permit request function progress- screenshot](../images/L08/mod-01-client-scripting-87.png)
 
 1. Add the function that will be called from the action button.
 
-	- Add the function mentioned below after the **_lockPermitRequest** function.
+   - Add the function below after the **_lockPermitRequest** function.
 
-            lockPermit: function (primaryControl) {
+      ```javascript
+      lockPermit: function (primaryControl) {
 
-            },
+      },
+      ```
 
-    ![Lock permit function - screenshot](../images/L08/mod-01-client-scripting-88.png)
+     ![Lock permit function - screenshot](../images/L08/mod-01-client-scripting-88.png)
 
-1. Get Permit ID and call **_lockPermitRequest**
+1. Get Permit ID and call **_lockPermitRequest**.
 
-	- Get the id by adding the script mentioned below inside the **lockPermit** function.
+   - Get the id by adding the script below inside the **lockPermit** function.
 
-            formContext = primaryControl;
-            var PermitID = formContext.data.entity.getId().replace('{', '').replace('}', '');
+      ```javascript
+      formContext = primaryControl;
+      var PermitID = formContext.data.entity.getId().replace('{', '').replace('}', '');
+      ```
 
-	- Call **_lockPermitRequest**. We are hard-coding the reason “Admin Lock”
+   - Call **_lockPermitRequest**. Note: we are hard-coding the reason as `Admin Lock`.
 
-            var lockPermitRequest = new ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
+      ```javascript
+      var lockPermitRequest = new ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
+      ```
 
 1. Execute the request.
 
-	- Add the script mentioned below inside the lockPermit function.
+   - Add the script below inside the lockPermit function.
 
-            // Use the request object to execute the function
-                Xrm.WebApi.online.execute(lockPermitRequest).then(
-                    function (result) {
-                        if (result.ok) {
-                            console.log("Status: %s %s", result.status, result.statusText);
-                            // perform other operations as required;
-                            formContext.ui.setFormNotification("Status " + result.status, "INFORMATION");
-                        }
-                    },
-                    function (error) {
-                        console.log(error.message);
-                        // handle error conditions
-                    }
-                );
+      ```javascript
+      // Use the request object to execute the function
+      Xrm.WebApi.online.execute(lockPermitRequest).then(
+          function (result) {
+              if (result.ok) {
+                  console.log("Status: %s %s", result.status, result.statusText);
+                  // perform other operations as required;
+                  formContext.ui.setFormNotification("Status " + result.status, "INFORMATION");
+              }
+          },
+          function (error) {
+              console.log(error.message);
+              // handle error conditions
+          }
+      );
+      ```
 
-    ![Lock permit function screenshot](../images/L08/mod-01-client-scripting-89.png)
+     ![Lock permit function screenshot](../images/L08/mod-01-client-scripting-89.png)
 
-	- Select **File** and then **Save All**.
+   - Select **File** and then **Save All**.
 
-1. Load the update resource and publish.
+### Task 4.3: Load Updated Script
 
-	- Log on to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+1. Open the Permit Form Script web resource.
 
-	- Select **Solutions** and open the **Permit Management** solution.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select **Web resources**.
+   - Edit the **Permit Form Script** web resource.
 
-	- Select **Web resources** and open the **Permit Form Scripts** web resource.
+1. Load the updated version of PermitFormFunction.js.
 
-	- Select **Upload File**.
+   - Select **Choose file**.
+   - Select the **PermitFormFunctions.js** file and select **Open**.
+   - Select **Save**. The Edit web resource pane will close.
+   - With the Perform Form Scripts web resources still selected, select **Publish** in the action bar.
 
-	- Select the **PermitFormFunctions.js** you updated and select **Open**.
+### Task 4.4: Add Button to Command Bar
 
-	- Select **Save** and wait until the changes are saved.
+1. Open the Permit Management solution.
 
-	- Select **Publish** and wait for the publishing to complete.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-### Task 4.3: Add Button to Ribbon
+1. Edit the Permit Management app
 
-1. Open the Permit Management application for edit
+   - In the Objects tab of the solution, select the **Apps** node.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Edit** and select **Edit in new tab**.
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
-
-	- Select **Solutions** and select to open the **Permit Management** solution.
-
-	- Select **Apps** and select the **Permit Management** application.
-
-  ![Select application - screenshot](../images/L08/mod-01-client-scripting-92.png)
-
-	- Select the chevron button next to the **Edit** button and select **Edit in new tab**.
-
-  ![Edit application - screenshot](../images/L08/mod-01-client-scripting-93.png)
+     ![Select application - screenshot](../images/L08/edit-app.png)
 
 1. Edit the Permit table command bar.
 
-	- Select the **Pages** tab, Hover over **Permits view** and select the **...** button.
+   - Select the **Pages** tab, Hover over **Permit** and select the **...** button.
   
-   ![Select permit management solution - screenshot](../images/L08/mod-01-client-scripting-94.png)
+     ![Select permit table - screenshot](../images/L08/mod-01-client-scripting-94.png)
 
-	- Select **Edit command bar**.
+   - Select **Edit command bar**.
 
-   ![Adit command bar - screenshot](../images/L08/mod-01-client-scripting-95.png)
+     ![Edit command bar - screenshot](../images/L08/edit-app-command-bar.png)
 
-    - Select **Main form** and then select **Edit**.
+   - Select **Main form** and then select **Edit**.
+
+     ![Select main form command bar - screenshot](../images/L08/edit-app-command-bar-main-form.png)
 
 1. Add command to permit table
 
-	- Select **+ New command**.
+   - Select **+ New** and then select **Command**.
 
-    ![Add command - screenshot](../images/L08/mod-01-client-scripting-96.png)
+    ![Add command - screenshot](../images/L08/edit-app-add-command.png)
 
-	- Select **JavaScript** and then select **Continue**.
+   - Select **JavaScript** and then select **Continue**.
 
 1. Configure command bar button
 
-	- Enter **Lock Permit** for Label, Select **Use Icon**, select **Lock** for Icon, and enter **Lock Permit** for Tooltip title.
+   - Enter `Lock Permit` for Label.
 
-    ![Command properties- screenshot](../images/L08/mod-01-client-scripting-97.png)
+   - Select **Use Icon** for Icon and then Select the **Lock** icon.
 
-	- Select **+ Add library**
+   - Select **Run JavaScript** for Action.
 
-    ![Add library - screenshot](../images/L08/mod-01-client-scripting-98.png)
+   - Select **+ Add library**.
 
-	- Search for **contoso**, select **Permit Form Scripts**, and then select **Add**.
+     ![Add library - screenshot](../images/L08/mod-01-client-scripting-98.png)
 
-    ![Select library - screenshot](../images/L08/mod-01-client-scripting-99.png)
+   - Search for `contoso`, select **Permit Form Scripts** and select **Add**.
 
-	- Enter **ContosoPermit.Scripts.PermitForm.lockPermit** in the textbox for **Function Name**.
+     ![Select library - screenshot](../images/L08/mod-01-client-scripting-99.png)
 
-    ![Function name - screenshot](../images/L08/mod-01-client-scripting-100.png)
+   - Enter `ContosoPermit.Scripts.PermitForm.lockPermit` in the textbox for **Function Name**.
 
-1. Add parameter
+     ![Function name - screenshot](../images/L08/mod-01-client-scripting-100.png)
 
-	- Select **+ Add parameter** .
+   - Add parameter.
 
-    ![Add parameter - screenshot](../images/L08/mod-01-client-scripting-101.png)
+     ![Add parameter - screenshot](../images/L08/mod-01-client-scripting-101.png)
 
-	- Select **PrimaryControl** for Parameter 1.
+   - Select **PrimaryControl** for Parameter 1.
 
-    ![Select primary control as parameter - screenshot](../images/L08/mod-01-client-scripting-102.png)
+     ![Select primary control as parameter - screenshot](../images/L08/mod-01-client-scripting-102.png)
 
-1. Publish your changes.
+   - Enter `Lock Permit` for Tooltip title.
 
-    - Select **Save and Publish**.
+     ![Command properties- screenshot](../images/L08/mod-01-client-scripting-97.png)
 
-### Task 4.4: Test Command Button
+   - The Lock Permit command should look like the following.
 
-1. Start the Permit Management application.
+     ![Command properties- screenshot](../images/L08/lock-permit-command.png)
 
-	- Log on to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have your **Dev** environment selected.
+   - Select **Save and Publish**.
 
-	- Select **Apps** and launch the **Permit Management** application.
+   - Close the app designer.
 
-2. Open a permit record
+   - Select **Done**.
 
-	- Select **Permits**.
+   - In the **Objects** pane, select **All**.
 
-	- Select to open a permit.
+   - Select **Publish All Customizations**.
 
-	- You should be able to see the button you just added.
+### Task 4.5: Test Command Button
 
-    ![Lock permit button - screenshot](../images/L08/mod-01-client-scripting-107.png)
+1. Start the Permit Management app.
 
-3. Test the Command
+   - In the Objects tab of the solution, select the **Apps** node.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
-	- Select the **Lock Permit** button.
+1. Open a Permit record.
 
-	- The script should trigger the action and you should be able to see the Status 200 notification.
+   - Select **Permits**.
 
-    ![Status notification - screenshot](../images/L08/mod-01-client-scripting-108.png)
+   - Select to edit a permit record.
+
+   - You should be able to see the button you just added.
+
+     ![Lock permit button - screenshot](../images/L08/mod-01-client-scripting-107.png)
+
+   > [!NOTE]
+   > If the button is not displayed, refresh your browser.
+
+1. Test the command
+
+   - Select the **Lock Permit** button.
+
+   - The script should trigger the action and you should be able to see the Status 200 notification.
+
+     ![Status notification - screenshot](../images/L08/mod-01-client-scripting-108.png)
