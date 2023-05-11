@@ -127,7 +127,8 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. View inspection records
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
@@ -471,7 +472,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Create a Build Site.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Build Sites**.

@@ -49,7 +49,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -518,6 +518,12 @@ LockPermitCancelInspections.cs`
    - In Solution Explorer, right-click the *ContosoPackageProject* project and select **Build**.
    - Check the **Output* window and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here.
 
+1. Select **File** and **Close Solution**.
+
+1. Select **Save**.
+
+1. Select **Save**.
+
 ### Task 2.4: Deploy the plug-in
 
 1. If you do not have the Plugin Registration Tool running already, follow instructions above to run the tool and connect to the environment.
@@ -546,7 +552,7 @@ LockPermitCancelInspections.cs`
 
 1. Add plug-in to solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -582,7 +588,7 @@ LockPermitCancelInspections.cs`
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 

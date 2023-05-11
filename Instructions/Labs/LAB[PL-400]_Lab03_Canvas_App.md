@@ -52,7 +52,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -479,7 +479,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Confirm the inspection record was updated.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
 
@@ -507,7 +507,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Select the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Select the **Permit Management** solution.
@@ -616,7 +616,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Import the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Production** environment.
 
 1. Import solution.

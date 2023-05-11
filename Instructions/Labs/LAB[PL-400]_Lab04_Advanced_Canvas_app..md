@@ -164,7 +164,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Confirm the inspection record was updated.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Inspections** and open the **Framing Inspection** record.
@@ -180,8 +180,8 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Create test records for later labs.
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
-   - Make sure you are in the Development environment.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Inspections**.

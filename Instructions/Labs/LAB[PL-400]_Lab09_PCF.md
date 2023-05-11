@@ -692,7 +692,8 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -756,7 +757,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. View inspection records
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
@@ -947,7 +948,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Import**.
 
-   - in the Connections pane, select **Select a connection** and select **+New connection**.
+   - In the Connections pane, select **Select a connection** and select **+New connection**.
 
    - Select **Create** and sign in with your tenant credentials.
 

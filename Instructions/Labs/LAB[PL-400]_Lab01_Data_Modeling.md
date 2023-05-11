@@ -97,9 +97,9 @@ In this exercise, you will add existing tables to the solution.
 
 ### Task 2.1 – Add existing tables
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -151,9 +151,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.1: Create Permit table and columns
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the Development environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -344,9 +344,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.5: Edit Inspection status reasons
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -403,9 +403,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.6: Edit Permit status reasons
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -464,9 +464,9 @@ You will create the following data model.
 
 ### Task 4.1: Create Relationships
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
