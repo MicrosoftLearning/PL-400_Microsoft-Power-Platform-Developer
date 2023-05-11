@@ -50,6 +50,9 @@ We will install and configure the following tools:
 
    ![pac tools - screenshot](../images/L06/pac-tool-list.png)
 
+   > [!NOTE]
+   > Power Platform tools will be installed on first launch.
+
 ## Exercise 2: Configuration Migration Tool
 
 **Objective:** In this exercise, you will copy reference data between environments.
@@ -145,6 +148,10 @@ We will install and configure the following tools:
 1. Select **Install**.
 1. Select **Yes**.
 1. Select **Close**.
+1. Search for `trace` and select **Plugin Trace Viewer by Jonas Rapp**.
+1. Select **Install**.
+1. Select **Yes**.
+1. Select **Close**.
 1. Close the *Tool Library* tab.
 
 ### Task 3.2: FetchXML query
@@ -161,7 +168,7 @@ We will install and configure the following tools:
 1. Enter your tenant credentials.
 1. Click **Login**.
 1. Select your **Development** environment and select **Login**.
-1. Enter **Dev** for Name and select **Finish**.
+1. Enter `Dev` for Name and select **Finish**.
 1. Select **Continue**.
 
    ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
