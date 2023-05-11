@@ -331,9 +331,9 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Request Headers** for **Add authorization data to**.
    - Under *Configure New Token*, set:
      - Grant Type to `Implicit`
-     - Callback URL to `{{callback}}`
-     - Auth URL to `{{authurl}}`
-     - Client ID to `{{clientid}}`
+     - Callback URL to `\{\{callback\}\}`
+     - Auth URL to `\{\{authurl\}\}`
+     - Client ID to `\{\{clientid\}\}`
 
      ![Postman authorization tab - screenshot](../images/L07/postman-authorization.png)
 
