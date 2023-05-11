@@ -63,7 +63,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
 ### Task 1.2: Setup code component project
 
-1. Start the developer command prompt tool
+1. Start the developer command prompt tool.
 
    - Launch the **Developer Command Prompt** from the start menu.
 
@@ -447,7 +447,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
     - Add the data below inside the **testdata.csv** file and Save it.
 
-     ```dos
+     ```
      contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
      123,Electrical:Rough Inspection:Passed,8/1/2023,Passed
      124,Electrical:Rough Inspection:Passed,8/5/2023,Passed
@@ -579,7 +579,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
      ![Timeline control with data - screenshot](../images/L09/mod-02-pcf-1-44.png)
 
-   - Do not close the test environment.
+   - **Do not** close the test environment.
 
 ### Task 1.5: Change Color for Items
 
@@ -666,7 +666,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Build the solution.
 
-   - Change directory to the **pcfSmsolution** folder.
+   - Change directory to the **pcfSolution** folder.
 
      ```dos
      cd ..\pcfSolution
@@ -752,7 +752,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Save and publish**.
 
-   - **Do Not** close the form editor.
+   - Close the form editor.
 
 1. View inspection records
 
