@@ -211,7 +211,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    > [!IMPORTANT]
    > The URL should not have the / character as the end.
 
-1. Build the project
+1. Build the project.
 
    - Select the **Save** icon.
    - In Solution Explorer, right-click the *Permit console project* and select **Build**.
@@ -236,10 +236,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Add early bound classes.
 
-   - In Solution Explorer, right-click the *Permit console project* and select **Add**, and then select **Existing Item**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Add**, and then select **Existing Item**.
    - Browse to **C:\Users\Admin\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG**.
    - Select `Entities.cs` and select **Add**.
-   - In Solution Explorer, right-click the *Permit console project* and select **Add**, and then select **Existing Item**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Add**, and then select **Existing Item**.
    - Browse to **C:\Users\Admin\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG**.
    - Select `OptionSets.cs` and select **Add**.
 
@@ -287,7 +287,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
      }
      ```
 
-1. Build the project
+1. Build the project.
 
    - Select the **Save** icon.
    - In Solution Explorer, right-click the *Permit console project* and select **Build**.

@@ -354,12 +354,12 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
        ![Enable Areas in navigation settings - screenshot](../images/L02/edit-area-properties.png)
 
-   - In the **Title** text box in the **Properties** pane, enter **Building Dept**.
+   - In the **Title** text box in the **Properties** pane, enter `Building Dept`.
 
 1. Add group to app navigation
 
    - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
-   - In the **Title** text box in the **Properties** pane, enter **Permits**.
+   - In the **Title** text box in the **Properties** pane, enter `Permits`.
 
 1. Add tables to Permits group
 
@@ -377,7 +377,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Add second group to app navigation
 
    - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
-   - In the **Title** text box in the **Properties** pane, enter **Contacts**.
+   - In the **Title** text box in the **Properties** pane, enter `Contacts`.
 
 1. Add tables to Contacts group
 
@@ -417,7 +417,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide First Name as **John**, Last Name as **Doe**.
+   - Provide First Name as `John`, Last Name as `Doe`.
 
    - Select **Save & Close**
 
@@ -433,7 +433,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide the address as **One Microsoft Way Redmond WA 98052 USA**
+   - Provide the address as `One Microsoft Way Redmond WA 98052 USA`.
 
    - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
 
@@ -445,7 +445,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide **Name** as **New Construction** and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
+   - Provide **Name** as `New Construction` and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
 
      ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
 
@@ -455,7 +455,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
+   - Provide **Name** as `Test Permit`, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
 
    - Select tomorrow's date for the **Start Date** and select **Save**.
 
@@ -469,7 +469,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
 
-   - Provide **Name** as **Framing Inspection**.
+   - Provide **Name** as `Framing Inspection`.
 
    - Select **Initial Inspection** from the dropdown for **Inspection Type**.
 

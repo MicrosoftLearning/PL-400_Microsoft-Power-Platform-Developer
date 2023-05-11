@@ -83,7 +83,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Purchase services.](../images/L00/purchase-services.png)
 
-1. In the search all product categories text box, enter **PowerApps** and press **Enter**.
+1. In the search all product categories text box, enter `PowerApps` and press **Enter**.
 
 1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
 
@@ -142,7 +142,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
-1. In the **Name** text box, enter **[my initials] Development**. (Example: PL Development).
+1. In the **Name** text box, enter `[my initials] Development`. (Example: PL Development).
 
 1. In the **Type** drop down, select **Developer**.
 
@@ -168,7 +168,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Click **+ New**.
 
-1. In the **Name** text box, enter **[my initials] Live**. (Example: PL Live).
+1. In the **Name** text box, enter `[my initials] Live`. (Example: PL Live).
 
 1. In the **Type** drop down, select **Developer**.
 
@@ -202,7 +202,7 @@ In this exercise, you will create an Azure subscription that you will be using i
 1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
    > [!NOTE]
-   > If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter **0123456789** and click on **Submit**.
+   > If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter `0123456789` and click on **Submit**.
 
 1. Wait for Azure subscription to be provisioned and select **Maybe later**.
 

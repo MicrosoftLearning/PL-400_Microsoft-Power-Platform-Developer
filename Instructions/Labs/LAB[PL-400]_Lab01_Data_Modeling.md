@@ -430,17 +430,17 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 1. Add the Completed option
 
    - Select **+New choice**.
-   - Enter **Completed** for Label.
+   - Enter `Completed` for Label.
 
 1. Add the Canceled option
 
    - Select **+New choice**.
-   - Enter **Canceled** for Label.
+   - Enter `Canceled` for Label.
 
 1. Add the Expired option
 
    - Select **+New choice**.
-   - Enter **Expired** for Label.
+   - Enter `Expired` for Label.
 
 1. Select **Active** as the **Default choice**.
 

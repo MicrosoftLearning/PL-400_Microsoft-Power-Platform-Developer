@@ -179,7 +179,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select **Show advanced options**.
    - Click in **Comments**.
    - Select the **Expression** tab.
-   - Enter **null**
+   - Enter `null`.
 
      ![Null expression - screenshot](../images/L05/null-expression.png)
 

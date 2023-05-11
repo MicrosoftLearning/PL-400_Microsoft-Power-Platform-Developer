@@ -542,7 +542,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      - Select **Recheck all**.
      - Expand **Accessibility**.
 
-     - Select an issue. This will open the screen with the control and prompt to enter **AccessibleLabel** property.
+     - Select an issue. This will open the screen with the control and prompt to enter the *AccessibleLabel* property.
 
      - Enter text value as appropriate
 

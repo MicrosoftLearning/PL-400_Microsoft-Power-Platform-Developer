@@ -186,13 +186,13 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Inspections**.
    - Select **+ New**.
-   - Enter **Electric Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
+   - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
 
    - Select **+ New**.
-   - Enter **Plumbing Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
+   - Enter `Plumbing Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
 
    - Select **+ New**.
-   - Enter **Mechanical Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
+   - Enter `Mechanical Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
 
 1. You should have four inspections for the Test Permit.
 
