@@ -8,8 +8,6 @@ lab:
 
 ## Scenario
 
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
-
 In this lab you will create an Azure Function that will handle routing inspections. Every morning people call in to request inspections on their permits. They must call before 9:30 AM and once that period ends all the inspections for the day must be assigned and sequenced for the inspectors. To accomplish this, you will build an Azure Function that runs on a schedule, queries pending inspections and assigns them to inspectors. Given the limited time to complete the lab, we’ve simplified the routing and sequencing decisions.
 
 ## High-level lab steps
@@ -17,46 +15,54 @@ In this lab you will create an Azure Function that will handle routing inspectio
 As part of building the Azure Function, you will complete the following:
 
 - Configure an application user for the app along with a security role
-
 - Build the function logic to route the requests
-
 - Deploy the Azure Function
 
 ## Things to consider before you begin
 
 - Could we have used Dynamics 365 Universal Resource Scheduling instead of custom code?
-
 - Could we have used Power Automate instead of custom code?
+- Remember to continue working in your DEVELOPMENT environment. We'll move everything to production soon.
 
-- Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
+## Starter solution
 
-## Exercise 1: Configure an Azure AD application user
+A starter solution file for this lab can be found in the  C:\Labfiles\L11\Starter folder.
+
+## Completed solution
+
+Completed solution files for this lab can be found in the  C:\Labfiles\L11\Completed folder.
+
+## Resources
+
+Complete source code files for this lab can be found in the  C:\Labfiles\L11\Resources folder.
+
+## Exercise 1: Configure an Azure AD application user and add the user to Dataverse
 
 **Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse.
 
 ### Task 1.1: Register Azure AD Application
 
-1. Navigate to Azure Active Directory
+1. Navigate to Azure Active Directory.
 
-- Sign in to [Azure Portal](https://portal.azure.com/).
+- Sign in to the [Azure Active Directory portal](https://aad.portal.azure.com/).
 
-**Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account that has your Azure subscription.
+   > **Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account for your Azure subscription.
 
-- Select Show portal menu.
+1. Expand **Applications** and select **App registrations**.
 
-![Show portal menu - screenshot](../images/L11/Mod_02_Azure_Functions_image1.png)
+   ![App registrations - screenshot](../images/L11/aad-app-registrations.png)
 
-- Select **Azure Active Directory**.
+1. Select **+ New registration**.
 
-![Azure active directory - screenshot](../images/L11/Mod_02_Azure_Functions_image2.png)
+   ![New App registration - screenshot](../images/L11/aad-app-new-registration.png)
 
-- Select **+ Add** and then select **App registration**.
+1. Enter `Inspection Router` for **Name**
 
-![New registration - screenshot](../images/L11/Mod_02_Azure_Functions_image3.png)
+1. Select **Accounts in this organizational directory only** for **Supported account types**.
 
-- Enter **Inspection Router** for **Name**, select **Accounts in this Organizational Directory Only** for **Supported** **Account Types**, and then select **Register**.
+   ![Register application - screenshot](../images/L11/Mod_02_Azure_Functions_image4.png)
 
-![Register application - screenshot](../images/L11/Mod_02_Azure_Functions_image4.png)
+1. Select **Register**.
 
 ### Task 1.2: Enable OAuth 2.0
 
@@ -68,11 +74,17 @@ As part of building the Azure Function, you will complete the following:
 
 1. Set **oauth2AllowImplicitFlow** to **true**.
 
-1. Click **Save**.
+   ![App registration manifest - screenshot](../images/L11/aad-app-registration-manifest.png)
 
-1. Select **API Permissions**.
+1. Select **Save**.
 
-1. Click **+Add a permission**.
+### Task 1.3: API Permissions
+
+1. Select **API permissions**.
+
+1. Select **+Add a permission**.
+
+   ![App registration Request API permissions - screenshot](../images/L11/aad-app-registration-api-permissions.png)
 
 1. Select **Dynamics CRM**.
 
@@ -80,12 +92,11 @@ As part of building the Azure Function, you will complete the following:
 
 1. Check **user_impersonation**.
 
-1. Click **Add permissions**.
+   ![App registration Dataverse API permissions - screenshot](../images/L11/aad-app-registration-dataverse-api-permissions.png)
 
-### Task 1.3: Client Secret
+1. Select **Add permissions**.
 
-> [!NOTE]
-> In this lab we are using a secret, however, you can also use a certificate. With either of these options you need to have a plan in place to handle rollover when they expire to ensure that the app keeps running.
+### Task 1.4: Client secret
 
 1. Select **Certificates &amp; secrets**.
 
@@ -93,708 +104,841 @@ As part of building the Azure Function, you will complete the following:
 
    ![New client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image6.png)
 
-1. Enter **Inspection Routing** for **Description**, select **12 months** for **Expires**, and then select **Add**.
+1. Enter `Inspection Routing` for **Description**, select **(365 days) 12 months** for **Expires**
 
    ![Add client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image7.png)
+
+1. Select **Add**.
 
 1. Copy the **Value** and save it on a notepad. You will need this value in future tasks.
 
    ![Copy value - screenshot](../images/L11/Mod_02_Azure_Functions_image8.png)
 
-### Task 1.4: Security Role
+1. Select **Overview**
+
+   ![Copy app id - screenshot](../images/L11/aad-app-registration-overview.png)
+
+1. Copy the **Application (client) ID.** and save it on a notepad. You will need this value in future tasks.
+
+### Task 1.5: Dataverse security role
 
 In this task, you will create the security role needed for the routing logic.
 
-1. Create New Security Role
+1. Open the Permit Management solution.
 
-- Navigate to https://make.powerapps.com/ and make sure you have your **Development** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-- Select **Solutions** and open the **Permit Management** solution.
+1. Create security role.
 
-- Select **+ New** and then select **Security > Security role**
+   - Select **+ New** and then select **Security** and select **Security role**.
 
-![New security role - screenshot](../images/L11/Mod_02_Azure_Functions_image12.png)
+     ![New security role - screenshot](../images/L11/Mod_02_Azure_Functions_image12.png)
 
-- Enter **Inspection Router** for **Role Name** and then select **Save**.
+   - Enter `Inspection Router` for **Role Name** and then select the **Save** con.
 
-- Select the **Business Management** tab.
+   - Select the **Business Management** tab.
 
-- Locate the **User** table and set **Read** and **Append To** privileges to **Organization**.
+   - Locate the **User** table and set the **Read** and **Append To** privileges to **Organization**.
 
-![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image14.png)
+     ![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image14.png)
 
-- Select the **Custom Entities** tab.
+   - Select the **Custom Entities** tab.
 
-- Locate the **Inspection** table and set **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
+   - Locate the **Inspection** table and set the **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
 
-![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image15.png)
+     ![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image15.png)
 
-- Select **Save and Close**.
+   - Select **Save and Close**.
 
-- Select **Done**.
+   - Select **Done**.
 
-### Task 1.5: Add Application User to Dataverse
+### Task 1.6: Add Application user to Dataverse
 
-In this task, you will create the application user and associate it with the Azure AD app that you just registered.#
+In this task, you will create the application user in Dataverse and associate it with the Azure AD app that you just registered.#
 
-- Navigate to https://admin.powerplatform.microsoft.com/ and make sure you have your **Development** environment selected.
+1. Navigate to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 
-- Select your **Development** environment.
+1. Select **Environments**.
 
-- Click **See all** under **S2S apps**.
+1. Select your **Development** environment and select **Settings**.
 
-- Select **+ New app user**.
+     ![Development environment details - screenshot](../images/L11/development-environment.png)
 
-- Select **+ Add an app**.
+1. Select **See all** under **S2S apps**.
 
-  ![New application user - screenshot](../images/L11/Mod_02_Azure_Functions_image19.png)
+1. Select **+ New app user**.
 
-- Select the **Inspection Router** you created and then select **Add**.
+1. Select **+ Add an app**.
 
-  ![Switch form - screenshot](../images/L11/Mod_02_Azure_Functions_image20.png)
+   ![New application user - screenshot](../images/L11/Mod_02_Azure_Functions_image19.png)
 
-- Select your Business Unit and then select edit **Security roles**.
+1. Select the **Inspection Router** Azure AD app registration and then select **Add**.
 
-  ![Edit security roles- screenshot](../images/L11/Mod_02_Azure_Functions_image21.png)
+   ![Switch form - screenshot](../images/L11/Mod_02_Azure_Functions_image20.png)
 
-- Select the Inspection Router security role and then select **Save**.
+1. Select your root Business Unit.
 
-![ Add security role - screenshot](../images/L11/Mod_02_Azure_Functions_image26.png)
+1. Select the edit icon under **Security roles**.
 
-- Select **Create**.
+   ![Edit security roles- screenshot](../images/L11/Mod_02_Azure_Functions_image21.png)
 
-![Create app user - screenshot](../images/L11/Mod_02_Azure_Functions_image27.png)
+1. Select the Inspection Router security role
+
+   ![ Add security role - screenshot](../images/L11/Mod_02_Azure_Functions_image26.png)
+
+1. Select **Save**.
+
+   ![Create app user - screenshot](../images/L11/Mod_02_Azure_Functions_image27.png)
+
+1. Select **Create**.
 
 ## Exercise 2: Create Azure Function for Inspection Routing
 
 **Objective:** In this exercise, you will create the Azure function that will route the inspections.
 
-### Task 2.1: Create the Function
+### Task 2.1: Azure resources
 
-1. Create Azure Function project
+1. Create Resource group.
 
-- Start **Visual Studio**.
+   - Sign in to the [Azure portal](https://portal.azure.com) and login with the credentials used when redeeming your Azure Pass..
 
-- Select **Create a New Project**.
+   - Select **Show portal menu** and then select **+ Create a resource**.
 
-   ![New visual studio project - screenshot](../images/L11/Mod_02_Azure_Functions_image28.png)
+     ![Create new resource - screenshot](../images/L12/Mod_01_Web_Hook_image1.png)
 
-- Select **Azure Functions** and then select **Next**.
+   - Search for `resource group` and select **Resource group**.
 
-   ![Azure functions - screenshot](../images/L11/Mod_02_Azure_Functions_image29.png)
+     ![Azure Marketplace resource group - screenshot](../images/L11/azure-marketplace-resource-group.png)
 
-- Enter **InspectionManagementApp** for **Name** and then select **Create**.
+   - Click on the **Resource group** tile.
 
-   ![Create project - screenshot](../images/L11/Mod_02_Azure_Functions_image30.png)
+   - Select **Create**.
 
-- Select **NET Core3** and select **Timer Trigger**.
+   - Select your **Azure Pass - Sponsorship** subscription.
 
-- Change the Schedule to 0 0 0 * * * (Midnight Every Day) and select **Create**.
+   - Enter `PL400` for resource group.
 
-   ![Create Azure function application - screenshot](../images/L11/Mod_02_Azure_Functions_image32.png)
+     ![Create resource group - screenshot](../images/L11/azure-resource-group-create.png)
 
-2. Rename and run the Function
+   - Select **Review + create**.
 
-- Rename the function file **InspectionRouter**.
+   - Select **Create**.
 
-![Rename function file - screenshot](../images/L11/Mod_02_Azure_Functions_image33.png)
+1. Create Storage account.
 
-- Select **Yes** to rename references.
+   - Select **Show portal menu** and then select **+ Create a resource**.
 
-- Change the function FunctionName to **InspectionRouter.**
+   - Search for `storage account` and select **Storage account** by Microsoft.
 
-![Change function name - screenshot](../images/L11/Mod_02_Azure_Functions_image34.png)
+   - Click on the **Storage account** tile.
 
-- Select **Run**.
+   - Select **Create**.
 
-![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image35.png)
+   - Select your **Azure Pass - Sponsorship** subscription.
 
-- Azure functions tools should start.
+   - Select the **PL400** for resource group.
 
-![Running azure function - screenshot](../images/L11/Mod_02_Azure_Functions_image36.png)
+   - Enter `pl400sa` followed by a unique number for Storage account name.
 
-3. Trigger the function with Postman
+     > Note: Storage account name must be unique across Azure.
 
-- Start **Postman**.
+   - Select **Standard** for Performance.
 
-- Click **+** to open a new request tab.
+   - Select **Locally-redundant storage (LRS)** for Redundancy.
 
-- Select **POST** and enter the URL: [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter)
+     ![Create resource group - screenshot](../images/L11/azure-storage-account-create.png)
 
-![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image37.png)
+   - Select **Review**.
 
-- Select the **Headers** tab.
+   - Select **Create**.
 
-- Add **Content-Type** and set it to **application/json**.
+1. Create Function app.
 
-![Add content type - screenshot](../images/L11/Mod_02_Azure_Functions_image38.png)
+   - Select **Show portal menu** and then select **+ Create a resource**.
 
-- Select the **Body** tab.
+   - Search for `function app` and select **Function App** by Microsoft.
 
-- Select **Raw** and set it to empty json **{}**.
+   ![New function app - screenshot](../images/L12/Mod_01_Web_Hook_image2.png)
 
-![Select body - screenshot](../images/L11/Mod_02_Azure_Functions_image39.png)
+   - Click on the **Function App** tile.
 
-- Select **Send**.
+   - Select **Create**.
 
-- You should get **202** **Accepted Status**.
+   ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
-![Status - screenshot](../images/L11/Mod_02_Azure_Functions_image40.png)
+   - Select **Create**.
 
-- Go to the output console.
+   - Select your **Azure Pass - Sponsorship** subscription.
 
-- The function should get triggered.
+   - Select the **PL400** for resource group.
 
-![Triggered function - screenshot](../images/L11/Mod_02_Azure_Functions_image41.png)
+   - Enter `pl400fa` followed by your initials and a unique number for Function App name.
 
-- Go back to **Visual Studio** and stop debugging.
+   > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
 
-4. Add NuGet packages
+   - Select **.NET** for Runtime stack
 
-- Right Click on the project and select **Manage NuGet Packages**.
+   - Select **6 (LTS)** for Version
 
-- Select the **Browse** tab and search for **Microsoft.IdentityModel.Clients.ActiveDirectory**.
+   - Select **Consumption** for Hosting options and plans.
 
-- Select the latest stable version and then select **Install**.
+   - Select **Review + create**.
 
-![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image42.png)
+    ![Create function app - screenshot](../images/L11/azure-function-app-create.png)
 
-- Search for **Xrm.Tools.CrmWebAPI**. Note: This is a community library designed to work with the Microsoft Dataverse Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
+   - Select **Create**.
 
-- Select the latest stable version and then select **Install**.
+### Task 2.2: Create Function using Visual Studio
 
-![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image43.png)
+1. Create Azure Function project in Visual Studio.
 
-- Close the **NuGet Package Manager**.
+   - Start **Visual Studio**.
 
-5. Edit the local settings file
+     ![New visual studio project - screenshot](../images/L11/Mod_02_Azure_Functions_image28.png)
 
-- Open the **local.settings.json** file
+   - Select **Create a new project**.
+   - Search for `functions`.
 
-![Local settings file - screenshot](../images/L11/Mod_02_Azure_Functions_image44.png)
+     ![Azure functions - screenshot](../images/L11/Mod_02_Azure_Functions_image29.png)
 
-- Add the **Values** below to **local.settings**
+   - Select **Azure Functions** and then select **Next**.
 
-        "cdsurl": "",
+   - Enter `InspectionRoutingApp` for **Name**.
 
-        "cdsclientid": "",
+   - Change the location to **C:\LabFiles\L11**.
 
-        "cdsclientsecret": ""
+     ![Visual Studio configure project - screenshot](../images/L11/visual-studio-configure-project.png)
 
-![Add values - screenshot](../images/L11/Mod_02_Azure_Functions_image45.png)
+   - Select **Create**.
 
-- Find the client secret you saved in the notepad and paste as the cdsclientsecret.
+   - Select **NET Core 3 (LTS)**.
 
-![Client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image46.png)
+   - Select **Timer Trigger**.
 
-6. Copy the App ID
+   - Change the Schedule to `0 0 0 * * *` (Midnight Every Day).
 
-- Go back to your **Azure** portal.
+     ![Azure function application - screenshot](../images/L11/azure-function-configuration.png)
 
-- Select **Azure Active Directory**.
+   - Select **Create**.
 
-- Select **App Registrations**.
+1. Rename and run the Function.
 
-- Open the registration you created.
+   - In Solution Explorer, right click on **Function1.cs** and select **Rename**.
 
-![Open app registration - screenshot](../images/L11/Mod_02_Azure_Functions_image47.png)
+     ![Rename class - screenshot](../images/L11/visual-studio-rename-function.png)
 
-- Copy the **Application (Client ID).**
-
-![Copy app id - screenshot](../images/L11/Mod_02_Azure_Functions_image48.png)
-
-- Go back to **Visual Studio** and paste the **Application ID** as the **cdsclientid**.
-
-7. Find the your Microsoft Dataverse URL
-
-- Sign in to [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com/)
-
-- Select **Environments** and open the **Dev** environment.
-
-![Open environment - screenshot](../images/L11/Mod_02_Azure_Functions_image49.png)
-
-- Copy the **Environment URL**.
-
-![Copy environment URL - screenshot](../images/L11/Mod_02_Azure_Functions_image50.png)
-
-- Go back to **Visual Studio** and paste the **URL** you copied as the **cdsurl**.
-
-![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image51.png)
-
-- Save and close the file.
-
-8. Add using statements to the function class.
-
-- Open the **InspectionRouter.cs** file
-
-- Add the using statements below
-
-        using System.Threading.Tasks;
-        using Xrm.Tools.WebAPI;
-        using Microsoft.IdentityModel.Clients.ActiveDirectory;
-        using Xrm.Tools.WebAPI.Results;
-        using System.Dynamic;
-        using Xrm.Tools.WebAPI.Requests;
-        using System.Collections.Generic;
-
-9. Create a method that will create the web API.
-
-- Add the method below inside the class.
-
-        private static async Task<CRMWebAPI> GetCRMWebAPI(ILogger log)
-        {
-        return null;
-        }
-
-- Add the local variables below before the return line on the **GetCRMWebAPI** method.
-
-        var clientID = Environment.GetEnvironmentVariable("cdsclientid", EnvironmentVariableTarget.Process);
-        var clientSecret = Environment.GetEnvironmentVariable("cdsclientsecret", EnvironmentVariableTarget.Process);
-        var crmBaseUrl = Environment.GetEnvironmentVariable("cdsurl", EnvironmentVariableTarget.Process);
-        var crmurl = crmBaseUrl + "/api/data/v9.0/";
-
-- Create **Authentication Parameters**.
-
-        AuthenticationParameters ap = await AuthenticationParameters.CreateFromUrlAsync(new Uri(crmurl));
-
-- Create **Client Credential** passing your **Client Id** and **Client Secret**.
-
-        var clientcred = new ClientCredential(clientID, clientSecret);
-
-- Get **Authentication Context**.
-
-        // CreateFromUrlAsync returns endpoint while AuthenticationContext expects authority
-        // workaround is to downgrade adal to v3.19 or to strip the tail
-        var auth = ap.Authority.Replace("/oauth2/authorize", "");
-        var authContext = new AuthenticationContext(auth);
-
-- Get **Token**.
-
-        var authenticationResult = await authContext.AcquireTokenAsync(crmBaseUrl, clientcred);
-
-- Return the **web API**. Replace the return line with the code below.
-
-        return new CRMWebAPI(crmurl, authenticationResult.AccessToken);
-
-![Get CRM web API method - screenshot](../images/L11/Mod_02_Azure_Functions_image52.png)
-
-10. Test the web API you created
-
-- Call the GetCRMWebAPI method. Add the code below to the Run method.
-
-        CRMWebAPI api = GetCRMWebAPI(log).Result;
-
-- Execute **WhoAmI** function and log the **User Id**.
-
-        dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
-        log.LogInformation($"UserID: {whoami.UserId}");
-
-![Run method - screenshot](../images/L11/Mod_02_Azure_Functions_image53.png)
-
-11. Debug
-
-- Select **Run**.
-
-- Go back to **Postman** and select **Send**.
-
-![Postman send - screenshot](../images/L11/Mod_02_Azure_Functions_image55.png)
-
-- Go to the output console.
-
-- You should see the **User ID**.
-
-![Run result - screenshot](../images/L11/Mod_02_Azure_Functions_image56.png)
-
-Go back **Visual Studio** and stop debugging.
-
-### Task 2.2: Get Inspections and Users and Assign Inspections
-
-1. Get the New Request and Pending option values for the Inspection table Status Reason column.
-
-- Navigate to https://make.powerapps.com/ and make sure you have your **Dev** environment selected.
-
-- Select **Solutions** and open the **Permit Management** solution.
-
-- Select **Tables** and open the **Inspection** table.
-
-- Select **Switch to classic**.
-
-- Select **Fields**.
-
-- Locate and open the **Status Reason** field,
-
-- Scroll down and double open the **New Request** option.
+   - Rename the function file as `InspectionRouter.cs`.
   
-  ![New request option - screenshot](../images/L11/Mod_02_Azure_Functions_image56-1.png)
+     ![Rename function file - screenshot](../images/L11/visual-studio-renamed-function.png)
 
-- Copy the **Value** and keep it in a notepad.
+   - Select **Yes** to rename references.
 
-- Select **OK**.
+   - Open **InspectionRouter.cs** file.
 
-- double click to open the **Pending** option.
+   - Rename the function **Function1** to `InspectionRouter`.
 
-- Copy the **Value** and keep it in a notepad.
+     ![Change function name - screenshot](../images/L11/Mod_02_Azure_Functions_image34.png)
 
-  ![Pending option - screenshot](../images/L11/Mod_02_Azure_Functions_image56-2.png)
+   - Select **Run**.
 
-- Select **OK**.
+   - Select **Allow
 
-- Close the field editor.
+     ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image35.png)
 
-- Close the classic table editor.
+   - Select **Allow access** in the Windows Defender Firewall prompt.
 
-2. Create a method that will get all active inspections that are New Request or Pending, and schedule them for today
+   - After a little while, Azure Functions Core Tools will start.
 
-- Add the method below inside the class.
+     ![Running azure function - screenshot](../images/L11/Mod_02_Azure_Functions_image36.png)
 
-        private static Task<CRMGetListResult<ExpandoObject>> GetInspections(CRMWebAPI api)
+1. Trigger the function with Postman.
 
-        {
+   - Start **Postman**.
+
+   - Click **+** to open a new request tab.
+
+   - Select **POST**.
+
+   - Enter [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter) in *Enter request URL*.
+
+     ![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image37.png)
+
+   - Select the **Headers** tab.
+  
+   - Click in **Key** and select **Content-Type**.
+
+   - Click in **Value** and select **application/json**.
+
+     ![Add content type - screenshot](../images/L11/Mod_02_Azure_Functions_image38.png)
+
+   - Select the **Body** tab.
+
+   - Select **Raw** and set it to empty json.
+
+     ```json
+     {}     
+     ```
+
+     ![Select body - screenshot](../images/L11/Mod_02_Azure_Functions_image39.png)
+
+   - Select **Send**.
+
+   - You should see a status of **202** **Accepted Status**.
+
+     ![Status - screenshot](../images/L11/Mod_02_Azure_Functions_image40.png)
+
+   - Go to the output console.
+
+   - The function should get triggered.
+
+     ![Triggered function - screenshot](../images/L11/Mod_02_Azure_Functions_image41.png)
+
+   - Go back to **Visual Studio** and stop debugging.
+
+   - In the Visual Studio Debug Console, press [Enter] to close the window.
+
+1. Add NuGet packages.
+
+   - In Solution Explorer, right-click the *InspectionRoutingApp project* and select **Manage NuGet Packages...**.
+
+   - Select the **Browse** tab.
+
+   - Search for `identitymodel` and select the **Microsoft.IdentityModel.Clients.ActiveDirectory** NuGet package.
+
+     ![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image42.png)
+
+   - Select **Install**.
+
+   - Select **OK**.
+
+   - Select **I Accept**.
+
+   - Search for `crmwebapi` and select the **Xrm.Tools.CrmWebAPI by David Yack** NuGet package.
+
+     ![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image43.png)
+
+     > Note: This is a community library designed to work with the Microsoft Dataverse Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
+
+   - Select **Install**.
+
+   - Select **OK**.
+
+   - Select **I Accept**.
+
+   - Close the **NuGet: Permit console** tab.
+
+1. Edit the local settings file.
+
+   - Open the **local.settings.json** file.
+
+     ![Local settings file - screenshot](../images/L11/Mod_02_Azure_Functions_image44.png)
+
+   - Add the **Values** below to **local.settings**
+
+     ```json
+     ,
+     "cdsurl": "",
+     "cdsclientid": "",
+     "cdsclientsecret": ""
+     ```
+
+     ![Add values - screenshot](../images/L11/Mod_02_Azure_Functions_image45.png)
+
+   - Find the client secret you saved in the notepad and paste as the cdsclientsecret.
+
+     ![Client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image46.png)
+
+   - Find the application (client) ID in the notepad and paste as the **cdsclientid**.
+
+   - Find the Dataverse environment URL in the notepad and paste as the **cdsurl**.
+
+     ![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image51.png)
+
+   - Save and close the  **local.settings.json** file.
+
+1. Add using statements to the function class.
+
+   - Open the **InspectionRouter.cs** file
+
+   - Add the using statements below
+
+     ```csharp
+     using System.Threading.Tasks;
+     using Xrm.Tools.WebAPI;
+     using Microsoft.IdentityModel.Clients.ActiveDirectory;
+     using Xrm.Tools.WebAPI.Results;
+     using System.Dynamic;
+     using Xrm.Tools.WebAPI.Requests;
+     using System.Collections.Generic;
+     ```
+
+1. Create a method that will create the Web API.
+
+   - Add the method below inside the InspectionRouter class.
+
+     ```csharp
+     private static async Task<CRMWebAPI> GetCRMWebAPI(ILogger log)
+     {
 
         return null;
+     }
+     ```
 
-        }
+   - Add the local variables below before the return line on the **GetCRMWebAPI** method.
 
-- Create **Fetch XML**. Add the code below before the return line of the GetInspections method. replace **[New Request]** and **[Pending]** with the option values you copied without the commas.
+     ```csharp
+     var clientID = Environment.GetEnvironmentVariable("cdsclientid", EnvironmentVariableTarget.Process);
+     var clientSecret = Environment.GetEnvironmentVariable("cdsclientsecret", EnvironmentVariableTarget.Process);
+     var crmBaseUrl = Environment.GetEnvironmentVariable("cdsurl", EnvironmentVariableTarget.Process);
+     var crmurl = crmBaseUrl + "/api/data/v9.2/";
+     ```
 
-        var fetchxml = @"<fetch version=""1.0"" mapping=""logical"" >
+   - Create **Authentication Parameters**.
+
+     ```csharp
+     AuthenticationParameters ap = await AuthenticationParameters.CreateFromUrlAsync(new Uri(crmurl));
+     ```
+
+   - Create **Client Credential** passing your **Client Id** and **Client Secret**.
+
+     ```csharp
+     var clientcred = new ClientCredential(clientID, clientSecret);
+     ```
+
+   - Get **Authentication Context**.
+
+     ```csharp
+     // CreateFromUrlAsync returns endpoint while AuthenticationContext expects authority
+     // workaround is to downgrade adal to v3.19 or to strip the tail
+     var auth = ap.Authority.Replace("/oauth2/authorize", "");
+     var authContext = new AuthenticationContext(auth);
+     ```
+
+   - Get **Token**.
+
+     ```csharp
+     var authenticationResult = await authContext.AcquireTokenAsync(crmBaseUrl, clientcred);
+     ```
+
+   - Return the **Web API**. Replace the **return null** line with the code below.
+
+     ```csharp
+     return new CRMWebAPI(crmurl, authenticationResult.AccessToken);
+     ```
+
+     ![Get CRM web API method - screenshot](../images/L11/azure-function-webapi-code.png)
+
+1. Call the Web API.
+
+   - Call the GetCRMWebAPI method and Execute **WhoAmI**.
+
+     ```csharp
+     CRMWebAPI api = GetCRMWebAPI(log).Result;
+     dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
+     log.LogInformation($"UserID: {whoami.UserId}");
+     ```
+
+     ![Run method - screenshot](../images/L11/Mod_02_Azure_Functions_image53.png)
+
+1. Test the function.
+
+   - Select the **Save** icon.
+
+   - In Solution Explorer, right-click on the project and select **Build**.
+
+   - The Build should succeed with 0 errors.
+
+   - Select **Run**.
+
+   - Go back to **Postman** and select **Send**.
+
+   - Go to the output console.
+
+   - You should see the **User ID**.
+
+     ![Run result - screenshot](../images/L11/Mod_02_Azure_Functions_image56.png)
+
+   - Go back **Visual Studio** and stop debugging.
+
+   - In the Visual Studio Debug Console, press [Enter] to close the window.
+
+### Task 2.3: Get Inspections and Users and Assign Inspections
+
+1. Create a method that will get all active inspections that are New Request or Pending, and schedule them for today
+
+   - Add the method below inside the InspectionRouter class.
+
+     ```csharp
+     private static Task<CRMGetListResult<ExpandoObject>> GetInspections(CRMWebAPI api)
+     {
+
+        return null;
+     }
+     ```
+
+   - Create **FetchXML** query. Add the code below before the return line of the GetInspections method.
+
+     ```csharp
+     var fetchxml = @"<fetch version=""1.0"" mapping=""logical"" >
         <entity name=""contoso_inspection"" >
-        <attribute name=""contoso_inspectionid"" />
-        <attribute name=""contoso_name"" />
-        <attribute name=""ownerid"" />
-        <attribute name=""contoso_inspectiontype"" />
-        <attribute name=""contoso_sequence"" />
-        <attribute name=""contoso_scheduleddate"" />
-        <filter type=""and"" >
-        <condition value=""0"" operator=""eq"" attribute=""statecode"" />
-        <condition attribute=""contoso_scheduleddate"" operator=""today"" />
-        <condition attribute=""statuscode"" operator=""in"" >
-        <value>[New Request]</value>
-        <value>[Pending]</value>
-        </condition>
-        </filter>
+           <attribute name=""contoso_inspectionid"" />
+           <attribute name=""contoso_name"" />
+           <attribute name=""ownerid"" />
+           <attribute name=""contoso_inspectiontype"" />
+           <attribute name=""contoso_sequence"" />
+           <attribute name=""contoso_scheduleddate"" />
+           <filter type=""and"" >
+              <condition value=""0"" operator=""eq"" attribute=""statecode"" />
+              <condition attribute=""contoso_scheduleddate"" operator=""today"" />
+              <condition attribute=""statuscode"" operator=""in"" >
+                 <value>1</value>
+                 <value>330650001</value>
+              </condition>
+           </filter>
         </entity>
-        </fetch>";
+     </fetch>";
+     ```
 
-- Get the list of Inspections.
+     > [!NOTE]
+     >  1 is the value of the Inspection New Request status reason and 330650001 id the value of the Inspection Pending status reason. If the Pending status reason is different for your environment, change the code to match your value.
 
-        var inspections = api.GetList<ExpandoObject>("contoso_inspections", QueryOptions: new CRMGetListOptions()
-        {
+   - Get the list of Inspections.
+
+     ```csharp
+     var inspections = api.GetList<ExpandoObject>("contoso_inspections", QueryOptions: new CRMGetListOptions()
+     {
         FetchXml = fetchxml
-        });
+     });
+     ```
 
-- Return the Inspections. Replace the return line with the code below.
+   - Return the Inspections. Replace the **return = null** line with the code below.
 
-        return inspections;
+     ```csharp
+     return inspections;
+     ```
 
-![Get inspections method - screenshot](../images/L11/Mod_02_Azure_Functions_image57.png)
+     ![Get inspections method - screenshot](../images/L11/azure-function-inspections-code.png)
 
-3. Call the GetInspections method from the Run method.
+1. Call the GetInspections method from the Run method.
 
-- Go back to the **Run** method.
+   - Go back to the **Run** method.
 
-- Call the **GetInspections** method.
+   - Call the **GetInspections** method.
 
-        var inspections = GetInspections(api).Result;
+     ```csharp
+     var inspections = GetInspections(api).Result;
+     ```
 
-![Call get inspections method - screenshot](../images/L11/Mod_02_Azure_Functions_image58.png)
+     ![Call get inspections method - screenshot](../images/L11/Mod_02_Azure_Functions_image58.png)
 
-4. Create a method that will get all users.
+1. Create a method that will get all users.
 
-- Add the method below inside the class.
+   - Add the method below inside the class.
 
-        private static Task<CRMGetListResult<ExpandoObject>> GetUsers(CRMWebAPI api)
-        {
+     ```csharp
+     private static Task<CRMGetListResult<ExpandoObject>> GetUsers(CRMWebAPI api)
+     {
         var users = api.GetList<ExpandoObject>("systemusers");
         return users;
-        }
+     }
+     ```
 
-- Call the **GetUsers** method from the **Run** method.
+   - Call the **GetUsers** method from the **Run** method.
 
-        var users = GetUsers(api).Result;
+     ```csharp
+     var users = GetUsers(api).Result;
+     ```
 
-![Call get users method - screenshot](../images/L11/Mod_02_Azure_Functions_image59.png)
+     ![Call get users method - screenshot](../images/L11/Mod_02_Azure_Functions_image59.png)
 
-5. Create a method that will assign inspections to users
+1. Create a method that will assign inspections to users.
 
-- Add the method below to the class.
+   - Add the method below to the class.
 
-        private static async Task<CRMUpdateResult> RouteInspection(CRMWebAPI api, dynamic inspection, string userId, int sequenceNumber)
-        {
+     ```csharp
+     private static async Task<CRMUpdateResult> RouteInspection(CRMWebAPI api, dynamic inspection, string userId, int sequenceNumber)
+     {
         dynamic updateObject = new ExpandoObject();
         ((IDictionary<string, object>)updateObject).Add
         ("ownerid@odata.bind", "/systemusers(" + userId + ")");
         updateObject.contoso_sequence = sequenceNumber.ToString();
         return await api.Update("contoso_inspections", new Guid(inspection.contoso_inspectionid), updateObject);
-        }
+     }
+     ```
 
-6. Create two-digit random number.
+1. Create two-digit random number.
 
-- Add the code below to the Run method.
+   - Add the code below to the Run method.
 
-        Random rnd = new Random();
-        int sequenceNumber = rnd.Next(10, 99);
+     ```csharp
+     Random rnd = new Random();
+     int sequenceNumber = rnd.Next(10, 99);
+     ```
 
-7. Assign Inspections
+1. Assign Inspections
 
-- Go through the **Inspections** and call the **RouteInspection** method.
+   - Go through the **Inspections** and call the **RouteInspection** method.
 
-        int currentUserIndex = 0;
-        foreach (dynamic inspection in inspections.List)
-        {
+     ```csharp
+     int currentUserIndex = 0;
+     foreach (dynamic inspection in inspections.List)
+     {
         log.LogInformation($"Routing inspection {inspection.contoso_name}");
         var inspectionResult = new CRMUpdateResult();
-        //Your record assignment would look like this. We will not assign records to different users in this lab
+        // Your record assignment would look like this. We will not assign records to different users in this lab
         // if (users.List.Count > (currentUserIndex))
         //{
         // dynamic currentUser = users.List[currentUserIndex];
         // inspectionResult = RouteInspection(api, inspection, currentUser.systemuserid.ToString(), sequenceNumber).Result;
         //currentUserIndex++;
         //}
-        }
+     }
+     ```
 
-- We will not assign inspection records to other users in this lab.
+   - We will not assign inspection records to other users in this lab.
 
-![Comment out code - screenshot](../images/L11/Mod_02_Azure_Functions_image60.png)
+     ![Comment out code - screenshot](../images/L11/Mod_02_Azure_Functions_image60.png)
 
-- Assign inspections to the Inspection Router. Add the code below inside **foreach**.
+   - Assign inspections to the Inspection Router. Add the code below inside **foreach**.
 
-        //We will instead assign inspections to the user you are currently logged in as
-        inspectionResult = RouteInspection(api, inspection, whoami.UserId.ToString(), sequenceNumber).Result;
+     ```csharp
+     // We will instead assign inspections to the user you are currently logged in as
+     inspectionResult = RouteInspection(api, inspection, whoami.UserId.ToString(), sequenceNumber).Result;
+     ```
 
-![Assign inspections - screenshot](../images/L11/Mod_02_Azure_Functions_image61.png)
+     ![Assign inspections - screenshot](../images/L11/Mod_02_Azure_Functions_image61.png)
 
-Build the project and make sure that the build succeeds.
+   - Select the **Save** icon.
 
-## Exercise 3: Publish and Test
+   - In Solution Explorer, right-click on the project and select **Build**.
+
+   - The Build should succeed with 0 errors.
+
+## Exercise 3: Publish and test
 
 **Objective:** In this exercise, you will publish the Azure function to Azure, update the app settings, and test the function.
 
 ### Task 3.1: Publish to Azure
 
-1. Publish the function
+1. Publish the function to Azure.
 
-- Right click on the project and select **Publish**.
+   - In Solution Explorer, right click on the project and select **Publish**.
 
-![Publish project - screenshot](../images/L11/Mod_02_Azure_Functions_image62.png)
+     ![Publish project - screenshot](../images/L11/visual-studio-publish-project.png)
 
-- Select **Azure** and then select **Next**.
+   - Select **Azure** and then select **Next**.
 
-- Select **Azure Function App (Windows)** and then select **Next**.
+   - Select **Azure Function App (Windows)** and then select **Next**.
 
-- Sign in with user that has an Azure subscription.
+   - Sign in with user that has an Azure subscription.
 
-- Select your Azure subscription and then select **+** create new Azure function app.
+   - Select your **Azure Pass - Sponsorship** subscription.
 
-![Create Azure function app - screenshot](../images/L11/Mod_02_Azure_Functions_image63.png)
+   - Expand the **PL400** resource group.
 
-- Provide a unique name for **App Name**, select your subscription name, create new resource group, create new Azure storage, select **Consumption** for Plan type, select Location, and then select **Create**.
+   - Select the function app you created in the earlier exercise.
 
-![Create profile - screenshot](../images/L11/Mod_02_Azure_Functions_image64.png)
+     ![Publish Azure function app - screenshot](../images/L11/visual-studio-publish-azure.png)
 
-- Wait for the app service to be created.
+   - Select **Finish**.
 
-- Select **Finish**.
+     ![Deploy Azure function app - screenshot](../images/L11/visual-studio-deploy-azure.png)
 
-- Select **Publish**.
+   - Select **Publish**.
+  
+   - Select **Yes**.
 
-- Wait for the function application to be configured and published.
+     ![Publishing Azure function app - screenshot](../images/L11/visual-studio-publishing-azure.png)
 
-2. Open the function application settings
+   - Wait for the function application to be successfully published to Azure.
 
-- Go back to you **Azure** portal.
+   - Select **File** and **Exit**.
 
-- Select **All Resources**, search for **InspectionManagement**, and open the function you published.
+1. Open function application settings.
 
-![Open azure fi=unction application - screenshot](../images/L11/Mod_02_Azure_Functions_image65.png)
+   - Go back to you **Azure** portal.
 
-- Scroll down to **Settings** and select **Configuration**.
+   - Select **All Resources**, search for `pl400fa`, and open the function you published.
 
-![Configuration - screenshot](../images/L11/Mod_02_Azure_Functions_image66.png)
+     ![Azure resources - screenshot](../images/L11/azure-portal-resources.png)
 
-3. Update App Settings
+   - Scroll down to **Settings** and select **Configuration**.
 
-- Select **Advanced Edit**.
+     ![Configuration - screenshot](../images/L11/azure-portal-configuration-settings.png)
 
-![Advanced edit - screenshot](../images/L11/Mod_02_Azure_Functions_image67.png)
+1. Update function app settings.
 
-- Paste the json below at the top of the settings.
+   - Select **Advanced edit**.
 
-        {
+   - Paste the json below at the top of the settings.
 
-        "name": "cdsclientid",
+     ```json
+       {
+          "name": "cdsclientid",
+          "value": "[clientid]",
+          "slotSetting": false
+       },
+       {
+          "name": "cdsclientsecret",
+          "value": "[clientsecret]",
+          "slotSetting": false
+       },
+       {
+          "name": "cdsurl",
+          "value": "[cdsurl]",
+          "slotSetting": false
+       },
+     ```
 
-        "value": "[clientid]",
+     ![Edit settings - screenshot](../images/L11/Mod_02_Azure_Functions_image68.png)
 
-        "slotSetting": false
+   - Go back to **Visual Studio** and open the **local.settings.json** file.
 
-        },
+    ![Copy URL - screenshot ](../images/L11/Mod_02_Azure_Functions_image69.png)
 
-        {
+   - Copy the **cdsclientid**, **cdsclientsecret** and **cdsurl** values from the **local.settings.json** file and replace [**cdsclientid**], [**cdsclientsecret**] and [cdsurl].
 
-        "name": "cdsclientsecret",
+     ![Paste id and secret - screenshot](../images/L11/Mod_02_Azure_Functions_image71.png)
 
-        "value": "[clientsecret]",
+   - Select **OK**.
 
-        "slotSetting": false
+   - Select **Save**.
 
-        },
+     ![Save changes - screenshot](../images/L11/Mod_02_Azure_Functions_image72.png)
 
-        {
+   - Select **Continue**.
 
-        "name": "cdsurl",
+### Task 3.2: Test
 
-        "value": "[cdsurl]",
+1. Timezone.
 
-        "slotSetting": false
+   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Make sure you are in the Development environment.
+   - Select **Apps**.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
-        },
+   - Select **Settings** and then select **Personalization and Settings**.
 
-![Edit settings - screenshot](../images/L11/Mod_02_Azure_Functions_image68.png)
+     ![Personal settings - screenshot](../images/L11/Mod_02_Azure_Functions_image77.png)
 
-- Go back to **Visual Studio** and open the **local.settings.json** file.
+   - Change the **Time Zone** to **(GMT-11:00) Coordinated Universal Time-11** and then select **OK**. This will ensure the query results will produce the same results regardless of your time zone.
 
-- You will copy the **cdsurl**, **cdsclientid**, and **cdsclientsecret**. Copy the **cdsurl** value.
+     ![Change time zone - screenshot](../images/L11/Mod_02_Azure_Functions_image78.png)
 
-![Copy URL - screenshot ](../images/L11/Mod_02_Azure_Functions_image69.png)
+1. Reset inspections test data.
 
-- Go back to **Azure** and replace **[cdsurl]** with the URL you copied.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select **Cloud flows**.
+   - Select the ellipses **...** for the **Reset Inspections** flow, select **Edit** and select **Edit in new tab**.
 
-![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image70.png)
+     ![Edit flow - screenshot](../images/L11/edit-flow.png)
 
-- Copy the **cdsclientid** and **cdsclientsecret** values from the **local.settings.json** file and replace [**cdsclientid**] and [**cdsclientsecret**].
+   - Select the **Loop** step.
 
-![Paste id and secret - screenshot](../images/L11/Mod_02_Azure_Functions_image71.png)
+   - Select the **Update Inspection** step.
 
-- Select **OK**.
+   - Click in **Scheduled Date**.
 
-- Select **Save**.
+   - Select the **Expression** tab.
 
-![Save changes - screenshot](../images/L11/Mod_02_Azure_Functions_image72.png)
+   - Enter `utcNow()`.
 
-- Select **Continue**.
+     ![UtcNow expression - screenshot](../images/L11/update-flow-step.png)
 
-- Select **Functions** and open the function you published.
+   - Select **OK**.
 
-![Open function - screenshot](../images/L11/Mod_02_Azure_Functions_image73.png)
+   - Select **Save**.
 
-- Select **Code + Test.**
+   - Select **Test**.
 
-![Code + Test - screenshot](../images/L11/Mod_02_Azure_Functions_image74.png)
+   - Select **Manually**.
 
-4. Prepare test record
+   - Select **Test**.
 
-- Start a new browser window and sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select **Run flow**.
 
-- Make sure you are in the **Dev** environment.
+   - Select **Done**.
 
-![Current environment - screenshot](../images/L11/Mod_02_Azure_Functions_image75.png)
+   - Close the flow editor.
 
-- Select **Apps** and open the **Permit Management** application.
+   - All inspections records should be set to Pending and scheduled for today.
 
-![Start application - screenshot ](../images/L11/Mod_02_Azure_Functions_image76.png)
+1. Run the function.
 
-- Select **Settings** and then select **Personalization and Settings**.
+   - Go to your **Azure** portal.
 
-![Personal settings - screenshot](../images/L11/Mod_02_Azure_Functions_image77.png)
+   - Select **Functions** and open the function you published.
 
-- Change the **Time Zone** to **(GMT-11:00) Coordinated Universal Time-11** and then select **OK**. This will ensure the query results will produce the same results regardless of your time zone.
+     ![Open function - screenshot](../images/L11/Mod_02_Azure_Functions_image73.png)
 
-![Change time zone - screenshot](../images/L11/Mod_02_Azure_Functions_image78.png)
+   - Select **Code + Test.**
 
-- Select **Inspections** and open one of the **Inspection** records or create a new record.
+     ![Code + Test - screenshot](../images/L11/Mod_02_Azure_Functions_image74.png)
 
-![Open inspection record - screenshot](../images/L11/Mod_02_Azure_Functions_image79.png)
+   - Select **Test/Run.**
 
-- Set the **Status Reason** to **New Request** or **Pending**, change the **Scheduled Date** to today’s date, and make a note of the current **Owner** of the record.
+     ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image81.png)
 
-![Update record - screenshot](../images/L11/Mod_02_Azure_Functions_image80.png)
+   - Select **Run**.
 
-- Select **Save**.
+   - The function should run and succeed.
 
-5. Run the function
+     ![Run result - screenshot](../images/L11/azure-function-inspections-results.png)
 
-- Go to your **Azure** portal.
+1. Confirm record assignments.
 
-- Select **Test/Run.**
+   - Go back to the **Permit Management** application.
 
-![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image81.png)
+   - Select **Inspections**.
 
-- Select **Run**.
+   - The **Owner** of the inspections should now be the **Inspection Router** and .
 
-- The function should run and succeed.
+     ![Routed records - screenshot](../images/L11/assigned-inspections.png)
 
-![Run result - screenshot](../images/L11/Mod_02_Azure_Functions_image82.png)
+## Exercise 4: Export and import solution
 
-6. Confirm record assignment
+**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
 
-- Go back to the **Permit Management** application.
+### Task 4.1: Export solution
 
-- Select **Refresh**.
+1. Export managed solution.
 
-![Refresh record - screenshot](../images/L11/Mod_02_Azure_Functions_image83.png)
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select the **Overview** tab in the solution.
+   - Select **Export**.
+   - Select **Publish** and wait for the publishing to complete.
+   - Select **Next**.
+   - Set the version number to `1.0.0.11`.
+   - Select **Managed**.
+   - Select **Export**.
+   - Click **Download** to download the managed solution on your machine.
 
-- The record **Owner** should now be the **Inspection Router**.
+1. Export unmanaged solution.
 
-![Routed record - screenshot](../images/L11/Mod_02_Azure_Functions_image84.png)
+   - Select **Export** again.
+   - Select **Next**.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.11`.
+   - Select **Unmanaged**.
+   - Select **Export**.
+   - Click **Download** to download the unmanaged solution on your machine.
 
-## Exercise 4: Promote to production
+### Task 4.2: Import solution
 
-**Objective:** In this exercise, you will export the Permit Management solution form your Dev environment and import it into your Production environment. In this lab, you have added a security role to the solution that must be promoted.
+1. Import the Permit Management solution.
 
-### Task 4.1: Export Solution
-
-1. Export Permit Management managed solution
-
-- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
-
-- Select **Solution**.
-
-- Select the **Permit Management** solution and then select **Export**.
-
-![Export solution - screenshot](../images/L11/Mod_02_Azure_Functions_image85.png)
-
-- Select **Publish** and wait for the publishing to complete.
-
-![Publish solution - screenshot](../images/L11/Mod_02_Azure_Functions_image86.png)
-
-- Select **Next**.
-
-- Select **Managed** and then select **Export**.
-
-![Export solution - screenshot](../images/L11/Mod_02_Azure_Functions_image87.png)
-
-- Save the **Exported** solution on your machine.
-
-2. Export Permit Management unmanaged solution
-
-- Select **Solution** again.
-- Select the **Permit Management** solution and then select **Export**.
-- Select **Next**.
-- Select **Unmanaged, edit the version number to match the Managed solution** and then select **Export**.
-
-- Save the **Exported** solution in your machine.
-
-### Task 4.2: Import Solution
-
-1. Import Permit Management managed solution
-
-- Sign in to [https://make.powerapps.com](https://make.powerapps.com/) and make sure you are in the **Prod** environment.
-
-- Select **Solution**.
-
-- Select **Import**.
-
-![Import solution - screenshot](../images/L11/Mod_02_Azure_Functions_image88.png)
-
-- Select **Choose file**.
-
-- Select the **Managed** solution you exported and then select **Open**.
-
-- Select **Next**.
-
-- Select **Import**.
-
-- Wait for the import to complete and then select **Close**.
-
-- Review and test your production environment.
+   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Production** environment.
+   - Select **Solutions**.
+   - Select **Import solution**.
+   - Select **Browse**.
+   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
+   - Select **Next**.
+   - Expand **Advanced settings** and make sure **Upgrade** is selected.
+   - Select **Import**.
+   - Select **Import** and wait the import to complete.
