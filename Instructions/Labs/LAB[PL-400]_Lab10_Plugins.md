@@ -214,7 +214,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Return to command prompt.
 
-   - Run the command below to launch the Plug-in Registration Tool (PRT).
+   - Run the command below to launch the Plugin Registration Tool (PRT).
 
      ```dos
      pac tool prt
@@ -222,7 +222,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Connect to your Dataverse environment.
 
-   - Select **CREATE NEW CONNECTION**.
+   - Select **+ CREATE NEW CONNECTION**.
 
      ![New connection - screenshot](../images/L10/Mod_01_Plugin_image17.png)
 
@@ -241,7 +241,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Register the plug-in assembly.
 
-   - Select **Register** and select **Register** **Register New Assembly**.
+   - Select **Register** and select **Register New Assembly**.
 
      ![Register new assembly menu option - screenshot](../images/L10/prt-register-assembly.png)
 
@@ -257,7 +257,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
      ![Register new assembly plugin - screenshot](../images/L10/prt-register-assembly-plugin.png)
 
-   - Select **Register Selections Plugins**.
+   - Select **Register Selected Plugins**.
 
      ![Registered assembly plugin - screenshot](../images/L10/prt-registered-plugin.png)
 

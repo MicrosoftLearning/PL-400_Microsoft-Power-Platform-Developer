@@ -276,7 +276,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Enter `pl400fa` followed by your initials and a unique number for Function App name.
 
-   > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
+     > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
 
    - Select **.NET** for Runtime stack
 
