@@ -227,10 +227,10 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Select the **Views** node in the tree view for the Inspections table.
    - Select the **Active Inspections** view.
    - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
-   - Add **Inspection Type**, **Scheduled Date**, and **Sequence** to the view.
+   - Add **Permit**, **Inspection Type**, **Scheduled Date**, **Owner**, and **Sequence** to the view.
    - Remove **Created On** from the view by selecting the chevron on the column and select **Remove**.
 
-     ![Active inspections view - screenshot](../images/L02/Mod_02_Model_Driven_App_image22.png)
+     ![Active inspections view - screenshot](../images/L02/inspections-view.png)
 
    - Select **Save and publish** and wait for the publishing to complete.
 1. Close the view editor tab.
