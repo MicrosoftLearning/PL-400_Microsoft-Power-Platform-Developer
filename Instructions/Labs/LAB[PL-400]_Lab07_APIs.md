@@ -290,7 +290,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 1. Build the project.
 
    - Select the **Save** icon.
-   - In Solution Explorer, right-click the *Permit console project* and select **Build**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Build**.
    - The Build should succeed with 0 errors.
 
 1. Run the app.
