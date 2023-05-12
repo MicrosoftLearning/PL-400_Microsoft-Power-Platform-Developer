@@ -8,8 +8,6 @@ lab:
 
 ## Scenario
 
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
-
 In this lab you will use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
 
 ## High-level lab steps
@@ -17,295 +15,343 @@ In this lab you will use the event publishing capability of Microsoft Dataverse.
 As part of configuring the event publishing, you will complete the following:
 
 - Create an Azure Function to receive the Webhook post
-
 - Configure Microsoft Dataverse to publish events using a Webhook
-
 - Test publishing of events
 
 ## Things to consider before you begin
 
 - Do we know what events will trigger our Webhook?
-
 - Could what we are doing with the Webhook, be done using Power Automate?
-
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
 ## Exercise 1: Create an Azure Function
 
 **Objective:** In this exercise, you will create an Azure Function that will be the endpoint to accept and log incoming web requests.
 
-### Task 1.1: Create Azure Function App
+### Task 1.1: Create a Function App in the Azure Portal
 
-1. Create new function application
+1. Create function app.
 
-	- Sign in to [Azure portal](https://portal.azure.com) and login.
+   - Sign in to the [Azure portal](https://portal.azure.com).
 
-	- Select **Show portal menu** and then select **+ Create a resource**.
+   - Select **Show portal menu** and then select **+ Create a resource**.
 
-    ![Create new resource - screenshot](../images/L12/Mod_01_Web_Hook_image1.png)
+   - Search for `function app` and select **Function App** by Microsoft.
 
-	- Search for Function App and select it.
+   ![New function app - screenshot](../images/L12/Mod_01_Web_Hook_image2.png)
 
-    ![New function app - screenshot](../images/L12/Mod_01_Web_Hook_image2.png)
+   - Click on the **Function App** tile.
 
-	- Select **Create**.
+   - Select **Create**.
 
-    ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
+   ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
-	- Enter your initials plus today’s date for **App Name**, select your **Subscription**, select **Create New** for **Resource Group**, select **.NET** for Runtime Stack, **6** for Version, select location in the same region as **Microsoft Dataverse**, and then select **Review + Create**.
+   - Select **Create**.
 
-    ![Review/create function app - screenshot](../images/L12/Mod_01_Web_Hook_image4.png)
+   - Select your **Azure Pass - Sponsorship** subscription.
 
-	- Select **Create** and wait for the deployment to complete.
+   - Select the **PL400** for resource group.
 
-### Task 1.2: Create an Azure Function
+   - Enter `pl400wh` followed by your initials and a unique number for Function App name.
+
+     > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
+
+   - Select **.NET** for Runtime stack
+
+   - Select **6 (LTS)** for Version
+
+   - Select **Consumption** for Hosting options and plans.
+
+   - Select **Review + create**.
+
+   - Select **Create**.
+
+### Task 1.1: Create an Azure Function in the Azure Portal
 
 1. Create a new function
 
-	- Select **Go to resource**.
+   - Select **Go to resource**.
 
-    ![Go to resource - screenshot](../images/L12/Mod_01_Web_Hook_image5.png)
+     ![Go to resource - screenshot](../images/L12/azure-portal-go-to-resource.png)
 
-	- Select **Functions** and then select **+ Create**.
+   - Select **Functions**.
 
-    ![Add function - screenshot](../images/L12/Mod_01_Web_Hook_image6.png)
+     ![Add function - screenshot](../images/L12/Mod_01_Web_Hook_image6.png)
 
-	- Select **HTTP trigger** for template and then select **Create**.
+   - Select **+ Create**.
 
-    ![HTTP trigger - screenshot](../images/L12/Mod_01_Web_Hook_image7.png)
+   - Select **HTTP trigger** for Template.
 
-2. Test the function
+   - Enter `WebHookTrigger` for New Function.
 
-	- Select **Code + Test**.
+   - Select **Function** for Authorization level.
 
-    ![Code + Test - screenshot](../images/L12/Mod_01_Web_Hook_image8.png)
+     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function.png)
 
-	- Select **Test**/**Run**.
+   - Select **Create**.
 
-    ![Test/run - screenshot](../images/L12/Mod_01_Web_Hook_image9.png)
+1. Test the function
 
-	- Select **Run**.
+   - Select **Code + Test**.
 
-	- You should see **Hello, Azure** in the output.
+     ![Code + Test - screenshot](../images/L12/Mod_01_Web_Hook_image8.png)
 
-    ![Function output - screenshot](../images/L12/Mod_01_Web_Hook_image10.png)
+   - Select **Test**/**Run**.
 
-	- Close the test pane.
+     ![Test/run - screenshot](../images/L12/Mod_01_Web_Hook_image9.png)
 
-3. Edit the function
+   - Select **Run**.
 
-	- Replace the Run method with the method below.
+   - You should see **Hello, Azure** in the output.
 
-            public static async void Run(HttpRequest req, ILogger log)
-            {
-                log.LogInformation("C# HTTP trigger function processed a request.");
+     ![Function output - screenshot](../images/L12/Mod_01_Web_Hook_image10.png)
 
-                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-                dynamic data = JsonConvert.DeserializeObject(requestBody);
-                string indentedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
-                log.LogInformation(indentedJson);
-            }
+   - Close the test pane.
 
-	- Save your changes.
+1. Edit the function
 
-    ![Save function - screenshot](../images/L12/Mod_01_Web_Hook_image11.png)
+   - Replace the entire Task method with the method below.
 
-4. Remove HTTP output
+     ```csharp
+     public static async void Run(HttpRequest req, ILogger log)
+     {
+         log.LogInformation("C# HTTP trigger function processed a request.");
 
-	- Select **Integration**.
+         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+         dynamic data = JsonConvert.DeserializeObject(requestBody);
+         string indentedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
+         log.LogInformation(indentedJson);
+     }   
+     ```
 
-    ![Integration - screenshot](../images/L12/Mod_01_Web_Hook_image12.png)
+   - Save your changes.
 
-	- Select the **HTTP Output**.
+     ![Save function - screenshot](../images/L12/azure-portal-function-code.png)
 
-    ![Outputs - screenshot](../images/L12/Mod_01_Web_Hook_image13.png)
+1. Remove HTTP output
 
-	- Select **Delete**.
+   - Select **Integration**.
 
-    ![Delete output - screenshot](../images/L12/Mod_01_Web_Hook_image14.png)
+     ![Integration - screenshot](../images/L12/Mod_01_Web_Hook_image12.png)
 
-	- Select **OK**.
+   - Select the **HTTP Output**.
 
-5. Get the function URL
+     ![Outputs - screenshot](../images/L12/Mod_01_Web_Hook_image13.png)
 
-	- Select **Overview** and then select **Get Function URL**.
+   - Select **Delete**.
 
-    ![Get function URL - screenshot](../images/L12/Mod_01_Web_Hook_image15.png)
+     ![Delete output - screenshot](../images/L12/Mod_01_Web_Hook_image14.png)
 
-	- Select **Copy** and then select OK to close the popup.
+   - Select **OK**.
 
-    ![Copy function URL - screenshot](../images/L12/Mod_01_Web_Hook_image16.png)
+1. Get the function URL
 
-	- Save the **URL**, you will need it in the next exercise.
+   - Select **Overview** and then select **Get Function URL**.
+
+     ![Get function URL - screenshot](../images/L12/azure-portal-function-url.png)
+
+   - Select **Copy** and then select OK to close the popup.
+
+     ![Copy function URL - screenshot](../images/L12/Mod_01_Web_Hook_image16.png)
+
+   - Save the **URL** in a notepad, you will need it in the next exercise.
 
 ## Exercise 2: Configure Webhook
 
-### Task 2.1: Configure publishing to a Webhook
+### Task 2.1: Configure publishing to a webhook
 
-1. Start the Plugin Registration Tool
+1. Start the Plug-in Registration Tool.
 
-2. Start the plugin registration tool and sign in.
+   - Start the developer command prompt tool.
 
-	- Open a command prompt.
+   - Run the command below to launch the Plugin Registration Tool (PRT).
 
-	- Run the command below to launch the Plug-in Registration Tool (PRT).
+     ```dos
+     pac tool prt
+     ```
 
-            pac tool prt
+1. Connect to your Dataverse environment.
 
-3. Create new connection
+   - Select **+ CREATE NEW CONNECTION**.
 
-	- Select **Create New Connection**.
+     ![New connection - screenshot ](../images/L12/Mod_01_Web_Hook_image22.png)
 
-    ![New connection - screenshot ](../images/L12/Mod_01_Web_Hook_image22.png)
+   - Select **Office 365** for Deployment Type.
+   - Check **Display list of available organizations**.
+   - Check **Show Advanced**.
+   - Enter your tenant credentials.
 
-	- Select **Office 365** and check the **Display List of available organization** and **Show Advanced** checkboxes. Select **Online Region** where your organization is located. If you are unsure what region to select, select **Don’t Know**.
+     ![Provide credentials - screenshot](../images/L10/Mod_01_Plugin_image18.png)
 
-	- Provide your **Microsoft Dataverse** credentials and **Login**.
+   - Select **Login**.
 
-    ![Login - screenshot](../images/L12/Mod_01_Web_Hook_image23.png)
+     ![Tools environments - screenshot](../images/L06/pac-tools-environments.png)
 
-	- Select the **Development** environment and then select **Login**.
+   - Select your **Development** environment and select **Login**.
 
-    ![Select environment - screenshot](../images/L12/Mod_01_Web_Hook_image24.png)
+1. Register webhook.
 
-4. Register new Webhook
+   - Select **Register** and then select **Register New Web Hook**.
 
-	- Select **Register** and then select **Register New Webhook**.
+     ![Register new Webhook - screenshot](../images/L12/Mod_01_Web_Hook_image25.png)
 
-    ![Register new Webhook - screenshot](../images/L12/Mod_01_Web_Hook_image25.png)
+   - Enter `NewSize` for **Name**.
 
-	- Enter **NewSize** for **Name**.
+   - Go to the notepad where you saved the function URL and copy everything before the **?**.
 
-	- Go to the notepad where you saved the function URL and copy everything before the **‘?’**.
+     ![Copy URL - screenshot](../images/L12/webhook-url.png)
 
-      ![Copy URL - screenshot](../images/L12/Mod_01_Web_Hook_image26.png)
+   - In the Plugin Registration Tool, paste the URL you copied in the **Endpoint URL** field.
 
-	- Go back to the **Plugin Registration** tool and paste the **URL** you copied in the **Endpoint URL** field.
+      ![Paste URL - screenshot ](../images/L12/webhook-endpoint-url.png)
 
-      ![Paste URL - screenshot ](../images/L12/Mod_01_Web_Hook_image27.png)
+   - Select **WebhookKey** for **Authentication**.
 
-	- Select **WebhookKey** for **Authentication**.
+   - Go back to the notepad and copy the key - everything after **code=**.
 
-	- Go back to the notepad and copy the key.
+   - In the Plugin Registration Tool, paste the key you copied in the **Value** field.
 
-      ![Copy key - screenshot](../images/L12/Mod_01_Web_Hook_image28.png)
+      ![Paste key value - screenshot](../images/L12/webhook-value.png)
 
-	- Go back to the **Plugin Registration** tool, paste the key you copied in the **Value** field and select **Save**.
+   - Select **Save**
 
-      ![Paste key value and save - screenshot](../images/L12/Mod_01_Web_Hook_image29.png)
+1. Register new step on update of new size column.
 
-5. Register new step
+   - Select the **Webhook** you registered, select **Register** and then select **Register New Step**.
 
-	- Select the **Webhook** you registered, select **Register** and then select **Register New Step**.
+     ![Register new step - screenshot](../images/L12/Mod_01_Web_Hook_image30.png)
 
-    ![Register new step - screenshot](../images/L12/Mod_01_Web_Hook_image30.png)
+   - Enter `Update` for **Message**.
 
-	- Select **Update** Message, **contoso_permit** for Primary Entity, and select **Filtering Attributes.**
+   - Enter `contoso_permit` for **Primary Table**.
 
-      ![Filtering attributes - screenshot](../images/L12/Mod_01_Web_Hook_image31.png)
+   - Select **Filtering Attributes.**
 
-	- Select only **New Size** and then select **OK**.
+     ![Filtering attributes - screenshot](../images/L12/Mod_01_Web_Hook_image31.png)
 
-    ![Select attribute - screenshot](../images/L12/Mod_01_Web_Hook_image32.png)
+   - Uncheck **Select All**.
 
-	- Select **Asynchronous** for Execution Mode and then select **Register New Step**.
+   - Select **New Size**.
 
-    ![Register new step - screenshot](../images/L12/Mod_01_Web_Hook_image33.png)
+     ![Select attribute - screenshot](../images/L12/Mod_01_Web_Hook_image32.png)
+
+   - Select **OK**.
+
+   - Select **PostOperation** from dropdown for **Event Pipeline Stage of Execution**.
+
+   - Select **Asynchronous** for Execution Mode
+
+     ![Register new step - screenshot](../images/L12/webhook-register-step.png)
+
+   - Select **Register New Step**.
+
+   - Step should now be registered in the WebHook.
 
 ### Task 2.2: Test the Webhook
 
-1. Start the Permit Management application
+1. Configure formatted output when monitoring the function.
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Go back to your **Azure Function**.
 
-	- Select Apps and launch the Permit Management application.
+   - Select **Monitor**.
 
-      ![Start application - screenshot](../images/L12/Mod_01_Web_Hook_image34.png)
+   - Select the **Logs** tab.
 
-	- Select **Permits** and open one of the permit records. Create new if you don’t have a Permit record.
+   - Select **App Insight Logs**
 
-	- Change the **New Size** to **5000** and **Save**.
+     ![Configure Monitor - screenshot](../images/L12/azure-function-monitor.png)
+
+1. Update Permit record.
+
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
+   - Make sure you are in the Development environment.
+   - Select **Apps**.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select **Permits**.
+   - Open the **Test Permit** record.
+
+     ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
+
+   - Change the **New Size** to **5000**.
 
       ![Change size and save - screenshot](../images/L12/Mod_01_Web_Hook_image36.png)
 
-2. Check Azure Output
+   - Select **Save**.
 
-	- Go back to your **Azure Function**.
+1. Check Azure logs.
 
-	- Select **Code + Test**.
+   - Go back to your **Azure Function**.
 
-	- Show **Logs**.
+   - You should see logs like the image below. The Output is a serialized context object.
 
-      ![Show logs - screenshot](../images/L12/Mod_01_Web_Hook_image37.png)
+     ![Function output - screenshot](../images/L12/azure-function-result1.png)
 
-	- You should see logs like the image below. The Output is a serialized **RemoteExecutionContextobject** object
-
-      ![Function output - screenshot](../images/L12/Mod_01_Web_Hook_image38.png)
-
-**Hint**: If the log is not showing in the console (sometimes this happens), select **Monitor** on the left and check execution log. Select entry, details will be on the right (this could be delayed up to a few minutes).
-
-3. Confirm the function executes only when the New Size value changes
-
-	- Go back to the **Permit Management** application.
-
-	- Change the **Start Date** to tomorrow’s date and select **Save**.
-
-      ![Update record and save - screenshot](../images/L12/Mod_01_Web_Hook_image39.png)
-
-Go back to the Azure Function and make sure the function did not execute.
-
-### Task 2.3: Configure an entity image
-
-This step allows you to avoid unnecessarily querying Microsoft Dataverse and make a request only when you need information from the primary table. It can also be used to get the prior value of a column before an update operation.
-
-1. Register New Image
-
-	- Go back to the **Plugin Registration** tool.
-
-	- Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
-
-      ![Register new image - screenshot](../images/L12/Mod_01_Web_Hook_image40.png)
-
-	- Check both **Pre** and **Post** images checkboxes.
-
-	- Enter **Permit Image** for **Name**, **PermitImage** for **Entity Alias**, and then select the **Parameters** button.
-
-      ![Image type information - screenshot](../images/L12/Mod_01_Web_Hook_image41.png)
-
-	- Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**, and then select **OK**.
-
-      ![Select attributes - screenshot](../images/L12/Mod_01_Web_Hook_image42.png)
-
-	- Select **Register Image**.
-
-      ![Register image - screenshot](../images/L12/Mod_01_Web_Hook_image43.png)
-
-2. Clear Azure log
-
-	- Go back to the **Azure Function.**
-
-	- Select **Clear** logs.
+   - Select **Clear**.
 
       ![Clear logs - screenshot](../images/L12/Mod_01_Web_Hook_image44.png)
 
-3. Update Permit record
+1. Confirm the function executes only when the New Size value changes
 
-	- Go to the **Permit Management** application.
+   - Go back to the **Test Permit** record.
 
-	- Select **Permits** and open one of the **Permit** records.
+   - Change the **Start Date** to tomorrow’s date and select **Save**.
 
-	- Change the New Size to **4000** and select **Save**
+      ![Update record and save - screenshot](../images/L12/Mod_01_Web_Hook_image39.png)
 
-4. Check Azure logs
+   - Go back to your **Azure Function**.
 
-	- Go back to the **Azure Function**.
+   - The log is empty and the function did not execute.
 
-	- Maximize the log pane.
+### Task 2.3: Configure entity images
 
-      ![Maximize log pane - screenshot](../images/L12/Mod_01_Web_Hook_image45.png)
+This step allows you to avoid unnecessarily querying Microsoft Dataverse and make a request only when you need information from the primary table. It can also be used to get the prior value of a column before an update operation.
 
-	- The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
+1. Register images.
+
+   - Go back to the **Plugin Registration** tool.
+
+   - Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
+
+     ![Register new image - screenshot](../images/L12/Mod_01_Web_Hook_image40.png)
+
+   - Check **Pre Image**.
+
+   - Check **Post Image**.
+
+   - Enter `Permit PreImage` for **Name**.
+
+   - Enter `PermitImage` for **Entity Alias**.
+
+   - Select the **Parameters** button.
+
+     ![Image type information - screenshot](../images/L12/prt-image-parameters.png)
+
+   - Uncheck **Select All**.
+
+   - Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**.
+
+     ![Select attributes - screenshot](../images/L12/Mod_01_Web_Hook_image42.png)
+
+   - Select **OK**.
+
+     ![Register image - screenshot](../images/L12/prt-register-image.png)
+
+   - Select **Register Image**.
+
+1. Update Permit record.
+
+   - In the  **Permit Management** app, select **Permits**.
+
+   - Open the **Test Permit** record.
+
+   - Change the **New Size** to **4000**.
+
+   - Select **Save**.
+
+1. Check Azure logs.
+
+   - Go back to your **Azure Function**.
+
+   - The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
       ![Post and pre entity image values - screenshot](../images/L12/Mod_01_Web_Hook_image46.png)
-
-**Note:** Technically, we have the data in the target object already. However, if there are plugins modifying the data, PostImage will contain the copy as recorded in Microsoft Dataverse while Target contains the data was submitted on Save. In addition to that, preimage contains data before the save operation took place.
