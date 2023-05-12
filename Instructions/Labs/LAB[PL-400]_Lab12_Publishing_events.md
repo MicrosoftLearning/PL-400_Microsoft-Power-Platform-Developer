@@ -24,6 +24,18 @@ As part of configuring the event publishing, you will complete the following:
 - Could what we are doing with the Webhook, be done using Power Automate?
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L12\Starter folder.
+
+## Completed solution
+
+Completed solution files for this lab can be found in the  C:\Labfiles\L12\Completed folder.
+
+## Resources
+
+Complete source code files for this lab can be found in the  C:\Labfiles\L12\Resources folder.
+
 ## Exercise 1: Create an Azure Function
 
 **Objective:** In this exercise, you will create an Azure Function that will be the endpoint to accept and log incoming web requests.
