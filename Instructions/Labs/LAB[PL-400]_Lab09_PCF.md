@@ -43,7 +43,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 > [!IMPORTANT]
 > You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
 
-## Exercise #1: Create the PCF Control
+## Exercise 1: Create the PCF Control
 
 **Objective:** In this exercise, you will create a Power Apps Components Framework control using the Power Apps CLI.
 
@@ -271,7 +271,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      > [!NOTE]
      > If you get the response where *msbuild* is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
 
-### Task 1.3: Build the Basic Timeline
+### Task 1.4: Build the Basic Timeline
 
 1. Change to the **src** folder.
 
@@ -433,7 +433,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - **Do not** close the test environment.
 
-### Task 1.4: Tailor for Inspection Data
+### Task 1.5: Tailor for Inspection Data
 
 In this task, you will switch from using the hard-coded array of data to using a file loaded into the test harness.
 
@@ -581,7 +581,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
    - **Do not** close the test environment.
 
-### Task 1.5: Change Color for Items
+### Task 1.6: Change Color for Items
 
 In this task, you will use the **css** resource you configured to change the color of the items on the timeline.
 

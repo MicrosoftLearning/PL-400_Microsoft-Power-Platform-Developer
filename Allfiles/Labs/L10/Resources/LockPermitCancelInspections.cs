@@ -2,7 +2,6 @@ using System;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System.Text.RegularExpressions;
-using ContosoPackageProject;
 
 namespace ContosoPackageProject
 {
