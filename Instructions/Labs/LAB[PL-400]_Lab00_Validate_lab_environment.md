@@ -73,6 +73,8 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
     ![Labfiles folders.](../images/L00/labfiles-folder.png)
 
+1. Close the PowerShell window.
+
 ## Exercise 2 – Power Platform trial
 
 In this exercise, you will add a Power Apps trial to the tenant and assign licenses to users.
@@ -94,6 +96,10 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 1. In the left-hand navigation, expand **Billing** and select **Purchase services**.
 
     ![Purchase services.](../images/L00/purchase-services.png)
+
+1. If **Purchase services** is not listed under Billing, select **Marketplace** and then select the **All products** tab.
+
+    ![Marketplace.](../images/L00/marketplace.png)
 
 1. In the search all product categories text box, enter `PowerApps` and press **Enter**.
 
