@@ -37,7 +37,7 @@ namespace ContosoPackageProject
             qe.Criteria.AddCondition("contoso_permit", ConditionOperator.Equal, permitEntityRef.Id);
 
             localPluginContext.Trace("Retrieving inspections for Permit Id " + permitEntityRef.Id);
-            var inspectionsResult = localPluginContext.CurrentUserService.RetrieveMultiple(qe);
+            var inspectionsResult = localPluginContext.PluginUserService.RetrieveMultiple(qe);
             localPluginContext.Trace("Retrieved " + inspectionsResult.Entities.Count + " inspection records");
 
             int canceledInspectionsCount = 0;
@@ -49,7 +49,7 @@ namespace ContosoPackageProject
                     canceledInspectionsCount++;
                     inspection["statuscode"] = new OptionSetValue(330650004);
                     localPluginContext.Trace("Canceling inspection Id : " + inspection.Id);
-                    localPluginContext.CurrentUserService.Update(inspection);
+                    localPluginContext.PluginUserService.Update(inspection);
                     localPluginContext.Trace("Canceled inspection Id : " + inspection.Id);
                 }
             }
