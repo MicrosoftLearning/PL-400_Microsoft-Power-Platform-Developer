@@ -946,7 +946,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
    - In the **Objects** pane, select **All**.
 
-   - Select **Publish All Customizations**.
+   - Select **Publish all customizations**.
 
 ### Task 4.5: Test Command Button
 

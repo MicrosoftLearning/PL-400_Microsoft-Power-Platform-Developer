@@ -338,7 +338,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.
 
    ![Publish customizations - screenshot](../images/L01/Mod_01_Data_Modeling_image19.png)
 
@@ -452,7 +452,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.
 
 ## Exercise 4: Create Relationships
 
@@ -521,4 +521,4 @@ You will create the following data model.
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.
