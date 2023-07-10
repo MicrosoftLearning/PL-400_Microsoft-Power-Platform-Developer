@@ -232,7 +232,8 @@ We will install and configure the following tools:
 
 1. Download Windows 64-bit [Postman](https://www.postman.com/downloads)
 1. Run the Postman installer.
-1. Click **Skip and go to the app**.
+1. Create a Postman account.
+1. Sign in to Postman.
 1. Follow the steps in [Set up a Postman environment](https://learn.microsoft.com/power-apps/developer/data-platform/webapi/setup-postman-environment) to configure Postman to connect to your Development environment.
 
 ## Exercise 5: .NET Framework

@@ -56,7 +56,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
    - Select **+ Add data**.
    - Expand **Connectors**.
-   - Select **Office365Users**.
+   - Select **Office 365 Users**.
    - Select **Connect**.
 
 1. Configure OnStart.
@@ -150,10 +150,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 1. Start the application.
 
    - Select the **Main Screen** and select **Preview the app**.
-   - The application should load and show at least one inspection. Select the inspection.
+   - The application should load and show at least one inspection.
+   - Select the inspection.
    - Select the **Failed** button.
    - The inspection should be updated, and the application should navigate back to the Main Screen. The inspection you set to failed will not be listed in the gallery.
-   - Select **Close**.
+   - **Close** preview mode.
 
 1. Save and publish the app.
 
