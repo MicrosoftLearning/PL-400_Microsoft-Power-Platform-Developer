@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 5: Power Automate'
-    module: 'Module 4: Automate a business process using Power Automate'
+    module: 'Module 5: Automate a business process using Power Automate'
 ---
 
 # Practice Lab 5 - Power Automate

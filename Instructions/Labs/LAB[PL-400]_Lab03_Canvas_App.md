@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 3: Canvas app'
-    module: 'Module 2: Create canvas app in Power Apps'
+    module: 'Module 3: Create canvas apps'
 ---
 
 # Practice Lab 3 –  Canvas app

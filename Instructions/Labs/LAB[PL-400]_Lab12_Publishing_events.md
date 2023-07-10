@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 12: Publishing events externally'
-    module: 'Module 9: Integrate with Power Platform and Dataverse'
+    module: 'Module 10: Integrate Dataverse and Azure'
 ---
 
 # Practice Lab 12 – Publishing Events Externally

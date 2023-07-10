@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 10: Dataverse Plug-ins'
-    module: 'Module 8: Extending Microsoft Dataverse'
+    module: 'Module 9: Extending Microsoft Dataverse'
 ---
 
 # Practice Lab 10 – Dataverse Plug-ins

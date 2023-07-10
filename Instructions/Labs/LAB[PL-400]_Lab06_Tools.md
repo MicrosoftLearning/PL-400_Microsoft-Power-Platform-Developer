@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 6: Power Platform tools'
-    module: 'Module 5: Introduction to developing with Power Platform'
+    module: 'Module 6: Introduction to developing with Power Platform'
 ---
 
 # Practice Lab 6 - Power Platform tools

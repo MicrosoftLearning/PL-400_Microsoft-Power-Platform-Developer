@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 4: Advanced canvas app techniques'
-    module: 'Module 3: Master advanced techniques and data options in canvas apps'
+    module: 'Module 4: Advanced techniques in canvas apps'
 ---
 
 # Practice Lab 4 –  Advanced canvas app techniques

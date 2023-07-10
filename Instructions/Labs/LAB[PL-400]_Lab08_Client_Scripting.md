@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 8: Client scripting'
-    module: 'Module 6: Extending the model-driven apps user experience'
+    module: 'Module 7: Extending the model-driven apps user experience'
 ---
 
 # Practice Lab 8 - Client scripting

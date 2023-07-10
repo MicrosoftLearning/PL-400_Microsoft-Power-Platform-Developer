@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 9: Power Apps Component Framework'
-    module: 'Module 7: Create code components with the Power Apps Component Framework'
+    module: 'Module 8: Create code components with the Power Apps Component Framework'
 ---
 
 # Practice Lab 9 – Power Apps Component Framework

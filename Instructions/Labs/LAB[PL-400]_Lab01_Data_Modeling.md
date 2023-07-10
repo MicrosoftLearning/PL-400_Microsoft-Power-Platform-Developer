@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 1: Data modeling'
-    module: 'Module 1: Create a model-driven app in Power Apps'
+    module: 'Module 1: Work with Microsoft Dataverse'
 ---
 
 # Practice Lab 1  – Data Modeling
