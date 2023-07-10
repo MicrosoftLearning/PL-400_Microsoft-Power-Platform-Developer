@@ -55,7 +55,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
     ![Select Development environment in the Power Apps maker portal.](../images/L01/select-dev-environment.png)
 
-1. Select **Apps** from the left navigation pane. You should see a single app, Solution Health Hub, listed.
+1. Select **Apps** from the left navigation pane. You should see a two apps, Solution Health Hub and Package Management View, listed.
 
 1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model*.
 
@@ -165,6 +165,10 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Enter `Permit` for **Display Name**. The plural name will be automatically populated.
 
+1. Check **Enable attachments**.
+
+     ![Enable attachments for Table - screenshot](../images/L10/enable-attachments.png)
+
 1. Click **Save**.
 
    ![New Permit table - screenshot](../images/L01/permit-table.png)
@@ -262,6 +266,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - For **Required**, select **Business required**.
    - Expand **Advanced options**.
    - Set **Schema name** to `postalcode`.
+   - Set **Maximum character count** to 10.
    - Select **Save**.
 
 1. Add State/Province column
