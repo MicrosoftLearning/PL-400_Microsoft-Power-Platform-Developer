@@ -56,7 +56,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `early` and select **Early Bound Generator**.
 1. Select **Yes** to connect to an organization.
-1. Select your **Dev** connection and select **Connect**.
+1. Select your **Dev** connection and select **OK**.
 
      ![Early Bound Generator - screenshot](../images/L07/early-bound-tool.png)
 
