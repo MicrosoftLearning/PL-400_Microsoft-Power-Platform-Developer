@@ -159,7 +159,7 @@ We will install and configure the following tools:
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `fetchxml` and select **FetchXML Builder**.
 1. Select **Yes** to connect to an organization.
-1. Select **New connection**.
+1. Select **Open Connection Manager**.
 1. Select **Microsoft Login Control**.
 1. Click **Open Microsoft Login Control**.
 1. Select **Office 365** for Deployment Type.
@@ -169,6 +169,8 @@ We will install and configure the following tools:
 1. Click **Login**.
 1. Select your **Development** environment and select **Login**.
 1. Enter `Dev` for Name and select **Finish**.
+1. Select the **Dev** connection.
+1. Select **OK**.
 1. Select **Continue**.
 
    ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
