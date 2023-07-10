@@ -203,6 +203,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    ```
 
 1. Add your tenant credentials in the connection string.
+
+   > [!NOTE]
+   > If there is a semi-colon in your password add single quotes around the whole password.
+
 1. Add your Dataverse URL to the connection string.
 
    > [!NOTE]
@@ -331,9 +335,9 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Request Headers** for **Add authorization data to**.
    - Under *Configure New Token*, set:
      - Grant Type to `Implicit`
-     - Callback URL to `\{\{callback\}\}`
-     - Auth URL to `\{\{authurl\}\}`
-     - Client ID to `\{\{clientid\}\}`
+     - Callback URL to `{{callback}}`
+     - Auth URL to `{{authurl}}`
+     - Client ID to `{{clientid}}`
 
      ![Postman authorization tab - screenshot](../images/L07/postman-authorization.png)
 
@@ -364,7 +368,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     {{webapiurl}}contoso_inspections?$select=contoso_Permit, contoso_name
+     {{webapiurl}}contoso_inspections?$select=_contoso_permit_value, contoso_name
      ```
 
    - Select **Send**.
