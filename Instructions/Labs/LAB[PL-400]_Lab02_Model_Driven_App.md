@@ -84,7 +84,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Add new tab for **Inspections** to the form.
 
-   - Select the **Components** tab in the left-had pane.
+   - Select the **Components** tab in the left-hand pane.
 
      ![Add components to form - screenshot](../images/L02/form-components.png)
 
@@ -105,7 +105,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select the **Inspections** tab. Make sure that you have selected the whole tab and not just a section.
 
-   - Select the **Components** tab in the left-had pane.
+   - Select the **Components** tab in the left-hand pane.
 
    - Select **Subgrid** this will open a pop-up to select table.
 
@@ -123,7 +123,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
       ![Sub-grid properties - screenshot ](../images/L02/Mod_02_Model_Driven_App_image12.png)
 
-1. Steps to hide the section label
+1. Hide the section label.
 
    - Select the section.
 
@@ -132,6 +132,28 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Go to the **Properties** pane and check the **Hide Label** checkbox.
 
      ![Hide section label - screenshot](../images/L02/Mod_02_Model_Driven_App_image14.png)
+
+1. Add Timeline control to Permit form.
+
+   - In the **Tree view**, select the **General** tab
+
+     ![Tree view general tab - screenshot](../images/L10/select-general-tab.png)
+
+   - In the **Properties** pane, change **Layout** to **2 columns**.
+
+     ![General tab properties- screenshot](../images/L10/general-tab-properties.png)
+
+   - In the **Tree view**, select the **New Section** section under the General tab.
+
+   - Select the **Components** tab.
+
+   - Click on **Timeline** in the Component pane to add the Timeline control to the form.
+
+     ![General tab properties- screenshot](../images/L10/add-timeline.png)
+
+   - Select the section.
+
+   - Go to the **Properties** pane and check the **Hide Label** checkbox.
 
 1. Select **Save and publish** and wait for the publishing to complete.
 1. Close the form editor tab.
@@ -157,12 +179,11 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Click once on the **Permit Type** column. The Permit Type column will be added to the view.
    - Click the **Contact** column. The **Contact** column will be added to the view.
    - Go to the view designer and click on the chevron icon of the **Created On** column.
-   - Select **Remove**. **Created On** column will now be removed from the view.
+   - Select **Remove**. The **Created On** column will now be removed from the view.
    - Select **Save and publish** and wait for the publishing to complete.
 
 1. Close the view editor tab.
 1. Select **Done**.
-1. In the **Objects** pane, select **All**.
 
 ### Task 1.3: Build Site form and view
 
@@ -275,7 +296,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
-   - Select **OK**.
+   - Select **Ok**.
    - Select **Save and publish** and wait for the publishing to complete.
 1. Select the **<- Back** button.
 
@@ -445,7 +466,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide **Name** as `New Construction` and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
+   - Provide **Name** as `New Construction` and select **Save & Close** and this will show the newly created record on the Active Permit Types View.
 
      ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
 
