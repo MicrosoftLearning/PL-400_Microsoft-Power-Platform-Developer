@@ -74,9 +74,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Consumption** for Hosting options and plans.
 
+   - Select **Next : Storage**.
+
+   - Select the storage account you created in the previous lab.
+
    - Select **Review + create**.
 
-   - Select **Create**.
+   - Select **Create** and wait for the function app to be deployed.
 
 ### Task 1.1: Create an Azure Function in the Azure Portal
 
@@ -330,7 +334,7 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
 
    - Check **Post Image**.
 
-   - Enter `Permit PreImage` for **Name**.
+   - Enter `Permit Image` for **Name**.
 
    - Enter `PermitImage` for **Entity Alias**.
 
