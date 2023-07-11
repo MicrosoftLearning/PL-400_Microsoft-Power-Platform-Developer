@@ -162,7 +162,7 @@ In this task, you will create the application user in Dataverse and associate it
 
 1. Select **Environments**.
 
-1. Select your **Development** environment and select **Settings**.
+1. Select your **Development** environment.
 
      ![Development environment details - screenshot](../images/L11/development-environment.png)
 
@@ -284,6 +284,10 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Consumption** for Hosting options and plans.
 
+   - Select **Next : Storage**.
+
+   - Select the storage account you just created.
+
    - Select **Review + create**.
 
     ![Create function app - screenshot](../images/L11/azure-function-app-create.png)
@@ -313,7 +317,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Create**.
 
-   - Select **NET Core 3 (LTS)**.
+   - Select **.NET Core 3 (LTS)**.
 
    - Select **Timer Trigger**.
 
@@ -343,7 +347,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Run**.
 
-   - Select **Allow
+   - Select **Allow**.
 
      ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image35.png)
 
@@ -352,6 +356,8 @@ In this task, you will create the application user in Dataverse and associate it
    - After a little while, Azure Functions Core Tools will start.
 
      ![Running azure function - screenshot](../images/L11/Mod_02_Azure_Functions_image36.png)
+
+     > Note: If you get unknown option --port error, in Project Properties, select Debug and use the following command "host start --port 7071 --pause-on-error" to application arguments.
 
 1. Trigger the function with Postman.
 
@@ -378,7 +384,7 @@ In this task, you will create the application user in Dataverse and associate it
    - Select **Raw** and set it to empty json.
 
      ```json
-     {}     
+     {}
      ```
 
      ![Select body - screenshot](../images/L11/Mod_02_Azure_Functions_image39.png)
@@ -940,5 +946,4 @@ In this task, you will create the application user in Dataverse and associate it
    - Select the **Managed** solution file you exported in the previous task and then select **Open**.
    - Select **Next**.
    - Expand **Advanced settings** and make sure **Upgrade** is selected.
-   - Select **Import**.
    - Select **Import** and wait the import to complete.
