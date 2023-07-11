@@ -882,13 +882,13 @@ In this task, you will create the logic to invoke that will call the custom API.
 
 1. Edit the Permit table command bar.
 
-   - Select the **Pages** tab, Hover over **Permit** and select the **...** button.
+   - Select the **Pages** tab, Hover over **Permits view** and select the **...** button.
   
-     ![Select permit table - screenshot](../images/L08/mod-01-client-scripting-94.png)
+     ![Select permit table - screenshot](../images/L08/permits-view.png)
 
    - Select **Edit command bar**.
 
-     ![Edit command bar - screenshot](../images/L08/edit-app-command-bar.png)
+     ![Edit command bar - screenshot](../images/L08/edit-command-bar.png)
 
    - Select **Main form** and then select **Edit**.
 
