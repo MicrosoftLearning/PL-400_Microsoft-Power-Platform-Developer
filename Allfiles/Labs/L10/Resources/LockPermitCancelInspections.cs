@@ -26,7 +26,7 @@ namespace ContosoPackageProject
             localPluginContext.Trace("Updating Permit Id : " + permitEntityRef.Id);
             permitEntity["statuscode"] = new OptionSetValue(330650001);
 
-            localPluginContext.CurrentUsQuerterService.Update(permitEntity);
+            localPluginContext.PluginUserService.Update(permitEntity);
             localPluginContext.Trace("Updated Permit Id " + permitEntityRef.Id);
 
             QueryExpression qe = new QueryExpression

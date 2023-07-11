@@ -53,7 +53,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
-1. Find the values of the Permit table Status Reason columns.
+1. Find the values of the Permit table Status Reason column.
 
    - In the **Objects** pane on the left-hand side expand **Tables** then expand **Permit** table.
 
@@ -69,7 +69,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **Cancel**.
   
-1. Find the values of the Inspection table Status Reason columns.
+1. Find the values of the Inspection table Status Reason column.
 
    - In the **Tree view** expand the **Inspection** table.
   
@@ -206,7 +206,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select the **Save** icon.
    - In Solution Explorer, right-click the *ContosoPackageProject* project and select **Build**.
-   - Check the **Output* window and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here.
+   - Check the **Output** window and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here.
 
 ### Task 1.3: Deploy the plug-in
 
@@ -294,13 +294,12 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 ### Task 2.1: Add a new plug-in to the project
 
-1. Open **PreOperationPermitCreate.cs** file in Visual Studio.
+1. Open **ContosoPackageProject** solution in Visual Studio.
 
 1. Create new class.
 
    - In Solution Explorer, right-click the *ContosoPackageProject* project and select **Add** and then select **New Item**.
-   - Select Class and name the class `
-LockPermitCancelInspections.cs`
+   - Select Class and name the class `LockPermitCancelInspections.cs`
   
      ![Add class to Visual Studio - screenshot](../images/L10/vs-add-class.png)
 
@@ -392,7 +391,7 @@ LockPermitCancelInspections.cs`
 
 1. Retrieve the inspections and iterate through the returned records.
 
-   - Run thw QueryExpression query by using Retrieve Multiple.
+   - Run the QueryExpression query by using Retrieve Multiple.
 
      ```csharp
      localPluginContext.Trace("Retrieving inspections for Permit Id " + permitEntityRef.Id);
@@ -516,7 +515,7 @@ LockPermitCancelInspections.cs`
 
    - Select the **Save** icon.
    - In Solution Explorer, right-click the *ContosoPackageProject* project and select **Build**.
-   - Check the **Output* window and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here.
+   - Check the **Output** window and make sure that the build has succeeded. If it does not, go back and review your work compared the steps documented here.
 
 1. Select **File** and **Close Solution**.
 
@@ -530,7 +529,7 @@ LockPermitCancelInspections.cs`
 
 1. Update the assembly.
 
-   - Select the **ContosoPackageProject** assemblyand select **Update**.
+   - Select the **ContosoPackageProject** assembly and select **Update**.
 
      ![Update assembly - screenshot](../images/L10/Mod_01_Plugin_image36.png)
 
@@ -584,65 +583,7 @@ LockPermitCancelInspections.cs`
 
 **Objective:** In this exercise, you will test the plug-ins you created.
 
-### Task 3.1: Configure attachments on the Permit table
-
-1. Open the Permit Management solution.
-
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-
-1. Enable attachments for the Permit table.
-
-   - In the **Objects** pane on the left-hand side select **Tables**.
-
-   - Select the ellipses **...** for the **Permit** table and then select **Properties**.
-
-     ![Table settings - screenshot](../images/L10/Mod_01_Plugin_image48.png)
-
-   - Check **Enable attachments**.
-
-     ![Enable attachments for Table - screenshot](../images/L10/enable-attachments.png)
-
-   - Select **Save**
-
-1. Add Timeline control to Permit form.
-
-   - Select the **Permit** table.
-
-   - Under **Data experiences**, select **Forms**.
-
-   - Select the **Main** form.
-
-     ![Permit forms - screenshot](../images/L02/permit-forms.png)
-
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
-
-   - Select the **Tree view** tab.
-
-   - In the **Tree view**, select the **General** tab
-
-     ![Tree view general tab - screenshot](../images/L10/select-general-tab.png)
-
-   - In the **Properties** pane, change **Layout** to **2 columns**.
-
-     ![General tab properties- screenshot](../images/L10/general-tab-properties.png)
-
-   - In the **Tree view**, select the **New Section** section under the General tab.
-
-   - Select the **Components** tab.
-
-   - Click on **Timeline** iin the Component pane to add the Timeline control to the form.
-
-     ![General tab properties- screenshot](../images/L10/add-timeline.png)
-
-   - Select **Save and publish**.
-
-   - Close the form editor.
-
-   - Select **Done**.
-
-### Task 3.2: Enable Trace Logs
+### Task 3.1: Enable Trace Logs
 
 1. Enable Trace logs in XrmToolBox.
 
@@ -654,7 +595,7 @@ LockPermitCancelInspections.cs`
 
    - Select **Yes** to connect to an organization.
 
-   - Select your **Dev** connection and select **Connect**.
+   - Select your **Dev** connection and select **OK**.
 
    - Change **Trace Log Setting** to **All**.
 
@@ -716,7 +657,7 @@ LockPermitCancelInspections.cs`
 
      ![Active inspections view - screenshot](../images/L10/Mod_01_Plugin_image62.png)
 
-### Task 3.2: Test Restrict New Permit creation plug-in
+### Task 3.3: Test Restrict New Permit creation plug-in
 
 1. Try to create new Permit record for the One Microsoft Way Build Site.
 
@@ -726,7 +667,7 @@ LockPermitCancelInspections.cs`
 
    - Provide **Name** as `Test Permit Two`.
 
-   - Select **New Construction** for Permit Type, **One Microsoft Way** for Build Site, and **JOn Doe** for **Contact**.
+   - Select **New Construction** for Permit Type, **One Microsoft Way** for Build Site, and **Jon Doe** for **Contact**.
 
    - Select today's date for the Start Date.
 
@@ -778,7 +719,7 @@ LockPermitCancelInspections.cs`
 
    - Select the log with the contoso_LockPermit message and view the trace message in the right-hand pane. The trace messages should looks similar to.
 
-     ```
+     ```DOS
      Entered ContosoPackageProject.PreOperationPermitCreate.Execute() Correlation Id: f67c48f1-7946-4322-bc0b-de0950fffbec, Initiating User: 69d46714-c7eb-ed11-8849-000d3a17a888
      Updating Permit Id : f9068d71-f9ec-ed11-8848-0022481c5f83
      Updated Permit Id f9068d71-f9ec-ed11-8848-0022481c5f83
@@ -794,10 +735,10 @@ LockPermitCancelInspections.cs`
      Note record was created
      Exiting ContosoPackageProject.PreOperationPermitCreate.Execute()
      ```
-   
+
    - Select the log with the Create message and view the trace message in the right-hand pane. The trace messages should looks similar to.
 
-     ```
+     ```DOS
      Entered ContosoPackageProject.PreOperationPermitCreate.Execute() Correlation Id: 8d662516-cfba-4143-951c-f2423e743cc2, Initiating User: 69d46714-c7eb-ed11-8849-000d3a17a888
      Primary Entity Id: d12a656d-fcef-ed11-8848-0022481c5f83
      Build Site Entity Id: d4518341-f9ec-ed11-8848-0022481c5f83
@@ -813,3 +754,18 @@ LockPermitCancelInspections.cs`
 ### Task 5.1: Improve performance of LockPermitCancelInspections
 
 1. Filter the records in the QueryExpression to only return inspections to canceled.
+
+   ```csharp
+   qe.Criteria.AddCondition("statuscode", ConditionOperator.In, new object[] { 1,330650001 });   
+   ``````
+
+   or
+
+   ```csharp
+   qe.Criteria.FilterOperator = LogicalOperator.And;
+   FilterExpression statusfilter = new FilterExpression();
+   statusfilter.FilterOperator = LogicalOperator.Or;
+   statusfilter.AddCondition("statuscode", ConditionOperator.Equal, 1);
+   statusfilter.AddCondition("statuscode", ConditionOperator.Equal, 330650001);
+   qe.Criteria.AddFilter(statusfilter);
+   ```
