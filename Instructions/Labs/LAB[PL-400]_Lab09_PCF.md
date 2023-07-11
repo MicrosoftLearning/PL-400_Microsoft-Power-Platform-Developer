@@ -132,7 +132,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      > [!NOTE]
      > If Terminal is not visible in the menu, you can open it by selecting **View** -> **Terminal**.
 
-   - If **cmd** isn’t your **Default Shell**, select the arrow and then select *npm run build*Select Default Shell**.
+   - If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Profile**.
 
      ![Select default shell](../images/L09/mod-02-pcf-1-09.png)
 
@@ -249,10 +249,14 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
    - Add the following tag to the PropertyGroup.
 
      ```xml
-     <OutputPath>bin/debug</OutputPath>
+     <OutputPath>bin\debug</OutputPath>
      ```
 
+     ![Property Group in solution file - screenshot](../images/L09/output-path.png)
+
    - Select **File** and **Save All**.
+
+   - Select **File** and **Close Window**.
 
 1. Build the solution
 
@@ -269,7 +273,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      ![Build result - screenshot](../images/L09/build-result.png)
 
      > [!NOTE]
-     > If you get the response where *msbuild* is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
+     > If you get the response where msbuild is not recognized as an internal or external command. This means that you ran a normal command prompt instead of Visual Studio's developer command prompt.
 
 ### Task 1.4: Build the Basic Timeline
 
@@ -755,6 +759,8 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Close the form editor.
 
+   - Select **Done**.
+
 1. View inspection records
 
    - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
@@ -806,7 +812,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select the **Inspections** tab.
 
-   - The control should show the four inspections, but the color will not match the status reason values.
+   - The control should show the four inspections, but the color will not match the status reason colors.
 
      ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-66.png)
 
@@ -865,7 +871,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
 
-   - Drag the **Status Reason** column and drop it between the **Scheduled Date** and **Sequence** columns.
+   - Drag the **Status Reason** column and drop it after the **Scheduled Date** column.
 
    - Select **Save and publish** and wait for the publishing to complete.
 
@@ -946,7 +952,7 @@ In this task, you will use the **css** resource you configured to change the col
   
      ![Import solution - screenshot](../images/L09/mod-02-pcf-1-86.png)
 
-   - Select **Import**.
+   - Select **Next**.
 
    - In the Connections pane, select **Select a connection** and select **+New connection**.
 
