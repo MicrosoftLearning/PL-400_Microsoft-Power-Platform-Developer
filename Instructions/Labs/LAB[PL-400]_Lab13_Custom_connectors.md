@@ -145,13 +145,38 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **Save**.
 
+1. Select **Test/Run**.
+
+1. In the Body copy the following input values.
+
+   ```JSON
+   {
+    "Width": 10,
+    "Height": 15,
+    "Length": 10,
+    "AirChanges": 6
+   }
+   ```
+
+1. Select **Run**.
+
+1. the result should be as follows.
+
+   ```JSON
+   {
+    "cpm": 150
+   }
+   ```
+
+1. Close the Test pane.
+
 1. Copy the Function URL.
 
    - Select **Overview** and then select **Get Function URL**.
 
      ![Get function URL - screenshot](../images/L13/azure-portal-function-url.png)
 
-   - Select **Copy** and then select OK to close the popup.
+   - Select **Copy** and then select **OK** to close the popup.
 
      ![Copy function URL - screenshot](../images/L13/azure-portal-get-function-url.png)
 
@@ -227,7 +252,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **POST** for **Verb**.
 
-   - Paste the function **URL** from your notepad and remove everything after **HttpTrigger1**.
+   - Paste the function **URL** from your notepad and remove everything after **CPMTrigger**.
 
      ![Paste URL - screenshot](../images/L13/custom-connector-import-from-sample.png)
 
@@ -299,7 +324,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
      ![Test operation - screenshot](../images/L13/Mod_2_Custom_Connector_image37.png)
 
-   - Select **Test Operation**.
+   - Select **Test operation**.
 
    - You should get a CPM value back.
 
