@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 1: Data modeling'
-    module: 'Module 1: Create a model-driven app in Power Apps'
+    module: 'Module 1: Work with Microsoft Dataverse'
 ---
 
 # Practice Lab 1  – Data Modeling
@@ -55,7 +55,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
     ![Select Development environment in the Power Apps maker portal.](../images/L01/select-dev-environment.png)
 
-1. Select **Apps** from the left navigation pane. You should see a single app, Solution Health Hub, listed.
+1. Select **Apps** from the left navigation pane. You should see a two apps, Solution Health Hub and Package Management View, listed.
 
 1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model*.
 
@@ -97,9 +97,9 @@ In this exercise, you will add existing tables to the solution.
 
 ### Task 2.1 – Add existing tables
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -151,9 +151,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.1: Create Permit table and columns
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the Development environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -164,6 +164,10 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    ![Add new table - screenshot](../images/L01/Mod_01_Data_Modeling_image9.png)
 
 1. Enter `Permit` for **Display Name**. The plural name will be automatically populated.
+
+1. Check **Enable attachments**.
+
+     ![Enable attachments for Table - screenshot](../images/L10/enable-attachments.png)
 
 1. Click **Save**.
 
@@ -262,6 +266,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
    - For **Required**, select **Business required**.
    - Expand **Advanced options**.
    - Set **Schema name** to `postalcode`.
+   - Set **Maximum character count** to 10.
    - Select **Save**.
 
 1. Add State/Province column
@@ -338,15 +343,15 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.
 
    ![Publish customizations - screenshot](../images/L01/Mod_01_Data_Modeling_image19.png)
 
 ### Task 3.5: Edit Inspection status reasons
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -403,9 +408,9 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.6: Edit Permit status reasons
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -430,17 +435,17 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 1. Add the Completed option
 
    - Select **+New choice**.
-   - Enter **Completed** for Label.
+   - Enter `Completed` for Label.
 
 1. Add the Canceled option
 
    - Select **+New choice**.
-   - Enter **Canceled** for Label.
+   - Enter `Canceled` for Label.
 
 1. Add the Expired option
 
    - Select **+New choice**.
-   - Enter **Expired** for Label.
+   - Enter `Expired` for Label.
 
 1. Select **Active** as the **Default choice**.
 
@@ -452,7 +457,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.
 
 ## Exercise 4: Create Relationships
 
@@ -464,9 +469,9 @@ You will create the following data model.
 
 ### Task 4.1: Create Relationships
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 
-1. Make sure you are in the *Development* environment.
+1. Select your **Development** environment.
 
 1. Select **Solutions**.
 
@@ -521,4 +526,4 @@ You will create the following data model.
 
 1. In the **Objects** pane, select **All**.
 
-1. Select **Publish All Customizations**.
+1. Select **Publish all customizations**.

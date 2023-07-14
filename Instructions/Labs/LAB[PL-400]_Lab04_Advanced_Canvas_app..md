@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 4: Advanced canvas app techniques'
-    module: 'Module 3: Master advanced techniques and data options in canvas apps'
+    module: 'Module 4: Advanced techniques in canvas apps'
 ---
 
 # Practice Lab 4 –  Advanced canvas app techniques
@@ -56,7 +56,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
    - Select **+ Add data**.
    - Expand **Connectors**.
-   - Select **Office365Users**.
+   - Select **Office 365 Users**.
    - Select **Connect**.
 
 1. Configure OnStart.
@@ -150,10 +150,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 1. Start the application.
 
    - Select the **Main Screen** and select **Preview the app**.
-   - The application should load and show at least one inspection. Select the inspection.
+   - The application should load and show at least one inspection.
+   - Select the inspection.
    - Select the **Failed** button.
    - The inspection should be updated, and the application should navigate back to the Main Screen. The inspection you set to failed will not be listed in the gallery.
-   - Select **Close**.
+   - **Close** preview mode.
 
 1. Save and publish the app.
 
@@ -164,7 +165,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Confirm the inspection record was updated.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Inspections** and open the **Framing Inspection** record.
@@ -180,19 +181,19 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Create test records for later labs.
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
-   - Make sure you are in the Development environment.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Inspections**.
    - Select **+ New**.
-   - Enter **Electric Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
+   - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
 
    - Select **+ New**.
-   - Enter **Plumbing Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
+   - Enter `Plumbing Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
 
    - Select **+ New**.
-   - Enter **Mechanical Inspection** for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
+   - Enter `Mechanical Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
 
 1. You should have four inspections for the Test Permit.
 

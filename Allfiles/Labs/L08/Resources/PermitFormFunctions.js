@@ -94,6 +94,5 @@ ContosoPermit.Scripts.PermitForm = {
         );
     },
     __namespace: true
-
 }
 

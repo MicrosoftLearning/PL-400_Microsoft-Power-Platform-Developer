@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 6: Power Platform tools'
-    module: 'Module 5: Introduction to developing with Power Platform'
+    module: 'Module 6: Introduction to developing with Power Platform'
 ---
 
 # Practice Lab 6 - Power Platform tools
@@ -19,6 +19,7 @@ We will install and configure the following tools:
 - XrmToolBox
 - Postman
 - DotNet Framework
+- Visual Studio Code
 
 ## Things to consider before you begin
 
@@ -49,6 +50,9 @@ We will install and configure the following tools:
 
    ![pac tools - screenshot](../images/L06/pac-tool-list.png)
 
+   > [!NOTE]
+   > Power Platform tools will be installed on first launch.
+
 ## Exercise 2: Configuration Migration Tool
 
 **Objective:** In this exercise, you will copy reference data between environments.
@@ -56,7 +60,11 @@ We will install and configure the following tools:
 ### Task 2.1: Export data from Development
 
 1. Open a Command Prompt.
-1. Run the command **pac tool cmt**.
+1. Launch the Configuration Migration Tool with the following command.
+
+   ```dos
+   pac tool cmt
+   ```
 
    ![Configuration Migration Tool - screenshot](../images/L06/pac-tool-cmt.png)
 
@@ -98,7 +106,7 @@ We will install and configure the following tools:
 ### Task 2.2: Import data to Production
 
 1. Open the Command Prompt.
-1. Run the command **pac tool cmt**.
+1. Run the command `pac tool cmt`.
 1. Select **Import data**
 1. Select **Continue**.
 1. Select **Office 365** for Deployment Type.
@@ -140,6 +148,10 @@ We will install and configure the following tools:
 1. Select **Install**.
 1. Select **Yes**.
 1. Select **Close**.
+1. Search for `trace` and select **Plugin Trace Viewer by Jonas Rapp**.
+1. Select **Install**.
+1. Select **Yes**.
+1. Select **Close**.
 1. Close the *Tool Library* tab.
 
 ### Task 3.2: FetchXML query
@@ -147,7 +159,7 @@ We will install and configure the following tools:
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `fetchxml` and select **FetchXML Builder**.
 1. Select **Yes** to connect to an organization.
-1. Select **New connection**.
+1. Select **Open Connection Manager**.
 1. Select **Microsoft Login Control**.
 1. Click **Open Microsoft Login Control**.
 1. Select **Office 365** for Deployment Type.
@@ -156,7 +168,9 @@ We will install and configure the following tools:
 1. Enter your tenant credentials.
 1. Click **Login**.
 1. Select your **Development** environment and select **Login**.
-1. Enter **Dev** for Name and select **Finish**.
+1. Enter `Dev` for Name and select **Finish**.
+1. Select the **Dev** connection.
+1. Select **OK**.
 1. Select **Continue**.
 
    ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
@@ -220,7 +234,8 @@ We will install and configure the following tools:
 
 1. Download Windows 64-bit [Postman](https://www.postman.com/downloads)
 1. Run the Postman installer.
-1. Click **Skip and go to the app**.
+1. Create a Postman account.
+1. Sign in to Postman.
 1. Follow the steps in [Set up a Postman environment](https://learn.microsoft.com/power-apps/developer/data-platform/webapi/setup-postman-environment) to configure Postman to connect to your Development environment.
 
 ## Exercise 5: .NET Framework
@@ -253,3 +268,18 @@ We will install and configure the following tools:
    - Select **Modify**.
    - Select **Yes**
    - Close the **Visual Studio Installer** window.
+
+## Exercise 6: Visual Studio Code
+
+**Objective:** In this exercise, you will install the Visual Studio Code IDE.
+
+> [!NOTE]
+> If you already have Visual Studio Code installed, you can skip this exercise.
+
+### Task 6.1: Install Visual Studio Code
+
+1. Download [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win).
+
+1. Open the downloaded file.
+
+1. Follow the steps in setup wizard to complete installing **Visual Studio Code.**

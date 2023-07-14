@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 7: Power Platform APIs'
-    module: 'Module 5: Introduction to developing with Power Platform'
+    module: 'Module 6: Introduction to developing with Power Platform'
 ---
 
 # Practice Lab 7 - Power Platform APIs
@@ -56,7 +56,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `early` and select **Early Bound Generator**.
 1. Select **Yes** to connect to an organization.
-1. Select your **Dev** connection and select **Connect**.
+1. Select your **Dev** connection and select **OK**.
 
      ![Early Bound Generator - screenshot](../images/L07/early-bound-tool.png)
 
@@ -112,7 +112,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Console App (.NET Framework)**.
    - Select **Next**.
    - Enter `Permit console` for Project Name.
-   - Change the location to **C:\LabFiles\L07**
+   - Change the location to **C:\LabFiles\L07**.
    - Select **.NET Framework 4.7.2**.
 
      ![Visual Studio configure project - screenshot](../images/L07/visual-studio-configure-project.png)
@@ -203,6 +203,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    ```
 
 1. Add your tenant credentials in the connection string.
+
+   > [!NOTE]
+   > If there is a semi-colon in your password add single quotes around the whole password.
+
 1. Add your Dataverse URL to the connection string.
 
    > [!NOTE]
@@ -211,7 +215,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    > [!IMPORTANT]
    > The URL should not have the / character as the end.
 
-1. Build the project
+1. Build the project.
 
    - Select the **Save** icon.
    - In Solution Explorer, right-click the *Permit console project* and select **Build**.
@@ -236,10 +240,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Add early bound classes.
 
-   - In Solution Explorer, right-click the *Permit console project* and select **Add**, and then select **Existing Item**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Add**, and then select **Existing Item**.
    - Browse to **C:\Users\Admin\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG**.
    - Select `Entities.cs` and select **Add**.
-   - In Solution Explorer, right-click the *Permit console project* and select **Add**, and then select **Existing Item**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Add**, and then select **Existing Item**.
    - Browse to **C:\Users\Admin\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG**.
    - Select `OptionSets.cs` and select **Add**.
 
@@ -287,10 +291,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
      }
      ```
 
-1. Build the project
+1. Build the project.
 
    - Select the **Save** icon.
-   - In Solution Explorer, right-click the *Permit console project* and select **Build**.
+   - In Solution Explorer, right-click the *Permit console* project and select **Build**.
    - The Build should succeed with 0 errors.
 
 1. Run the app.
@@ -331,9 +335,9 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Request Headers** for **Add authorization data to**.
    - Under *Configure New Token*, set:
      - Grant Type to `Implicit`
-     - Callback URL to `{{callback}}`
-     - Auth URL to `{{authurl}}`
-     - Client ID to `{{clientid}}`
+     - Callback URL to `\{\{callback\}\}`
+     - Auth URL to `\{\{authurl\}\}`
+     - Client ID to `\{\{clientid\}\}`
 
      ![Postman authorization tab - screenshot](../images/L07/postman-authorization.png)
 
@@ -364,7 +368,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     {{webapiurl}}contoso_inspections?$select=contoso_Permit, contoso_name
+     \{\{webapiurl\}\}contoso_inspections?$select=_contoso_permit_value, contoso_name
      ```
 
    - Select **Send**.
@@ -410,7 +414,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     {{webapiurl}}contoso_permits
+     \{\{webapiurl\}\}contoso_permits
      ```
 
    - Select the **Body** tab.

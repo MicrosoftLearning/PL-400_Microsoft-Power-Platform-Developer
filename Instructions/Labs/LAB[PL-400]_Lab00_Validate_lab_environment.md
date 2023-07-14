@@ -51,15 +51,29 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 1. Move files to C:\Labfiles
 
    ```powershell
-   Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Instructions\*" -Destination "C:\LabFiles" -confirm: $false
+   Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Allfiles\Labs\*" -Destination "C:\LabFiles" -confirm: $false
    ```
 
     ![Powershell commands.](../images/L00/powershell-commands.png)
+
+1. Delete files not required for labs.
+
+   ```powershell
+   Remove-item 'C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master' -recurse -force
+   ```
+
+1. Delete zip file.
+
+   ```powershell
+   Remove-item 'C:\LabFiles\master.zip'
+   ```
 
    > [!NOTE]
    > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
 
     ![Labfiles folders.](../images/L00/labfiles-folder.png)
+
+1. Close the PowerShell window.
 
 ## Exercise 2 – Power Platform trial
 
@@ -83,7 +97,11 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Purchase services.](../images/L00/purchase-services.png)
 
-1. In the search all product categories text box, enter **PowerApps** and press **Enter**.
+1. If **Purchase services** is not listed under Billing, select **Marketplace** and then select the **All products** tab.
+
+    ![Marketplace.](../images/L00/marketplace.png)
+
+1. In the search all product categories text box, enter `PowerApps` and press **Enter**.
 
 1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
 
@@ -142,7 +160,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
-1. In the **Name** text box, enter **[my initials] Development**. (Example: PL Development).
+1. In the **Name** text box, enter `[my initials] Development`. (Example: PL Development).
 
 1. In the **Type** drop down, select **Developer**.
 
@@ -168,7 +186,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Click **+ New**.
 
-1. In the **Name** text box, enter **[my initials] Live**. (Example: PL Live).
+1. In the **Name** text box, enter `[my initials] Live`. (Example: PL Live).
 
 1. In the **Type** drop down, select **Developer**.
 
@@ -197,14 +215,14 @@ In this exercise, you will create an Azure subscription that you will be using i
 
    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
 
-1. On the Your profile page, change *Last name* from Administrator to **Developers**.
+1. On the Your profile page, change *Last name* from *Administrator* to **Developers**.
 
 1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
    > [!NOTE]
-   > If you are prompted for a *Phone number* when using Power Platform or Azure portals, enter **0123456789** and click on **Submit**.
+   > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and click on **Submit**.
 
-1. Wait for Azure subscription to be provisioned and select **Maybe later**.
+1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
 
 1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
 

@@ -1,18 +1,16 @@
 ---
 lab:
     title: 'Lab 13: Custom connector'
-    module: 'Module 9: Integrate with Power Platform and Dataverse'
+    module: 'Module 11: Custom Connectors'
 ---
 
 # Practice Lab 13 – Custom Connector
 
 ## Scenario
 
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
-
 In this lab you will build a custom connector that can be used from Power Apps and Power Automate. Custom connectors describe existing APIs and allow them to be used easily. In this lab, you will build an API that has common calculations used by inspectors so that they can be used by applications. After building the API, you will create a custom connector definition to make it available to Power Apps and Power Automate.
 
-The connector could have multiple actions defined on it. However, for our lab we will define a single action **Get Required CPM** – where CPM stands for Cubic <N> Per Minute. In some regions this would be Cubic Feet Per Minute, and in others it could be Cubic Meters Per Minute. The action we are building will take the dimensions of a room and the number of air exchanges required by policy. The action logic will calculate the required CPM for that configuration. If you want, you can add additional actions to support other inspection type scenarios to the API and the custom connector.
+The connector could have multiple actions defined on it. However, for our lab we will define a single action **Get Required CPM** – where CPM stands for Cubic X Per Minute. In some regions this would be Cubic Feet Per Minute, and in others it could be Cubic Meters Per Minute. The action we are building will take the dimensions of a room and the number of air exchanges required by policy. The action logic will calculate the required CPM for that configuration. If you want, you can add additional actions to support other inspection type scenarios to the API and the custom connector.
 
 After building the API and the custom connector you will modify the inspector app. You will use the same connector and invoke an action from Power Automate.
 
@@ -20,143 +18,169 @@ After building the API and the custom connector you will modify the inspector ap
 
 As part of configuring the custom connector, you will complete the following
 
-- Create an Azure function that implements the CPM API
-
+- Create an Azure function
 - Create a custom connector in a solution
-
 - Configure the security and actions on the custom connector
-
 - Test the custom connector
-
-- Configure a Power Apps canvas app to use the connector
-
-- Configure a Power Automate to use the connector
+- Configure a canvas app to use the connector
 
 ## Things to consider before you begin
 
 - Is there a standard approved connector already available that can be used?
-
 - What security will we use in our connector?
-
 - What are possible triggers and actions of the connector?
-
 - Are there any API rate limits that could potentially affect the connector?
+
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L13\Starter folder.
+
+## Completed solution
+
+Completed solution files for this lab can be found in the  C:\Labfiles\L13\Completed folder.
+
+## Resources
+
+Complete source code files for this lab can be found in the  C:\Labfiles\L13\Resources folder.
 
 ## Exercise 1: Create the Azure Function
 
-**Objective:** In this exercise, you will create an Azure function app and the function that will calculate the CPM.
+**Objective:** In this exercise, you will create an Azure function that will calculate the CPM.
 
-### Task 1.1: Create CPM Calculation Function
+### Task 1.1: Create Azure Function for CPM Calculation
 
-1. Create the function app
+1. Create function
 
-	- Sign in to [Azure portal](https://portal.azure.com/)
+   - Sign in to the [Azure portal](https://portal.azure.com).
 
-	- Select **Create a Resource**.
+   - Select **All Resources**, search for `pl400wh`, and open the function app you created in the previous lab.
 
-    ![Create new resource - screenshot](../images/L13/Mod_2_Custom_Connector_image1.png)
+   - Select **Functions**.
 
-	- Search for **Function** and select **Function App**.
+     ![Add function - screenshot](../images/L13/azure-portal-create-function.png)
 
-    ![Select function app - screenshot](../images/L13/Mod_2_Custom_Connector_image2.png)
+   - Select **+ Create**.
 
-	- Select **Create**.
+   - Select **HTTP trigger** for Template.
 
-	- Enter **CPMCalculator** for **App Name**. Provide a unique name, if CPMCalculator is not available.
+   - Enter `CPMTrigger` for New Function.
 
-	- Create **New Resource Group**. You may select an existing Resource Group if you already created one for this course.
+   - Select **Function** for Authorization level.
 
-	- Select **.NET** for Runtime Stack, select **6** for Version, select your **Region** and select **Review + Create**.
+   - Select **Create**.
 
-    ![Create review function application - screenshot](../images/L13/Mod_2_Custom_Connector_image4.png)
+1. Add the **Using Statements** and **CPMCalcRequest** class to the function.
 
-	- Select **Create**. Wait for the function app to be created
+   - Select **Code + Test**.
 
-2. Create function
+     ![Code and test - screenshot](../images/L13/Mod_2_Custom_Connector_image7.png)
 
-	- Select **Go to Resource**.
+   - Add the Using Statements below to the function.
 
-    ![Go to resource - screenshot](../images/L13/Mod_2_Custom_Connector_image5.png)
+     ```csharp
+     using Microsoft.Extensions.Logging;
+     using Newtonsoft.Json.Linq;
+     ```
 
-	- Select **Functions** and then select **+ Create**.
+     ![Add using statements - screenshot](../images/L13/Mod_2_Custom_Connector_image8.png)
 
-    ![Add function - screenshot](../images/L13/Mod_2_Custom_Connector_image6.png)
+1. Clean up the Run method
 
-	- Select **HTTP trigger** and then select **Create**.
+   - Go to the **Run** method.
 
-3. Add the **Using Statements** and **CPMCalcRequest** class to the function.
-
-	- Select **Code + Test**.
-
-    ![Code and test - screenshot](../images/L13/Mod_2_Custom_Connector_image7.png)
-
-	- Add the Using Statements below to the function.
-
-            using Microsoft.Extensions.Logging;
-            using Newtonsoft.Json.Linq;
-
-    ![Add using statements - screenshot](../images/L13/Mod_2_Custom_Connector_image8.png)
-
-	- Add the public class below to the function. This will describe the request that will be sent from the applications using the API.
-
-            public class CPMCalcRequest
-            {
-                public int Width=0;
-                public int Height=0;
-                public int Length=0;
-                public int AirChanges=0;
-            }
-
-    ![Add class - screenshot](../images/L13/Mod_2_Custom_Connector_image9.png)
-
-4. Clean up the Run method
-
-	- Go to the **Run** method.
-
-	- Remove everything but the log line from the **Run** method.
+   - Remove everything but the log line from the **Run** method.
 
     ![Edit run method - screenshot](../images/L13/Mod_2_Custom_Connector_image10.png)
 
-5. Get the Request body and deserialize it as **CPMCalcRequest**
+1. Add class for the request.
 
-	- Get the request **Body** from the request argument. Add the code below inside the **Run** method.
+   - Add the public class below to the function. This will describe the request that will be sent from the applications using the API.
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+     ```csharp
+     public class CPMCalcRequest
+     {
+         public int Width=0;
+         public int Height=0;
+         public int Length=0;
+         public int AirChanges=0;
+     }
+     ```
 
-	- Deserialize the request body. Add the code below inside the **Run** method.
+     ![Add class - screenshot](../images/L13/add-class.png)
 
-            CPMCalcRequest calcReq = JsonConvert.DeserializeObject<CPMCalcRequest>(requestBody);
+1. Get the Request body and deserialize it as **CPMCalcRequest**.
+
+   - Get the request **Body** from the request argument. Add the code below inside the **Run** method.
+
+     ```csharp
+     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+     ```
+
+   - Deserialize the request body. Add the code below inside the **Run** method.
+
+     ```csharp
+     CPMCalcRequest calcReq = JsonConvert.DeserializeObject<CPMCalcRequest>(requestBody);
+     ```
 
     ![Add code to run method - screenshot](../images/L13/Mod_2_Custom_Connector_image11.png)
 
-6. Calculate the CPM and return it form the Run method
+1. Calculate the CPM and return it form the Run method
 
-	- Calculate the **CPM** and log the calculated value. Add the code below inside the **Run** method.
+   - Calculate the **CPM** and log the calculated value. Add the code below inside the **Run** method.
 
-            var cpm = ((calcReq.Width*calcReq.Height*calcReq.Length) * calcReq.AirChanges) / 60;
-            log.LogInformation("CPM " + cpm);
+     ```csharp
+     var cpm = ((calcReq.Width*calcReq.Height*calcReq.Length) * calcReq.AirChanges) / 60;
+     log.LogInformation("CPM " + cpm);
+     ```
 
-	- Return the calculated **CPM**. Add the code below inside the Run method.
+   - Return the calculated **CPM**. Add the code below inside the Run method.
 
-            return (ActionResult)new OkObjectResult(new{
-                CPM = cpm
-            });
+     ```csharp
+     return (ActionResult)new OkObjectResult(new{
+         CPM = cpm
+     });
+     ```
 
-    ![Updated run method - screenshot](../images/L13/Mod_2_Custom_Connector_image12.png)
+     ![Updated run method - screenshot](../images/L13/Mod_2_Custom_Connector_image12.png)
 
-7. Select **Save** to save your changes.
+   - Select **Save**.
 
-8. Copy the Function URL.
+1. Select **Test/Run**.
 
-	- Select **Get Function URL**.
+1. In the Body copy the following input values.
 
-    ![Get function URL - screenshot](../images/L13/Mod_2_Custom_Connector_image13.png)
+   ```JSON
+   {
+    "Width": 10,
+    "Height": 15,
+    "Length": 10,
+    "AirChanges": 6
+   }
+   ```
 
-	- Select **Copy**.
+1. Select **Run**.
 
-    ![Copy function URL - screenshot](../images/L13/Mod_2_Custom_Connector_image14.png)
+1. the result should be as follows.
 
-	- Keep the URL you copied on a notepad. You will need this URL while creating the custom connector.
+   ```JSON
+   {
+    "cpm": 150
+   }
+   ```
+
+1. Close the Test pane.
+
+1. Copy the Function URL.
+
+   - Select **Overview** and then select **Get Function URL**.
+
+     ![Get function URL - screenshot](../images/L13/azure-portal-function-url.png)
+
+   - Select **Copy** and then select **OK** to close the popup.
+
+     ![Copy function URL - screenshot](../images/L13/azure-portal-get-function-url.png)
+
+   - Save the **URL** in a notepad, you will need it when creating the custom connector.
 
 ## Exercise 2: Create the Custom Connector
 
@@ -166,407 +190,356 @@ As part of configuring the custom connector, you will complete the following
 
 1. Open the Permit Management solution
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select **Solutions** and open the **Permit Management** solution.
+1. Create Custom Connector
 
-    ![Open solution - screenshot](../images/L13/Mod_2_Custom_Connector_image15.png)
+   - Select **+ New** and select **Automation** and select **Custom connector**.
 
-2. Create Custom Connector
+     ![Create new custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image17.png)
 
-	- Select **+ New**.
+   - Enter `CPM Calculator` for **Connector Name**.
 
-	- Select **Automation** > **Custom Connector**.
+     ![Rename custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image18.png)
 
-    ![Create new custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image17.png)
+   - Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
 
-	- Change the **Connector** **Name** from **Untitled** to **CPM Calculator**.
+   - Remove https:// and everything after .net.
 
-    ![Rename custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image18.png)
+     ![Paste host URL - screenshot ](../images/L13/custom-connector-host.png)
 
-	- Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
+1. Add API key for security.
 
-	- Remove https:// and everything after .net.
+   - Select **Security ->**.
 
-    ![Paste host URL - screenshot ](../images/L13/Mod_2_Custom_Connector_image19.png)
+     ![Select security - screenshot ](../images/L13/Mod_2_Custom_Connector_image20.png)
 
-3. Select API key for security and create the connector
+   - Select **API Key** for Authentication type.
 
-	- Advance to **Security**.
+     ![Select API key - screenshot](../images/L13/Mod_2_Custom_Connector_image21.png)
 
-    ![Select security - screenshot ](../images/L13/Mod_2_Custom_Connector_image20.png)
+   - Enter `API Key` for Parameter label.
 
-	- Select **API Key**.
+   - Enter `code` for Parameter name
 
-    ![Select API key - screenshot](../images/L13/Mod_2_Custom_Connector_image21.png)
+   - Select **Query** for Parameter Location.
 
-	- Enter **API Key** for Parameter Label, **code** for Parameter Name, and select **Query** for Parameter Location.
+     ![API key - screenshot](../images/L13/Mod_2_Custom_Connector_image22.png)
 
-    ![API key - screenshot](../images/L13/Mod_2_Custom_Connector_image22.png)
+1. Define action.
 
-4. Create Connector
+   - Select **Definition**.
 
-	- Advance to **Definition**.
+     ![Definition - screenshot](../images/L13/Mod_2_Custom_Connector_image23.png)
 
-    ![Definition - screenshot](../images/L13/Mod_2_Custom_Connector_image23.png)
+   - Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API or Postman collection files for larger APIs.
 
-	- Select **Create Connector** and wait for the connector to be created.
+     ![Create new action - screenshot](../images/L13/Mod_2_Custom_Connector_image25.png)
 
-    ![Create connector - screenshot](../images/L13/Mod_2_Custom_Connector_image24.png)
+   - Enter `CPM Calculator` for Summary
 
-5. Create Action
+   - Enter `Calculates CPM` for Description.
 
-	- Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API or Postman collection files for larger APIs.
+   - Enter `GetRequiredCPM` for Operation ID.
 
-    ![Create new action - screenshot](../images/L13/Mod_2_Custom_Connector_image25.png)
+     ![Action information - screenshot](../images/L13/Mod_2_Custom_Connector_image26.png)
 
-	- Enter **CPM Calculator** for Summary, **Calculates CPM** for Description, and **GetRequiredCPM** for Operation ID.
+   - Under **Request**, select **+ Import from Sample**.
 
-    ![Action information - screenshot](../images/L13/Mod_2_Custom_Connector_image26.png)
+     ![Import request from sample - screenshot](../images/L13/Mod_2_Custom_Connector_image27.png)
 
-6. Import request from sample
+   - Select **POST** for **Verb**.
 
-	- Select **+ Import from Sample**.
+   - Paste the function **URL** from your notepad and remove everything after **CPMTrigger**.
 
-    ![Import request from sample - screenshot](../images/L13/Mod_2_Custom_Connector_image27.png)
+     ![Paste URL - screenshot](../images/L13/custom-connector-import-from-sample.png)
 
-	- Select **Post** for **Verb**.
+   - Paste the json below in the **Body** field.
 
-	- Paste the function **URL** from your notepad and remove everything after **HttpTrigger1**.
+     ```json
+     {
+         "Width": 15,
+         "Height": 8,
+         "Length":20,
+         "AirChanges":8
+     }
+     ```
 
-    ![Paste URL - screenshot](../images/L13/Mod_2_Custom_Connector_image28.png)
+     ![Import sample - screenshot](../images/L13/Mod_2_Custom_Connector_image29.png)
 
-	- Paste the json below in the **Body** field and select **Import**.
+   - Select **Import**.
 
-            {
-                "Width": 15,
-                "Height": 8,
-                "Length":20,
-                "AirChanges":8
-            }
+   - Under **Response**, select **+ Add default response**.
 
-    ![Import sample - screenshot](../images/L13/Mod_2_Custom_Connector_image29.png)
+     ![Add default response - screenshot](../images/L13/Mod_2_Custom_Connector_image30.png)
 
-7. Add Default response
+   - Paste the json below in the **Body**.
 
-	- Scroll down to the **Response** section and select **+ Add Default Response**.
+     ```json
+     {"cpm":200}
+     ```
 
-    ![Add default response - screenshot](../images/L13/Mod_2_Custom_Connector_image30.png)
+     ![Import response - screenshot](../images/L13/Mod_2_Custom_Connector_image31.png)
 
-	- Paste the json below in the **Body** and select **Import**.
+   - Select **Import**.
 
-            {"cpm":200}
+1. Create connector.
 
-    ![Import response - screenshot](../images/L13/Mod_2_Custom_Connector_image31.png)
+   - Select **Create Connector** and wait for the connector to be created.
 
-	- Select **Update Connector**.
+     ![Create connector - screenshot](../images/L13/Mod_2_Custom_Connector_image24.png)
 
-    ![Update connector - screenshot](../images/L13/Mod_2_Custom_Connector_image32.png)
+1. Test the connector
 
-8. Test the connector
+   - Advance to **Test**.
 
-	- Advance to Test.
+     ![Select test - screenshot](../images/L13/Mod_2_Custom_Connector_image33.png)
 
-    ![Select test - screenshot](../images/L13/Mod_2_Custom_Connector_image33.png)
+   - Select **+ New connection**. This will open a New window.
 
-	- Select **New Connection**. This will open a New window.
+     ![New connection - screenshot](../images/L13/Mod_2_Custom_Connector_image34.png)
 
-    ![New connection - screenshot](../images/L13/Mod_2_Custom_Connector_image34.png)
+   - Go back to the notepad and copy the key - everything after **code=**.
 
-	- Go to your notepad and copy only the value of the **code**.
+   - Go back to the connector and paste the value you copied.
 
-    ![Copy key - screenshot](../images/L13/Mod_2_Custom_Connector_image35.png)
+     ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image36.png)
 
-	- Go back to the connector, paste the value you copied, and select **Create Connection**.
+   - Select **Create connection**.
 
-    ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image36.png)
+   - Select the **Refresh** icon.
 
-	- Refresh the connections and select the connection you just created.
+     ![Select connection - screenshot](../images/L13/custom-connector-connection.png)
 
-	- Provide values for **Width**, **Height**, **Length**, and **AirChanges**.
+   - The connection should be selected.
 
-	- Select **Test Operation**.
+   - Enter test data,
 
-    ![Test operation - screenshot](../images/L13/Mod_2_Custom_Connector_image37.png)
+     - Enter 15 for **Width**.
+     - Enter 8 for **Height**.
+     - Enter 15 for **Length**.
+     - Enter 5 for **AirChanges**..
 
-	- You should get a CPM value back.
+     ![Test operation - screenshot](../images/L13/Mod_2_Custom_Connector_image37.png)
 
-    ![Response value - screenshot](../images/L13/Mod_2_Custom_Connector_image38.png)
+   - Select **Test operation**.
 
-	- Close the window and go back to Solution window and select **Done.**
+   - You should get a CPM value back.
 
-	- Select **Publish all Customizations** and wait for the publishing to complete.
+     ![Response value - screenshot](../images/L13/Mod_2_Custom_Connector_image38.png)
+
+   - Select **Close**,
+
+   - Close the **Custom connectors** tab.
+
+   - Select **Done.**
 
 ## Exercise 3 Test Connector
 
-**Objective:** In this exercise, you will use the Custom Connector from a Power Apps canvas app and a Power Automate.
+**Objective:** In this exercise, you will use the Custom Connector from a canvas app.
 
-## Task 3.1: Test on Canvas App
+### Task 3.1: Test in Canvas app
 
 1. Open the Permit Management solution
 
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select **Solutions.**
+1. Edit the Inspector canvas app.
 
-	- Open the **Permit Management** solution.
+   - Select **Apps** and select to open the **Inspector** Canvas app.
 
-2. Open the Inspector canvas application in edit mode
+     ![Edit application - screenshot](../images/L13/Mod_2_Custom_Connector_image39.png)
 
-	- Select **Apps** and open the **Inspector** Canvas app.
+1. Add new screen to the application.
 
-    ![Edit application - screenshot](../images/L13/Mod_2_Custom_Connector_image39.png)
+   - Select **New Screen** and then select **Blank**.
 
-3. Add new screen to the application
+     ![New blank screen - screenshot ](../images/L13/canvas-app-add-screen.png)
 
-	- Select **New Screen** and then select **Blank**.
+   - Rename the screen `CPM Calc Screen`.
 
-    ![New blank screen - screenshot ](../images/L13/Mod_2_Custom_Connector_image40.png)
+     ![Rename screen - screenshot](../images/L13/Mod_2_Custom_Connector_image41.png)
 
-	- Rename the screen **CPM Calc Screen**
+1. Add Input Text to the new screen.
 
-    ![Rename screen - screenshot](../images/L13/Mod_2_Custom_Connector_image41.png)
+   - Select the **CPM Calc Screen**.
 
-4. Add Input Text to the new screen
+   - Select **+ Insert** tab.
 
-	- Select the **CPM Calc Screen**.
+     ![Insert button screenshot](../images/L13/Mod_2_Custom_Connector_image42.png)
 
-	- Select **Insert**.
+   - Select **Text input**.
 
-    ![Insert button screenshot](../images/L13/Mod_2_Custom_Connector_image42.png)
+     ![Add control to screens - screenshot ](../images/L13/Mod_2_Custom_Connector_image43.png)
 
-	- Select **Text Input**.
+   - Select the **Tree View**.
 
-    ![Add control to screens - screenshot ](../images/L13/Mod_2_Custom_Connector_image43.png)
+     ![Select tree view - screenshot](../images/L13/Mod_2_Custom_Connector_image44.png)
 
-	- Select the **Tree View**.
+   - Rename the Text Input `Width Text`.
 
-    ![Select tree view - screenshot](../images/L13/Mod_2_Custom_Connector_image44.png)
+   - Remove the **Default** property of the **Width** text input.
 
-	- Rename the Text Input **Width Text**.
+     ![Remove default value - svreenshot](../images/L13/Mod_2_Custom_Connector_image45.png)
 
-	- Remove the **Default** property of the **Width** text input.
-
-    ![Remove default value - svreenshot](../images/L13/Mod_2_Custom_Connector_image45.png)
-
-	- Change the **HintText** property of the **Width** text input to **Provide Width**.
+   - Change the **HintText** property of the **Width** text input to `"Provide Width"`.
 
     ![Provide hint text - screenshot](../images/L13/Mod_2_Custom_Connector_image46.png)
 
-	- The **Width Text** input should now look like the image below.
+   - The **Width Text** input should now look like the image below.
 
-    ![Width text - screenshot](../images/L13/Mod_2_Custom_Connector_image47.png)
+     ![Width text - screenshot](../images/L13/Mod_2_Custom_Connector_image47.png)
 
-5. Add Height, Length, and Air Change Input Text controls
+1. Add Height, Length, and Air Change Input Text controls.
 
-	- Copy the **Width Text**.
+   - Copy the **Width Text**.
 
-    ![Copy input text - screenshot](../images/L13/Mod_2_Custom_Connector_image48.png)
+     ![Copy input text - screenshot](../images/L13/Mod_2_Custom_Connector_image48.png)
 
-	- Paste the text input you copied to the **CPM Calc Screen.**
+   - Paste the text input you copied to the **CPM Calc Screen.**
 
-    ![Paste text input - screenshot](../images/L13/Mod_2_Custom_Connector_image49.png)
+     ![Paste text input - screenshot](../images/L13/Mod_2_Custom_Connector_image49.png)
 
-	- Paste the text input you copied to the **CPM Calc Screen** two more times.
+   - Paste the text input you copied to the **CPM Calc Screen** two more times.
 
-	- The **CPMCalcScreen** should now have total of four text inputs.
+   - The **CPMCalcScreen** should now have total of four text inputs.
 
-    ![Text input controls - screenshot](../images/L13/Mod_2_Custom_Connector_image50.png)
+     ![Text input controls - screenshot](../images/L13/Mod_2_Custom_Connector_image50.png)
 
-	- Rename the input text controls **Height Text**, **Length Text**, and **Air Change Text**.
+   - Rename the input text controls **Height Text**, **Length Text**, and **Air Change Text**.
 
-    ![Rename controls - screenshot](../images/L13/Mod_2_Custom_Connector_image51.png)
+     ![Rename controls - screenshot](../images/L13/Mod_2_Custom_Connector_image51.png)
 
-	- Change the **HintText** for the three text inputs you renamed to **Provide Height**, **Provide Length**, and **Provide Air Change**, respectively.
+   - Change the **HintText** for the three text inputs you renamed to **Provide Height**, **Provide Length**, and **Provide Air Change**, respectively.
 
-	- Resize and reposition the text inputs as shown in the image below.
+   - Resize and reposition the text inputs as shown in the image below.
 
-    ![Input text control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image52.png)
+     ![Input text control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image52.png)
 
-6. Add button
+1. Add button.
 
-	- Go to the **Insert** tab and select Button.
+   - Select **+ Insert** tab.
 
-    ![Insert button - screenshot](../images/L13/Mod_2_Custom_Connector_image53.png)
+   - Select **Button**.
 
-	- Rename the Button **Calculate Button**.
+   - Select the **Tree view** tab.
 
-	- Change the **Calculate Button Text** value to **Submit**.
+   - Rename the button to `Calculate Button`.
 
-	- Resize and reposition the button as shown in the image below.
+   - Change the **Text** value of the button to `"Submit"`.
 
-    ![Reposition button - screenshot](../images/L13/Mod_2_Custom_Connector_image54.png)
+   - Resize and reposition the button as shown in the image below.
 
-7. Add the result label to the screen
+      ![Reposition button - screenshot](../images/L13/Mod_2_Custom_Connector_image54.png)
 
-	- Go to the **Insert** tab and select **Label**.
+1. Add the result label to the screen
 
-	- Rename the Label **Result Label**.
+   - Select **+ Insert** tab.
 
-	- Place the label to the right of the text inputs.
+   - Select **Button**.
 
-    ![Control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image55.png)
+   - Select **Text label**.
 
-8. Add the Custom Connector to the application.
+   - Select the **Tree view** tab.
 
-	- Select the **Data** tab and then select **+ Add data**.
+   - Rename the label to `Result Label`.
+
+   - Place the label to the right of the text inputs.
+
+      ![Control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image55.png)
+
+1. Add the Custom Connector to the app.
+
+   - Select the **Data** tab.
   
-    ![Add data - screenshot](../images/L13/Mod_2_Custom_Connector_image55-1.png)
+     ![Add data - screenshot](../images/L13/Mod_2_Custom_Connector_image55-1.png)
 
-	- Expand **Connectors**.
+   - Select **+ Add data**.
 
-	- Select the **CPM Connector**.
+   - Expand **Connectors**.
 
-    ![CPM Calculator connector - screenshot](../images/L13/Mod_2_Custom_Connector_image56.png)
+   - Select **CPM Connector**.
 
-	- Select **CPM Calculator** again.
+     ![CPM Calculator connector - screenshot](../images/L13/Mod_2_Custom_Connector_image56.png)
 
-	- The **CPM Calculator** should now be listed in the **In your App** section.
+   - Select **CPM Calculator** again.
 
-    ![Added connector - screenshot](../images/L13/Mod_2_Custom_Connector_image58.png)
+     ![Added connector - screenshot](../images/L13/Mod_2_Custom_Connector_image58.png)
 
-9. Get the calculated value when the button is selected
+1. Get the calculated value when the button is selected
 
-	- Select the **Calculate Button**.
+   - Select the **Tree view** tab.
 
-	- Set the **OnSelect** value of the **Calculate Button** to the formula below.
+   - Select **Calculate Button**.
 
-            Set(CalculatedValue, Concatenate("Calculated CPM ", Text(Defaulttitle.GetRequiredCPM({Width: 'Width Text'.Text, Height: 'Height Text'.Text, Length: 'Length Text'.Text, AirChanges: 'Air Change Text'.Text}).cpm)))
+   - Set the **OnSelect** property of the **Calculate Button** to the formula below.
 
-    ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image59.png)
+     ```powerappsfl
+     Set(CalculatedValue, Concatenate("Calculated CPM ", Text(Defaulttitle.GetRequiredCPM({Width: 'Width Text'.Text, Height: 'Height Text'.Text, Length: 'Length Text'.Text, AirChanges: 'Air Change Text'.Text}).cpm)))
+     ```
 
-	- Select the **Result Label** and set the **Text** value to the **CalculatedValue** variable.
+     ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image59.png)
 
-    ![Label text value - screenshot](../images/L13/Mod_2_Custom_Connector_image60.png)
+   - Select the **Result Label** and set the **Text** property to the **CalculatedValue** variable.
 
-10. Add navigation button to the Main screen
+     ![Label text value - screenshot](../images/L13/Mod_2_Custom_Connector_image60.png)
 
-	- Select the **Main Screen**.
+1. Add navigation button to the Main screen.
 
-	- Go to the **Insert** tab and select **Button**.
+   - Select the **Main Screen**.
 
-	- Rename the Button **CPM Button**.
+   - Go to the **Insert** tab and select **Button**.
 
-	- Change the **CPM Button** **Text** value to **CPM Calculator**.
+   - Select the **Tree view** tab.
 
-	- Place the button on the bottom right of the **Main Screen**.
+   - Rename the button to `CPM Button`.
 
-11. Steps to navigate to the CPM Calc Screens
+   - Change the **Text** value of the button to `"CPM Calculator"`.
 
-	- Select the **CPM Calculator**.
+   - Place the button on the bottom right of the **Main Screen**.
 
-	- Set the **OnSelect** value of the **CPM Calculator** to the formula below.
+1. Navigate to the CPM Calc screen.
 
-            Set(CalculatedValue, ""); Navigate('CPM Calc Screen', ScreenTransition.None)
+   - Select the **CPM Calculator** buttin.
 
-    ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image61.png)
+   - Set the **OnSelect** property of the **CPM Calculator** to the formula below.
 
-12. Run the Application
+     ```powerappsfl
+     Set(CalculatedValue, ""); Navigate('CPM Calc Screen', ScreenTransition.None);
+     ```
 
-	- Select the **Main Screen** and select **Preview the App**.
+     ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image61.png)
+
+1. Test the app.
+
+   - Select the **Main Screen** and select **Preview the app**.
 
     ![Preview app - screenshot](../images/L13/Mod_2_Custom_Connector_image62.png)
 
-	- Select on **CPM Calculator** button.
+   - Select the **CPM Calculator** button.
 
-	- The CPM Calculator screen should load.
+   - The CPM Calculator screen should load.
 
-    ![Calculator page - screenshot](../images/L13/Mod_2_Custom_Connector_image63.png)
+     ![Calculator page - screenshot](../images/L13/Mod_2_Custom_Connector_image63.png)
 
-	- Provide values and then select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
+   - Enter values into the four fields and select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
 
-    ![Submit form - screenshot](../images/L13/Mod_2_Custom_Connector_image64.png)
+     ![Submit form - screenshot](../images/L13/Mod_2_Custom_Connector_image64.png)
 
-	- The **Result Label** should show the calculated result from the Custom Connector.
+   - The **Result Label** should show the calculated result from the Custom Connector.
 
-    ![Calculation result - screenshot](../images/L13/Mod_2_Custom_Connector_image65.png)
+     ![Calculation result - screenshot](../images/L13/Mod_2_Custom_Connector_image65.png)
 
-	- Close the Preview.
+   - Close the Preview.
 
-	- Select **File** and then select **Save**.
+1. Save and publish the app.
 
-	- **Publish** the changes.
-
-	- Select **Close**.
-
-### Task 3.2: Test on Flow
-
-1. Open the Permit Management solution
-
-	- Sign in to [Power Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
-
-	- Select **Solutions**.
-
-	- Open the **Permit Management** solution.
-
-2. Create flow and add trigger.
-
-	- Select **+ New**.
-  
-	- Select **Automation | Cloud flow | Instant**.
-
-    ![Create new flow - screenshot](../images/L13/Mod_2_Custom_Connector_image66.png)
-
-	- Select **Manually Trigger Flow** and then select **Create**.
-
-    ![Select trigger - screenshot](../images/L13/Mod_2_Custom_Connector_image67.png)
-
-3. Add a step that will use the Custom Connector
-
-	- Select **+ New Step**.
-
-    ![Add new step - screenshot](../images/L13/Mod_2_Custom_Connector_image68.png)
-
-	- Select the **Custom** tab and then select **CPM Calculator**.
-
-    ![Select custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image69.png)
-
-	- Select **CPM Calculator** action.
-
-    ![Select action - screenshot](../images/L13/Mod_2_Custom_Connector_image70.png)
-
-	- Enter **CPM Connector** for Connection name.
-  
-	- Copy the key form the notepad and paste it on the **API Key** field.
-  
-	- Select **Create**.
-  
-     ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image70-1.png)
-
-4. Provide values and save
-
-	- Enter 18 for Width, 10 for Height, 18 for Length, 30 for AirChanges, and select **Save**.
-
-    ![Save flow - screenshot](../images/L13/Mod_2_Custom_Connector_image71.png)
-
-5. Test the flow
-
-	- Select **Test**.
-
-    ![Test connector - screenshot](../images/L13/Mod_2_Custom_Connector_image72.png)
-
-	- Select **Manually** and then select**Test**.
-
-	- Select **Continue**.
-
-    ![Continue with test - screenshot](../images/L13/Mod_2_Custom_Connector_image73.png)
-
-	- Select **Run Flow**.
-
-	- Select **Done**. The flow should run successfully. In the flow run history, expand the CPM Calculator action.
-
-    ![Succeeded run - screenshot](../images/L13/Mod_2_Custom_Connector_image74.png)
-
-	- You should be able to see the calculated result from the custom connector in the output of the action.
-
-    ![Result value - screenshot](../images/L13/Mod_2_Custom_Connector_image75.png)
-
-	- Select the **<-** back button
-
-    ![Back to solution value - screenshot](../images/L13/Mod_2_Custom_Connector_image75-1.png)
-
-	- Select **Publish all Customizations.**
-
-	- If you finish early, try adding input values to the Manual Button trigger for the room dimensions and use those to call the custom connector. You could also use the notification connector to send the user the required CPM. Finally, if you want to test this in a real device install the Power Automate mobile application.
-
-    ![Flow using input values - screenshot](../images/L13/Mod_2_Custom_Connector_image76.png)
+   - Click the **Save** icon.
+   - Click the **Publish** icon.
+   - Select **Publish this version**.
+   - Click the **<- Back** icon.
+   - Select **Leave**.

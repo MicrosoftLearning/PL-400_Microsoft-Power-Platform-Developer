@@ -1,14 +1,12 @@
 ---
 lab:
     title: 'Lab 9: Power Apps Component Framework'
-    module: 'Module 7: Create code components with the Power Apps Component Framework'
+    module: 'Module 8: Create code components with the Power Apps Component Framework'
 ---
 
 # Practice Lab 9 – Power Apps Component Framework
 
 ## Scenario
-
-A regional building department issues and tracks permits for new buildings and updates for remodeling of existing buildings. Throughout this course you will build applications and automation to enable the regional building department to manage the permitting process. This will be an end-to-end solution which will help you understand the overall process flow.
 
 In this lab you will develop a custom component control using the Power Apps Component Framework (PCF). This component will be used to visualize the permit inspection history timeline. As you build the component, you will see how to use prescriptive interfaces of the framework to interact with the hosting form data. To speed things up we will use a community timeline library to render the visualization. When you build such controls, you can either follow the same procedure or use popular frameworks like React or Vue to completely control the visualization that the component will render.
 
@@ -17,11 +15,8 @@ In this lab you will develop a custom component control using the Power Apps Com
 As part of building this component, you will complete the following steps:
 
 - Use the Power Apps CLI to initialize the new component
-
 - Build the component logic using Typescript
-
 - Publish the component for use on forms
-
 - Configure the permit form to use the component
 
 This is what the component will look like when it is completed.
@@ -31,578 +26,619 @@ This is what the component will look like when it is completed.
 ## Things to consider before you begin
 
 - What are the advantages of using a Power Apps Component Framework component over an embedded Power Apps canvas app?
-
 - Remember to continue working in your DEVELOPMENT environment. We’ll move everything to production soon.
 
-## Exercise #1: Create the PCF Control
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starter folder.
+
+## Completed solution
+
+Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
+
+## Resources
+
+Complete source code files for this lab can be found in the  C:\Labfiles\L09\Resources folder.
+
+> [!IMPORTANT]
+> You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
+
+## Exercise 1: Create the PCF Control
 
 **Objective:** In this exercise, you will create a Power Apps Components Framework control using the Power Apps CLI.
 
-### Task 1.1: Install Microsoft Power Apps CLI and Prerequisites
+### Task 1.1: Node.js
 
 1. Install Node.js
 
-	- Navigate to [Node JS](https://nodejs.org/en/)
+   - Navigate to [Node JS](https://nodejs.org/en/)
 
-	- Select the latest **LTS** version.
+   - Select the latest **LTS** version.
 
-    ![latest LTS - screenshot](../images/L09/mod-02-pcf-1-02.png)
+     ![latest LTS - screenshot](../images/L09/node-js-download.png)
 
-	- Open the downloaded file.
+   - Open the downloaded file.
 
-	- Follow the steps in setup wizard to complete installing **Node.js**
+   - Follow the steps in setup wizard to complete installing **Node.js**.
 
-1. Install .NET Framework 4.6.2 Developer Pack
+### Task 1.2: Setup code component project
 
-	- Navigate to [Download .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
+1. Start the developer command prompt tool.
 
-	- Select the **Developer Pack**.
+   - Launch the **Developer Command Prompt** from the start menu.
 
-    ![Developer pack - screenshot](../images/L09/mod-02-pcf-1-03.png)
+     ![Developer command prompt - screenshot](../images/L09/mod-02-pcf-1-04.png)
 
-	- Run the downloaded file.
+1. Create a folder named named **pcfTimelineControl** for the code component.
+
+   - Run the following commands.
+
+     ```dos
+     cd C:\LabFiles\L09
+     mkdir pcfTimelineControl
+     cd pcfTimelineControl
+     mkdir src
+     cd src
+     ```
+
+     ![pcfTimelineControl folder - screenshot](../images/L09/pcf-folder.png)
+
+1. Create a solution project for a pcf dataset component named **timelinecontrol**.
+
+   - Initialize the component. This command will create a set of files that will implement a dataset component. You will customize these files as we continue.
+
+     ```dos
+     pac pcf init --name timelinecontrol --namespace contoso --template dataset
+     ```
+
+   - Install dependencies by running **npm install** command in the Terminal
+
+     ```dos
+     npm install
+     ```
+
+   - Wait for the dependencies installation to complete.
+
+1. Review the generated resources.
+
+   - Open the **src** folder in **Visual Studio Code**.
+
+     ```dos
+     code .
+     ```
+
+   - **Visual Studio Code** should start, and it should open the **src** folder.
+
+     ![Visual Studio Code - screenshot](../images/L09/mod-02-pcf-1-06.png)
+
+   - Expand the **timelinecontrol** folder.
+
+   - Open the **ControlManifest.Input** xml file and examine it.
+
+     ![Manifest file - screenshot](../images/L09/mod-02-pcf-1-07.png)
+
+   - Open the **Index.ts** file and examine it.
+
+   - Expand the **generated** folder.
+
+   - Open the **ManifestTypes.d.ts** file and examine it.
+
+1. Open CLI in Visual Studio Code
+
+   - In Visual Studio Code, select **Terminal** and select **New Terminal**.
+
+     ![New terminal - screenshot](../images/L09/mod-02-pcf-1-08.png)
+
+     > [!NOTE]
+     > If Terminal is not visible in the menu, you can open it by selecting **View** -> **Terminal**.
+
+   - If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Profile**.
+
+     ![Select default shell](../images/L09/mod-02-pcf-1-09.png)
+
+   - Select **Command Prompt**.
+
+     ![Command prompt - screenshot](../images/L09/mod-02-pcf-1-10.png)
+
+   - Select **New Terminal**.
+
+     ![New terminal - screenshot](../images/L09/mod-02-pcf-1-11.png)
+
+   - The **cmd** terminal should now open.
+
+     ![cmd terminal - screenshot =](../images/L09/mod-02-pcf-1-12.png)
+
+1. Run the Build command and review the out folder.
+
+   - Run **npm build** in the terminal.
+
+     ```dos
+     npm run build
+     ```
+
+     > [!NOTE]
+     > if you experience an error, try to modify the .eslintrc.json file and change the rules as follows and re-run npm run build.
+
+     ``` JSON
+     "rules": {
+       "no-unused-vars": "off",
+       "no-undef" : "off"
+     }
+     ```
+
+   - You should now be able to see the out folder. Expand the folder and review its content.
+
+     ![Out folder - screenshot](../images/L09/mod-02-pcf-1-13.png)
+
+1. Start the test harness.
+
+   - Run **npm start** in the terminal.
+
+     ```dos
+     npm start
+     ```
+
+   - Select **Allow access** in the Windows Defender Firewall prompt.
+
+   - This should open the Test Environment in a browser window.
+
+     ![Test environment - screenshot](../images/L09/mod-02-pcf-1-14.png)
+
+   - The **Component** container size should change if you provide **Width** and **Height**.
+
+     ![Change component size - screenshot](../images/L09/mod-02-pcf-1-15.png)
+
+1. Stop the test harness
+
+   - Close the **Test Environment** browser window or tab.
+
+   - In **Visual Studio Code**, click on the **Terminal** and press the **[CONTROL]** key and **c**.
+
+   - Type **y** and **[ENTER].**
+
+     ![stop test harness - screenshot](../images/L09/mod-02-pcf-1-16.png)
+
+### Task 1.3: Setup solution
+
+1. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl**.
+
+   - Change directory to the **pcfTimelineControl** folder.
+
+     ```dos
+     cd ..
+     ```
+
+   - You should now be in the **pcfTimelineControl** directory.
+
+   - Create a new folder with the name **solution**.
+
+     ```dos
+     mkdir pcfSolution
+     ```
+
+   - Switch to the pcfSolution directory.
+
+     ```dos
+     cd pcfSolution
+     ```
+
+   - You should now be in the pcfSolution directory.
+
+     ![change directory - screenshot ](../images/L09/pcf-solution-folder.png)
+
+1. Create solution project and add reference of the **src** folder where the component is located to the solution. This configuration will be used when you are done with your development and ready to publish your component for others to use.
+
+   - Create solution project with name and prefix contoso.
+
+     ```dos
+     pac solution init --publisher-name contoso --publisher-prefix contoso
+     ```
+
+   - Add component location to the solution. This creates a reference to include your component when the solution build command is run.
+
+     ```dos
+     pac solution add-reference --path ..\src
+     ```
+
+   - The project reference should be added successfully.
+
+     ![Add project reference - screenshot](../images/L09/solution-reference-added.png)
+
+   - Edit the **solution.cdsproj** file  by entering `code .` in the Terminal window to start Visual Studio Code in the pcfSolution folder.
+
+   - Add the following tag to the PropertyGroup.
+
+     ```xml
+     <OutputPath>bin\debug</OutputPath>
+     ```
+
+     ![Property Group in solution file - screenshot](../images/L09/output-path.png)
+
+   - Select **File** and **Save All**.
+
+   - Select **File** and **Close Window**.
+
+1. Build the solution
+
+   - Make sure you are still in the pcfSolution folder.
+
+   - Build the project by running the command below.
+
+     ```dos
+     msbuild /t:build /restore
+     ```
+
+   - The build should succeed.
+
+     ![Build result - screenshot](../images/L09/build-result.png)
+
+     > [!NOTE]
+     > If you get the response where msbuild is not recognized as an internal or external command. This means that you ran a normal command prompt instead of Visual Studio's developer command prompt.
+
+### Task 1.4: Build the Basic Timeline
+
+1. Change to the **src** folder.
+
+   - Run the following command in the Visual Studio Code Terminal window.
+
+     ```dos
+     cd ..\src
+     ```
+
+1. Add css file.
+
+   - Select the **timelinecontrol** folder and then select **New Folder**.
+
+     ![New css folder - screenshot](../images/L09/mod-02-pcf-1-21.png)
+
+   - Enter `css` and press [ENTER].
+
+   - Select the **css** folder you created and then select **New File**.
+
+     ![New css file - screenshot](../images/L09/mod-02-pcf-1-22.png)
+
+   - Enter `timelinecontrol.css` and Press [ENTER].
+
+1. Add the css file as a resource.
+
+   - Open the **ControlManifest.Input.xml** file.
+
+   - Locate the **resources** sub element and uncomment the **css** tag, change the **Order** to **2**.
+
+     ![Uncomment css - screenshot](../images/L09/mod-02-pcf-1-23.png)
+
+1. Change the data-set name.
+
+   - Locate **sampleDataSet** tag and change the name property to `timelineDataSet`.
+
+     ![Change dataset name - screenshot](../images/L09/mod-02-pcf-1-24.png)
+
+1. Install vis-timeline css npm package.
+
+   - Run the following command in the Visual Studio Code Terminal window and wait form the packages to be added.
+
+     ```dos
+     npm install vis-timeline
+     ```
+
+   - Run the following command in the Visual Studio Code Terminal window and wait form the packages to be added..
+
+     ```dos
+     npm install moment
+     ```
+
+   - Run the following command in the Visual Studio Code Terminal window and wait form the packages to be added..
+
+     ```dos
+     npm install vis-data
+     ```
+
+1. Add the vis-timeline css as a resource.
+
+   - Open the **ControlManifest.Input.xml** file.
+
+   - Add the vis-timeline css inside the resources tag.
+
+     ```xml
+     <css path="..\node_modules\vis-timeline\dist\vis-timeline-graph2d.min.css" order="1" />
+     ```
+
+     ![Add resource - screenshot](../images/L09/mod-02-pcf-1-26.png)
+
+1. Add timeline element and visual properties to the Index.ts file.
+
+   - Open the **Index.ts** file.
+
+   - Add the properties below, inside the **export** class timelinecontrol function.
+
+     ```typescript
+     private _timelineElm: HTMLDivElement;
+     private _timelineVis : any;
+     ```
+
+     ![Add properties - screenshot](../images/L09/mod-02-pcf-1-27.png)
+
+   - Add the below constant after the import lines on the top.
+
+     ```typescript
+     const vis = require('vis-timeline');
+     ```
+
+     ![Add constant - screenshot](../images/L09/mod-02-pcf-1-28.png)
+
+1. Build the timeline element as div and add it to container element as a child.
+
+   - Locate the **init** function.
+
+   - Add the code below to the **init** function.
+
+     ```typescript
+     this._timelineElm = document.createElement("div");
+     container.appendChild(this._timelineElm);
+     ```
   
-	- Follow the steps in setup wizard to complete installing the **Developer Pack.**
+     ![Init function - screenshot](../images/L09/mod-02-pcf-1-29.png)
 
-1. Download [Power Platform CLI](https://aka.ms/PowerAppsCLI).
+1. Create a function that will render the timeline.
 
-1. Run the **powerapps-cli-1.0.msi** to start the installation.
+   - Add the function below to the bottom of the class.
+
+     ```typescript
+     private renderTimeline(): void {
+         // Create a DataSet (allows two way data-binding)
+         var items = [
+             { id: 1, content: 'item 1', start: '2023-08-20' },
+             { id: 2, content: 'item 2', start: '2023-08-14' },
+             { id: 3, content: 'item 3', start: '2023-08-18' },
+             { id: 4, content: 'item 4', start: '2023-08-16', end: '2020-08-19' },
+             { id: 5, content: 'item 5', start: '2023-08-25' },
+             { id: 6, content: 'item 6', start: '2023-08-27', type: 'point' }
+         ];
+         // Configuration for the Timeline
+         var options = {};
+         // Create a Timeline
+         var timeline = new vis.Timeline(this._timelineElm, items, options);
+     }
+     ```
+
+     ![Render timeline function - screenshot](../images/L09/mod-02-pcf-1-30.png)
+
+1. Call the **renderTimeline** function from the **updateView** function.
+
+   - Locate the **updateView** function.
+
+   - Add the code below inside the **updateView** function.
+
+     ```typescript
+     this.renderTimeline();
+     ```
+
+     ![Update view function - screenshot](../images/L09/mod-02-pcf-1-31.png)
+
+   - Select **File** and then select **Save All**.
+
+1. Build and start
+
+   - Run the following command in the Visual Studio Code Terminal window.
+
+     ```dos
+     npm run build
+     ```
   
-1. Use the setup wizard to complete the setup and select **Finish**.
+   - The build should succeed.
 
-	**Note:** if you just installed the CLI tool, you already have the latest, however, you can run this command anytime to ensure you are always up to date.
+   - Start the test harness. This command will keep the test environment running and auto update when you change the component.
 
-	**Note:** If you get an error that npm is not a recognized command, you will need to re-run the nodejs installer and make sure to choose **Chocolatry**. This will run a PowerShell script as part of the install which may have been missed during the first install attempt.
+     ```dos
+     npm start watch
+     ```
 
-         pac install latest
+     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-32.png)
 
-### Task 1.2: Setup Components Project
+   - **Do not** close the test environment.
 
-1. Start the developer command prompt tool
-
-	- Launch to start the **developer command prompt** from the start menu.
-
-    ![Developer command prompt - screenshot](../images/L09/mod-02-pcf-1-04.png)
-
-2. Create a new folder in your Documents folder and work in that directory
-
-	- Run the command mentioned below to change directory. Replace **[Computer User Name]** with your OS user name.
-
-            cd C:\Users\[Computer User Name]\Documents
-
-	- Run the command mentioned below to create a new folder with name **pcfTimelineControl**.
-
-            mkdir pcfTimelineControl
-
-	- Run the command mentioned below to switch to the **pcfTimelineControl** folder.
-
-            cd pcfTimelineControl
-
-    ![Change directory - screenshot](../images/L09/mod-02-pcf-1-05.png)
-
-3. Create a new folder in the **pcfTimelineControl** folder, name it **src**, and work in that directory
-
-	- Create a new folder with the name **src**, by running the command below.
-
-            mkdir src
-
-	- Run the command below to switch to the **src** folder you just created.
-
-            cd src
-
-	- Clear the screen by running the command below.
-
-            cls
-
-4. Create a solution project with the name **timelinecontrol**, namespace **contoso**, and template **dataset**
-
-	- Initialize the component. This command will create a set of files that will implement a dataset component. You will customize these files as we continue.
-
-            pac pcf init --name timelinecontrol --namespace contoso --template dataset
-
-	- Install dependencies by running **npm install** command in the Terminal
-
-            npm install
-
-	- Wait for the dependency installation to complete.
-
-5. Open the **src** folder in Visual Studio Code and review the generated resources
-
-	- Open the **src** folder in **Visual Studio Code**. For this to work, make sure that the Visual Studio Code is added to Path in Environment Variables.
-
-            code .
-
-	- **Visual Studio Code** should start, and it should open the **src** folder.
-
-    ![Visual Studio Code - screenshot](../images/L09/mod-02-pcf-1-06.png)
-
-	- Expand the **timelinecontrol** folder.
-
-	- Open the **ControlManifest.Input** xml file and examine it.
-
-    ![Manifest file - screenshot](../images/L09/mod-02-pcf-1-07.png)
-
-	- Open the **Index.ts** file and examine it.
-
-	- Expand the **generated** folder.
-
-	- Open the **ManifestTypes** file and examine it.
-
-6. Open CLI in visual studio code
-
-	- Select **Terminal** and select **New Terminal**. If Terminal is not visible in the menu, you can open it by selecting View -> Integrated Terminal.
-
-    ![New terminal - screenshot](../images/L09/mod-02-pcf-1-08.png)
-
-	- If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Shell**.
-
-    ![Select default shell](../images/L09/mod-02-pcf-1-09.png)
-
-	- Select **Command Prompt**.
-
-    ![Command prompt - screenshot](../images/L09/mod-02-pcf-1-10.png)
-
-	- Select **New Terminal**.
-
-    ![New terminal - screenshot](../images/L09/mod-02-pcf-1-11.png)
-
-	- The **cmd** terminal should now open.
-
-    ![cmd terminal - screenshot =](../images/L09/mod-02-pcf-1-12.png)
-
-7. Run the Build command and review the out folder
-
-	- Run **npm** **build** in the terminal
-
-            npm run build
-
-	**Note:** if you experience an error, try to modify your .eslintrc.json and include the rules as follows:
-
-			"rules": {
-			"no-unused-vars": "off",
-			"no-undef" : "off"
-			}
-
-	- You should now be able to see the out folder. Expand the folder and review its content.
-
-    ![Out folder - screenshot](../images/L09/mod-02-pcf-1-13.png)
-
-8. Run the Start command to start the test harness
-
-	- Run **npm** **start** in the terminal
-
-            npm start
-
-	- This should open the Test Environment in a browser window.
-
-    ![Test environment - screenshot](../images/L09/mod-02-pcf-1-14.png)
-
-	- The **Component** container size should change, if you provide **Width** and **Height**.
-
-    ![Change component size - screenshot](../images/L09/mod-02-pcf-1-15.png)
-
-9. Stop the test harness
-
-	- Close the **Test Environment** browser window or tab.
-
-	- Go back to **Visual Studio Code**.
-
-	- Click on the **Terminal** and press the **[CONTROL]** key and **c**.
-
-	- Type **y** and **[ENTER].**
-
-    ![stop test harness - screenshot](../images/L09/mod-02-pcf-1-16.png)
-
-10. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl** and switch to it
-
-	- Change directory to the **pcfTimelineControl** folder.
-
-            cd ..
-
-	- You should now be in the **pcfTimelineControl** directory.
-
-    ![parent folder - screenshot](../images/L09/mod-02-pcf-1-17.png)
-
-	- Create a new folder with the name **solution**.
-
-            mkdir solution
-
-	- Switch to the solution directory.
-
-            cd solution
-
-	- You should now be in the solution directory.
-
-    ![change directory - screenshot ](../images/L09/mod-02-pcf-1-18.png)
-
-11. Create solution project and add reference of the **src** folder where the component is located to the solution. This configuration will be used when you are done with your development and ready to publish your component for others to use.
-
-	- Create solution project with name and prefix contoso.
-
-            pac solution init --publisher-name contoso --publisher-prefix contoso
-
-	- Add component location to the solution. This creates a reference to include your component when the solution build command is run.
-
-            pac solution add-reference --path ..\src
-
-	- The project reference should be added successfully.
-
-    ![Add project reference - screenshot](../images/L09/mod-02-pcf-1-19.png)
-
-    - Edit the solution.cdsproj file and add the tag ti tge PropertyGroup
- 
-           <OutputPath>bin/debug</OutputPath>
-
-12. Build the solution
-
-	- Make sure you are still in the solution folder.
-
-	- Build the project by running the command below.
-
-            msbuild /t:build /restore
-
-	- The build should succeed.
-
-    ![Build result - screenshot](../images/L09/mod-02-pcf-1-20.png)
-
-	> NOTE: If you get the response where 'msbuild' is not recognized as an internal or external command. This means that you run a normal command prompt instead of Visual Studio's developer command prompt.
-
-### Task 1.3: Build the Basic Timeline
-
-1. Change directory to the **src** folder
-
-	- Change directory to the **src** folder.
-
-            cd ..\src
-
-2. Create **css** folder in the **timelinecontrol** folder and create **timelinecontrol.css** file in the **css** folder
-
-	- Select the **timelinecoltrol** folder and then select **New Folder**.
-
-    ![New css folder - screenshot](../images/L09/mod-02-pcf-1-21.png)
-
-	- Name the folder **css**.
-
-	- Select the **css** folder you created and then select **New File**.
-
-    ![New css file - screenshot](../images/L09/mod-02-pcf-1-22.png)
-
-	- Name the new file **timelinecontrol.css**.
-
-3. Add the **css** as resource
-
-	- Open the **ControlManifest.Input.xml** file.
-
-	- Locate the **resources** sub element and uncomment the **css** tag, change the **Order** to **2**.
-
-    ![Uncomment css - screenshot](../images/L09/mod-02-pcf-1-23.png)
-
-4. Change the data-set name to **timelineDataSet**.
-
-	- Locate **sampleDataSet** tag and change the name property to **timelineDataSet**.
-
-    ![Change dataset name - screenshot](../images/L09/mod-02-pcf-1-24.png)
-
-5. Install vis-timeline css npm package
-
-	- Go to the **Terminal** and make sure you are in the **src** directory.
-
-	- Run the command mentioned below and wait for the packages to be added.
-
-            npm install vis-timeline
-
-    ![Install vis-timeline npm - screenshot ](../images/L09/mod-02-pcf-1-25.png)
-
-	- Run the command mentioned below and wait for the packages to be added.
-
-            npm install moment
-
-	- Run the command mentioned below and wait for the packages to be added.
-
-            npm install vis-data
-
-6. Add the vis-timeline css as a resource
-
-	- Go back to the **ControlManifest.Input.xml** file.
-
-	- Add the vis-timeline css inside the resources tag.
-
-            <css path="..\node_modules\vis-timeline\dist\vis-timeline-graph2d.min.css" order="1" />
-
-    ![Add resource - screenshot](../images/L09/mod-02-pcf-1-26.png)
-
-7. Add timeline element and visual properties to the Index file
-
-	- Open the **Index.ts** file.
-
-	- Add the properties below, inside the **export** class timelinecontrol function.
-
-             private _timelineElm: HTMLDivElement;
-             private _timelineVis : any;
-
-    ![Add properties - screenshot](../images/L09/mod-02-pcf-1-27.png)
-
-	- Add the below constant after the import lines on the top.
-
-            const vis = require('vis-timeline');
-
-    ![Add constant - screenshot](../images/L09/mod-02-pcf-1-28.png)
-
-8. Build the timeline element as div and add it to container element as a child
-
-	- Locate the **init** function.
-
-	- Add the script mentioned below to the **init** function.
-
-            this._timelineElm = document.createElement("div");
-
-            container.appendChild(this._timelineElm);
-
-    ![Init function - screenshot](../images/L09/mod-02-pcf-1-29.png)
-
-9. Create a function that will render the timeline
-
-	- Add the function below.
-
-            private renderTimeline(): void {
-                // Create a DataSet (allows two way data-binding)
-                var items = [
-                    { id: 1, content: 'item 1', start: '2020-08-20' },
-                    { id: 2, content: 'item 2', start: '2020-08-14' },
-                    { id: 3, content: 'item 3', start: '2020-08-18' },
-                    { id: 4, content: 'item 4', start: '2020-08-16', end: '2020-08-19' },
-                    { id: 5, content: 'item 5', start: '2020-08-25' },
-                    { id: 6, content: 'item 6', start: '2020-08-27', type: 'point' }
-                ];
-                // Configuration for the Timeline
-                var options = {};
-                // Create a Timeline
-                var timeline = new vis.Timeline(this._timelineElm, items, options);
-            }
-
-    ![Render timeline function - screenshot](../images/L09/mod-02-pcf-1-30.png)
-
-10. Call the **renderTimeline** function from the **updateView** function
-
-	- Locate the **updateView** function.
-
-	- Add the script mentioned below inside the **updateView** function.
-
-            this.renderTimeline();
-
-    ![Update view function - screenshot](../images/L09/mod-02-pcf-1-31.png)
-
-	- Select **File** and then select **Save All**.
-
-11. Build and start
-
-	- Go to the **Terminal** and make sure you are still in the **src** directory.
-
-	- Run the build command.
-
-            npm run build
-
-	- The build should succeed.
-
-	- Run the start watch command. This command will keep the test environment running and auto update when you change the component.
-
-            npm start watch
-
-    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-32.png)
-
-**Do not** close the test environment.
-
-### Task 1.4: Tailor for Inspection Data
+### Task 1.5: Tailor for Inspection Data
 
 In this task, you will switch from using the hard-coded array of data to using a file loaded into the test harness.
 
 1. Create test data csv file
 
-	- Select the **src** folder and then select **New File**.
+    - Select the **src** folder and then select **New File**.
 
-    ![New file - screenshot](../images/L09/mod-02-pcf-1-33.png)
+     ![New file - screenshot](../images/L09/mod-02-pcf-1-33.png)
 
-	- Name the new file **testdata.csv**
+    - Name the new file `testdata.csv`.
 
-	- Add the below mentioned data inside the **testdata.csv** file and Save it.
+    - Add the data below inside the **testdata.csv** file and Save it.
 
-            contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
-            123,Electrical:Rough Inspection:Passed,8/1/2020,Passed
-            124,Electrical:Rough Inspection:Passed,8/5/2020,Passed
-            125,Plumbing:Rough Inspection:Failed,8/8/2020,Failed
-            126,Plumbing:Rough Inspection:Passed,8/10/2020,Passed
+     ```
+     contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
+     123,Electrical:Rough Inspection:Passed,8/1/2023,Passed
+     124,Electrical:Rough Inspection:Passed,8/5/2023,Passed
+     125,Plumbing:Rough Inspection:Failed,8/8/2023,Failed
+     126,Plumbing:Rough Inspection:Passed,8/10/2023,Passed
+     ```
 
-    ![Test data - screenshot](../images/L09/mod-02-pcf-1-34.png)
+     ![Test data - screenshot](../images/L09/mod-02-pcf-1-34.png)
 
-2. Create Timeline Data class
+1. Create Timeline Data class
 
-	- Open the **index.ts** file.
+   - Open the **index.ts** file.
 
-	- Paste the code below after the **type** **DataSet** line.
+   - Paste the code below at the top of the file after the **type DataSet** line.
 
-            class TimelineData {
-                id: string;
-                content: string;
-                start: string;
-                className: string;
+     ```typescript
+     class TimelineData {
+         id: string;
+         content: string;
+         start: string;
+         className: string;
           
-                constructor(id: string, content: string, start: string, className: string) {
-                this.id = id;
-                this.content = content;
-                this.start = start;
-                this.className = className;
-                }
-            }
+         constructor(id: string, content: string, start: string, className: string) {
+            this.id = id;
+            this.content = content;
+            this.start = start;
+            this.className = className;
+         }
+     }
+     ```
 
-    ![Timeline data class - screenshot](../images/L09/mod-02-pcf-1-35.png)
+     ![Timeline data class - screenshot](../images/L09/mod-02-pcf-1-35.png)
 
-	- Add the timeline data array property inside the **export** class timelinecontrol function and below the **_timelineElm** definition.
+   - Add the timeline data array property inside the **export** class timelinecontrol function and below the **_timelineElm** definition.
 
-            private _timelineData : TimelineData[] = [];
+     ```typescript
+     private _timelineData : TimelineData[] = [];
+     ```
 
-    ![timeline data array - screenshot](../images/L09/mod-02-pcf-1-36.png)
+     ![timeline data array - screenshot](../images/L09/mod-02-pcf-1-36.png)
 
-3. Add a method that will create the timeline data.
+1. Add a method that will create the timeline data.
 
-	- Add the method mentioned below after the **render** method.
+   - Add the method below after the **renderTimeline** method at the bottom of the class.
 
-            private createTimelineData(gridParam: DataSet) {
-                this._timelineData = [];
-                if (gridParam.sortedRecordIds.length > 0) {
-                    for (let currentRecordId of gridParam.sortedRecordIds) {
+     ```typescript
+     private createTimelineData(gridParam: DataSet) {
+         this._timelineData = [];
+         if (gridParam.sortedRecordIds.length > 0) {
+             for (let currentRecordId of gridParam.sortedRecordIds) {
+           
+                 console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
+
+                 var permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
+                 var permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
+                 var permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
+                 var permitColor = "green";
+                 if (permitStatus == "Failed")
+                     permitColor = "red";
+                 else if (permitStatus == "Canceled")
+                     permitColor = "yellow";
             
-                        console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
+                 console.log('name:' + permitName + ' date:' + permitDate);
 
-                        var permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
-                        var permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
-                        var permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
-                        var permitColor = "green";
-                        if (permitStatus == "Failed")
-                            permitColor = "red";
-                        else if (permitStatus == "Canceled")
-                            permitColor = "yellow";
-            
 
-                        console.log('name:' + permitName + ' date:' + permitDate);
+                 if (permitName != null)
+                     this._timelineData.push(new TimelineData(currentRecordId, permitName, permitDate, permitColor));
+             }
+         }
+         else {
+             //handle no data
+         }
+     }
+     ```
 
-            
-                        if (permitName != null)
-                            this._timelineData.push(new TimelineData(currentRecordId, permitName, permitDate, permitColor));
-                    }
-                }
-                else {
-                    //handle no data
-                }
-            }
+      ![Create timeline data method - screenshot ](../images/L09/mod-02-pcf-1-37.png)
 
-    ![Create timeline data method - screenshot ](../images/L09/mod-02-pcf-1-37.png)
+1. Call the createTimelineData method from the updateView method.
 
-4. Call the createTimelineData method from the updateView method.
+   - Go to the **updateView** method.
 
-	- Go to the **updateView** method.
+   - Replace the code inside the **updateView** method with the code below.
 
-	- Replace the code inside the **updateView** method with the code below.
+     ```typescript
+     if (!context.parameters.timelineDataSet.loading) {
+         // Get sorted columns on View
+         this.createTimelineData(context.parameters.timelineDataSet);
+         this.renderTimeline();
+     }
+     ```
 
-            if (!context.parameters.timelineDataSet.loading) {
-                // Get sorted columns on View
-                this.createTimelineData(context.parameters.timelineDataSet);
-                this.renderTimeline();
-            }
+     ![Update vie method - screenshot](../images/L09/mod-02-pcf-1-38.png)
 
-    ![Update vie method - screenshot](../images/L09/mod-02-pcf-1-38.png)
+1. Replace the hardcoded items with the csv data.
 
-5. Replace the hardcoded items with the csv data.
+   - Locate the **renderTimeline** function.
 
-	- Locate the **renderTimeline** function.
+   - Replace the hardcoded **items** with code below.
 
-	- Replace the hardcoded **items** with code below.
+     ```typescript
+     var items = this._timelineData;
+     ```
 
-            var items = this._timelineData;
+     ![render timeline function - screenshot](../images/L09/mod-02-pcf-1-39.png)
 
-    ![render timeline function - screenshot](../images/L09/mod-02-pcf-1-39.png)
+1. Make sure the test environment shows your changes and test the timeline control with the test data.
 
-6. Make sure the test environment shows your changes and test the timeline control with the test data.
+   - Select **File** and then **Save All**.
 
-	- Select **File** and then **Save All**.
+   - The test harness should still be running. If it is not running run **npm start watch** command.
 
-	- The test harness should still be running. If it is not running run **npm start watch** command.
+   - Go to the test environment and make sure it looks like the image below.
 
-	- Go to the test environment and make sure it looks like the image below.
+     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-40.png)
 
-    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-40.png)
+   - Select **+ Select a file**.
 
-	- Select **+ Select a File**.
+     ![Select file - screenshot](../images/L09/mod-02-pcf-1-41.png)
 
-    ![Select file - screenshot](../images/L09/mod-02-pcf-1-41.png)
+   - Select the **testdata.csv** and then select **Open**.
 
-	- Select the **testdata.csv** and then select **Open**.
+     ![Select CSV file - screenshot](../images/L09/mod-02-pcf-1-42.png)
 
-    ![Select CSV file - screenshot](../images/L09/mod-02-pcf-1-42.png)
+   - Select **Apply**.
 
-	- Select **Apply**.
+     ![Apply changes - screenshot](../images/L09/mod-02-pcf-1-43.png)
 
-    ![Apply changes - screenshot](../images/L09/mod-02-pcf-1-43.png)
+   - The timeline control should now show the test data.
 
-	- The timeline control should now show the test data.
+     ![Timeline control with data - screenshot](../images/L09/mod-02-pcf-1-44.png)
 
-    ![Timeline control with data - screenshot](../images/L09/mod-02-pcf-1-44.png)
+   - **Do not** close the test environment.
 
-Do not close the test environment.
-
-### Task 1.5: Change Color for Items
+### Task 1.6: Change Color for Items
 
 In this task, you will use the **css** resource you configured to change the color of the items on the timeline.
 
 1. Add red and green styles to the timelinecontrol.css file
 
-	- Go back to **Visual Studio Code**.
+   - In **Visual Studio Code**, expand d the **css** folder and open the **timelinecontrol.css** file.
 
-	- Expand the **css** folder and open the **timelinecontrol.css**
+   - Add the style below to the **timelinecontrol.css** file and save your changes.
 
-	- Add the style below to the **timelinecontrol.css** file and save your changes.
-
-            .red{
-                background:red;
-                color:white;
+     ```css
+     .red{
+         background:red;
+         color:white;
+         }
+     .green{
+         background:green;
+         color:white;
                 }
-            .green{
-                background:green;
-                color:white;
-                }
-            .yellow{
-                background:yellow;
-                color:black;
-                }
+     .yellow{
+         background:yellow;
+         color:black;
+         }
+     ```
 
-    ![CSS file - screenshot](../images/L09/mod-02-pcf-1-45.png)
+     ![CSS file - screenshot](../images/L09/mod-02-pcf-1-45.png)
 
-	- Select File and then select Save All.
+   - Select **File** and then select **Save All**.
 
-2. Check the test environment, load the test data and make sure it shows your changes
+1. Check the test environment, load the test data and make sure it shows your changes.
 
-	- Go to the **Test Environment**.
+   - Go to the **Test Environment**.
 
-	- Select **+ Select a File**.
+   - Select **+ Select a file**.
 
-    ![Select file - screenshot](../images/L09/mod-02-pcf-1-46.png)
+     ![Select file - screenshot](../images/L09/mod-02-pcf-1-46.png)
 
-	- Select the **testdata.csv** and then select **Open**.
+   - Select the **testdata.csv** and then select **Open**.
 
-	- Select **Apply**.
+   - Select **Apply**.
 
-	- The timeline control should now show the test data.
+   - The timeline control should now show the test data.
 
-    ![Timeline control with style - screenshot](../images/L09/mod-02-pcf-1-47.png)
+     ![Timeline control with style - screenshot](../images/L09/mod-02-pcf-1-47.png)
 
-	- Close the test environment browser window or tab.
+   - Close the test environment browser tab.
 
-3. Stop the test
+1. Stop the test.
 
-	- Go back to **Visual Studio Code**.
+   - Go back to **Visual Studio Code**.
 
-	- Click on the **Terminal** and press the **[CONTROL]** key and **c**.
+   - Click on the **Terminal** and press the **[CONTROL]** key and **c**.
 
-	- Type **y** and **[ENTER].**
+   - Type **y** and **[ENTER].**
 
 ## Exercise 2: Publish to Microsoft Dataverse
 
@@ -610,298 +646,320 @@ In this task, you will use the **css** resource you configured to change the col
 
 ### Task 2.1: Setup and Publish
 
-1. Get your environment URL
+1. Get your environment URL.
 
-	- Navigate to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) and select environments.
+   - Navigate to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) and select environments.
+   - Locate and open your **Development** environment.
+   - Right click and copy the **Environment URL**.
 
-	- Locate and open your **Dev** environment.
+     ![Endpoint address - screenshot](../images/L09/mod-02-pcf-1-51.png)
 
-	- Right click and copy the **Environment URL**.
+1. Authenticate.
 
-    ![Endpoint address - screenshot](../images/L09/mod-02-pcf-1-51.png)
+   - Go back to **Visual Studio Code**.
 
-2. Authenticate
+   - Make sure you are still in the **src** directory.
 
-	- Go back to **Visual Studio Code**.
+   - Run the command below. Replace **&lt;Environment URL&gt;** with the **URL** you copied.
 
-	- Make sure you are still in the **src** directory.
+     ```dos
+     pac auth create --url <Environment URL>
+     ```
 
-	- Run the command below. Replace **&lt;Environment URL&gt;** with the **URL** you copied.
+   - Sign in with your tenant credentials.
 
-            pac auth create --url <Environment URL>
+1. Build the solution.
 
-	- Sign in with your **admin** username.
+   - Change directory to the **pcfSolution** folder.
 
-3. Build the solution
+     ```dos
+     cd ..\pcfSolution
+     ```
 
-	- Change directory to the **solution** folder.
+   - Build the project by running the command below.
 
-            cd ..\solution
+     ```dos
+     msbuild /t:build /restore
+     ```
 
-	- Build the project by running the command below.
+1. Import the solution into your org and publish.
 
-            msbuild /t:build /restore
+   - Run the command below and wait for the publishing to complete.
 
-3. Import the solution into your org and publish
+     ```dos
+     pac solution import
+     ```
 
-	- Run the command below and wait for the publishing to complete.
-
-            pac solution import
-
-    ![import solution - screenshot](../images/L09/mod-02-pcf-1-52.png)
+     ![import solution - screenshot](../images/L09/mod-02-pcf-1-52.png)
 
 ### Task 2.2: Add Timeline Control to the Permit Form
 
-1. Open the Permit Management solution
+1. Open the Permit Management solution.
 
-	- Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select **Solutions**.
+1. Add the PCF component to the solution.
 
-	- Open the **Permit Management** solution.
+   - Select **+Add existing** and then **More** and **Developer** and **Custom control**.
 
-2. Open the Permit Main form and switch to classic
+     ![Add existing custom control - screenshot](../images/L09/mod-02-pcf-1-79.png)
 
-	- Select **Tabled** and open the **Permit** table.
+   - Select **contoso_contoso_timelinecontrol**.
 
-    ![Open Table - screenshot](../images/L09/mod-02-pcf-1-54.png)
+     ![Select control - screenshot](../images/L09/mod-02-pcf-1-80.png)
 
-	- Select the **Forms** tab.
+   - Select **Add**.
 
-	- Open the **Main** form.
+1. Open the Permit Main form.
 
-    ![Open form - screenshot](../images/L09/mod-02-pcf-1-55.png)
+   - Select **Tables** and open the **Permit** table.
 
-	- Select **Switch to Classic**.
+     ![Open Table - screenshot](../images/L09/mod-02-pcf-1-54.png)
 
-    ![Switch to classic - screenshot](../images/L09/mod-02-pcf-1-56.png)
+   - Under **Data experiences**, select **Forms**.
 
-3. Add Timeline control to the form
+   - Open the **Main** form.
 
-	- Locate the **Inspections** tab.
+     ![Open form - screenshot](../images/L09/permit-table-forms.png)
 
-	- Double click on the **Inspections** sub-grid.
+   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
 
-    ![Open sub-grid properties - screenshot](../images/L09/mod-02-pcf-1-57.png)
+1. Add Timeline control to the form.
 
-	- Select the **Controls** tab and select **Add Control**.
+   - Select the **Components** tab.
 
-    ![Add control - screenshot](../images/L09/mod-02-pcf-1-58.png)
+   - Select **Get more components**.
 
-	- Select **timelinecontrol** and select **Add**.
+     ![Get More Components - screenshot](../images/L09/get-more-components.png)
 
-    ![Add timeline control - screenshot](../images/L09/mod-02-pcf-1-59.png)
+   - Select **timelinecontrol** and select **Add**.
 
-	- Select **Web** and and then select **OK**.
+1. Add Timeline control to the form.
 
-    ![Select web - screenshot](../images/L09/mod-02-pcf-1-60.png)
+   - Locate the **Inspections** tab.
 
-4. Save and publish
+   - Click on the **Inspections** sub-grid.
 
-	- Select **Save**.
+   - In the Properties pane, scroll down and expand **Components**.
 
-	- Select **Publish** and wait for the publishing to complete.
+   - Select **+ Component**.
 
-	- **DO NOT** close the form editor.
+     ![Sub-grid properties - screenshot](../images/L09/add-component-to-subgrid.png)
 
-5. Create test data
+   - Select **timelinecontrol**.
 
-	- Go back to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Dev** environment selected.
+   - Select **Done**.
 
-	- Select **Apps** and launch the **Permit Management** application
+     ![Sub-grid properties - screenshot](../images/L09/timelinecontrol-on-form.png)
 
-	- Select **Advanced Find**.
+   - Select **Save and publish**.
 
-    ![Advanced find - screenshot](../images/L09/mod-02-pcf-1-61.png)
+   - Close the form editor.
 
-	- Select **Inspections** and then select **Results**.
+   - Select **Done**.
 
-    ![Inspections results - screenshot](../images/L09/mod-02-pcf-1-62.png)
+1. View inspection records
 
-	- Select **Inspection**.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
+   - Make sure you are in the Development environment.
+   - Select **Apps**.
+   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select **Inspections**.
+   - Select **Edit columns**.
+   - Select **+ Add columns**.
+   - Select **Permit**.
+   - Select **Status Reason**.
+   - Select **Close**.
+   - Select **Apply**.
+   - All inspections should be set to **Pending**.
 
-	- Open the **Framing Inspection** record.
+1. Create test data
 
-	- Change the **Status Reason** to **Passed** and select **New**.
+   - Open the **Framing Inspection** record.
 
-    ![Create new inspection - screenshot](../images/L09/mod-02-pcf-1-63.png)
+   - Change the **Status Reason** to **Passed**.
 
-	- Provide a Name, select Inspection Type, select the Test Permit, select Scheduled Date, select Failed for Status Reason, and then select **Save and Close**.
+     ![Save and close passed record - screenshot](../images/L09/mod-02-pcf-1-63.png)
 
-    ![Save and close record - screenshot](../images/L09/mod-02-pcf-1-64.png)
+   - Select **Save & Close**.
 
-	- Close **Advanced Find**.
+   - Open the **Electric Inspection** record.
 
-6. Test the control
+   - Change the **Status Reason** to **Failed**.
 
-	- Select **Permits**.
+     ![Save and close failed record - screenshot](../images/L09/mod-02-pcf-1-64.png)
 
-	- Open a **Test Permit** record.
+   - Select **Save & Close**.
 
-    ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
+   - Open the **Mechanical Inspection** record.
 
-	- Select the **Inspections** tab.
+   - Change the **Status Reason** to **New Request**.
 
-	- The control should show the two inspections, but the color will not match the status reason values.
+   - You should have four inspections for Test Permit; one Passed, one Failed, one New Request, and one Pending.
 
-    ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-66.png)
+     ![Test data - screenshot](../images/L09/test-data-inspections.png)
+
+1. Test the control
+
+   - Select **Permits**.
+
+   - Open the **Test Permit** record.
+
+     ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
+
+   - Select the **Inspections** tab.
+
+   - The control should show the four inspections, but the color will not match the status reason colors.
+
+     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-66.png)
 
 ### Task 2.3: Debug
 
-1. Start Edge DevTools and add breakpoint.
+1. Start Dev Tools and add breakpoint.
 
-	- Press **F12**.
+   - Press **F12** or right click and select **Inspect**.
 
-	- Search for **createTimelineData = function**
+   - Press **Ctrl** + **Shift** + **F** to open Search in Dev Tools.
 
-	- Locate the **createTimelineData** function and add breakpoint on the **permitColor =”green”** line.
+   - Search for **createTimelineData = function**.
 
-    ![Add breakpoint - screenshot](../images/L09/mod-02-pcf-1-67.png)
+     ![Search in Dev Tools - screenshot](../images/L09/dev-tools-search.png)
 
-	- Go back to the Permit Management application and click Refresh.
+   - Click on the **createTimelineData** function. This will open index.ts in DevTools.
 
-    ![Refresh record - screenshot](../images/L09/mod-02-pcf-1-68.png)
+   - Add a breakpoint on the **permitColor =”green”** line.
 
-	- Select the **Inspections** tab again.
+     ![Add breakpoint - screenshot](../images/L09/mod-02-pcf-1-67.png)
 
-	- Execution should break.
+   - Go back to the Permit Management application and click Refresh.
 
-	- Hover over the **permitStatus**, the **permitStatus** is null because **Status Reason** is not included in the **View**.
+     ![Refresh record - screenshot](../images/L09/mod-02-pcf-1-68.png)
 
-    ![Null permit status - screenshot](../images/L09/mod-02-pcf-1-69.png)
+   - Select the **Inspections** tab again.
 
-	- Press **F5** to continue.
+   - Execution should break.
 
-	- Close the **DevTools**.
+   - Hover over the **permitStatus**, the **permitStatus** is null because **Status Reason** is not included in the **View** used by the subgrid.
 
-2. Add Status Reason to the view.
+     ![Null permit status - screenshot](../images/L09/mod-02-pcf-1-69.png)
 
-	- Go back to the form editor.
+   - Press **F5** to continue.
 
-	- Double click on the Inspections timeline control.
+   - Close **Dev Tools**.
 
-    ![open inspection timeline properties - screenshot](../images/L09/mod-02-pcf-1-70.png)
+### Task 2.4: Add Status Reason to Inspections view
 
-	- Select **Edit**.
+1. Open the Permit Management solution.
 
-    ![Edit view - screenshot](../images/L09/mod-02-pcf-1-71.png)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
 
-	- Select **Add Columns**.
+1. Edit the Inspections view.
 
-    ![Add column - screenshot](../images/L09/mod-02-pcf-1-72.png)
+   - Expand **Tables**.
 
-	- Select **Status Reason** and select **OK**.
+   - Select the **Inspection** table.
 
-    ![Select column - screenshot](../images/L09/mod-02-pcf-1-73.png)
+   - Under **Data experiences**, select **Views**.
 
-	- Move the **Status Reason** column after the **Name** column.
+   - Select the **Active Inspections** view.
 
-    ![Move column - screenshot](../images/L09/mod-02-pcf-1-74.png)
+   - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
 
-	- Select **Save and Close**.
+   - Drag the **Status Reason** column and drop it after the **Scheduled Date** column.
 
-	- Select **OK**.
+   - Select **Save and publish** and wait for the publishing to complete.
 
-    ![Close properties - screenshot](../images/L09/mod-02-pcf-1-75.png)
+   - Close the view editor tab.
 
-	- Select **Save**.
+   - Select **Done**.
 
-	- Select **Publish** and wait for the publishing to complete.
+1. Test your changes
 
-	- Close the form editor.
+   - Go back to the **Permit Management** app and refresh the browser.
 
-3. Test your changes
+     ![Refresh browser - screenshot ](../images/L09/mod-02-pcf-1-76.png)
 
-	- Go back to the **Permit Management** application and refresh the browser.
+   - Select the **Inspections** tab. The timeline control should now show the correct colors.
 
-    ![Refresh browser - screenshot ](../images/L09/mod-02-pcf-1-76.png)
+     ![Timeline control with stye - screenshot](../images/L09/mod-02-pcf-1-77.png)
 
-	- Select the **Inspections** tab. The timeline control should now show the correct colors.
+## Exercise 3: Export and import solution
 
-    ![Timeline control with stye - screenshot](../images/L09/mod-02-pcf-1-77.png)
+**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
 
-### Task 2.4: Add the Timeline Control to Permit Management Solution
+### Task 3.1: Export solution
 
-1. Add Custom Control to solution
+1. Export managed solution.
 
-	- Navigate to [Power Apps maker portal - screenshot](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
+   - Select the **Overview** tab in the solution.
+   - Select **Export**.
 
-	- Select **Solutions** and open the **Permit Management** solution.
+     ![Export solution - screenshot](../images/L03/solution-overview-export.png)
 
-	- Select **Add Existing | More | Developer | Custom Control**.
+   - Select **Publish** and wait for the publishing to complete.
 
-    ![Add existing custom control - screenshot](../images/L09/mod-02-pcf-1-79.png)
+     ![Publish solution - screenshot](../images/L03/export-solution-publish.png)
 
-	- Search for Timeline, select **contoso_contoso.timelinecontrol** and select **Add**.
+   - Select **Next**.
+   - Set the version number to `1.0.0.9`.
+   - Select **Managed**.
 
-    ![Select control - screenshot](../images/L09/mod-02-pcf-1-80.png)
+     ![Export solution - screenshot](../images/L09/export-solution-managed.png)
 
-	- Select **Publish All Customizations** and wait for the publishing to complete.
+   - Select **Export**.
 
-## Exercise 3: Promote to production
+     ![Export solution - screenshot](../images/L03/export-solution-download.png)  
 
-**Objective:** In this exercise, you will export the Permit Management solution from your Dev environment and import it into your Production environment.
+   - Click **Download** to download the managed solution on your machine.
 
-### Task 3.1: Export Solution
-
-1. Export Permit Management managed solution
-
-	- Log on to [Power Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Dev** environment.
-
-	- Select **Solution**.
-
-	- Select the **Permit Management** solution and then select **Export**.
-
-    ![Export solution - screenshot](../images/L09/mod-02-pcf-1-81.png)
-
-	- Select **Publish** and wait for the publishing to complete.
-
-    ![Publish customizations - screenshot](../images/L09/mod-02-pcf-1-82.png)
-
-	- Select **Next**.
-
-	- Select **Managed** and then select **Export**.
-
-    ![Export manage solution - screenshot](../images/L09/mod-02-pcf-1-83.png)
-
-	- Save the **Exported** solution on your machine.
-
-2. Export Permit Management unmanaged solution
-
-	- Select **Solution** again.
-
-	- Select the **Permit Management** solution and then select **Export**.
-
-	- Select **Next**.
-
-	- Select **Unmanaged, edit the version number** to match the Managed Solution you just exported and select **Export**.
-
-	- Save the **Exported** solution on your machine.
-
-## Task 3.2: Import Solution
-
-1. Import Permit Management managed solution
-
-	- Log on to [Powe Apps maker portal](https://make.powerapps.com/) and make sure you are in the **Prod** environment.
-
-	- Select **Solution**.
-
-	- Select **Import**.
-
-    ![Import solution - screenshot](../images/L09/mod-02-pcf-1-84.png)
-
-	- Click **Choose File**.
-
-	- Select the **Managed** solution you exported and select **Open**.
-
-    ![Select manage solution file - screenshot](../images/L09/mod-02-pcf-1-85.png)
-
-	- Select **Next**.
-
-	- Expand the Advanced settings area and make sure **Upgrade** is selected.
+1. Export unmanaged solution.
+
+   - Select **Export** again.
+   - Select **Next**.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.9`.
+   - Select **Unmanaged**.
   
-	- Select **Import** and wait the import to complete.
+    ![Export unmanaged solution - screenshot](../images/L09/export-solution-unmanaged.png)
 
-    ![Import solution - screenshot](../images/L09/mod-02-pcf-1-86.png)
+   - Select **Export**.
+   - Click **Download** to download the unmanaged solution on your machine.
 
-Review the production application by adding a few records and testing your progress.
+### Task 3.2: Import solution
+
+1. Import the Permit Management solution.
+
+   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Production** environment.
+
+1. Import solution.
+
+   - Select **Solutions**.
+   - Select **Import solution**.
+   - Select **Browse**.
+   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
+
+     ![Select solution file - screenshot](../images/L09/import-solution-file.png)
+
+   - Select **Next**.
+
+   - Expand **Advanced settings** and make sure **Upgrade** is selected.
+  
+     ![Import solution - screenshot](../images/L09/mod-02-pcf-1-86.png)
+
+   - Select **Next**.
+
+   - In the Connections pane, select **Select a connection** and select **+New connection**.
+
+   - Select **Create** and sign in with your tenant credentials.
+
+   - Close the Connections browser tab.
+
+   - Select **Refresh**.
+
+   - Select **Import** and wait the import to complete.

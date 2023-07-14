@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 2: Model-driven app'
-    module: 'Module 1: Create a model-driven app in Power Apps'
+    module: 'Module 2: Create model-driven apps'
 ---
 
 # Practice Lab 2 – Model driven app
@@ -49,7 +49,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 ### Task 1.1: Permit Form
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -84,7 +84,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Add new tab for **Inspections** to the form.
 
-   - Select the **Components** tab in the left-had pane.
+   - Select the **Components** tab in the left-hand pane.
 
      ![Add components to form - screenshot](../images/L02/form-components.png)
 
@@ -105,7 +105,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select the **Inspections** tab. Make sure that you have selected the whole tab and not just a section.
 
-   - Select the **Components** tab in the left-had pane.
+   - Select the **Components** tab in the left-hand pane.
 
    - Select **Subgrid** this will open a pop-up to select table.
 
@@ -123,7 +123,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
       ![Sub-grid properties - screenshot ](../images/L02/Mod_02_Model_Driven_App_image12.png)
 
-1. Steps to hide the section label
+1. Hide the section label.
 
    - Select the section.
 
@@ -133,13 +133,35 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Hide section label - screenshot](../images/L02/Mod_02_Model_Driven_App_image14.png)
 
+1. Add Timeline control to Permit form.
+
+   - In the **Tree view**, select the **General** tab
+
+     ![Tree view general tab - screenshot](../images/L10/select-general-tab.png)
+
+   - In the **Properties** pane, change **Layout** to **2 columns**.
+
+     ![General tab properties- screenshot](../images/L10/general-tab-properties.png)
+
+   - In the **Tree view**, select the **New Section** section under the General tab.
+
+   - Select the **Components** tab.
+
+   - Click on **Timeline** in the Component pane to add the Timeline control to the form.
+
+     ![General tab properties- screenshot](../images/L10/add-timeline.png)
+
+   - Select the section.
+
+   - Go to the **Properties** pane and check the **Hide Label** checkbox.
+
 1. Select **Save and publish** and wait for the publishing to complete.
 1. Close the form editor tab.
 1. Select **Done**.
 
 ### Task 1.2: Permit View
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -157,16 +179,15 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Click once on the **Permit Type** column. The Permit Type column will be added to the view.
    - Click the **Contact** column. The **Contact** column will be added to the view.
    - Go to the view designer and click on the chevron icon of the **Created On** column.
-   - Select **Remove**. **Created On** column will now be removed from the view.
+   - Select **Remove**. The **Created On** column will now be removed from the view.
    - Select **Save and publish** and wait for the publishing to complete.
 
 1. Close the view editor tab.
 1. Select **Done**.
-1. In the **Objects** pane, select **All**.
 
 ### Task 1.3: Build Site form and view
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -201,7 +222,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 ### Task 1.4: Inspection form and views
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -227,10 +248,10 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Select the **Views** node in the tree view for the Inspections table.
    - Select the **Active Inspections** view.
    - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
-   - Add **Inspection Type**, **Scheduled Date**, and **Sequence** to the view.
+   - Add **Permit**, **Inspection Type**, **Scheduled Date**, **Owner**, and **Sequence** to the view.
    - Remove **Created On** from the view by selecting the chevron on the column and select **Remove**.
 
-     ![Active inspections view - screenshot](../images/L02/Mod_02_Model_Driven_App_image22.png)
+     ![Active inspections view - screenshot](../images/L02/inspections-view.png)
 
    - Select **Save and publish** and wait for the publishing to complete.
 1. Close the view editor tab.
@@ -275,13 +296,13 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
-   - Select **OK**.
+   - Select **Ok**.
    - Select **Save and publish** and wait for the publishing to complete.
 1. Select the **<- Back** button.
 
 ### Task 1.5: Edit Permit Type form and view
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -322,7 +343,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 ### Task 2.1: Create Application
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -354,12 +375,12 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
        ![Enable Areas in navigation settings - screenshot](../images/L02/edit-area-properties.png)
 
-   - In the **Title** text box in the **Properties** pane, enter **Building Dept**.
+   - In the **Title** text box in the **Properties** pane, enter `Building Dept`.
 
 1. Add group to app navigation
 
    - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
-   - In the **Title** text box in the **Properties** pane, enter **Permits**.
+   - In the **Title** text box in the **Properties** pane, enter `Permits`.
 
 1. Add tables to Permits group
 
@@ -377,7 +398,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Add second group to app navigation
 
    - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
-   - In the **Title** text box in the **Properties** pane, enter **Contacts**.
+   - In the **Title** text box in the **Properties** pane, enter `Contacts`.
 
 1. Add tables to Contacts group
 
@@ -401,7 +422,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 ### Task 2.2: Test Application
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
@@ -417,7 +438,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide First Name as **John**, Last Name as **Doe**.
+   - Provide First Name as `John`, Last Name as `Doe`.
 
    - Select **Save & Close**
 
@@ -433,7 +454,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide the address as **One Microsoft Way Redmond WA 98052 USA**
+   - Provide the address as `One Microsoft Way Redmond WA 98052 USA`.
 
    - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
 
@@ -445,7 +466,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide **Name** as **New Construction** and select **Save & Close**and this will show the newly created record on the Active Permit Types View.
+   - Provide **Name** as `New Construction` and select **Save & Close** and this will show the newly created record on the Active Permit Types View.
 
      ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
 
@@ -455,7 +476,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **+ New**.
 
-   - Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
+   - Provide **Name** as `Test Permit`, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
 
    - Select tomorrow's date for the **Start Date** and select **Save**.
 
@@ -469,7 +490,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
 
-   - Provide **Name** as **Framing Inspection**.
+   - Provide **Name** as `Framing Inspection`.
 
    - Select **Initial Inspection** from the dropdown for **Inspection Type**.
 

@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 5: Power Automate'
-    module: 'Module 4: Automate a business process using Power Automate'
+    module: 'Module 5: Automate a business process using Power Automate'
 ---
 
 # Practice Lab 5 - Power Automate
@@ -127,13 +127,14 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. View inspection records
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Inspections**.
    - Select **Edit columns**.
-   - Select **Add columns**.
+   - Select **+ Add columns**.
    - Select **Status Reason**.
    - Select **Close**.
    - Select **Apply**.
@@ -179,7 +180,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select **Show advanced options**.
    - Click in **Comments**.
    - Select the **Expression** tab.
-   - Enter **null**
+   - Enter `null`.
 
      ![Null expression - screenshot](../images/L05/null-expression.png)
 
@@ -283,7 +284,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select the **Framing Inspection** record.
    - Select the **Clear Comments** button.
    - The inspection should be updated and the comments will be cleared.
-   - Select **Close**.
+   - **Close** preview mode.
 
 1. Save and publish the app.
 
@@ -471,7 +472,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Create a Build Site.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Build Sites**.
@@ -483,9 +484,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Enter `Street` for Street.
    - Enter `City` for City.
    - Enter `State` for State.
-   - Enter `Postal Code` for Postal Code.
+   - Enter `ZIP` for Postal Code.
    - Select **Save**.
-   - Click on **New Site** stage in the business process flow.
+   - Select the **New Site** stage in the business process flow.
    - Select **Next Stage**. You should see the error *Country: Required fields must be filled in*.
 
      > [!NOTE]
@@ -499,7 +500,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
    - Select **Next Stage**.
    - Select **+ Create**.
-   - Click on **Initial Permit** stage in the business process flow.
+   - Select the **Initial Permit** stage in the business process flow.
    - Enter `BPF Permit` for Name.
    - Select **John Doe** for Contact.
    - Select today's date for Start Date.
@@ -508,10 +509,10 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Transition to Inspection stage.
 
-   - Click on **Initial Permit** stage in the business process flow.
+   - Select the **Initial Permit** stage in the business process flow.
    - Select **Next Stage**.
    - Select **+ Create**.
-   - Click on **Initial Inspection** stage in the business process flow.
+   - Select the **Initial Inspection** stage in the business process flow.
    - Enter `BPF Inspection` for Name.
    - Select **Initial Inspection** for Inspection Type.
    - Select tomorrow's date for Scheduled Date.

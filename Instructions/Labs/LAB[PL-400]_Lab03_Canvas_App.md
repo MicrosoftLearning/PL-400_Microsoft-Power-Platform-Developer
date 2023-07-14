@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 3: Canvas app'
-    module: 'Module 2: Create canvas app in Power Apps'
+    module: 'Module 3: Create canvas apps'
 ---
 
 # Practice Lab 3 –  Canvas app
@@ -52,7 +52,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -67,7 +67,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      ![Create new canvas application - screenshot](../images/L03/Mod_03_Canvas_App_image3.png)
 
    - On the Welcome to Power Apps Studio popup, select **Skip**.
-   - Click the **Save** icon. This will make sure that the changes are not lost if the app closes unexpectedly.
+   - Select the **Save** icon. This will make sure that the changes are not lost if the app closes unexpectedly.
 
 1. Rename Screen1.
 
@@ -181,7 +181,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Change date time to date only.
 
-   - Expand the **Inspection List** and select **Subtitle**.
+   - In the Tree view, expand the **Inspection List** and select **Subtitle**.
 
      ![Select subtitle - screenshot](../images/L03/Mod_03_Canvas_App_image24.png)
 
@@ -226,7 +226,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 1. Add new screen.
 
    - Select the **Tree view** tab.
-   - Click **+ New screen** and select **Blank**.
+   - Select **+ New screen** and select **Blank**.
 
      ![Add blank screen - screenshot](../images/L03/new-screen.png)
 
@@ -256,7 +256,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - Select the **Details Screen** in the Tree view.
 
-   - Select the **+ Insert** tab and then select **Edit Form**.
+   - Select the **+ Insert** tab and then select **Edit form**.
 
      ![Edit form - screenshot](../images/L03/Mod_03_Canvas_App_image31.png)
 
@@ -313,6 +313,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
    - Select **+ Add Field**.
    - Select **Status Reason**, **Scheduled Date**, **Name**, and **Comments**.
+   - Remove all other fields.
    - Select **Add**.
    - The columns should be ordered as shown in the image below. You can drag/drop to rearrange the columns. Close the Fields pane.
 
@@ -428,7 +429,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Set the **OnSelect** value of the submit button to the formula below. Remove the false expression and update it. This formula will submit the form and then navigate back to the MainScreen.
 
     ```powerappsfl
-    SubmitForm('InspectionForm');Back(ScreenTransition.UnCoverRight);
+    SubmitForm(InspectionForm);Back(ScreenTransition.UnCoverRight);
     ```
 
      ![submit formula - screenshot](../images/L03/Mod_03_Canvas_App_image53.png)
@@ -442,6 +443,8 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
     ```powerappsfl
    Navigate('Details Screen', ScreenTransition.Cover);
     ```
+
+1. Save your work.
 
 ### Task 1.6: Test Application
 
@@ -465,21 +468,22 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Close preview - screenshot](../images/L03/Mod_03_Canvas_App_image57.png)
 
-   - Select **Close**.
+   - **Close** Preview Mode.
 
 1. Save and publish the application.
 
-   - Click the **Save** icon.
-   - Click the **Publish** icon.
+   - Select the **Save** icon.
+   - Select the **Publish** icon.
+   - Select **Publish this version**.
 
      ![Publish application - screenshot](../images/L03/save-icon.png)
 
-   - Click the **<- Back** icon.
+   - Select the **<- Back** icon.
    - Select **Leave**.
 
 1. Confirm the inspection record was updated.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
 
@@ -507,7 +511,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Select the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Solutions**.
    - Select the **Permit Management** solution.
@@ -542,7 +546,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      - Select **Recheck all**.
      - Expand **Accessibility**.
 
-     - Select an issue. This will open the screen with the control and prompt to enter **AccessibleLabel** property.
+     - Select an issue. This will open the screen with the control and prompt to enter the *AccessibleLabel* property.
 
      - Enter text value as appropriate
 
@@ -553,14 +557,14 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
      - Expand **Missing tab stop** node
      - Select control, enter a value for the **TabIndex**, e.g. `0`.
      - Fix other app issues as appropriate.
-     - Select **Recheck all**.
+     - Select **Recheck**.
 
 1. Save and publish the app.
 
-   - Click the **Save** icon.
-   - Click the **Publish** icon.
+   - Select the **Save** icon.
+   - Select the **Publish** icon.
    - Select **Publish this version**.
-   - Click the **<- Back** icon.
+   - Select the **<- Back** icon.
    - Select **Leave**.
 
 1. Run solution checker again.
@@ -598,7 +602,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Export solution - screenshot](../images/L03/export-solution-download.png)  
 
-   - Click **Download** to download the managed solution on your machine.
+   - Select **Download** to download the managed solution on your machine.
 
 1. Export unmanaged solution.
 
@@ -610,13 +614,13 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
     ![Export unmanaged solution - screenshot](../images/L03/export-solution-unmanaged.png)
 
    - Select **Export**.
-   - Click **Download** to download the unmanaged solution on your machine.
+   - Select **Download** to download the unmanaged solution on your machine.
 
 ### Task 2.4: Import solution
 
 1. Import the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Production** environment.
 
 1. Import solution.
