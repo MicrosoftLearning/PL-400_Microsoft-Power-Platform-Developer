@@ -1,0 +1,38 @@
+Table contact {
+  contactid guid [primary key]
+  firstname nvarchar
+  lastname nvarchar
+}
+
+Table pet {
+  petid guid [primary key]
+  petname nvarchar
+  dateofbirth timestamp 
+  petvalue money
+  species integer 
+  petownerid guid
+  statuscode integer
+}
+
+Table trick {
+  trickid guid [primary key]
+  trickname nvarchar
+  trickpoints integer
+  statuscode integer
+}
+
+Table pettrick {
+  pettrickid guid [primary key]
+  name nvarchar
+  petid guid
+  trickid guid
+  level integer
+  points integer
+  statuscode integer
+}
+
+Ref: contact.contactid > pet.petownerid
+
+Ref: pet.petid > pettrick.petid
+
+Ref: trick.trickid > pettrick.trickid
