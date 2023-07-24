@@ -79,7 +79,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 In this exercise, you will add a Power Apps trial to the tenant and assign licenses to users.
 
-### Task 2.1 – Sign up for a Power Apps per user trial
+### Task 2.1 – Sign up for a Power Apps trial
 
 1. Navigate to <https://admin.microsoft.com>.
 
@@ -107,6 +107,10 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Power Apps per user plan.](../images/L00/per-user-plan.png)
 
+1. If **Power Apps per user plan** is not listed, select **Power Apps Premium** and click on **Details**.
+
+    ![Power Apps Premium plan.](../images/L00/premium_plan.png)
+
 1. Click **Start free trial**.
 
 1. Click **Try now**.
@@ -119,7 +123,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click on your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator.png)
 
-1. Check the box for **Power Apps per user plan**.
+1. Check the box for **Power Apps per user plan** or **Power Apps Premium**.
 
 1. Select **Save changes**.
 
@@ -133,7 +137,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Select other users.](../images/L00/select-users.png)
 
-1. Select **Assign more** and check the box for **Power Apps per user plan**.
+1. Select **Assign more** and check the box for **Power Apps per user plan** or **Power Apps Premium**.
 
     ![Add more licenses.](../images/L00/add-licenses.png)
 
