@@ -440,8 +440,6 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **+ Insert** tab.
 
-   - Select **Button**.
-
    - Select **Text label**.
 
    - Select the **Tree view** tab.
