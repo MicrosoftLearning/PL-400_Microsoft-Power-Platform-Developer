@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 13: Custom connector'
+    title: 'Lab 13: Custom connector (Optional)'
     module: 'Module 11: Custom Connectors'
 ---
 
