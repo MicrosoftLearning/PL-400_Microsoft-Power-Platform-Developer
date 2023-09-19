@@ -97,17 +97,9 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Purchase services.](../images/L00/purchase-services.png)
 
-1. If **Purchase services** is not listed under Billing, select **Marketplace** and then select the **All products** tab.
+1. In the search all product categories text box, enter `Power Apps` and press **Enter**.
 
-    ![Marketplace.](../images/L00/marketplace.png)
-
-1. In the search all product categories text box, enter `PowerApps` and press **Enter**.
-
-1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
-
-    ![Power Apps per user plan.](../images/L00/per-user-plan.png)
-
-1. If **Power Apps per user plan** is not listed, select **Power Apps Premium** and click on **Details**.
+1. Select **Power Apps Premium** and click on **Details**.
 
     ![Power Apps Premium plan.](../images/L00/premium_plan.png)
 
@@ -123,7 +115,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click on your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator.png)
 
-1. Check the box for **Power Apps per user plan** or **Power Apps Premium**.
+1. Check the box for **Power Apps Premium**.
 
 1. Select **Save changes**.
 
@@ -137,7 +129,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Select other users.](../images/L00/select-users.png)
 
-1. Select **Assign more** and check the box for **Power Apps per user plan** or **Power Apps Premium**.
+1. Select **Assign more** and check the box for **Power Apps Premium**.
 
     ![Add more licenses.](../images/L00/add-licenses.png)
 
