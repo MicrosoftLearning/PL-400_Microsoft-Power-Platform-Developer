@@ -292,7 +292,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Filter properties - screenshot](../images/L02/Mod_02_Model_Driven_App_image28.png)
 
-   - To set the filter property select **Owner** column in the first dropdown and **Equals current user** in second dropdown .
+   - To set the filter property select **Owner** column in the first dropdown and **Equals current user** in second dropdown.
 
      ![View filters - screenshot](../images/L02/Mod_02_Model_Driven_App_image29.png)
 
