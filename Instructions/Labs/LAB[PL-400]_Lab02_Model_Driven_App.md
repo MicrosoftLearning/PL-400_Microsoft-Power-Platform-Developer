@@ -323,7 +323,6 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Edit the Active Permit Types view.
    - Select the **Views** node in the tree view for the Inspections table.
-   - Select the **Active Active Permit Types** view.
    - Select the ellipses **...** for the **Active Permit Types** view, select **Edit** and select **Edit in new tab**.
    - Add **Require Inspections** and **Require Size** to the view.
    - Remove **Created On** from the view but selecting the chevron on the column and select **Remove**.
