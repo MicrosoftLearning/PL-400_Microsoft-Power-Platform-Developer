@@ -94,29 +94,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
      currentuser.Country
      ```
 
-1. Save and publish the app.
+1. Click the **Save** icon.
 
-   - Click the **Save** icon.
-   - Click the **<- Back** icon.
-   - Select **Leave**.
+1. Do **NOT** navigate away from this screen.
 
 ## Exercise 2: Patch
 
 **Objective:** In this exercise, you use Patch to update the Status Reason on an inspection.
 
 ### Task 2.1: Update inspection row using Patch
-
-1. Open the Permit Management solution.
-
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Development** environment.
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-
-1. Edit the **Inspector** canvas app.
-
-   - Select **Apps** in the Permit Management solution.
-   - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
 
 1. Add failed button to the details screen.
 
@@ -144,6 +130,8 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
    ```
 
 1. Save the app.
+
+1. Do **NOT** navigate away from this screen.
 
 ### Task 2.2: Test the app
 
