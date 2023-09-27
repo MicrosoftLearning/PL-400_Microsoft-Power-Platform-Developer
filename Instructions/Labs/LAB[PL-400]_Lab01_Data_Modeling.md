@@ -35,6 +35,14 @@ Your solution will contain several tables upon completion of all the customizati
 - What relationship behaviors would we consider enabling users to complete their tasks?
 - Remember to work in your *Development* environment with the customizations. Once the customizations are completed, published and tested in *Development*, and if everything works fine, the same will be deployed to *Live*.
 
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L01\Starter folder.
+
+This starter solution covers all steps in Labs 1 and 2. You should import this solution if you are familiar with Dataverse and model-driven apps.
+
+There is a second starter solution that covers all steps in Lab 3 if you are familiar with basic canvas apps.
+
 ## Completed solution
 
 A completed solution file for this lab can be found in the  C:\Labfiles\L01\Completed folder.
@@ -213,6 +221,8 @@ In this exercise, you will create tables, add columns to these tables, and edit 
   
    - Select **+ New** and then select **Table** and select **Table** again.
    - Enter `Permit Type` for **Display name**.
+   - Expand **Advanced options**.
+   - Select **Organization** for **Record ownership**.
    - Select **Save**.
 
 1. Create Require Inspections column
@@ -331,7 +341,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
    - Select **+ New column**.
    - Enter `Comments` for **Display name**.
-   - For **Data type**, select **Text** and then select **Plain Text** under **Multiple Lines of Text**.
+   - For **Data type**, select **Text** and then select **Plain Text** under **Multiple lines of text**.
    - Select **Save**.
 
 1. Add Sequence column

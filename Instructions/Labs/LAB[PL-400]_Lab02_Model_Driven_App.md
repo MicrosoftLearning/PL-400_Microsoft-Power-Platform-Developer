@@ -233,7 +233,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Under **Data experiences**, select **Forms**.
    - Select the **Main** form.
    - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
-   - Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** columns to the form. **Inspection type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** column.
+   - Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** columns to the form. **Inspection Type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** column.
    - Add the **Status Reason** column to the header.
    - The form should now look like the image below.
 
