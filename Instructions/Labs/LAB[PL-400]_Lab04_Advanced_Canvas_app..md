@@ -135,6 +135,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 ### Task 2.2: Test the app
 
+> [!NOTE]
+> If you closed the application, follow these steps to get back to Power Apps Studio.
+>  - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+>  - Select your **Development** environment.
+>  - Select **Solutions**.
+>  - Open the **Permit Management** solution.
+>  - Select **Apps** in the Permit Management solution.
+>   - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
+
 1. Start the application.
 
    - Select the **Main Screen** and select **Preview the app**.
