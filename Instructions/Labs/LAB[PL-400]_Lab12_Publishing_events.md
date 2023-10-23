@@ -90,11 +90,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
      ![Go to resource - screenshot](../images/L12/azure-portal-go-to-resource.png)
 
-   - Select **Functions**.
+   - Select the **Functions** tab.
 
-     ![Add function - screenshot](../images/L12/Mod_01_Web_Hook_image6.png)
+     ![Add function - screenshot](../images/L12/azure-function-overview.png)
 
-   - Select **+ Create**.
+   - Select **Create in Azure portal**.
 
    - Select **HTTP trigger** for Template.
 
@@ -371,3 +371,62 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
    - The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
       ![Post and pre entity image values - screenshot](../images/L12/Mod_01_Web_Hook_image46.png)
+
+### Task 2.4: Add webhook to the solution
+
+1. Add webhook to solution.
+
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+
+   - Select **Add existing** and select **More** and **Developer** and **Service endpoint**.
+
+   - Select the **NewSize** webhook and then select **Add**.
+
+   - Select **Add existing** and select **More** and **Developer** and **Plug-in step**.
+
+   - Select the **NewSize: Update of contoso_permit** step and then select **Add**.
+
+## Exercise 3: Export and import solution
+
+**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
+
+### Task 3.1: Export solution
+
+1. Export managed solution.
+
+   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select the **Overview** tab in the solution.
+   - Select **Export**.
+   - Select **Publish** and wait for the publishing to complete.
+   - Select **Next**.
+   - Set the version number to `1.0.0.12`.
+   - Select **Managed**.
+   - Select **Export**.
+   - Click **Download** to download the managed solution on your machine.
+
+1. Export unmanaged solution.
+
+   - Select **Export** again.
+   - Select **Next**.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.12`.
+   - Select **Unmanaged**.
+   - Select **Export**.
+   - Click **Download** to download the unmanaged solution on your machine.
+
+### Task 3.2: Import solution
+
+1. Import the Permit Management solution.
+
+   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Production** environment.
+   - Select **Solutions**.
+   - Select **Import solution**.
+   - Select **Browse**.
+   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
+   - Select **Next**.
+   - Expand **Advanced settings** and make sure **Upgrade** is selected.
+   - Select **Import** and wait the import to complete.

@@ -616,7 +616,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Select **Export**.
    - Select **Download** to download the unmanaged solution on your machine.
 
-### Task 2.4: Import solution
+### Task 2.3: Import solution
 
 1. Import the Permit Management solution.
 

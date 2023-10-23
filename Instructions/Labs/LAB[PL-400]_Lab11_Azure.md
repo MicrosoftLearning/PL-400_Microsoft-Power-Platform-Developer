@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 11: Azure Functions'
+    title: 'Lab 11: Azure Functions (Optional)'
     module: 'Module 10: Integrate Dataverse and Azure'
 ---
 

@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 13: Custom connector'
+    title: 'Lab 13: Custom connector (Optional)'
     module: 'Module 11: Custom Connectors'
 ---
 
@@ -439,8 +439,6 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 1. Add the result label to the screen
 
    - Select **+ Insert** tab.
-
-   - Select **Button**.
 
    - Select **Text label**.
 
