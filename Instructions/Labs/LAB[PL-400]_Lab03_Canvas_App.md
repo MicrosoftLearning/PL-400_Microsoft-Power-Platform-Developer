@@ -87,7 +87,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Browse to the lab resources folder (L03\Resources), select the **ContosoComponents.msapp** file and select **Open**.
 
    > [!NOTE]
-   > The Component file can be found in the  C:\Labfiles\L03\Resources folder.
+   > The Component file can be found in the  C:\LabFiles\L03\Resources folder.
 
 1. Add the Header component to the MainScreen.
 

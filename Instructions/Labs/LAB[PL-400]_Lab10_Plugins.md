@@ -325,7 +325,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Override the ExecuteDataversePlugin method and get the reason value from the input parameter.
 
-   - Add the code below inside the **LockPermitCancelInspections** method.
+   - Add the code below inside the **LockPermitCancelInspections** class.
 
      ```csharp
      public LockPermitCancelInspections(string unsecureConfiguration, string secureConfiguration)
