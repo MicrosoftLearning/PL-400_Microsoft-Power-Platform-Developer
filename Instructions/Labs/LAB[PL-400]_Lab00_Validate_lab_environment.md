@@ -79,11 +79,13 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 In this exercise, you will add a Power Apps trial to the tenant and assign licenses to users.
 
-### Task 2.1 – Sign up for a Power Apps trial
+### Task 2.1 – Sign into the Microsoft 365 admin portal
+
+1. Verify that you have your **Microsoft 365 credentials** from the Authorized Lab Host available.
 
 1. Navigate to <https://admin.microsoft.com>.
 
-1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype** .
+1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype**.
 
 1. Click **Next**.
 
@@ -93,31 +95,21 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Select **Yes** to stay signed in.
 
-1. In the left-hand navigation, expand **Billing** and select **Purchase services**.
+### Task 2.2 – Sign up for a Power Apps trial
 
-    ![Purchase services.](../images/L00/purchase-services.png)
+1. In a new browser tab, navigate to <https://powerapps.microsoft.com> and select **Start free**.
 
-1. If **Purchase services** is not listed under Billing, select **Marketplace** and then select the **All products** tab.
+1. Enter the `email address` provided by the Authorized Lab Host.
 
-    ![Marketplace.](../images/L00/marketplace.png)
+1. Select **Sign in**.
 
-1. In the search all product categories text box, enter `PowerApps` and press **Enter**.
+1. Enter the `password` provided by the Authorized Lab Host.
 
-1. Scroll down and locate the **Power Apps per user plan** and click on **Details**.
+1. Select **Yes** to stay signed in.
 
-    ![Power Apps per user plan.](../images/L00/per-user-plan.png)
+1. The Power Apps maker portal will load in a new tab.
 
-1. If **Power Apps per user plan** is not listed, select **Power Apps Premium** and click on **Details**.
-
-    ![Power Apps Premium plan.](../images/L00/premium_plan.png)
-
-1. Click **Start free trial**.
-
-1. Click **Try now**.
-
-1. Click **Continue**.
-
-### Task 2.2 – Assign Power Apps licenses to your user
+### Task 2.3 – Assign Power Apps licenses to your user
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
@@ -129,7 +121,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
 1. Click on **X** in the top right of the user details panel to close the panel.
 
-### Task 2.3 – Assign Power Apps licenses to other users
+### Task 2.4 – Assign Power Apps licenses to other users
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
@@ -137,7 +129,7 @@ In this exercise, you will add a Power Apps trial to the tenant and assign licen
 
     ![Select other users.](../images/L00/select-users.png)
 
-1. Select **Assign more** and check the box for **Power Apps per user plan** or **Power Apps Premium**.
+1. Select **Assign more** and check the box for **Power Apps Plan 2** or **Power Apps per user plan** or **Power Apps Premium**.
 
     ![Add more licenses.](../images/L00/add-licenses.png)
 
