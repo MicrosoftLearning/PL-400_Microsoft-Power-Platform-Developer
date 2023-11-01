@@ -313,7 +313,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Under **Data experiences**, select **Forms**.
    - Select the **Main** form.
    - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
-   - Add **Require Inspections** and **Require Size** columns to the form between **Name** and **Owner**.
+   - Add **Require Inspections** and **Require Size** columns to the form under **Name**.
 
      ![Permit type form - screenshot](../images/L02/Mod_02_Model_Driven_App_image30.png)
 
