@@ -343,7 +343,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Select update property - screenshot](../images/L03/Mod_03_Canvas_App_image40.png)
 
-   - Remove everything after and substitute with formula below. This should remove the error message from the app.
+   - Remove everything and substitute with formula below. This should remove the error message from the app.
 
     ```powerappsfl
     ScheduledDateValue.SelectedDate
