@@ -337,13 +337,18 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
      ![Delete card components - screenshot](../images/L03/Mod_03_Canvas_App_image39.png)
 
+   - Rename the DateValue control to `ScheduledDateValue` by double clicking on the control in Tree View.
    - Select the **Scheduled Date** DataCard.
    - Go to property selector and select the **Update** property.
 
      ![Select update property - screenshot](../images/L03/Mod_03_Canvas_App_image40.png)
 
-   - Remove everything after the **SelectedDate**. This should remove the error message from the app.
+   - Remove everything after and substitute with formula below. This should remove the error message from the app.
 
+    ```powerappsfl
+    ScheduledDateValue.SelectedDate
+    ```
+    
      ![Edit formula - screenshot](../images/L03/Mod_03_Canvas_App_image41.png)
 
 1. Make the Name and Scheduled Date columns read-only.
