@@ -69,7 +69,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
 ### Task 1.2 – Create solution and publisher
 
-1. Select **Solutions** from the left navigation pane. You should see several solutions including the *Default Solution* and the *Common Data Services Default Solution*.
+1. Select **Solutions** from the left navigation pane. You should see the *Default Solution* and the *Common Data Services Default Solution*.
 
     ![List of solutions in Maker portal.](../images/L01/solutions-list.png)
 
