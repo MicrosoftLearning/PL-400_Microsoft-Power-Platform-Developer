@@ -63,9 +63,9 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
     ![Select Development environment in the Power Apps maker portal.](../images/L01/select-dev-environment.png)
 
-1. Select **Apps** from the left navigation pane. You should see a two apps, Solution Health Hub and Package Management View, listed.
+1. Select **Apps** from the left navigation pane and then select **All**. You should see several apps including, Dataverse Accelerator App, Solution Health Hub, and Package Management View, listed.
 
-1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model*.
+1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model* including Account and Contact.
 
 ### Task 1.2 – Create solution and publisher
 
