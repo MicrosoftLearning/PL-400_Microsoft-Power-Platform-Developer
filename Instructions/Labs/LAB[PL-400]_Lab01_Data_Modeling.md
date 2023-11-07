@@ -63,23 +63,23 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
     ![Select Development environment in the Power Apps maker portal.](../images/L01/select-dev-environment.png)
 
-1. Select **Apps** from the left navigation pane. You should see a two apps, Solution Health Hub and Package Management View, listed.
+1. Select **Apps** from the left navigation pane and then select **All**. You should see several apps including, Dataverse Accelerator App, Solution Health Hub, and Package Management View, listed.
 
-1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model*.
+1. Select **Tables** from the left navigation pane. You should see the standard tables from the *Common Data Model* including Account and Contact.
 
 ### Task 1.2 – Create solution and publisher
 
-1. Select **Solutions** from the left navigation pane. You should see several solutions including the *Default Solution* and the *Common Data Services Default Solution*.
+1. Select **Solutions** from the left navigation pane. You should see the *Default Solution* and the *Common Data Services Default Solution*.
 
     ![List of solutions in Maker portal.](../images/L01/solutions-list.png)
 
-1. Click **+ New solution**.
+1. Select **+ New solution**.
 
 1. In the **Display name** text box, enter `Permit Management`. The Name text box should be automatically populated.
 
    ![Add new publisher - screenshot](../images/L01/Mod_01_Data_Modeling_image4.png)
 
-1. Click **+ New publisher** below the **Publisher** dropdown.
+1. Select **+ New publisher** below the **Publisher** dropdown.
 
 1. In the **Display name** text box, enter `Contoso`.
 
@@ -91,15 +91,15 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
 1. Make a note of the **Choice value prefix**.
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. In the **Publisher** drop-down, select **Contoso (contoso)**.
 
    ![New solution - screenshot](../images/L01/new-solution.png)
 
-1. Click **Create**.
+1. Select **Create**.
 
-## Exercise 2 - Add components to the solution
+## Exercise 2: Add components to the solution
 
 In this exercise, you will add existing tables to the solution.
 
@@ -113,15 +113,15 @@ In this exercise, you will add existing tables to the solution.
 
 1. Open the **Permit Management** solution you created in the previous exercise.
 
-1. Click on **Add existing** and select **Table**.
+1. Select **Add existing** and select **Table**.
 
     ![Add existing tables.](../images/L01/add-existing.png)
 
 1. Search for `contact` and select the **Contact** table.
 
-1. Click **Next**.
+1. Select **Next**.
 
-1. Click **Select objects**.
+1. Select **Select objects**.
 
    ![Select Table objects - screenshot](../images/L01/Mod_01_Data_Modeling_image7.png)
 
@@ -129,27 +129,27 @@ In this exercise, you will add existing tables to the solution.
 
 1. Select the **Active Contacts** view.
 
-1. Click on **Add**.
+1. Select **Add**.
 
-1. Click **Select objects**.
+1. Select **Select objects**.
 
 1. Select the **Forms** tab.
 
 1. Select the **Contact** main form.
 
-1. Click on **Add**.
+1. Select **Add**.
 
 1. You should have **1 view** and **1 form** selected.
 
    ![Add objects](../images/L01/Mod_01_Data_Modeling_image8.png)
 
-1. Select **Add**. This will add the Contact table to the Practice Management solution.
+1. Select **Add**. This will add the Contact table to the Permit Management solution.
 
-1. Click on **Add existing** and select **Table**.
+1. Select **Add existing** and select **Table**.
 
 1. Search for `user` and select the **User** table.
 
-1. Click **Next**.
+1. Select **Next**.
 
 1. **DO NOT** select any objects and Select **Add**. Your solution should now have two tables.
 
@@ -167,7 +167,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Open the **Permit Management** solution.
 
-1. Click **+ New** and then select **Table** and select **Table** again.
+1. Select **+ New** and then select **Table** and select **Table** again.
 
    ![Add new table - screenshot](../images/L01/Mod_01_Data_Modeling_image9.png)
 
@@ -177,13 +177,17 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
      ![Enable attachments for Table - screenshot](../images/L10/enable-attachments.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
    ![New Permit table - screenshot](../images/L01/permit-table.png)
 
+1. Select **Properties**.
+
+1. If *Enable attachments* is not checked for the Permit table, then check **Enable attachments** again and select **Save**.
+
 1. Under **Schema**, select **Columns**.
 
-1. Click **+ New column**.
+1. Select **+ New column**.
 
     ![New column - screenshot](../images/L01/Mod_01_Data_Modeling_image10.png)
 
@@ -193,23 +197,23 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. In the **Required** drop-down, select **Business required**.
 
-1. Click **Save**.
+1. Select **Save**.
 
-1. Click **+ New column**.
+1. Select **+ New column**.
 
 1. Enter `Expiration Date` for **Display name**.
 
 1. Select **Date and time** in the **Data type** drop-down and then select **Date only**.
 
-1. Click **Save**.
+1. Select **Save**.
 
-1. Click **+ New column**.
+1. Select **+ New column**.
 
 1. Enter `New Size` for **Display name**.
 
 1. Select **Number** in the **Data type** drop-down and then select **Whole number**.
 
-1. Click **Save**.
+1. Select **Save**.
 
 ### Task 3.2: Create Permit Type table and columns
 
@@ -371,7 +375,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Expand the **Inspection** table.
 
-1. Expand **Columns**.
+1. Select **Columns**.
 
 1. Select the **Status Reason** column.
 
@@ -430,7 +434,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Expand the **Permit** table.
 
-1. Expand **Columns**.
+1. Select **Columns**.
 
 1. Select the **Status Reason** column.
 

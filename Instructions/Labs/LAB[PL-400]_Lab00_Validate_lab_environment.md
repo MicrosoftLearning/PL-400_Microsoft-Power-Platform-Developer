@@ -19,7 +19,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 ## Exercise 1 - Download lab files
 
-1. From the lab virtual machine, click **Start** and search for **PowerShell** then open **PowerShell as Administrator**.
+1. From the lab virtual machine, select the Windows **Start** icon and search for **PowerShell** then open **PowerShell as Administrator**.
 
    ![Start Powershell as administrator.](../images/L00/start-powershell.png)
 
@@ -87,11 +87,11 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype**.
 
-1. Click **Next**.
+1. Select **Next**.
 
 1. Enter the password from your Microsoft 365 credentials.
 
-1. Click **Sign in**.
+1. Select **Sign in**.
 
 1. Select **Yes** to stay signed in.
 
@@ -131,7 +131,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Select **Save changes**.
 
-1. Click on **X** in the top right of the user details panel to close the panel.
+1. Select the **X** in the top right of the user details panel to close the panel.
 
 ### Task 2.4 – Assign Power Apps licenses to other users
 
@@ -139,7 +139,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
-1. Check the boxes next to the other users, click on the **ellipses (...**) in the action bar, and select **Manage product licenses**.
+1. Check the boxes next to the other users, click on the **ellipses (...)** in the action bar, and select **Manage product licenses**.
 
     ![Select other users.](../images/L00/select-users.png)
 
@@ -147,9 +147,9 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
     ![Add more licenses.](../images/L00/add-licenses-dev.png)
 
-1. Click **Save changes**.
+1. Select **Save changes**.
 
-1. Click **Done**.
+1. Select **Done**.
 
 ## Exercise 3 - Create environments
 
@@ -162,11 +162,11 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Navigate to the Power Platform admin center `https://admin.powerplatform.microsoft.com` and sign in with your Microsoft 365 credentials if prompted again.
 
-1. Click **Get Started** if a Welcome to the Power Platform admin center popup is shown.
+1. Select **Get Started** if a Welcome to the Power Platform admin center popup is shown.
 
 1. Select **Environments** from the left navigation pane. There should be a default environment, *Contoso (default)*, and possible another environment named *Dev One*.
 
-1. Click **+ New**.
+1. Select **+ New**.
 
    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
@@ -184,7 +184,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
     ![Environment in the Power Platform admin center.](../images/L00/ppac-environments-dev.png)
 
-1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and select **Settings**.
+1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and selecting **Settings**.
 
    ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
@@ -194,7 +194,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Navigate to environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
 
-1. Click **+ New**.
+1. Select **+ New**.
 
 1. In the **Name** text box, enter `[my initials] Live`. (Example: PL Live).
 
@@ -230,7 +230,7 @@ In this exercise, you will create an Azure subscription that you will be using i
 1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
    > [!NOTE]
-   > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and click on **Submit**.
+   > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
 1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
 
