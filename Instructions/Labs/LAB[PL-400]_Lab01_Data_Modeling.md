@@ -375,7 +375,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Expand the **Inspection** table.
 
-1. Expand **Columns**.
+1. Select **Columns**.
 
 1. Select the **Status Reason** column.
 
@@ -434,7 +434,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 1. Expand the **Permit** table.
 
-1. Expand **Columns**.
+1. Select **Columns**.
 
 1. Select the **Status Reason** column.
 
