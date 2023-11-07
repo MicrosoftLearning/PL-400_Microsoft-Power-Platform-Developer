@@ -65,7 +65,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
      ![Dataverse actions - screenshot](../images/L05/select-list-rows-action.png)
 
-   - Rename the List rows step to `Inspections` by selecting the **ellipses ...** on the flow step and selecting **Rename**.
+   - Rename the List rows step to `Inspections` by selecting the ellipses **...** on the flow step and selecting **Rename**.
 
      ![Rename flow step - screenshot](../images/L05/rename-flow-step.png)
 
@@ -131,7 +131,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select your **Development** environment.
    - Make sure you are in the Development environment.
    - Select **Apps**.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
    - Select **Inspections**.
    - Select **Edit columns**.
    - Select **+ Add columns**.
@@ -159,11 +159,22 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
    - Select **+ New** and then select **Automation** > **Cloud flow** > **Instant**.
    - Enter `ClearInspectionComments` for Flow name.
-   - Select the **PowerApps** trigger.
+   - Select the **PowerApps (V2)** trigger.
 
      ![new instant flow name - screenshot](../images/L05/instant-flow-name.png)
 
    - Select **Create**.
+
+1. Add Input.
+
+   - Select and expand the Power Apps trigger.
+   - Select **+ Add an input**.
+   - Select **Text**.
+   - Click in *Input* and enter `InspectionID`.
+   - Click in *Please enter your input* and enter `GUID`
+
+     ![Power Apps Trigger input - screenshot](../images/L05/powerapps-trigger.png)
+
 
 1. Add Update row step.
 
@@ -173,9 +184,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Rename the step to `CancelComments`.
    - Select **Inspections** for Table name.
    - Click in **Row ID**.
-   - Using **Dynamic content**, select **Ask in PowerApps**.
+   - Using **Dynamic content**, select **InspectionID**.
 
-     ![Ask in Power Apps Dynamic content - screenshot](../images/L05/dynamic-content-ask-in-powerapps.png)
+     ![Ask in Power Apps Dynamic content - screenshot](../images/L05/dynamic-content-use-input.png)
 
    - Select **Show advanced options**.
    - Click in **Comments**.
@@ -226,7 +237,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 1. Edit the **Inspector** canvas app.
 
    - Select **Apps** in the Permit Management solution.
-   - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
+   - Select the ellipses **...** next to **Inspector** app and select **Edit in new tab**.
 
 1. Add the instant cloud flow to the app.
 
@@ -288,9 +299,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Save and publish the app.
 
-   - Click the **Publish** icon.
+   - Select the **Publish** icon.
    - Select **Publish this version**.
-   - Click the **<- Back** icon.
+   - Select the **<- Back** icon.
    - Select **Leave**.
 
 ## Exercise 3: Business process flow (Optional)
@@ -326,19 +337,19 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Add stages.
 
-   - Click on the first stage.
+   - Select the first stage.
    - Enter `New Site` for Display Name.
    - Select **Apply**.
    - Select the **Components** tab.
    - Drag the **Stage** component and drop it onto the **+** icon to the right of the first stage.
-   - Click on the second stage.
+   - Select the second stage.
    - Enter `Initial Permit` for Display Name.
    - Select **Permit** for Entity.
    - Select **Apply**.
    - Select the **+ Add** button in the command bar.
    - Select **Add Stage**.
-   - Click the **+** icon to the right of the second stage.
-   - Click on the third stage.
+   - Select the **+** icon to the right of the second stage.
+   - Select the third stage.
    - Enter `Initial Inspection` for Display Name.
    - Select **Inspection** for Entity.
    - Select **Apply**.
@@ -347,11 +358,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Configure Build Site stage.
 
-   - Click on the first stage.
+   - Select the first stage.
    - Expand **Details**.
    - Select the **+ Add** button in the command bar.
    - Select **Add Data Step**.
-   - Click the **+** icon under the existing data step.
+   - Select the **+** icon under the existing data step.
    - Repeat adding steps until there are five data steps on the stage.
 
      ![business process flow steps - screenshot](../images/L05/business-process-flow-data-steps.png)
@@ -385,11 +396,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Configure Initial Permit stage.
 
-   - Click on the second stage.
+   - Select the second stage.
    - Expand **Details**.
    - Select the **+ Add** button in the command bar.
    - Select **Add Data Step**.
-   - Click the **+** icon under the existing data step.
+   - Select the **+** icon under the existing data step.
    - Repeat adding steps until there are five data steps on the stage.
 
    - Select **Data Step #1**.
@@ -417,7 +428,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
 1. Configure Initial Inspection stage.
 
-   - Click on the third stage.
+   - Select the third stage.
    - Expand **Details**.
    - Select the **Components** tab.
    - Drag the **Data Step** component and drop it onto the **+** icon under the existing data step.
@@ -462,7 +473,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    > [!IMPORTANT]
    > You need to add the Business process flow table to the solution.
 
-   - Click on **Add existing** and select **Table**.
+   - Select **Add existing** and select **Table**.
    - Search for `build` and select the **New Build Site** table.
    - Select **Next**.
    - Check **Include all objects**.
@@ -480,7 +491,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
      ![business process flow for new record - screenshot](../images/L05/business-process-flow-new-record.png)
 
-   - Click on **New Site** stage in the business process flow.
+   - Select the **New Site** stage in the business process flow.
    - Enter `Street` for Street.
    - Enter `City` for City.
    - Enter `State` for State.
