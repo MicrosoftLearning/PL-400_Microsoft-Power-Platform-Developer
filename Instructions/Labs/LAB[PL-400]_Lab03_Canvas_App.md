@@ -348,8 +348,6 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
     ```powerappsfl
     ScheduledDateValue.SelectedDate
     ```
-    
-     ![Edit formula - screenshot](../images/L03/Mod_03_Canvas_App_image41.png)
 
 1. Make the Name and Scheduled Date columns read-only.
 

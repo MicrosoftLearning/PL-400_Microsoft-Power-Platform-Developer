@@ -147,7 +147,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select the **Components** tab.
 
-   - Click on **Timeline** in the Component pane to add the Timeline control to the form.
+   - Select **Timeline** in the Component pane to add the Timeline control to the form.
 
      ![General tab properties- screenshot](../images/L10/add-timeline.png)
 
@@ -370,7 +370,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Close the settings window.
 
-   - In the left-hand pane, select **Area1**, select the **ellipses (...)** and select **Edit properties**.
+   - In the left-hand pane, select **Area1**, select the ellipses **...** and select **Edit properties**.
 
        ![Enable Areas in navigation settings - screenshot](../images/L02/edit-area-properties.png)
 
@@ -378,36 +378,36 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Add group to app navigation
 
-   - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+   - Select **Navigation**, select the ellipses **...** and select **New group**.
    - In the **Title** text box in the **Properties** pane, enter `Permits`.
 
 1. Add tables to Permits group
 
-   - Click **+ Add page**.
+   - Select **+ Add page**.
    - Select **Dataverse table**.
-   - Click **Next**.
+   - Select **Next**.
    - Search for `Permit` and select the **Permit** and **Permit Type** tables.
    - Search for `Inspection` and select the **Inspections** table.
-   - Click **Add**.
+   - Select **Add**.
 
 1. Order the navigation.
 
-   - Select **Permits view** , select the **ellipses (...)** and select **Move up**.
+   - Select **Permits view** , select the ellipses **...** and select **Move up**.
 
 1. Add second group to app navigation
 
-   - Click on **Navigation**, select the **ellipses (...)** and select **New group**.
+   - Select**Navigation**, select the ellipses **...** and select **New group**.
    - In the **Title** text box in the **Properties** pane, enter `Contacts`.
 
 1. Add tables to Contacts group
 
-   - Click **+ New**.
+   - Select **+ New**.
    - Select **Dataverse table**.
-   - Click **Next**.
+   - Select **Next**.
    - Search for `Contact` and select the **Contact** table.
    - Search for `Build` and select the **Build Site** table.
-   - Click **Add**.
-   - Select **Contacts view** , select the **ellipses (...)** and select **Move up**.
+   - Select **Add**.
+   - Select **Contacts view** , select the ellipses **...** and select **Move up**.
 
 1. The navigation should now look like the image below.
 
@@ -427,7 +427,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Open the **Permit Management** solution.
 1. In the **Objects** pane, select **All**.
 1. Select the **Apps** node.
-1. Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+1. Select the **Permit Management** app, select the ellipses **...** and select **Play**.
 
 1. Create new Contact record
 
