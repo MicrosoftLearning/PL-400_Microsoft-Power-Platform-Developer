@@ -46,7 +46,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 1. Edit the **Inspector** canvas app.
 
    - Select **Apps** in the Permit Management solution.
-   - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
+   - Select the ellipses **...** next to the **Inspector** app and select **Edit in new tab**.
 
 1. Add Office 365 Users as a data source.
 
@@ -76,7 +76,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
    - Select the **Tree view** tab.
    - Select the **App** object.
-   - Select the ellipses (...) and select **Run OnStart**
+   - Select the ellipses **...** and select **Run OnStart**
 
     ![OnStart formula - screenshot](../images/L04/run-onstart.png)
 
@@ -94,7 +94,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
      currentuser.Country
      ```
 
-1. Click the **Save** icon.
+1. Select the **Save** icon.
 
 1. Do **NOT** navigate away from this screen.
 
@@ -126,7 +126,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
    - Change the **OnSelect** property to the formula below.
 
    ```powerappsfl
-   Patch(Inspections, 'Inspection List'.Selected, {'Status Reason':'Status Reason (Inspections)'.Failed});Refresh(Inspections);Back(ScreenTransition.UnCoverRight);
+   Patch(Inspections, 'Inspection List'.Selected, {'Status Reason':'Status Reason (Inspections)'.Failed});Back(ScreenTransition.UnCoverRight);
    ```
 
 1. Save the app.
@@ -135,14 +135,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 ### Task 2.2: Test the app
 
-> [!NOTE]
-> If you closed the application, follow these steps to get back to Power Apps Studio.
->  - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
->  - Select your **Development** environment.
->  - Select **Solutions**.
->  - Open the **Permit Management** solution.
->  - Select **Apps** in the Permit Management solution.
->   - Select the **ellipses ...** next to **Inspector** app and select **Edit**.
+   > [!NOTE]
+   > If you closed the application, follow these steps to get back to the Power Apps Studio.
+   >
+   > - Navigate to the [Power Apps Maker portal](https://make.powerapps.com)
+   > - Select your **Development** environment.
+   > - Select **Solutions**.
+   > - Open the **Permit Management** solution.
+   > - Select **Apps** in the Permit Management solution.
+   > - Select the ellipses **...** next to the **Inspector** app and select **Edit**.
 
 1. Start the application.
 
@@ -155,9 +156,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
 
 1. Save and publish the app.
 
-   - Click the **Publish** icon.
+   - Select the **Publish** icon.
    - Select **Publish this version**.
-   - Click the **<- Back** icon.
+   - Select the **<- Back** icon.
    - Select **Leave**.
 
 1. Confirm the inspection record was updated.
@@ -181,7 +182,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L04\Compl
    - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
    - Select your **Development** environment.
    - Select **Apps**.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
    - Select **Inspections**.
    - Select **+ New**.
    - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
