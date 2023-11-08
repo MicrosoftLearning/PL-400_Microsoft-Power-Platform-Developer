@@ -486,7 +486,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
      ![Label text value - screenshot](../images/L13/Mod_2_Custom_Connector_image60.png)
 
-1. Add navigation button to the Main screen.
+1. Add button to the Main screen.
 
    - Select the **Main Screen**.
 
@@ -502,9 +502,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Navigate to the CPM Calc screen.
 
-   - Select the **CPM Calculator** buttin.
+   - Select the **CPM Button** button.
 
-   - Set the **OnSelect** property of the **CPM Calculator** to the formula below.
+   - Set the **OnSelect** property of the **CPM Button** to the formula below.
 
      ```powerappsfl
      Set(CalculatedValue, ""); Navigate('CPM Calc Screen', ScreenTransition.None);
@@ -518,9 +518,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
     ![Preview app - screenshot](../images/L13/Mod_2_Custom_Connector_image62.png)
 
-   - Select the **CPM Calculator** button.
+   - Select **CPM Calculator**.
 
-   - The CPM Calculator screen should load.
+   - The CPM Calc screen should load.
 
      ![Calculator page - screenshot](../images/L13/Mod_2_Custom_Connector_image63.png)
 
