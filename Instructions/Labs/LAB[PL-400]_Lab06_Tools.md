@@ -32,7 +32,7 @@ We will install and configure the following tools:
 
 ### Task 1.1: Download and install Power Platform CLI
 
-1. Download [Power Platform CLI](https://aka.ms/PowerAppsCLI).
+1. Download the Power Platform CLI `https://aka.ms/PowerAppsCLI`.
 1. Run the **powerapps-cli-1.0.msi** to start the installation.
 1. Use the setup wizard to complete the setup and select **Finish**.
 1. Open a Command Prompt.
@@ -69,7 +69,7 @@ We will install and configure the following tools:
    ![Configuration Migration Tool - screenshot](../images/L06/pac-tool-cmt.png)
 
 1. Select **Create schema** and select **Continue**.
-1. Select **Office 365** for Deployment Type.
+1. Select **Office 365** for *Deployment Type*.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
@@ -82,19 +82,19 @@ We will install and configure the following tools:
 
 1. Select your **Development** environment and select **Login**.
 1. Select the **Permit Management** solution.
-1. Select the **Build Site** table under Select Entity .
+1. Select the **Build Site** table under *Select Entity*.
 1. Select **Build Site, City, Country/Region, State/Province, Street Address, ZIP/Postal Code** columns.
 1. Select **Add Fields >**.
 
    ![Configuration Migration Tool table and columns- screenshot](../images/L06/pac-tool-cmt-build-site.png)
 
-1. Select the **Permit Type** table under Select Entity.
+1. Select the **Permit Type** table under *Select Entity*.
 1. Select **Name, Permit Type, Require Inspections, Require Size** columns.
 1. Select **Add Fields >**.
 1. Select **Save and Export**.
 1. Enter `permit.xml` and select **Save**.
 1. Select **Yes** to export the data.
-1. Select the **ellipses (...)** next to **Save to data file**.
+1. Select the ellipses **...** next to **Save to data file**.
 1. Enter `permitdata.zip`.
 1. Select **Save**.
 
@@ -109,13 +109,13 @@ We will install and configure the following tools:
 1. Run the command `pac tool cmt`.
 1. Select **Import data**
 1. Select **Continue**.
-1. Select **Office 365** for Deployment Type.
+1. Select **Office 365** for *Deployment Type*.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
 1. Select **Login**.
 1. Select your **Production** environment and click **Login**.
-1. Select the ellipses (...) next to **Zip File**.
+1. Select the ellipses **...** next to **Zip File**.
 1. Select the **permitdata.zip** file you created in the previous task and click **Open**.
 1. Select **Import data**
 1. Select **Exit**.
@@ -127,11 +127,14 @@ We will install and configure the following tools:
 
 ### Task 3.1: Install XrmToolBox
 
-1. Navigate to [XrmToolBox](https://www.xrmtoolbox.com).
+1. Navigate to XrmToolBox `https://www.xrmtoolbox.com`
 
    ![XrmToolBox website - screenshot](../images/L06/xrmtoolbox-website.png)
 
-1. Download **XrmToolBox** latest version and extract the files to a folder.
+1. Download the latest version of **XrmToolBox**.
+1. Right click on the *XrmToolBox.zip* file and select **Properties**.
+1. Select **Unblock** and **Apply**.
+1. Extract the XrmToolBox.zip file to a folder.
 1. Run **XrmToolBox.exe** from the folder.
 
    ![XrmToolBox app - screenshot](../images/L06/xrmtoolbox-app.png)
@@ -158,17 +161,19 @@ We will install and configure the following tools:
 
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `fetchxml` and select **FetchXML Builder**.
-1. Select **Yes** to connect to an organization.
+1. Select **Yes** to *Do you want to connect to an organization first?*.
 1. Select **Open Connection Manager**.
+1. Select **Create a new connection**.
 1. Select **Microsoft Login Control**.
 1. Click **Open Microsoft Login Control**.
-1. Select **Office 365** for Deployment Type.
+1. Select **Office 365** for *Deployment Type*.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
 1. Click **Login**.
 1. Select your **Development** environment and select **Login**.
 1. Enter `Dev` for Name and select **Finish**.
+1. Select **Close**.
 1. Select the **Dev** connection.
 1. Select **OK**.
 1. Select **Continue**.
@@ -232,7 +237,7 @@ We will install and configure the following tools:
 
 ### Task 4.2: Install and configure Postman
 
-1. Download Windows 64-bit [Postman](https://www.postman.com/downloads)
+1. Download Windows 64-bit Postman `https://www.postman.com/downloads`
 1. Run the Postman installer.
 1. Create a Postman account.
 1. Sign in to Postman.
@@ -249,7 +254,7 @@ We will install and configure the following tools:
 
 1. Install .NET Framework 4.6.2 Developer Pack
 
-   - Navigate to [Download .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
+   - Navigate to .NET Framework 4.6.2 Downloads `https://dotnet.microsoft.com/download/dotnet-framework/net462`.
 
    - Select the **Developer Pack**.
 
