@@ -202,7 +202,7 @@ In this task, you will create the application user in Dataverse and associate it
 
 1. Create Resource group.
 
-   - Sign in to the [Azure portal](https://portal.azure.com) and login with the credentials used when redeeming your Azure Pass..
+   - Sign in to the Azure portal `https://portal.azure.com` and login with the credentials used when redeeming your Azure Pass..
 
    - Select **Show portal menu** and then select **+ Create a resource**.
 
@@ -877,7 +877,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Go to your **Azure** portal.
 
-   - Select **Functions** and open the function you published.
+   - Select the **Functions** tab in the **Overview** pane and open the function you published.
 
      ![Open function - screenshot](../images/L11/Mod_02_Azure_Functions_image73.png)
 
@@ -904,46 +904,3 @@ In this task, you will create the application user in Dataverse and associate it
    - The **Owner** of the inspections should now be the **Inspection Router** and .
 
      ![Routed records - screenshot](../images/L11/assigned-inspections.png)
-
-## Exercise 4: Export and import solution
-
-**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
-
-### Task 4.1: Export solution
-
-1. Export managed solution.
-
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-   - Select the **Overview** tab in the solution.
-   - Select **Export**.
-   - Select **Publish** and wait for the publishing to complete.
-   - Select **Next**.
-   - Set the version number to `1.0.0.11`.
-   - Select **Managed**.
-   - Select **Export**.
-   - Click **Download** to download the managed solution on your machine.
-
-1. Export unmanaged solution.
-
-   - Select **Export** again.
-   - Select **Next**.
-   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.11`.
-   - Select **Unmanaged**.
-   - Select **Export**.
-   - Click **Download** to download the unmanaged solution on your machine.
-
-### Task 4.2: Import solution
-
-1. Import the Permit Management solution.
-
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Production** environment.
-   - Select **Solutions**.
-   - Select **Import solution**.
-   - Select **Browse**.
-   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
-   - Select **Next**.
-   - Expand **Advanced settings** and make sure **Upgrade** is selected.
-   - Select **Import** and wait the import to complete.
