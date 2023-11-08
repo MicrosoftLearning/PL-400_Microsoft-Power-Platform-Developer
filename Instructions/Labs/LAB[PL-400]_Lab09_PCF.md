@@ -244,7 +244,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
      ![Add project reference - screenshot](../images/L09/solution-reference-added.png)
 
-   - Edit the **solution.cdsproj** file  by entering `code .` in the Terminal window to start Visual Studio Code in the pcfSolution folder.
+   - Edit the **pcfSolution.cdsproj** file  by entering `code .` in the Terminal window to start Visual Studio Code in the pcfSolution folder.
 
    - Add the following tag to the PropertyGroup.
 
@@ -820,7 +820,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Start Dev Tools and add breakpoint.
 
-   - Press **F12** or right click and select **Inspect**.
+   - Press **F12** or **Ctrl+Shift+I** or right click and select **Inspect**.
 
    - Press **Ctrl** + **Shift** + **F** to open Search in Dev Tools.
 
