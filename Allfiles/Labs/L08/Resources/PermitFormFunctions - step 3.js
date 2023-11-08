@@ -54,50 +54,6 @@ ContosoPermit.Scripts.PermitForm = {
 
     },
 
-    _lockPermitRequest: function (permitID, reason) {
-        "use strict";
-        console.log('_lockPermitRequest');
-        this.entity = { entityType: "contoso_permit", id: permitID };
-        this.Reason = reason;
-        this.getMetadata = function () {
-            return {
-                boundParameter: "entity", parameterTypes: {
-                    "entity": {
-                        typeName: "mscrm.contoso_permit",
-                        structuralProperty: 5
-                    },
-                    "Reason": {
-                        "typeName": "Edm.String",
-                        "structuralProperty": 1 // Primitive Type
-                    }
-                },
-                operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
-                operationName: "contoso_LockPermit",
-            };
-        };
-    },
-
-    lockPermit: function (primaryControl) {
-        "use strict";        
-        console.log('lockPermit');
-        formContext = primaryControl;
-        var PermitID = formContext.data.entity.getId().replace('{', '').replace('}', '');
-        var lockPermitRequest = new ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
-        // Use the request object to execute the function
-        Xrm.WebApi.online.execute(lockPermitRequest).then(
-            function (result) {
-                if (result.ok) {
-                    console.log("Status: %s %s", result.status, result.statusText);
-                    // perform other operations as required;
-                    formContext.ui.setFormNotification("Status " + result.status, "INFORMATION");
-                }
-            },
-            function (error) {
-                console.log(error.message);
-                // handle error conditions
-            }
-        );
-    },
     __namespace: true
 }
 
