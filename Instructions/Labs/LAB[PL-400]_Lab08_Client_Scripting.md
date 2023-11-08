@@ -60,7 +60,7 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
    cd ContosoClientScripts
    ```
 
-    ![ContosoClientScripts folder - screenshot](../images/L08/scripts-folder.png)
+   ![ContosoClientScripts folder - screenshot](../images/L08/scripts-folder.png)
 
 1. Launch **Visual Studio Code**.
 
@@ -95,9 +95,9 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
    - Add the below namespaces to the newly created **PermitFormFunctions** file.
 
      ```javascript
-     if (typeof (ContosoPermit) == "undefined")
+     if (typeof (ContosoPermit) === "undefined")
      {var ContosoPermit = {__namespace: true};}
-     if (typeof (ContosoPermit.Scripts) == "undefined")
+     if (typeof (ContosoPermit.Scripts) === "undefined")
      {ContosoPermit.Scripts = {__namespace: true};}
      ```
 
@@ -127,6 +127,7 @@ In this task, you will create functions for the logic that you will be implement
 
       ```javascript
       handleOnLoad: function (executionContext) {
+         "use strict";
          console.log('on load - permit form');
       },
       ```
@@ -139,6 +140,7 @@ In this task, you will create functions for the logic that you will be implement
 
       ```javascript
       handleOnChangePermitType: function (executionContext) {
+         "use strict";
           console.log('on change - permit type');
       },
       ```
@@ -162,7 +164,7 @@ In this task, you will upload the JavaScript file as a web resource.You will als
 
    - Select **+ New**.
 
-   - Select **More** and then select **Web Resource**.
+   - Select **More** and then select **Web resource**.
 
     ![Add web resource - screenshot](../images/L08/mod-01-client-scripting-12.png)
 
@@ -257,7 +259,7 @@ In this task, you will test the event handlers.
 1. Start the Permit Management app.
 
    - In the Objects tab of the solution, select the **Apps** node.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
 
      ![Start application - screenshot](../images/L08/mod-01-client-scripting-27.png)
 
@@ -271,7 +273,7 @@ In this task, you will test the event handlers.
 
 1. Open browser Dev Tools.
 
-   - Press **F12** or right click and select **Inspect**.
+   - Press **F12** or **Ctrl+Shift+I** or right click and select **Inspect**.
 
    - Select the **Console** tab in the top menu and select the **Clear console** icon.
 
@@ -297,6 +299,8 @@ In this task, you will test the event handlers.
 
    - Close the **Dev Tools** pane.
 
+   - In the **Permit** record form, select the **New Construction** Permit Type.
+
    - In the **Permit** record form, select **Save & Close**.
 
 ## Exercise 2: Show and hide tabs
@@ -313,7 +317,7 @@ In this task, you will test the event handlers.
 
       ```javascript
       _handlePermitTypeSettings: function (executionContext) {
-
+         "use strict";
 
       },
       ```
@@ -325,12 +329,12 @@ In this task, you will test the event handlers.
    - Add the script below inside the **_handlePermitTypeSettings** function.
 
       ```javascript
-      var formContext = executionContext.getFormContext(); 
+      var formContext = executionContext.getFormContext();
       ```
 
 1. Get the Permit Type value.
 
-   - Add the script below inside the **_handlePermitTypeSettings** function.
+   - Add the script below inside the **_handlePermitTypeSettings** function under the previous statement.
 
       ```javascript
       var permitType = formContext.getAttribute("contoso_permittype").getValue();
@@ -341,10 +345,10 @@ In this task, you will test the event handlers.
 
 1. Check if the Permit Type has a value.
 
-   - Add the script below inside the **_handlePermitTypeSettings** function.
+   - Add the script below inside the **_handlePermitTypeSettings** function under the previous statement.
 
       ```javascript
-      if (permitType == null) {
+      if (permitType === null) {
 
       } else {
             
@@ -474,7 +478,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 1. Start the Permit Management app.
 
    - In the Objects tab of the solution, select the **Apps** node.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
 
      ![Start application - screenshot](../images/L08/mod-01-client-scripting-27.png)
 
@@ -535,7 +539,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 
    - Open **Visual Studio Code**.
 
-   - Add the script below inside the **if permitType == null** statement.
+   - Add the script below inside the **if permitType === null** statement.
 
       ```javascript
       formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
@@ -615,7 +619,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 1. Start the Permit Management app.
 
    - In the Objects tab of the solution, select the **Apps** node.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
 
 1. Open a Permit record.
 
@@ -684,12 +688,12 @@ In this task, you will create a custom API that will be called to lock the permi
      ![Create new process - screenshot](../images/L08/mod-01-client-scripting-76.png)
 
    - Enter the following:
-      - `contoso_LockPermit` for Unique name.
-      - `Lock Permit` for Name.
-      - `Lock Permit` for Display name.
-      - `Lock Permit` for Description.
-   - Select **Entity** for Binding type.
-   - Enter `contoso_permit` for Bound Entity Logical Name.
+      - `contoso_LockPermit` for *Unique name*.
+      - `Lock Permit` for *Name*.
+      - `Lock Permit` for *Display name*.
+      - `Lock Permit` for *Description*.
+   - Select **Entity** for *Binding type*.
+   - Enter `contoso_permit` for *Bound Entity Logical Name*.
 
     ![New process form - screenshot](../images/L08/mod-01-client-scripting-77.png)
   
@@ -702,13 +706,13 @@ In this task, you will create a custom API that will be called to lock the permi
 
      ![Add process argument - screenshot](../images/L08/mod-01-client-scripting-78.png)
 
-   - Search for `lock` and select **Lock Permit** for Custom API.
+   - Search for `lock` and select **Lock Permit** for *Custom API*.
    - Enter the following:
-      - `Reason` for Unique name.
-      - `Reason` for Name.
-      - `Reason` Display name.
-      - `Reason` for Description.
-   - Select **String** for Type
+      - `Reason` for *Unique name*.
+      - `Reason` for *Name*.
+      - `Reason` for *Display name*.
+      - `Reason` for *Description*.
+   - Select **String** for *Type*.
 
      ![Add string input argument - screenshot](../images/L08/mod-01-client-scripting-79.png)
 
@@ -719,14 +723,14 @@ In this task, you will create a custom API that will be called to lock the permi
 
    - Select **+ New** and then select **More** and **Other** and **Custom API Response Property**.
 
-   - Search for `lock` and select **Lock Permit** for Custom API.
+   - Search for `lock` and select **Lock Permit** for *Custom API*.
    - Enter the following:
-      - **CanceledInspectionsCount** for Unique name.
-      - **Canceled Inspections Count** for Name.
-      - **Canceled Inspections Count** for Display name.
-      - **Canceled Inspections Count** for Description.
-   - Select **Integer** for Type
-   - Select **Save and Close**.
+      - `CanceledInspectionsCount` for *Unique name*.
+      - `Canceled Inspections Count` for *Name*.
+      - `Canceled Inspections Count` for *Display name*.
+      - `Canceled Inspections Count` for *Description*.
+   - Select **Integer** for *Type*.
+   - Select **Save & Close**.
 
      ![Process arguments - screenshot](../images/L08/mod-01-client-scripting-80.png)
 
@@ -876,7 +880,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 1. Edit the Permit Management app
 
    - In the Objects tab of the solution, select the **Apps** node.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Edit** and select **Edit in new tab**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Edit** and select **Edit in new tab**.
 
      ![Select application - screenshot](../images/L08/edit-app.png)
 
@@ -953,7 +957,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 1. Start the Permit Management app.
 
    - In the Objects tab of the solution, select the **Apps** node.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
 
 1. Open a Permit record.
 

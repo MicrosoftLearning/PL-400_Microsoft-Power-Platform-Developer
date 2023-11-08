@@ -14,12 +14,14 @@ demo:
 
 ```javascript
 function dem_pettrick_trick_OnChange(executionContext) {
+    "use strict";
     console.log('dem: on change - Pet Trick form - Trick');
     var formContext = executionContext.getFormContext();
     var trick = formContext.getAttribute("dem_trickid").getValue();
-    if (trick == null) {
+    if (trick === null) {
         console.log('dem: Trick null');
         formContext.ui.controls.get("dem_points").setVisible(false);
+        formContext.getAttributes("dem_points").setValue(0);
         return;
     } else {
         var trickid = trick[0].id;
