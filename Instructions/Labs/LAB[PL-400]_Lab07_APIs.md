@@ -73,17 +73,27 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 1. Generate early bound classes
 
    - Select **Create Entities**.
+   - Select **Office 365** for *Deployment Type*.
    - Check **Display list of available organizations**.
    - Check **Show Advanced**.
    - Enter your tenant credentials.
    - Select **Login**.
    - Select your **Development** environment and select **Login**.
+   - Wait for CrmSvcUtil to complete.
+
+1. Generate choice enums
+
    - Select **Create OptionSets**.
+   - Select **Office 365** for *Deployment Type*.
    - Check **Display list of available organizations**.
    - Check **Show Advanced**.
    - Enter your tenant credentials.
    - Select **Login**.
    - Select your **Development** environment and select **Login**.
+   - Wait for CrmSvcUtil to complete.
+
+1. Verify files have been generated
+
    - Open Windows Explorer and change to the **C:\Users\Admin\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG** folder. You should see Entities.cs and OptionSets.cs class files.
 
      ![Early bound classes - screenshot](../images/L07/early-bound-entity-classes.png)
@@ -160,7 +170,11 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
            Console.Title = "PL400.Permit.Console";
            Console.WriteLine("Permit console : Start");
 
-            string connectionString = "AuthType=OAuth;Username=<username>;Password=<password>;Url=<url>;AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
+           string userName = "admin@M365x99999999.onmicrosoft.com";
+           string password = "password";
+           string url = "https://orgNNNNNNNN.crm.dynamics.com";
+
+           string connectionString = "AuthType=OAuth;Username=" & userName & ";Password=" & password & ">;Url=" & url & ";AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
 
            try
            {
@@ -331,13 +345,16 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 1. Authorization.
 
    - Select the **Authorization** tab.
-   - Select **OAuth 2.0** for **Type**.
-   - Select **Request Headers** for **Add authorization data to**.
+   - Select **OAuth 2.0** for *Type*.
+   - Select **Request Headers** for *Add authorization data to*.
    - Under *Configure New Token*, set:
-     - Grant Type to `Implicit`
-     - Callback URL to `\{\{callback\}\}`
-     - Auth URL to `\{\{authurl\}\}`
-     - Client ID to `\{\{clientid\}\}`
+     - Grant Type to **`Implicit`**
+     - Callback URL to **`{{callback}}`**
+     - Auth URL to **`{{authurl}}`**
+     - Client ID to **`{{clientid}}`**
+
+   > [!IMPORTANT]
+   > callback, authurl, and clientid should be surrounded by double curly braces {{ }}
 
      ![Postman authorization tab - screenshot](../images/L07/postman-authorization.png)
 
@@ -368,8 +385,11 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     \{\{webapiurl\}\}contoso_inspections?$select=_contoso_permit_value, contoso_name
+     {{webapiurl}}contoso_inspections?$select=_contoso_permit_value, contoso_name
      ```
+
+   > [!IMPORTANT]
+   > webapiurl should be surrounded by double curly braces {{ }}
 
    - Select **Send**.
 
@@ -414,7 +434,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     \{\{webapiurl\}\}contoso_permits
+     {webapiurl}}contoso_permits
      ```
 
    - Select the **Body** tab.

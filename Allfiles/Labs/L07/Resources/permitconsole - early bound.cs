@@ -16,7 +16,11 @@ namespace Permit_console
             Console.Title = "PL400.Permit.Console";
             Console.WriteLine("Permit console : Start");
 
-            string connectionString = "AuthType=OAuth;Username=<username>;Password=<password>;Url=<url>;AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
+            string userName = "admin@M365x99999999.onmicrosoft.com";
+            string password = "password";
+            string url = "https://orgNNNNNNNN.crm.dynamics.com";
+
+            string connectionString = "AuthType=OAuth;Username=" + userName + ";Password=" + password + ";Url=" + url + ";AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
 
             try
             {

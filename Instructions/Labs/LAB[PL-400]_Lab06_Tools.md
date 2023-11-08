@@ -88,7 +88,7 @@ We will install and configure the following tools:
 
    ![Configuration Migration Tool table and columns- screenshot](../images/L06/pac-tool-cmt-build-site.png)
 
-1. Select the **Permit Type** table under Select Entity.
+1. Select the **Permit Type** table under *Select Entity*.
 1. Select **Name, Permit Type, Require Inspections, Require Size** columns.
 1. Select **Add Fields >**.
 1. Select **Save and Export**.
@@ -109,7 +109,7 @@ We will install and configure the following tools:
 1. Run the command `pac tool cmt`.
 1. Select **Import data**
 1. Select **Continue**.
-1. Select **Office 365** for Deployment Type.
+1. Select **Office 365** for *Deployment Type*.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
@@ -166,7 +166,7 @@ We will install and configure the following tools:
 1. Select **Create a new connection**.
 1. Select **Microsoft Login Control**.
 1. Click **Open Microsoft Login Control**.
-1. Select **Office 365** for Deployment Type.
+1. Select **Office 365** for *Deployment Type*.
 1. Check **Display list of available organizations**.
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
