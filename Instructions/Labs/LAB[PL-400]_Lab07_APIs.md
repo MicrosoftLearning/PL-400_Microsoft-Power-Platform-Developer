@@ -174,7 +174,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
            string password = "password";
            string url = "https://orgNNNNNNNN.crm.dynamics.com";
 
-           string connectionString = "AuthType=OAuth;Username=" & userName & ";Password=" & password & ">;Url=" & url & ";AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
+           string connectionString = "AuthType=OAuth;Username=" + userName + ";Password='" + password + "';Url=" + url + ";AppId=51f81489-12ee-4a9e-aaae-a2591f45987d;RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;LoginPrompt=Auto";
 
            try
            {
