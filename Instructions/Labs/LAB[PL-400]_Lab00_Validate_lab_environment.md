@@ -151,6 +151,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Select **Done**.
 
+
 ## Exercise 3 - Create environments
 
 In this exercise, you will create a *Development* environment that you will do the majority of your lab work in and a *Live* environment to use to deploy solutions.
@@ -164,7 +165,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Select **Get Started** if a Welcome to the Power Platform admin center popup is shown.
 
-1. Select **Environments** from the left navigation pane. There should be a default environment, *Contoso (default)*, and possible another environment named *Dev One*.
+1. Select **Environments** from the left navigation pane. There should be a default environment, *Contoso (default)*, and possibly another environment named *Dev One*.
 
 1. Select **+ New**.
 
@@ -210,6 +211,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
    > [!IMPORTANT]
    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+
 
 ## Exercise 4 - Azure subscription
 
