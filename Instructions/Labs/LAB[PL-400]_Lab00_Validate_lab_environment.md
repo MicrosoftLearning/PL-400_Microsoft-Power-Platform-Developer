@@ -216,8 +216,8 @@ In this exercise, you will create a *Development* environment that you will do t
 
    ![Environments.](../images/L00/environments-all.png)
 
-   > [!IMPORTANT]
-   > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+> [!IMPORTANT]
+> You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
 
 ## Exercise 4 - Azure subscription
@@ -238,8 +238,8 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
-    > [!NOTE]
-    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
+> [!NOTE]
+> If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
 1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
 
