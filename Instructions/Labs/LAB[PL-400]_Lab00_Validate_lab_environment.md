@@ -75,6 +75,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. Close the PowerShell window.
 
+
 ## Exercise 2 – Power Platform license
 
 In this exercise, you will add Power Apps for Developer to the tenant and assign licenses to users.
@@ -95,11 +96,12 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Select **Yes** to stay signed in.
 
+
 ### Task 2.2 – Sign up for Power Apps for Developer
 
-1. In a new browser tab, navigate to `https://powerapps.microsoft.com` and select **Start free**.
+1. In a new browser tab, navigate to `https://powerapps.microsoft.com` 
 
-1. Select **Start building apps**.
+1. Select **Try for free**. Select **Start building apps**.
 
 1. Enter the `email address` provided by the Authorized Lab Host.
 
@@ -119,9 +121,10 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. The Power Apps maker portal will load in a new tab.
 
+
 ### Task 2.3 – Verify Power Apps license is assigned to your user
 
-1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`.
+1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
 
 1. In the left-hand navigation, expand **Users** and select **Active users**.
 
@@ -132,6 +135,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. Select **Save changes**.
 
 1. Select the **X** in the top right of the user details panel to close the panel.
+
 
 ### Task 2.4 – Assign Power Apps licenses to other users
 
@@ -209,7 +213,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
    ![Environments.](../images/L00/environments-all.png)
 
-   > [!IMPORTANT]
+   > **Important:**
    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
 
@@ -227,11 +231,11 @@ In this exercise, you will create an Azure subscription that you will be using i
 
    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
 
-1. On the Your profile page, change *Last name* from *Administrator* to **Developers**.
+1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
 
-1. On the Your profile page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
+1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
-   > [!NOTE]
+   > **Note:**
    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
 1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
