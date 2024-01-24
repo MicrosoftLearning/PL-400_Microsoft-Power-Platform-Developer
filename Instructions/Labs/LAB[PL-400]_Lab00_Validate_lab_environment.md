@@ -175,7 +175,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Select **+ New**.
 
-   ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
+    ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
 1. In the **Name** text box, enter `[my initials] Development`. (Example: PL Development).
 
@@ -191,7 +191,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
     ![Environment in the Power Platform admin center.](../images/L00/ppac-environments-dev.png)
 
-1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as **Ready**, select your **Development** environment by selecting the ellipses (...) menu next to the name to expand the drop-down menu and selecting **Settings**.
+1. Your Development environment may take a few minutes to provision. Refresh the list if needed. When the environment shows as **Ready**, select the **Development** environment by selecting the ellipsis (...) menu next to the name to expand the drop-down menu and selecting **Settings**.
 
     ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
@@ -214,10 +214,10 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. You should now see the following environments; Contoso (default), Development, and Live.
 
-   ![Environments.](../images/L00/environments-all.png)
+    ![Environments.](../images/L00/environments-all.png)
 
-> [!IMPORTANT]
-> You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+    > **Important**:
+    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
 
 ## Exercise 4 - Azure subscription
@@ -238,8 +238,8 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
-> [!NOTE]
-> If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
+    > **Note**:
+    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
 1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
 
