@@ -84,7 +84,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Verify that you have your **Microsoft 365 credentials** from the Authorized Lab Host available.
 
-1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`.
+1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
 
 1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype**.
 
