@@ -101,7 +101,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. In a new browser tab, navigate to `https://powerapps.microsoft.com` 
 
-1. Select **Try for free**. Select **Start building apps**.
+1. Select **Try for free**, then **Start building apps**.
 
 1. Enter the `email address` provided by the Authorized Lab Host.
 
@@ -111,37 +111,39 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Enter the `password` provided by the Authorized Lab Host, if prompted.
 
-1. Leave the Country or Region as the default value.
+1. Leave the **Country or Region** as the default value.
 
-1. If prompted, enter `0123456789` for business phone number.
+1. If prompted, enter `0123456789` for **Business phone number**.
 
 1. Select **Get Started**.
 
 1. Select **Get Started** again.
 
-1. The Power Apps maker portal will load in a new tab.
+1. The Power Apps Maker portal will open in a new tab.
 
 
 ### Task 2.3 – Verify Power Apps license is assigned to your user
 
 1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
 
-1. In the left-hand navigation, expand **Users** and select **Active users**.
+1. In the left navigation, expand **Users** and select **Active users**.
 
-1. Click on your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. ![Mod Administrator licenses.](../images/L00/mod-administrator-dev.png)
+1. Select your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. 
 
-1. Check the box for **Microsoft Power Apps for Developer** if it is not already checked.
+    ![Mod Administrator licenses.](../images/L00/mod-administrator-dev.png)
 
-1. Select **Save changes**.
+1. Verify that **Microsoft Power Apps for Developer** is checked. Check it, if not.
+
+1. Select **Save changes**. 
 
 1. Select the **X** in the top right of the user details panel to close the panel.
 
 
 ### Task 2.4 – Assign Power Apps licenses to other users
 
-1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`.
+1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
 
-1. In the left-hand navigation, expand **Users** and select **Active users**.
+1. In the left navigation, expand **Users** and select **Active users**.
 
 1. Check the boxes next to the other users, click on the **ellipses (...)** in the action bar, and select **Manage product licenses**.
 
@@ -181,7 +183,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Leave all other selections as default and select **Next**.
 
-   ![New environment.](../images/L00/new-environment.png)
+    ![New environment.](../images/L00/new-environment.png)
 
 1. On the **Add Dataverse** tab, select **Save**.
 
@@ -189,11 +191,12 @@ In this exercise, you will create a *Development* environment that you will do t
 
     ![Environment in the Power Platform admin center.](../images/L00/ppac-environments-dev.png)
 
-1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as Ready, select your **Development** environment by clicking on the ellipses (...) next to its name to expand the drop down menu and selecting **Settings**.
+1. Your Development environment may take a few minutes to provision. Use the refresh icon if needed. When your environment shows as **Ready**, select your **Development** environment by selecting the ellipses (...) menu next to the name to expand the drop-down menu and selecting **Settings**.
 
-   ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
+    ![Environment in the Power Platform admin center.](../images/L00/ellipses-settings-dev.png)
 
 1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
+
 
 ### Task 3.2 – Create production environment
 
@@ -203,7 +206,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. In the **Name** text box, enter `[my initials] Live`. (Example: PL Live).
 
-1. In the **Type** drop down, select **Developer**.
+1. In the **Type** drop-down, select **Developer**.
 
 1. Leave all other selections as default and select **Next**.
 
@@ -213,7 +216,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
    ![Environments.](../images/L00/environments-all.png)
 
-   > **Important:**
+   > [!IMPORTANT]
    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
 
 
@@ -225,21 +228,22 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
 
-1. Navigate to the Azure Pass redemption page <https://www.microsoftazurepass.com> and sign in with your Microsoft 365 credentials.
+1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials.
 
 1. Follow these instructions to redeem your Azure Pass.
 
-   [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
+    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
 
 1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
 
 1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
 
-   > **Note:**
-   > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
+    > [!NOTE]
+    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
 1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
 
 1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
 
-   ![Azure Pass subscription.](../images/L00/azure-subscription.png)
+    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
+
