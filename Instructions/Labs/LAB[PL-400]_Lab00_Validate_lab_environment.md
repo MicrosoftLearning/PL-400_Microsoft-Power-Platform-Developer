@@ -200,7 +200,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 ### Task 3.2 – Create production environment
 
-1. Navigate to environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
+1. Navigate to **Environments** in the Power Platform admin center `https://admin.powerplatform.microsoft.com/environments`
 
 1. Select **+ New**.
 
