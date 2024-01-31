@@ -815,7 +815,7 @@ In this task, you will create the logic to invoke that will call the custom API.
    - Get the id by adding the script below inside the **lockPermit** function.
 
       ```javascript
-      formContext = primaryControl;
+      var formContext = primaryControl;
       var PermitID = formContext.data.entity.getId().replace('{', '').replace('}', '');
       ```
 

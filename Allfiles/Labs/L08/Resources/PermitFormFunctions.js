@@ -80,7 +80,7 @@ ContosoPermit.Scripts.PermitForm = {
     lockPermit: function (primaryControl) {
         "use strict";        
         console.log('lockPermit');
-        formContext = primaryControl;
+        var formContext = primaryControl;
         var PermitID = formContext.data.entity.getId().replace('{', '').replace('}', '');
         var lockPermitRequest = new ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
         // Use the request object to execute the function
