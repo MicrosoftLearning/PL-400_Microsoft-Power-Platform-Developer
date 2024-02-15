@@ -42,10 +42,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
+   - Navigate to the `https://make.powerapps.com`
    - Make sure you are in the Development environment.
    - Select **Apps**.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the **ellipsis (...)** and select **Play**.
    - Copy the Dataverse URL before main.aspx excluding final /.
 
      ![Organization Service URL - screenshot](../images/L07/organization-service-endpoint.png)
@@ -62,12 +62,12 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Configure early bound options
 
-   - Under *Entities*, select the ellipses next to **Entities Whitelist** and add *Contact* and *User*.
+   - Under *Entities*, select the ellipsis next to **Entities Whitelist** and add *Contact* and *User*.
 
      ![Early Bound Whitelist - screenshot](../images/L07/early-bound-entities-whitelist.png)
 
    - Select **Save**.
-   - Under *Entities*, select the ellipses next to **Entities Prefix Whitelist**.
+   - Under *Entities*, select the ellipsis (...) next to **Entities Prefix Whitelist**.
    - Enter `contoso` and select **OK**.
 
 1. Generate early bound classes
@@ -237,13 +237,14 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Run the app.
 
-   - Click on the **Start** icon.
+   - Select the **Start** icon.
    - The output will look similar to the following:
 
      ![Console app output  - screenshot](../images/L07/console-whoami-output.png)
 
 1. Press the **Enter** key.
 1. Select **File** and **Exit**.
+
 
 ### Task 1.4: Data operations
 
@@ -313,13 +314,14 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Run the app.
 
-   - Click on the **Start** icon.
+   - Select the **Start** icon.
    - The output will look similar to the following:
 
      ![Console app output  - screenshot](../images/L07/console-output.png)
 
 1. Press the **Enter** key.
 1. Select **File** and **Exit**.
+
 
 ## Exercise 2: Web API
 
@@ -360,24 +362,22 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
    - Select **Get New Access Token**.
    - Sign in with your tenant credentials.
-   - Wait until the Manage Access Tokens dialog appears.
+   - Wait until the **Manage Access Tokens** dialog appears.
    - Select **Use Token**.
 
 1. Headers.
 
-   - Select the **Headers** tab.
-   - Click in **Key** and select **Content-Type**.
-   - Click in **Value** and select **application/json**.
-   - Click in **Key** and select **Accept**.
-   - Click in **Value** and select **application/json**.
-   - Click in **Key** and enter `OData-Version`.
-   - Click in **Value** and enter `4.0`.
-   - Click in **Key** and enter `OData-MaxVersion`.
-   - Click in **Value** and enter `4.0`.
-   - Click in **Key** and select **If-None-Match**.
-   - Click in **Value** and enter `null`.
+   - Select the **Headers** tab and configure the **Key** / **Value** pairs as follows:
 
-     ![Postman headers tab - screenshot](../images/L07/postman-headers.png)
+    | Key                | Value            |
+    | ------------------ | ---------------- |
+    | **Content-Type**   | application/json |
+    | **Accept**         | application/json |
+    | `OData-Version`    | `4.0`            |
+    | `OData-MaxVersion` | `4.0`            |
+    | **If-None-Match**  | `null`           |
+
+    ![Postman headers tab - screenshot](../images/L07/postman-headers.png)
 
 1. Retrieve inspections.
 
@@ -434,7 +434,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Enter the following in *Enter request URL*.
 
      ```odata
-     {webapiurl}}contoso_permits
+     {{webapiurl}}contoso_permits
      ```
 
    - Select the **Body** tab.
