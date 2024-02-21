@@ -62,7 +62,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Permit forms - screenshot](../images/L02/permit-forms.png)
 
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
 
    - By default, the form has two columns, Name (Primary column) and Owner.
 
