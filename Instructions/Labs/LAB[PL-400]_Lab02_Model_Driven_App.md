@@ -174,7 +174,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
      ![Permit views - screenshot](../images/L02/permit-views.png)
 
-   - Select the ellipses **...** for the **Active Permits** view, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Active Permits** view, select **Edit** and select **Edit in new tab**.
    - Drag the **Build Site** column and drop it between the **Name** and **Created On** columns.
    - Click once on the **Permit Type** column. The Permit Type column will be added to the view.
    - Click the **Contact** column. The **Contact** column will be added to the view.
@@ -197,7 +197,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Under **Data experiences**, select **Forms**.
    - Select the **Main** form.
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **City**, **State/Province**, **Zip/Postal Code**, and **Country Region** columns to the form between **Street Address** and **Owner**.
 
      ![Build site form - screenshot](../images/L02/Mod_02_Model_Driven_App_image18.png)
@@ -210,7 +210,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select the **Views** node in the tree view for the Build Sites table.
    - Select the **Active Build Sites** view.
-   - Select the ellipses **...** for the **Active Build Sites** view, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Active Build Sites** view, select **Edit** and select **Edit in new tab**.
    - Add **City** and **Zip/Postal Code** to the view.
    - Remove **Created On** from the view by selecting **Remove** from the options in column chevron.
 
@@ -232,7 +232,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Under **Data experiences**, select **Forms**.
    - Select the **Main** form.
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **Inspection type**, **Permit**, **Scheduled Date**, and **Comments** columns to the form. **Inspection Type**, **Permit**, **Scheduled Date** should be added between **Name** and **Owner**, while **Comments** will be added after the **Owner** column.
    - Add the **Status Reason** column to the header.
    - The form should now look like the image below.
@@ -247,7 +247,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select the **Views** node in the tree view for the Inspections table.
    - Select the **Active Inspections** view.
-   - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
    - Add **Permit**, **Inspection Type**, **Scheduled Date**, **Owner**, and **Sequence** to the view.
    - Remove **Created On** from the view by selecting the chevron on the column and select **Remove**.
 
@@ -312,7 +312,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Under **Data experiences**, select **Forms**.
    - Select the **Main** form.
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
    - Add **Require Inspections** and **Require Size** columns to the form under **Name**.
 
      ![Permit type form - screenshot](../images/L02/Mod_02_Model_Driven_App_image30.png)
@@ -323,7 +323,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Edit the Active Permit Types view.
    - Select the **Views** node in the tree view for the Permit Types table.
-   - Select the ellipses **...** for the **Active Permit Types** view, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Active Permit Types** view, select **Edit** and select **Edit in new tab**.
    - Add **Require Inspections** and **Require Size** to the view.
    - Remove **Created On** from the view but selecting the chevron on the column and select **Remove**.
 
@@ -359,7 +359,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Enable Areas in Navigation
 
    - Select **Navigation**.
-   - Select the ellipses **...** for the **Navigation**  and select **Settings**.
+   - Select the ellipsis (**...**) for the **Navigation**  and select **Settings**.
 
      ![App navigation settings - screenshot](../images/L02/app-navigation-settings.png)
 
@@ -370,7 +370,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Close the settings window.
 
-   - In the left-hand pane, select **Area1**, select the ellipses **...** and select **Edit properties**.
+   - In the left-hand pane, select **Area1**, select the ellipsis (**...**) and select **Edit properties**.
 
        ![Enable Areas in navigation settings - screenshot](../images/L02/edit-area-properties.png)
 
@@ -378,7 +378,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Add group to app navigation
 
-   - Select **Navigation**, select the ellipses **...** and select **New group**.
+   - Select **Navigation**, select the ellipsis (**...**) and select **New group**.
    - In the **Title** text box in the **Properties** pane, enter `Permits`.
 
 1. Add tables to Permits group
@@ -392,11 +392,11 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
 1. Order the navigation.
 
-   - Select **Permits view** , select the ellipses **...** and select **Move up**.
+   - Select **Permits view** , select the ellipsis (**...**) and select **Move up**.
 
 1. Add second group to app navigation
 
-   - Select**Navigation**, select the ellipses **...** and select **New group**.
+   - Select **Navigation**, select the ellipsis (**...**) and select **New group**.
    - In the **Title** text box in the **Properties** pane, enter `Contacts`.
 
 1. Add tables to Contacts group
@@ -407,7 +407,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
    - Search for `Contact` and select the **Contact** table.
    - Search for `Build` and select the **Build Site** table.
    - Select **Add**.
-   - Select **Contacts view** , select the ellipses **...** and select **Move up**.
+   - Select **Contacts view** , select the ellipsis (**...**) and select **Move up**.
 
 1. The navigation should now look like the image below.
 
@@ -427,7 +427,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 1. Open the **Permit Management** solution.
 1. In the **Objects** pane, select **All**.
 1. Select the **Apps** node.
-1. Select the **Permit Management** app, select the ellipses **...** and select **Play**.
+1. Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
 
 1. Create new Contact record
 
