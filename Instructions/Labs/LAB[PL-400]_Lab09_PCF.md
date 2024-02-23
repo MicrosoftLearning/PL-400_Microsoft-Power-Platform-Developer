@@ -725,7 +725,7 @@ In this task, you will use the **css** resource you configured to change the col
 
      ![Open form - screenshot](../images/L09/permit-table-forms.png)
 
-   - Select the ellipses **...** for the **Main** form, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
 
 1. Add Timeline control to the form.
 
@@ -766,7 +766,7 @@ In this task, you will use the **css** resource you configured to change the col
    - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
    - Make sure you are in the Development environment.
    - Select **Apps**.
-   - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
+   - Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
    - Select **Inspections**.
    - Select **Edit columns**.
    - Select **+ Add columns**.
@@ -854,7 +854,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -869,7 +869,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select the **Active Inspections** view.
 
-   - Select the ellipses **...** for the **Active Inspections** view, select **Edit** and select **Edit in new tab**.
+   - Select the ellipsis (**...**) for the **Active Inspections** view, select **Edit** > **Edit in new tab**.
 
    - Drag the **Status Reason** column and drop it after the **Scheduled Date** column.
 
