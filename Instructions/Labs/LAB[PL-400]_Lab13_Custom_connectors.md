@@ -234,7 +234,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
      ![Definition - screenshot](../images/L13/Mod_2_Custom_Connector_image23.png)
 
-   - Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API or Postman collection files for larger APIs.
+   - Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API for larger APIs.
 
      ![Create new action - screenshot](../images/L13/Mod_2_Custom_Connector_image25.png)
 
