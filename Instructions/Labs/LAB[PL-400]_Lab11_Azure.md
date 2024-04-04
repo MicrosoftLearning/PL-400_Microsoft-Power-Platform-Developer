@@ -345,66 +345,6 @@ In this task, you will create the application user in Dataverse and associate it
 
      ![Change function name - screenshot](../images/L11/Mod_02_Azure_Functions_image34.png)
 
-   - Select **Run**.
-
-   - Select **Allow**.
-
-     ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image35.png)
-
-   - Select **Allow access** in the Windows Defender Firewall prompt.
-
-   - After a little while, Azure Functions Core Tools will start.
-
-     ![Running azure function - screenshot](../images/L11/Mod_02_Azure_Functions_image36.png)
-
-     > Note: If you get unknown option --port error, in Project Properties, select Debug and use the following command "host start --port 7071 --pause-on-error" to application arguments.
-
-1. Trigger the function with Postman.
-
-   - Start **Postman**.
-
-   - Click **+** to open a new request tab.
-
-   - Select **POST**.
-
-   - Enter [http://localhost:7071/admin/functions/InspectionRouter](http://localhost:7071/admin/functions/InspectionRouter) in *Enter request URL*.
-
-     ![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image37.png)
-
-   - Select the **Headers** tab.
-  
-   - Click in **Key** and select **Content-Type**.
-
-   - Click in **Value** and select **application/json**.
-
-     ![Add content type - screenshot](../images/L11/Mod_02_Azure_Functions_image38.png)
-
-   - Select the **Body** tab.
-
-   - Select **Raw** and set it to empty json.
-
-     ```json
-     {}
-     ```
-
-     ![Select body - screenshot](../images/L11/Mod_02_Azure_Functions_image39.png)
-
-   - Select **Send**.
-
-   - You should see a status of **202** **Accepted Status**.
-
-     ![Status - screenshot](../images/L11/Mod_02_Azure_Functions_image40.png)
-
-   - Go to the output console.
-
-   - The function should get triggered.
-
-     ![Triggered function - screenshot](../images/L11/Mod_02_Azure_Functions_image41.png)
-
-   - Go back to **Visual Studio** and stop debugging.
-
-   - In the Visual Studio Debug Console, press [Enter] to close the window.
-
 1. Add NuGet packages.
 
    - In Solution Explorer, right-click the *InspectionRoutingApp project* and select **Manage NuGet Packages...**.
@@ -547,28 +487,6 @@ In this task, you will create the application user in Dataverse and associate it
      ```
 
      ![Run method - screenshot](../images/L11/Mod_02_Azure_Functions_image53.png)
-
-1. Test the function.
-
-   - Select the **Save** icon.
-
-   - In Solution Explorer, right-click on the project and select **Build**.
-
-   - The Build should succeed with 0 errors.
-
-   - Select **Run**.
-
-   - Go back to **Postman** and select **Send**.
-
-   - Go to the output console.
-
-   - You should see the **User ID**.
-
-     ![Run result - screenshot](../images/L11/Mod_02_Azure_Functions_image56.png)
-
-   - Go back **Visual Studio** and stop debugging.
-
-   - In the Visual Studio Debug Console, press [Enter] to close the window.
 
 ### Task 2.3: Get Inspections and Users and Assign Inspections
 

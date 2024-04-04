@@ -17,7 +17,6 @@ We will install and configure the following tools:
 - Power Platform CLI
 - Configuration Migration Tool
 - XrmToolBox
-- Postman
 - DotNet Framework
 - Visual Studio Code
 
@@ -216,41 +215,14 @@ We will install and configure the following tools:
    (statuscode eq 1 or statuscode eq 330650001)
    ```
 
-## Exercise 4: Postman
-
-**Objective:** In this exercise, you will install Postman and configure connection to Dataverse.
-
-### Task 4.1: Find the Web API endpoint
-
-1. Find the Web API endpoint
-
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Development** environment.
-
-     ![Power Apps Studio Settings - screenshot](../images/L06/maker-portal-settings.png)
-
-   - Select **Settings** and then select **Developer Resources**
-
-     ![Power Apps Studio Developer Resources - screenshot](../images/L06/developer-resources.png)
-
-   - Copy the base url of the Web API endpoint.
-
-### Task 4.2: Install and configure Postman
-
-1. Download Windows 64-bit Postman `https://www.postman.com/downloads`
-1. Run the Postman installer.
-1. Create a Postman account.
-1. Sign in to Postman.
-1. Follow the steps in [Set up a Postman environment](https://learn.microsoft.com/power-apps/developer/data-platform/webapi/setup-postman-environment) to configure Postman to connect to your Development environment.
-
-## Exercise 5: .NET Framework
+## Exercise 4: .NET Framework
 
 **Objective:** In this exercise, you will install the supported .NET Framework.
 
 > [!NOTE]
 > The virtual machine used in the lab environment has Visual Studio 2019 Community Edition installed. The labs are have been verified against this version of Visual Studio. If you are using a different version or edition of Visual Studio, the steps may differ.
 
-### Task 5.1: Install .NET Framework
+### Task 4.1: Install .NET Framework
 
 1. Install .NET Framework 4.6.2 Developer Pack
 
@@ -263,7 +235,7 @@ We will install and configure the following tools:
    - Open the downloaded file.
    - Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
-### Task 5.2: Install .NET Framework in Visual Studio
+### Task 4.2: Install .NET Framework in Visual Studio
 
 1. Add .NET Framework 4.6.2 to Visual Studio 2019.
 
@@ -274,14 +246,14 @@ We will install and configure the following tools:
    - Select **Yes**
    - Close the **Visual Studio Installer** window.
 
-## Exercise 6: Visual Studio Code
+## Exercise 5: Visual Studio Code
 
 **Objective:** In this exercise, you will install the Visual Studio Code IDE.
 
 > [!NOTE]
 > If you already have Visual Studio Code installed, you can skip this exercise.
 
-### Task 6.1: Install Visual Studio Code
+### Task 5.1: Install Visual Studio Code
 
 1. Download [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win).
 
