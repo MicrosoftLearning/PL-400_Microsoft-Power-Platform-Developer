@@ -26,9 +26,9 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 1. Select **Yes** if prompted.
 
 1. Run the following commands to download the latest version of the lab files to the virtual machine.
-
-   > [!NOTE]
-   > If any of the commands fail run them again until they are successful.
+        
+        > [!NOTE]
+        > If any of the commands fail run them again until they are successful.
 
 1. Create folder for lab files.
 
