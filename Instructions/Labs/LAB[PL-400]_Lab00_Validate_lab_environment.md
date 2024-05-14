@@ -54,7 +54,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
    Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Allfiles\Labs\*" -Destination "C:\LabFiles" -confirm: $false
    ```
 
-    ![Powershell commands.](../images/L00/powershell-commands.png)
+   ![Powershell commands.](../images/L00/powershell-commands.png)
 
 1. Delete files not required for labs.
 
@@ -71,7 +71,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
    > [!NOTE]
    > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
 
-    ![Labfiles folders.](../images/L00/labfiles-folder.png)
+   ![Labfiles folders.](../images/L00/labfiles-folder.png)
 
 1. Close the PowerShell window.
 
