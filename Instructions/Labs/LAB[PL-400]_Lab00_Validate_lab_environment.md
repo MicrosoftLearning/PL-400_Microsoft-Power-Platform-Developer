@@ -27,16 +27,16 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. Run the following commands to download the latest version of the lab files to the virtual machine.
         
-    >Please not, if any of the commands fail run them again until they are successful.
+    >Please note, if any of the commands fail run them again until they are successful.
 
-1. Create folder for lab files.
+1. Create folder for lab files. 
 
    ```powershell
    New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
    ```
 
-1. Download ZIP file from GitHub.
-
+1. Download ZIP file from GitHub.   
+    
    ```powershell
    ([System.Net.WebClient]::new()).DownloadFile('https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip', 'C:\LabFiles\master.zip')
    ```
