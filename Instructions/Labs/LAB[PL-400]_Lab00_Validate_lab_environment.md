@@ -27,8 +27,7 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. Run the following commands to download the latest version of the lab files to the virtual machine.
         
-> [!NOTE]
-> If any of the commands fail run them again until they are successful.
+    >Please not, if any of the commands fail run them again until they are successful.
 
 1. Create folder for lab files.
 
@@ -68,7 +67,6 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
    Remove-item 'C:\LabFiles\master.zip'
    ```
 
-   > [!NOTE]
    > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
 
    ![Labfiles folders.](../images/L00/labfiles-folder.png)
