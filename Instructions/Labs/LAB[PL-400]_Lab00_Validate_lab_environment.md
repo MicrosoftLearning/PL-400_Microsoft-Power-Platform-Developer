@@ -31,9 +31,9 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. Create folder for lab files. 
 
-   ```powershell
-   New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
-   ```
+    ```powershell
+    New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
+    ```
 
 1. Download ZIP file from GitHub.   
     
