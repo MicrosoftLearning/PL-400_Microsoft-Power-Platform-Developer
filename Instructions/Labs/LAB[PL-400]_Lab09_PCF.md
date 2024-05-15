@@ -879,6 +879,118 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Done**.
 
+## Exercise 3: Test Application
+
+### Task 3.1: Create records
+
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. In the **Objects** pane, select **All**.
+1. Select the **Apps** node.
+1. Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
+
+1. Create new Contact record
+
+   - Select **Contacts**.
+  
+     ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
+
+   - Select **+ New**.
+
+   - Provide First Name as `John`, Last Name as `Doe`.
+
+   - Select **Save & Close**
+
+     ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
+
+   - You should now see the created contact on the **Active Contacts** view.
+
+     ![Created contact record - screenshot](../images/L02/contact-list.png)
+
+1. Create new Build Site record
+
+   - Select **Build Sites**.
+
+   - Select **+ New**.
+
+   - Provide the address as `One Microsoft Way Redmond WA 98052 USA`.
+
+   - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
+
+     ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
+
+1. Create new Permit Type record
+
+   - Select **Permit Types**.
+
+   - Select **+ New**.
+
+   - Provide **Name** as `New Construction` and select **Save & Close** and this will show the newly created record on the Active Permit Types View.
+
+     ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
+
+1. Create new Permit record
+
+   - Select **Permits**.
+
+   - Select **+ New**.
+
+   - Provide **Name** as `Test Permit`, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
+
+   - Select tomorrow's date for the **Start Date** and select **Save**.
+
+     ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
+
+1. Create new Inspection record
+
+   - Select the **Inspections** tab in the Permit form.
+
+   - Select **+ New Inspection**.
+
+     ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
+
+   - Provide **Name** as `Framing Inspection`.
+
+   - Select **Initial Inspection** from the dropdown for **Inspection Type**.
+
+   - Select tomorrow's date for **Scheduled Date**.
+
+   - Select **Save & Close**.
+
+     ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)
+
+   - The **Inspection** record should now show in the Inspections sub-grid.
+
+     ![Inspect sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image49.png)
+
+1. You may add more test records.
+
+
+### Task 3.2: Create test data
+
+1. Create test records for later labs.
+
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Apps**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
+   - Select **Inspections**.
+   - Select **+ New**.
+   - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
+
+   - Select **+ New**.
+   - Enter `Plumbing Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
+
+   - Select **+ New**.
+   - Enter `Mechanical Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
+
+1. You should have four inspections for the Test Permit.
+
+    ![Create inspection record - screenshot](../images/L04/test-data-inspections.png)
+
+
 1. Test your changes
 
    - Go back to the **Permit Management** app and refresh the browser.
@@ -889,43 +1001,3 @@ In this task, you will use the **css** resource you configured to change the col
 
      ![Timeline control with stye - screenshot](../images/L09/mod-02-pcf-1-77.png)
 
-## Exercise 3: Export and import solution
-
-**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
-
-### Task 3.1: Export solution
-
-1. Export managed solution.
-
-   - Select the **Overview** tab in the solution.
-   - Select **Export**.
-
-     ![Export solution - screenshot](../images/L03/solution-overview-export.png)
-
-   - Select **Publish** and wait for the publishing to complete.
-
-     ![Publish solution - screenshot](../images/L03/export-solution-publish.png)
-
-   - Select **Next**.
-   - Set the version number to `1.0.0.9`.
-   - Select **Managed**.
-
-     ![Export solution - screenshot](../images/L09/export-solution-managed.png)
-
-   - Select **Export**.
-
-     ![Export solution - screenshot](../images/L03/export-solution-download.png)  
-
-   - Click **Download** to download the managed solution on your machine.
-
-1. Export unmanaged solution.
-
-   - Select **Export** again.
-   - Select **Next**.
-   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.9`.
-   - Select **Unmanaged**.
-  
-    ![Export unmanaged solution - screenshot](../images/L09/export-solution-unmanaged.png)
-
-   - Select **Export**.
-   - Click **Download** to download the unmanaged solution on your machine.
