@@ -17,68 +17,13 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 > [!IMPORTANT]
 > This lab provides you with a Microsoft 365 tenant and licenses for the Power Platform applications you will be using in this course. You will only be provided with one tenant for the practice labs in this course. The settings and actions you take within this tenant do not roll-back or reset, whereas the virtual machine you are provided with does reset each time you close the lab session. Please be aware that Microsoft 365 and Power Platform are evolving all the time. The instructions in this document may be different from what you experience in your actual tenant. It is also possible to experience a delay of several minutes before the virtual machine has network connectivity to begin the labs.
 
-## Exercise 1 - Download lab files
-
-1. From the lab virtual machine, select the Windows **Start** icon and search for **PowerShell** then open **PowerShell as Administrator**.
-
-   ![Start Powershell as administrator.](../images/L00/start-powershell.png)
-
-1. Select **Yes** if prompted.
-
-1. Run the following commands to download the latest version of the lab files to the virtual machine.
-        
-    >Please note, if any of the commands fail run them again until they are successful.
-
-1. Create folder for lab files.
-
-    ```powershell
-    New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
-    ```
-
-1. Download ZIP file from GitHub.
-
-    ```powershell
-    ([System.Net.WebClient]::new()).DownloadFile('https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip', 'C:\LabFiles\master.zip')
-    ```
-
-1. Expand ZIP file.
-
-    ```powershell
-    Expand-Archive -Path 'C:\LabFiles\master.zip' -DestinationPath 'C:\LabFiles'
-    ```
-
-1. Move files to C:\Labfiles
-
-    ```powershell
-    Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Allfiles\Labs\*" -Destination "C:\LabFiles" -confirm: $false
-    ```
-
-    ![Powershell commands.](../images/L00/powershell-commands.png)
-
-1. Delete files not required for labs.
-
-    ```powershell
-    Remove-item 'C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master' -recurse -force
-    ```
-
-1. Delete zip file.
-
-    ```powershell
-    Remove-item 'C:\LabFiles\master.zip'
-    ```
-
-    > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
-
-    ![Labfiles folders.](../images/L00/labfiles-folder.png)
-
-1. Close the PowerShell window.
 
 
-## Exercise 2 – Power Platform license
+## Exercise 1 – Power Platform license
 
 In this exercise, you will add Power Apps for Developer to the tenant and assign licenses to users.
 
-### Task 2.1 – Sign into the Microsoft 365 admin portal
+### Task 1.1 – Sign into the Microsoft 365 admin portal
 
 1. Verify that you have your **Microsoft 365 credentials** from the Authorized Lab Host available. You can find them under the **Resources** tab on the top right corner of your screen.
 
@@ -96,7 +41,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. Select **Yes** to stay signed in.
 
 
-### Task 2.2 – Sign up for Power Apps for Developer
+### Task 1.2 – Sign up for Power Apps for Developer
 
 1. In a new browser tab, navigate to `https://powerapps.microsoft.com` 
 
@@ -121,7 +66,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. The Power Apps Maker portal will open in a new tab.
 
 
-### Task 2.3 – Verify Power Apps license is assigned to your user
+### Task 1.3 – Verify Power Apps license is assigned to your user
 
 1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
 
@@ -138,11 +83,11 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. Select the **X** in the top right of the user details panel to close the panel.
 
 
-## Exercise 3: Power Platform CLI
+## Exercise 2: Power Platform CLI
 
 **Objective:** In this exercise, you will install the Power Platform CLI.
 
-### Task 1.1: Download and install Power Platform CLI
+### Task 2.1: Download and install Power Platform CLI
 
 1. Download the Power Platform CLI `https://aka.ms/PowerAppsCLI`.
 1. Run the **powerapps-cli-1.0.msi** to start the installation.
