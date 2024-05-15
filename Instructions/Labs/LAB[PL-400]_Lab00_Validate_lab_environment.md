@@ -136,3 +136,31 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. Select **Save changes**. 
 
 1. Select the **X** in the top right of the user details panel to close the panel.
+
+
+## Exercise 3: Power Platform CLI
+
+**Objective:** In this exercise, you will install the Power Platform CLI.
+
+### Task 1.1: Download and install Power Platform CLI
+
+1. Download the Power Platform CLI `https://aka.ms/PowerAppsCLI`.
+1. Run the **powerapps-cli-1.0.msi** to start the installation.
+1. Use the setup wizard to complete the setup and select **Finish**.
+1. Open a Command Prompt.
+1. Verify Power Apps CLI is installed.
+
+   ```dos
+   pac install latest
+   ```
+
+1. List the Power Apps CLI tools.
+
+   ```dos
+   pac tool list
+   ```
+
+   ![pac tools - screenshot](../images/L06/pac-tool-list.png)
+
+   > [!NOTE]
+   > Power Platform tools will be installed on first launch.
