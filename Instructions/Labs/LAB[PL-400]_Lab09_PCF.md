@@ -32,16 +32,32 @@ This is what the component will look like when it is completed.
 
 A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starter folder.
 
+# Installing starter solution
+
+1. Navigate to `make.powerapps.com` and ensure that the Environment is set to **Dev One.**
+
+1. Select **Solutions** in the left navigation menu.
+
+1. Select **Import Solution** from the command bar.
+   ![Screenshot of the maker portal with Solutions selected](../images/L09/image-20240515154425897.png)
+
+1. Select **Browse** and open`PermitManagement_1_0_0_8.zip` found in the `C:\Labfiles\L09\Starter` folder.
+
+1. Select **Next** and **Next** again.
+
+1. Wait for the connections to be loaded, and then select **Import**.
+   ![Screenshot of "Import a solution" prompt](../images/L09/image-20240515154838171.png)
+
+1. Wait for the solution to be imported (this can take a few minutes). Once completed you will see a message just below the command bar indicating *Solution "Permit Management" imported successfully*.
+
+1. Select **Publish all customizations** from the command bar and wait for the Publish to complete before continuing.![Screenshot that points to the location of the "Publish all customization" button](../images/L09/image-20240515155452554.png)
+
+
 ## Completed solution
 
 Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
 
-## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L09\Resources folder.
-
-> [!IMPORTANT]
-> You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
 
 ## Exercise 1: Create the PCF Control
 
@@ -51,15 +67,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
 1. Install Node.js
 
-   - Navigate to [Node JS](https://nodejs.org/en/)
+   - Navigate to `nodejs.org`
 
    - Select the latest **LTS** version.
 
-     ![latest LTS - screenshot](../images/L09/node-js-download.png)
+     ![latest LTS - screenshot](../images/L09/node-js-download.jpg)
 
-   - Open the downloaded file.
+   - Open the downloaded file and please note when installing NodeJS, the user should accept all the defaults (leave the ‘Automatically install the necessary tools’ checkbox unchecked)
 
-   - Follow the steps in setup wizard to complete installing **Node.js**.
+     ![NodeJs setup - screenshot](../images/L09/node-js-setup.jpg)
+
+
 
 ### Task 1.2: Setup code component project
 
