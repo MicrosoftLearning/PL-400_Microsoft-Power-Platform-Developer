@@ -55,7 +55,7 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starte
 
 # Create records
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the `make.powerapps.com`
 1. Make sure you are in the Development environment.
 1. Select **Solutions**.
 1. Open the **Permit Management** solution.
