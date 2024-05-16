@@ -146,7 +146,7 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starte
 
 1. Create test records for later labs.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to `make.powerapps.com`
    - Select your **Development** environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
