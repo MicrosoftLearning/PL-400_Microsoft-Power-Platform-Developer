@@ -53,9 +53,116 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starte
 1. Select **Publish all customizations** from the command bar and wait for the Publish to complete before continuing.![Screenshot that points to the location of the "Publish all customization" button](../images/L09/image-20240515155452554.png)
 
 
-## Completed solution
+# Create records
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
+1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Make sure you are in the Development environment.
+1. Select **Solutions**.
+1. Open the **Permit Management** solution.
+1. In the **Objects** pane, select **All**.
+1. Select the **Apps** node.
+1. Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
+
+1. Create new Contact record
+
+   - Select **Contacts**.
+  
+     ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
+
+   - Select **+ New**.
+
+   - Provide First Name as `John`, Last Name as `Doe`.
+
+   - Select **Save & Close**
+
+     ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
+
+   - You should now see the created contact on the **Active Contacts** view.
+
+     ![Created contact record - screenshot](../images/L02/contact-list.png)
+
+1. Create new Build Site record
+
+   - Select **Build Sites**.
+
+   - Select **+ New**.
+
+   - Provide the address as `One Microsoft Way`, City `Redmond`, State/Province `WA` and Zip/Postal Code `98052`
+
+   - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
+
+     ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
+
+1. Create new Permit Type record
+
+   - Select **Permit Types**.
+
+   - Select **+ New**.
+
+   - Provide **Name** as `New Construction`
+   
+   - Set **Require Inspections** to **Yes** and select **Save & Close** and this will show the newly created record on the Active Permit Types View.
+
+     ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
+
+1. Create new Permit record
+
+   - Select **Permits**.
+
+   - Select **+ New**.
+
+   - Provide **Name** as `Test Permit`, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
+
+   - Select tomorrow's date for the **Start Date** and select **Save**.
+
+     ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
+
+1. Create new Inspection record
+
+   - Select the **Inspections** tab in the Permit form.
+
+   - Select **+ New Inspection**.
+
+     ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
+
+   - Provide **Name** as `Framing Inspection`.
+
+   - Select **Initial Inspection** from the dropdown for **Inspection Type**.
+
+   - Select tomorrow's date for **Scheduled Date**.
+
+   - Select **Save & Close**.
+
+     ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)
+
+   - The **Inspection** record should now show in the Inspections sub-grid.
+
+     ![Inspect sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image49.png)
+
+1. You may add more test records.
+
+
+# Create test data
+
+1. Create test records for later labs.
+
+   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Select your **Development** environment.
+   - Select **Apps**.
+   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
+   - Select **Inspections**.
+   - Select **+ New**.
+   - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
+
+   - Select **+ New**.
+   - Enter `Plumbing Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
+
+   - Select **+ New**.
+   - Enter `Mechanical Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
+
+1. You should have four inspections for the Test Permit.
+
+    ![Create inspection record - screenshot](../images/L04/test-data-inspections.png)
 
 
 
@@ -179,12 +286,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L09\Compl
      > [!NOTE]
      > if you experience an error, try to modify the .eslintrc.json file and change the rules as follows and re-run npm run build.
 
-     ``` JSON
-     "rules": {
-       "no-unused-vars": "off",
-       "no-undef" : "off"
-     }
-     ```
+      ```json
+      "rules": {      
+          "@typescript-eslint/no-unused-vars": "off",      
+          "@typescript-eslint/no-var-requires": "off",      
+          "@typescript-eslint/no-explicit-any": "off",      
+          "no-var":"off",
+          "prefer-const":"off"
+      }
+      ```
 
    - You should now be able to see the out folder. Expand the folder and review its content.
 
@@ -615,22 +725,22 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Add the style below to the **timelinecontrol.css** file and save your changes.
 
-     ```css
-     .red{
-         background:red;
-         color:white;
-         }
-     .green{
-         background:green;
-         color:white;
-                }
-     .yellow{
-         background:yellow;
-         color:black;
-         }
-     ```
+      ```css
+      .red{    
+          background:red !important;    
+          color:white !important;    
+      }
+      .green{    
+          background:green !important;    
+          color:white !important;           
+      }
+      .yellow{    
+          background:yellow !important;    
+          color:black !important;    
+      }
+      ```
 
-     ![CSS file - screenshot](../images/L09/mod-02-pcf-1-45.png)
+     
 
    - Select **File** and then select **Save All**.
 
@@ -668,39 +778,38 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Get your environment URL.
 
-   - Navigate to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) and select environments.
-   - Locate and open your **Development** environment.
-   - Right click and copy the **Environment URL**.
+   - Navigate to `make.powerapps.com`
+   - Ensure that the `Dev One` Environment is selected
+   - Select the **Gear icon** on the top right and then **Session details**.
+   - Copy the **Instance Url**.
+     ![Session details where intance Url is found - screenshot](../images/L09/image-20240515170012071.png)
+   - Close the dialog
 
-     ![Endpoint address - screenshot](../images/L09/mod-02-pcf-1-51.png)
+1. Authenticate
 
-1. Authenticate.
+   - Open the **Developer Command Prompt** from the start menu
 
-   - Go back to **Visual Studio Code**.
+   - Change the directory to the `pcfSolution` folder.
 
-   - Make sure you are still in the **src** directory.
+     ```DOS
+     cd C:\LabFiles\L09\pcfTimelineControl\pcfSolution
+     ```
 
-   - Run the command below. Replace **&lt;Environment URL&gt;** with the **URL** you copied.
 
-     ```dos
+   - Run the command below. Replace **<Environment URL>** with the **URL** you copied.
+
+     ```DOS
      pac auth create --url <Environment URL>
      ```
+   - Sign in with your Office 365 Tenant administration user from the Resources tab in these lab instructions, and your new password if you were prompted to change it when you first logged in.
 
-   - Sign in with your tenant credentials.
-
-1. Build the solution.
-
-   - Change directory to the **pcfSolution** folder.
-
-     ```dos
-     cd ..\pcfSolution
-     ```
+1. Build the solution
 
    - Build the project by running the command below.
 
-     ```dos
-     msbuild /t:build /restore
-     ```
+      ```DOS
+      msbuild /t:build /restore
+      ```
 
 1. Import the solution into your org and publish.
 
@@ -716,7 +825,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to `make.powerapps.com`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -790,11 +899,10 @@ In this task, you will use the **css** resource you configured to change the col
    - Select **Inspections**.
    - Select **Edit columns**.
    - Select **+ Add columns**.
-   - Select **Permit**.
    - Select **Status Reason**.
    - Select **Close**.
    - Select **Apply**.
-   - All inspections should be set to **Pending**.
+   
 
 1. Create test data
 
@@ -898,117 +1006,6 @@ In this task, you will use the **css** resource you configured to change the col
    - Close the view editor tab.
 
    - Select **Done**.
-
-## Exercise 3: Test Application
-
-### Task 3.1: Create records
-
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
-1. Make sure you are in the Development environment.
-1. Select **Solutions**.
-1. Open the **Permit Management** solution.
-1. In the **Objects** pane, select **All**.
-1. Select the **Apps** node.
-1. Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
-
-1. Create new Contact record
-
-   - Select **Contacts**.
-  
-     ![Contacts - screenshot](../images/L02/Mod_02_Model_Driven_App_image41.png)  
-
-   - Select **+ New**.
-
-   - Provide First Name as `John`, Last Name as `Doe`.
-
-   - Select **Save & Close**
-
-     ![Create contact record - screenshot](../images/L02/Mod_02_Model_Driven_App_image42.png)
-
-   - You should now see the created contact on the **Active Contacts** view.
-
-     ![Created contact record - screenshot](../images/L02/contact-list.png)
-
-1. Create new Build Site record
-
-   - Select **Build Sites**.
-
-   - Select **+ New**.
-
-   - Provide the address as `One Microsoft Way Redmond WA 98052 USA`.
-
-   - Select **Save & Close** and this will show the newly created record on the Active Build Sites View.
-
-     ![Created build site record - screenshot](../images/L02/Mod_02_Model_Driven_App_image44.png)
-
-1. Create new Permit Type record
-
-   - Select **Permit Types**.
-
-   - Select **+ New**.
-
-   - Provide **Name** as `New Construction` and select **Save & Close** and this will show the newly created record on the Active Permit Types View.
-
-     ![New permit type record - screenshot](../images/L02/Mod_02_Model_Driven_App_image45.png)
-
-1. Create new Permit record
-
-   - Select **Permits**.
-
-   - Select **+ New**.
-
-   - Provide **Name** as `Test Permit`, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
-
-   - Select tomorrow's date for the **Start Date** and select **Save**.
-
-     ![New permit record - screenshot](../images/L02/Mod_02_Model_Driven_App_image46.png)
-
-1. Create new Inspection record
-
-   - Select the **Inspections** tab in the Permit form.
-
-   - Select **+ New Inspection**.
-
-     ![Add new inspection - screenshot](../images/L02/Mod_02_Model_Driven_App_image47.png)
-
-   - Provide **Name** as `Framing Inspection`.
-
-   - Select **Initial Inspection** from the dropdown for **Inspection Type**.
-
-   - Select tomorrow's date for **Scheduled Date**.
-
-   - Select **Save & Close**.
-
-     ![New inspection record - screenshot](../images/L02/Mod_02_Model_Driven_App_image48.png)
-
-   - The **Inspection** record should now show in the Inspections sub-grid.
-
-     ![Inspect sub-grid - screenshot](../images/L02/Mod_02_Model_Driven_App_image49.png)
-
-1. You may add more test records.
-
-
-### Task 3.2: Create test data
-
-1. Create test records for later labs.
-
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
-   - Select your **Development** environment.
-   - Select **Apps**.
-   - Select the **Permit Management** app, select the ellipses **...** and select **Play**.
-   - Select **Inspections**.
-   - Select **+ New**.
-   - Enter `Electric Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to today's date, select **Failed** for Status Reason, and then select **Save & Close**.
-
-   - Select **+ New**.
-   - Enter `Plumbing Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to two days in the future, select **Pending** for Status Reason, and then select **Save & Close**.
-
-   - Select **+ New**.
-   - Enter `Mechanical Inspection` for Name, select **Initial Inspection** for Type, select the **Test Permit**, set **Scheduled Date** to three days in the future, select **New Request** for Status Reason, and select **Save & Close**.
-
-1. You should have four inspections for the Test Permit.
-
-    ![Create inspection record - screenshot](../images/L04/test-data-inspections.png)
 
 
 1. Test your changes
