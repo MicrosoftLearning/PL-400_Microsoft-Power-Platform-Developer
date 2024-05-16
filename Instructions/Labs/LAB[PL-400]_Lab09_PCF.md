@@ -87,6 +87,8 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L09\Compl
 
      ![Developer command prompt - screenshot](../images/L09/mod-02-pcf-1-04.png)
 
+    Please note, if you have Command Prompt already, you must open a new Command Prompt for the node to be added to the path.
+
 1. Create a folder named named **pcfTimelineControl** for the code component.
 
    - Run the following commands.
