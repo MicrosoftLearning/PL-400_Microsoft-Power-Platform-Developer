@@ -269,6 +269,8 @@ In this task, you will create the application user in Dataverse and associate it
    ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
    - Select **Create**.
+     
+   - Select **Consumption** for Hosting options and plans.
 
    - Select your **Azure Pass - Sponsorship** subscription.
 
@@ -281,8 +283,6 @@ In this task, you will create the application user in Dataverse and associate it
    - Select **.NET** for Runtime stack
 
    - Select **6 (LTS)** for Version
-
-   - Select **Consumption** for Hosting options and plans.
 
    - Select **Next : Storage**.
 
