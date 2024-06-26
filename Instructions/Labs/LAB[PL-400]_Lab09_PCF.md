@@ -389,7 +389,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      ```typescript
      private renderTimeline(): void {
          // Create a DataSet (allows two way data-binding)
-         var items = [
+         const items = [
              { id: 1, content: 'item 1', start: '2023-08-20' },
              { id: 2, content: 'item 2', start: '2023-08-14' },
              { id: 3, content: 'item 3', start: '2023-08-18' },
@@ -398,9 +398,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
              { id: 6, content: 'item 6', start: '2023-08-27', type: 'point' }
          ];
          // Configuration for the Timeline
-         var options = {};
+         const options = {};
          // Create a Timeline
-         var timeline = new vis.Timeline(this._timelineElm, items, options);
+         const timeline = new vis.Timeline(this._timelineElm, items, options);
      }
      ```
 
@@ -505,20 +505,19 @@ In this task, you will switch from using the hard-coded array of data to using a
          this._timelineData = [];
          if (gridParam.sortedRecordIds.length > 0) {
              for (let currentRecordId of gridParam.sortedRecordIds) {
-           
+
                  console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
 
-                 var permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
-                 var permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
-                 var permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
-                 var permitColor = "green";
+                 const permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
+                 const permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
+                 const permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
+                 let permitColor = "green";
                  if (permitStatus == "Failed")
                      permitColor = "red";
                  else if (permitStatus == "Canceled")
                      permitColor = "yellow";
-            
-                 console.log('name:' + permitName + ' date:' + permitDate);
 
+                 console.log('name:' + permitName + ' date:' + permitDate);
 
                  if (permitName != null)
                      this._timelineData.push(new TimelineData(currentRecordId, permitName, permitDate, permitColor));
@@ -555,7 +554,7 @@ In this task, you will switch from using the hard-coded array of data to using a
    - Replace the hardcoded **items** with code below.
 
      ```typescript
-     var items = this._timelineData;
+     const items = this._timelineData;
      ```
 
      ![render timeline function - screenshot](../images/L09/mod-02-pcf-1-39.png)
