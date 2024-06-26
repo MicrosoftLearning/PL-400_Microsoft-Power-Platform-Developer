@@ -86,7 +86,7 @@ export class timelinecontrol implements ComponentFramework.StandardControl<IInpu
     private createTimelineData(gridParam: DataSet) {
         this._timelineData = [];
         if (gridParam.sortedRecordIds.length > 0) {
-            for (let currentRecordId of gridParam.sortedRecordIds) {
+            for (const currentRecordId of gridParam.sortedRecordIds) {
 
                 console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
 

@@ -504,7 +504,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      private createTimelineData(gridParam: DataSet) {
          this._timelineData = [];
          if (gridParam.sortedRecordIds.length > 0) {
-             for (let currentRecordId of gridParam.sortedRecordIds) {
+             for (const currentRecordId of gridParam.sortedRecordIds) {
 
                  console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
 
