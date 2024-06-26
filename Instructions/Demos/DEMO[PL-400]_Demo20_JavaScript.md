@@ -21,7 +21,7 @@ function dem_pettrick_trick_OnChange(executionContext) {
     if (trick === null) {
         console.log('dem: Trick null');
         formContext.ui.controls.get("dem_points").setVisible(false);
-        formContext.getAttributes("dem_points").setValue(0);
+        formContext.getAttribute("dem_points").setValue(0);
         return;
     } else {
         var trickid = trick[0].id;
