@@ -76,24 +76,24 @@ export class timelinecontrol implements ComponentFramework.StandardControl<IInpu
 
     private renderTimeline(): void {
         // Create a DataSet (allows two way data-binding)
-        var items = this._timelineData;
+        const items = this._timelineData;
         // Configuration for the Timeline
-        var options = {};
+        const options = {};
         // Create a Timeline
-        var timeline = new vis.Timeline(this._timelineElm, items, options);
+        const timeline = new vis.Timeline(this._timelineElm, items, options);
     }
 
     private createTimelineData(gridParam: DataSet) {
         this._timelineData = [];
         if (gridParam.sortedRecordIds.length > 0) {
-            for (let currentRecordId of gridParam.sortedRecordIds) {
+            for (const currentRecordId of gridParam.sortedRecordIds) {
 
                 console.log('record: ' + gridParam.records[currentRecordId].getRecordId());
 
-                var permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
-                var permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
-                var permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
-                var permitColor = "green";
+                const permitName = gridParam.records[currentRecordId].getFormattedValue('contoso_name')
+                const permitDate = gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
+                const permitStatus = gridParam.records[currentRecordId].getFormattedValue('statuscode')
+                let permitColor = "green";
                 if (permitStatus == "Failed")
                     permitColor = "red";
                 else if (permitStatus == "Canceled")
