@@ -665,7 +665,7 @@ In this task, you will use the **css** resource you configured to change the col
    - Run the command below. Replace **&lt;Environment URL&gt;** with the **URL** you copied.
 
      ```dos
-     pac auth create --url <Environment URL>
+     pac auth create --environment <Environment URL>
      ```
 
    - Sign in with your tenant credentials.
