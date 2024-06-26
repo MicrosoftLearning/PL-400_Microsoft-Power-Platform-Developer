@@ -161,6 +161,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
      ``` JSON
      "rules": {
+       "@typescript-eslint/no-unused-vars": "off",
+       "@typescript-eslint/no-var-requires": "off",
+       "@typescript-eslint/no-explicit-any": "off",
        "no-unused-vars": "off",
        "no-undef" : "off"
      }
@@ -178,7 +181,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      npm start
      ```
 
-   - Select **Allow access** in the Windows Defender Firewall prompt.
+   - Select **Allow** in the Windows Security prompt.
 
    - This should open the Test Environment in a browser window.
 
