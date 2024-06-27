@@ -826,11 +826,11 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Press **Ctrl** + **Shift** + **F** to open Search in Dev Tools.
 
-   - Search for **createTimelineData = function**.
+   - Search for **createTimelineData(gridParam)**.
 
      ![Search in Dev Tools - screenshot](../images/L09/dev-tools-search.png)
 
-   - Click on the **createTimelineData** function. This will open index.ts in DevTools.
+   - Click on the **createTimelineData** function under index.ts. This will open index.ts in DevTools.
 
    - Add a breakpoint on the **permitColor =”green”** line.
 
