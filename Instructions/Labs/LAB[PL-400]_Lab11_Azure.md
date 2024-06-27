@@ -20,7 +20,6 @@ As part of building the Azure Function, you will complete the following:
 
 ## Things to consider before you begin
 
-- Could we have used Dynamics 365 Universal Resource Scheduling instead of custom code?
 - Could we have used Power Automate instead of custom code?
 - Remember to continue working in your DEVELOPMENT environment. We'll move everything to production soon.
 
@@ -36,15 +35,15 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L11\Compl
 
 Complete source code files for this lab can be found in the  C:\Labfiles\L11\Resources folder.
 
-## Exercise 1: Configure an Azure AD application user and add the user to Dataverse
+## Exercise 1: Configure an Microsoft Entra application user and add the user to Dataverse
 
 **Objective:** In this exercise, you will configure an application user that will be used to connect the Azure Function back to Microsoft Dataverse.
 
-### Task 1.1: Register Azure AD Application
+### Task 1.1: Register Application in Microsoft Entra
 
-1. Navigate to Azure Active Directory.
+1. Navigate to Microosft Entra portal
 
-- Sign in to the [Azure Active Directory portal](https://aad.portal.azure.com/).
+- Sign in to the [Microsoft Entra  portal](https://entra.microsoft.com/).
 
    > **Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account for your Azure subscription.
 
@@ -136,27 +135,29 @@ In this task, you will create the security role needed for the routing logic.
 
      ![New security role - screenshot](../images/L11/Mod_02_Azure_Functions_image12.png)
 
-   - Enter `Inspection Router` for **Role Name** and then select the **Save** con.
+   - Enter `Inspection Router` for **Role Name**, select the root business unit.
 
-   - Select the **Business Management** tab.
+   - Uncheck **Include App Opener privileges**.
 
-   - Locate the **User** table and set the **Read** and **Append To** privileges to **Organization**.
+     ![New security role pane - screenshot](../images/L11/create-new-role-pane.png)
 
-     ![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image14.png)
+   - Select **Save**.
 
-   - Select the **Custom Entities** tab.
+   - Search for the **systemuser** table and set the **Read** and **Append To** privileges to **Organization**.
 
-   - Locate the **Inspection** table and set the **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
+     ![User table privileges - screenshot](../images/L11/security-role-privileges-user.png)
 
-     ![User table privileges - screenshot](../images/L11/Mod_02_Azure_Functions_image15.png)
+   - Search for the **Inspection** table and set the **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
 
-   - Select **Save and Close**.
+     ![Inspection table privileges - screenshot](../images/L11/security-role-privileges-inspection.png)
 
-   - Select **Done**.
+   - Select **Save**.
+
+   - Select **<- Back**.
 
 ### Task 1.6: Add Application user to Dataverse
 
-In this task, you will create the application user in Dataverse and associate it with the Azure AD app that you just registered.#
+In this task, you will create the application user in Dataverse and associate it with the Microsoft Entra app that you just registered.
 
 1. Navigate to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
 
@@ -174,7 +175,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    ![New application user - screenshot](../images/L11/Mod_02_Azure_Functions_image19.png)
 
-1. Select the **Inspection Router** Azure AD app registration and then select **Add**.
+1. Select the **Inspection Router** app registration and then select **Add**.
 
    ![Switch form - screenshot](../images/L11/Mod_02_Azure_Functions_image20.png)
 
