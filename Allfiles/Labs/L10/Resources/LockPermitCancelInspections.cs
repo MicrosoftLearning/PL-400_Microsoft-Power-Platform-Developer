@@ -8,7 +8,7 @@ namespace ContosoPackageProject
     public class LockPermitCancelInspections : PluginBase
     {
         public LockPermitCancelInspections(string unsecureConfiguration, string secureConfiguration)
-: base(typeof(PreOperationPermitCreate))
+: base(typeof(LockPermitCancelInspections))
         {
 
         }

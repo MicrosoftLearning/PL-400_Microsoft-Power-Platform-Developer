@@ -271,7 +271,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Enter `Create` for **Message**.
 
-   - Enter `contoso_permit` for **Primary Table**.
+   - Enter `contoso_permit` for **Primary Entity**.
 
    - Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution**.
 
