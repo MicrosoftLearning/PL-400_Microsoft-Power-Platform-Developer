@@ -237,11 +237,22 @@ We will install and configure the following tools:
 
 ### Task 4.2: Install .NET Framework in Visual Studio
 
-1. Add .NET Framework 4.6.2 to Visual Studio 2019.
+1. If you have Visual Studio 2019.
 
    - Start **Visual Studio Installer**.
+   - Select **Update** to apply any updates to Visual Studio.
    - Select **Modify**.
-   - Under *Installation details* pane, check **.NET Framework 4.6.2 development tools**.
+   - Under the *Installation details* pane, check **.NET Framework 4.6.2 development tools**.
+   - Select **Modify**.
+   - Select **Yes**
+   - Close the **Visual Studio Installer** window.
+
+1.If you have Visual Studio 2022
+
+   - Start **Visual Studio Installer**.
+   - Select **Update** to apply any updates to Visual Studio.
+   - Select **Modify**.
+   - Under the *Azure development* and *Installation details* pane, check **.NET Framework 4.6.2-4.7.1 development tools**.
    - Select **Modify**.
    - Select **Yes**
    - Close the **Visual Studio Installer** window.
