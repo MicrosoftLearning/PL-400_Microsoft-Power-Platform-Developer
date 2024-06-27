@@ -251,7 +251,7 @@ In this task, you will create the application user in Dataverse and associate it
 
      ![Create resource group - screenshot](../images/L11/azure-storage-account-create.png)
 
-   - Select **Review**.
+   - Select **Review + create**.
 
    - Select **Create**.
 
@@ -263,13 +263,17 @@ In this task, you will create the application user in Dataverse and associate it
 
    ![New function app - screenshot](../images/L12/Mod_01_Web_Hook_image2.png)
 
-   - Click on the **Function App** tile.
+   - Select the **Function App** tile.
 
    - Select **Create**.
 
    ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
    - Select **Create**.
+
+   - Select the **Consumption** tile.
+
+   - Select **Select**.
 
    - Select your **Azure Pass - Sponsorship** subscription.
 
@@ -281,9 +285,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **.NET** for Runtime stack
 
-   - Select **6 (LTS)** for Version
-
-   - Select **Consumption** for Hosting options and plans.
+   - Select **6 (LTS), in-process model** for Version
 
    - Select **Next : Storage**.
 
@@ -294,6 +296,16 @@ In this task, you will create the application user in Dataverse and associate it
     ![Create function app - screenshot](../images/L11/azure-function-app-create.png)
 
    - Select **Create**.
+
+   - Select **Go to resource**.
+
+1. Configure settings
+
+   - Select **Settings** -> **Configuration** and then select **General settings** tab.
+
+   - Select **On** for **SCM Basic Auth Publishing Credentials**.
+
+   - Select **Save**.
 
 ### Task 2.2: Create Function using Visual Studio
 
@@ -316,9 +328,9 @@ In this task, you will create the application user in Dataverse and associate it
 
      ![Visual Studio configure project - screenshot](../images/L11/visual-studio-configure-project.png)
 
-   - Select **Create**.
+   - Select **Next**.
 
-   - Select **.NET Core 3 (LTS)**.
+   - Select **.NET Framework Isolated v4**.
 
    - Select **Timer Trigger**.
 
@@ -355,6 +367,16 @@ In this task, you will create the application user in Dataverse and associate it
    - Search for `identitymodel` and select the **Microsoft.IdentityModel.Clients.ActiveDirectory** NuGet package.
 
      ![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image42.png)
+
+   - Select **Install**.
+
+   - Select **OK**.
+
+   - Select **I Accept**.
+
+   - Search for `newtonsoft` and select the **Newtonsoft.Json** NuGet package.
+
+   - Select **InspectionRoutingApp**.
 
    - Select **Install**.
 
@@ -482,9 +504,9 @@ In this task, you will create the application user in Dataverse and associate it
    - Call the GetCRMWebAPI method and Execute **WhoAmI**.
 
      ```csharp
-     CRMWebAPI api = GetCRMWebAPI(log).Result;
+     CRMWebAPI api = GetCRMWebAPI(_logger).Result;
      dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
-     log.LogInformation($"UserID: {whoami.UserId}");
+     _logger.LogInformation($"UserID: {whoami.UserId}");
      ```
 
      ![Run method - screenshot](../images/L11/Mod_02_Azure_Functions_image53.png)
@@ -610,7 +632,7 @@ In this task, you will create the application user in Dataverse and associate it
      int currentUserIndex = 0;
      foreach (dynamic inspection in inspections.List)
      {
-        log.LogInformation($"Routing inspection {inspection.contoso_name}");
+        _logger.LogInformation($"Routing inspection {inspection.contoso_name}");
         var inspectionResult = new CRMUpdateResult();
         // Your record assignment would look like this. We will not assign records to different users in this lab
         // if (users.List.Count > (currentUserIndex))
@@ -673,6 +695,8 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Publish**.
   
+   - If prompted, select **Update** to update the function app settings.
+
    - Select **Yes**.
 
      ![Publishing Azure function app - screenshot](../images/L11/visual-studio-publishing-azure.png)
@@ -689,7 +713,7 @@ In this task, you will create the application user in Dataverse and associate it
 
      ![Azure resources - screenshot](../images/L11/azure-portal-resources.png)
 
-   - Scroll down to **Settings** and select **Configuration**.
+   - Scroll down to **Settings** and select **Environment variables**.
 
      ![Configuration - screenshot](../images/L11/azure-portal-configuration-settings.png)
 
@@ -729,11 +753,9 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **OK**.
 
-   - Select **Save**.
+   - Select **Apply**.
 
-     ![Save changes - screenshot](../images/L11/Mod_02_Azure_Functions_image72.png)
-
-   - Select **Continue**.
+   - Select **Confirm**.
 
 ### Task 3.2: Test
 
@@ -796,15 +818,15 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Go to your **Azure** portal.
 
-   - Select the **Functions** tab in the **Overview** pane and open the function you published.
+   - Select the **Overview** pane and select the function you published.
 
-     ![Open function - screenshot](../images/L11/Mod_02_Azure_Functions_image73.png)
+     ![Open function - screenshot](../images/L11/function-in-portal.png)
 
-   - Select **Code + Test.**
+   - Select the **Code + Test** tab.
 
      ![Code + Test - screenshot](../images/L11/Mod_02_Azure_Functions_image74.png)
 
-   - Select **Test/Run.**
+   - Select **Test/Run**.
 
      ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image81.png)
 
