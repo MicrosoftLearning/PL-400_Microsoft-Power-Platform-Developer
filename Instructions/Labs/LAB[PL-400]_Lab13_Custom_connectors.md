@@ -55,7 +55,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **All Resources**, search for `pl400wh`, and open the function app you created in the previous lab.
 
-   - Select **Functions**.
+   - Select the **Functions** tab.
 
      ![Add function - screenshot](../images/L13/azure-portal-create-function.png)
 
@@ -63,7 +63,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **HTTP trigger** for Template.
 
-   - Enter `CPMTrigger` for New Function.
+   - Select **Next**.
+
+   - Enter `CPMTrigger` for Function name.
 
    - Select **Function** for Authorization level.
 
@@ -71,9 +73,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Add the **Using Statements** and **CPMCalcRequest** class to the function.
 
-   - Select **Code + Test**.
+   - Select the **Code + Test** tab.
 
-     ![Code and test - screenshot](../images/L13/Mod_2_Custom_Connector_image7.png)
+     ![Code and test - screenshot](../images/L13/azure-portal-function-code-test.png)
 
    - Add the Using Statements below to the function.
 
@@ -170,17 +172,27 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Close the Test pane.
 
-1. Copy the Function URL.
+1. Get the function endpoint
 
-   - Select **Overview** and then select **Get Function URL**.
+   - Select the **Code + Test** tab and then select **Get function URL**.
 
-     ![Get function URL - screenshot](../images/L13/azure-portal-function-url.png)
+     ![Get function URL - screenshot](../images/L13/azure-portal-get-function-url.png)
 
-   - Select **Copy** and then select **OK** to close the popup.
+   - Select **Copy to clipboard** against the **default (Function key)** and then select **Close**.
 
-     ![Copy function URL - screenshot](../images/L13/azure-portal-get-function-url.png)
+     ![Copy function URL - screenshot](../images/L13/azure-portal-function-get-url.png)
 
-   - Save the **URL** in a notepad, you will need it when creating the custom connector.
+   - Save the **URL** in a notepad, you will need it in the next exercise.
+
+1. Get the function key
+
+   - Select the **Function Keys** tab.
+
+     ![Show function keys - screenshot](../images/L13/azure-portal-function-keys.png)
+
+   - Select **Copy to clipboard** against the **default** key.
+
+   - Save the **key** in a notepad, you will need it in the next exercise.
 
 ## Exercise 2: Create the Custom Connector
 
@@ -301,7 +313,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
      ![New connection - screenshot](../images/L13/Mod_2_Custom_Connector_image34.png)
 
-   - Go back to the notepad and copy the key - everything after **code=**.
+   - Go back to the notepad and copy the function key.
 
    - Go back to the connector and paste the value you copied.
 
