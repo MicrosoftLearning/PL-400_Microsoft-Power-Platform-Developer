@@ -265,8 +265,6 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select the **Function App** tile.
 
-   - Select **Create**.
-
    ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
    - Select **Create**.
