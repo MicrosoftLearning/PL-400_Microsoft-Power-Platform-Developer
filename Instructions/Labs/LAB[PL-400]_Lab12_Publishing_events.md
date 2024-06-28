@@ -102,7 +102,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Next**.
 
-   - Enter `WebHookTrigger` for New Function.
+   - Enter `WebHookTrigger` for Function name.
 
    - Select **Function** for Authorization level.
 
