@@ -54,11 +54,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Click on the **Function App** tile.
 
-   - Select **Create**.
-
    ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
 
    - Select **Create**.
+  
+   - Select the **Consumption** tile.
+
+   - Select **Select**.
 
    - Select your **Azure Pass - Sponsorship** subscription.
 
@@ -70,9 +72,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **.NET** for Runtime stack
 
-   - Select **6 (LTS)** for Version
-
-   - Select **Consumption** for Hosting options and plans.
+   - Select **8 (LTS), in-process model** for Version
 
    - Select **Next : Storage**.
 
@@ -94,27 +94,31 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
      ![Add function - screenshot](../images/L12/azure-function-overview.png)
 
-   - Select **Create in Azure portal**.
+   - Select **Create function** under **Create in Azure portal**.
 
    - Select **HTTP trigger** for Template.
+  
+     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function1.png)
+
+   - Select **Next**.
 
    - Enter `WebHookTrigger` for New Function.
 
    - Select **Function** for Authorization level.
 
-     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function.png)
+     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function2.png)
 
    - Select **Create**.
 
 1. Test the function
 
-   - Select **Code + Test**.
+   - Select the **Code + Test** tab.
 
-     ![Code + Test - screenshot](../images/L12/Mod_01_Web_Hook_image8.png)
+     ![Code + Test - screenshot](../images/L12/azure-portal-function-code-test.png)
 
    - Select **Test**/**Run**.
 
-     ![Test/run - screenshot](../images/L12/Mod_01_Web_Hook_image9.png)
+     ![Test/run - screenshot](../images/L12/azure-portal-function-test.png)
 
    - Select **Run**.
 
@@ -146,9 +150,9 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
 1. Remove HTTP output
 
-   - Select **Integration**.
+   - Select the **Integration** tab.
 
-     ![Integration - screenshot](../images/L12/Mod_01_Web_Hook_image12.png)
+     ![Integration - screenshot](../images/L12/azure-portal-function-integration.png)
 
    - Select the **HTTP Output**.
 
@@ -158,19 +162,29 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
      ![Delete output - screenshot](../images/L12/Mod_01_Web_Hook_image14.png)
 
-   - Select **OK**.
+   - Select **Delete**.
 
-1. Get the function URL
+1. Get the function endpoint
 
-   - Select **Overview** and then select **Get Function URL**.
+   - Select the **Code + Test** tab and then select **Get function URL**.
 
      ![Get function URL - screenshot](../images/L12/azure-portal-function-url.png)
 
-   - Select **Copy** and then select OK to close the popup.
+   - Select **Copy to clipboard** against the **default (Function key)** and then select **Close**.
 
-     ![Copy function URL - screenshot](../images/L12/Mod_01_Web_Hook_image16.png)
+     ![Copy function URL - screenshot](../images/L12/azure-portal-function-get-url.png)
 
    - Save the **URL** in a notepad, you will need it in the next exercise.
+
+1. Get the function key
+
+   - Select the **Function Keys** tab.
+
+     ![Show function keys - screenshot](../images/L12/azure-portal-function-keys.png)
+
+   - Select **Copy to clipboard** against the **default** key.
+
+   - Save the **key** in a notepad, you will need it in the next exercise.
 
 ## Exercise 2: Configure Webhook
 
@@ -223,7 +237,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **WebhookKey** for **Authentication**.
 
-   - Go back to the notepad and copy the key - everything after **code=**.
+   - Go back to the notepad and copy the function key.
 
    - In the Plugin Registration Tool, paste the key you copied in the **Value** field.
 
@@ -262,6 +276,36 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
    - Select **Register New Step**.
 
    - Step should now be registered in the WebHook.
+
+1. Register images.
+
+   - Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
+
+     ![Register new image - screenshot](../images/L12/Mod_01_Web_Hook_image40.png)
+
+   - Check **Pre Image**.
+
+   - Check **Post Image**.
+
+   - Enter `Permit Image` for **Name**.
+
+   - Enter `PermitImage` for **Entity Alias**.
+
+   - Select the **Parameters** button.
+
+     ![Image type information - screenshot](../images/L12/prt-image-parameters.png)
+
+   - Uncheck **Select All**.
+
+   - Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**.
+
+     ![Select attributes - screenshot](../images/L12/Mod_01_Web_Hook_image42.png)
+
+   - Select **OK**.
+
+     ![Register image - screenshot](../images/L12/prt-register-image.png)
+
+   - Select **Register Image**.
 
 ### Task 2.2: Test the Webhook
 
@@ -318,42 +362,6 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - The log is empty and the function did not execute.
 
-### Task 2.3: Configure entity images
-
-This step allows you to avoid unnecessarily querying Microsoft Dataverse and make a request only when you need information from the primary table. It can also be used to get the prior value of a column before an update operation.
-
-1. Register images.
-
-   - Go back to the **Plugin Registration** tool.
-
-   - Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
-
-     ![Register new image - screenshot](../images/L12/Mod_01_Web_Hook_image40.png)
-
-   - Check **Pre Image**.
-
-   - Check **Post Image**.
-
-   - Enter `Permit Image` for **Name**.
-
-   - Enter `PermitImage` for **Entity Alias**.
-
-   - Select the **Parameters** button.
-
-     ![Image type information - screenshot](../images/L12/prt-image-parameters.png)
-
-   - Uncheck **Select All**.
-
-   - Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**.
-
-     ![Select attributes - screenshot](../images/L12/Mod_01_Web_Hook_image42.png)
-
-   - Select **OK**.
-
-     ![Register image - screenshot](../images/L12/prt-register-image.png)
-
-   - Select **Register Image**.
-
 1. Update Permit record.
 
    - In the  **Permit Management** app, select **Permits**.
@@ -372,7 +380,7 @@ This step allows you to avoid unnecessarily querying Microsoft Dataverse and mak
 
       ![Post and pre entity image values - screenshot](../images/L12/Mod_01_Web_Hook_image46.png)
 
-### Task 2.4: Add webhook to the solution
+### Task 2.3: Add webhook to the solution
 
 1. Add webhook to solution.
 
