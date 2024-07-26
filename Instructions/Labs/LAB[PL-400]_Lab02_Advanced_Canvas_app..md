@@ -32,7 +32,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
 
 **Objective:** In this exercise, you use Patch to update the Status Reason on an inspection.
 
-### Task 2.1: Update inspection row using Patch
+### Task 1.1: Update inspection row using Patch
 
 1. Open the Permit Management solution.
 
@@ -75,7 +75,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
 
 1. Do **NOT** navigate away from this screen.
 
-### Task 2.2: Test the app
+### Task 1.2: Test the app
 
    > [!NOTE]
    > If you closed the application, follow these steps to get back to the Power Apps Studio.
@@ -116,4 +116,3 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
    - Change the **Status Reason** back to **Pending**.
    - Select **Save & Close**.
    - Close the **Permit Management** application.
-

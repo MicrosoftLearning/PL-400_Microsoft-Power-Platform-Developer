@@ -41,6 +41,7 @@
       <field displayname="Inspection Type" name="contoso_inspectiontype" type="optionsetvalue" customfield="true" />
       <field displayname="Scheduled Date" name="contoso_scheduleddate" type="datetime" customfield="true" dateMode="relativeDaily" />
       <field displayname="Name" name="contoso_name" type="string" customfield="true" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
     </fields>
   </entity>
 </entities>
