@@ -24,11 +24,11 @@ We will create cloud flows to
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L05\Starter folder.
+A starter solution file for this lab can be found in the C:\Labfiles\L03\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L05\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L03\Completed folder.
 
 ## Exercise 1: Create a scheduled cloud flow
 
@@ -47,13 +47,13 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
    - Select **+ New** and then select **Automation** > **Cloud flow** > **Scheduled**.
 
-     ![new flow type - screenshot](../images/L05/new-scheduled-flow.png)
+     ![new flow type - screenshot](../images/L03/new-scheduled-flow.png)
 
    - On the Welcome to Power Automate popup, select **Get started**.
    - Enter `Reset Inspections` for Flow name.
    - Change the **Repeat every** drop-down to **Month**.
 
-     ![new flow name - screenshot](../images/L05/scheduled-flow-name.png)
+     ![new flow name - screenshot](../images/L03/scheduled-flow-name.png)
 
    - Select  **Create**.
 
@@ -63,11 +63,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Search for `Dataverse` and select the **Microsoft Dataverse** connector.
    - Select the **List rows** action.
 
-     ![Dataverse actions - screenshot](../images/L05/select-list-rows-action.png)
+     ![Dataverse actions - screenshot](../images/L03/select-list-rows-action.png)
 
    - Rename the List rows step to `Inspections` by selecting the ellipses **...** on the flow step and selecting **Rename**.
 
-     ![Rename flow step - screenshot](../images/L05/rename-flow-step.png)
+     ![Rename flow step - screenshot](../images/L03/rename-flow-step.png)
 
    - Select **Inspections** for Table name.
    - Select **Show advanced options**.
@@ -77,7 +77,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
      statuscode ne 330650001
      ```
 
-     ![List rows step - screenshot](../images/L05/inspections-list-rows-step.png)
+     ![List rows step - screenshot](../images/L03/inspections-list-rows-step.png)
 
      > [!IMPORTANT]
      > 330650001 is the value of the Pending status reason on the Inspection table. You should verify that this is the correct value for your environment.
@@ -91,7 +91,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in **Select an output from previous steps**.
    - Using **Dynamic content**, select **value**.
 
-     ![Apply to Each step Dynamic content - screenshot](../images/L05/configure-loop.png)
+     ![Apply to Each step Dynamic content - screenshot](../images/L03/configure-loop.png)
 
 1. Add Update row step within the loop.
 
@@ -103,18 +103,18 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in **Row ID**.
    - Using **Dynamic content**, select **Inspection**.
 
-     ![Update row Dynamic content - screenshot](../images/L05/dynamic-content-inspection.png)
+     ![Update row Dynamic content - screenshot](../images/L03/dynamic-content-inspection.png)
 
    - Select **Show advanced options**.
    - In **Status Reason**, select **Pending**.
 
-     ![Reset inspections flow - screenshot](../images/L05/reset-inspections-flow.png)
+     ![Reset inspections flow - screenshot](../images/L03/reset-inspections-flow.png)
 
    - Select **Save**.
 
 ### Task 1.2: Run flow
 
-   ![Test flow - screenshot](../images/L05/test-flow.png)
+   ![Test flow - screenshot](../images/L03/test-flow.png)
 
 1. Select **Test**.
 1. Select **Manually**.
@@ -140,7 +140,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select **Apply**.
    - All inspections should be set to **Pending**.
 
-   ![Inspection records - screenshot](../images/L05/pending-inspections.png)
+   ![Inspection records - screenshot](../images/L03/pending-inspections.png)
 
 ## Exercise 2: Create an instant cloud flow
 
@@ -159,9 +159,9 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
    - Select **+ New** and then select **Automation** > **Cloud flow** > **Instant**.
    - Enter `ClearInspectionComments` for Flow name.
-   - Select the **PowerApps (V2)** trigger.
+   - Select the **When Power Apps calls a flow (V2)** trigger.
 
-     ![new instant flow name - screenshot](../images/L05/instant-flow-name.png)
+     ![new instant flow name - screenshot](../images/L03/instant-flow-name.png)
 
    - Select **Create**.
 
@@ -173,7 +173,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in *Input* and enter `InspectionID`.
    - Click in *Please enter your input* and enter `GUID`
 
-     ![Power Apps Trigger input - screenshot](../images/L05/powerapps-trigger.png)
+     ![Power Apps Trigger input - screenshot](../images/L03/powerapps-trigger.png)
 
 
 1. Add Update row step.
@@ -186,14 +186,14 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in **Row ID**.
    - Using **Dynamic content**, select **InspectionID**.
 
-     ![Ask in Power Apps Dynamic content - screenshot](../images/L05/dynamic-content-use-input.png)
+     ![Ask in Power Apps Dynamic content - screenshot](../images/L03/dynamic-content-use-input.png)
 
    - Select **Show advanced options**.
    - Click in **Comments**.
    - Select the **Expression** tab.
    - Enter `null`.
 
-     ![Null expression - screenshot](../images/L05/null-expression.png)
+     ![Null expression - screenshot](../images/L03/null-expression.png)
 
    - Select **OK**.
 
@@ -207,12 +207,12 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in **Row ID**.
    - Using **Dynamic content**, select **Permit (Value)**.
 
-     ![Retrieve row Dynamic content - screenshot](../images/L05/dynamic-content-permit.png)
+     ![Retrieve row Dynamic content - screenshot](../images/L03/dynamic-content-permit.png)
 
 1. Add Respond to PowerApps step.
 
    - Select **+ New step**.
-   - Search for `PowerApps` and select the **PowerApps** connector.
+   - Search for `Power Apps` and select the **Power Apps** connector.
    - Select the **Respond to a PowerApp or flow** action.
    - Select **+ Add an output**.
    - Select **Date**.
@@ -220,7 +220,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Click in *Enter a value to respond*.
    - Using **Dynamic content**, search for `start` and select **Start Date**.
 
-     ![Permit Start Date Dynamic content - screenshot](../images/L05/dynamic-content-start-date.png)
+     ![Permit Start Date Dynamic content - screenshot](../images/L03/dynamic-content-start-date.png)
 
    - Select **Save**.
    - Select the **<-** icon.
@@ -243,7 +243,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 
    - Select the **Power Automate** tab.
 
-     ![Add cloud flow to app - screenshot](../images/L05/add-flow-to-app.png)
+     ![Add cloud flow to app - screenshot](../images/L03/add-flow-to-app.png)
 
    - Select **+ Add flow**.
    - Select **ClearInspectionComments**.
@@ -258,7 +258,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Rename the button to `Clear Button`.
    - Change the **Text** value of the button to `"Clear Comments"`.
 
-     ![Form layout - screenshot](../images/L05/clear-button.png)
+     ![Form layout - screenshot](../images/L03/clear-button.png)
 
 1. Run the cloud flow.
 
@@ -331,7 +331,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Enter `newbuildsite` for Name.
    - Select **Build Site** for Table.
 
-     ![new business process flow name - screenshot](../images/L05/business-process-flow-name.png)
+     ![new business process flow name - screenshot](../images/L03/business-process-flow-name.png)
 
    - Select **Create**.
 
@@ -354,7 +354,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select **Inspection** for Entity.
    - Select **Apply**.
 
-     ![business process flow stages - screenshot](../images/L05/business-process-flow-stages.png)
+     ![business process flow stages - screenshot](../images/L03/business-process-flow-stages.png)
 
 1. Configure Build Site stage.
 
@@ -365,7 +365,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select the **+** icon under the existing data step.
    - Repeat adding steps until there are five data steps on the stage.
 
-     ![business process flow steps - screenshot](../images/L05/business-process-flow-data-steps.png)
+     ![business process flow steps - screenshot](../images/L03/business-process-flow-data-steps.png)
 
    - Select **Data Step #1**.
    - Select **Street Address** for Data Field.
@@ -392,7 +392,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Check **Required**.
    - Select **Apply**.
 
-     ![business process flow build site stage - screenshot](../images/L05/business-process-flow-build-site-stage.png)
+     ![business process flow build site stage - screenshot](../images/L03/business-process-flow-build-site-stage.png)
 
 1. Configure Initial Permit stage.
 
@@ -424,7 +424,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Check **Required**.
    - Select **Apply**.
 
-     ![business process flow permit stage - screenshot](../images/L05/business-process-flow-permit-stage.png)
+     ![business process flow permit stage - screenshot](../images/L03/business-process-flow-permit-stage.png)
 
 1. Configure Initial Inspection stage.
 
@@ -455,11 +455,11 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Check **Required**.
    - Select **Apply**.
 
-     ![business process flow permit stage - screenshot](../images/L05/business-process-flow-inspection-stage.png)
+     ![business process flow permit stage - screenshot](../images/L03/business-process-flow-inspection-stage.png)
 
 1. Save the business process flow.
 
-     ![business process flow action bar - screenshot](../images/L05/business-process-flow-actions.png)
+     ![business process flow action bar - screenshot](../images/L03/business-process-flow-actions.png)
 
    - Select **Save**.
    - Select **Validate**. Validation should be successful.
@@ -471,7 +471,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
 1. Add business process flow table to the solution.
 
    > [!IMPORTANT]
-   > You need to add the Business process flow table to the solution.
+   > You need to add the Business process flow table to the solution to prevent dependency errors when importing the solution.
 
    - Select **Add existing** and select **Table**.
    - Search for `build` and select the **New Build Site** table.
@@ -489,7 +489,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
    - Select **Build Sites**.
    - Select **+ New**.
 
-     ![business process flow for new record - screenshot](../images/L05/business-process-flow-new-record.png)
+     ![business process flow for new record - screenshot](../images/L03/business-process-flow-new-record.png)
 
    - Select the **New Site** stage in the business process flow.
    - Enter `Street` for Street.
@@ -503,7 +503,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L05\Compl
      > [!NOTE]
      > If the Next Stage button is not shown, refresh your browser.
 
-     ![business process flow required step - screenshot](../images/L05/business-process-flow-required-step.png)
+     ![business process flow required step - screenshot](../images/L03/business-process-flow-required-step.png)
 
    - Enter `Country` for Country.
 
