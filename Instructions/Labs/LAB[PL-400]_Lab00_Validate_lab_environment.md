@@ -75,7 +75,6 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 1. Close the PowerShell window.
 
-
 ## Exercise 2 – Power Platform license
 
 In this exercise, you will add Power Apps for Developer to the tenant and assign licenses to users.
@@ -84,7 +83,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Verify that you have your **Microsoft 365 credentials** from the Authorized Lab Host available.
 
-1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
+1. Navigate to the Microsoft 365 admin center `https://admin.cloud.microsoft`.
 
 1. Enter the email address from your Microsoft 365 credentials in the text box that says **Email, phone, or Skype**.
 
@@ -96,12 +95,11 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Select **Yes** to stay signed in.
 
-
 ### Task 2.2 – Sign up for Power Apps for Developer
 
-1. In a new browser tab, navigate to `https://powerapps.microsoft.com` 
+1. In a new browser tab, navigate to `https://powerapps.microsoft.com`.
 
-1. Select **Try for free**, then **Start building apps**.
+1. Select **Try for free**.
 
 1. Enter the `email address` provided by the Authorized Lab Host.
 
@@ -121,23 +119,21 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. The Power Apps Maker portal will open in a new tab.
 
-
 ### Task 2.3 – Verify Power Apps license is assigned to your user
 
-1. Navigate to the Microsoft 365 admin center `https://admin.microsoft.com`
+1. Navigate to the Microsoft 365 admin center `https://admin.cloud.microsoft`
 
 1. In the left navigation, expand **Users** and select **Active users**.
 
-1. Select your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab. 
+1. Select your user, **MOD Administrator**, to open the user details panel and select the **Licenses and apps** tab.
 
     ![Mod Administrator licenses.](../images/L00/mod-administrator-dev.png)
 
 1. Verify that **Microsoft Power Apps for Developer** is checked. Check it, if not.
 
-1. Select **Save changes**. 
+1. Select **Save changes**.
 
 1. Select the **X** in the top right of the user details panel to close the panel.
-
 
 ### Task 2.4 – Assign Power Apps licenses to other users
 
@@ -156,7 +152,6 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 1. Select **Save changes**.
 
 1. Select **Done**.
-
 
 ## Exercise 3 - Create environments
 
@@ -197,7 +192,6 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Explore the different areas in **Settings** that you may be interested in but do not make any changes yet.
 
-
 ### Task 3.2 – Create production environment
 
 1. Navigate to **Environments** in the Power Platform admin center `https://admin.powerplatform.microsoft.com/environments`
@@ -218,32 +212,3 @@ In this exercise, you will create a *Development* environment that you will do t
 
     > **Important**:
     > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
-
-
-## Exercise 4 - Azure subscription
-
-In this exercise, you will create an Azure subscription that you will be using in later labs.
-
-### Task 4.1 – Redeem Azure Pass
-
-1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
-
-1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials.
-
-1. Follow these instructions to redeem your Azure Pass.
-
-    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
-
-1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
-
-1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
-
-    > **Note**:
-    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
-
-1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
-
-1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
-
-    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
-

@@ -22,4 +22,4 @@ This directory provides instructor demonstrations for the PL-400 Microsoft Power
 
 - These demonstrations provide a minimal set of features to show your students. As time permits feel free to add, show, and discuss more things.
 
-- Solution files for the completed demos are available
+- Solution files for the starter and completed demos are available

@@ -23,3 +23,11 @@ Hyperlinks to each of the lab exercises and demos are listed below.
 | --- | --- |
 {% for activity in demos  %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
+
+## Setup
+
+{% assign setups = site.pages | where_exp:"page", "page.url contains '/Instructions/Setup'" %}
+| Learning Path | Setup |
+| --- | --- |
+{% for activity in setups %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% endfor %}
