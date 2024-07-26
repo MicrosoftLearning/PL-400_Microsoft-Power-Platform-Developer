@@ -35,7 +35,7 @@ Your solution will contain several tables upon completion of all the customizati
 - What are considered as best practices for managing changes in between environments (“Dev” to “Test” to “Prod”)? Are there additional considerations for team solution development?
 - What tables a user might need in the scenario that we are building?
 - What relationship behaviors would we consider enabling users to complete their tasks?
-- Remember to work in your *Development* environment with the customizations. Once the customizations are completed, published and tested in *Development*, and if everything works fine, the same will be deployed to *Live*.
+- Remember to work in your *Development* environment with the customizations. Once the customizations are completed, published and tested in *Development*, and if everything works fine, the same will be deployed to *Production*.
 
 ## Starter solution
 

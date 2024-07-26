@@ -155,7 +155,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 ## Exercise 3 - Create environments
 
-In this exercise, you will create a *Development* environment that you will do the majority of your lab work in and a *Live* environment to use to deploy solutions.
+In this exercise, you will create a *Development* environment that you will do the majority of your lab work in and a *Production* environment to use to deploy solutions.
 
 > [!NOTE]
 > Depending on the browser that you are using, it is suggested that you disable any pop-up blockers that maybe enabled. This will prevent popup screens from not appearing as they should.
@@ -198,7 +198,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Select **+ New**.
 
-1. In the **Name** text box, enter `[my initials] Live`. (Example: PL Live).
+1. In the **Name** text box, enter `[my initials] Production`. (Example: PL Production).
 
 1. In the **Type** drop-down, select **Developer**.
 
@@ -206,9 +206,9 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. On the **Add Dataverse** tab, select **Save**.
 
-1. You should now see the following environments; Contoso (default), Development, and Live.
+1. You should now see the following environments; Contoso (default), Development, and Production.
 
     ![Environments.](../images/L00/environments-all.png)
 
     > **Important**:
-    > You will use the *Development* environment for all customizations in the labs. The *Live* environment will act as your test/production environment.
+    > You will use the *Development* environment for all customizations in the labs. The *Production* environment will act as your test/production environment.
