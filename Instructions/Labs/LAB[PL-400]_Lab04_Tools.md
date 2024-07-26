@@ -31,32 +31,11 @@ We will install and configure the following tools:
 - Which tools do you require?
 - Which IDE(s) do you require?
 
-## Exercise 1: Power Platform CLI
-
-**Objective:** In this exercise, you will verify the Power Platform CLI.
-
-1. Verify Power Apps CLI is installed.
-
-   ```dos
-   pac install latest
-   ```
-
-1. List the Power Apps CLI tools.
-
-   ```dos
-   pac tool list
-   ```
-
-   ![pac tools - screenshot](../images/L06/pac-tool-list.png)
-
-   > [!NOTE]
-   > Power Platform tools will be installed on first launch.
-
-## Exercise 2: Configuration Migration Tool
+## Exercise 1: Configuration Migration Tool
 
 **Objective:** In this exercise, you will copy reference data between environments.
 
-### Task 2.1: Export data from Development
+### Task 1.1: Export data from Development
 
 1. Open a Command Prompt.
 1. Launch the Configuration Migration Tool with the following command.
@@ -65,7 +44,7 @@ We will install and configure the following tools:
    pac tool cmt
    ```
 
-   ![Configuration Migration Tool - screenshot](../images/L06/pac-tool-cmt.png)
+   ![Configuration Migration Tool - screenshot](../images/L04/pac-tool-cmt.png)
 
 1. Select **Create schema** and select **Continue**.
 1. Select **Office 365** for *Deployment Type*.
@@ -73,11 +52,11 @@ We will install and configure the following tools:
 1. Check **Show Advanced**.
 1. Enter your tenant credentials.
 
-   ![Tools login - screenshot](../images/L06/pac-tools-login.png)
+   ![Tools login - screenshot](../images/L04/pac-tools-login.png)
 
 1. Select **Login**.
 
-   ![Tools environments - screenshot](../images/L06/pac-tools-environments.png)
+   ![Tools environments - screenshot](../images/L04/pac-tools-environments.png)
 
 1. Select your **Development** environment and select **Login**.
 1. Select the **Permit Management** solution.
@@ -85,7 +64,7 @@ We will install and configure the following tools:
 1. Select **Build Site, City, Country/Region, State/Province, Street Address, ZIP/Postal Code** columns.
 1. Select **Add Fields >**.
 
-   ![Configuration Migration Tool table and columns- screenshot](../images/L06/pac-tool-cmt-build-site.png)
+   ![Configuration Migration Tool table and columns- screenshot](../images/L04/pac-tool-cmt-build-site.png)
 
 1. Select the **Permit Type** table under *Select Entity*.
 1. Select **Name, Permit Type, Require Inspections, Require Size** columns.
@@ -97,12 +76,12 @@ We will install and configure the following tools:
 1. Enter `permitdata.zip`.
 1. Select **Save**.
 
-   ![Configuration Migration Tool export - screenshot](../images/L06/pac-tool-cmt-export.png)
+   ![Configuration Migration Tool export - screenshot](../images/L04/pac-tool-cmt-export.png)
 
 1. Select **Export Data**.
 1. Select **Exit**.
 
-### Task 2.2: Import data to Production
+### Task 1.2: Import data to Production
 
 1. Open the Command Prompt.
 1. Run the command `pac tool cmt`.
@@ -120,15 +99,15 @@ We will install and configure the following tools:
 1. Select **Exit**.
 1. Close the Configuration Migration Tool window.
 
-## Exercise 3: Community tools
+## Exercise 2: Community tools
 
 **Objective:** In this exercise, you will use FetchXmlBuilder in the XrmToolBox to find inspections with status reason New request or Pending.
 
-### Task 3.1: Install XrmToolBox
+### Task 2.1: Install XrmToolBox
 
 1. Navigate to XrmToolBox `https://www.xrmtoolbox.com`
 
-   ![XrmToolBox website - screenshot](../images/L06/xrmtoolbox-website.png)
+   ![XrmToolBox website - screenshot](../images/L04/xrmtoolbox-website.png)
 
 1. Download the latest version of **XrmToolBox**.
 1. Right click on the *XrmToolBox.zip* file and select **Properties**.
@@ -136,17 +115,13 @@ We will install and configure the following tools:
 1. Extract the XrmToolBox.zip file to a folder.
 1. Run **XrmToolBox.exe** from the folder.
 
-   ![XrmToolBox app - screenshot](../images/L06/xrmtoolbox-app.png)
+   ![XrmToolBox app - screenshot](../images/L04/xrmtoolbox-app.png)
 
 1. Select **Open Tool Library**.
 1. Search for `fetchxml` and select **FetchXML Builder by Jonas Rapp**.
 
-   ![XrmToolBox Tool Library - screenshot](../images/L06/xrmtoolbox-tool-library.png)
+   ![XrmToolBox Tool Library - screenshot](../images/L04/xrmtoolbox-tool-library.png)
 
-1. Select **Install**.
-1. Select **Yes**.
-1. Select **Close**.
-1. Search for `early` and select **Early Bound Generator by Daryl LaBar**.
 1. Select **Install**.
 1. Select **Yes**.
 1. Select **Close**.
@@ -156,7 +131,7 @@ We will install and configure the following tools:
 1. Select **Close**.
 1. Close the *Tool Library* tab.
 
-### Task 3.2: FetchXML query
+### Task 2.2: FetchXML query
 
 1. Select the **Tools** tab in XRMToolBox.
 1. Search for `fetchxml` and select **FetchXML Builder**.
@@ -177,7 +152,7 @@ We will install and configure the following tools:
 1. Select **OK**.
 1. Select **Continue**.
 
-   ![FetchXML Builder - screenshot](../images/L06/fetchxml-builder.png)
+   ![FetchXML Builder - screenshot](../images/L04/fetchxml-builder.png)
 
 1. Click on the **(entity)** node.
 1. Select **contoso_inspection** in the Entity name drop down.
@@ -192,7 +167,7 @@ We will install and configure the following tools:
 1. Click on the **filter** node.
 1. Select **or** in the Filter type drop down.
 
-   ![FetchXML Builder query - screenshot](../images/L06/fetchxml-query-builder.png)
+   ![FetchXML Builder query - screenshot](../images/L04/fetchxml-query-builder.png)
 
 1. Select **View** and then select **FetchXML**. The FetchXML should look like the following query.
 

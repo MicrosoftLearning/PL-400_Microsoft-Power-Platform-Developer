@@ -28,7 +28,7 @@ A starter solution file for this lab can be found in the C:\Labfiles\L03\Starter
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L03\Completed folder.
+Completed solution files for this lab can be found in the C:\Labfiles\L03\Completed folder.
 
 ## Exercise 1: Create a scheduled cloud flow
 
@@ -38,7 +38,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -150,7 +150,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -174,7 +174,6 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Click in *Please enter your input* and enter `GUID`
 
      ![Power Apps Trigger input - screenshot](../images/L03/powerapps-trigger.png)
-
 
 1. Add Update row step.
 
@@ -229,7 +228,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -319,7 +318,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Open the Permit Management solution.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -483,7 +482,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
 
 1. Create a Build Site.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Build Sites**.
@@ -528,3 +527,95 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L03\Compl
    - Select **Initial Inspection** for Inspection Type.
    - Select tomorrow's date for Scheduled Date.
    - Select **Save**.
+
+## Exercise 4: Export and import solution
+
+**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
+
+### Task 4.1: Solution checker
+
+1. Select the Permit Management solution.
+
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
+   - Select your **Development** environment.
+   - Select **Solutions**.
+   - Select the **Permit Management** solution.
+
+     ![Select solution - screenshot](../images/S03/select-solution.png)
+
+1. Run solution checker.
+
+   - Select **Solution checker** and then select **Run**.
+
+     ![Run solution checker - screenshot](../images/S03/solution-checker-run.png)
+
+   - Wait for the run to complete as it may take several minutes.
+
+   - Open the **Permit Management** solution.
+
+   - Select the **Overview** tab in the solution.
+
+     ![Accessibility label - screenshot](../images/S03/solution-overview-tab.png)
+
+   - Under **Solution status overview** then select **Run check** and wait for the run to complete.
+
+   - There should be zero issues.
+
+     ![Solution checker with zero issues result - screenshot](../images/S03/solution-checker-sero-issues.png)
+
+### Task 4.2: Export solution
+
+1. Export managed solution.
+
+   - Select **Export**.
+
+     ![Export solution - screenshot](../images/S03/solution-overview-export.png)
+
+   - Select **Publish** and wait for the publishing to complete.
+
+     ![Publish solution - screenshot](../images/S03/export-solution-publish.png)
+
+   - Select **Next**.
+   - Set the version number to `1.0.0.3`.
+   - Select **Managed**.
+
+     ![Export solution - screenshot](../images/S03/export-solution-managed.png)
+
+   - Select **Export**.
+
+     ![Export solution - screenshot](../images/S03/export-solution-download.png)  
+
+   - Select **Download** to download the managed solution on your machine.
+
+1. Export unmanaged solution.
+
+   - Select **Export** again.
+   - Select **Next**.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.3`.
+   - Select **Unmanaged**.
+  
+    ![Export unmanaged solution - screenshot](../images/S03/export-solution-unmanaged.png)
+
+   - Select **Export**.
+   - Select **Download** to download the unmanaged solution on your machine.
+
+### Task 4.3: Import solution
+
+1. Import the Permit Management solution.
+
+   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
+   - Select your **Production** environment.
+
+1. Import solution.
+
+   - Select **Solutions**.
+   - Select **Import solution**.
+   - Select **Browse**.
+   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
+
+     ![Select solution file - screenshot](../images/S03/import-solution-file.png)
+
+   - Select **Next**.
+   - Select **Import**.
+   - Wait for import to complete.
+   - Navigate to both the model-driven and canvas apps you built and add a few records and test the apps.
