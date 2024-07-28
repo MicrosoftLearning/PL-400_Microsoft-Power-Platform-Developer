@@ -12,7 +12,7 @@ demo:
 
 ## Task 3.1 - Add columns to Pets table
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
 
 1. Select the **Demo** environment.
 1. Select **Solutions** from the left navigation pane.

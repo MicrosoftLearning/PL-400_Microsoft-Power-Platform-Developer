@@ -31,6 +31,10 @@ We will install and configure the following tools:
 - Which tools do you require?
 - Which IDE(s) do you require?
 
+## Starter solution
+
+A starter solution file for this lab can be found in the  C:\Labfiles\L04\Starter folder.
+
 ## Exercise 1: Configuration Migration Tool
 
 **Objective:** In this exercise, you will copy reference data between environments.

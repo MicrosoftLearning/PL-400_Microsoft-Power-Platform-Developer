@@ -33,15 +33,15 @@ As part of configuring the custom connector, you will complete the following
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L13\Starter folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L11\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L13\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L11\Completed folder.
 
 ## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L13\Resources folder.
+Complete source code files for this lab can be found in the  C:\Labfiles\L11\Resources folder.
 
 ## Exercise 1: Create the Azure Function
 
@@ -51,13 +51,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Create function
 
-   - Sign in to the [Azure portal](https://portal.azure.com).
+   - Sign in to the Azure portal `https://portal.azure.com`.
 
    - Select **All Resources**, search for `pl400wh`, and open the function app you created in the previous lab.
 
    - Select the **Functions** tab.
 
-     ![Add function - screenshot](../images/L13/azure-portal-create-function.png)
+     ![Add function - screenshot](../images/L11/azure-portal-create-function.png)
 
    - Select **+ Create**.
 
@@ -75,7 +75,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select the **Code + Test** tab.
 
-     ![Code and test - screenshot](../images/L13/azure-portal-function-code-test.png)
+     ![Code and test - screenshot](../images/L11/azure-portal-function-code-test.png)
 
    - Add the Using Statements below to the function.
 
@@ -84,7 +84,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      using Newtonsoft.Json.Linq;
      ```
 
-     ![Add using statements - screenshot](../images/L13/Mod_2_Custom_Connector_image8.png)
+     ![Add using statements - screenshot](../images/L11/Mod_2_Custom_Connector_image8.png)
 
 1. Clean up the Run method
 
@@ -92,7 +92,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Remove everything but the log line from the **Run** method.
 
-    ![Edit run method - screenshot](../images/L13/Mod_2_Custom_Connector_image10.png)
+    ![Edit run method - screenshot](../images/L11/Mod_2_Custom_Connector_image10.png)
 
 1. Add class for the request.
 
@@ -108,7 +108,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      }
      ```
 
-     ![Add class - screenshot](../images/L13/add-class.png)
+     ![Add class - screenshot](../images/L11/add-class.png)
 
 1. Get the Request body and deserialize it as **CPMCalcRequest**.
 
@@ -124,7 +124,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      CPMCalcRequest calcReq = JsonConvert.DeserializeObject<CPMCalcRequest>(requestBody);
      ```
 
-    ![Add code to run method - screenshot](../images/L13/Mod_2_Custom_Connector_image11.png)
+    ![Add code to run method - screenshot](../images/L11/Mod_2_Custom_Connector_image11.png)
 
 1. Calculate the CPM and return it form the Run method
 
@@ -143,7 +143,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      });
      ```
 
-     ![Updated run method - screenshot](../images/L13/Mod_2_Custom_Connector_image12.png)
+     ![Updated run method - screenshot](../images/L11/Mod_2_Custom_Connector_image12.png)
 
    - Select **Save**.
 
@@ -176,11 +176,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select the **Code + Test** tab and then select **Get function URL**.
 
-     ![Get function URL - screenshot](../images/L13/azure-portal-get-function-url.png)
+     ![Get function URL - screenshot](../images/L11/azure-portal-get-function-url.png)
 
    - Select **Copy to clipboard** against the **default (Function key)** and then select **Close**.
 
-     ![Copy function URL - screenshot](../images/L13/azure-portal-function-get-url.png)
+     ![Copy function URL - screenshot](../images/L11/azure-portal-function-get-url.png)
 
    - Save the **URL** in a notepad, you will need it in the next exercise.
 
@@ -188,7 +188,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select the **Function Keys** tab.
 
-     ![Show function keys - screenshot](../images/L13/azure-portal-function-keys.png)
+     ![Show function keys - screenshot](../images/L11/azure-portal-function-keys.png)
 
    - Select **Copy to clipboard** against the **default** key.
 
@@ -202,7 +202,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Open the Permit Management solution
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -210,27 +210,27 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **+ New** and select **Automation** and select **Custom connector**.
 
-     ![Create new custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image17.png)
+     ![Create new custom connector - screenshot](../images/L11/Mod_2_Custom_Connector_image17.png)
 
    - Enter `CPM Calculator` for **Connector Name**.
 
-     ![Rename custom connector - screenshot](../images/L13/Mod_2_Custom_Connector_image18.png)
+     ![Rename custom connector - screenshot](../images/L11/Mod_2_Custom_Connector_image18.png)
 
    - Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
 
    - Remove https:// and everything after .net.
 
-     ![Paste host URL - screenshot ](../images/L13/custom-connector-host.png)
+     ![Paste host URL - screenshot ](../images/L11/custom-connector-host.png)
 
 1. Add API key for security.
 
    - Select **Security ->**.
 
-     ![Select security - screenshot ](../images/L13/Mod_2_Custom_Connector_image20.png)
+     ![Select security - screenshot ](../images/L11/Mod_2_Custom_Connector_image20.png)
 
    - Select **API Key** for Authentication type.
 
-     ![Select API key - screenshot](../images/L13/Mod_2_Custom_Connector_image21.png)
+     ![Select API key - screenshot](../images/L11/Mod_2_Custom_Connector_image21.png)
 
    - Enter `API Key` for Parameter label.
 
@@ -238,17 +238,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **Query** for Parameter Location.
 
-     ![API key - screenshot](../images/L13/Mod_2_Custom_Connector_image22.png)
+     ![API key - screenshot](../images/L11/Mod_2_Custom_Connector_image22.png)
 
 1. Define action.
 
    - Select **Definition**.
 
-     ![Definition - screenshot](../images/L13/Mod_2_Custom_Connector_image23.png)
+     ![Definition - screenshot](../images/L11/Mod_2_Custom_Connector_image23.png)
 
    - Select **New Action**. The action describes each operation that the API has. These can be manually defined like we are doing here or can be imported from Open API for larger APIs.
 
-     ![Create new action - screenshot](../images/L13/Mod_2_Custom_Connector_image25.png)
+     ![Create new action - screenshot](../images/L11/Mod_2_Custom_Connector_image25.png)
 
    - Enter `CPM Calculator` for Summary
 
@@ -256,17 +256,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Enter `GetRequiredCPM` for Operation ID.
 
-     ![Action information - screenshot](../images/L13/Mod_2_Custom_Connector_image26.png)
+     ![Action information - screenshot](../images/L11/Mod_2_Custom_Connector_image26.png)
 
    - Under **Request**, select **+ Import from Sample**.
 
-     ![Import request from sample - screenshot](../images/L13/Mod_2_Custom_Connector_image27.png)
+     ![Import request from sample - screenshot](../images/L11/Mod_2_Custom_Connector_image27.png)
 
    - Select **POST** for **Verb**.
 
    - Paste the function **URL** from your notepad and remove everything after **CPMTrigger**.
 
-     ![Paste URL - screenshot](../images/L13/custom-connector-import-from-sample.png)
+     ![Paste URL - screenshot](../images/L11/custom-connector-import-from-sample.png)
 
    - Paste the json below in the **Body** field.
 
@@ -279,13 +279,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      }
      ```
 
-     ![Import sample - screenshot](../images/L13/Mod_2_Custom_Connector_image29.png)
+     ![Import sample - screenshot](../images/L11/Mod_2_Custom_Connector_image29.png)
 
    - Select **Import**.
 
    - Under **Response**, select **+ Add default response**.
 
-     ![Add default response - screenshot](../images/L13/Mod_2_Custom_Connector_image30.png)
+     ![Add default response - screenshot](../images/L11/Mod_2_Custom_Connector_image30.png)
 
    - Paste the json below in the **Body**.
 
@@ -293,7 +293,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      {"cpm":200}
      ```
 
-     ![Import response - screenshot](../images/L13/Mod_2_Custom_Connector_image31.png)
+     ![Import response - screenshot](../images/L11/Mod_2_Custom_Connector_image31.png)
 
    - Select **Import**.
 
@@ -301,29 +301,29 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **Create Connector** and wait for the connector to be created.
 
-     ![Create connector - screenshot](../images/L13/Mod_2_Custom_Connector_image24.png)
+     ![Create connector - screenshot](../images/L11/Mod_2_Custom_Connector_image24.png)
 
 1. Test the connector
 
    - Advance to **Test**.
 
-     ![Select test - screenshot](../images/L13/Mod_2_Custom_Connector_image33.png)
+     ![Select test - screenshot](../images/L11/Mod_2_Custom_Connector_image33.png)
 
    - Select **+ New connection**. This will open a New window.
 
-     ![New connection - screenshot](../images/L13/Mod_2_Custom_Connector_image34.png)
+     ![New connection - screenshot](../images/L11/Mod_2_Custom_Connector_image34.png)
 
    - Go back to the notepad and copy the function key.
 
    - Go back to the connector and paste the value you copied.
 
-     ![Create connection - screenshot](../images/L13/Mod_2_Custom_Connector_image36.png)
+     ![Create connection - screenshot](../images/L11/Mod_2_Custom_Connector_image36.png)
 
    - Select **Create connection**.
 
    - Select the **Refresh** icon.
 
-     ![Select connection - screenshot](../images/L13/custom-connector-connection.png)
+     ![Select connection - screenshot](../images/L11/custom-connector-connection.png)
 
    - The connection should be selected.
 
@@ -334,13 +334,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      - Enter 15 for **Length**.
      - Enter 5 for **AirChanges**..
 
-     ![Test operation - screenshot](../images/L13/Mod_2_Custom_Connector_image37.png)
+     ![Test operation - screenshot](../images/L11/Mod_2_Custom_Connector_image37.png)
 
    - Select **Test operation**.
 
    - You should get a CPM value back.
 
-     ![Response value - screenshot](../images/L13/Mod_2_Custom_Connector_image38.png)
+     ![Response value - screenshot](../images/L11/Mod_2_Custom_Connector_image38.png)
 
    - Select **Close**,
 
@@ -356,7 +356,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
 1. Open the Permit Management solution
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -364,17 +364,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **Apps** and select to open the **Inspector** Canvas app.
 
-     ![Edit application - screenshot](../images/L13/Mod_2_Custom_Connector_image39.png)
+     ![Edit application - screenshot](../images/L11/Mod_2_Custom_Connector_image39.png)
 
 1. Add new screen to the application.
 
    - Select **New Screen** and then select **Blank**.
 
-     ![New blank screen - screenshot ](../images/L13/canvas-app-add-screen.png)
+     ![New blank screen - screenshot ](../images/L11/canvas-app-add-screen.png)
 
    - Rename the screen `CPM Calc Screen`.
 
-     ![Rename screen - screenshot](../images/L13/Mod_2_Custom_Connector_image41.png)
+     ![Rename screen - screenshot](../images/L11/Mod_2_Custom_Connector_image41.png)
 
 1. Add Input Text to the new screen.
 
@@ -382,55 +382,55 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **+ Insert** tab.
 
-     ![Insert button screenshot](../images/L13/Mod_2_Custom_Connector_image42.png)
+     ![Insert button screenshot](../images/L11/Mod_2_Custom_Connector_image42.png)
 
    - Select **Text input**.
 
-     ![Add control to screens - screenshot ](../images/L13/Mod_2_Custom_Connector_image43.png)
+     ![Add control to screens - screenshot ](../images/L11/Mod_2_Custom_Connector_image43.png)
 
    - Select the **Tree View**.
 
-     ![Select tree view - screenshot](../images/L13/Mod_2_Custom_Connector_image44.png)
+     ![Select tree view - screenshot](../images/L11/Mod_2_Custom_Connector_image44.png)
 
    - Rename the Text Input `Width Text`.
 
    - Remove the **Default** property of the **Width** text input.
 
-     ![Remove default value - svreenshot](../images/L13/Mod_2_Custom_Connector_image45.png)
+     ![Remove default value - svreenshot](../images/L11/Mod_2_Custom_Connector_image45.png)
 
    - Change the **HintText** property of the **Width** text input to `"Provide Width"`.
 
-    ![Provide hint text - screenshot](../images/L13/Mod_2_Custom_Connector_image46.png)
+    ![Provide hint text - screenshot](../images/L11/Mod_2_Custom_Connector_image46.png)
 
    - The **Width Text** input should now look like the image below.
 
-     ![Width text - screenshot](../images/L13/Mod_2_Custom_Connector_image47.png)
+     ![Width text - screenshot](../images/L11/Mod_2_Custom_Connector_image47.png)
 
 1. Add Height, Length, and Air Change Input Text controls.
 
    - Copy the **Width Text**.
 
-     ![Copy input text - screenshot](../images/L13/Mod_2_Custom_Connector_image48.png)
+     ![Copy input text - screenshot](../images/L11/Mod_2_Custom_Connector_image48.png)
 
    - Paste the text input you copied to the **CPM Calc Screen.**
 
-     ![Paste text input - screenshot](../images/L13/Mod_2_Custom_Connector_image49.png)
+     ![Paste text input - screenshot](../images/L11/Mod_2_Custom_Connector_image49.png)
 
    - Paste the text input you copied to the **CPM Calc Screen** two more times.
 
    - The **CPMCalcScreen** should now have total of four text inputs.
 
-     ![Text input controls - screenshot](../images/L13/Mod_2_Custom_Connector_image50.png)
+     ![Text input controls - screenshot](../images/L11/Mod_2_Custom_Connector_image50.png)
 
    - Rename the input text controls **Height Text**, **Length Text**, and **Air Change Text**.
 
-     ![Rename controls - screenshot](../images/L13/Mod_2_Custom_Connector_image51.png)
+     ![Rename controls - screenshot](../images/L11/Mod_2_Custom_Connector_image51.png)
 
    - Change the **HintText** for the three text inputs you renamed to **Provide Height**, **Provide Length**, and **Provide Air Change**, respectively.
 
    - Resize and reposition the text inputs as shown in the image below.
 
-     ![Input text control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image52.png)
+     ![Input text control layout - screenshot](../images/L11/Mod_2_Custom_Connector_image52.png)
 
 1. Add button.
 
@@ -446,7 +446,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Resize and reposition the button as shown in the image below.
 
-      ![Reposition button - screenshot](../images/L13/Mod_2_Custom_Connector_image54.png)
+      ![Reposition button - screenshot](../images/L11/Mod_2_Custom_Connector_image54.png)
 
 1. Add the result label to the screen
 
@@ -460,13 +460,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Place the label to the right of the text inputs.
 
-      ![Control layout - screenshot](../images/L13/Mod_2_Custom_Connector_image55.png)
+      ![Control layout - screenshot](../images/L11/Mod_2_Custom_Connector_image55.png)
 
 1. Add the Custom Connector to the app.
 
    - Select the **Data** tab.
   
-     ![Add data - screenshot](../images/L13/Mod_2_Custom_Connector_image55-1.png)
+     ![Add data - screenshot](../images/L11/Mod_2_Custom_Connector_image55-1.png)
 
    - Select **+ Add data**.
 
@@ -474,11 +474,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
 
    - Select **CPM Connector**.
 
-     ![CPM Calculator connector - screenshot](../images/L13/Mod_2_Custom_Connector_image56.png)
+     ![CPM Calculator connector - screenshot](../images/L11/Mod_2_Custom_Connector_image56.png)
 
    - Select **CPM Calculator** again.
 
-     ![Added connector - screenshot](../images/L13/Mod_2_Custom_Connector_image58.png)
+     ![Added connector - screenshot](../images/L11/Mod_2_Custom_Connector_image58.png)
 
 1. Get the calculated value when the button is selected
 
@@ -492,11 +492,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      Set(CalculatedValue, Concatenate("Calculated CPM ", Text(Defaulttitle.GetRequiredCPM({Width: 'Width Text'.Text, Height: 'Height Text'.Text, Length: 'Length Text'.Text, AirChanges: 'Air Change Text'.Text}).cpm)))
      ```
 
-     ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image59.png)
+     ![On-Select formula - screenshot](../images/L11/Mod_2_Custom_Connector_image59.png)
 
    - Select the **Result Label** and set the **Text** property to the **CalculatedValue** variable.
 
-     ![Label text value - screenshot](../images/L13/Mod_2_Custom_Connector_image60.png)
+     ![Label text value - screenshot](../images/L11/Mod_2_Custom_Connector_image60.png)
 
 1. Add button to the Main screen.
 
@@ -522,27 +522,27 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L13\Res
      Set(CalculatedValue, ""); Navigate('CPM Calc Screen', ScreenTransition.None);
      ```
 
-     ![On-Select formula - screenshot](../images/L13/Mod_2_Custom_Connector_image61.png)
+     ![On-Select formula - screenshot](../images/L11/Mod_2_Custom_Connector_image61.png)
 
 1. Test the app.
 
    - Select the **Main Screen** and select **Preview the app**.
 
-    ![Preview app - screenshot](../images/L13/Mod_2_Custom_Connector_image62.png)
+    ![Preview app - screenshot](../images/L11/Mod_2_Custom_Connector_image62.png)
 
    - Select **CPM Calculator**.
 
    - The CPM Calc screen should load.
 
-     ![Calculator page - screenshot](../images/L13/Mod_2_Custom_Connector_image63.png)
+     ![Calculator page - screenshot](../images/L11/Mod_2_Custom_Connector_image63.png)
 
    - Enter values into the four fields and select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
 
-     ![Submit form - screenshot](../images/L13/Mod_2_Custom_Connector_image64.png)
+     ![Submit form - screenshot](../images/L11/Mod_2_Custom_Connector_image64.png)
 
    - The **Result Label** should show the calculated result from the Custom Connector.
 
-     ![Calculation result - screenshot](../images/L13/Mod_2_Custom_Connector_image65.png)
+     ![Calculation result - screenshot](../images/L11/Mod_2_Custom_Connector_image65.png)
 
    - Close the Preview.
 

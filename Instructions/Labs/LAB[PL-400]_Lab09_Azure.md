@@ -25,15 +25,15 @@ As part of building the Azure Function, you will complete the following:
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L11\Starter folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L11\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
 
 ## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L11\Resources folder.
+Complete source code files for this lab can be found in the  C:\Labfiles\L09\Resources folder.
 
 ## Exercise 1: Configure an Microsoft Entra application user and add the user to Dataverse
 
@@ -43,23 +43,23 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L11\Res
 
 1. Navigate to Microosft Entra portal
 
-- Sign in to the [Microsoft Entra  portal](https://entra.microsoft.com/).
+- Sign in to the Microsoft Entra  portal `https://entra.microsoft.com`.
 
    > **Note:** You must be logged in with an organization account in the same tenant as your Microsoft Dataverse Environment. This does **NOT** have to be the account for your Azure subscription.
 
 1. Expand **Applications** and select **App registrations**.
 
-   ![App registrations - screenshot](../images/L11/aad-app-registrations.png)
+   ![App registrations - screenshot](../images/L09/aad-app-registrations.png)
 
 1. Select **+ New registration**.
 
-   ![New App registration - screenshot](../images/L11/aad-app-new-registration.png)
+   ![New App registration - screenshot](../images/L09/aad-app-new-registration.png)
 
 1. Enter `Inspection Router` for **Name**
 
 1. Select **Accounts in this organizational directory only** for **Supported account types**.
 
-   ![Register application - screenshot](../images/L11/Mod_02_Azure_Functions_image4.png)
+   ![Register application - screenshot](../images/L09/Mod_02_Azure_Functions_image4.png)
 
 1. Select **Register**.
 
@@ -73,7 +73,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L11\Res
 
 1. Set **oauth2AllowImplicitFlow** to **true**.
 
-   ![App registration manifest - screenshot](../images/L11/aad-app-registration-manifest.png)
+   ![App registration manifest - screenshot](../images/L09/aad-app-registration-manifest.png)
 
 1. Select **Save**.
 
@@ -83,7 +83,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L11\Res
 
 1. Select **+Add a permission**.
 
-   ![App registration Request API permissions - screenshot](../images/L11/aad-app-registration-api-permissions.png)
+   ![App registration Request API permissions - screenshot](../images/L09/aad-app-registration-api-permissions.png)
 
 1. Select **Dynamics CRM**.
 
@@ -91,7 +91,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L11\Res
 
 1. Check **user_impersonation**.
 
-   ![App registration Dataverse API permissions - screenshot](../images/L11/aad-app-registration-dataverse-api-permissions.png)
+   ![App registration Dataverse API permissions - screenshot](../images/L09/aad-app-registration-dataverse-api-permissions.png)
 
 1. Select **Add permissions**.
 
@@ -101,21 +101,21 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L11\Res
 
 1. Click **+ New client secret**.
 
-   ![New client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image6.png)
+   ![New client secret - screenshot](../images/L09/Mod_02_Azure_Functions_image6.png)
 
 1. Enter `Inspection Routing` for **Description**, select **(365 days) 12 months** for **Expires**
 
-   ![Add client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image7.png)
+   ![Add client secret - screenshot](../images/L09/Mod_02_Azure_Functions_image7.png)
 
 1. Select **Add**.
 
 1. Copy the **Value** and save it on a notepad. You will need this value in future tasks.
 
-   ![Copy value - screenshot](../images/L11/Mod_02_Azure_Functions_image8.png)
+   ![Copy value - screenshot](../images/L09/Mod_02_Azure_Functions_image8.png)
 
 1. Select **Overview**
 
-   ![Copy app id - screenshot](../images/L11/aad-app-registration-overview.png)
+   ![Copy app id - screenshot](../images/L09/aad-app-registration-overview.png)
 
 1. Copy the **Application (client) ID.** and save it on a notepad. You will need this value in future tasks.
 
@@ -125,7 +125,7 @@ In this task, you will create the security role needed for the routing logic.
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -133,23 +133,23 @@ In this task, you will create the security role needed for the routing logic.
 
    - Select **+ New** and then select **Security** and select **Security role**.
 
-     ![New security role - screenshot](../images/L11/Mod_02_Azure_Functions_image12.png)
+     ![New security role - screenshot](../images/L09/Mod_02_Azure_Functions_image12.png)
 
    - Enter `Inspection Router` for **Role Name**, select the root business unit.
 
    - Uncheck **Include App Opener privileges**.
 
-     ![New security role pane - screenshot](../images/L11/create-new-role-pane.png)
+     ![New security role pane - screenshot](../images/L09/create-new-role-pane.png)
 
    - Select **Save**.
 
    - Search for the **systemuser** table and set the **Read** and **Append To** privileges to **Organization**.
 
-     ![User table privileges - screenshot](../images/L11/security-role-privileges-user.png)
+     ![User table privileges - screenshot](../images/L09/security-role-privileges-user.png)
 
    - Search for the **Inspection** table and set the **Read**, **Write**, **Append,** and **Assign** privileges to **Organization**.
 
-     ![Inspection table privileges - screenshot](../images/L11/security-role-privileges-inspection.png)
+     ![Inspection table privileges - screenshot](../images/L09/security-role-privileges-inspection.png)
 
    - Select **Save**.
 
@@ -159,13 +159,13 @@ In this task, you will create the security role needed for the routing logic.
 
 In this task, you will create the application user in Dataverse and associate it with the Microsoft Entra app that you just registered.
 
-1. Navigate to the [Power Platform admin center](https://admin.powerplatform.microsoft.com).
+1. Navigate to the Power Platform admin center `https://admin.powerplatform.microsoft.com`.
 
 1. Select **Environments**.
 
 1. Select your **Development** environment.
 
-     ![Development environment details - screenshot](../images/L11/development-environment.png)
+     ![Development environment details - screenshot](../images/L09/development-environment.png)
 
 1. Select **See all** under **S2S apps**.
 
@@ -173,25 +173,25 @@ In this task, you will create the application user in Dataverse and associate it
 
 1. Select **+ Add an app**.
 
-   ![New application user - screenshot](../images/L11/Mod_02_Azure_Functions_image19.png)
+   ![New application user - screenshot](../images/L09/Mod_02_Azure_Functions_image19.png)
 
 1. Select the **Inspection Router** app registration and then select **Add**.
 
-   ![Switch form - screenshot](../images/L11/Mod_02_Azure_Functions_image20.png)
+   ![Switch form - screenshot](../images/L09/Mod_02_Azure_Functions_image20.png)
 
 1. Select your root Business Unit.
 
 1. Select the edit icon under **Security roles**.
 
-   ![Edit security roles- screenshot](../images/L11/Mod_02_Azure_Functions_image21.png)
+   ![Edit security roles- screenshot](../images/L09/Mod_02_Azure_Functions_image21.png)
 
 1. Select the Inspection Router security role
 
-   ![ Add security role - screenshot](../images/L11/Mod_02_Azure_Functions_image26.png)
+   ![ Add security role - screenshot](../images/L09/Mod_02_Azure_Functions_image26.png)
 
 1. Select **Save**.
 
-   ![Create app user - screenshot](../images/L11/Mod_02_Azure_Functions_image27.png)
+   ![Create app user - screenshot](../images/L09/Mod_02_Azure_Functions_image27.png)
 
 1. Select **Create**.
 
@@ -211,7 +211,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Search for `resource group` and select **Resource group**.
 
-     ![Azure Marketplace resource group - screenshot](../images/L11/azure-marketplace-resource-group.png)
+     ![Azure Marketplace resource group - screenshot](../images/L09/azure-marketplace-resource-group.png)
 
    - Click on the **Resource group** tile.
 
@@ -221,7 +221,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Enter `PL400` for resource group.
 
-     ![Create resource group - screenshot](../images/L11/azure-resource-group-create.png)
+     ![Create resource group - screenshot](../images/L09/azure-resource-group-create.png)
 
    - Select **Review + create**.
 
@@ -249,7 +249,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Locally-redundant storage (LRS)** for Redundancy.
 
-     ![Create resource group - screenshot](../images/L11/azure-storage-account-create.png)
+     ![Create resource group - screenshot](../images/L09/azure-storage-account-create.png)
 
    - Select **Review + create**.
 
@@ -291,7 +291,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Review + create**.
 
-    ![Create function app - screenshot](../images/L11/azure-function-app-create.png)
+    ![Create function app - screenshot](../images/L09/azure-function-app-create.png)
 
    - Select **Create**.
 
@@ -311,20 +311,20 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Start **Visual Studio**.
 
-     ![New visual studio project - screenshot](../images/L11/Mod_02_Azure_Functions_image28.png)
+     ![New visual studio project - screenshot](../images/L09/Mod_02_Azure_Functions_image28.png)
 
    - Select **Create a new project**.
    - Search for `functions`.
 
-     ![Azure functions - screenshot](../images/L11/Mod_02_Azure_Functions_image29.png)
+     ![Azure functions - screenshot](../images/L09/Mod_02_Azure_Functions_image29.png)
 
    - Select **Azure Functions** and then select **Next**.
 
    - Enter `InspectionRoutingApp` for **Name**.
 
-   - Change the location to **C:\LabFiles\L11**.
+   - Change the location to **C:\LabFiles\L09**.
 
-     ![Visual Studio configure project - screenshot](../images/L11/visual-studio-configure-project.png)
+     ![Visual Studio configure project - screenshot](../images/L09/visual-studio-configure-project.png)
 
    - Select **Next**.
 
@@ -334,7 +334,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Change the Schedule to `0 0 0 * * *` (Midnight Every Day).
 
-     ![Azure function application - screenshot](../images/L11/azure-function-configuration.png)
+     ![Azure function application - screenshot](../images/L09/azure-function-configuration.png)
 
    - Select **Create**.
 
@@ -342,11 +342,11 @@ In this task, you will create the application user in Dataverse and associate it
 
    - In Solution Explorer, right click on **Function1.cs** and select **Rename**.
 
-     ![Rename class - screenshot](../images/L11/visual-studio-rename-function.png)
+     ![Rename class - screenshot](../images/L09/visual-studio-rename-function.png)
 
    - Rename the function file as `InspectionRouter.cs`.
   
-     ![Rename function file - screenshot](../images/L11/visual-studio-renamed-function.png)
+     ![Rename function file - screenshot](../images/L09/visual-studio-renamed-function.png)
 
    - Select **Yes** to rename references.
 
@@ -354,7 +354,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Rename the function **Function1** to `InspectionRouter`.
 
-     ![Change function name - screenshot](../images/L11/Mod_02_Azure_Functions_image34.png)
+     ![Change function name - screenshot](../images/L09/Mod_02_Azure_Functions_image34.png)
 
 1. Add NuGet packages.
 
@@ -364,7 +364,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Search for `identitymodel` and select the **Microsoft.IdentityModel.Clients.ActiveDirectory** NuGet package.
 
-     ![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image42.png)
+     ![Install package - screenshot](../images/L09/Mod_02_Azure_Functions_image42.png)
 
    - Select **Install**.
 
@@ -384,7 +384,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Search for `crmwebapi` and select the **Xrm.Tools.CrmWebAPI by David Yack** NuGet package.
 
-     ![Install package - screenshot](../images/L11/Mod_02_Azure_Functions_image43.png)
+     ![Install package - screenshot](../images/L09/Mod_02_Azure_Functions_image43.png)
 
      > Note: This is a community library designed to work with the Microsoft Dataverse Web API. When you are building this type of extension you can use any oData V4 library you prefer. Make sure you select the one developed by DavidYack.
 
@@ -400,7 +400,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Open the **local.settings.json** file.
 
-     ![Local settings file - screenshot](../images/L11/Mod_02_Azure_Functions_image44.png)
+     ![Local settings file - screenshot](../images/L09/Mod_02_Azure_Functions_image44.png)
 
    - Add the **Values** below to **local.settings**
 
@@ -411,17 +411,17 @@ In this task, you will create the application user in Dataverse and associate it
      "cdsclientsecret": ""
      ```
 
-     ![Add values - screenshot](../images/L11/Mod_02_Azure_Functions_image45.png)
+     ![Add values - screenshot](../images/L09/Mod_02_Azure_Functions_image45.png)
 
    - Find the client secret you saved in the notepad and paste as the cdsclientsecret.
 
-     ![Client secret - screenshot](../images/L11/Mod_02_Azure_Functions_image46.png)
+     ![Client secret - screenshot](../images/L09/Mod_02_Azure_Functions_image46.png)
 
    - Find the application (client) ID in the notepad and paste as the **cdsclientid**.
 
    - Find the Dataverse environment URL in the notepad and paste as the **cdsurl**.
 
-     ![Paste URL - screenshot](../images/L11/Mod_02_Azure_Functions_image51.png)
+     ![Paste URL - screenshot](../images/L09/Mod_02_Azure_Functions_image51.png)
 
    - Save and close the  **local.settings.json** file.
 
@@ -495,7 +495,7 @@ In this task, you will create the application user in Dataverse and associate it
      return new CRMWebAPI(crmurl, authenticationResult.AccessToken);
      ```
 
-     ![Get CRM web API method - screenshot](../images/L11/azure-function-webapi-code.png)
+     ![Get CRM web API method - screenshot](../images/L09/azure-function-webapi-code.png)
 
 1. Call the Web API.
 
@@ -507,7 +507,7 @@ In this task, you will create the application user in Dataverse and associate it
      _logger.LogInformation($"UserID: {whoami.UserId}");
      ```
 
-     ![Run method - screenshot](../images/L11/Mod_02_Azure_Functions_image53.png)
+     ![Run method - screenshot](../images/L09/Mod_02_Azure_Functions_image53.png)
 
 ### Task 2.3: Get Inspections and Users and Assign Inspections
 
@@ -547,7 +547,7 @@ In this task, you will create the application user in Dataverse and associate it
      ```
 
      > [!NOTE]
-     >  1 is the value of the Inspection New Request status reason and 330650001 id the value of the Inspection Pending status reason. If the Pending status reason is different for your environment, change the code to match your value.
+     > 1 is the value of the Inspection New Request status reason and 330650001 id the value of the Inspection Pending status reason. If the Pending status reason is different for your environment, change the code to match your value.
 
    - Get the list of Inspections.
 
@@ -564,7 +564,7 @@ In this task, you will create the application user in Dataverse and associate it
      return inspections;
      ```
 
-     ![Get inspections method - screenshot](../images/L11/azure-function-inspections-code.png)
+     ![Get inspections method - screenshot](../images/L09/azure-function-inspections-code.png)
 
 1. Call the GetInspections method from the Run method.
 
@@ -576,7 +576,7 @@ In this task, you will create the application user in Dataverse and associate it
      var inspections = GetInspections(api).Result;
      ```
 
-     ![Call get inspections method - screenshot](../images/L11/Mod_02_Azure_Functions_image58.png)
+     ![Call get inspections method - screenshot](../images/L09/Mod_02_Azure_Functions_image58.png)
 
 1. Create a method that will get all users.
 
@@ -596,7 +596,7 @@ In this task, you will create the application user in Dataverse and associate it
      var users = GetUsers(api).Result;
      ```
 
-     ![Call get users method - screenshot](../images/L11/Mod_02_Azure_Functions_image59.png)
+     ![Call get users method - screenshot](../images/L09/Mod_02_Azure_Functions_image59.png)
 
 1. Create a method that will assign inspections to users.
 
@@ -644,7 +644,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - We will not assign inspection records to other users in this lab.
 
-     ![Comment out code - screenshot](../images/L11/Mod_02_Azure_Functions_image60.png)
+     ![Comment out code - screenshot](../images/L09/Mod_02_Azure_Functions_image60.png)
 
    - Assign inspections to the Inspection Router. Add the code below inside **foreach**.
 
@@ -653,7 +653,7 @@ In this task, you will create the application user in Dataverse and associate it
      inspectionResult = RouteInspection(api, inspection, whoami.UserId.ToString(), sequenceNumber).Result;
      ```
 
-     ![Assign inspections - screenshot](../images/L11/Mod_02_Azure_Functions_image61.png)
+     ![Assign inspections - screenshot](../images/L09/Mod_02_Azure_Functions_image61.png)
 
    - Select the **Save** icon.
 
@@ -671,7 +671,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - In Solution Explorer, right click on the project and select **Publish**.
 
-     ![Publish project - screenshot](../images/L11/visual-studio-publish-project.png)
+     ![Publish project - screenshot](../images/L09/visual-studio-publish-project.png)
 
    - Select **Azure** and then select **Next**.
 
@@ -685,11 +685,11 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select the function app you created in the earlier exercise.
 
-     ![Publish Azure function app - screenshot](../images/L11/visual-studio-publish-azure.png)
+     ![Publish Azure function app - screenshot](../images/L09/visual-studio-publish-azure.png)
 
    - Select **Finish**.
 
-     ![Deploy Azure function app - screenshot](../images/L11/visual-studio-deploy-azure.png)
+     ![Deploy Azure function app - screenshot](../images/L09/visual-studio-deploy-azure.png)
 
    - Select **Publish**.
   
@@ -697,7 +697,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **Yes**.
 
-     ![Publishing Azure function app - screenshot](../images/L11/visual-studio-publishing-azure.png)
+     ![Publishing Azure function app - screenshot](../images/L09/visual-studio-publishing-azure.png)
 
    - Wait for the function application to be successfully published to Azure.
 
@@ -709,11 +709,11 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select **All Resources**, search for `pl400fa`, and open the function you published.
 
-     ![Azure resources - screenshot](../images/L11/azure-portal-resources.png)
+     ![Azure resources - screenshot](../images/L09/azure-portal-resources.png)
 
    - Scroll down to **Settings** and select **Environment variables**.
 
-     ![Configuration - screenshot](../images/L11/azure-portal-configuration-settings.png)
+     ![Configuration - screenshot](../images/L09/azure-portal-configuration-settings.png)
 
 1. Update function app settings.
 
@@ -739,15 +739,15 @@ In this task, you will create the application user in Dataverse and associate it
        },
      ```
 
-     ![Edit settings - screenshot](../images/L11/Mod_02_Azure_Functions_image68.png)
+     ![Edit settings - screenshot](../images/L09/Mod_02_Azure_Functions_image68.png)
 
    - Go back to **Visual Studio** and open the **local.settings.json** file.
 
-    ![Copy URL - screenshot ](../images/L11/Mod_02_Azure_Functions_image69.png)
+    ![Copy URL - screenshot ](../images/L09/Mod_02_Azure_Functions_image69.png)
 
    - Copy the **cdsclientid**, **cdsclientsecret** and **cdsurl** values from the **local.settings.json** file and replace [**cdsclientid**], [**cdsclientsecret**] and [cdsurl].
 
-     ![Paste id and secret - screenshot](../images/L11/Mod_02_Azure_Functions_image71.png)
+     ![Paste id and secret - screenshot](../images/L09/Mod_02_Azure_Functions_image71.png)
 
    - Select **OK**.
 
@@ -759,28 +759,28 @@ In this task, you will create the application user in Dataverse and associate it
 
 1. Timezone.
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
 
    - Select **Settings** and then select **Personalization and Settings**.
 
-     ![Personal settings - screenshot](../images/L11/Mod_02_Azure_Functions_image77.png)
+     ![Personal settings - screenshot](../images/L09/Mod_02_Azure_Functions_image77.png)
 
    - Change the **Time Zone** to **(GMT-11:00) Coordinated Universal Time-11** and then select **OK**. This will ensure the query results will produce the same results regardless of your time zone.
 
-     ![Change time zone - screenshot](../images/L11/Mod_02_Azure_Functions_image78.png)
+     ![Change time zone - screenshot](../images/L09/Mod_02_Azure_Functions_image78.png)
 
 1. Reset inspections test data.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
    - Select **Cloud flows**.
    - Select the ellipses **...** for the **Reset Inspections** flow, select **Edit** and select **Edit in new tab**.
 
-     ![Edit flow - screenshot](../images/L11/edit-flow.png)
+     ![Edit flow - screenshot](../images/L09/edit-flow.png)
 
    - Select the **Loop** step.
 
@@ -792,7 +792,7 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Enter `utcNow()`.
 
-     ![UtcNow expression - screenshot](../images/L11/update-flow-step.png)
+     ![UtcNow expression - screenshot](../images/L09/update-flow-step.png)
 
    - Select **OK**.
 
@@ -818,21 +818,21 @@ In this task, you will create the application user in Dataverse and associate it
 
    - Select the **Overview** pane and select the function you published.
 
-     ![Open function - screenshot](../images/L11/function-in-portal.png)
+     ![Open function - screenshot](../images/L09/function-in-portal.png)
 
    - Select the **Code + Test** tab.
 
-     ![Code + Test - screenshot](../images/L11/Mod_02_Azure_Functions_image74.png)
+     ![Code + Test - screenshot](../images/L09/Mod_02_Azure_Functions_image74.png)
 
    - Select **Test/Run**.
 
-     ![Run function - screenshot](../images/L11/Mod_02_Azure_Functions_image81.png)
+     ![Run function - screenshot](../images/L09/Mod_02_Azure_Functions_image81.png)
 
    - Select **Run**.
 
    - The function should run and succeed.
 
-     ![Run result - screenshot](../images/L11/azure-function-inspections-results.png)
+     ![Run result - screenshot](../images/L09/azure-function-inspections-results.png)
 
 1. Confirm record assignments.
 
@@ -842,4 +842,4 @@ In this task, you will create the application user in Dataverse and associate it
 
    - The **Owner** of the inspections should now be the **Inspection Router** and .
 
-     ![Routed records - screenshot](../images/L11/assigned-inspections.png)
+     ![Routed records - screenshot](../images/L09/assigned-inspections.png)

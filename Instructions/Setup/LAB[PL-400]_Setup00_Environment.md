@@ -8,7 +8,7 @@ lab:
 
 Ideally, you should complete these labs in a hosted lab environment. If you want to complete them on your own computer, you can do so by installing the following software.
 
-- All setup and resource files can be [downloaded from GitHub](https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip).
+- All setup and resource files can be downloaded from GitHub `https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip`.
 
 ***You may experience unexpected dialogs and behavior when using your own environment. Due to the wide range of possible local configurations, the course team cannot support issues you may encounter in your own environment.***
 
@@ -18,13 +18,13 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
 ### Microsoft Edge
 
-1. Install the latest version of [Microsoft Edge](https://microsoft.com/edge) to access the Power Platform online.
+1. Install the latest version of Microsoft Edge `https://microsoft.com/edge` to access the Power Platform online.
 
 1. Apply updates to Edge from `edge://settings/help` ad restart Edge.
 
 ### Microsoft 365 tenant account
 
-You will need to log into Power Platform with an organizational account. You can use your own, but if you don't have access, you can create a free [Microsoft 365 Developer account](https://developer.microsoft.com/en-us/microsoft-365/dev-program).
+You will need to log into Power Platform with an organizational account. You can use your own, but if you don't have access, you can create a free Microsoft 365 Developer account `https://developer.microsoft.com/en-us/microsoft-365/dev-program`.
 
 ### .NET Framework 4.6.2 Developer Pack
 
@@ -55,7 +55,7 @@ You will need to log into Power Platform with an organizational account. You can
 
 ### Visual Studio Code
 
-1. Download [Visual Studio Code](https://code.visualstudio.com/docs/?dv=win).
+1. Download Visual Studio Code `https://code.visualstudio.com/docs/?dv=win`.
 
 1. Open the downloaded file.
 

@@ -21,7 +21,7 @@ As part of building this component, you will complete the following steps:
 
 This is what the component will look like when it is completed.
 
- ![Completed component - screenshot](../images/L09/mod-02-pcf-1-01.png)
+ ![Completed component - screenshot](../images/L07/mod-02-pcf-1-01.png)
 
 ## Things to consider before you begin
 
@@ -30,15 +30,15 @@ This is what the component will look like when it is completed.
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starter folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L07\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L07\Completed folder.
 
 ## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L09\Resources folder.
+Complete source code files for this lab can be found in the  C:\Labfiles\L07\Resources folder.
 
 > [!IMPORTANT]
 > You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
@@ -51,11 +51,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
 1. Install Node.js
 
-   - Navigate to [Node JS](https://nodejs.org/en/)
+   - Navigate to the Node JS website `https://nodejs.org/en/`.
 
    - Select the latest **LTS** version.
 
-     ![latest LTS - screenshot](../images/L09/node-js-download.png)
+     ![latest LTS - screenshot](../images/L07/node-js-download.png)
 
    - Open the downloaded file.
 
@@ -67,21 +67,21 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - Launch the **Developer Command Prompt** from the start menu.
 
-     ![Developer command prompt - screenshot](../images/L09/mod-02-pcf-1-04.png)
+     ![Developer command prompt - screenshot](../images/L07/mod-02-pcf-1-04.png)
 
 1. Create a folder named named **pcfTimelineControl** for the code component.
 
    - Run the following commands.
 
      ```dos
-     cd C:\LabFiles\L09
+     cd C:\LabFiles\L07
      mkdir pcfTimelineControl
      cd pcfTimelineControl
      mkdir src
      cd src
      ```
 
-     ![pcfTimelineControl folder - screenshot](../images/L09/pcf-folder.png)
+     ![pcfTimelineControl folder - screenshot](../images/L07/pcf-folder.png)
 
 1. Create a solution project for a pcf dataset component named **timelinecontrol**.
 
@@ -109,13 +109,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - **Visual Studio Code** should start, and it should open the **src** folder.
 
-     ![Visual Studio Code - screenshot](../images/L09/mod-02-pcf-1-06.png)
+     ![Visual Studio Code - screenshot](../images/L07/mod-02-pcf-1-06.png)
 
    - Expand the **timelinecontrol** folder.
 
    - Open the **ControlManifest.Input** xml file and examine it.
 
-     ![Manifest file - screenshot](../images/L09/mod-02-pcf-1-07.png)
+     ![Manifest file - screenshot](../images/L07/mod-02-pcf-1-07.png)
 
    - Open the **Index.ts** file and examine it.
 
@@ -127,26 +127,26 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - In Visual Studio Code, select **Terminal** and select **New Terminal**.
 
-     ![New terminal - screenshot](../images/L09/mod-02-pcf-1-08.png)
+     ![New terminal - screenshot](../images/L07/mod-02-pcf-1-08.png)
 
      > [!NOTE]
      > If Terminal is not visible in the menu, you can open it by selecting **View** -> **Terminal**.
 
    - If **cmd** isn’t your **Default Shell**, select the arrow and then select **Select Default Profile**.
 
-     ![Select default shell](../images/L09/mod-02-pcf-1-09.png)
+     ![Select default shell](../images/L07/mod-02-pcf-1-09.png)
 
    - Select **Command Prompt**.
 
-     ![Command prompt - screenshot](../images/L09/mod-02-pcf-1-10.png)
+     ![Command prompt - screenshot](../images/L07/mod-02-pcf-1-10.png)
 
    - Select **New Terminal**.
 
-     ![New terminal - screenshot](../images/L09/mod-02-pcf-1-11.png)
+     ![New terminal - screenshot](../images/L07/mod-02-pcf-1-11.png)
 
    - The **cmd** terminal should now open.
 
-     ![cmd terminal - screenshot =](../images/L09/mod-02-pcf-1-12.png)
+     ![cmd terminal - screenshot =](../images/L07/mod-02-pcf-1-12.png)
 
 1. Run the Build command and review the out folder.
 
@@ -171,7 +171,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - You should now be able to see the out folder. Expand the folder and review its content.
 
-     ![Out folder - screenshot](../images/L09/mod-02-pcf-1-13.png)
+     ![Out folder - screenshot](../images/L07/mod-02-pcf-1-13.png)
 
 1. Start the test harness.
 
@@ -185,11 +185,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - This should open the Test Environment in a browser window.
 
-     ![Test environment - screenshot](../images/L09/mod-02-pcf-1-14.png)
+     ![Test environment - screenshot](../images/L07/mod-02-pcf-1-14.png)
 
    - The **Component** container size should change if you provide **Width** and **Height**.
 
-     ![Change component size - screenshot](../images/L09/mod-02-pcf-1-15.png)
+     ![Change component size - screenshot](../images/L07/mod-02-pcf-1-15.png)
 
 1. Stop the test harness
 
@@ -199,7 +199,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - Type **y** and **[ENTER].**
 
-     ![stop test harness - screenshot](../images/L09/mod-02-pcf-1-16.png)
+     ![stop test harness - screenshot](../images/L07/mod-02-pcf-1-16.png)
 
 ### Task 1.3: Setup solution
 
@@ -227,7 +227,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - You should now be in the pcfSolution directory.
 
-     ![change directory - screenshot ](../images/L09/pcf-solution-folder.png)
+     ![change directory - screenshot ](../images/L07/pcf-solution-folder.png)
 
 1. Create solution project and add reference of the **src** folder where the component is located to the solution. This configuration will be used when you are done with your development and ready to publish your component for others to use.
 
@@ -245,7 +245,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - The project reference should be added successfully.
 
-     ![Add project reference - screenshot](../images/L09/solution-reference-added.png)
+     ![Add project reference - screenshot](../images/L07/solution-reference-added.png)
 
    - Edit the **pcfSolution.cdsproj** file  by entering `code .` in the Terminal window to start Visual Studio Code in the pcfSolution folder.
 
@@ -255,7 +255,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      <OutputPath>bin\debug</OutputPath>
      ```
 
-     ![Property Group in solution file - screenshot](../images/L09/output-path.png)
+     ![Property Group in solution file - screenshot](../images/L07/output-path.png)
 
    - Select **File** and **Save All**.
 
@@ -273,7 +273,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - The build should succeed.
 
-     ![Build result - screenshot](../images/L09/build-result.png)
+     ![Build result - screenshot](../images/L07/build-result.png)
 
      > [!NOTE]
      > If you get the response where msbuild is not recognized as an internal or external command. This means that you ran a normal command prompt instead of Visual Studio's developer command prompt.
@@ -292,13 +292,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - Select the **timelinecontrol** folder and then select **New Folder**.
 
-     ![New css folder - screenshot](../images/L09/mod-02-pcf-1-21.png)
+     ![New css folder - screenshot](../images/L07/mod-02-pcf-1-21.png)
 
    - Enter `css` and press [ENTER].
 
    - Select the **css** folder you created and then select **New File**.
 
-     ![New css file - screenshot](../images/L09/mod-02-pcf-1-22.png)
+     ![New css file - screenshot](../images/L07/mod-02-pcf-1-22.png)
 
    - Enter `timelinecontrol.css` and Press [ENTER].
 
@@ -308,13 +308,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
    - Locate the **resources** sub element and uncomment the **css** tag, change the **Order** to **2**.
 
-     ![Uncomment css - screenshot](../images/L09/mod-02-pcf-1-23.png)
+     ![Uncomment css - screenshot](../images/L07/mod-02-pcf-1-23.png)
 
 1. Change the data-set name.
 
    - Locate **sampleDataSet** tag and change the name property to `timelineDataSet`.
 
-     ![Change dataset name - screenshot](../images/L09/mod-02-pcf-1-24.png)
+     ![Change dataset name - screenshot](../images/L07/mod-02-pcf-1-24.png)
 
 1. Install vis-timeline css npm package.
 
@@ -346,7 +346,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      <css path="..\node_modules\vis-timeline\dist\vis-timeline-graph2d.min.css" order="1" />
      ```
 
-     ![Add resource - screenshot](../images/L09/mod-02-pcf-1-26.png)
+     ![Add resource - screenshot](../images/L07/mod-02-pcf-1-26.png)
 
 1. Add timeline element and visual properties to the Index.ts file.
 
@@ -359,7 +359,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      private _timelineVis : any;
      ```
 
-     ![Add properties - screenshot](../images/L09/mod-02-pcf-1-27.png)
+     ![Add properties - screenshot](../images/L07/mod-02-pcf-1-27.png)
 
    - Add the below constant after the import lines on the top.
 
@@ -367,7 +367,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      const vis = require('vis-timeline');
      ```
 
-     ![Add constant - screenshot](../images/L09/mod-02-pcf-1-28.png)
+     ![Add constant - screenshot](../images/L07/mod-02-pcf-1-28.png)
 
 1. Build the timeline element as div and add it to container element as a child.
 
@@ -380,7 +380,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      container.appendChild(this._timelineElm);
      ```
   
-     ![Init function - screenshot](../images/L09/mod-02-pcf-1-29.png)
+     ![Init function - screenshot](../images/L07/mod-02-pcf-1-29.png)
 
 1. Create a function that will render the timeline.
 
@@ -404,7 +404,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      }
      ```
 
-     ![Render timeline function - screenshot](../images/L09/mod-02-pcf-1-30.png)
+     ![Render timeline function - screenshot](../images/L07/mod-02-pcf-1-30.png)
 
 1. Call the **renderTimeline** function from the **updateView** function.
 
@@ -416,7 +416,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      this.renderTimeline();
      ```
 
-     ![Update view function - screenshot](../images/L09/mod-02-pcf-1-31.png)
+     ![Update view function - screenshot](../images/L07/mod-02-pcf-1-31.png)
 
    - Select **File** and then select **Save All**.
 
@@ -436,7 +436,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
      npm start watch
      ```
 
-     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-32.png)
+     ![Timeline control - screenshot](../images/L07/mod-02-pcf-1-32.png)
 
    - **Do not** close the test environment.
 
@@ -448,13 +448,13 @@ In this task, you will switch from using the hard-coded array of data to using a
 
     - Select the **src** folder and then select **New File**.
 
-     ![New file - screenshot](../images/L09/mod-02-pcf-1-33.png)
+     ![New file - screenshot](../images/L07/mod-02-pcf-1-33.png)
 
     - Name the new file `testdata.csv`.
 
     - Add the data below inside the **testdata.csv** file and Save it.
 
-     ```
+     ```csv
      contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
      123,Electrical:Rough Inspection:Passed,8/1/2023,Passed
      124,Electrical:Rough Inspection:Passed,8/5/2023,Passed
@@ -462,7 +462,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      126,Plumbing:Rough Inspection:Passed,8/10/2023,Passed
      ```
 
-     ![Test data - screenshot](../images/L09/mod-02-pcf-1-34.png)
+     ![Test data - screenshot](../images/L07/mod-02-pcf-1-34.png)
 
 1. Create Timeline Data class
 
@@ -486,7 +486,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      }
      ```
 
-     ![Timeline data class - screenshot](../images/L09/mod-02-pcf-1-35.png)
+     ![Timeline data class - screenshot](../images/L07/mod-02-pcf-1-35.png)
 
    - Add the timeline data array property inside the **export** class timelinecontrol function and below the **_timelineElm** definition.
 
@@ -494,7 +494,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      private _timelineData : TimelineData[] = [];
      ```
 
-     ![timeline data array - screenshot](../images/L09/mod-02-pcf-1-36.png)
+     ![timeline data array - screenshot](../images/L07/mod-02-pcf-1-36.png)
 
 1. Add a method that will create the timeline data.
 
@@ -529,7 +529,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      }
      ```
 
-      ![Create timeline data method - screenshot ](../images/L09/mod-02-pcf-1-37.png)
+      ![Create timeline data method - screenshot ](../images/L07/mod-02-pcf-1-37.png)
 
 1. Call the createTimelineData method from the updateView method.
 
@@ -545,7 +545,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      }
      ```
 
-     ![Update vie method - screenshot](../images/L09/mod-02-pcf-1-38.png)
+     ![Update vie method - screenshot](../images/L07/mod-02-pcf-1-38.png)
 
 1. Replace the hardcoded items with the csv data.
 
@@ -557,7 +557,7 @@ In this task, you will switch from using the hard-coded array of data to using a
      const items = this._timelineData;
      ```
 
-     ![render timeline function - screenshot](../images/L09/mod-02-pcf-1-39.png)
+     ![render timeline function - screenshot](../images/L07/mod-02-pcf-1-39.png)
 
 1. Make sure the test environment shows your changes and test the timeline control with the test data.
 
@@ -567,23 +567,23 @@ In this task, you will switch from using the hard-coded array of data to using a
 
    - Go to the test environment and make sure it looks like the image below.
 
-     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-40.png)
+     ![Timeline control - screenshot](../images/L07/mod-02-pcf-1-40.png)
 
    - Select **+ Select a file**.
 
-     ![Select file - screenshot](../images/L09/mod-02-pcf-1-41.png)
+     ![Select file - screenshot](../images/L07/mod-02-pcf-1-41.png)
 
    - Select the **testdata.csv** and then select **Open**.
 
-     ![Select CSV file - screenshot](../images/L09/mod-02-pcf-1-42.png)
+     ![Select CSV file - screenshot](../images/L07/mod-02-pcf-1-42.png)
 
    - Select **Apply**.
 
-     ![Apply changes - screenshot](../images/L09/mod-02-pcf-1-43.png)
+     ![Apply changes - screenshot](../images/L07/mod-02-pcf-1-43.png)
 
    - The timeline control should now show the test data.
 
-     ![Timeline control with data - screenshot](../images/L09/mod-02-pcf-1-44.png)
+     ![Timeline control with data - screenshot](../images/L07/mod-02-pcf-1-44.png)
 
    - **Do not** close the test environment.
 
@@ -612,7 +612,7 @@ In this task, you will use the **css** resource you configured to change the col
          }
      ```
 
-     ![CSS file - screenshot](../images/L09/mod-02-pcf-1-45.png)
+     ![CSS file - screenshot](../images/L07/mod-02-pcf-1-45.png)
 
    - Select **File** and then select **Save All**.
 
@@ -622,7 +622,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **+ Select a file**.
 
-     ![Select file - screenshot](../images/L09/mod-02-pcf-1-46.png)
+     ![Select file - screenshot](../images/L07/mod-02-pcf-1-46.png)
 
    - Select the **testdata.csv** and then select **Open**.
 
@@ -630,7 +630,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - The timeline control should now show the test data.
 
-     ![Timeline control with style - screenshot](../images/L09/mod-02-pcf-1-47.png)
+     ![Timeline control with style - screenshot](../images/L07/mod-02-pcf-1-47.png)
 
    - Close the test environment browser tab.
 
@@ -650,11 +650,11 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Get your environment URL.
 
-   - Navigate to [Power Platform admin center](https://admin.powerplatform.microsoft.com/) and select environments.
+   - Navigate to the Power Platform admin center `https://admin.powerplatform.microsoft.com` and select environments.
    - Locate and open your **Development** environment.
    - Right click and copy the **Environment URL**.
 
-     ![Endpoint address - screenshot](../images/L09/mod-02-pcf-1-51.png)
+     ![Endpoint address - screenshot](../images/L07/mod-02-pcf-1-51.png)
 
 1. Authenticate.
 
@@ -692,13 +692,13 @@ In this task, you will use the **css** resource you configured to change the col
      pac solution import
      ```
 
-     ![import solution - screenshot](../images/L09/mod-02-pcf-1-52.png)
+     ![import solution - screenshot](../images/L07/mod-02-pcf-1-52.png)
 
 ### Task 2.2: Add Timeline Control to the Permit Form
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/)
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -707,11 +707,11 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **+Add existing** and then **More** and **Developer** and **Custom control**.
 
-     ![Add existing custom control - screenshot](../images/L09/mod-02-pcf-1-79.png)
+     ![Add existing custom control - screenshot](../images/L07/mod-02-pcf-1-79.png)
 
    - Select **contoso_contoso_timelinecontrol**.
 
-     ![Select control - screenshot](../images/L09/mod-02-pcf-1-80.png)
+     ![Select control - screenshot](../images/L07/mod-02-pcf-1-80.png)
 
    - Select **Add**.
 
@@ -719,13 +719,13 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Tables** and open the **Permit** table.
 
-     ![Open Table - screenshot](../images/L09/mod-02-pcf-1-54.png)
+     ![Open Table - screenshot](../images/L07/mod-02-pcf-1-54.png)
 
    - Under **Data experiences**, select **Forms**.
 
    - Open the **Main** form.
 
-     ![Open form - screenshot](../images/L09/permit-table-forms.png)
+     ![Open form - screenshot](../images/L07/permit-table-forms.png)
 
    - Select the ellipsis (**...**) for the **Main** form, select **Edit** and select **Edit in new tab**.
 
@@ -735,7 +735,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Get more components**.
 
-     ![Get More Components - screenshot](../images/L09/get-more-components.png)
+     ![Get More Components - screenshot](../images/L07/get-more-components.png)
 
    - Select **timelinecontrol** and select **Add**.
 
@@ -749,13 +749,13 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **+ Component**.
 
-     ![Sub-grid properties - screenshot](../images/L09/add-component-to-subgrid.png)
+     ![Sub-grid properties - screenshot](../images/L07/add-component-to-subgrid.png)
 
    - Select **timelinecontrol**.
 
    - Select **Done**.
 
-     ![Sub-grid properties - screenshot](../images/L09/timelinecontrol-on-form.png)
+     ![Sub-grid properties - screenshot](../images/L07/timelinecontrol-on-form.png)
 
    - Select **Save and publish**.
 
@@ -765,7 +765,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. View inspection records
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the ellipsis (**...**) and select **Play**.
@@ -784,7 +784,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Change the **Status Reason** to **Passed**.
 
-     ![Save and close passed record - screenshot](../images/L09/mod-02-pcf-1-63.png)
+     ![Save and close passed record - screenshot](../images/L07/mod-02-pcf-1-63.png)
 
    - Select **Save & Close**.
 
@@ -792,7 +792,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Change the **Status Reason** to **Failed**.
 
-     ![Save and close failed record - screenshot](../images/L09/mod-02-pcf-1-64.png)
+     ![Save and close failed record - screenshot](../images/L07/mod-02-pcf-1-64.png)
 
    - Select **Save & Close**.
 
@@ -802,7 +802,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - You should have four inspections for Test Permit; one Passed, one Failed, one New Request, and one Pending.
 
-     ![Test data - screenshot](../images/L09/test-data-inspections.png)
+     ![Test data - screenshot](../images/L07/test-data-inspections.png)
 
 1. Test the control
 
@@ -810,13 +810,13 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Open the **Test Permit** record.
 
-     ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
+     ![Open permit record - screenshot](../images/L07/mod-02-pcf-1-65.png)
 
    - Select the **Inspections** tab.
 
    - The control should show the four inspections, but the color will not match the status reason colors.
 
-     ![Timeline control - screenshot](../images/L09/mod-02-pcf-1-66.png)
+     ![Timeline control - screenshot](../images/L07/mod-02-pcf-1-66.png)
 
 ### Task 2.3: Debug
 
@@ -828,17 +828,17 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Search for **createTimelineData(gridParam)**.
 
-     ![Search in Dev Tools - screenshot](../images/L09/dev-tools-search.png)
+     ![Search in Dev Tools - screenshot](../images/L07/dev-tools-search.png)
 
    - Click on the **createTimelineData** function under index.ts. This will open index.ts in DevTools.
 
    - Add a breakpoint on the **permitColor =”green”** line.
 
-     ![Add breakpoint - screenshot](../images/L09/mod-02-pcf-1-67.png)
+     ![Add breakpoint - screenshot](../images/L07/mod-02-pcf-1-67.png)
 
    - Go back to the Permit Management application and click Refresh.
 
-     ![Refresh record - screenshot](../images/L09/mod-02-pcf-1-68.png)
+     ![Refresh record - screenshot](../images/L07/mod-02-pcf-1-68.png)
 
    - Select the **Inspections** tab again.
 
@@ -846,7 +846,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Hover over the **permitStatus**, the **permitStatus** is null because **Status Reason** is not included in the **View** used by the subgrid.
 
-     ![Null permit status - screenshot](../images/L09/mod-02-pcf-1-69.png)
+     ![Null permit status - screenshot](../images/L07/mod-02-pcf-1-69.png)
 
    - Press **F5** to continue.
 
@@ -856,7 +856,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Open the Permit Management solution.
 
-   - Navigate to the Power Apps maker portal `https://make.powerapps.com`
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -885,11 +885,11 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Go back to the **Permit Management** app and refresh the browser.
 
-     ![Refresh browser - screenshot ](../images/L09/mod-02-pcf-1-76.png)
+     ![Refresh browser - screenshot ](../images/L07/mod-02-pcf-1-76.png)
 
    - Select the **Inspections** tab. The timeline control should now show the correct colors.
 
-     ![Timeline control with stye - screenshot](../images/L09/mod-02-pcf-1-77.png)
+     ![Timeline control with stye - screenshot](../images/L07/mod-02-pcf-1-77.png)
 
 ## Exercise 3: Export and import solution
 
@@ -909,10 +909,10 @@ In this task, you will use the **css** resource you configured to change the col
      ![Publish solution - screenshot](../images/L03/export-solution-publish.png)
 
    - Select **Next**.
-   - Set the version number to `1.0.0.9`.
+   - Set the version number to `1.0.0.7`.
    - Select **Managed**.
 
-     ![Export solution - screenshot](../images/L09/export-solution-managed.png)
+     ![Export solution - screenshot](../images/L07/export-solution-managed.png)
 
    - Select **Export**.
 
@@ -924,10 +924,10 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Select **Export** again.
    - Select **Next**.
-   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.9`.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.7`.
    - Select **Unmanaged**.
   
-    ![Export unmanaged solution - screenshot](../images/L09/export-solution-unmanaged.png)
+    ![Export unmanaged solution - screenshot](../images/L07/export-solution-unmanaged.png)
 
    - Select **Export**.
    - Click **Download** to download the unmanaged solution on your machine.
@@ -936,7 +936,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Import the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Sign in to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select your **Production** environment.
 
 1. Import solution.
@@ -946,13 +946,13 @@ In this task, you will use the **css** resource you configured to change the col
    - Select **Browse**.
    - Select the **Managed** solution file you exported in the previous task and then select **Open**.
 
-     ![Select solution file - screenshot](../images/L09/import-solution-file.png)
+     ![Select solution file - screenshot](../images/L07/import-solution-file.png)
 
    - Select **Next**.
 
    - Expand **Advanced settings** and make sure **Upgrade** is selected.
   
-     ![Import solution - screenshot](../images/L09/mod-02-pcf-1-86.png)
+     ![Import solution - screenshot](../images/L07/mod-02-pcf-1-86.png)
 
    - Select **Next**.
 

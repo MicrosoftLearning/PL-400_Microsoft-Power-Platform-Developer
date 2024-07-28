@@ -28,15 +28,15 @@ As part of building the plug-ins, you will complete the following activities.
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L10\Starter folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L08\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L10\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L08\Completed folder.
 
 ## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L10\Resources folder.
+Complete source code files for this lab can be found in the  C:\Labfiles\L08\Resources folder.
 
 > [!IMPORTANT]
 > You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
@@ -49,7 +49,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Open the Permit Management solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -61,7 +61,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select the **Status Reason** column.
   
-    ![Permit Status Reason option values - screenshot](../images/L10/permit-statuscodes.png)
+    ![Permit Status Reason option values - screenshot](../images/L08/permit-statuscodes.png)
 
    - Copy the value of the **Locked** option.
   
@@ -77,7 +77,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
   
    - Select the **Status Reason** column.
   
-    ![Inspection Status Reason option values - screenshot](../images/L10/inspection-statuscodes.png)
+    ![Inspection Status Reason option values - screenshot](../images/L08/inspection-statuscodes.png)
 
    - Copy the value of the **New Request** option.
 
@@ -101,7 +101,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
    - Run the following commands.
 
      ```dos
-     cd C:\LabFiles\L10
+     cd C:\LabFiles\L08
      mkdir ContosoPackageProject
      cd ContosoPackageProject
      ```
@@ -116,7 +116,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Dataverse plug-in class library creation should be successful.
   
-     ![Plugin class library creation - screenshot](../images/L10/plugin-init.png)
+     ![Plugin class library creation - screenshot](../images/L08/plugin-init.png)
 
    - Run the command below to open the project in Visual Studio.
   
@@ -128,7 +128,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Right click on **Plugin1.cs** and select **Rename**.
 
-     ![Rename class - screenshot](../images/L10/Mod_01_Plugin_image3.png)
+     ![Rename class - screenshot](../images/L08/Mod_01_Plugin_image3.png)
 
    - Rename the class as `PreOperationPermitCreate`.
 
@@ -200,7 +200,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - The ExecuteDataversePlugin method should now look like the image below.
 
-     ![Execute Dataverse Plugin method - screenshot](../images/L10/permit-create-code.png)
+     ![Execute Dataverse Plugin method - screenshot](../images/L08/permit-create-code.png)
 
 1. Build the project.
 
@@ -224,14 +224,14 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **+ CREATE NEW CONNECTION**.
 
-     ![New connection - screenshot](../images/L10/Mod_01_Plugin_image17.png)
+     ![New connection - screenshot](../images/L08/Mod_01_Plugin_image17.png)
 
    - Select **Office 365** for Deployment Type.
    - Check **Display list of available organizations**.
    - Check **Show Advanced**.
    - Enter your tenant credentials.
 
-     ![Provide credentials - screenshot](../images/L10/Mod_01_Plugin_image18.png)
+     ![Provide credentials - screenshot](../images/L08/Mod_01_Plugin_image18.png)
 
    - Select **Login**.
 
@@ -243,23 +243,23 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **Register** and select **Register New Assembly**.
 
-     ![Register new assembly menu option - screenshot](../images/L10/prt-register-assembly.png)
+     ![Register new assembly menu option - screenshot](../images/L08/prt-register-assembly.png)
 
    - Select the ellipses **…**.
 
-     ![Browse icon - screenshot](../images/L10/Mod_01_Plugin_image21.png)
+     ![Browse icon - screenshot](../images/L08/Mod_01_Plugin_image21.png)
 
    - Browse to the **bin/debug/net462** folder of your plug-in project **ContosoPackageProject**.
 
-     ![Select .dll file - screenshot](../images/L10/prt-select-assembly.png)
+     ![Select .dll file - screenshot](../images/L08/prt-select-assembly.png)
 
    - Select the **ContosoPackageProject.dll** file and select **Open**.
 
-     ![Register new assembly plugin - screenshot](../images/L10/prt-register-assembly-plugin.png)
+     ![Register new assembly plugin - screenshot](../images/L08/prt-register-assembly-plugin.png)
 
    - Select **Register Selected Plugins**.
 
-     ![Registered assembly plugin - screenshot](../images/L10/prt-registered-plugin.png)
+     ![Registered assembly plugin - screenshot](../images/L08/prt-registered-plugin.png)
 
    - Select **OK**
 
@@ -267,7 +267,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Right-click on the ContosoPackageProject assembly and select **Register New Step**.
 
-    ![Register new step - screenshot](../images/L10/prt-register-step.png)
+    ![Register new step - screenshot](../images/L08/prt-register-step.png)
 
    - Enter `Create` for **Message**.
 
@@ -275,7 +275,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **PreOperation** from dropdown for **Event Pipeline Stage of Execution**.
 
-     ![Register step - screenshot](../images/L10/prt-register-step-details.png)
+     ![Register step - screenshot](../images/L08/prt-register-step-details.png)
 
    - Select **Register New Step**.
 
@@ -283,7 +283,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Step should now be registered in the assembly plugin.
 
-     ![Registered step - screenshot](../images/L10/Mod_01_Plugin_image27.png)
+     ![Registered step - screenshot](../images/L08/Mod_01_Plugin_image27.png)
 
 ## Exercise 2: Create plug-in for Custom API
 
@@ -301,7 +301,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
    - In Solution Explorer, right-click the *ContosoPackageProject* project and select **Add** and then select **New Item**.
    - Select Class and name the class `LockPermitCancelInspections.cs`
   
-     ![Add class to Visual Studio - screenshot](../images/L10/vs-add-class.png)
+     ![Add class to Visual Studio - screenshot](../images/L08/vs-add-class.png)
 
    - Select **Add**.
 
@@ -321,7 +321,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      public class LockPermitCancelInspections : PluginBase
      ```
 
-     ![Add using statements and edit class - screenshot](../images/L10/Mod_01_Plugin_image30.png)
+     ![Add using statements and edit class - screenshot](../images/L08/Mod_01_Plugin_image30.png)
 
 1. Override the ExecuteDataversePlugin method and get the reason value from the input parameter.
 
@@ -370,7 +370,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      localPluginContext.Trace("Updated Permit Id " + permitEntityRef.Id);
      ```
 
-     ![Update permit - screenshot](../images/L10/update-permit-code.png)
+     ![Update permit - screenshot](../images/L08/update-permit-code.png)
 
 ### Task 2.2: Get related inspections and cancel the inspections
 
@@ -387,7 +387,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      qe.Criteria.AddCondition("contoso_permit", ConditionOperator.Equal, permitEntityRef.Id);
      ```
 
-     ![LockPermitCancelInspections plugin Execute method - screenshot](../images/L10/query-expression-code.png)
+     ![LockPermitCancelInspections plugin Execute method - screenshot](../images/L08/query-expression-code.png)
 
 1. Retrieve the inspections and iterate through the returned records.
 
@@ -427,7 +427,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      ```
 
      > [!NOTE]
-     >  1 is the value of the Inspection New Request status reason and 330650001 id the value of the Inspection Pending status reason. If the Pending status reason is different for your environment, change the code to match your value.
+     > 1 is the value of the Inspection New Request status reason and 330650001 id the value of the Inspection Pending status reason. If the Pending status reason is different for your environment, change the code to match your value.
 
 1. Cancel the inspections that are pending or new request.
 
@@ -449,7 +449,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      canceledInspectionsCount++;
      ```
 
-     ![Foreach section of the execute plugin method - screenshot](../images/L10/foreach-code.png)
+     ![Foreach section of the execute plugin method - screenshot](../images/L08/foreach-code.png)
 
 ### Task 2.3: Set Output Parameter and Create Note record
 
@@ -471,7 +471,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
      localPluginContext.PluginExecutionContext.OutputParameters["CanceledInspectionsCount"] = canceledInspectionsCount;
      ```
 
-     ![Set output parameter - screenshot](../images/L10/set-custom-api-response.png)
+     ![Set output parameter - screenshot](../images/L08/set-custom-api-response.png)
 
 1. Check if the Input Parameters contain reason and create the Note record.
 
@@ -509,7 +509,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
          localPluginContext.Trace("Note record was created");
      ```
 
-     ![Create note record - screenshot](../images/L10/create-note-record.png)
+     ![Create note record - screenshot](../images/L08/create-note-record.png)
 
 1. Build the project.
 
@@ -531,7 +531,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select the **ContosoPackageProject** assembly and select **Update**.
 
-     ![Update assembly - screenshot](../images/L10/Mod_01_Plugin_image36.png)
+     ![Update assembly - screenshot](../images/L08/Mod_01_Plugin_image36.png)
 
    - Select the ellipses **…**.
 
@@ -541,23 +541,23 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Check the **Select All** checkbox.
 
-     ![Update assembly plugins - screenshot](../images/L10/prt-update-assembly.png)
+     ![Update assembly plugins - screenshot](../images/L08/prt-update-assembly.png)
 
    - Select **Update Selected Plugins**.
 
-     ![IUpdated assembly plugin - screenshot](../images/L10/prt-updated-plugin.png)
+     ![IUpdated assembly plugin - screenshot](../images/L08/prt-updated-plugin.png)
 
    - Select **OK**.
 
 1. Add plug-in to solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
    - Select **Add existing** and select **More** and **Developer** and **Plug-in assembly**.
 
-     ![Select message and primary Table - screenshot](../images/L10/Mod_01_Plugin_image40.png)
+     ![Select message and primary Table - screenshot](../images/L08/Mod_01_Plugin_image40.png)
 
    - Select the **ContosoPackageProject** assembly and then select **Add**.
 
@@ -569,11 +569,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **Custom API** and open the **Lock Permit** custom API.
   
-     ![Open custom API - screenshot](../images/L10/Mod_01_Plugin_image39.png)
+     ![Open custom API - screenshot](../images/L08/Mod_01_Plugin_image39.png)
   
    - Scroll down and select **ContosoPackageProject.LockPermitCancelInspections** for Plugin Type.
 
-     ![Plugin type - screenshot](../images/L10/Mod_01_Plugin_image41.png)
+     ![Plugin type - screenshot](../images/L08/Mod_01_Plugin_image41.png)
 
    - Select **Save & Close**.
   
@@ -601,7 +601,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Set Enable Plug-in Logging to Plug-in Trace Log to **All** and select **OK**.
 
-     ![Enable trace logging - screenshot](../images/L10/enable-trace-logs.png)
+     ![Enable trace logging - screenshot](../images/L08/enable-trace-logs.png)
   
    - Select **OK**.
 
@@ -611,7 +611,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
 1. Test data.
 
-   - Navigate to the Power Apps maker portal <https://make.powerapps.com>.
+   - Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
@@ -619,7 +619,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - You should have four inspections for **Test Permit**; one **Failed**, one **Passed**, one **New Request**, and one **Pending**. If not, edit and update the records.
 
-     ![Inspection records - screenshot](../images/L10/inspections-data.png)
+     ![Inspection records - screenshot](../images/L08/inspections-data.png)
 
 ### Task 3.2: Test Lock plug-in
 
@@ -629,25 +629,25 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Open the **Test Permit**.
 
-     ![Open permit record - screenshot](../images/L10/Mod_01_Plugin_image57.png)
+     ![Open permit record - screenshot](../images/L08/Mod_01_Plugin_image57.png)
 
    - Make sure the Status Reason is set to Active.
 
    - Select the **Lock Permit** button.
 
-    ![Lock permit record - screenshot](../images/L10/Mod_01_Plugin_image58.png)
+    ![Lock permit record - screenshot](../images/L08/Mod_01_Plugin_image58.png)
 
    - The Custom API should run. Select **Refresh**.
 
-     ![Refresh record - screenshot](../images/L10/Mod_01_Plugin_image59.png)
+     ![Refresh record - screenshot](../images/L08/Mod_01_Plugin_image59.png)
 
    - The **Status Reason** value should change to **Locked**.
 
-     ![Locked record - screenshot](../images/L10/Mod_01_Plugin_image60.png)
+     ![Locked record - screenshot](../images/L08/Mod_01_Plugin_image60.png)
 
    - A note should have been added to the Timeline.
 
-     ![Note in timeline details - screenshot](../images/L10/locked-note-attachment.png)
+     ![Note in timeline details - screenshot](../images/L08/locked-note-attachment.png)
 
 1. Check if the Pending and New Request Inspections are canceled.
 
@@ -655,7 +655,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - You should now have two canceled inspections.  
 
-     ![Active inspections view - screenshot](../images/L10/Mod_01_Plugin_image62.png)
+     ![Active inspections view - screenshot](../images/L08/Mod_01_Plugin_image62.png)
 
 ### Task 3.3: Test Restrict New Permit creation plug-in
 
@@ -673,17 +673,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Enter `4000` for New Size.
 
-     ![Save new permit - screenshot](../images/L10/Mod_01_Plugin_image68.png)
+     ![Save new permit - screenshot](../images/L08/Mod_01_Plugin_image68.png)
 
    - Select **Save**.
 
    - You should get the error below.
 
-     ![Record locked message - screenshot](../images/L10/Mod_01_Plugin_image69.png)
+     ![Record locked message - screenshot](../images/L08/Mod_01_Plugin_image69.png)
 
    - The record should not get created.
 
-    ![Unsaved changes - screenshot](../images/L10/Mod_01_Plugin_image70.png)
+    ![Unsaved changes - screenshot](../images/L08/Mod_01_Plugin_image70.png)
 
    - Select **OK**.
 
@@ -691,11 +691,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - Select **Discard changes**.
 
-     ![Discard changes - screenshot](../images/L10/Mod_01_Plugin_image71.png)
+     ![Discard changes - screenshot](../images/L08/Mod_01_Plugin_image71.png)
 
    - The Test Two permit has not been created.
 
-     ![Permits list - screenshot](../images/L10/Mod_01_Plugin_image72.png)
+     ![Permits list - screenshot](../images/L08/Mod_01_Plugin_image72.png)
 
 ## Exercise 4: Trace Log
 
@@ -713,7 +713,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L10\Res
 
    - You should see at least two logs.
 
-     ![Plug-in trace logs list - screenshot](../images/L10/trace-logs.png)
+     ![Plug-in trace logs list - screenshot](../images/L08/trace-logs.png)
 
 1. View the trace logs.
 

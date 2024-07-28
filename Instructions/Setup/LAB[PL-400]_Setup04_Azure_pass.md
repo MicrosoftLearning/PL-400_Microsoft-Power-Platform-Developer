@@ -17,7 +17,7 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. Follow these instructions to redeem your Azure Pass.
 
-    [Redeem a Microsoft Azure Pass](https://www.microsoftazurepass.com/Home/HowTo?Length=5)
+    Redeem a Microsoft Azure Pass `https://www.microsoftazurepass.com/Home/HowTo?Length=5`
 
 1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
 

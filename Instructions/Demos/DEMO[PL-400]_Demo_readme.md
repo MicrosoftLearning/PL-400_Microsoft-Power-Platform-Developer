@@ -10,7 +10,7 @@ This directory provides instructor demonstrations for the PL-400 Microsoft Power
 
 ## Things to think about
 
-- Most areas have a demonstration. Take the time to work through each one and decide which to use. Some of the demonstrations are simple show and tell walk-throughs of the Power Apps maker portal; others require developer skills.
+- Most areas have a demonstration. Take the time to work through each one and decide which to use. Some of the demonstrations are simple show and tell walk-throughs of the Power Apps Maker portal; others require developer skills.
 
 - Consider having the students follow along as you do the demonstration or have one of the students' "drive" and coach them through the steps.
 

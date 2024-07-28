@@ -36,7 +36,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
 
 1. Open the Permit Management solution.
 
-   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
@@ -80,7 +80,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
    > [!NOTE]
    > If you closed the application, follow these steps to get back to the Power Apps Studio.
    >
-   > - Navigate to the [Power Apps Maker portal](https://make.powerapps.com)
+   > - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    > - Select your **Development** environment.
    > - Select **Solutions**.
    > - Open the **Permit Management** solution.
@@ -105,7 +105,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
 
 1. Confirm the inspection record was updated.
 
-   - Navigate to the Power Apps maker portal `https://make.powerapps.com/`
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`
    - Select your **Development** environment.
    - Select **Apps** and play the **Permit Management** app.
    - Select **Inspections** and open the **Framing Inspection** record.

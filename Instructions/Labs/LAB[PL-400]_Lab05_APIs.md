@@ -23,15 +23,11 @@ We will use the following APIs
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L07\Starter folder.
-
-## Completed solution
-
-Completed solution files for this lab can be found in the  C:\Labfiles\L07\Completed folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L05\Starter folder.
 
 ## Resources
 
-Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources folder.
+Complete code files for this lab can be found in the  C:\Labfiles\L05\Resources folder.
 
 ## Exercise 1: Organization Service
 
@@ -47,7 +43,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select the **Permit Management** app, select the **ellipsis (...)** and select **Play**.
    - Copy the Dataverse URL before main.aspx excluding final /.
 
-     ![Organization Service URL - screenshot](../images/L07/organization-service-endpoint.png)
+     ![Organization Service URL - screenshot](../images/L05/organization-service-endpoint.png)
 
 ### Task 1.2: Create Console app
 
@@ -56,9 +52,9 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
 
 1. Start Visual Studio
 
-   - Launch Visual Studio 2019 or 2022.
+   - Launch Visual Studio 2022.
 
-     ![Visual Studio Welcome - screenshot](../images/L07/visual-studio-welcome.png)
+     ![Visual Studio Welcome - screenshot](../images/L05/visual-studio-welcome.png)
 
    - Select **Sign in** and use your Tenant credentials.
    - Select **Start Visual Studio**.
@@ -68,15 +64,15 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select **Create a new project**.
    - Search for `console`.
 
-     ![Visual Studio create project - screenshot](../images/L07/visual-studio-create-project.png)
+     ![Visual Studio create project - screenshot](../images/L05/visual-studio-create-project.png)
 
    - Select **Console App (.NET Framework)**.
    - Select **Next**.
    - Enter `Permit console` for Project Name.
-   - Change the location to **C:\LabFiles\L07**.
+   - Change the location to **C:\LabFiles\L05**.
    - Select **.NET Framework 4.7.2**.
 
-     ![Visual Studio configure project - screenshot](../images/L07/visual-studio-configure-project.png)
+     ![Visual Studio configure project - screenshot](../images/L05/visual-studio-configure-project.png)
 
    - Select **Create**.
 
@@ -191,11 +187,10 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select the **Start** icon.
    - The output will look similar to the following:
 
-     ![Console app output  - screenshot](../images/L07/console-whoami-output.png)
+     ![Console app output  - screenshot](../images/L05/console-whoami-output.png)
 
 1. Press the **Enter** key.
 1. Select **File** and **Exit**.
-
 
 ### Task 1.3: Data operations
 
@@ -254,7 +249,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L07\Resources 
    - Select the **Start** icon.
    - The output will look similar to the following:
 
-     ![Console app output  - screenshot](../images/L07/console-output.png)
+     ![Console app output  - screenshot](../images/L05/console-output.png)
 
 1. Press the **Enter** key.
 1. Select **File** and **Exit**.

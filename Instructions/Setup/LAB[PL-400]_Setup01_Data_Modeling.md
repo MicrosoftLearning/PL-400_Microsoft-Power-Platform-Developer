@@ -55,7 +55,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
 ### Task 1.1 – Maker portal
 
-1. Navigate to the Power Apps maker portal <https://make.powerapps.com> and sign in with your Microsoft 365 credentials if prompted.
+1. Navigate to the Power Apps Maker portal <https://make.powerapps.com> and sign in with your Microsoft 365 credentials if prompted.
 
 1. If you are prompted for a *Phone number* enter `0123456789` and select **Submit**.
 
@@ -63,7 +63,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
 1. Select your **Development** environment from the list.
 
-    ![Select Development environment in the Power Apps maker portal.](../images/S01/select-dev-environment.png)
+    ![Select Development environment in the Power Apps Maker portal.](../images/S01/select-dev-environment.png)
 
 1. Select **Apps** from the left navigation pane and then select **All**. You should see several apps including, Dataverse Accelerator App, Solution Health Hub, and Package Management View, listed.
 
@@ -107,7 +107,7 @@ In this exercise, you will add existing tables to the solution.
 
 ### Task 2.1 – Add existing tables
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
 
 1. Select your **Development** environment.
 
@@ -161,7 +161,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.1: Create Permit table and columns
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
 
 1. Select your **Development** environment.
 
@@ -365,7 +365,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.5: Edit Inspection status reasons
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
 
 1. Select your **Development** environment.
 
@@ -424,7 +424,7 @@ In this exercise, you will create tables, add columns to these tables, and edit 
 
 ### Task 3.6: Edit Permit status reasons
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
 
 1. Select your **Development** environment.
 
@@ -485,7 +485,7 @@ You will create the following data model.
 
 ### Task 4.1: Create Relationships
 
-1. Navigate to the [Power Apps maker portal](https://make.powerapps.com/)
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
 
 1. Select your **Development** environment.
 

@@ -26,15 +26,15 @@ As part of configuring the event publishing, you will complete the following:
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L12\Starter folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L10\Starter folder.
 
 ## Completed solution
 
-Completed solution files for this lab can be found in the  C:\Labfiles\L12\Completed folder.
+Completed solution files for this lab can be found in the  C:\Labfiles\L10\Completed folder.
 
 ## Resources
 
-Complete source code files for this lab can be found in the  C:\Labfiles\L12\Resources folder.
+Complete source code files for this lab can be found in the  C:\Labfiles\L10\Resources folder.
 
 ## Exercise 1: Create an Azure Function
 
@@ -44,17 +44,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
 1. Create function app.
 
-   - Sign in to the [Azure portal](https://portal.azure.com).
+   - Sign in to the Azure portal `https://portal.azure.com`.
 
    - Select **Show portal menu** and then select **+ Create a resource**.
 
    - Search for `function app` and select **Function App** by Microsoft.
 
-   ![New function app - screenshot](../images/L12/Mod_01_Web_Hook_image2.png)
+   ![New function app - screenshot](../images/L10/Mod_01_Web_Hook_image2.png)
 
    - Click on the **Function App** tile.
 
-   ![Create function app - screenshot](../images/L12/Mod_01_Web_Hook_image3.png)
+   ![Create function app - screenshot](../images/L10/Mod_01_Web_Hook_image3.png)
 
    - Select **Create**.
   
@@ -88,17 +88,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Go to resource**.
 
-     ![Go to resource - screenshot](../images/L12/azure-portal-go-to-resource.png)
+     ![Go to resource - screenshot](../images/L10/azure-portal-go-to-resource.png)
 
    - Select the **Functions** tab.
 
-     ![Add function - screenshot](../images/L12/azure-function-overview.png)
+     ![Add function - screenshot](../images/L10/azure-function-overview.png)
 
    - Select **Create function** under **Create in Azure portal**.
 
    - Select **HTTP trigger** for Template.
   
-     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function1.png)
+     ![HTTP trigger - screenshot](../images/L10/azure-portal-create-function1.png)
 
    - Select **Next**.
 
@@ -106,7 +106,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Function** for Authorization level.
 
-     ![HTTP trigger - screenshot](../images/L12/azure-portal-create-function2.png)
+     ![HTTP trigger - screenshot](../images/L10/azure-portal-create-function2.png)
 
    - Select **Create**.
 
@@ -114,17 +114,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **Code + Test** tab.
 
-     ![Code + Test - screenshot](../images/L12/azure-portal-function-code-test.png)
+     ![Code + Test - screenshot](../images/L10/azure-portal-function-code-test.png)
 
    - Select **Test**/**Run**.
 
-     ![Test/run - screenshot](../images/L12/azure-portal-function-test.png)
+     ![Test/run - screenshot](../images/L10/azure-portal-function-test.png)
 
    - Select **Run**.
 
    - You should see **Hello, Azure** in the output.
 
-     ![Function output - screenshot](../images/L12/Mod_01_Web_Hook_image10.png)
+     ![Function output - screenshot](../images/L10/Mod_01_Web_Hook_image10.png)
 
    - Close the test pane.
 
@@ -146,21 +146,21 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Save your changes.
 
-     ![Save function - screenshot](../images/L12/azure-portal-function-code.png)
+     ![Save function - screenshot](../images/L10/azure-portal-function-code.png)
 
 1. Remove HTTP output
 
    - Select the **Integration** tab.
 
-     ![Integration - screenshot](../images/L12/azure-portal-function-integration.png)
+     ![Integration - screenshot](../images/L10/azure-portal-function-integration.png)
 
    - Select the **HTTP Output**.
 
-     ![Outputs - screenshot](../images/L12/Mod_01_Web_Hook_image13.png)
+     ![Outputs - screenshot](../images/L10/Mod_01_Web_Hook_image13.png)
 
    - Select **Delete**.
 
-     ![Delete output - screenshot](../images/L12/Mod_01_Web_Hook_image14.png)
+     ![Delete output - screenshot](../images/L10/Mod_01_Web_Hook_image14.png)
 
    - Select **Delete**.
 
@@ -168,11 +168,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **Code + Test** tab and then select **Get function URL**.
 
-     ![Get function URL - screenshot](../images/L12/azure-portal-function-url.png)
+     ![Get function URL - screenshot](../images/L10/azure-portal-function-url.png)
 
    - Select **Copy to clipboard** against the **default (Function key)** and then select **Close**.
 
-     ![Copy function URL - screenshot](../images/L12/azure-portal-function-get-url.png)
+     ![Copy function URL - screenshot](../images/L10/azure-portal-function-get-url.png)
 
    - Save the **URL** in a notepad, you will need it in the next exercise.
 
@@ -180,7 +180,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **Function Keys** tab.
 
-     ![Show function keys - screenshot](../images/L12/azure-portal-function-keys.png)
+     ![Show function keys - screenshot](../images/L10/azure-portal-function-keys.png)
 
    - Select **Copy to clipboard** against the **default** key.
 
@@ -204,7 +204,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **+ CREATE NEW CONNECTION**.
 
-     ![New connection - screenshot ](../images/L12/Mod_01_Web_Hook_image22.png)
+     ![New connection - screenshot ](../images/L10/Mod_01_Web_Hook_image22.png)
 
    - Select **Office 365** for Deployment Type.
    - Check **Display list of available organizations**.
@@ -223,17 +223,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Register** and then select **Register New Web Hook**.
 
-     ![Register new Webhook - screenshot](../images/L12/Mod_01_Web_Hook_image25.png)
+     ![Register new Webhook - screenshot](../images/L10/Mod_01_Web_Hook_image25.png)
 
    - Enter `NewSize` for **Name**.
 
    - Go to the notepad where you saved the function URL and copy everything before the **?**.
 
-     ![Copy URL - screenshot](../images/L12/webhook-url.png)
+     ![Copy URL - screenshot](../images/L10/webhook-url.png)
 
    - In the Plugin Registration Tool, paste the URL you copied in the **Endpoint URL** field.
 
-      ![Paste URL - screenshot ](../images/L12/webhook-endpoint-url.png)
+      ![Paste URL - screenshot ](../images/L10/webhook-endpoint-url.png)
 
    - Select **WebhookKey** for **Authentication**.
 
@@ -241,7 +241,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - In the Plugin Registration Tool, paste the key you copied in the **Value** field.
 
-      ![Paste key value - screenshot](../images/L12/webhook-value.png)
+      ![Paste key value - screenshot](../images/L10/webhook-value.png)
 
    - Select **Save**
 
@@ -249,7 +249,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **Webhook** you registered, select **Register** and then select **Register New Step**.
 
-     ![Register new step - screenshot](../images/L12/Mod_01_Web_Hook_image30.png)
+     ![Register new step - screenshot](../images/L10/Mod_01_Web_Hook_image30.png)
 
    - Enter `Update` for **Message**.
 
@@ -257,13 +257,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Filtering Attributes.**
 
-     ![Filtering attributes - screenshot](../images/L12/Mod_01_Web_Hook_image31.png)
+     ![Filtering attributes - screenshot](../images/L10/Mod_01_Web_Hook_image31.png)
 
    - Uncheck **Select All**.
 
    - Select **New Size**.
 
-     ![Select attribute - screenshot](../images/L12/Mod_01_Web_Hook_image32.png)
+     ![Select attribute - screenshot](../images/L10/Mod_01_Web_Hook_image32.png)
 
    - Select **OK**.
 
@@ -271,7 +271,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Asynchronous** for Execution Mode
 
-     ![Register new step - screenshot](../images/L12/webhook-register-step.png)
+     ![Register new step - screenshot](../images/L10/webhook-register-step.png)
 
    - Select **Register New Step**.
 
@@ -281,7 +281,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **NewSize** step you created, select **Register** and then select **Register New Image**.
 
-     ![Register new image - screenshot](../images/L12/Mod_01_Web_Hook_image40.png)
+     ![Register new image - screenshot](../images/L10/Mod_01_Web_Hook_image40.png)
 
    - Check **Pre Image**.
 
@@ -293,17 +293,17 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select the **Parameters** button.
 
-     ![Image type information - screenshot](../images/L12/prt-image-parameters.png)
+     ![Image type information - screenshot](../images/L10/prt-image-parameters.png)
 
    - Uncheck **Select All**.
 
    - Select **Build Site**, **Contact**, **Name**, **New Size**, **Permit Type**, and **Start Date**.
 
-     ![Select attributes - screenshot](../images/L12/Mod_01_Web_Hook_image42.png)
+     ![Select attributes - screenshot](../images/L10/Mod_01_Web_Hook_image42.png)
 
    - Select **OK**.
 
-     ![Register image - screenshot](../images/L12/prt-register-image.png)
+     ![Register image - screenshot](../images/L10/prt-register-image.png)
 
    - Select **Register Image**.
 
@@ -319,11 +319,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **App Insight Logs**
 
-     ![Configure Monitor - screenshot](../images/L12/azure-function-monitor.png)
+     ![Configure Monitor - screenshot](../images/L10/azure-function-monitor.png)
 
 1. Update Permit record.
 
-   - Navigate to the [Power Apps maker portal](https://make.powerapps.com).
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
@@ -334,7 +334,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Change the **New Size** to **5000**.
 
-      ![Change size and save - screenshot](../images/L12/Mod_01_Web_Hook_image36.png)
+      ![Change size and save - screenshot](../images/L10/Mod_01_Web_Hook_image36.png)
 
    - Select **Save**.
 
@@ -344,11 +344,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - You should see logs like the image below. The Output is a serialized context object.
 
-     ![Function output - screenshot](../images/L12/azure-function-result1.png)
+     ![Function output - screenshot](../images/L10/azure-function-result1.png)
 
    - Select **Clear**.
 
-      ![Clear logs - screenshot](../images/L12/Mod_01_Web_Hook_image44.png)
+      ![Clear logs - screenshot](../images/L10/Mod_01_Web_Hook_image44.png)
 
 1. Confirm the function executes only when the New Size value changes
 
@@ -356,7 +356,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Change the **Start Date** to tomorrow’s date and select **Save**.
 
-      ![Update record and save - screenshot](../images/L12/Mod_01_Web_Hook_image39.png)
+      ![Update record and save - screenshot](../images/L10/Mod_01_Web_Hook_image39.png)
 
    - Go back to your **Azure Function**.
 
@@ -378,13 +378,13 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - The logs should now show both **Pre** and **Post** entity images. In this case you should see the old value **5000** in **Pre** image and the new value **4000** in the **Post** image
 
-      ![Post and pre entity image values - screenshot](../images/L12/Mod_01_Web_Hook_image46.png)
+      ![Post and pre entity image values - screenshot](../images/L10/Mod_01_Web_Hook_image46.png)
 
 ### Task 2.3: Add webhook to the solution
 
 1. Add webhook to solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -404,14 +404,14 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
 1. Export managed solution.
 
-   - Navigate to [Power Apps maker portal](https://make.powerapps.com/) and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
    - Select the **Overview** tab in the solution.
    - Select **Export**.
    - Select **Publish** and wait for the publishing to complete.
    - Select **Next**.
-   - Set the version number to `1.0.0.12`.
+   - Set the version number to `1.0.0.10`.
    - Select **Managed**.
    - Select **Export**.
    - Click **Download** to download the managed solution on your machine.
@@ -420,7 +420,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
    - Select **Export** again.
    - Select **Next**.
-   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.12`.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.10`.
    - Select **Unmanaged**.
    - Select **Export**.
    - Click **Download** to download the unmanaged solution on your machine.
@@ -429,7 +429,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L12\Res
 
 1. Import the Permit Management solution.
 
-   - Sign in to [Power Apps maker portal](https://make.powerapps.com/)
+   - Sign in to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select your **Production** environment.
    - Select **Solutions**.
    - Select **Import solution**.
