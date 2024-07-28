@@ -12,7 +12,7 @@ demo:
 
 ## Task 4.1 - Create one-to-many relationship from Pet to Pet Trick
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com`.
 
 1. Select the **Demo** environment.
 1. Select **Solutions** from the left navigation pane.

@@ -611,7 +611,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 
 1. Test data.
 
-   - Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com`.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.

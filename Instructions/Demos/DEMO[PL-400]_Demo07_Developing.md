@@ -10,4 +10,4 @@ demo:
 
 ## Task 7.1 - Video
 
-Play this video <https://www.microsoft.com/en-us/videoplayer/embed/RWBJuM>
+Play this video `https://www.microsoft.com/en-us/videoplayer/embed/RWBJuM`

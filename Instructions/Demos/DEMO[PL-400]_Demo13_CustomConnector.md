@@ -94,7 +94,7 @@ demo:
 
 ## Task 13.2 - Import a custom connector
 
-1. In the Power Automate portal <https://make.powerautomate.com>.
+1. In the Power Automate portal `https://make.powerautomate.com`.
 
 1. Select the **Demo** environment.
 

@@ -759,7 +759,7 @@ In this task, you will create the application user in Dataverse and associate it
 
 1. Timezone.
 
-   - Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com`.
    - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.

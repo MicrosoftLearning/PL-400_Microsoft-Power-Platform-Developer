@@ -12,6 +12,6 @@ demo:
 
 ## Task 1.1 - Create a Developer Environment
 
-1. Navigate to Environments in the Power Platform admin center <https://admin.powerplatform.microsoft.com/environments>.
+1. Navigate to Environments in the Power Platform admin center `https://admin.powerplatform.microsoft.com/environments`.
 
 1. Create an environment of type **Developer** named `PL400 Demo` and with **Deploy sample apps and data** selected. Accept all other default options. Note that Dataverse is preselected.

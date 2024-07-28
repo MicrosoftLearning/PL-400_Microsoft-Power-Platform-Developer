@@ -55,7 +55,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L01\Comp
 
 ### Task 1.1 – Maker portal
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com> and sign in with your Microsoft 365 credentials if prompted.
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com` and sign in with your Microsoft 365 credentials if prompted.
 
 1. If you are prompted for a *Phone number* enter `0123456789` and select **Submit**.
 

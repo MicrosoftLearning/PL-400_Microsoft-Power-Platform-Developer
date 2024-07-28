@@ -10,7 +10,7 @@ demo:
 
 ## Task 5.1 - Business rule to enforce selection of Level on Pet Trick records
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Navigate to the Power Apps Maker portal `https://make.powerapps.com`.
 
 1. Select the **Demo** environment.
 1. Select **Solutions** from the left navigation pane.
