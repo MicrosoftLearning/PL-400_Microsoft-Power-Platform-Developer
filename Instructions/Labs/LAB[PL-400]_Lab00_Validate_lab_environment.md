@@ -141,7 +141,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. In the left navigation, expand **Users** and select **Active users**.
 
-1. Check the boxes next to the other users, click on the **ellipses (...)** in the action bar, and select **Manage product licenses**.
+1. Check the boxes next to all the other users (except MOD Administrator and Microsoft Service Account), click on the **ellipses (...)** in the action bar, and select **Manage product licenses**.
 
     ![Select other users.](../images/L00/select-users.png)
 
@@ -221,7 +221,7 @@ In this exercise, you will create an Azure subscription that you will be using i
 
 1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
 
-1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials.
+1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials, if prompted.
 
 1. Follow these instructions to redeem your Azure Pass.
 
@@ -234,7 +234,7 @@ In this exercise, you will create an Azure subscription that you will be using i
     > **Note**:
     > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
 
-1. Wait for the Azure subscription to be provisioned and select **Maybe later**.
+1. Wait for the Azure subscription to be provisioned and select **Cancel**.
 
 1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
 
