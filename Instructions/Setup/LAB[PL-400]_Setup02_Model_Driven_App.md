@@ -137,11 +137,11 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - In the **Tree view**, select the **General** tab
 
-     ![Tree view general tab - screenshot](../images/L10/select-general-tab.png)
+     ![Tree view general tab - screenshot](../images/L08/select-general-tab.png)
 
    - In the **Properties** pane, change **Layout** to **2 columns**.
 
-     ![General tab properties- screenshot](../images/L10/general-tab-properties.png)
+     ![General tab properties- screenshot](../images/L08/general-tab-properties.png)
 
    - In the **Tree view**, select the **New Section** section under the General tab.
 
@@ -149,7 +149,7 @@ A completed solution file for this lab can be found in the  C:\Labfiles\L02\Comp
 
    - Select **Timeline** in the Component pane to add the Timeline control to the form.
 
-     ![General tab properties- screenshot](../images/L10/add-timeline.png)
+     ![General tab properties- screenshot](../images/L08/add-timeline.png)
 
    - Select the section.
 
