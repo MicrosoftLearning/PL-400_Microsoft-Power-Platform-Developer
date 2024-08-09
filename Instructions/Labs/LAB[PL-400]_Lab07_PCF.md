@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 7: Power Apps Component Framework (Optional)'
+    title: 'Lab 7: Power Apps Component Framework'
     module: 'Module 5: Create code components with the Power Apps Component Framework'
 ---
 
