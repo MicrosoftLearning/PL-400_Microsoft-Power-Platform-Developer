@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab Setup 3: Canvas app'
+    title: 'Supplementary/Setup Lab 3: Canvas app'
     module: 'Set up your own environment'
 ---
 
-# Lab Setup Instructions 3 – Canvas app
+# Supplementary/Setup Lab Instructions 3 – Canvas app
 
 ## Scenario
 

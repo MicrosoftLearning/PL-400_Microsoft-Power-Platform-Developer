@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab Setup 2: Model-driven app'
+    title: 'Supplementary/Setup Lab 2: Model-driven app'
     module: 'Set up your own environment'
 ---
 
-# Lab Setup Instructions – Model driven app
+# Supplementary/Setup Lab Instructions – Model driven app
 
 ## Scenario
 

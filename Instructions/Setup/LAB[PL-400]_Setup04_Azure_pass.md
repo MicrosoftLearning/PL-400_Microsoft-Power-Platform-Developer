@@ -1,9 +1,10 @@
 ---
 lab:
-    title: 'Setup 4: Azure Pass'
+    title: 'Supplementary/Setup Lab 4: Azure Pass'
+    module: 'Set up your own environment'
 ---
 
-# Setup Instructions 4 – Azure Pass
+# Supplementary/Setup Lab Instructions 4 – Azure Pass
 
 ## Exercise 1 - Azure subscription
 

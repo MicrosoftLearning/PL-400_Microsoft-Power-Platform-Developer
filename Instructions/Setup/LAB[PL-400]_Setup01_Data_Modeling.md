@@ -1,10 +1,10 @@
 ---
 setup:
-    title: 'Lab Setup 1: Data modeling'
+    title: 'Supplementary/Setup Lab 1: Data modeling'
     module: 'Set up your own environment'
 ---
 
-# Lab Setup Instructions 1  – Data Modeling
+# Supplementary/Setup Lab Instructions 1  – Data Modeling
 
 Follow these instructions to create the data model for the course. A solution is provided for students so that they do not need to perform these steps.
 
