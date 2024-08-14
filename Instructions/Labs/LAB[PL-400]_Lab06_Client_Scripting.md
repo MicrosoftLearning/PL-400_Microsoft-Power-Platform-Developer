@@ -281,7 +281,7 @@ In this task, you will test the event handlers.
 
 1. Confirm the OnLoad event handler function runs.
 
-   - In the **Permit** record form, select the **Refresh** cion.
+   - In the **Permit** record form, select the **Refresh** icon.
 
    - In the **Dev Tools** pane you should see the **on load – permit form** message.
 
