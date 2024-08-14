@@ -32,15 +32,89 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L09\Compl
 
 Complete source code files for this lab can be found in the  C:\Labfiles\L09\Resources folder.
 
-## Exercise 1: Import Permit Management solution
+## Lab environment
 
-In this exercise, you will import the solution into your **Development** environment.
+If you are not using cloud slice and already have the solution installed you should skip to Exercise 4.
 
-### Task 1.1: Import solution
+Otherwise, id you are starting a new lab you will need to:
+
+- Download the lab files
+- Use the **Dev One** environment
+- Import the solution and data
+
+in order to complete the lab.
+
+## Exercise 1: Download lab files
+
+In this exercise, you will download the lab files from GitHub.
+
+### Task 1.1: PowerShell
+
+1. From the lab virtual machine, select the Windows **Start** icon and search for **PowerShell** then open **PowerShell as Administrator**.
+
+   ![Start Powershell as administrator.](../images/L00/start-powershell.png)
+
+1. Select **Yes** if prompted.
+
+1. Run the following commands to download the latest version of the lab files to the virtual machine.
+
+   > [!NOTE]
+   > If any of the commands fail run them again until they are successful.
+
+1. Create folder for lab files.
+
+   ```powershell
+   New-Item -Path "C:\" -Name "LabFiles" -ItemType "directory"   
+   ```
+
+1. Download ZIP file from GitHub.
+
+   ```powershell
+   ([System.Net.WebClient]::new()).DownloadFile('https://github.com/MicrosoftLearning/PL-400_Microsoft-Power-Platform-Developer/archive/master.zip', 'C:\LabFiles\master.zip')
+   ```
+
+1. Expand ZIP file.
+
+   ```powershell
+   Expand-Archive -Path 'C:\LabFiles\master.zip' -DestinationPath 'C:\LabFiles'
+   ```
+
+1. Move files to C:\Labfiles
+
+   ```powershell
+   Move-item -Path "C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master\Allfiles\Labs\*" -Destination "C:\LabFiles" -confirm: $false
+   ```
+
+    ![Powershell commands.](../images/L00/powershell-commands.png)
+
+1. Delete files not required for labs.
+
+   ```powershell
+   Remove-item 'C:\LabFiles\PL-400_Microsoft-Power-Platform-Developer-master' -recurse -force
+   ```
+
+1. Delete zip file.
+
+   ```powershell
+   Remove-item 'C:\LabFiles\master.zip'
+   ```
+
+   > [!NOTE]
+   > Please note, the files are copied to C:\Labfiles and whenever asked to navigate to a lab files, you should use this location.
+
+    ![Labfiles folders.](../images/L00/labfiles-folder.png)
+
+1. Close the PowerShell window.
+
+## Exercise 2: Import Permit Management solution
+
+In this exercise, you will import the solution into the **Dev One** environment.
+
+### Task 2.1: Import solution
 
 1. Navigate to `https://make.powerapps.com`
 
-1. Make sure you are in your **Development** environment.
+1. Make sure you are in the **Dev One** environment.
 
 1. Select **Solutions**.
 
@@ -72,11 +146,11 @@ In this exercise, you will import the solution into your **Development** environ
 
 1. Select **Publish all customizations**.
 
-## Exercise 2: Import data
+## Exercise 3: Import data
 
-In this exercise, you will import data the into your **Development** environment using the Configuration Migration Tool.
+In this exercise, you will import data the into the **Dev One** environment using the Configuration Migration Tool.
 
-### Task 2.1: Import data with the Configuration Migration Tool
+### Task 3.1: Import data with the Configuration Migration Tool
 
 1. Open a **Command Prompt**.
 
@@ -104,9 +178,7 @@ In this exercise, you will import data the into your **Development** environment
 
 1. Select **Login**.
 
-    ![Configuration Migration Tool select environment.](../images/L01/configuration-migration-step3a.png)
-
-1. Select your **Development** environment.
+1. Select the **Dev One** environment.
 
 1. Select **Login**.
 
@@ -124,7 +196,36 @@ In this exercise, you will import data the into your **Development** environment
 
 1. Select the **X** to close the Configuration Migration Tool.
 
-## Exercise 3: Create an Azure Function
+1. Skip to Exercise 5.
+
+## Exercise 4: Azure Pass
+
+In this exercise, you will create an Azure subscription using an Azure Pass.
+
+### Task 4.1: Redeem Azure Pass
+
+1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
+
+1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials, if prompted.
+
+1. Follow these instructions to redeem your Azure Pass.
+
+    Redeem a Microsoft Azure Pass `https://www.microsoftazurepass.com/Home/HowTo?Length=5`
+
+1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
+
+1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
+
+    > **Note**:
+    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
+
+1. Wait for the Azure subscription to be provisioned and select **Cancel**.
+
+1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
+
+    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
+
+## Exercise 5: Create an Azure Function
 
 **Objective:** In this exercise, you will create an Azure Function that will be the endpoint to accept and log incoming web requests.
 
@@ -136,7 +237,7 @@ As part of configuring the event publishing, you will complete the following:
 - Configure Microsoft Dataverse to publish events using a Webhook
 - Test publishing of events
 
-### Task 3.1: Create a Function App in the Azure Portal
+### Task 5.1: Create a Function App in the Azure Portal
 
 1. Create function app.
 
@@ -178,7 +279,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Create** and wait for the function app to be deployed.
 
-### Task 3.2: Create an Azure Function in the Azure Portal
+### Task 5.2: Create an Azure Function in the Azure Portal
 
 1. Create a new function
 
@@ -282,9 +383,9 @@ As part of configuring the event publishing, you will complete the following:
 
    - Save the **key** in a notepad, you will need it in the next exercise.
 
-## Exercise 4: Configure Webhook
+## Exercise 6: Configure Webhook
 
-### Task 4.1: Configure publishing to a webhook
+### Task 6.1: Configure publishing to a webhook
 
 1. Start the Plug-in Registration Tool.
 
@@ -307,13 +408,11 @@ As part of configuring the event publishing, you will complete the following:
    - Check **Show Advanced**.
    - Enter your tenant credentials.
 
-     ![Provide credentials - screenshot](../images/L09/Mod_01_Plugin_image18.png)
+     ![Provide credentials - screenshot](../images/L08/Mod_01_Plugin_image18.png)
 
    - Select **Login**.
 
-     ![Tools environments - screenshot](../images/L06/pac-tools-environments.png)
-
-   - Select your **Development** environment and select **Login**.
+   - Select the Development environment and select **Login**.
 
 1. Register webhook.
 
@@ -403,7 +502,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Register Image**.
 
-### Task 4.2: Test the Webhook
+### Task 6.2: Test the Webhook
 
 1. Configure formatted output when monitoring the function.
 
@@ -420,13 +519,12 @@ As part of configuring the event publishing, you will complete the following:
 1. Update Permit record.
 
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
-   - Make sure you are in the Development environment.
    - Select **Apps**.
    - Select the **Permit Management** app, select the **ellipses (...)** and select **Play**.
    - Select **Permits**.
    - Open the **Test Permit** record.
 
-     ![Open permit record - screenshot](../images/L09/mod-02-pcf-1-65.png)
+     ![Open permit record - screenshot](../images/L07/mod-02-pcf-1-65.png)
 
    - Change the **New Size** to **5000**.
 
@@ -476,11 +574,11 @@ As part of configuring the event publishing, you will complete the following:
 
       ![Post and pre entity image values - screenshot](../images/L09/Mod_01_Web_Hook_image46.png)
 
-### Task 4.3: Add webhook to the solution
+### Task 6.3: Add webhook to the solution
 
 1. Add webhook to solution.
 
-   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -492,7 +590,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **NewSize: Update of contoso_permit** step and then select **Add**.
 
-## Exercise 5: Create the Azure Function for a custom connector
+## Exercise 7: Create the Azure Function for a custom connector
 
 **Objective:** In this exercise, you will create an Azure function that will calculate the CPM.
 
@@ -510,7 +608,7 @@ As part of configuring the custom connector, you will complete the following
 - Test the custom connector
 - Configure a canvas app to use the connector
 
-### Task 5.1: Create Azure Function for CPM Calculation
+### Task 7.1: Create Azure Function for CPM Calculation
 
 1. Create function
 
@@ -657,15 +755,15 @@ As part of configuring the custom connector, you will complete the following
 
    - Save the **key** in a notepad, you will need it in the next exercise.
 
-## Exercise 6: Create the Custom Connector
+## Exercise 8: Create the Custom Connector
 
 **Objective:** In this exercise, you will create the Custom Connector. This same approach could be used to describe any existing API you create or that has been created by any third party.
 
-### Task 6.1: Create the Custom Connector
+### Task 8.1: Create the Custom Connector
 
 1. Open the Permit Management solution
 
-   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -811,15 +909,15 @@ As part of configuring the custom connector, you will complete the following
 
    - Select **Done.**
 
-## Exercise 7: Test Connector
+## Exercise 9: Test Connector
 
 **Objective:** In this exercise, you will use the Custom Connector from a canvas app.
 
-### Task 7.1: Test in Canvas app
+### Task 9.1: Test in Canvas app
 
 1. Open the Permit Management solution
 
-   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
 
@@ -1016,46 +1114,3 @@ As part of configuring the custom connector, you will complete the following
    - Select **Publish this version**.
    - Click the **<- Back** icon.
    - Select **Leave**.
-
-## Exercise 8: Export and import solution
-
-**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
-
-### Task 8.1: Export solution
-
-1. Export managed solution.
-
-   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
-   - Select **Solutions**.
-   - Open the **Permit Management** solution.
-   - Select the **Overview** tab in the solution.
-   - Select **Export**.
-   - Select **Publish** and wait for the publishing to complete.
-   - Select **Next**.
-   - Set the version number to `1.0.0.10`.
-   - Select **Managed**.
-   - Select **Export**.
-   - Click **Download** to download the managed solution on your machine.
-
-1. Export unmanaged solution.
-
-   - Select **Export** again.
-   - Select **Next**.
-   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.10`.
-   - Select **Unmanaged**.
-   - Select **Export**.
-   - Click **Download** to download the unmanaged solution on your machine.
-
-### Task 8.2: Import solution
-
-1. Import the Permit Management solution.
-
-   - Sign in to the Power Apps Maker portal `https://make.powerapps.com/`.
-   - Select your **Production** environment.
-   - Select **Solutions**.
-   - Select **Import solution**.
-   - Select **Browse**.
-   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
-   - Select **Next**.
-   - Expand **Advanced settings** and make sure **Upgrade** is selected.
-   - Select **Import** and wait the import to complete.

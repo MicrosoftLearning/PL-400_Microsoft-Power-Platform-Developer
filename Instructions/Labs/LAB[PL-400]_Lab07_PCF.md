@@ -40,9 +40,6 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L07\Compl
 
 Complete source code files for this lab can be found in the  C:\Labfiles\L07\Resources folder.
 
-> [!IMPORTANT]
-> You should have installed .NET 4.6.2 and Power Apps CLI in an earlier lab. If you have not completed the steps in the Power Platform Tools lab, you must complete those before starting this lab.
-
 ## Exercise 1: Create the PCF Control
 
 **Objective:** In this exercise, you will create a Power Apps Components Framework control using the Power Apps CLI.
@@ -902,21 +899,21 @@ In this task, you will use the **css** resource you configured to change the col
    - Select the **Overview** tab in the solution.
    - Select **Export**.
 
-     ![Export solution - screenshot](../images/L03/solution-overview-export.png)
+     ![Export solution - screenshot](../images/S03/solution-overview-export.png)
 
    - Select **Publish** and wait for the publishing to complete.
 
-     ![Publish solution - screenshot](../images/L03/export-solution-publish.png)
+     ![Publish solution - screenshot](../images/S03/export-solution-publish.png)
 
    - Select **Next**.
    - Set the version number to `1.0.0.7`.
    - Select **Managed**.
 
-     ![Export solution - screenshot](../images/L07/export-solution-managed.png)
+     ![Export solution - screenshot](../images/S03/export-solution-managed.png)
 
    - Select **Export**.
 
-     ![Export solution - screenshot](../images/L03/export-solution-download.png)  
+     ![Export solution - screenshot](../images/S03/export-solution-download.png)  
 
    - Click **Download** to download the managed solution on your machine.
 

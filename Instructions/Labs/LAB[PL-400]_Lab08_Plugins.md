@@ -235,7 +235,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 
    - Select **Login**.
 
-     ![Tools environments - screenshot](../images/L06/pac-tools-environments.png)
+     ![Tools environments - screenshot](../images/L04/pac-tools-environments.png)
 
    - Select your **Development** environment and select **Login**.
 
@@ -769,3 +769,46 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    statusfilter.AddCondition("statuscode", ConditionOperator.Equal, 330650001);
    qe.Criteria.AddFilter(statusfilter);
    ```
+
+## Exercise 6: Export and import solution
+
+**Objective:** In this exercise, you will export the solution you created in the development environment and import it to the production environment.
+
+### Task 6.1: Export solution
+
+1. Export managed solution.
+
+   - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
+   - Select **Solutions**.
+   - Open the **Permit Management** solution.
+   - Select the **Overview** tab in the solution.
+   - Select **Export**.
+   - Select **Publish** and wait for the publishing to complete.
+   - Select **Next**.
+   - Set the version number to `1.0.0.8`.
+   - Select **Managed**.
+   - Select **Export**.
+   - Click **Download** to download the managed solution on your machine.
+
+1. Export unmanaged solution.
+
+   - Select **Export** again.
+   - Select **Next**.
+   - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.8`.
+   - Select **Unmanaged**.
+   - Select **Export**.
+   - Click **Download** to download the unmanaged solution on your machine.
+
+### Task 6.2: Import solution
+
+1. Import the Permit Management solution.
+
+   - Sign in to the Power Apps Maker portal `https://make.powerapps.com/`.
+   - Select your **Production** environment.
+   - Select **Solutions**.
+   - Select **Import solution**.
+   - Select **Browse**.
+   - Select the **Managed** solution file you exported in the previous task and then select **Open**.
+   - Select **Next**.
+   - Expand **Advanced settings** and make sure **Upgrade** is selected.
+   - Select **Import** and wait the import to complete.
