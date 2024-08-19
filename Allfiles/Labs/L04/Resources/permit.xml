@@ -1,0 +1,20 @@
+<entities >
+  <entity name="contoso_buildsite" displayname="Build Site" etc="10436" primaryidfield="contoso_buildsiteid" primarynamefield="contoso_street1" disableplugins="false">
+    <fields>
+      <field displayname="City" name="contoso_city" type="string" customfield="true" />
+      <field displayname="Build Site" name="contoso_buildsiteid" type="guid" primaryKey="true" />
+      <field displayname="Country/Region" name="contoso_country" type="string" customfield="true" />
+      <field displayname="State/Province" name="contoso_stateprovince" type="string" customfield="true" />
+      <field displayname="Street Address" name="contoso_street1" type="string" customfield="true" />
+      <field displayname="ZIP/Postal Code" name="contoso_postalcode" type="string" customfield="true" />
+    </fields>
+  </entity>
+  <entity name="contoso_permittype" displayname="Permit Type" etc="10439" primaryidfield="contoso_permittypeid" primarynamefield="contoso_name" disableplugins="false">
+    <fields>
+      <field displayname="Permit Type" name="contoso_permittypeid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="contoso_name" type="string" customfield="true" />
+      <field displayname="Require Inspections" name="contoso_requireinspections" type="bool" customfield="true" />
+      <field displayname="Require Size" name="contoso_requiresize" type="bool" customfield="true" />
+    </fields>
+  </entity>
+</entities>

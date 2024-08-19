@@ -1,0 +1,47 @@
+<entities  dateMode="relative">
+  <entity name="contact" displayname="Contact" etc="2" primaryidfield="contactid" primarynamefield="fullname" disableplugins="false">
+    <fields>
+      <field displayname="First Name" name="firstname" type="string" />
+      <field displayname="Contact" name="contactid" type="guid" primaryKey="true" />
+      <field displayname="Last Name" name="lastname" type="string" />
+    </fields>
+  </entity>
+  <entity name="contoso_buildsite" displayname="Build Site" etc="10436" primaryidfield="contoso_buildsiteid" primarynamefield="contoso_street1" disableplugins="false">
+    <fields>
+      <field displayname="Build Site" name="contoso_buildsiteid" type="guid" primaryKey="true" />
+      <field displayname="City" name="contoso_city" type="string" customfield="true" />
+      <field displayname="Country/Region" name="contoso_country" type="string" customfield="true" />
+      <field displayname="State/Province" name="contoso_stateprovince" type="string" customfield="true" />
+      <field displayname="Street Address" name="contoso_street1" type="string" customfield="true" />
+      <field displayname="ZIP/Postal Code" name="contoso_postalcode" type="string" customfield="true" />
+    </fields>
+  </entity>
+  <entity name="contoso_permittype" displayname="Permit Type" etc="10439" primaryidfield="contoso_permittypeid" primarynamefield="contoso_name" disableplugins="false">
+    <fields>
+      <field displayname="Permit Type" name="contoso_permittypeid" type="guid" primaryKey="true" />
+      <field displayname="Require Inspections" name="contoso_requireinspections" type="bool" customfield="true" />
+      <field displayname="Require Size" name="contoso_requiresize" type="bool" customfield="true" />
+      <field displayname="Name" name="contoso_name" type="string" customfield="true" />
+    </fields>
+  </entity>
+  <entity name="contoso_permit" displayname="Permit" etc="10438" primaryidfield="contoso_permitid" primarynamefield="contoso_name" disableplugins="false">
+    <fields>
+      <field displayname="Build Site" name="contoso_buildsite" type="entityreference" lookupType="contoso_buildsite" customfield="true" />
+      <field displayname="Contact" name="contoso_contact" type="entityreference" lookupType="contact" customfield="true" />
+      <field displayname="Name" name="contoso_name" type="string" customfield="true" />
+      <field displayname="Permit" name="contoso_permitid" type="guid" primaryKey="true" />
+      <field displayname="Permit Type" name="contoso_permittype" type="entityreference" lookupType="contoso_permittype" customfield="true" />
+      <field displayname="Start Date" name="contoso_startdate" type="datetime" customfield="true" dateMode="relativeDaily" />
+    </fields>
+  </entity>
+  <entity name="contoso_inspection" displayname="Inspection" etc="10437" primaryidfield="contoso_inspectionid" primarynamefield="contoso_name" disableplugins="false">
+    <fields>
+      <field displayname="Permit" name="contoso_permit" type="entityreference" lookupType="contoso_permit" customfield="true" />
+      <field displayname="Inspection" name="contoso_inspectionid" type="guid" primaryKey="true" />
+      <field displayname="Inspection Type" name="contoso_inspectiontype" type="optionsetvalue" customfield="true" />
+      <field displayname="Scheduled Date" name="contoso_scheduleddate" type="datetime" customfield="true" dateMode="relativeDaily" />
+      <field displayname="Name" name="contoso_name" type="string" customfield="true" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+    </fields>
+  </entity>
+</entities>
