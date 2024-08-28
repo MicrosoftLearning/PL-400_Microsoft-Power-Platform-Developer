@@ -237,7 +237,37 @@ As part of configuring the event publishing, you will complete the following:
 - Configure Microsoft Dataverse to publish events using a Webhook
 - Test publishing of events
 
-### Task 5.1: Create a Function App in the Azure Portal
+### Task 5.1: Create a storage account
+
+1. Create Storage account.
+
+   - Select **Show portal menu** and then select **+ Create a resource**.
+
+   - Search for `storage account` and select **Storage account** by Microsoft.
+
+   - Click on the **Storage account** tile.
+
+   - Select **Create**.
+
+   - Select your **Azure Pass - Sponsorship** subscription.
+
+   - Select the **PL400** for resource group.
+
+   - Enter `pl400sa` followed by a unique number for Storage account name.
+
+     > Note: Storage account name must be unique across Azure.
+
+   - Select **Standard** for Performance.
+
+   - Select **Locally-redundant storage (LRS)** for Redundancy.
+
+     ![Create storage account - screenshot](../images/L09/azure-storage-account-create.png)
+
+   - Select **Review + create**.
+
+   - Select **Create**.
+
+### Task 5.2: Create a Function App in the Azure Portal
 
 1. Create function app.
 
@@ -273,7 +303,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Next : Storage**.
 
-   - Select the storage account you created in the previous lab.
+   - Select the storage account you created in the previous task.
 
    - Select **Review + create**.
 
