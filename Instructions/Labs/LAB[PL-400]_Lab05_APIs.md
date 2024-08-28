@@ -230,7 +230,6 @@ Complete code files for this lab can be found in the  C:\Labfiles\L05\Resources 
      inspectionsQuery.Distinct = true;
      EntityCollection inspections = crmSvc.RetrieveMultiple(inspectionsQuery);
      Console.WriteLine("Number of Pending Inspections=" + inspections.Entities.Count.ToString());
-     }
      foreach (Entity inspection in inspections.Entities)
      {
          EntityReference permit = (EntityReference)inspection["contoso_permit"];
