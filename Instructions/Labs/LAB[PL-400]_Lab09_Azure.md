@@ -807,7 +807,7 @@ As part of configuring the custom connector, you will complete the following
 
      ![Rename custom connector - screenshot](../images/L09/Mod_2_Custom_Connector_image18.png)
 
-   - Locate the **Host** column and paste the **Function URL** you copied in Exercise 1.
+   - Locate the **Host** column and paste the **Function URL** you copied in Exercise 7.
 
    - Remove https:// and everything after .net.
 
