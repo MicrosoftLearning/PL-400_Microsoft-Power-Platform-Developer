@@ -471,7 +471,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
    - Select **Choose file**.
    - Select the **PermitFormFunctions.js** file and select **Open**.
    - Select **Save**. The Edit web resource pane will close.
-   - With the Perform Form Scripts web resources still selected, select **Publish** in the action bar.
+   - With the Permit Form Script web resource still selected, select **Publish** in the action bar.
   
 ### Task 2.4: Test Your Changes
 
