@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 9: Integration with Azure'
-    module: 'Module 7: Integrate Dataverse and Azure and Module 8: Custom Connectors''
+    module: 'Module 7: Integrate Dataverse and Azure and Module 8: Custom Connectors'
 ---
 
 # Practice Lab 9 – Azure
