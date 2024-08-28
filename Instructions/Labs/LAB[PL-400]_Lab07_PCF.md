@@ -720,7 +720,7 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Under **Data experiences**, select **Forms**.
 
-   - Open the **Main** form.
+   - Select the **Main** form.
 
      ![Open form - screenshot](../images/L07/permit-table-forms.png)
 
