@@ -226,7 +226,7 @@ Complete code files for this lab can be found in the  C:\Labfiles\L05\Resources 
      };
      inspectionsQuery.ColumnSet.AddColumn("contoso_permit");
      inspectionsQuery.ColumnSet.AddColumn("contoso_name");
-     inspectionsQuery.Criteria.AddCondition("statuscode", ConditionOperator.Equal, (int)contoso_Inspection_StatusCode.Pending);
+     inspectionsQuery.Criteria.AddCondition("statuscode", ConditionOperator.Equal, 330650001);
      inspectionsQuery.Distinct = true;
      EntityCollection inspections = crmSvc.RetrieveMultiple(inspectionsQuery);
      Console.WriteLine("Number of Pending Inspections=" + inspections.Entities.Count.ToString());
