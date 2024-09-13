@@ -358,7 +358,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Delete**.
 
-     ![Delete output - screenshot](../images/L09/Mod_01_Web_Hook_image14.png)
+     ![Delete output - screenshot](../images/L09/webhook-output.png)
 
    - Select **Delete**.
 
@@ -449,7 +449,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Enter `Update` for **Message**.
 
-   - Enter `contoso_permit` for **Primary Table**.
+   - Enter `contoso_permit` for **Primary Entity**.
 
    - Select **Filtering Attributes.**
 
