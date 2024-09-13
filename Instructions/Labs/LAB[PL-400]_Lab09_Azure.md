@@ -220,7 +220,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Create**.
 
-   - Select your **Azure Pass - Sponsorship** subscription.
+   - Select the Azure subscription.
 
    - Select the **PL400** for resource group.
 
@@ -260,7 +260,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Select**.
 
-   - Select your **Azure Pass - Sponsorship** subscription.
+   - Select the Azure subscription.
 
    - Select the **PL400** for resource group.
 
