@@ -196,36 +196,7 @@ In this exercise, you will import data the into the **Dev One** environment usin
 
 1. Select the **X** to close the Configuration Migration Tool.
 
-1. Skip to Exercise 5.
-
-## Exercise 4: Azure Pass
-
-In this exercise, you will create an Azure subscription using an Azure Pass.
-
-### Task 4.1: Redeem Azure Pass
-
-1. Obtain a new Azure Pass (valid for 30-days) from the instructor, lab provider, or other source.
-
-1. Navigate to the Azure Pass redemption page `https://www.microsoftazurepass.com` and sign in with your Microsoft 365 credentials, if prompted.
-
-1. Follow these instructions to redeem your Azure Pass.
-
-    Redeem a Microsoft Azure Pass `https://www.microsoftazurepass.com/Home/HowTo?Length=5`
-
-1. On the **Your profile** page, change *Last name* from *Administrator* to **Developers**.
-
-1. On the **Your profile** page, you will need to enter a valid *Address line 1*, *City*, and *Postal Code* and agree to the subscription offer. Do not change any other details.
-
-    > **Note**:
-    > If you are prompted for a *Phone number* when using the Power Platform or Azure portals, enter `0123456789` and select **Submit**.
-
-1. Wait for the Azure subscription to be provisioned and select **Cancel**.
-
-1. Select **Subscriptions**. You should see **Azure Pass - Sponsorship**.
-
-    ![Azure Pass subscription.](../images/L00/azure-subscription.png)
-
-## Exercise 5: Create an Azure Function
+## Exercise 4: Create an Azure Function
 
 **Objective:** In this exercise, you will create an Azure Function that will be the endpoint to accept and log incoming web requests.
 
@@ -237,7 +208,7 @@ As part of configuring the event publishing, you will complete the following:
 - Configure Microsoft Dataverse to publish events using a Webhook
 - Test publishing of events
 
-### Task 5.1: Create a storage account
+### Task 4.1: Create a storage account
 
 1. Create Storage account.
 
@@ -267,7 +238,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Create**.
 
-### Task 5.2: Create a Function App in the Azure Portal
+### Task 4.2: Create a Function App in the Azure Portal
 
 1. Create function app.
 
@@ -309,7 +280,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Create** and wait for the function app to be deployed.
 
-### Task 5.2: Create an Azure Function in the Azure Portal
+### Task 4.3: Create an Azure Function in the Azure Portal
 
 1. Create a new function
 
@@ -413,9 +384,9 @@ As part of configuring the event publishing, you will complete the following:
 
    - Save the **key** in a notepad, you will need it in the next exercise.
 
-## Exercise 6: Configure Webhook
+## Exercise 5: Configure Webhook
 
-### Task 6.1: Configure publishing to a webhook
+### Task 5.1: Configure publishing to a webhook
 
 1. Start the Plug-in Registration Tool.
 
@@ -532,7 +503,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Register Image**.
 
-### Task 6.2: Test the Webhook
+### Task 5.2: Test the Webhook
 
 1. Configure formatted output when monitoring the function.
 
@@ -604,7 +575,7 @@ As part of configuring the event publishing, you will complete the following:
 
       ![Post and pre entity image values - screenshot](../images/L09/Mod_01_Web_Hook_image46.png)
 
-### Task 6.3: Add webhook to the solution
+### Task 5.3: Add webhook to the solution
 
 1. Add webhook to solution.
 
@@ -620,7 +591,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **NewSize: Update of contoso_permit** step and then select **Add**.
 
-## Exercise 7: Create the Azure Function for a custom connector
+## Exercise 6: Create the Azure Function for a custom connector
 
 **Objective:** In this exercise, you will create an Azure function that will calculate the CPM.
 
@@ -638,7 +609,7 @@ As part of configuring the custom connector, you will complete the following
 - Test the custom connector
 - Configure a canvas app to use the connector
 
-### Task 7.1: Create Azure Function for CPM Calculation
+### Task 6.1: Create Azure Function for CPM Calculation
 
 1. Create function
 
@@ -785,11 +756,11 @@ As part of configuring the custom connector, you will complete the following
 
    - Save the **key** in a notepad, you will need it in the next exercise.
 
-## Exercise 8: Create the Custom Connector
+## Exercise 7: Create the Custom Connector
 
 **Objective:** In this exercise, you will create the Custom Connector. This same approach could be used to describe any existing API you create or that has been created by any third party.
 
-### Task 8.1: Create the Custom Connector
+### Task 7.1: Create the Custom Connector
 
 1. Open the Permit Management solution
 
@@ -939,11 +910,11 @@ As part of configuring the custom connector, you will complete the following
 
    - Select **Done.**
 
-## Exercise 9: Test Connector
+## Exercise 8: Test Connector
 
 **Objective:** In this exercise, you will use the Custom Connector from a canvas app.
 
-### Task 9.1: Test in Canvas app
+### Task 8.1: Test in Canvas app
 
 1. Open the Permit Management solution
 
