@@ -797,6 +797,8 @@ In this task, you will use the **css** resource you configured to change the col
 
    - Change the **Status Reason** to **New Request**.
 
+   - Select **Save & Close**.
+
    - You should have four inspections for Test Permit; one Passed, one Failed, one New Request, and one Pending.
 
      ![Test data - screenshot](../images/L07/test-data-inspections.png)
