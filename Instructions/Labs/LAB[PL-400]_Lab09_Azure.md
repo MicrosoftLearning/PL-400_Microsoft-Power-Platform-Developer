@@ -36,7 +36,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
 If you are not using cloud slice and already have the solution installed you should skip to Exercise 4.
 
-Otherwise, id you are starting a new lab you will need to:
+Otherwise, if you are starting a new lab you will need to:
 
 - Download the lab files
 - Use the **Dev One** environment
@@ -507,15 +507,19 @@ As part of configuring the event publishing, you will complete the following:
 
 1. Configure formatted output when monitoring the function.
 
-   - Go back to your **Azure Function**.
+   - Sign in to the Azure portal `https://portal.azure.com`.
 
-   - Select **Monitor**.
+   - Select **All Resources**, search for `pl400wh`, and open the function app you created earlier in the lab.
+
+   - Select the **Functions** tab.
+
+   - Select **WebHookTrigger** in the **Functions** tab.
 
    - Select the **Logs** tab.
 
-   - Select **App Insight Logs**
+   - Select **App Insight Logs** if not already selected.
 
-     ![Configure Monitor - screenshot](../images/L09/azure-function-monitor.png)
+     ![Configure Monitor - screenshot](../images/L09/azure-function-logs.png)
 
 1. Update Permit record.
 
@@ -615,7 +619,7 @@ As part of configuring the custom connector, you will complete the following
 
    - Sign in to the Azure portal `https://portal.azure.com`.
 
-   - Select **All Resources**, search for `pl400wh`, and open the function app you created in the previous lab.
+   - Select **All Resources**, search for `pl400wh`, and open the function app you created earlier in the lab.
 
    - Select the **Functions** tab.
 
