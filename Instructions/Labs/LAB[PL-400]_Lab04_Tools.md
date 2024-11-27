@@ -127,11 +127,9 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L04\Starte
    ![XrmToolBox Tool Library - screenshot](../images/L04/xrmtoolbox-tool-library.png)
 
 1. Select **Install**.
-1. Select **Yes**.
 1. Select **Close**.
 1. Search for `trace` and select **Plugin Trace Viewer by Jonas Rapp**.
 1. Select **Install**.
-1. Select **Yes**.
 1. Select **Close**.
 1. Close the *Tool Library* tab.
 
