@@ -112,7 +112,7 @@ In this exercise, you will import data the into your **Development** environment
 
 1. Select the ellipsis (...) menu and locate and select **PermitManagementdata.zip** file.
 
-    > **Note:** This file is located in the Labfiles/L01 folder on your machine.
+    > **Note:** This file is located in the C:/Labfiles/L01 folder on your machine.
 
 1. Select **Open**. The data file will be validated.
 
