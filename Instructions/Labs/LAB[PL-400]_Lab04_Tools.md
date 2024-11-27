@@ -158,11 +158,11 @@ A starter solution file for this lab can be found in the  C:\Labfiles\L04\Starte
 
 1. Click on the **(entity)** node in the **Query Builder** pane.
 1. Select **contoso_inspection** in the Entity name drop down.
-1. Click on **filter**.
+1. Click on **filter** under **Quick Actions**.
 1. Select **statuscode** in the Attribute drop down.
 1. Select **Equal** in the Operator drop down.
 1. Select **New Request** in the Value drop down.
-1. Click on **+condition**.
+1. Click on **+condition** under **Quick Actions**.
 1. Select **statuscode** in the Attribute drop down.
 1. Select **Equal** in the Operator drop down.
 1. Select **Pending** in the Value drop down.
