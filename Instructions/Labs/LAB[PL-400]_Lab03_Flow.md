@@ -208,11 +208,11 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 
      ![Retrieve row Dynamic content - screenshot](../images/L03/dynamic-content-permit.png)
 
-1. Add Respond to PowerApps step.
+1. Add Respond to a Power App step.
 
    - Select **+ New step**.
    - Search for `Power Apps` and select the **Power Apps** connector.
-   - Select the **Respond to a PowerApp or flow** action.
+   - Select the **Respond to a Power App or flow** action.
    - Select **+ Add an output**.
    - Select **Date**.
    - Click in *Enter title* and enter `startdate`.
@@ -240,7 +240,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 
 1. Add the instant cloud flow to the app.
 
-   - Select the **Power Automate** tab.
+   - Select the ellipses **...** and then **Power Automate** tab.
 
      ![Add cloud flow to app - screenshot](../images/L03/add-flow-to-app.png)
 
@@ -256,6 +256,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
    - Select the **Tree view** tab.
    - Rename the button to `Clear Button`.
    - Change the **Text** value of the button to `"Clear Comments"`.
+   - Resize the button to fit the added text.
 
      ![Form layout - screenshot](../images/L03/clear-button.png)
 
