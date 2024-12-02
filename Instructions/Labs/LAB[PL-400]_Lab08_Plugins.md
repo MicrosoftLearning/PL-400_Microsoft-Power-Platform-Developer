@@ -597,15 +597,11 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 
    - Select your **Dev** connection and select **OK**.
 
-   - Change **Trace Log Setting** to **All**.
+   - Change **Setting** to **All**.
 
-   - Set Enable Plug-in Logging to Plug-in Trace Log to **All** and select **OK**.
+   - Select **OK** and then again **OK**.
 
      ![Enable trace logging - screenshot](../images/L08/enable-trace-logs.png)
-  
-   - Select **OK**.
-
-   - Select **OK**.
 
    - Leave XrmToolBox open.
 
@@ -684,8 +680,6 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    - The record should not get created.
 
     ![Unsaved changes - screenshot](../images/L08/Mod_01_Plugin_image70.png)
-
-   - Select **OK**.
 
    - Select **Permits**.
 
