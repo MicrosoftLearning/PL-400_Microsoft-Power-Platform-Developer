@@ -114,7 +114,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
      ![Manifest file - screenshot](../images/L07/mod-02-pcf-1-07.png)
 
-   - Open the **Index.ts** file and examine it.
+   - Open the **index.ts** file and examine it.
 
    - Expand the **generated** folder.
 
@@ -570,7 +570,10 @@ In this task, you will switch from using the hard-coded array of data to using a
 
      ![Select file - screenshot](../images/L07/mod-02-pcf-1-41.png)
 
-   - Select the **testdata.csv** and then select **Open**.
+   - Select the **testdata.csv** and then select **Open**. 
+
+    > [!NOTE]
+    > The file should be located at C:\LabFiles\L07\pcfTimelineControl\src.
 
      ![Select CSV file - screenshot](../images/L07/mod-02-pcf-1-42.png)
 
@@ -590,7 +593,7 @@ In this task, you will use the **css** resource you configured to change the col
 
 1. Add red and green styles to the timelinecontrol.css file
 
-   - In **Visual Studio Code**, expand d the **css** folder and open the **timelinecontrol.css** file.
+   - In **Visual Studio Code**, expand the **css** folder and open the **timelinecontrol.css** file.
 
    - Add the style below to the **timelinecontrol.css** file and save your changes.
 
@@ -815,7 +818,9 @@ In this task, you will use the **css** resource you configured to change the col
 
    - The control should show the four inspections, but the color will not match the status reason colors.
 
-     ![Timeline control - screenshot](../images/L07/mod-02-pcf-1-66.png)
+      ![Timeline control - screenshot](../images/L07/mod-02-pcf-1-66.png)
+    > [!NOTE]
+    > If the **Inspections** tab is not visible, modify the **Permit Type** to require inspections.
 
 ### Task 2.3: Debug
 
