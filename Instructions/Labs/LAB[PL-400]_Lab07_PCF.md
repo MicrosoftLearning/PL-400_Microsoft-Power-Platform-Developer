@@ -153,7 +153,20 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
      npm run build
      ```
 
-   - You should now be able to see the **out** folder. Expand the folder and review its content.
+     > [!NOTE]
+     > if you experience an error, try to modify the .eslintrc.json file and change the rules as follows and re-run npm run build.
+
+     ``` JSON
+     "rules": {
+       "@typescript-eslint/no-unused-vars": "off",
+       "@typescript-eslint/no-var-requires": "off",
+       "@typescript-eslint/no-explicit-any": "off",
+       "no-unused-vars": "off",
+       "no-undef" : "off"
+     }
+     ```
+
+   - You should now be able to see the out folder. Expand the folder and review its content.
 
      ![Out folder - screenshot](../images/L07/mod-02-pcf-1-13.png)
 
@@ -187,15 +200,15 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
 ### Task 1.3: Setup solution
 
-1. Launch the **Developer Command Promt**, if you do not have it open from the previous steps. 
-
 1. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl**.
 
    - Change directory to the **pcfTimelineControl** folder.
 
      ```dos
-     cd C:\LabFiles\L07\pcfTimelineControl
+     cd ..
      ```
+
+   - You should now be in the **pcfTimelineControl** directory.
 
    - Create a new folder with the name **solution**.
 
@@ -247,7 +260,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
 1. Build the solution
 
-   - Make sure you are still in the pcfSolution folder in the **Developer Command Prompt**.
+   - Make sure you are still in the pcfSolution folder.
 
    - Build the project by running the command below.
 
@@ -266,7 +279,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
 1. Change to the **src** folder.
 
-   - Run the following command in the **Visual Studio Code Terminal** window.
+   - Run the following command in the Visual Studio Code Terminal window.
 
      ```dos
      cd ..\src
@@ -290,7 +303,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
    - Open the **ControlManifest.Input.xml** file.
 
-   - Locate the **resources** sub element and uncomment the **css** tag, change the **order** attribute to **2**.
+   - Locate the **resources** sub element and uncomment the **css** tag, change the **Order** to **2**.
 
      ![Uncomment css - screenshot](../images/L07/mod-02-pcf-1-23.png)
 
