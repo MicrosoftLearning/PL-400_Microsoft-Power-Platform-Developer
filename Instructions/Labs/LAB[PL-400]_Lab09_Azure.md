@@ -413,7 +413,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Login**.
 
-   - Select the Development environment and select **Login**.
+   - Select the Dev One environment and select **Login**.
 
 1. Register webhook.
 
@@ -515,11 +515,11 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **WebHookTrigger** in the **Functions** tab.
 
-   - Select the **Logs** tab.
-
-   - Select **App Insight Logs** if not already selected.
+   - In the **App Insight Logs** dropdown, select **Filesystem Logs**.
 
      ![Configure Monitor - screenshot](../images/L09/azure-function-logs.png)
+
+   - Select **Ok**.
 
 1. Update Permit record.
 
@@ -978,7 +978,7 @@ As part of configuring the custom connector, you will complete the following
 
      ![Copy input text - screenshot](../images/L09/Mod_2_Custom_Connector_image48.png)
 
-   - Paste the text input you copied to the **CPM Calc Screen.**
+   - Paste the text input you copied to the **CPM Calc Screen** by selecting **Paste** and **Paste** again.
 
      ![Paste text input - screenshot](../images/L09/Mod_2_Custom_Connector_image49.png)
 
@@ -1038,7 +1038,7 @@ As part of configuring the custom connector, you will complete the following
 
    - Expand **Connectors**.
 
-   - Select **CPM Connector**.
+   - Select **CPM Calculator**.
 
      ![CPM Calculator connector - screenshot](../images/L09/Mod_2_Custom_Connector_image56.png)
 
