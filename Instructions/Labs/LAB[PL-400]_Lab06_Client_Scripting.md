@@ -106,7 +106,7 @@ In this task, you will set up a folder to contain the JavaScript web resource fi
 
      ![Namespaces - screenshot](../images/L06/mod-01-client-scripting-07.png)
 
-   - Add the function below after adding the namespaces.
+   - Add the code below after adding the namespaces.
 
      ```javascript
      ContosoPermit.Scripts.PermitForm = {
@@ -123,7 +123,7 @@ In this task, you will create functions for the logic that you will be implement
 
 1. Add a function for the OnLoad event.
 
-   - Add the function below to the **PermitFormFunctions.js** file at the top of the *ContosoPermit.Scripts.PermitForm* function created in the previous task.
+   - Add the function below to the **PermitFormFunctions.js** file at the top of the *ContosoPermit.Scripts.PermitForm* object created in the previous task.
 
       ```javascript
       handleOnLoad: function (executionContext) {
@@ -136,7 +136,7 @@ In this task, you will create functions for the logic that you will be implement
 
 1. Add a function for the OnChange permit type event.
 
-   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* function.
+   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* object.
 
       ```javascript
       handleOnChangePermitType: function (executionContext) {
@@ -313,7 +313,7 @@ In this task, you will test the event handlers.
 
    - Open **Visual Studio Code**.
 
-   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* function.
+   - Add the function below to the **PermitFormFunctions.js** file inside the *ContosoPermit.Scripts.PermitForm* object.
 
       ```javascript
       _handlePermitTypeSettings: function (executionContext) {
@@ -462,7 +462,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
    - Select **Solutions**.
    - Open the **Permit Management** solution.
    - Select **Web resources**.
-   - Edit the **Permit Form Script** web resource.
+   - Edit the **Permit Form Scripts** web resource.
 
     ![Open web resource - screenshot](../images/L06/mod-01-client-scripting-41.png)
 
@@ -539,7 +539,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 
    - Open **Visual Studio Code**.
 
-   - Add the script below inside the **if permitType === null** statement.
+   - Add the script below inside the **if permitType === null** statement before *return;*.
 
       ```javascript
       formContext.getAttribute("contoso_newsize").setRequiredLevel("none");
@@ -553,7 +553,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 
 1. When Permit Type is selected, check if the value of the *Require Size* column value of the Permit Type is set to Yes.
 
-   - Add the script below inside the **retrieveRecord** function.
+   - Add the script below inside the **retrieveRecord** function after previous statements.
 
       ```javascript
       if (result.contoso_requiresize) {
@@ -605,7 +605,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
    - Select **Solutions**.
    - Open the **Permit Management** solution.
    - Select **Web resources**.
-   - Edit the **Permit Form Script** web resource.
+   - Edit the **Permit Form Scripts** web resource.
 
 1. Load the updated version of PermitFormFunction.js.
 
@@ -654,7 +654,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
 
    - In the **Permit** record form, clear the **Permit Type** field.
 
-     ![Remove permit type - screenshot](../images/L06/mod-01-client-scripting-64.png)
+     ![Remove permit type - screenshot](../images/L06/mod-01-client-scripting-32.png)
 
    - Both the **Inspections** tab and **New Size** column should be hidden. They should be removed as soon as the *Permit Type* is removed.
 
@@ -859,7 +859,7 @@ In this task, you will create the logic to invoke that will call the custom API.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
    - Select **Web resources**.
-   - Edit the **Permit Form Script** web resource.
+   - Edit the **Permit Form Scripts** web resource.
 
 1. Load the updated version of PermitFormFunction.js.
 

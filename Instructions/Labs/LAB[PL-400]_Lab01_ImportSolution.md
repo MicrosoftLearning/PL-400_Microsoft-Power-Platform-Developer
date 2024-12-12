@@ -46,7 +46,7 @@ In this exercise, you will import the solution into your **Development** environ
 
 1. Select **Browse** and locate the **PermitManagement_1.0.0.0.zip** file and select **Open**.
 
-    > **Note:** This file is located in the Labfiles/L01 folder on your machine.
+    > **Note:** This file is located in the C:/Labfiles/L01 folder on your machine.
 
     ![Solution to import.](../images/L01/solution-to-import.png)
 
@@ -112,7 +112,7 @@ In this exercise, you will import data the into your **Development** environment
 
 1. Select the ellipsis (...) menu and locate and select **PermitManagementdata.zip** file.
 
-    > **Note:** This file is located in the Labfiles/L01 folder on your machine.
+    > **Note:** This file is located in the C:/Labfiles/L01 folder on your machine.
 
 1. Select **Open**. The data file will be validated.
 
