@@ -34,7 +34,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L09\Res
 
 ## Lab environment
 
-If you are not using cloud slice and already have the solution installed you should skip to Exercise 4.
+If you are using your own tenant and already have the solution installed you should skip to Exercise 4.
 
 Otherwise, if you are starting a new lab you will need to:
 
