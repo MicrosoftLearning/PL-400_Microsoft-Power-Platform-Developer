@@ -166,7 +166,7 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Select **Get Started** if a Welcome to the Power Platform admin center popup is shown.
 
-1. Select **Environments** from the left navigation pane. There should be a default environment, *Contoso (default)*, and possibly another environment named *Dev One*.
+1. Select **Manage** from the left navigation pane and then select **Environments**. There should be a default environment, *Contoso (default)*, and possibly another environment named *Dev One*.
 
 1. Select **+ New**.
 
