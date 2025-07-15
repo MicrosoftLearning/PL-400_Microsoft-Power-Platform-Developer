@@ -329,7 +329,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 
      ```csharp
      public LockPermitCancelInspections(string unsecureConfiguration, string secureConfiguration)
-     : base(typeof(PreOperationPermitCreate))
+     : base(typeof(LockPermitCancelInspections))
      {
 
      }
