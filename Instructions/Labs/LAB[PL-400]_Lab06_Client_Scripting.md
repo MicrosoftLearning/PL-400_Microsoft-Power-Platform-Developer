@@ -728,7 +728,6 @@ In this task, you will create a custom API that will be called to lock the permi
       - `Canceled Inspections Count` for *Display name*.
       - `Canceled Inspections Count` for *Description*.
    - Select **Integer** for *Type*.
-   - Select **Save & Close**.
 
      ![Process arguments - screenshot](../images/L06/mod-01-client-scripting-80.png)
 
@@ -756,6 +755,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
       ```javascript
       _lockPermitRequest : function (permitID, reason) {
+         "use strict";
 
       },
       ```
@@ -802,6 +802,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
       ```javascript
       lockPermit: function (primaryControl) {
+         "use strict";
 
       },
       ```
