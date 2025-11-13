@@ -162,28 +162,26 @@ In this task, you will upload the JavaScript file as a web resource.You will als
 
 1. Create web resource.
 
-   - Select **+ New**.
+    - Select **+ New**.
 
-   - Select **More** and then select **Web resource**.
+    - Select **More** and then select **Web resource**.
 
     ![Add web resource - screenshot](../images/L06/mod-01-client-scripting-12.png)
+
+    - Select **Choose file**.
+    
+    - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
+
+    - Select the **PermitFormFunctions.js** file and select **Open**.
+
+     ![Select file - screenshot](../images/L06/mod-01-client-scripting-14.png)
 
    - Enter `Permit Form Scripts` for **Display name**.
 
    - Enter `PermitFormScripts.js` for **Name**.
 
-   - Select **JavaScript (JS)** for **Type**.
-
-   - Select **Choose file**.
-
      ![New web resource form - screenshot](../images/L06/new-web-resource.png)
-
-   - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
-
-   - Select the **PermitFormFunctions.js** file and select **Open**.
-
-     ![Select file - screenshot](../images/L06/mod-01-client-scripting-14.png)
-
+   
    - Select **Save**.
 
 1. Add the JavaScript library to the Permit main form.
