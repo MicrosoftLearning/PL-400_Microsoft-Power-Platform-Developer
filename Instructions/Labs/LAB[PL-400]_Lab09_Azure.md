@@ -10,7 +10,7 @@ lab:
 
 This lab focuses on both inbound and outbound integration with Azure. In this lab you will:
 
-1) Use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
+1. Use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
 
 1. Build a custom connector that can be used from Power Apps and Power Automate. Custom connectors describe existing APIs and allow them to be used easily. In this lab, you will build an API that has common calculations used by inspectors so that they can be used by applications. After building the API, you will create a custom connector definition to make it available to Power Apps and Power Automate.
 
@@ -264,9 +264,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **PL400** for resource group.
 
-   - Enter `pl400wh` followed by your initials and a unique number for Function App name.
-
-     > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
+   - Enter `pl400wh` for Function App name.
 
    - Select **.NET** for Runtime stack
 
