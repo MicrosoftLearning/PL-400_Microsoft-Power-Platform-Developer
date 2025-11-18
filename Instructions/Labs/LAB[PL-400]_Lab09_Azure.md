@@ -1016,6 +1016,19 @@ As part of configuring the custom connector, you will complete the following
 
       ![Reposition button - screenshot](../images/L09/Mod_2_Custom_Connector_image54.png)
 
+1. Add another button.
+   - Select **+ Insert** tab.
+
+   - Select Button 
+
+   - Select **Tree view** tab.
+
+   - Rename button to `Back Button`
+
+   - Change the **Text** value of the button to `"Back"`.
+
+   - Change the **OnSelect** value to `Back()`.
+
 1. Add the result label to the screen
 
    - Select **+ Insert** tab.
@@ -1102,11 +1115,7 @@ As part of configuring the custom connector, you will complete the following
 
    - The CPM Calc screen should load.
 
-     ![Calculator page - screenshot](../images/L09/Mod_2_Custom_Connector_image63.png)
-
    - Enter values into the four fields and select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
-
-     ![Submit form - screenshot](../images/L09/Mod_2_Custom_Connector_image64.png)
 
    - The **Result Label** should show the calculated result from the Custom Connector.
 
