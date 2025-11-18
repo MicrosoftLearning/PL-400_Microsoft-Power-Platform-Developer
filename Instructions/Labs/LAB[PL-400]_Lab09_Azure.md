@@ -224,6 +224,8 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **PL400** for resource group.
 
+   - Ensure the **Region** is set to **East US 2**.
+
    - Enter `pl400sa` followed by a unique number for Storage account name.
 
      > Note: Storage account name must be unique across Azure.
@@ -269,6 +271,8 @@ As part of configuring the event publishing, you will complete the following:
    - Select **.NET** for Runtime stack
 
    - Select **8 (LTS), in-process model** for Version
+
+   - Ensure the **Region** is set to **East US 2**.
 
    - Select **Next : Storage**.
 
@@ -318,7 +322,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Run**.
 
-   - You should see **Hello, Azure** in the output.
+   - You should see the following output.
 
      ![Function output - screenshot](../images/L09/Mod_01_Web_Hook_image10.png)
 
@@ -326,7 +330,7 @@ As part of configuring the event publishing, you will complete the following:
 
 1. Edit the function
 
-   - Replace the entire Task method with the method below.
+   - Replace the entire **Run** method with the method below.
 
      ```csharp
      public static async void Run(HttpRequest req, ILogger log)
@@ -411,7 +415,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Login**.
 
-   - Select the Dev One environment and select **Login**.
+   - Select the **Dev One** environment and select **Login**.
 
 1. Register webhook.
 
