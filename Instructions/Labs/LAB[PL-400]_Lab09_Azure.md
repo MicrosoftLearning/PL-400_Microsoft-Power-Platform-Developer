@@ -280,6 +280,8 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Create** and wait for the function app to be deployed.
 
+   > **Note:** If the function app deployment fails with an error message stating SubscriptionIsOverQuotaForSku, try redeploying the function app in a different region such as Canada Central.
+
 ### Task 4.3: Create an Azure Function in the Azure Portal
 
 1. Create a new function
