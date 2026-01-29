@@ -10,7 +10,7 @@ lab:
 
 This lab focuses on both inbound and outbound integration with Azure. In this lab you will:
 
-1) Use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
+1. Use the event publishing capability of Microsoft Dataverse. When a permit results in changing the size of the build site, an external taxing authority needs to be notified so they can evaluate if additional taxing is required. You will configure Microsoft Dataverse to publish permits with size changes using the Webhook. To simulate the taxing authority receiving the information you will create a simple Azure function to receive the post.
 
 1. Build a custom connector that can be used from Power Apps and Power Automate. Custom connectors describe existing APIs and allow them to be used easily. In this lab, you will build an API that has common calculations used by inspectors so that they can be used by applications. After building the API, you will create a custom connector definition to make it available to Power Apps and Power Automate.
 
@@ -224,6 +224,8 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **PL400** for resource group.
 
+   - Ensure the **Region** is set to **East US 2**.
+
    - Enter `pl400sa` followed by a unique number for Storage account name.
 
      > Note: Storage account name must be unique across Azure.
@@ -264,13 +266,13 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **PL400** for resource group.
 
-   - Enter `pl400wh` followed by your initials and a unique number for Function App name.
-
-     > Note: Function app name must be unique across Azure. Wait until you see a green tick to confirm the name is unique.
+   - Enter `pl400wh` for Function App name.
 
    - Select **.NET** for Runtime stack
 
    - Select **8 (LTS), in-process model** for Version
+
+   - Ensure the **Region** is set to **East US 2**.
 
    - Select **Next : Storage**.
 
@@ -322,7 +324,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Run**.
 
-   - You should see **Hello, Azure** in the output.
+   - You should see the following output.
 
      ![Function output - screenshot](../images/L09/Mod_01_Web_Hook_image10.png)
 
@@ -330,7 +332,7 @@ As part of configuring the event publishing, you will complete the following:
 
 1. Edit the function
 
-   - Replace the entire Task method with the method below.
+   - Replace the entire **Run** method with the method below.
 
      ```csharp
      public static async void Run(HttpRequest req, ILogger log)
@@ -415,7 +417,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select **Login**.
 
-   - Select the Dev One environment and select **Login**.
+   - Select the **Dev One** environment and select **Login**.
 
 1. Register webhook.
 
@@ -1016,6 +1018,19 @@ As part of configuring the custom connector, you will complete the following
 
       ![Reposition button - screenshot](../images/L09/Mod_2_Custom_Connector_image54.png)
 
+1. Add another button.
+   - Select **+ Insert** tab.
+
+   - Select Button 
+
+   - Select **Tree view** tab.
+
+   - Rename button to `Back Button`
+
+   - Change the **Text** value of the button to `"Back"`.
+
+   - Change the **OnSelect** value to `Back()`.
+
 1. Add the result label to the screen
 
    - Select **+ Insert** tab.
@@ -1102,11 +1117,7 @@ As part of configuring the custom connector, you will complete the following
 
    - The CPM Calc screen should load.
 
-     ![Calculator page - screenshot](../images/L09/Mod_2_Custom_Connector_image63.png)
-
    - Enter values into the four fields and select **Submit**. You can notice the loading dots on top of the screen, which confirms that the request has been initiated.
-
-     ![Submit form - screenshot](../images/L09/Mod_2_Custom_Connector_image64.png)
 
    - The **Result Label** should show the calculated result from the Custom Connector.
 

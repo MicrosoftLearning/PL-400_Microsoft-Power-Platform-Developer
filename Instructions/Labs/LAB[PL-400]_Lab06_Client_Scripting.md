@@ -162,28 +162,26 @@ In this task, you will upload the JavaScript file as a web resource.You will als
 
 1. Create web resource.
 
-   - Select **+ New**.
+    - Select **+ New**.
 
-   - Select **More** and then select **Web resource**.
+    - Select **More** and then select **Web resource**.
 
     ![Add web resource - screenshot](../images/L06/mod-01-client-scripting-12.png)
+
+    - Select **Choose file**.
+    
+    - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
+
+    - Select the **PermitFormFunctions.js** file and select **Open**.
+
+     ![Select file - screenshot](../images/L06/mod-01-client-scripting-14.png)
 
    - Enter `Permit Form Scripts` for **Display name**.
 
    - Enter `PermitFormScripts.js` for **Name**.
 
-   - Select **JavaScript (JS)** for **Type**.
-
-   - Select **Choose file**.
-
      ![New web resource form - screenshot](../images/L06/new-web-resource.png)
-
-   - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
-
-   - Select the **PermitFormFunctions.js** file and select **Open**.
-
-     ![Select file - screenshot](../images/L06/mod-01-client-scripting-14.png)
-
+   
    - Select **Save**.
 
 1. Add the JavaScript library to the Permit main form.
@@ -730,7 +728,6 @@ In this task, you will create a custom API that will be called to lock the permi
       - `Canceled Inspections Count` for *Display name*.
       - `Canceled Inspections Count` for *Description*.
    - Select **Integer** for *Type*.
-   - Select **Save & Close**.
 
      ![Process arguments - screenshot](../images/L06/mod-01-client-scripting-80.png)
 
@@ -758,6 +755,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
       ```javascript
       _lockPermitRequest : function (permitID, reason) {
+         "use strict";
 
       },
       ```
@@ -804,6 +802,7 @@ In this task, you will create the logic to invoke that will call the custom API.
 
       ```javascript
       lockPermit: function (primaryControl) {
+         "use strict";
 
       },
       ```
