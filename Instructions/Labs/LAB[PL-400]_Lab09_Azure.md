@@ -1019,7 +1019,7 @@ As part of configuring the custom connector, you will complete the following
 1. Add another button.
    - Select **+ Insert** tab.
 
-   - Select Button 
+   - Select **Button**.
 
    - Select **Tree view** tab.
 
