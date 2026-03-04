@@ -663,7 +663,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 
    - Provide **Name** as `Test Permit Two`.
 
-   - Select **New Construction** for Permit Type, **One Microsoft Way** for Build Site, and **Jon Doe** for **Contact**.
+   - Select **New Construction** for Permit Type, **One Microsoft Way** for Build Site, and **John Doe** for **Contact**.
 
    - Select today's date for the Start Date.
 

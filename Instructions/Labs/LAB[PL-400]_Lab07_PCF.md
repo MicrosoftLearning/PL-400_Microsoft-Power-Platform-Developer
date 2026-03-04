@@ -696,7 +696,7 @@ In this task, you will use the **css** resource you configured to change the col
 
      ![Add existing custom control - screenshot](../images/L07/mod-02-pcf-1-79.png)
 
-   - Select **contoso_contoso_timelinecontrol**.
+   - Select **contoso_contoso.timelinecontrol**.
 
      ![Select control - screenshot](../images/L07/mod-02-pcf-1-80.png)
 
