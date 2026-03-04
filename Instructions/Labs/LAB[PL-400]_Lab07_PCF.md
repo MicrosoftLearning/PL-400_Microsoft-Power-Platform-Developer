@@ -377,7 +377,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
              { id: 1, content: 'item 1', start: '2023-08-20' },
              { id: 2, content: 'item 2', start: '2023-08-14' },
              { id: 3, content: 'item 3', start: '2023-08-18' },
-             { id: 4, content: 'item 4', start: '2023-08-16', end: '2020-08-19' },
+             { id: 4, content: 'item 4', start: '2023-08-16', end: '2023-08-19' },
              { id: 5, content: 'item 5', start: '2023-08-25' },
              { id: 6, content: 'item 6', start: '2023-08-27', type: 'point' }
          ];
