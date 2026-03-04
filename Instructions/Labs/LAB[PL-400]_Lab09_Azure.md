@@ -266,7 +266,7 @@ As part of configuring the event publishing, you will complete the following:
 
    - Select the **PL400** for resource group.
 
-   - Enter `pl400wh` for Function App name.
+   - Enter a globally unique Function App name, for example `pl400wh<your-initials><unique-number>` (Function App names must be unique across Azure).
 
    - Select **.NET** for Runtime stack
 
