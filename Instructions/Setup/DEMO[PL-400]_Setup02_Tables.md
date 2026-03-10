@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 2: Tables'
-    module: '1: Work with Microsoft Dataverse'
+lab:
+  title: Demo setup instructions 2 - Tables
+  description: '**Objective:** In this demo, you will show how to create tables in
+    a Dataverse solution. In later demos you will add columns and relationships.'
+  duration: 120 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 2 - Tables
