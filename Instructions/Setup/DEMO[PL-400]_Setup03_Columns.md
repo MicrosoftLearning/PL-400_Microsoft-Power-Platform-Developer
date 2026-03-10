@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 3: Columns'
-    module: '1: Work with Microsoft Dataverse'
+lab:
+  title: Demo setup instructions 3 - Columns
+  description: '**Objective:** In this demo, you will show how to add columns to the
+    tables created in the previous demo.'
+  duration: 136 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 3 - Columns
