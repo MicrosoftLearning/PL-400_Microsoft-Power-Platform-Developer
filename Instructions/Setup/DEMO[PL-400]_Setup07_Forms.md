@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 7: Model-driven app forms'
-    module: '2: Create model-driven apps'
+lab:
+  title: Demo setup instructions 7 - Model-driven app forms
+  description: '**Objective:** In this demo, you will show how to edit model-driven
+    app forms.'
+  duration: 78 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 7 - Model-driven app forms
