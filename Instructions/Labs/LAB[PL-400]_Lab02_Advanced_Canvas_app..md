@@ -1,7 +1,12 @@
 ---
 lab:
-    title: 'Lab 2: Advanced canvas app techniques'
-    module: 'Module 1: Advanced techniques in canvas apps'
+  title: 'Lab 2: Advanced canvas app techniques'
+  module: 'Module 1: Advanced techniques in canvas apps'
+  description: As we continue to build our solution, we will now customize the canvas
+    app to use the Patch formula.
+  duration: 44 minutes
+  level: 100
+  islab: true
 ---
 
 # Practice Lab 2 –  Advanced canvas app techniques
