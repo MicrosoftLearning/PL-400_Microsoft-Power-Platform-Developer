@@ -1,7 +1,17 @@
 ---
 lab:
-    title: 'Supplementary/Setup Lab 2: Model-driven app'
-    module: 'Set up your own environment'
+  title: 'Supplementary/Setup Lab 2: Model-driven app'
+  module: Set up your own environment
+  description: In this lab we will continue to build on top of the Microsoft Dataverse
+    components created in the previous lab. We will now build a Power Apps model-driven
+    app to allow the office staff manage records for the inspectors and the inspectors
+    to manage their own records as needed.
+  duration: 158 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Microsoft Dataverse
+  - Power Apps
 ---
 
 # Supplementary/Setup Lab Instructions – Model driven app
