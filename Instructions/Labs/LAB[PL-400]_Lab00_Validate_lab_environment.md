@@ -1,7 +1,13 @@
 ---
 lab:
-    title: 'Lab 0: Validate lab environment'
-    module: 'Module 0: Course Introduction'
+  title: 'Lab 0: Validate lab environment'
+  module: 'Module 0: Course Introduction'
+  description: If you are being provided with a tenant as a part of an instructor-led
+    training delivery, please note that the tenant is made available for the purpose
+    of supporting the hands-on labs in the instructor-led training.
+  duration: 146 minutes
+  level: 200
+  islab: true
 ---
 
 # Practice Lab 0 - Validate lab environment
