@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 1: Import Solution'
-    module: '0: Course Introduction'
+lab:
+  title: Demo setup instructions 1 - Import Solution
+  description: '**Objective:** In this demo, you will show how to create a Dataverse
+    solution'
+  duration: 46 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 1 - Import Solution
