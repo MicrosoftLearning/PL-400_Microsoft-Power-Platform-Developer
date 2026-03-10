@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 10: Create canvas app'
-    module: '3: Create canvas apps'
+lab:
+  title: Demo setup instructions 10 - Create canvas app
+  description: '**Objective:** In this demo, you will show how to create a canvas
+    app and display a list of records from a Dataverse table.'
+  duration: 68 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 10 - Create canvas app
