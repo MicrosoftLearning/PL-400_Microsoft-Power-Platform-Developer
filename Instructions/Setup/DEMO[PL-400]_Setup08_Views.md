@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 8: Model-driven app views'
-    module: '2: Create model-driven apps'
+lab:
+  title: Demo setup instructions 8 - Model-driven app views
+  description: '**Objective:** In this demo, you will show how to edit model-driven
+    app views.'
+  duration: 84 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 8 - Model-driven app views
