@@ -1,7 +1,17 @@
 ---
 lab:
-    title: 'Supplementary/Setup Lab 3: Canvas app'
-    module: 'Set up your own environment'
+  title: 'Supplementary/Setup Lab 3: Canvas app'
+  module: Set up your own environment
+  description: As we continue to build our solution, we will now design a Power Apps
+    canvas app that the inspectors will use in the field on their mobile devices.
+    Canvas apps are low code apps that can be designed for a tablet or mobile phone
+    layouts. You will build a two-screen canvas app that allows inspectors quickly
+    access and process the inspections.
+  duration: 118 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Power Apps
 ---
 
 # Supplementary/Setup Lab Instructions 3 – Canvas app
