@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 4: Relationships'
-    module: '1: Work with Microsoft Dataverse'
+lab:
+  title: Demo setup instructions 4 - Relationships
+  description: '**Objective:** In this demo, you will show how to create relationships
+    for the tables created in the previous demo.'
+  duration: 90 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 4 - Relationships
