@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 5: Business rules'
-    module: '1: Work with Microsoft Dataverse'
+lab:
+  title: Demo setup instructions 5 - Business rules
+  description: '**Objective:** In this demo, you will show how to create business
+    rule on the Pet trick table and columns created in the previous demos.'
+  duration: 84 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 5 - Business rules
