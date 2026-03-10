@@ -1,7 +1,12 @@
 ---
-setup:
-    title: 'Supplementary/Setup Lab 1: Data modeling'
-    module: 'Set up your own environment'
+lab:
+  title: Supplementary/Setup Lab Instructions 1  – Data Modeling
+  description: Follow these instructions to create the data model for the course.
+    A solution is provided for students so that they do not need to perform these
+    steps.
+  duration: 168 minutes
+  level: 100
+  islab: true
 ---
 
 # Supplementary/Setup Lab Instructions 1  – Data Modeling
