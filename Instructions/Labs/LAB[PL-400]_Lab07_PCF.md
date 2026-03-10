@@ -1,7 +1,20 @@
 ---
 lab:
-    title: 'Lab 7: Power Apps Component Framework'
-    module: 'Module 5: Create code components with the Power Apps Component Framework'
+  title: 'Lab 7: Power Apps Component Framework'
+  module: 'Module 5: Create code components with the Power Apps Component Framework'
+  description: In this lab you will develop a custom component control using the Power
+    Apps Component Framework (PCF). This component will be used to visualize the permit
+    inspection history timeline. As you build the component, you will see how to use
+    prescriptive interfaces of the framework to interact with the hosting form data.
+    To speed things up we will use a community timeline library to render the visualization.
+    When you build such controls, you can either follow the same procedure or use
+    popular frameworks like React or Vue to completely control the visualization that
+    the component will render.
+  duration: 158 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Power Apps
 ---
 
 # Practice Lab 7 – Power Apps Component Framework
