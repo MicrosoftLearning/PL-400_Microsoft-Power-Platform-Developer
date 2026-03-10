@@ -1,7 +1,13 @@
 ---
 lab:
-    title: 'Set up your own environment'
-    module: 'Set up your own environment'
+  title: Set up your own environment
+  module: Set up your own environment
+  description: Ideally, you should complete these labs in a hosted lab environment.
+    If you want to complete them on your own computer, you can do so by installing
+    the following software.
+  duration: 68 minutes
+  level: 100
+  islab: true
 ---
 
 # Setup local lab environment
