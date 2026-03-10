@@ -1,7 +1,11 @@
 ---
-demo:
-    title: 'Demo Setup 9: Compose Model-driven app'
-    module: '2: Create model-driven apps'
+lab:
+  title: Demo setup instructions 9 - Compose Model-driven app
+  description: '**Objective:** In this demo, you will show how to create a model-driven
+    app.'
+  duration: 32 minutes
+  level: 100
+  islab: true
 ---
 
 # Demo setup instructions 9 - Compose Model-driven app
