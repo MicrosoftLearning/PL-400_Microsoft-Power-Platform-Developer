@@ -1,7 +1,14 @@
 ---
 lab:
-    title: 'Lab 1: Import solution'
-    module: 'Module 0: Course Introduction'
+  title: 'Lab 1: Import solution'
+  module: 'Module 0: Course Introduction'
+  description: A regional building department, Contoso, issues and tracks permits
+    for new buildings and updates for remodeling of existing buildings. Throughout
+    these labs you will create business logic, write code, and perform automation
+    to enable the regional building department to manage the permit process.
+  duration: 88 minutes
+  level: 100
+  islab: true
 ---
 
 # Practice Lab 1 - Import solution
