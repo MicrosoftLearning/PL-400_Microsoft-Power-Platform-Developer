@@ -1,7 +1,14 @@
 ---
 lab:
-    title: 'Lab 3: Power Automate'
-    module: 'Module 2: Automate a business process using Power Automate'
+  title: 'Lab 3: Power Automate'
+  module: 'Module 2: Automate a business process using Power Automate'
+  description: As we continue to build our solution, we will now create Power Automate
+    cloud flows to process inspection data.
+  duration: 138 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Power Automate
 ---
 
 # Practice Lab 3 - Power Automate
