@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 0: Validate lab environment'
-    module: 'Module 0: Course Introduction'
+  title: 'Lab 0: Validate lab environment'
+  module: 'Module 0: Course Introduction'
+  description: In this exercise, you will create a Development environment that you will do the majority of your lab work in and a Production environment to use to deploy solutions.
+  duration: 146 minutes
+  level: 200
+  islab: true
 ---
 
 # Practice Lab 0 - Validate lab environment
