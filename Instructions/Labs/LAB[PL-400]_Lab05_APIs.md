@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 5: Power Platform APIs'
-    module: 'Module 3: Introduction to developing with Power Platform'
+  title: 'Lab 5: Power Platform APIs'
+  module: 'Module 3: Introduction to developing with Power Platform'
+  description: Complete code files for this lab can be found in the C:\Labfiles\L05\Resources folder.
+  duration: 68 minutes
+  level: 100
+  islab: true
 ---
 
 # Practice Lab 5 - Power Platform APIs
