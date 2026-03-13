@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 2: Advanced canvas app techniques'
-    module: 'Module 1: Advanced techniques in canvas apps'
+  title: 'Lab 2: Advanced canvas app techniques'
+  module: 'Module 1: Advanced techniques in canvas apps'
+  description: 'We will follow the below basic steps to optimize the canvas app:'
+  duration: 30 minutes
+  level: 100
+  islab: true
 ---
 
 # Practice Lab 2 –  Advanced canvas app techniques
