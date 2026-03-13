@@ -3,7 +3,7 @@ lab:
   title: 'Lab 9: Integration with Azure'
   module: 'Module 7: Integrate Dataverse and Azure and Module 8: Custom Connectors'
   description: 'This lab focuses on both inbound and outbound integration with Azure. In this lab you will:'
-  duration: 186 minutes
+  duration: 90 minutes
   level: 400
   islab: true
   primarytopics:
