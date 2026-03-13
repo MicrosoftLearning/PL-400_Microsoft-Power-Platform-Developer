@@ -3,8 +3,8 @@ lab:
   title: 'Lab 8: Dataverse Plug-ins'
   module: 'Module 6: Extending Microsoft Dataverse'
   description: In this lab you will build two plug-ins. The first plug-in will run when a new permit record is created, and it will check that there are no other permits that exists for the build sites that are locked. If a locked permit is found, the plug-in will block the creation of this new permit. The second plug-in will hook up and run when the Lock Permit custom API is invoked. In the prior module we defined the custom API, and now with the plug-in step registered on execution of the custom API, it will perform the lock permit business logic.
-  duration: 152 minutes
-  level: 200
+  duration: 90 minutes
+  level: 300
   islab: true
 ---
 
