@@ -3,8 +3,8 @@ lab:
   title: 'Lab 4: Power Platform tools'
   module: 'Module 3: Introduction to developing with Power Platform'
   description: As we continue to build our solution, we will now install and configure tools used for extending the Power Platform with code.
-  duration: 152 minutes
-  level: 100
+  duration: 45 minutes
+  level: 200
   islab: true
 ---
 
