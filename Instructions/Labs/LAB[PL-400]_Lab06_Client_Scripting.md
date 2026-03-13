@@ -3,8 +3,8 @@ lab:
   title: 'Lab 6: Client scripting'
   module: 'Module 4: Extending the model-driven apps user experience'
   description: In this lab, you will implement client-side logic that will use the web API to evaluate the permit type associated with the permit record and use the client scripting API to manipulate the form controls.
-  duration: 182 minutes
-  level: 100
+  duration: 75 minutes
+  level: 300
   islab: true
 ---
 
