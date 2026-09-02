@@ -88,6 +88,13 @@ In this exercise, you will import data the into your **Development** environment
 
     ![Configuration Migration Tool.](../images/L01/configuration-migration-step1.png)
 
+    > **Note:** If the CLI reports **Launched CMT** but the Configuration Migration Tool window never opens, install and run an older version of the tool instead:
+    >
+    > 1. `nuget install Microsoft.CrmSdk.XrmTooling.ConfigurationMigration.Wpf -Version 9.1.0.185`
+    > 1. Run `DataMigrationUtility.exe` from the `Tools` folder of the installed package (for example, `C:\Users\<you>\.nuget\Packages\Microsoft.CrmSdk.XrmTooling.ConfigurationMigration.Wpf\9.1.0.185\Tools\DataMigrationUtility.exe`).
+    >
+    > Alternatively, this tool only saves time by pre-populating data — you can skip it and create the same records manually in the model-driven app.
+
 1. Select **Import data**.
 
 1. Select **Continue**.
