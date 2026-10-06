@@ -163,6 +163,7 @@ In this task, you will upload the JavaScript file as a web resource.You will als
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create web resource.
 
@@ -173,19 +174,19 @@ In this task, you will upload the JavaScript file as a web resource.You will als
     ![Add web resource - screenshot](../images/L06/mod-01-client-scripting-12.png)
 
     - Select **Choose file**.
-    
+
     - Browse to the **ContosoClientScripts** folder and then to the **FormScripts** folder.
 
     - Select the **PermitFormFunctions.js** file and select **Open**.
 
      ![Select file - screenshot](../images/L06/mod-01-client-scripting-14.png)
 
-   - Enter `Permit Form Scripts` for **Display name**.
-
    - Enter `PermitFormScripts.js` for **Name**.
 
+   - Enter `Permit Form Scripts` for **Display name**.
+
      ![New web resource form - screenshot](../images/L06/new-web-resource.png)
-   
+
    - Select **Save**.
 
 1. Add the JavaScript library to the Permit main form.
@@ -463,6 +464,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
    - Select **Web resources**.
    - Edit the **Permit Form Scripts** web resource.
 
@@ -606,6 +608,7 @@ In this task, you will use the Web API to retrieve the permit type lookup record
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
    - Select **Web resources**.
    - Edit the **Permit Form Scripts** web resource.
 
@@ -682,6 +685,7 @@ In this task, you will create a custom API that will be called to lock the permi
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create Custom API.
 
@@ -861,6 +865,7 @@ In this task, you will create the logic to invoke that will call the custom API.
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
    - Select **Web resources**.
    - Edit the **Permit Form Scripts** web resource.
 
@@ -879,6 +884,7 @@ In this task, you will create the logic to invoke that will call the custom API.
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Edit the Permit Management app
 

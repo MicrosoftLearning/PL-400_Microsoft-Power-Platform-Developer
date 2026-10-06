@@ -44,6 +44,7 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Edit the **Inspector** canvas app.
 
@@ -88,11 +89,13 @@ Completed solution files for this lab can be found in the  C:\Labfiles\L02 folde
    > - Select your **Development** environment.
    > - Select **Solutions**.
    > - Open the **Permit Management** solution.
+   > - Select the **Objects** page.
    > - Select **Apps** in the Permit Management solution.
    > - Select the ellipses **...** next to the **Inspector** app and select **Edit**.
 
 1. Start the application.
 
+   - Select the **Tree view** tab.
    - Select the **Main Screen** and select **Preview the app**.
    - The application should load and show at least one inspection.
    - Select the **Framing Inspection** record.

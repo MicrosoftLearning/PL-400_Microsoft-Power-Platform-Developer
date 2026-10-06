@@ -48,6 +48,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create a scheduled cloud flow.
 
@@ -71,12 +72,13 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 
      ![Dataverse actions - screenshot](../images/L03/select-list-rows-action.png)
 
+   - Select **Oauth** for *Authentication Type* and select **Sign in** using your tenant credentials.
+
    - Rename the List rows step to `Inspections` by selecting the ellipses **...** on the flow step and selecting **Rename**.
 
      ![Rename flow step - screenshot](../images/L03/rename-flow-step.png)
 
    - Select **Inspections** for Table name.
-   - Select **Show advanced options**.
    - In **Filter rows**, enter the OData query
 
      ```odata
@@ -160,6 +162,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create an instant cloud flow.
 
@@ -238,6 +241,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Edit the **Inspector** canvas app.
 
@@ -296,6 +300,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 
 1. Start the application.
 
+   - Select the **Tree view** tab.
    - Select the **Main Screen** and select **Preview the app**.
    - The application should load and show at least one inspection.
    - Select the **Framing Inspection** record.
@@ -329,6 +334,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create a business process flow.
 
@@ -583,6 +589,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
      ![Publish solution - screenshot](../images/S03/export-solution-publish.png)
 
    - Select **Next**.
+   - Select **Next**.
    - Set the version number to `1.0.0.3`.
    - Select **Managed**.
 
@@ -597,6 +604,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 1. Export unmanaged solution.
 
    - Select **Export** again.
+   - Select **Next**.
    - Select **Next**.
    - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.3`.
    - Select **Unmanaged**.
@@ -622,6 +630,7 @@ Completed solution files for this lab can be found in the C:\Labfiles\L03\Comple
 
      ![Select solution file - screenshot](../images/S03/import-solution-file.png)
 
+   - Select **Next**.
    - Select **Next**.
    - Select **Import**.
    - Wait for import to complete.

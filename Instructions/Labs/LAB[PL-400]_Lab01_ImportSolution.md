@@ -145,6 +145,8 @@ In this exercise, you will import data the into your **Development** environment
 
 1. In the left navigation of the app, select **Contacts**.
 
+1. If the **John Doe** contact already exists, skip to Task 2.3.
+
 1. Select **+ New**.
 
 1. Enter `John` for **First Name** and `Doe` for **Last Name**.
