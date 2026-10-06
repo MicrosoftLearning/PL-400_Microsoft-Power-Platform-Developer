@@ -1,5 +1,6 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import DataSetInterfaces = ComponentFramework.PropertyHelper.DataSetApi;
+import { Timeline } from "vis-timeline/standalone";
 type DataSet = ComponentFramework.PropertyTypes.DataSet;
 
 class TimelineData {
@@ -16,12 +17,10 @@ class TimelineData {
     }
 }
 
-const vis = require('vis-timeline');
-
 export class timelinecontrol implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
     private _timelineElm: HTMLDivElement;
-    private _timelineVis: any;
+    private _timelineVis: Timeline;
     private _timelineData: TimelineData[] = [];
 
     /**
@@ -41,7 +40,6 @@ export class timelinecontrol implements ComponentFramework.StandardControl<IInpu
      */
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement): void {
         this._timelineElm = document.createElement("div");
-
         container.appendChild(this._timelineElm);
     }
 
