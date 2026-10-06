@@ -83,7 +83,21 @@ Tenants must not be converted to a paid subscription. Tenants obtained as a part
 
 In this exercise, you will add Power Apps for Developer to the tenant and assign licenses to users.
 
-### Task 2.1 – Sign into the Microsoft 365 admin portal
+### Task 2.1 – Sign up for Power Apps for Developer
+
+1. In a new browser tab, navigate to `https://powerapps.microsoft.com`.
+
+1. Select **Try for free**.
+
+1. Enter the `email address` provided by the Authorized Lab Host.
+
+1. Select the *By signing up, you agree to the Microsoft Online Subscription agreement* box.
+
+1. Enter the `password` provided by the Authorized Lab Host, if prompted.
+
+1. The Power Apps Maker portal will open.
+
+### Task 2.2 – Sign into the Microsoft 365 admin portal
 
 1. Verify that you have your **Microsoft 365 credentials** from the Authorized Lab Host available.
 
@@ -99,29 +113,7 @@ In this exercise, you will add Power Apps for Developer to the tenant and assign
 
 1. Select **Yes** to stay signed in.
 
-### Task 2.2 – Sign up for Power Apps for Developer
-
-1. In a new browser tab, navigate to `https://powerapps.microsoft.com`.
-
-1. Select **Try for free**.
-
-1. Enter the `email address` provided by the Authorized Lab Host.
-
-1. Select **Next**.
-
-1. Select **Sign In**.
-
-1. Enter the `password` provided by the Authorized Lab Host, if prompted.
-
-1. Leave the **Country or Region** as the default value.
-
-1. If prompted, enter `0123456789` for **Business phone number**.
-
-1. Select **Get Started**.
-
-1. Select **Get Started** again.
-
-1. The Power Apps Maker portal will open in a new tab.
+1. If prompted to set up multi-factor authentication, skip to Exercise 3.
 
 ### Task 2.3 – Verify Power Apps license is assigned to your user
 
@@ -176,9 +168,11 @@ In this exercise, you will create a *Development* environment that you will do t
 
     ![Environment in the Power Platform admin center.](../images/L00/ppac-environments.png)
 
+1. In the **Type** drop down, select **Developer**.
+
 1. In the **Name** text box, enter `[my initials] Development`. (Example: PL Development).
 
-1. In the **Type** drop down, select **Developer**.
+
 
 1. Leave all other selections as default and select **Next**.
 
