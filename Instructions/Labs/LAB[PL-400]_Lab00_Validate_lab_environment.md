@@ -170,9 +170,13 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. In the **Type** drop down, select **Developer**.
 
+1. In the **Macro Region Geography** drop down, select **North America**.
+
 1. In the **Name** text box, enter `[my initials] Development`. (Example: PL Development).
 
+1. Expand **Change default settings**.
 
+1. Enable **Add a Dataverse data store**.
 
 1. Leave all other selections as default and select **Next**.
 
@@ -196,9 +200,15 @@ In this exercise, you will create a *Development* environment that you will do t
 
 1. Select **+ New**.
 
+1. In the **Type** drop-down, select **Developer**.
+
+1. In the **Macro Region Geography** drop down, select **North America**.
+
 1. In the **Name** text box, enter `[my initials] Production`. (Example: PL Production).
 
-1. In the **Type** drop-down, select **Developer**.
+1. Expand **Change default settings**.
+
+1. Enable **Add a Dataverse data store**.
 
 1. Leave all other selections as default and select **Next**.
 
