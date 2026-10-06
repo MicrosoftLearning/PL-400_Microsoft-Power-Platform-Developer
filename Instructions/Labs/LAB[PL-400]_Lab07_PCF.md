@@ -196,7 +196,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
 
 ### Task 1.3: Setup solution
 
-1. Launch the **Developer Command Promt**, if you do not have it open from the previous steps. 
+1. Launch the **Developer Command Prompt**, if you do not have it open from the previous steps.
 
 1. Create a new solution folder in the parent of the **src** folder **pcfTimelineControl**.
 
@@ -383,12 +383,12 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L07\Res
      private renderTimeline(): void {
          // Create a DataSet (allows two way data-binding)
          const items = [
-             { id: 1, content: 'item 1', start: '2023-08-20' },
-             { id: 2, content: 'item 2', start: '2023-08-14' },
-             { id: 3, content: 'item 3', start: '2023-08-18' },
-             { id: 4, content: 'item 4', start: '2023-08-16', end: '2023-08-19' },
-             { id: 5, content: 'item 5', start: '2023-08-25' },
-             { id: 6, content: 'item 6', start: '2023-08-27', type: 'point' }
+             { id: 1, content: 'item 1', start: '2026-08-20' },
+             { id: 2, content: 'item 2', start: '2026-08-14' },
+             { id: 3, content: 'item 3', start: '2026-08-18' },
+             { id: 4, content: 'item 4', start: '2026-08-16', end: '2026-08-19' },
+             { id: 5, content: 'item 5', start: '2026-08-25' },
+             { id: 6, content: 'item 6', start: '2026-08-27', type: 'point' }
          ];
          // Configuration for the Timeline
          const options = {};
@@ -449,10 +449,10 @@ In this task, you will switch from using the hard-coded array of data to using a
 
      ```csv
      contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
-     123,Electrical:Rough Inspection:Passed,8/1/2023,Passed
-     124,Electrical:Rough Inspection:Passed,8/5/2023,Passed
-     125,Plumbing:Rough Inspection:Failed,8/8/2023,Failed
-     126,Plumbing:Rough Inspection:Passed,8/10/2023,Passed
+     123,Electrical:Rough Inspection:Passed,8/1/2026,Passed
+     124,Electrical:Rough Inspection:Passed,8/5/2026,Passed
+     125,Plumbing:Rough Inspection:Failed,8/8/2026,Failed
+     126,Plumbing:Rough Inspection:Passed,8/10/2026,Passed
      ```
 
      ![Test data - screenshot](../images/L07/mod-02-pcf-1-34.png)
@@ -566,7 +566,7 @@ In this task, you will switch from using the hard-coded array of data to using a
 
      ![Select file - screenshot](../images/L07/mod-02-pcf-1-41.png)
 
-   - Select the **testdata.csv** and then select **Open**. 
+   - Select the **testdata.csv** and then select **Open**.
 
     > [!NOTE]
     > The file should be located at C:\LabFiles\L07\pcfTimelineControl\src.
@@ -698,6 +698,7 @@ In this task, you will use the **css** resource you configured to change the col
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Add the PCF component to the solution.
 
@@ -860,6 +861,7 @@ In this task, you will use the **css** resource you configured to change the col
    - Select your **Development** environment.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Edit the Inspections view.
 
@@ -909,6 +911,7 @@ In this task, you will use the **css** resource you configured to change the col
      ![Publish solution - screenshot](../images/S03/export-solution-publish.png)
 
    - Select **Next**.
+   - Select **Next**.
    - Set the version number to `1.0.0.7`.
    - Select **Managed**.
 
@@ -923,6 +926,7 @@ In this task, you will use the **css** resource you configured to change the col
 1. Export unmanaged solution.
 
    - Select **Export** again.
+   - Select **Next**.
    - Select **Next**.
    - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.7`.
    - Select **Unmanaged**.
@@ -955,13 +959,5 @@ In this task, you will use the **css** resource you configured to change the col
      ![Import solution - screenshot](../images/L07/mod-02-pcf-1-86.png)
 
    - Select **Next**.
-
-   - In the Connections pane, select **Select a connection** and select **+New connection**.
-
-   - Select **Create** and sign in with your tenant credentials.
-
-   - Close the Connections browser tab.
-
-   - Select **Refresh**.
 
    - Select **Import** and wait the import to complete.

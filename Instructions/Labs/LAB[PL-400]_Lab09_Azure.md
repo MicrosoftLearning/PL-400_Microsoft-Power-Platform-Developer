@@ -28,11 +28,7 @@ This lab focuses on both inbound and outbound integration with Azure. In this la
 
 ## Starter solution
 
-A starter solution file for this lab can be found in the  C:\Labfiles\L09\Starter folder.
-
-## Completed solution
-
-Completed solution files for this lab can be found in the  C:\Labfiles\L09\Completed folder.
+A starter solution file for this lab can be found in the  C:\Labfiles\L09\ folder.
 
 ## Resources
 
@@ -607,6 +603,7 @@ As part of configuring the event publishing, you will complete the following:
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
    - Select **Add existing** and select **More** and **Developer** and **Service endpoint**.
 
@@ -792,6 +789,7 @@ As part of configuring the custom connector, you will complete the following
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Create Custom Connector
 
@@ -946,6 +944,7 @@ As part of configuring the custom connector, you will complete the following
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/`.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Edit the Inspector canvas app.
 

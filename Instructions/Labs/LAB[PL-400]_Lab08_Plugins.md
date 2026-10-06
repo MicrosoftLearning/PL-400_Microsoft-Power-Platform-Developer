@@ -56,6 +56,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
 1. Find the values of the Permit table Status Reason column.
 
@@ -558,6 +559,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    - Navigate to the Power Apps Maker portal `https://make.powerapps.com/` and make sure you have the **Development** environment selected.
    - Select **Solutions**.
    - Open the **Permit Management** solution.
+   - Select the **Objects** page.
 
    - Select **Add existing** and select **More** and **Developer** and **Plug-in assembly**.
 
@@ -783,6 +785,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    - Select **Export**.
    - Select **Publish** and wait for the publishing to complete.
    - Select **Next**.
+   - Select **Next**.
    - Set the version number to `1.0.0.8`.
    - Select **Managed**.
    - Select **Export**.
@@ -791,6 +794,7 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
 1. Export unmanaged solution.
 
    - Select **Export** again.
+   - Select **Next**.
    - Select **Next**.
    - Edit the version number to match the Managed solution you just exported i.e., `1.0.0.8`.
    - Select **Unmanaged**.
@@ -809,4 +813,5 @@ Complete source code files for this lab can be found in the  C:\Labfiles\L08\Res
    - Select the **Managed** solution file you exported in the previous task and then select **Open**.
    - Select **Next**.
    - Expand **Advanced settings** and make sure **Upgrade** is selected.
+   - Select **Next**.
    - Select **Import** and wait the import to complete.
